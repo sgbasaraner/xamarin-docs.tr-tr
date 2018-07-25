@@ -1,47 +1,47 @@
 ---
-title: Android ile ADO.NET kullanarak
+title: ADO.NET ile Android kullanma
 ms.prod: xamarin
 ms.assetid: F6ABCEF1-951E-40D8-9EA9-DD79123C2650
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: 29e81afdf2c46cdefc68e2c2fae4e6e47999a346
-ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
+ms.openlocfilehash: 9e0c1be2e37355242db2fb70857d90127c3b5259
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
-ms.locfileid: "31646787"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242218"
 ---
-# <a name="using-adonet-with-android"></a>Android ile ADO.NET kullanarak
+# <a name="using-adonet-with-android"></a>ADO.NET ile Android kullanma
 
-Xamarin Android üzerinde kullanılabilir ve tanıdık ADO.NET benzeri sözdizimi kullanarak verilebilen SQLite veritabanı için yerleşik desteğe sahiptir. Bu API'leri kullanarak, gerektirir SQLite tarafından gibi işlenir SQL deyimleri yazmanıza `CREATE TABLE`, `INSERT` ve `SELECT` deyimleri.
+Xamarin Android üzerinde kullanılabilir ve alışık olduğunuz ADO.NET benzeri sözdizimi kullanarak kullanıma sunulabilecek SQLite veritabanı için yerleşik destek sunmaktadır. Bu API'leri kullanarak, gerektirir SQLite tarafından gibi işlenir SQL deyimleri yazmanıza `CREATE TABLE`, `INSERT` ve `SELECT` deyimleri.
 
 ## <a name="assembly-references"></a>Derleme başvuruları
 
-Erişim SQLite eklemelisiniz ADO.NET aracılığıyla kullanılacak `System.Data` ve `Mono.Data.Sqlite` aşağıda gösterildiği gibi Android projenize başvuruyor:
+SQLite eklemelisiniz ADO.NET aracılığıyla erişimi kullanmak için `System.Data` ve `Mono.Data.Sqlite` burada gösterildiği gibi Android projesine başvuruyor:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin) 
 
-![Visual Studio'da Android başvuruları](using-adonet-images/image7.png "Android başvuran Visual Studio'da") 
+![Visual Studio'da Android başvuruları](using-adonet-images/image7.png "Visual Studio'da Android başvuruları") 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac) 
 
-![Mac için Visual Studio'da Android başvuruları](using-adonet-images/image5.png "Android, Mac için Visual Studio'da başvurur") 
+![Mac için Visual Studio'da Android başvuruları](using-adonet-images/image5.png "Android, Mac için Visual Studio'da başvuruyor") 
 
 -----
 
 
-Sağ **başvuruları > başvurular Düzenle...**  sonra gerekli derlemeleri seçmek için tıklatın.
+Sağ **başvuruları > başvuruları Düzenle...**  sonra gerekli derlemeleri seçmek için tıklayın.
 
 ## <a name="about-monodatasqlite"></a>Mono.Data.Sqlite hakkında
 
-Kullanacağız `Mono.Data.Sqlite.SqliteConnection` bir boş veritabanı dosyası oluşturmak için sınıf ve ardından örneği için `SqliteCommand` nesneleri biz veritabanında SQL yönergeleri yürütmek için kullanabilirsiniz.
+Kullanacağız `Mono.Data.Sqlite.SqliteConnection` bir boş veritabanı oluşturmak için sınıf örneği oluşturmak için sonra da `SqliteCommand` nesneleri biz veritabanına karşı SQL yönergeleri yürütmek için kullanabilirsiniz.
 
-**Boş bir veritabanı oluşturma** &ndash; çağrısı `CreateFile` geçerli bir yöntemle (IE. yazılabilir) dosya yolu. Bu yöntemi çağırmadan önce dosya zaten var, aksi halde yeni (boş) veritabanı eskisinin üst oluşturulur ve eski dosyasındaki veriler kaybolacak olup olmadığını denetlemelisiniz.
-`Mono.Data.Sqlite.SqliteConnection.CreateFile (dbPath);` `dbPath` Değişkeni bu belgenin önceki bölümlerinde açıklanan kuralları göre belirlenemedi.
+**Boş veritabanı oluşturma** &ndash; çağrı `CreateFile` geçerli bir yöntemle (IE. yazılabilir) dosya yolu. Dosya zaten bu yöntemi çağırmadan önce Aksi takdirde eski üst yeni (boş) bir veritabanı oluşturulur ve eski dosyasındaki veriler kaybolur olup olmadığını denetlemelisiniz.
+`Mono.Data.Sqlite.SqliteConnection.CreateFile (dbPath);` `dbPath` Değişkeni bu belgenin önceki bölümlerinde açıklanan kurallara göre belirlenemedi.
 
-**Veritabanı bağlantısı oluşturma** &ndash; SQLite veritabanı dosyası oluşturulduktan sonra verilere erişmek için bir bağlantı nesnesi oluşturabilirsiniz. Bağlantı biçimini alır sahip bir bağlantı dizesi oluşturulan `Data Source=file_path`, aşağıda gösterildiği gibi:
+**Veritabanı bağlantısı oluşturma** &ndash; SQLite veritabanı dosyası oluşturulduktan sonra verilere erişmek için bir bağlantı nesnesi oluşturabilirsiniz. Bağlantı biçiminde alan bir bağlantı dizesi ile oluşturulmuş olan `Data Source=file_path`, burada gösterildiği gibi:
 
 ```csharp
 var connection = new SqliteConnection ("Data Source=" + dbPath);
@@ -50,9 +50,9 @@ connection.Open();
 connection.Close();
 ```
 
-Daha önce belirtildiği gibi bir bağlantı hiçbir zaman farklı iş parçacıkları arasında yeniden kullanılan olmalıdır. Emin değilseniz, gerekli olarak bağlantı oluşturun ve tamamladığınızda kapatın; Ancak bu fazla genellikle çok gerekli yapma dikkatli olun.
+Daha önce bahsedildiği gibi bir bağlantı hiçbir zaman farklı iş parçacıkları arasında yeniden kullanılan olmamalıdır. Bu konuda şüpheleriniz varsa gerektiği gibi bir bağlantı oluşturun ve işiniz bittiğinde kapatın; Ancak, bu çok genellikle çok gerekli yapmanın oluşturduğunu unutmayın.
 
-**Oluşturma ve bir veritabanı komutu yürütülürken** &ndash; bağlantı sahibiz sonra biz bunu karşı rasgele SQL komutları çalıştırabilirsiniz. Aşağıdaki kodu gösterir bir `CREATE TABLE` yürütülmekte olan ifade.
+**Oluşturma ve bir veritabanı komutu yürütülürken** &ndash; bağlantı biz oluşturduktan sonra rasgele SQL komutları yürütecek. Aşağıdaki kod gösterir bir `CREATE TABLE` yürütülmekte olan ifade.
 
 ```csharp
 using (var command = connection.CreateCommand ()) {
@@ -61,17 +61,17 @@ using (var command = connection.CreateCommand ()) {
 }
 ```
 
-SQL veritabanına karşı doğrudan yürütülürken zaten bir tablo oluşturma girişimi gibi geçersiz istek yapmamak için normal önlemler almanız gerekir. Veritabanınızın yapısını neden olmayan böylece izlemek bir `SqliteException` gibi **SQLite hata tablosundaki [öğeleri] zaten**.
+Doğrudan veritabanına karşı SQL yürütürken gibi zaten var olan bir tablo oluşturulmaya çalışılırken geçersiz istekleri yapmamak için normal önlemleri almalıdır. Veritabanınızı yapısını neden olmayan böylece izlemek bir `SqliteException` gibi **SQLite hata tablosundaki [öğeleri] zaten**.
 
 ## <a name="basic-data-access"></a>Temel veri erişimi
 
-*DataAccess_Basic* bu belge için örnek kod şu şekilde görünür Android üzerinde çalışırken:
+*DataAccess_Basic* bu belge için örnek kod şuna benzer Android'de çalıştırırken:
 
 ![Android ADO.NET örnek](using-adonet-images/image8.png "Android ADO.NET örnek")
 
-Aşağıdaki kodu basit SQLite işlemleri gerçekleştirmek nasıl gösterir ve sonuçları, uygulamanın ana penceresinde metin olarak gösterilir.
+Aşağıdaki kod, basit SQLite işlemlerini nasıl gerçekleştireceğinizi gösterir ve uygulamanın ana pencere metin olarak sonuçları gösterir.
 
-Bu ad alanlarını dahil yapmanız gerekir:
+Bu ad alanlarını içerecek şekilde gerekir:
 
 ```csharp
 using System;
@@ -79,13 +79,13 @@ using System.IO;
 using Mono.Data.Sqlite;
 ```
 
-Aşağıdaki kod örneği, tüm veritabanı etkileşim gösterir:
+Aşağıdaki kod örneği, veritabanının tamamını etkileşim gösterilmektedir:
 
 1.  Veritabanı dosyası oluşturma
 2.  Bazı veri ekleme
 3.  Veriyi sorgulama
 
-Bu işlem genellikle, kodunuzu boyunca birden çok yerde Örneğin, uygulamanızı ilk başladığında tablo ve veritabanı dosyası oluşturabilir ve veri okuma ve yazma işlemleri ayrı ayrı ekranları uygulamanızda gerçekleştirmek görüntülenir. Aşağıdaki örnekte bu örnek için tek bir yöntem halinde gruplandırılır:
+Bu işlemlerin genellikle kodunuz genelinde birden çok yerde Örneğin, uygulamanızın ilk kez başlatıldığında tablo ve veritabanı dosyası oluşturabilir ve veri okuma ve yazma işlemleri, uygulamanızda bireysel ekranlara gerçekleştirmek görünür. Aşağıdaki örnekte bu örneğin tek bir yöntem içinde gruplandırılır:
 
 ```csharp
 public static SqliteConnection connection;
@@ -143,18 +143,18 @@ public static string DoSomeDataAccess ()
 
 ## <a name="more-complex-queries"></a>Daha karmaşık sorgular
 
-Veri karşı çalıştırmak için rasgele SQL komutlarını SQLite izin verdiğinden, ne olursa olsun gerçekleştirebilirsiniz `CREATE`, `INSERT`, `UPDATE`, `DELETE`, veya `SELECT` istediğiniz deyimleri. Sqlite Web sitesinde SQLite tarafından desteklenen SQL komutları hakkında bilgi edinebilirsiniz. SQL deyimleri üç yöntemden birini kullanarak çalışan bir `SqliteCommand` nesnesi:
+SQLite karşı verileri çalıştırmayı rastgele SQL komutlarını izin verdiğinden, ne olursa olsun gerçekleştirebilirsiniz `CREATE`, `INSERT`, `UPDATE`, `DELETE`, veya `SELECT` istediğiniz deyimleri. Sqlite Web sitesinde SQLite tarafından desteklenen SQL komutlar hakkında bilgi edinebilirsiniz. SQL deyimlerini üç yöntemden birini kullanarak çalıştırılan bir `SqliteCommand` nesnesi:
 
--   **ExecuteNonQuery** &ndash; genellikle tablo oluşturma veya veri ekleme için kullanılır. Bazı işlemler için dönüş değerini etkilenen satırların sayısı, aksi takdirde, -1'dir.
+-   **ExecuteNonQuery** &ndash; genelde tablo oluşturma veya veri ekleme için kullanılan. Bazı işlemler için dönüş değeri etkilenen satır sayısı, aksi takdirde, -1'dir.
 
--   **ExecuteReader** &ndash; satır koleksiyonu olarak döndürülmelidir çağrılırken bir `SqlDataReader`.
+-   **ExecuteReader** &ndash; satır koleksiyonu olarak döndürülmesi kullanılan bir `SqlDataReader`.
 
 -   **ExecuteScalar** &ndash; (örneğin bir toplama) tek bir değer alır.
 
 
 ### <a name="executenonquery"></a>EXECUTENONQUERY
 
-`INSERT`, `UPDATE`, ve `DELETE` deyimleri etkilenen satırların sayısını döndürür. Diğer tüm SQL deyimlerini -1 döndürür.
+`INSERT`, `UPDATE`, ve `DELETE` deyimleri etkilenen satır sayısını döndürür. Diğer tüm SQL deyimleri -1 döndürür.
 
 ```csharp
 using (var c = connection.CreateCommand ()) {
@@ -166,7 +166,7 @@ using (var c = connection.CreateCommand ()) {
 ### <a name="executereader"></a>EXECUTEREADER
 
 Aşağıdaki yöntem gösterildiği bir `WHERE` yan tümcesinde `SELECT` deyimi.
-Kodu tam bir SQL deyimi oluşturmak için bu ayrılmış karakterleri dizeleri etrafında tırnak işareti (') gibi kaçınmak için dikkatli olun gerekir.
+Kod, tam bir SQL deyimi kaynaklı olduğundan, dizeleri etrafında tırnak işareti (')'gibi ayrılmış karakterleri kaçış ilgileniriz gerekir.
 
 ```csharp
 public static string MoreComplexQuery ()
@@ -193,11 +193,11 @@ public static string MoreComplexQuery ()
 }
 ```
 
-`ExecuteReader` Yöntemi döndürür bir `SqliteDataReader` nesnesi. Ek olarak `Read` yöntemi gösterilen örnekte, diğer kullanışlı özellikler şunlardır:
+`ExecuteReader` Yöntemi döndürür bir `SqliteDataReader` nesne. Ek olarak `Read` yöntemi gösterilen örnekte, diğer yararlı özellikler şunlardır:
 
 -   **RowsAffected** &ndash; sorgu tarafından etkilenen satırların sayısı.
 
--   **HasRows** &ndash; herhangi bir satır olup döndürülmedi.
+-   **HasRows** &ndash; olup herhangi bir satır döndürülmedi.
 
 
 ### <a name="executescalar"></a>EXECUTESCALAR
@@ -211,13 +211,13 @@ using (var contents = connection.CreateCommand ()) {
 }
 ```
 
-`ExecuteScalar` Yöntemin dönüş türü `object` &ndash; veritabanı sorgusu bağlı olarak sonuç atamalısınız. Sonucu arasında bir tamsayı olabilir bir `COUNT` sorgu veya tek bir sütun dizeden `SELECT` sorgu. Bu diğer farklı olduğuna dikkat edin `Execute` Okuyucu nesnesi veya etkilenen satırların sayısını döndüren yöntemler.
+`ExecuteScalar` Yöntemin dönüş türü `object` &ndash; sonucu veritabanı sorguya bağlı olarak atamanız gerekir. Arasında bir tamsayı sonucu olabilir bir `COUNT` sorgu ya da bir dizeden tek bir sütun `SELECT` sorgu. Bu diğer farklı olduğunu unutmayın `Execute` Okuyucu nesnesi veya etkilenen satır sayısını döndüren yöntemler.
 
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [ADO'da Basic (örnek)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
-- [ADO'da Gelişmiş (örnek)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
-- [Android veri tarif](https://developer.xamarin.com/recipes/android/data/)
+- [DataAccess Basic (örnek)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
+- [DataAccess Gelişmiş (örnek)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
+- [Android veri tarifleri](https://github.com/xamarin/recipes/tree/master/Recipes/android/data)
 - [Xamarin.Forms veri erişimi](~/xamarin-forms/app-fundamentals/databases.md)

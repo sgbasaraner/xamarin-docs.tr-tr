@@ -1,26 +1,26 @@
 ---
-title: Xamarin.iOS eşlemeleri
-description: Bu belgede iOS MapKit framework ve Xamarin.iOS ile nasıl kullanıldığı açıklanmaktadır. Bir harita, kaydırma ve yakınlaştırma, kullanıcı konumu ile çalışma, ek açıklama ekleyin, belirtme ve yer paylaşımları ile çalışır ve yerel arama yapmak stili ekleme açıklanır.
+title: Xamarin.iOS eşlemelerinde
+description: Bu belge iOS MapKit çerçevesi ve Xamarin.iOS ile nasıl kullanıldığını açıklar. Bu, bir harita, kaydırma ve yakınlaştırma, kullanıcı konumu ile çalışma, ek açıklama ekleyin, belirtme ve katmanları ile çalışmak ve yerel arama gerçekleştirmek stil eklemek nasıl ele alınmaktadır.
 ms.prod: xamarin
 ms.assetid: 5DD8E56D-51C1-4AFA-B387-79B5734698ED
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 3649c8eb9c8c1a82940b8e2eece7d2bfd005d024
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 5343f53b77319b08424263103834ffcf10e261a0
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34790236"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242072"
 ---
-# <a name="maps-in-xamarinios"></a>Xamarin.iOS eşlemeleri
+# <a name="maps-in-xamarinios"></a>Xamarin.iOS eşlemelerinde
 
-MAPS, modern mobil işletim sistemlerinin tümünde ortak bir özelliktir. iOS harita Seti çerçevesi aracılığıyla yerel olarak eşleme destek sunar. Harita Seti ile uygulamaları kolayca zengin ve etkileşimli eşlemeleri ekleyebilirsiniz. Bu eşlemeler, bir harita konumları işaretlemek için ek açıklamaları ekleme ve rastgele şekil grafik üst üste getirme gibi yollarla, çeşitli özelleştirilebilir. Harita Seti bile bir aygıt geçerli konumunu göstermek için yerleşik desteğe sahiptir.
+Haritalar, tüm modern mobil işletim sistemlerindeki genel bir özelliğidir. iOS Map Kit framework aracılığıyla eşleme desteği sunar. Map Kit ile uygulamaları zengin, etkileşimli haritalar bir kolayca ekleyebilirsiniz. Bu haritalar bir harita üzerinde konumları işaretlemek için ek açıklamaları ekleme ve grafik rastgele şekilleri planlamanızda gibi yollarla çeşitli özelleştirilebilir. Map Kit, hatta bir cihazın geçerli konumunu göstermek için yerleşik destek sunmaktadır.
 
-## <a name="adding-a-map"></a>Bir harita ekleme
+## <a name="adding-a-map"></a>Bir eşleme ekleniyor
 
-Uygulamaya bir harita ekleme gerçekleştirilir ekleyerek bir `MKMapView` aşağıda gösterildiği gibi görünüm hiyerarşisine örneği:
+Bir uygulamaya bir harita eklemek gerçekleştirilir ekleyerek bir `MKMapView` aşağıda gösterildiği gibi hiyerarşisini Görüntüle için örnek:
 
 ```csharp
 // map is an MKMapView declared as a class variable
@@ -28,31 +28,31 @@ map = new MKMapView (UIScreen.MainScreen.Bounds);
 View = map;
 ```
 
- `MKMapView` olan bir `UIView` bir harita görüntüleyen bir alt kümesi. Yalnızca yukarıdaki kodu kullanarak harita ekleme etkileşimli bir harita oluşturur:
+ `MKMapView` olan bir `UIView` öğesinin alt sınıfı bir harita görüntülenir. Yukarıdaki kodu kullanarak haritada yalnızca ekleme, etkileşimli bir harita oluşturur:
 
- ![](images/00-map.png "Bir örnek eşleme")
+ ![](images/00-map.png "Örnek eşleme")
 
 ## <a name="map-style"></a>Harita stili
 
- `MKMapView` eşlemelerinin 3 farklı stillerini destekler. Bir harita stili uygulamak için basitçe ayarlamak `MapType` arasında bir değer özelliğine `MKMapType` numaralandırma:
+ `MKMapView` Haritalar 3 farklı türlerde destekler. Harita stil uygulamak için ayarlamanız yeterlidir `MapType` arasında bir değer özelliğini `MKMapType` sabit listesi:
  ```
 map.MapType = MKMapType.Standard; //road map
 map.MapType = MKMapType.Satellite;
 map.MapType = MKMapType.Hybrid;
  ```
-  Aşağıdaki ekran görüntüsünde kullanılabilir farklı harita Stilleri Göster:
+  Aşağıdaki ekran görüntüsünde, mevcut olan farklı eşleme stilleri gösterir:
 
- ![](images/01-mapstyles.png "Bu ekran kullanılabilir farklı harita Stilleri Göster")
+ ![](images/01-mapstyles.png "Bu ekran göster kullanılabilen farklı eşleme stilleri")
 
 ## <a name="panning-and-zooming"></a>Kaydırma ve yakınlaştırma
 
  `MKMapView` Harita etkileşim özellikleri için destek gibi içerir:
 
--  Tutarak hareketi yakınlaştırma
--  Pan hareketi kaydırma
+-  Tabletinizde hareket yakınlaştırma
+-  Bir kaydırma hareketi kaydırma
 
 
-Bu özellikler etkin ya da yalnızca ayarlayarak devre dışı `ZoomEnabled` ve `ScrollEnabled` özelliklerini `MKMapView` örneği, varsayılan değeri olduğu için her ikisi de true. Örneğin, statik haritaya görüntülemek için yalnızca uygun özellikleri false olarak ayarlayın:
+Bu özellikler etkinleştirilebilir ya da yalnızca ayarlayarak devre dışı `ZoomEnabled` ve `ScrollEnabled` özelliklerini `MKMapView` örneği, varsayılan değer olduğu için her ikisi de true. Örneğin, statik bir haritaya görüntülemek için uygun özellikleri false olarak ayarlamanız yeterlidir:
 
 ```csharp
 map.ZoomEnabled = false;
@@ -61,7 +61,7 @@ map.ScrollEnabled = false;
 
 ## <a name="user-location"></a>Kullanıcı konumu
 
-Kullanıcı etkileşimi yanı sıra `MKMapView` cihazın konumunu görüntüleme için yerleşik destek de vardır. Bunu kullanarak yapar *çekirdek konumu* framework. Kullanıcının konumuna erişebilmesi için kullanıcıya sor gerekir. Bunu yapmak için bir örneğini oluşturmak `CLLocationManager` ve arama `RequestWhenInUseAuthorization`.
+Kullanıcı etkileşimi yanı sıra `MKMapView` cihazın konumunu görüntüleyen için yerleşik destek de vardır. Bunu kullanarak yapar *çekirdek konumu* framework. Kullanıcının konumuna erişebilmek için önce kullanıcıdan gerekir. Bunu yapmak için bir örneğini oluşturmak `CLLocationManager` ve çağrı `RequestWhenInUseAuthorization`.
 
 ```csharp
 CLLocationManager locationManager = new CLLocationManager();
@@ -69,40 +69,40 @@ locationManager.RequestWhenInUseAuthorization();
 //locationManager.RequestAlwaysAuthorization(); //requests permission for access to location data while running in the background
 ```
 
-İOS 8.0, çağrı girişimi önce sürümlerinde unutmayın `RequestWhenInUseAuthorization` bir hatayla sonuçlanır. İOS sürüm 8'den önceki sürümleri desteklemek istiyorsanız, bu çağrıyı yapmadan önce kontrol ettiğinizden emin olun.
+İOS 8.0, arama girişimi önce sürümlerinde unutmayın `RequestWhenInUseAuthorization` bir hataya neden olur. 8'den önceki sürümleri desteklemek istiyorsanız, bu çağrı yapmadan önce iOS sürümünü kontrol ettiğinizden emin olun.
 
-Kullanıcının konumuna erişim aynı zamanda yapılan değişiklikler gerektirir **Info.plist**. Konum verileri ile ilgili aşağıdaki anahtarları ayarlamanız gerekir:
+Kullanıcının konumuna erişimi de değişiklikler gerektirir **Info.plist**. Konum verileri ile ilgili aşağıdaki anahtarları ayarlamanız gerekir:
 
-- **NSLocationWhenInUseUsageDescription** - uygulamanızı ile etkileşim sırasında zaman kullanıcının konuma erişmek için.
-- **NSLocationAlwaysUsageDescription** - ne zaman, uygulamanızın arka planda kullanıcının konumuna erişir.
+- **NSLocationWhenInUseUsageDescription** - uygulamanızla etkileşim sırasında kullanıcının konumuna erişmek için.
+- **NSLocationAlwaysUsageDescription** - ne zaman uygulamanızın arka planda kullanıcının konumuna erişir.
 
-Bu anahtarlar açarak ekleyebilirsiniz **Info.plist** ve seçerek *kaynak* düzenleyicisinin alt.
+Bu anahtarları açarak ekleyebilirsiniz **Info.plist** seçerek *kaynak* düzenleyicisinin alt.
 
-Güncelleştirdikten sonra **Info.plist** ve kullanıcıdan konumlarına erişmek izin istenir, ayarlayarak kullanıcının konumu haritada gösterebilir `ShowsUserLocation` özelliği true olarak:
+Güncelledikten sonra **Info.plist** ve konumlarına erişim izni için kullanıcıdan, ayarlayarak kullanıcının konumunu haritada gösterebilirsiniz `ShowsUserLocation` özelliği true:
 
 ```csharp
 map.ShowsUserLocation = true;
 ```
 
- ![](images/02-location-alert.png "İzin ver konumu erişim Uyarısı")
+ ![](images/02-location-alert.png "İzin konuma erişim Uyarısı")
  
 ## <a name="annotations"></a>Ek Açıklamalar
 
- `MKMapView` Ayrıca bir harita ek açıklamaları olarak bilinen görüntüleme görüntüleri destekler. Bunlar, özel resimler veya sistem tanımlı PIN'ler çeşitli renklerin olabilir. Örneğin, aşağıdaki ekran görüntüsü bir harita hem bir PIN ile gösterir ve özel bir görüntü:
+ `MKMapView` Ayrıca bir harita üzerindeki ek açıklama olarak bilinen görüntüleme görüntüleri destekler. Bu, özel görüntüler veya sistem tanımlı PIN çeşitli renklerinin olabilir. Örneğin, aşağıdaki ekran görüntüsünde iki bir PIN ile bir harita gösterir ve özel bir görüntü:
 
- ![](images/03-annotations.png "Bu ekran görüntüsü, hem bir PIN ile bir eşleme gösterir ve özel bir görüntü")
+ ![](images/03-annotations.png "Bir harita hem bir PIN ile bu ekran görüntüsünde gösterilir ve özel bir görüntü")
 
-### <a name="adding-an-annotation"></a>Ek açıklama ekleme
+### <a name="adding-an-annotation"></a>Bir ek açıklama ekleme
 
 Bir eklenti iki bölümden oluşur:
 
--  `MKAnnotation` Başlık ve ek açıklamanın konumu gibi ek açıklamanın hakkında model verileri içeren nesne.
--  `MKAnnotationView` , Görüntünün görüntü ve isteğe bağlı olarak kullanıcı ek açıklamanın ne zaman dokunur gösterilen bir belirtme çizgisi içerir.
+-  `MKAnnotation` Hakkında ek açıklama başlık ve açıklamanın konumu gibi model verileri içeren bir nesne.
+-  `MKAnnotationView` , Görüntü ve isteğe bağlı olarak, ek açıklama kullanıcı dokunduğunda gösterilen belirtme çizgisi görüntüsünü içerir.
 
 
-Harita Seti haritaya, ek açıklamaları eklemek için iOS temsilci deseni kullanır burada `Delegate` özelliği `MKMapView` örneğine ayarlanmış bir `MKMapViewDelegate`. Sorumlu döndürmek için bu temsilcinin uygulaması olan `MKAnnotationView` bir eklenti için.
+Map Kit kullanan iOS temsilci düzeni bir eşleme için ek açıklamaları eklemek için burada `Delegate` özelliği `MKMapView` örneğine ayarlanmış bir `MKMapViewDelegate`. Bu temsilcinin uygulamasında, döndürmekten sorumlu olduğu `MKAnnotationView` bir ek açıklama için.
 
-Ek açıklama eklemek için önce ek açıklamanın çağrılarak eklenir `AddAnnotations` üzerinde `MKMapView` örneği:
+Bir ek açıklama eklemek için önce ek açıklama çağrılarak eklenir `AddAnnotations` üzerinde `MKMapView` örneği:
 
 ```csharp
 // add an annotation
@@ -112,7 +112,7 @@ map.AddAnnotations (new MKPointAnnotation (){
 });
 ```
 
-Ek açıklamanın konumu harita üzerinde görünür hale geldiğinde `MKMapView` kendi temsilcinin çağıracak `GetViewForAnnotation` almak için yöntemi `MKAnnotationView` görüntülemek için.
+Ek açıklama konumunu bir haritada görünür olduğunda `MKMapView` kendi temsilcinin çağıracak `GetViewForAnnotation` almak için yöntemi `MKAnnotationView` görüntülenecek.
 
 Örneğin, aşağıdaki kod bir sistem tarafından sağlanan döndürür `MKPinAnnotationView`:
 
@@ -139,32 +139,32 @@ public override MKAnnotationView GetViewForAnnotation (MKMapView mapView, NSObje
 
 ### <a name="reusing-annotations"></a>Ek açıklamalar yeniden kullanma
 
-Bellek, tasarruf etmek için `MKMapView` ek açıklama görünüm kullanıcının yeniden kullanmak üzere, benzer şekilde tablo hücreleri yeniden havuza için sağlar. Bir ek açıklama görünümü havuzdan alma çağrısıyla yapılır `DequeueReusableAnnotation`:
+Bellek, tasarruf etmek için `MKMapView` ek açıklama görünümü kullanıcının yeniden kullanmak, benzer şekilde tablo hücreleri yeniden havuzda toplanmasını sağlar. Havuzdan bir ek açıklama görünümü elde çağrısıyla yapılır `DequeueReusableAnnotation`:
 
 ```csharp
 MKAnnotationView pinView = (MKPinAnnotationView)mapView.DequeueReusableAnnotation (pId);
 ```
 
-#### <a name="showing-callouts"></a>Belirtme çizgisi gösterme
+#### <a name="showing-callouts"></a>Belirtme çizgisi gösteriliyor
 
-Daha önce belirtildiği gibi ek açıklama belirtme çizgisi isteğe bağlı olarak gösterebilir. Belirtme çizgisi yalnızca göstermek için ayarlayın `CanShowCallout` true üzerinde `MKAnnotationView`. Ek açıklamanın dokunduğunuz, gösterildiği gibi görüntülenmesini açıklamanın başlığında sonuçları:
+Daha önce bahsedildiği gibi bir ek açıklama belirtme çizgisi isteğe bağlı olarak gösterebilirsiniz. Belirtme çizgisi yalnızca gösterecek şekilde ayarlayın `CanShowCallout` üzerinde true `MKAnnotationView`. Bu ek açıklama dokunulduğunda, gösterildiği gibi görüntülenmesini açıklamanın başlığına sonuçlanır:
 
- ![](images/04-callout.png "Ek açıklamalar görüntülenmesini başlık")
+ ![](images/04-callout.png "Ek açıklamaların görüntülenmesini başlık")
 
 ### <a name="customizing-the-callout"></a>Belirtme çizgisi özelleştirme
 
-Belirtme çizgisi sol ve sağ aksesuar görünümleri göstermek için aşağıda gösterildiği gibi özelleştirilebilir:
+Belirtme çizgisi da sol ve sağ aksesuar görünümleri göstermek için aşağıda gösterildiği gibi özelleştirilebilir:
 
 ```csharp
 pinView.RightCalloutAccessoryView = UIButton.FromType (UIButtonType.DetailDisclosure);
 pinView.LeftCalloutAccessoryView = new UIImageView(UIImage.FromFile ("monkey.png"));
 ```
 
-Bu kod, aşağıdaki çağrı sonuçları:
+Bu kod aşağıdaki çağrı sonuçları:
 
  ![](images/05-callout-accessories.png "Bir örnek belirtme")
 
-Sağ donatıyı dokunarak kullanıcı işlemek için yalnızca uygulama `CalloutAccessoryControlTapped` yönteminde `MKMapViewDelegate`:
+Kullanıcının doğru Donatı dokunarak işlemek için yalnızca uygulama `CalloutAccessoryControlTapped` yönteminde `MKMapViewDelegate`:
 
 ```csharp
 public override void CalloutAccessoryControlTapped (MKMapView mapView, MKAnnotationView view, UIControl control)
@@ -175,33 +175,33 @@ public override void CalloutAccessoryControlTapped (MKMapView mapView, MKAnnotat
 
 ### <a name="overlays"></a>Yer paylaşımları
 
-Bir harita katmanı grafik başka bir şekilde yer paylaşımları kullanıyor. Yer paylaşımları Haritası uzaklaştırılacağını gibi ölçeklendirilebilen çizim grafik içeriği destekler. iOS, yer paylaşımları dahil olmak üzere, çeşitli türleri için destek sağlar:
+Başka bir şekilde katman grafik bir haritada yer paylaşımları kullanıyor. Katmanları ile eşleme, yakınlaştırılmış olarak ölçeklendirilen çizim grafik içeriği destekler. iOS katmanları dahil olmak üzere, çeşitli türleri için destek sağlar:
 
--  Çokgenler - harita üzerinde bazı bölge vurgulamak için yaygın olarak kullanılır.
--  Kullansa - genellikle bir rota gösterilirken görülür.
--  Daire - bir eşleme döngüsel bir alanını vurgulamak için kullanılır.
+-  Çokgen - bazı bir haritadaki bölgeyi vurgulama için yaygın olarak kullanılan.
+-  Kullansa - genellikle bir yol gösteren sırasında görülen.
+-  Daireler - bir eşleme dairesel bir alanı vurgulamak için kullanılır.
 
 
-Ayrıca, özel yer paylaşımları ayrıntılı, özelleştirilmiş çizim koduyla rasgele geometri göstermek için oluşturulabilir. Örneğin, hava durumu radar özel bir katmana için iyi bir aday olur.
+Ayrıca, ayrıntılı, özelleştirilmiş çizim kodu ile rastgele geometrileri göstermek için özel yer paylaşımları oluşturulabilir. Örneğin, hava durumu radar özel bir katmana için iyi bir aday olabilir.
 
 #### <a name="adding-an-overlay"></a>Bir katmana ekleme
 
-Ek açıklamalar için benzer bir katmana ekleme 2 bölümleri içerir:
+Benzer şekilde ek açıklamaları, bir katman eklenmesini 2 bölümleri kapsar:
 
--  Katman için bir model nesnesi oluşturma ve eklemeyi `MKMapView` .
--  Katmanda için Görünüm oluşturma `MKMapViewDelegate` .
+-  Katman için bir model nesnesi oluşturma ve ekleme `MKMapView` .
+-  İçinde katmana için bir görünüm oluşturma `MKMapViewDelegate` .
 
 
-Katman modeli herhangi olabilir `MKShape` bir alt kümesi. Xamarin.iOS içeren `MKShape` çokgenler, kullansa ve daireler, alt sınıflarının aracılığıyla `MKPolygon`, `MKPolyline` ve `MKCircle` sırasıyla sınıfları.
+Katman modeli herhangi biri `MKShape` öğesinin alt sınıfı. Xamarin.iOS içerir `MKShape` çokgenler, çoklu çizgilere ve daireler, alt sınıfların aracılığıyla `MKPolygon`, `MKPolyline` ve `MKCircle` sırasıyla sınıfları.
 
-Örneğin, aşağıdaki kodu eklemek için kullanılan bir `MKCircle`:
+Örneğin, aşağıdaki kod eklemek için kullanılan bir `MKCircle`:
 
 ```csharp
 var circleOverlay = MKCircle.Circle (mapCenter, 1000);
 map.AddOverlay (circleOverlay);
 ```
 
-Bir katmana görünümü bir `MKOverlayView` tarafından döndürülen örnek `GetViewForOverlay` içinde `MKMapViewDelegate`. Her `MKShape` karşılık gelen `MKOverlayView` verilen şeklin görüntülemek nasıl bilir. İçin `MKPolygon` yok `MKPolygonView`. Benzer şekilde, `MKPolyline` karşılık gelen `MKPolylineView`ve `MKCircle` yok `MKCircleView`.
+Görünüm için bir katmana bir `MKOverlayView` tarafından döndürülen örnek `GetViewForOverlay` içinde `MKMapViewDelegate`. Her `MKShape` karşılık gelen `MKOverlayView` verilen şeklin görüntülemek nasıl olduğunu bilir. İçin `MKPolygon` yoktur `MKPolygonView`. Benzer şekilde, `MKPolyline` karşılık gelen `MKPolylineView`ve `MKCircle` yoktur `MKCircleView`.
 
 Örneğin, aşağıdaki kodu bir `MKCircleView` için bir `MKCircle`:
 
@@ -217,29 +217,29 @@ public override MKOverlayView GetViewForOverlay (MKMapView mapView, NSObject ove
 
 Bu bir daire harita üzerinde gösterildiği gibi görüntülenir:
 
- ![](images/06-circle-overlay.png "Haritada görüntülenmelerini bir daire")
+ ![](images/06-circle-overlay.png "Haritada görüntülenen bir daire")
 
 ## <a name="local-search"></a>Yerel arama
 
-iOS API belirtilen bir coğrafi bölgede ilgilenilen noktaları için zaman uyumsuz aramaları sağlayan harita Seti ile yerel arama içerir.
+iOS yerel arama API'si ile zaman uyumsuz aramaları belirli bir coğrafi bölgede ilgi noktası sağlayan harita Seti içerir.
 
-Bir uygulama, bir yerel arama yapmak için şu adımları izlemelisiniz:
+Yerel arama gerçekleştirmek için bir uygulama adımları izlemelisiniz:
 
-1.  Oluşturma `MKLocalSearchRequest` nesnesi.
-1.  Oluşturma bir `MKLocalSearch` nesnesinin `MKLocalSearchRequest` .
-1.  Çağrı `Start` yöntemi `MKLocalSearch` nesnesi.
+1.  Oluşturma `MKLocalSearchRequest` nesne.
+1.  Oluşturma bir `MKLocalSearch` nesnesinden `MKLocalSearchRequest` .
+1.  Çağrı `Start` metodunda `MKLocalSearch` nesne.
 1.  Alma `MKLocalSearchResponse` bir geri çağırma nesnesi.
 
 
-Yerel arama API kendisini hiçbir kullanıcı arabirimi sağlar. Hatta kullanılması için bir harita olmasını gerektirmez. Ancak, yerel arama pratik kullanılmasını sağlamak için bir uygulama bir arama sorgusu belirtin ve sonuçları görüntülemek için bazı yol sağlaması gerekir. Sonuçları konum verileri içerecek olduğundan, ayrıca, bu genellikle bir haritada göstermek için anlamlı olacaktır.
+API'nin yerel arama kullanıcı arabirimi sağlar. Kullanılacak bir harita bile gerek yoktur. Ancak, yerel arama pratik kullanılmasını sağlamak için bir arama sorgusu belirtin ve sonuçları görüntülemek için bazı yol sağlamak üzere bir uygulama gerekir. Konum verileri sonuçlarını içerecek olduğundan, buna ek olarak, bu genellikle bir haritada gösterilecek anlamlı olacaktır.
 
 <a name="Adding_a_Local_Search_UI"/>
 
-### <a name="adding-a-local-search-ui"></a>Yerel arama kullanıcı Arabirimi ekleme
+### <a name="adding-a-local-search-ui"></a>Yerel bir arama kullanıcı Arabirimi ekleme
 
-Arama girişi kabul etmek için bir yoldur ile bir `UISearchBar`, tarafından sağlanan bir `UISearchController` ve sonuçları bir tabloda görüntülenir.
+Arama giriş kabul etmek için başka bir yöntem bir `UISearchBar`, tarafından sağlanan bir `UISearchController` ve sonuçları bir tabloda görüntülenir.
 
-Aşağıdaki kod ekler `UISearchController` (olan bir arama çubuğu özelliği) içinde `ViewDidLoad` yöntemi `MapViewController`:
+Aşağıdaki kodu ekler `UISearchController` (bir arama çubuğu özelliğe sahip) içinde `ViewDidLoad` yöntemi `MapViewController`:
 
 ```csharp
 //Creates an instance of a custom View Controller that holds the results
@@ -354,11 +354,11 @@ public class SearchResultsViewController : UITableViewController
 }
 ```
 
-### <a name="updating-the-search-results"></a>Arama sonuçlarını güncelleştiriliyor
+### <a name="updating-the-search-results"></a>Arama sonuçları güncelleştiriliyor
 
 `SearchResultsUpdater` İşletme arasında bir aracı gibi davranır `searchController`ait arama çubuğu ve arama sonuçları. 
 
-Bu örnekte, biz ilk arama yönteminde oluşturmak zorunda `SearchResultsViewController`. Biz oluşturmalısınız bunun için bir `MKLocalSearch` nesne ve arama çıkarmak için kullan bir `MKLocalSearchRequest`, sonuçları geçirilen bir geri çağırma alınır `Start` yöntemi `MKLocalSearch` nesnesi. Sonuçları sonra döndürülür bir `MKLocalSearchResponse` içeren bir dizi nesnesi `MKMapItem` nesneler:
+Bu örnekte biz öncelikle arama yöntemi oluşturmanız gerekir `SearchResultsViewController`. Gerekir oluştururuz bunu yapmanın bir `MKLocalSearch` nesne ve için bir arama göndermek için bir `MKLocalSearchRequest`, geçirilen geri çağırma sonuçları alınır `Start` yöntemi `MKLocalSearch` nesne. Sonuç olarak döndürülür bir `MKLocalSearchResponse` oluşan bir diziyi içeren bir nesne `MKMapItem` nesneler:
 
 ```csharp
 public void Search (string forSearchString)
@@ -384,7 +384,7 @@ public void Search (string forSearchString)
 }
 ```
 
-Ardından bizim `MapViewController` , özel bir uygulama oluşturacağız `UISearchResultsUpdating`, için atanan `SearchResultsUpdater` özelliği bizim `searchController` içinde [yerel arama kullanıcı Arabirimi ekleme](#Adding_a_Local_Search_UI) bölümü:
+Ardından bizim `MapViewController` özel uygulanışı oluşturacağız `UISearchResultsUpdating`, için atanan `SearchResultsUpdater` özelliği bizim `searchController` içinde [yerel arama kullanıcı Arabirimi ekleme](#Adding_a_Local_Search_UI) bölümü:
 
 ```csharp
 public class SearchResultsUpdator : UISearchResultsUpdating
@@ -398,20 +398,20 @@ public class SearchResultsUpdator : UISearchResultsUpdating
 }
 ```
 
-Yukarıdaki uygulama sonuçlarından bir öğe seçildiğinde açıklamanın aşağıda gösterildiği gibi eşlemesine ekler:
+Yukarıdaki uygulama sonuçlardan bir öğe seçildiğinde bir ek açıklama aşağıda gösterildiği gibi haritaya ekler:
 
- ![](images/08-search-results.png "Sonuçları bir öğe seçildiğinde eşlemesine eklenen ek açıklama")
+ ![](images/08-search-results.png "Sonuçlardan bir öğenin seçili olduğunda haritaya eklenen bir ek açıklama")
  
 > [!IMPORTANT]
-> `UISearchController` iOS 8 uygulanmıştır. Cihazları öncesindeki bu desteklemek istediğiniz sonra kullanmanız gerekecektir `UISearchDisplayController`.
+> `UISearchController` iOS 8'de kullanılmıştır. Bu'den önceki cihazlar desteklemek istediğiniz sonra kullanmanız gerekecektir `UISearchDisplayController`.
 
 
 
 ## <a name="summary"></a>Özet
 
-Bu makalede incelenmesi *harita* *Seti* framework iOS için. İlk olarak, ne Aranan `MKMapView` sınıfı, bir uygulamada dahil edilecek etkileşimli eşlemeleri olanak tanır. Ardından ek açıklamalar ve yer paylaşımları kullanarak eşlemeleri daha fazla özelleştirmek nasıl gösterilmektedir. Son olarak, 6.1, iOS ile harita pakete eklenen yerel arama yetenekleri incelenmesi nasıl kullanılacağını gösteren ilgilenilen noktaları için konum tabanlı sorgular gerçekleştirmek ve bunları bir harita Ekle.
+Bu makalede incelenir *harita* *Seti* framework iOS için. İlk olarak ne görünüyordu `MKMapView` sınıfı, bir uygulamada eklenecek etkileşimli haritalar olanak tanır. Ardından ek açıklamalar ve yer paylaşımları kullanarak haritalar daha fazla özelleştirmek nasıl gösterilmiştir. Son olarak, iOS 6.1, harita pakete eklenmiş olan yerel arama özellikleri incelenirken nasıl kullanılacağını gösteren ilgi noktası için konum tabanlı sorgular gerçekleştirmek ve bunları haritaya ekleyebilirsiniz.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [SearchController](https://developer.xamarin.com/recipes/ios/content_controls/search-controller/)
+- [SearchController](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/search-controller)
 - [MapDemo (örnek)](https://developer.xamarin.com/samples/monotouch/MapDemo)

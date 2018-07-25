@@ -1,38 +1,38 @@
 ---
 title: iOS Platform Özellikleri
-description: Xamarin.Forms uygulamaları için g/ç işlemine özel işlevsellik ekleme
+description: Xamarin.Forms uygulamaları için iOS özel işlevsellik ekleme
 ms.prod: xamarin
 ms.assetid: 634AB62E-68C8-454C-838B-F1CC4E4E21BC
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/13/2016
-ms.openlocfilehash: ef0aad7af3636911fba70667857ee9fbcf17853f
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: e3a85f95deec24e1fe3403146bad57a9739313dd
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30790684"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241298"
 ---
 # <a name="ios-platform-features"></a>iOS Platform Özellikleri
 
 ## <a name="ios-specific-formatting"></a>iOS özel biçimlendirme
 
-Platformlar arası kullanıcı arabirimi stilleri ve ayarlanacak - renkleri Xamarin.Forms sağlar ancak iOS projesi platforma özgü API'lerini kullanarak, iOS tema ayarlamak için diğer seçenekleri mevcuttur.
+Xamarin.Forms platformlar arası kullanıcı arabirimi stili ve renklerini ayarlamak için - sağlar, ancak iOS projesi platforma özel API'leri kullanarak iOS temasını ayarlamak için diğer seçenekleri mevcuttur.
 
-[Daha fazla bilgi](theme.md) iOS özgü API'leri gibi kullanarak kullanıcı arabirimi biçimlendirme hakkında **Info.plist** yapılandırma ve `UIAppearance` API.
+[Daha fazla bilgi edinin](theme.md) biçimlendirme gibi iOS özel API'leri kullanarak kullanıcı arabirimi hakkında **Info.plist** yapılandırma ve `UIAppearance` API.
 
 ![](images/status-white-sml.png "iOS Tema oluşturma")
 
 ## <a name="ios-9-features"></a>iOS 9 özellikleri
 
-Kullanarak [özel Oluşturucu](~/xamarin-forms/app-fundamentals/custom-renderer/index.md), [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md)ve [MessagingCenter](~/xamarin-forms/app-fundamentals/messaging-center.md), çok çeşitli yerel işlevsellik birleştirmek mümkündür İOS için Xamarin.Forms uygulamalar.
+Kullanarak [özel oluşturucular](~/xamarin-forms/app-fundamentals/custom-renderer/index.md), [DependencyService](~/xamarin-forms/app-fundamentals/dependency-service/index.md)ve [MessagingCenter](~/xamarin-forms/app-fundamentals/messaging-center.md), çok çeşitli yerel bir işlev birleştirmek mümkündür İOS için Xamarin.Forms uygulamaları.
 
-Aşağıdaki tarif Xamarin.Forms uygulaması iOS parçasına iOS 9 özellikleri içerecek şekilde nasıl göster:
+Aşağıdaki tarifleri iOS 9 özellikleri Xamarin.Forms uygulaması iOS parçası dahil edilip derecelendirilir. işlemini gösterir:
 
-* [CoreSpotlight](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/ios/core-spotlight-search/)
+* [CoreSpotlight](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/iOS/core-spotlight-search)
 
-* [NSUserActivity](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/ios/nsuseractivity-search/)
+* [NSUserActivity](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/iOS/nsuseractivity-search)
 
 ![](images/corespotlight.png "iOS Spotlight arama")
 

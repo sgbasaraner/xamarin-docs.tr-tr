@@ -1,43 +1,43 @@
 ---
-title: Xamarin.iOS çekirdek görüntüde
-description: Çekirdek görüntü, iOS ve video geliştirme işlevselliği dinamik görüntü işleme sağlamak üzere 5 ile sunulan yeni bir çerçevedir. Bu makalede Xamarin.iOS örnekleri ile bu özellikleri sunar.
+title: Xamarin.iOS, temel görüntü
+description: Temel görüntü, görüntü işleme sağlamak ve canlı video geliştirme işlevleri için 5 iOS ile tanıtılan yeni bir çerçevedir. Bu makalede, Xamarin.iOS örnekleri ile bu özellikler sunar.
 ms.prod: xamarin
 ms.assetid: 91E0780B-FF8A-E70D-9CD4-419119612B2D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 6032554a0ddbda26ff5de94f6035bc4f8c15a22a
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 7af57856079813e8cb1831a7f22a0a098a6be771
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786638"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242172"
 ---
-# <a name="core-image-in-xamarinios"></a>Xamarin.iOS çekirdek görüntüde
+# <a name="core-image-in-xamarinios"></a>Xamarin.iOS, temel görüntü
 
-_Çekirdek görüntü, iOS ve video geliştirme işlevselliği dinamik görüntü işleme sağlamak üzere 5 ile sunulan yeni bir çerçevedir. Bu makalede Xamarin.iOS örnekleri ile bu özellikleri sunar._
+_Temel görüntü, görüntü işleme sağlamak ve canlı video geliştirme işlevleri için 5 iOS ile tanıtılan yeni bir çerçevedir. Bu makalede, Xamarin.iOS örnekleri ile bu özellikler sunar._
 
-Çekirdek görüntüsü, bir dizi yerleşik filtreler ve görüntüleri ve video yüz algılama dahil olmak üzere, uygulama etkileri sağlayan bir iOS 5'de sunulan yeni bir çerçevedir.
+Temel görüntü, bir dizi yerleşik filtreler ve görüntüler ve videolar, yüz algılama dahil olmak üzere uygulanacak efektleri sağlayan bir iOS 5 sürümünde yeni bir çerçevedir.
 
-Bu belge basit örnekleri içerir:
+Bu belge, basit örnekleri içerir:
 
 -  Yüz algılama.
--  Bir görüntüye filtre uygulama
--  Kullanılabilir filtreleri listeleniyor.
+-  Bir görüntü için filtreler uygulanıyor
+-  Kullanılabilir filtrelerin listesi.
 
 
-Bu örnekler Xamarin.iOS uygulamalarınıza çekirdek görüntü özelliklerini başlamanıza yardımcı olması.
+Bu örnekler Xamarin.iOS uygulamalarınıza temel görüntü özellikleri başlamanıza yardımcı olacaktır.
 
 ## <a name="requirements"></a>Gereksinimler
 
-Xcode en son sürümünü kullanmanız gerekir.
+En yeni Xcode sürümünü kullanmanız gerekir.
 
 ## <a name="face-detection"></a>Yüz algılama
 
-Yalnızca ne yazacaktır çekirdek görüntü yüz algılama özelliğini mu – bir fotoğraf yüzeyleri tanımlamaya çalışır ve tanıdığı yüzeyleri koordinatlarını döndürür. Bu bilgiler görüntüdeki kişiler sayısı, Göstergeler görüntüde (ör. çizmek için kullanılabilir 'kişiler bir fotoğraf etiketleme için'), ya da, düşünme başka bir şey.
+Temel görüntü yüz algılama özelliği, yalnızca ne diyor yapar: Fotoğraf yüzlerini tanımlamaya çalışır ve tanıdığı tüm yüzleri koordinatlarını döndürür. Bu bilgiler görüntü kişilerin sayısını göstergeleri (ör. görüntü üzerinde çizmek için kullanılabilir 'kişiler hello'nun etiketleme için'), veya'nın aklınıza.
 
-Bu koddan CoreImage\SampleCode.cs oluşturmak ve katıştırılmış görüntüde yüz algılama kullanmak nasıl gösterir:
+Bu koddan CoreImage\SampleCode.cs, oluşturma ve yüz algılama katıştırılmış bir resim üzerinde kullanma gösterilmektedir:
 
 ```csharp
 var image = new UIImage("photoFace.JPG");
@@ -47,17 +47,17 @@ var ciImage = CIImage.FromCGImage(image.CGImage);
 CIFeature[] features = detector.FeaturesInImage(ciImage);
 ```
 
-Özellik dizisi ile doldurulur `CIFaceFeature` (tüm yüzeyleri algılanırsa) nesneleri. Var olan bir `CIFaceFeature` her yüz için. `CIFaceFeature` aşağıdaki özelliklere sahiptir:
+Özellik dizisi ile doldurulur `CIFaceFeature` (tüm yüzleri algılanırsa) nesneleri. Var olan bir `CIFaceFeature` her yüz için. `CIFaceFeature` aşağıdaki özelliklere sahiptir:
 
--  HasMouthPosition – bir ağzınıza için bu yüz olup algılandı.
--  HasLeftEyePosition – sol göz için bu yüz olup algılandı.
--  HasRightEyePosition – sağ göz için bu yüz olup algılandı. 
--  MouthPosition – Bu yüz ağzınıza koordinatları.
+-  HasMouthPosition – için bu yüz ağız olup olmadığı algılandı.
+-  HasLeftEyePosition – Bu yüz için sol göz olup olmadığı algılandı.
+-  HasRightEyePosition – Bu yüz için doğru göz olup olmadığı algılandı. 
+-  MouthPosition – Bu yüz için ağız koordinatları.
 -  LeftEyePosition – Bu yüz için sol göz koordinatları.
 -  RightEyePosition – Bu yüz için doğru göz koordinatları.
 
 
-Bu özelliklerin koordinatları kendi kaynak sol alt – sol üst kaynağı kullanan Uıkit aksine sahip. Koordinatları kullanırken `CIFaceFeature` 'bunları ters çevirmek ' emin olun. Bu CoreImage\CoreImageViewController.cs çok temel özel görüntü görünümde görüntüde 'Yüz göstergesi' üçgenler çizin gösterir (Not `FlipForBottomOrigin` yöntemi):
+Koordinatları tüm bu özellikler için sol alt – sol üst kaynağı kullandığı Uıkit aksine kaynağa sahip. Koordinatları kullanırken `CIFaceFeature` 'bunları çevirmek ' emin olun. Bu çok basit bir özel görüntü görünümde CoreImage\CoreImageViewController.cs 'yüzey gösterge' üçgenler resmi çizim gösterilmektedir (Not `FlipForBottomOrigin` yöntemi):
 
 ```csharp
 public class FaceDetectImageView : UIView
@@ -102,7 +102,7 @@ public class FaceDetectImageView : UIView
 }
 ```
 
-Görüntüyü yeniden önce SampleCode.cs dosyasında görüntü ve Özellikler atanır:
+Görüntüyü yeniden önce SampleCode.cs dosyasında görüntü ve özelliklerini atanır:
 
 ```csharp
 faceView.Image = image;
@@ -110,19 +110,19 @@ faceView.Features = features;
 faceView.SetNeedsDisplay();
 ```
 
-Ekran örnek çıkış şunları gösterir: algılanan yüz özelliklerine konumlarını bir UITextView görüntülenir ve CoreGraphics kullanarak kaynak yansımayı çizilmiştir.
+Ekran görüntüsünde örnek çıktı gösterilmektedir: algılanan yüz özellikleri konumlarını içinde bir UITextView görüntülenir ve CoreGraphics kullanarak kaynak görüntünün çizilir.
 
-Yüz tanıma çalışma şeklini nedeniyle bazen şeyleri (ör. Bu Oyuncak monkeys!) İnsan yüzeyleri yanı sıra algılar.
+Yüz tanıma çalıştığını şekli nedeniyle (örneğin, bu çocuğunun monkeys!) İnsan yüzlerini yanı sıra şeyler bazen algılar.
 
 ## <a name="filters"></a>FilTReleri
 
-Yeni filtreler uygulanabilir framework genişletilebilir, böylelikle ve 50'den farklı yerleşik filtreler vardır.
+50'den fazla farklı yerleşik filtreler vardır ve böylece yeni filtreler uygulanabilir genişletilebilir bir çerçevedir.
 
 ## <a name="using-filters"></a>Filtreleri kullanma
 
-Görüntüye filtre uygulama dört farklı adımlar vardır: yükleme görüntüsünü, filtre oluşturma, filtre uygulamak ve kaydetme (veya görüntüleme) sonucu.
+Görüntünün bir filtre uygulanıyor dört ayrı adımdan oluşur: yükleme görüntüsünü, filtresi oluşturma, filtre uygulama ve kaydetme (veya görüntüleme) sonucu.
 
-Görüntüye ilk olarak, yükleme bir `CIImage` nesnesi.
+Görüntüye ilk olarak, yükleme bir `CIImage` nesne.
 
 ```csharp
 var uiimage = UIImage.FromFile ("photo.JPG");
@@ -137,7 +137,7 @@ sepia.Image = ciimage;
 sepia.Intensity = 0.8f;
 ```
 
-Üçüncü erişim `OutputImage` özelliği ve çağrı `CreateCGImage` sonucunu işlemek için yöntem.
+Üçüncü olarak, erişim `OutputImage` özelliği ve çağrı `CreateCGImage` sonucunu işlemek için yöntemi.
 
 ```csharp
 CIImage output = sepia.OutputImage;
@@ -145,16 +145,16 @@ var context = CIContext.FromOptions(null);
 var cgimage = context.CreateCGImage (output, output.Extent);
 ```
 
-Son olarak, görüntünün sonuçları görmek için bir görünüm atayın. Gerçek dünya uygulamada elde edilen görüntü dosya sistemi, fotoğraf albümü, bir Tweet veya e-posta için kaydedilmiş olabilir.
+Son olarak, görüntü, sonuçları görmek için bir görünüm atayın. Gerçek bir uygulamada elde edilen görüntü dosya sistemi, fotoğraf albümü, Tweet veya e-posta için kaydedilmiş olabilir.
 
 ```csharp
 var ui = UIImage.FromImage (cgimage);
 imgview.Image = ui;
 ```
 
-Bu ekran görüntüleri sonucu göster `CISepia` ve `CIHueAdjust` CoreImage.zip gösterilen filtreleri örnek kodu.
+Bu ekran görüntüleri sonucu göster `CISepia` ve `CIHueAdjust` CoreImage.zip içinde gösterilen filtreleri örnek kodu.
 
-Bkz: [sözleşme ayarlamak ve bir görüntü tarif parlaklığını](https://developer.xamarin.com/recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image) ilişkin bir örnek `CIColorControls` Filtresi.
+Bkz: [sözleşme ayarlamak ve görüntü tarif parlaklığını](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image) ilişkin bir örnek `CIColorControls` filtre.
 
 ```csharp
 var uiimage = UIImage.FromFile("photo.JPG");
@@ -192,9 +192,9 @@ var ui = UIImage.FromImage (cgimage);
 imgview.Image = ui;
 ```
 
-### <a name="listing-filters-and-their-properties"></a>Filtreler ve bunların özelliklerini listeleme
+### <a name="listing-filters-and-their-properties"></a>Filtreler ve özelliklerini listeleme
 
-Bu koddan CoreImage\SampleCode.cs yerleşik filtreler tam listesi ve bunların parametrelerini çıkarır.
+Bu koddan CoreImage\SampleCode.cs yerleşik filtreleri tam listesi ve bunların parametrelerini çıkarır.
 
 ```csharp
 var filters = CIFilter.FilterNamesInCategories(new string[0]);
@@ -210,21 +210,21 @@ foreach (var filter in filters){
 }
 ```
 
-[CIFilter sınıf başvurusu](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/Reference/Reference.html) 50 yerleşik filtreler ve bunların özelliklerini açıklar. Yukarıdaki kodu kullanarak parametrelerinin varsayılan değerleri ve (bir filtre uygulanmadan önce girişleri doğrulamak için kullanılabilir) maksimum ve minimum izin verilen değerleri dahil olmak üzere filtre sınıfları sorgulayabilirsiniz.
+[CIFilter sınıf başvurusu](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/Reference/Reference.html) 50 yerleşik filtreleri ve özelliklerini açıklar. Yukarıdaki kodu kullanarak parametrelerinin varsayılan değerleri ve (girişler, Filtre uygulanmadan önce doğrulamak için kullanılabilir) maksimum ve minimum izin verilen değerleri dahil olmak üzere filtre sınıfları sorgulayabilirsiniz.
 
-Liste kategorileri çıktı simulator'da şöyle – tüm filtreleri ve bunların parametrelerini görmek için listenin kaydırın.
+Kategorileri listeleme çıkış simulator'da şöyle görünür: tüm filtreleri ve parametreleri görmek için listede gezinebilirsiniz.
 
- [![](introduction-to-coreimage-images/coreimage05.png "Liste kategorileri çıktı simulator'da şöyle")](introduction-to-coreimage-images/coreimage05.png#lightbox)
+ [![](introduction-to-coreimage-images/coreimage05.png "Kategorileri listeleme çıktı simulator'da şu şekilde görünür")](introduction-to-coreimage-images/coreimage05.png#lightbox)
 
-Derleme tarayıcı veya Mac için Visual Studio veya Visual Studio'da otomatik tamamlama kullanılarak Xamarin.iOS.CoreImage API de gözatabilirsiniz Xamarin.iOS, sınıfında olarak listelenen her filtre açık. 
+Xamarin.iOS.CoreImage API bütünleştirilmiş kod tarayıcı veya otomatik tamamlama Mac için Visual Studio veya Visual Studio kullanarak da keşfedebilirsiniz için listelenen her bir filtrenin Xamarin.iOS, bir sınıfta olarak gösterilen. 
 
 ## <a name="summary"></a>Özet
 
-Bu makalede, bazı yüz algılama ve görüntüye filtre uygulayarak gibi yeni iOS 5 çekirdek görüntü framework Özellikleri'nin nasıl kullanıldığını göstermiştir. Farklı bir resim filtreleri düzinelerce Framework'te kullanmanız için kullanılabilir.
+Bu makalede, yüz algılama ve görüntünün filtreler uygulayarak gibi yeni iOS 5 temel görüntü framework özelliklerinden bazıları kullanmayı göstermiştir. Framework'te kullanabilmeniz için kullanılabilen farklı resmi filtreleri onlarca vardır.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Çekirdek görüntü (örnek)](https://developer.xamarin.com/samples/CoreImage/)
-- [Sözleşme ve bir görüntü tarif parlaklığını ayarla](https://developer.xamarin.com/recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image)
-- [Çekirdek resim filtreleri kullanma](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Conceptual/CoreImaging/ci_tasks/ci_tasks.html)
+- [Temel görüntü (örnek)](https://developer.xamarin.com/samples/CoreImage/)
+- [Sözleşme ve görüntü tarif parlaklığını ayarla](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/coreimage/adjust_contrast_and_brightness_of_an_image)
+- [Temel görüntü filtrelerini kullanma](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Conceptual/CoreImaging/ci_tasks/ci_tasks.html)
 - [CIFilter sınıf başvurusu](https://developer.apple.com/library/prerelease/ios/#documentation/GraphicsImaging/Reference/QuartzCoreFramework/Classes/CIFilter_Class/Reference/Reference.htm)

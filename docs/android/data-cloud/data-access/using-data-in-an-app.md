@@ -1,42 +1,42 @@
 ---
-title: Bir Android uygulaması verileri kullanma
+title: Bir Android uygulamasını kullanarak verileri
 ms.prod: xamarin
 ms.assetid: D5932AEB-0B6E-4F37-8B32-9BE4775AEE85
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/08/2018
-ms.openlocfilehash: b79b2e44e79a6ff75b096c7443f6d46c20e27144
-ms.sourcegitcommit: 797597d902330652195931dec9ac3e0cc00792c5
+ms.openlocfilehash: 563c04ef1c8eec00108844894c5f9bdc0e9950e3
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/20/2018
-ms.locfileid: "31647040"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241896"
 ---
-# <a name="using-data-in-an-app"></a>Bir uygulamada veri kullanma
+# <a name="using-data-in-an-app"></a>Bir uygulamada verileri kullanarak
 
-**DataAccess_Adv** örnek kullanıcı girişini ve CRUD (Oluştur, okuma, güncelleştirme ve silme) veritabanı işlevselliği sağlar ve çalışan bir uygulama gösterir. İki ekranda uygulama oluşur: bir listesi ve veri girişi formu. Tüm veri erişim kodu değişiklik yapılmadan iOS ve Android yeniden kullanılabilir.
+**DataAccess_Adv** örnek kullanıcı girişini ve CRUD (oluşturma, okuma, güncelleştirme ve silme) veritabanı işlevselliğini sağlar ve çalışan bir uygulama gösterilmektedir. Uygulama iki ekran oluşur: bir listesi ve bir veri giriş formunu. Tüm veri erişim kodunun değiştirilmeden iOS ve Android yeniden kullanılabilir.
 
-Bazı veriler ekledikten sonra uygulama ekranlar Android şöyle:
+Bazı veriler ekledikten sonra uygulama ekranları Android'de şuna benzer:
 
 ![Android örnek listesi](using-data-in-an-app-images/image11.png "Android örnek listesi")
 
 ![Android örnek ayrıntı](using-data-in-an-app-images/image12.png "Android örnek ayrıntısı")
 
-Android projesi aşağıda gösterilen &ndash; Bu bölümde gösterilen kodu kapsamında yer alan **Orm** dizini:
+Android projesine aşağıda gösterilen &ndash; Bu bölümde gösterilen kodu içinde yer alan **Orm** dizini:
 
-![Android projesi ağaç](using-data-in-an-app-images/image14.png "Android projesi ağacı")
+![Android projesi ağaç](using-data-in-an-app-images/image14.png "Android proje ağacı")
 
-Yerel kullanıcı Arabirimi kodu Android etkinlikler için bu belgenin kapsamı dışındadır. Başvurmak [Android ListViews ve bağdaştırıcıları](~/android/user-interface/layouts/list-view/index.md) UI denetimleri hakkında daha fazla bilgi için Kılavuzu.
+Android etkinlikler için yerel kullanıcı Arabirimi kodu, bu belgenin kapsamı dışındadır. Başvurmak [Android ListViews ve bağdaştırıcıları](~/android/user-interface/layouts/list-view/index.md) kullanıcı Arabirimi denetimleri hakkında daha fazla bilgi için Kılavuzu.
 
 ## <a name="read"></a>Oku
 
-Birkaç örnek okuma işlemleri şunlardır:
+Birkaç örnek okuma işlemlerinde vardır:
 
 -  Listenin okuma
 -  Tek tek kayıtları okuma
 
-Öğesinde iki yöntem `StockDatabase` sınıfı bulunur:
+İki metot `StockDatabase` sınıfı:
 
 ```csharp
 public IEnumerable<Stock> GetStocks ()
@@ -55,9 +55,9 @@ public Stock GetStock (int id)
 
 Android veri olarak işleyen bir `ListView`.
 
-## <a name="create-and-update"></a>Oluşturma ve güncelleştirme
+## <a name="create-and-update"></a>Oluştur ve güncelleştir
 
-Uygulama kodu basitleştirmek için tek bir yöntem kaydetme, INSERT sağlanan veya PrimaryKey olup ayarlanmış bağlı olarak güncelleştirmedir. Çünkü `Id` özelliği ile işaretlenmiş bir `[PrimaryKey]` , ayarlı değil, kodunuzda özniteliği. Bu yöntem değeri (birincil anahtar özelliği denetleyerek) kaydedilen önceki olup olmadığını algılar ve eklemek veya nesne uygun şekilde güncelleştirin:
+Uygulama kodu basitleştirmek için tek bir yöntem kaydetme ekleme yapan sağlanan veya PrimaryKey olup ayarlandı bağlı olarak güncelleştirmedir. Çünkü `Id` özelliği ile işaretlenmiş bir `[PrimaryKey]` , ayarlı değil, kodunuzda özniteliği. Bu yöntem, değeri (birincil anahtar özelliği kontrol ederek) kaydedilmiş önceki olup olmadığını algılar ve ekleme veya nesne uygun şekilde güncelleştirin:
 
 ```csharp
 public int SaveStock (Stock item)
@@ -73,11 +73,11 @@ public int SaveStock (Stock item)
 }
 ```
 
-Gerçek dünya uygulamalar genellikle bazı doğrulama (örneğin, gerekli alanlar, minimum uzunluk veya diğer iş kuralları) gerektirir. Doğrulama hataları platformun yetenekleri göre görüntülemek için kullanıcı Arabirimi yedekle geçirme paylaşılan kodda mümkün olduğunca mantıksal doğrulama çok iyi platformlar arası uygulamalar uygular.
+Gerçek dünya uygulamaları genellikle bazı doğrulama (örneğin, gerekli alanları, en düşük uzunlukta veya diğer iş kuralları) gerektirir. Doğrulama mantıksal paylaşılan kod, doğrulama hataları platformun özelliklerinden göre görüntülemek için kullanıcı Arabirimi yede geçirme mümkün olduğunca çok iyi platformlar arası uygulamalar uygular.
 
 ## <a name="delete"></a>Sil
 
-Farklı `Insert` ve `Update` yöntemleri, `Delete<T>` yöntemi yalnızca birincil anahtar değeri yerine bir tam kabul edebileceği `Stock` nesnesi. Bu örnekte bir `Stock` nesne yönteme geçirilen ancak yalnızca kimliği özelliği için geçirilen `Delete<T>` yöntemi.
+Farklı `Insert` ve `Update` yöntemleri `Delete<T>` yöntemi yalnızca birincil anahtar değer yerine eksiksiz bir kabul edebilir `Stock` nesne. Bu örnekte bir `Stock` nesne yönteme geçirilir, ancak yalnızca kimlik özelliği için geçirilen `Delete<T>` yöntemi.
 
 ```csharp
 public int DeleteStock(Stock stock)
@@ -88,17 +88,17 @@ public int DeleteStock(Stock stock)
 }
 ```
 
-## <a name="using-a-pre-populated-sqlite-database-file"></a>Önceden girilmiş bir SQLite veritabanı dosyasını kullanarak
+## <a name="using-a-pre-populated-sqlite-database-file"></a>Önceden doldurulmuş bir SQLite veritabanı dosyası kullanma
 
-Bazı uygulamalar, verilerle zaten doldurulmuş bir veritabanı ile aktarılır. Ayrıca, uygulamanızı olan mevcut bir SQLite veritabanı dosya aktarma ve erişmeden önce yazılabilir bir dizine kopyalama tarafından mobil uygulamanızda bu kolayca gerçekleştirebilirsiniz. SQLite birçok platformlarda kullanılan standart bir dosya biçimi olduğundan, bir dizi bir SQLite veritabanı dosyasını oluşturmak için kullanılabilen araçlar vardır:
+Bazı uygulamalar, zaten doldurulmuş bir veritabanı ile gönderilir. Ayrıca, uygulamanızı mevcut bir SQLite veritabanı dosyasıyla sevkiyat ve erişmeden önce yazılabilir bir dizine kopyalanıyor mobil uygulamanızda bu kolayca gerçekleştirebilirsiniz. SQLite birçok platformunda kullanılan standart bir dosya biçimi olduğundan, bir SQLite veritabanı dosyası oluşturmak kullanılabilen araçlar vardır:
 
--   **SQLite Yöneticisi Firefox uzantısı** &ndash; iOS ve Android ile uyumlu olan Mac ve Windows ve üretir dosyaları çalışır.
+-   **SQLite Firefox yöneticisini** &ndash; iOS ve Android ile uyumlu olan Mac ve Windows ve oluşturan dosyalar üzerinde çalışır.
 
 -   **Komut satırı** &ndash; bkz [www.sqlite.org/sqlite.html](http://www.sqlite.org/sqlite.html) .
 
-Dağıtım için bir veritabanı dosyası ile uygulamanızı oluştururken, tablolar ve sütunlar bunların eşleşmesi ne kodunuzu bekler, özellikle, C# sınıfları ve özellikleri eşleşecek şekilde adları beklediği SQLite.NET kullanıyorsanız emin olmak için adlandırma ile ilgilenebilmek (veya ilişkili özel öznitelikler).
+Dağıtım için bir veritabanı dosyası, uygulamanızı oluştururken, tablolar ve sütunlar bunların eşleşmesi ne kodunuzu bekliyor, özellikle, C# sınıfları ve özellikleri ile eşleşecek biçimde adlarını beklediği SQLite.NET kullanıyorsanız emin olmak için adlandırma ile ilgileniriz (veya ilişkili özel öznitelikler).
 
-Biraz kod Android uygulamanızda başka bir şey önce çalıştığından emin olmak için yüklemek için ilk etkinliğin yerleştirin veya oluşturabileceğiniz bir `Application` hiç etkinlik önce yüklenen bir alt kümesi. Aşağıdaki kodu gösterir bir `Application` var olan bir veritabanı dosyası kopyalar bir alt **data.sqlite** dışı **/Resources/Raw/** dizin.
+Bazı kod önce Android uygulamanızda diğer her şeyin çalıştığından emin olmak için yüklemek için ilk etkinlik yerleştirebilirsiniz veya oluşturabileceğiniz bir `Application` herhangi bir etkinlik önce yüklenen bir alt sınıfı. Aşağıdaki kod gösterir bir `Application` mevcut veritabanı dosyasına kopyalar alt **data.sqlite** tanesi **/Resources/ham/** dizin.
 
 ```csharp
 [Application]
@@ -137,7 +137,7 @@ public class YourAndroidApp : Application {
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [ADO'da Basic (örnek)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
-- [ADO'da Gelişmiş (örnek)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
-- [Android veri tarif](https://developer.xamarin.com/recipes/android/data/)
+- [DataAccess Basic (örnek)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
+- [DataAccess Gelişmiş (örnek)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
+- [Android veri tarifleri](https://github.com/xamarin/recipes/tree/master/Recipes/android/data)
 - [Xamarin.Forms veri erişimi](~/xamarin-forms/app-fundamentals/databases.md)

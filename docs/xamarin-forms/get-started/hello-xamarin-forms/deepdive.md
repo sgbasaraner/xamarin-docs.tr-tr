@@ -8,12 +8,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2018
-ms.openlocfilehash: 538092c39fa7ca7bb5a1912e772fb2c670905812
-ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
+ms.openlocfilehash: 7eff7f4413b533caadcf2aa8b5eed8c4ab65449d
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39203104"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242231"
 ---
 # <a name="xamarinforms-deep-dive"></a>Xamarin.Forms yakından
 
@@ -325,7 +325,7 @@ Xamarin.Forms Phoneword uygulamayı birkaç kavram bu makalede ele alınmayan ku
 
 ## <a name="testing-and-deployment"></a>Test ve dağıtım
 
-Mac için Visual Studio ve Visual Studio test etmek ve bir uygulamayı dağıtmak için pek çok seçenek sunar. Uygulamalarında hata ayıklama, uygulama geliştirme yaşam döngüsü, ortak bir parçasıdır ve kod sorunlarını tanılamak için yardımcı olur. Daha fazla bilgi için [bir kesme noktası ayarlamak](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/set_a_breakpoint/), [adım kod aracılığıyla](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/step_through_code/), ve [günlük penceresini çıkış bilgileri](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/output_information_to_log_window/).
+Mac için Visual Studio ve Visual Studio test etmek ve bir uygulamayı dağıtmak için pek çok seçenek sunar. Uygulamalarında hata ayıklama, uygulama geliştirme yaşam döngüsü, ortak bir parçasıdır ve kod sorunlarını tanılamak için yardımcı olur. Daha fazla bilgi için [bir kesme noktası ayarlamak](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint), [adım kod aracılığıyla](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/step_through_code), ve [günlük penceresini çıkış bilgileri](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/output_information_to_log_window).
 
 Simülatörleri, dağıtma ve bir uygulamayı test başlatmak ve uygulamaları test etmek için kullanışlı işlevler özelliği için iyi bir yerdir. Ancak, kullanıcıların uygulamaları gerçek cihazlar üzerinde erken ve sıkça test edilmesi şekilde, simülatör son uygulamada tüketecektir değil. İOS cihaz sağlama hakkında daha fazla bilgi için bkz. [cihaz sağlama](~/ios/get-started/installation/device-provisioning/index.md). Android cihaz sağlama hakkında daha fazla bilgi için bkz. [cihaz geliştirme için ayarlanmış yukarı](~/android/get-started/installation/set-up-device-for-development.md).
 

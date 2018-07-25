@@ -6,12 +6,12 @@ ms.assetid: F976AB09-0697-4408-999A-633977FEFF64
 author: charlespetzold
 ms.author: chape
 ms.date: 03/29/2017
-ms.openlocfilehash: a4e1a31a2591c799a153e1333e4a4a4a0719a107
-ms.sourcegitcommit: e98a9ce8b716796f15de7cec8c9465c4b6bb2997
+ms.openlocfilehash: 430c4eca7c6dbd7107692246b70ff93bafa44d01
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39111205"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241840"
 ---
 # <a name="programming-urhosharp-with-f"></a>F # ile UrhoSharp programlama
 
@@ -19,11 +19,11 @@ UrhoSharp ile F # aynı kitaplıkları ve C# programcıları tarafından kullan�
 
 C++ dünyada kaynaklanan birçok kitaplıkları gibi birçok UrhoSharp İşlevler, Boole değerlerini veya başarısı veya başarısızlığı gösteren tamsayı döndürür. Kullanmanız gereken `|> ignore` bu değerleri yok sayılacak.
 
-[Örnek program](https://github.com/xamarin/recipes/tree/master/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp) UrhoSharp F #'dan bir "Merhaba Dünya" içindir.
+[Örnek program](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp) UrhoSharp F #'dan bir "Merhaba Dünya" içindir.
 
 ## <a name="creating-an-empty-project"></a>Boş bir proje oluşturma
 
-Hiçbir F # şablonlar UrhoSharp için henüz kullanılabilir, böylece kendi UrhoSharp projesi oluşturmak ya başlangıç ile yapabilecekleriniz [örnek](https://github.com/xamarin/recipes/tree/master/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp) ya da şu adımları izleyin:
+Hiçbir F # şablonlar UrhoSharp için henüz kullanılabilir, böylece kendi UrhoSharp projesi oluşturmak ya başlangıç ile yapabilecekleriniz [örnek](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp) ya da şu adımları izleyin:
 
 1. Mac için Visual Studio'dan yeni bir oluşturma **çözüm**. Seçin **iOS > Uygulama > tek görünüm uygulaması** seçip **F #** uygulama dili olarak. 
 1. Silme **Main.storyboard** dosya. Açık **Info.plist** dosya ve **iPhone / iPod dağıtım bilgisi** bölmesinde Sil `Main` içinde dize **ana arabirimi** açılır.
@@ -114,4 +114,4 @@ Sonuç programı gibi görünmelidir:
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [(Örnek) Github'da göz atın](https://github.com/xamarinhttps://developer.xamarin.com/recipes/tree/master/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)
+- [(Örnek) Github'da göz atın](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/urho/urho-fsharp/HelloWorldUrhoFsharp)

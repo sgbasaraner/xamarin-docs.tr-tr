@@ -1,44 +1,44 @@
 ---
-title: 2B matematik CocosSharp ile
-description: Bu kılavuz, oyun geliştirmeye yönelik 2B matematik kapsar. Ortak oyun geliştirme görevleri gerçekleştirmek nasıl göstermek için CocosSharp kullanır ve bu görevlerin arkasında matematik açıklar.
+title: CocosSharp ile 2B matematik
+description: Bu kılavuz, oyun geliştirme için hazırlanan 2B matematik kapsar. Bu ortak oyun geliştirme görevleri nasıl gerçekleştireceğinizi gösterilecek CocosSharp kullanır ve bu görevleri arkasında matematik açıklar.
 ms.prod: xamarin
 ms.assetid: 5C241AB4-F97E-4B61-B93C-F5D307BCD517
 author: charlespetzold
 ms.author: chape
 ms.date: 03/27/2017
-ms.openlocfilehash: 13279df69b7a22117c10d74f1a15c082aff13264
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 63c722b74c7dc7e034475e539f38204aca87763e
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33921592"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242059"
 ---
-# <a name="2d-math-with-cocossharp"></a>2B matematik CocosSharp ile
+# <a name="2d-math-with-cocossharp"></a>CocosSharp ile 2B matematik
 
-_Bu kılavuz, oyun geliştirmeye yönelik 2B matematik kapsar. Ortak oyun geliştirme görevleri gerçekleştirmek nasıl göstermek için CocosSharp kullanır ve bu görevlerin arkasında matematik açıklar._
+_Bu kılavuz, oyun geliştirme için hazırlanan 2B matematik kapsar. Bu ortak oyun geliştirme görevleri nasıl gerçekleştireceğinizi gösterilecek CocosSharp kullanır ve bu görevleri arkasında matematik açıklar._
 
-Konum ve kod nesneleriyle taşımak için bir çekirdek ölçekteki geliştirme oyunlar parçasıdır. Oyun düz bir çizgi ya da döndürme Trigonometri kullanılmak boyunca bir nesneyi taşıma sağlanıp sağlanmadığını konumlandırma ve taşıma matematik, kullanılmasını gerektirir. Bu belge aşağıdaki konular ele alınacaktır:
+Getirin ve kod nesneleri taşımak için bir çekirdek, her boyuttaki geliştirme oyunlar parçasıdır. Taşıma düz bir çizgi veya döndürme için Trigonometri kullanımını bir nesnenin bir oyunu gerektirip gerektirmediği bilgisini konumlandırma ve taşıma matematik, kullanılmasını gerektirir. Bu belge aşağıdaki konuları ele alınacaktır:
 
  - Hız
  - Hızlandırma
  - CocosSharp nesneleri döndürme
- - Döndürme hız ile kullanma
+ - Dönüş hızı ile kullanma
 
-Güçlü matematik arka plan yok ya da kimin uzun-okul, aşağıdaki konulardan unutmuş geliştiriciler endişelenmeniz gerekmez – bu belgeyi kavramları bite ölçekli parçalara bölecektir ve teorik açıklamaları pratik örneklerle eşlik. Kısacası, bu makalede Paskalya'da matematik Öğrenci soruyu yanıtlayın: "Ne zaman gerçekte gerekir bu olanaklardan kullanılacak?"
+Geliştiricilerin güçlü matematik arka plan etkinleştirmemiş veya kimin uzun-Okul aşağıdaki konulardan unutmuş endişelenmenize gerek yok: Bu belge, küçük boyutlu parçalara bölecektir kavramları ve teorik açıklamaları pratik örnekler ile eşlik edecek. Kısacası, bu makalede tanılamalarını matematik Öğrenci sorusunu: "Ne zaman gerçekten ihtiyacım kullanabileceğimiz kullanılacak?"
 
 
 ## <a name="requirements"></a>Gereksinimler
 
-Bu belge öncelikle CocosSharp matematiksel tarafında odaklanıyor olsa da, kod örnekleri form devralma nesnelerle çalışmayı varsayın `CCNode`. Ayrıca, bu yana `CCNode` değerleri içermez hız ve Hızlandırma için kod VelocityX, VelocityY, AccelerationX ve AccelerationY gibi değerler sağlayan varlıklarla çalışmaya varsayar. Bizim izlenecek varlıklar hakkında daha fazla bilgi için bakın [CocosSharp varlıklarda](~/graphics-games/cocossharp/entities.md).
+Bu belge, öncelikli olarak matematik CocosSharp tarafında odaklanıyor olsa da, kod örnekleri form devralma nesnelerle çalışmayı varsayar `CCNode`. Ayrıca, bu yana `CCNode` değerlerini içermez hız ve Hızlandırma için kod VelocityX, VelocityY AccelerationX ve AccelerationY gibi değerler sağlayan varlıklarla çalışmaya varsayar. Varlıklar hakkında daha fazla bilgi için izlenecek yol bakın [cocossharp'taki varlıklar](~/graphics-games/cocossharp/entities.md).
 
 
 ## <a name="velocity"></a>Hız
 
-Oyun geliştiricilerin terim kullanın *hız* nasıl bir nesne taşıma – tanımlamak için özellikle ne kadar hızlı hareket şeydir ve yönü, BT'nin taşıma. 
+Oyun geliştiricileri terimi kullanın *hız* nasıl nesneyi taşıma – tanımlamak için özellikle ne kadar hızlı bir şey taşınıyor ve yön olduğundan taşıma. 
 
-Hız, iki tür birimleri kullanılarak tanımlanır: konum birim ve bir zaman birimi. Örneğin, bir otomobilin hızı, saat başına mil veya kilometre saatte olarak tanımlanır. Oyun geliştiriciler genellikle kullanım piksel ne kadar hızlı nesneyi tanımlamak için saniye başına taşır. Örneğin, bir madde işareti, saniye başına 300 piksel hızında taşıyabilir. Madde işareti, saniye başına 300 piksel taşıma ise diğer bir deyişle, sonra da 600 birim iki saniye ve 900 birimleri üç saniye ve benzeri taşınacaktır. Daha fazla genel olarak, hız değeri *ekler* bir nesnenin bir konuma (aşağıda anlatıldığı gibi).
+Hız birimleri iki tür kullanarak tanımlanır: konum birim ve bir zaman birimi. Örneğin, bir otomobilin hız saat başına mil veya kilometre saatlik olarak tanımlanır. Oyun geliştiriciler genellikle kullanım piksel ne kadar hızlı bir nesne tanımlamak için saniye başına taşır. Örneğin, bir madde işareti, saniye başına 300 piksel bir hızda taşıyabilir. Bir madde işareti, saniye başına 300 piksel taşıma ise diğer bir deyişle, ardından bunu 600 birim iki saniye ve 900 birimlerinde üç saniye ve benzeri taşınacaktır. Daha genel olarak, hız değeri *ekler* bir nesnenin konumuna (aşağıda anlatıldığı gibi).
 
-Hız birimleri açıklamak için hız kullandık rağmen hızı ve yön için terim hız başvuruyor ancak terim hızı genellikle yönünü, bağımsız bir değer anlamına gelir. Bu nedenle, madde işareti 's hız (madde işareti gerekli özellikleri içeren bir sınıf olduğunu varsayarak) atama şöyle görünebilir:
+Hızı birimlerinin hızı açıklamak için kullandığımız olsa da, terim hız hem hız hem de yönü başvuruyor ancak terimi hızını genellikle yönü, bağımsız bir değere başvuruyor. Bu nedenle, bir madde işareti 's hız (madde işareti gerekli özellikleri içeren bir sınıf olduğunu varsayarak) atamasını şöyle görünebilir:
 
 
 ```csharp
@@ -51,7 +51,7 @@ bulletInstance.VelocityY = 300;
 
 ### <a name="implementing-velocity"></a>Hız uygulama
 
-Taşıma gerektiren nesneler, kendi taşıma mantığı uygulamanız gerekir böylece CocosSharp hız, uygulamıyor. Hız genellikle uygulama yeni oyun geliştiricilerin kendi hız yapma hata kare hızı bağımlı hale getirin. Diğer bir deyişle, aşağıdaki *yanlış uygulama* doğru sonuçlar sağlamak için göründüğü ancak oyunun çerçeve oranına dayalı:
+CocosSharp hız, uygulamaz, taşıma gerektiren nesneler, kendi taşıma mantığı uygulamanız gerekir. Hız genellikle uygulama yeni oyun geliştiricileri, hız yapmadan yanlışı kare hızı üzerinde bağımlı hale getirin. Diğer bir deyişle, aşağıdaki *yanlış uygulama* doğru sonuçlar sağlamak için görünüyor ancak oyunun çerçeve hızınıza göre:
 
 ```csharp
 // VelocityX and VelocityY will be added every time this code executes
@@ -59,9 +59,9 @@ this.PositionX += this.VelocityX;
 this.PositionY += this.VelocityY;
 ```
 
-Oyun (örneğin, saniyede 30 kare yerine saniyede 60 çerçeve) daha yüksek bir kare hızında çalıştırıyorsa, yavaş bir çerçeve hızında çalıştırılmadığını daha hızlı taşımak için nesne görüntülenir. Benzer şekilde, oyun (hangi aygıtın kaynaklarını kullanan arka plan işlemleri tarafından kaynaklanıyor olabilir) bir çerçeve oranının yüksek olarak kareleri işleyemiyor ise, oyun yavaşlaması görünecektir.
+Oyun (örneğin, saniyede 30 kare yerine saniyede 60 kare) daha yüksek kare hızında çalıştırıyorsa, daha yavaş kare hızı çalışıyorsa daha hızlı taşımak için nesne görünür. Benzer şekilde, oyun kareleri (Bu cihazın kaynakları kullanarak arka plan işlemleri tarafından kaynaklanıyor olabilir) bir çerçeve oranının yüksek olarak işleyemedi, oyun yavaşlamasına görünür.
 
-Bu hesap için hız genellikle bir saat değeri kullanılarak uygulanır. Örneğin, varsa `seconds` değişkeni temsil saniye sayısı (veya kesir) son zamanı hız uygulandıktan sonra aşağıdaki kodu kare hızı bağımsız olarak tutarlı taşıma sahip nesne neden olacağından sonra:
+Bu hesap için hız genellikle bir saat değeri kullanılarak uygulanır. Örneğin, varsa `seconds` değişkeni temsil saniye sayısı (veya kesir) son saat hızı uygulandıktan sonra ardından aşağıdaki kodu kare hızını bağımsız olarak tutarlı taşıma sahip nesne neden olur:
 
 ```csharp
 // VelocityX and VelocityY will be added every time this code executes
@@ -69,16 +69,16 @@ this.PositionX += this.VelocityX * seconds;
 this.PositionY += this.VelocityY * seconds;
 ```
 
-Daha düşük bir çerçeve hızda çalışan oyun nesnelerine daha az konumunu sık güncelleştireceği göz önünde bulundurun. Bu nedenle, her güncelleştirme oyun daha sık güncelleştirmekte olduğunuz durumda daha fazla taşıma nesneleri neden olur. `seconds` Değer hesapları bu için ne kadar süre son güncelleştirmeden bu yana geçen bildirerek.
+Düşük kare hızı çalışan bir oyun nesnelerine daha az konumunu sık sık güncelleştirilir göz önünde bulundurun. Bu nedenle, her bir güncelleştirme oyunu daha sık güncelleme durumda daha fazla taşıma nesneleri neden olur. `seconds` Değeri hesaplar bunun için son güncelleştirmeden bu yana ne kadar zaman geçti raporlama tarafından.
 
-Zaman tabanlı hareket ekleme örneği için bkz: [zaman kapsayan bu tarif tabanlı taşıma](https://developer.xamarin.com/recipes/cross-platform/game_development/time_based_movement/).
+Zamana bağlı taşıma ekleme örneği için bkz. [zaman kapsayan bu tarif tabanlı taşıma](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/game_development/time_based_movement).
 
 
-### <a name="calculating-positions-using-velocity"></a>Hız kullanarak konumlar hesaplama
+### <a name="calculating-positions-using-velocity"></a>Hız kullanarak konumları hesaplanıyor
 
-Hız, bir nesne zamanı geçişleri miktar sonra burada olacaktır ilgili tahminlerde ya da nesnelerin davranışını oyunu çalıştırmak gerek kalmadan ince ayar yardımcı olmak için kullanılabilir. Örneğin, bu örneği sonra madde işareti 's hız ayarlamak Mazotlu madde işareti hareketini uygulayan bir geliştirici gerekir. Ekran boyutu hız ayarlamak için bir temel sağlamak üzere kullanılabilir. Diğer bir deyişle, geliştirici biliyorsa madde işareti 2 saniye cinsinden ekran yüksekliğini taşımalısınız sonra hız 2 ile bölünmüş ekran yüksekliğini ayarlanmalıdır. Ekran 800 piksel uzunluğunda ise, madde işareti'nın hızı (Bu 800/2) 400'e ayarlanır.
+Hız, bir nesne sonra zaman geçişleri miktar burada olacaktır hakkında tahminde bulunmak amacıyla ya da nesnelerin davranışını oyunu çalıştırmak zorunda kalmadan ayarlamanıza yardımcı olmak için kullanılabilir. Örneğin, tetiklenme bir madde işareti hareketini uygulama geliştiriciye örneği oluşturulduğu sonra madde işareti'nın hız ayarlaması gerekiyor. Ekran boyutu, hız ayarlamak için bir temel sağlamak için kullanılabilir. Diğer bir deyişle, geliştirici biliyorsa madde işareti ekran yüksekliği 2 saniye cinsinden taşımanız gerekir ve ardından hız 2 bölünmüş ekran yüksekliği olarak ayarlanmalıdır. 800 piksel yüksekliktir ekran ise madde işareti'nın hızı (aynı 800/2) 400'e ayarlanır.
 
-Benzer şekilde, oyun mantığı, bir nesne, hız verilen bir hedefe ulaşmak için ne kadar sürer hesaplamak gerekebilir. Bu travelling nesnenin hız tarafından seyahat uzaklığı bölünmesiyle hesaplanır. Örneğin, aşağıdaki kodu metnin ne kadar süreyle görüntüleyen bir etiket atama gösterilmiştir hedefine bir Füze ulaşana kadar:
+Benzer şekilde, oyun içi mantıksal bir nesne, hız belirtilen hedefe ulaşmak için ne kadar sürer hesaplamak gerekebilir. Bu uzaklık travelling nesnenin hız tarafından seyahat bölünmesiyle hesaplanır. Örneğin, aşağıdaki kod metin ne kadar süreyle görüntüleyen bir etiket atama gösterir bir Füze hedefine ulaşana kadar:
 
 
 ```csharp
@@ -93,13 +93,13 @@ label.Text = secondsToReachTarget + " seconds to reach target";
 
 ## <a name="acceleration"></a>Hızlandırma
 
-*Hızlandırma* oyun geliştirmede ortak bir kavramıdır ve hız ile benzer şekilde paylaşır. Bir nesne hızlandırma ya da (nasıl hız değeri zaman içinde değişir) yavaşlamasının hızlandırma niceliğini belirtir. Hızlandırma *ekler* yalnızca konumlandırmak için hız ekler gibi hız için. Hızlandırma ortak uygulamalarının yer çekimi, bir araba hızlandırma ve kendi thrusters tetikleme alanı sevk içerir. 
+*Hızlandırma* ortak bir kavramıdır oyun geliştirme alanındaki ve hızı ile benzer paylaşır. Bir nesne hızlandırmadan ya da (nasıl hız değeri zaman içinde değişir) yavaşlatmasını hızlandırma niceliğini belirtir. Hızlandırma *ekler* yalnızca konumlandırmak için hız ekler gibi hız. Sık kullanılan uygulamaları hızlandırma yer çekimi hızlandırmadan bir araba ve bir alan kendi thrusters tetikleme sevk içerir. 
 
-Benzer şekilde hız, hızlandırma bir konumu ve zaman birimi tanımlanır; Ancak, hızlandırma'nin zaman birimi olarak adlandırılır bir *squared* nasıl hızlandırma matematiksel olarak tanımlanan yansıtır birim. Diğer bir deyişle, oyun hızlandırma genellikle ölçülür *piksel saniyedeki kare*.
+Benzer şekilde, hız, hızlandırma konumu ve zaman birimi tanımlanır; Ancak, hızlandırma'nın zaman birimi olarak adlandırılır bir *karesini* hızlandırma matematiksel olarak nasıl tanımlandığını yansıtan birim. Diğer bir deyişle, oyun hızlandırma genellikle ölçülür *piksel saniyedeki kare*.
 
-Bir nesne kare saniye başına 10 birim X ivmesini varsa, daha sonra kendi hız 10 saniyede artıracaktır anlamına gelir. Bir saniye ikinci, sonra iki başına 10 birimlerde taşıma olacaktır sonra Durma noktasına başlıyorsanız 20 birim başına ikinci, vb. saniye.
+Bir nesne bir kare saniyede 10 birim X ivmesini varsa, ardından kendi hız saniyede 10 tarafından artacağını anlamına gelir. Bir saniye başına saniye, sonra iki 10 birimlerde taşıma olacaktır sonra bir Durma noktasına başlatılıyorsa, 20 birim başına saniye vb. saniye.
 
-Hızlandırma iki boyutlu bir X ve Y bileşeni gerektirir ve bu nedenle şu şekilde atanabilir:
+Şu şekilde atanabilir şekilde hızlandırma iki boyutlu bir X ve Y bileşeni gerektirir:
 
 
 ```csharp
@@ -112,12 +112,12 @@ icicle.AccelerationY = -50;
 
 ### <a name="acceleration-vs-deceleration"></a>Hızlandırma yavaşlama karşılaştırması
 
-Hızlandırma ve yavaşlama her gün konuşma bazen ayırt edilen rağmen ikisi arasındaki teknik fark yoktur. Yer çekimi hızlandırma sonuçları bir force ' dir. Nesneyi yukarı oluşturulursa sonra yer çekimi, (yavaşlatıcı aşağı) yavaş, ancak nesne climbing durduruldu ve yer çekimi ile aynı yönde dönmeden sonra ardından yer çekimi bunu (hızlandırmaya yukarı) hızlandırma. Aynı yönde veya tersi yönde hareket uygulanmakta olup olmadığını aşağıda gösterildiği gibi bir hızlandırma aynı uygulamasıdır. 
+Bazen her gün konuşma ivme ve negatif ayırt edilen olsa da, ikisi arasındaki teknik fark yoktur. Yer çekimi içinde hızlandırma sonuçlanır bir zorla ' dir. Bir nesneyi yukarı oluşturulursa sonra yer çekimi bunu (yavaşlatma aşağı) yavaşlatır, ancak nesne tırmanma durdurdu ve dünya ile aynı yönde dönülüyor sonra sonra yer çekimi bunu (hızlandırma ayarlama) hızlandırma. Aynı yönde veya tersi yönde hareket uygulanıyor olmadığını aşağıda gösterildiği gibi bir hızlandırma aynı uygulamasıdır. 
 
 
 ### <a name="implementing-acceleration"></a>Hızlandırma uygulama
 
-Hızlandırma uygularken için hız benzer – CocosSharp tarafından otomatik olarak uygulanmadı ve zaman tabanlı Hızlandırma (aksine hızlandırma tabanlı çerçeve) istenen uygulamasıdır. Bu nedenle bir basit Hızlandırma (birlikte hız) uygulaması gibi görünebilir:
+Hızlandırma uygularken hız için benzerdir: CocosSharp ile otomatik olarak uygulanmadı ve zamana bağlı Hızlandırma (aksine, kare tabanlı hızlandırma) istenen uygulamasıdır. Bu nedenle bir basit Hızlandırma (birlikte hızı) uygulaması gibi görünebilir:
 
 ```csharp
 this.VelocityX += this.AccelerationX * seconds;
@@ -126,9 +126,9 @@ this.PositionX += this.VelocityX * seconds;
 this.PositionY += this.VelocityY * seconds;
 ```
 
-Yukarıdaki kodu ne olarak adlandırılır bir *doğrusal yaklaşık* hızlandırma uygulaması. Etkili bir şekilde oldukça Kapat düzeyde doğruluk hızlandırma uygular, ancak hızlandırma mükemmel doğru modeli değil. Bunu yukarıda hızlandırma nasıl uygulandığını kavramı açıklamaya yardımcı olması için dahil edilir.
+Yukarıdaki kod ne olarak adlandırılır olduğu bir *doğrusal bir yaklaştırma* hızlandırma uygulaması. Etkili bir şekilde oldukça yakın bir doğruluk derecesi ile hızlandırma uygular, ancak hızlandırma mükemmel bir şekilde doğru modeli değil. Bunu yukarıda hızlandırma nasıl uygulandığını kavramı anlaşılmasına yardımcı olacak dahil edilir.
 
-Aşağıdaki uygulama hızlandırma ve hız, matematiksel olarak doğru bir uygulamadır:
+Aşağıdaki uygulama hızlandırma ve hız matematiksel olarak doğru bir uygulamadır:
 
 
 ```csharp
@@ -143,14 +143,14 @@ this.VelocityX += this.AccelerationX * seconds;
 this.VelocityY += this.AccelerationY * seconds; 
 ```
 
-Yukarıdaki kod için en bariz fark `halfSecondsSquared` değişkeni ve konumlandırmak için hızlandırma uygulamak için kullanım. Matematik Bunun nedeni Bu öğretici kapsamında değildir, ancak bu arkasında matematik ilginizi geliştiriciler hakkında daha fazla bilgi bulabilirsiniz [bu tartışma hızlandırma tümleştirme hakkında.](http://www.cliffsnotes.com/math/calculus/calculus/integration/distance-velocity-and-acceleration)
+Yukarıdaki kod için en belirgin fark `halfSecondsSquared` değişkeni ve kullanımını konumlandırmak için hızlandırma uygulamak için. Matematik Bunun nedeni bu öğreticinin kapsamı dışındadır, ancak bunun ardındaki matematik ilginizi geliştiriciler hakkında daha fazla bilgi bulabilirsiniz [hızlandırma tümleştirme hakkındaki bu tartışma.](http://www.cliffsnotes.com/math/calculus/calculus/integration/distance-velocity-and-acceleration)
 
-Pratik etkisini `halfSecondSquare` hızlandırma matematiksel tutarlı ve öngörülebilir bir şekilde kare hızı bağımsız olarak davranacak emin olan. Doğrusal yaklaşık hızlandırma olarak çerçeve tabi – düşük kare hızı az doğru yaklaşık hale bırakır hızıdır. Kullanarak `halfSecondsSquared` garanti kodu kare hızı bakılmaksızın aynı şekilde davranır.
+Pratik etkisi `halfSecondSquare` hızlandırma matematiksel olarak doğru bir şekilde ve daha öngörülebilir bir şekilde bağımsız olarak kare hızı davranış göstereceği anlamına olduğu. Doğrusal hızlandırması kare hızı tabi – düşük kare hızını yaklaşık daha az doğru olur bırakır değeridir. Kullanarak `halfSecondsSquared` garantileri kod kare hızını bağımsız olarak aynı şekilde davranır.
 
 
 ## <a name="angles-and-rotation"></a>Açıları ve döndürme
 
-Visual nesneleri gibi `CCSprite` destek döndürme aracılığıyla bir `Rotation` değişkeni. Bu bir değeri döndürme derece cinsinden ayarlamak için atanabilir. Örneğin, aşağıdaki kodu nasıl döndürüleceğini gösterir bir `CCSprite` örneği:
+Görsel nesneler gibi `CCSprite` desteği aracılığıyla döndürme bir `Rotation` değişkeni. Bu bir değere derece döndürme ayarlanacak atanabilir. Örneğin, aşağıdaki kod nasıl döndürüleceğini gösterir bir `CCSprite` örneği:
 
 
 ```csharp
@@ -171,37 +171,37 @@ this.AddChild (rotatedSprite);
 
 Bu durum şunlara sebep olur:
 
-![](math-images/image1.png "Bu bu ekran görüntüsünde sonuçları")
+![](math-images/image1.png "Bu ekran görüntüsünde bu sonuçları")
 
-45 (olan geçmiş nedeniyle döndürme matematiksel nasıl uygulandığını tersi) derece saat yönünde bir döndürme olduğuna dikkat edin:
+Döndürme (aynı geçmiş nedeniyle döndürme matematiksel olarak nasıl uygulanacağını tersi) saat yönünde 45 derece olduğuna dikkat edin:
 
-![](math-images/image2.png "Geçmiş nedenleri döndürme matematiksel nasıl uygulandığını karşıtı olduğu döndürme 45 derece saat yönünde olduğuna dikkat edin")
+![](math-images/image2.png "Döndürme matematiksel olarak nasıl uygulanacağını tersi geçmiş nedeniyle olduğu döndürme 45 derece saat yönünde olduğuna dikkat edin")
 
-Genel olarak aşağıdaki gibi CocosSharp ve normal matematik dönüş canlandırılabilir:
+Genel döndürme CocosSharp ve normal Matematiği için şu şekilde görselleştirilebilir:
 
-![](math-images/image3.png "Genel CocosSharp ve normal matematik dönüş şöyle canlandırılabilir")
+![](math-images/image3.png "Genel döndürme CocosSharp ve normal Matematiği için şu şekilde görselleştirilebilir")
 
-![](math-images/image4.png "Genel CocosSharp ve normal matematik dönüş şöyle canlandırılabilir")
+![](math-images/image4.png "Genel döndürme CocosSharp ve normal Matematiği için şu şekilde görselleştirilebilir")
 
-Bu ayrım önemlidir çünkü `System.Math` sınıfı, böylece geliştiriciler bu sınıfla tanıdık açıları ile çalışırken Çevir gerek saatin aksi yönünde bir döndürme kullanır `CCNode` örnekleri.
+Bu ayrım önemlidir çünkü `System.Math` sınıfı kullanır; böylelikle geliştiriciler bu sınıfla ilgili bilgi sahibi ile çalışırken açıları ters çevirmek gereken saat yönünün tersine dönüş `CCNode` örnekleri.
 
-Yukarıdaki diyagramları derece cinsinden döndürme görüntülemek dikkat etmelidir; Ancak, bazı matematik işlevleri (işlevlerde gibi `System.Math` ad alanı) bekler ve dönüş değerleri *radyan* derece yerine. Bu kılavuzda biraz daha sonra iki birim türü arasında dönüştürme inceleyeceğiz.
+Yukarıdaki diyagramları derece döndürme görüntüleme dikkat etmelidir; Ancak, bazı matematik işlevleri (işlevler gibi `System.Math` ad alanı) bekler ve dönüş değerleri *radyan* derece yerine. Bu kılavuzdaki biraz daha sonra iki birim türleri arasında dönüştürme inceleyeceğiz.
 
 
-### <a name="rotating-to-face-a-direction"></a>Bir yön yüz döndürme
+### <a name="rotating-to-face-a-direction"></a>Yüz yön için döndürme
 
-Yukarıda gösterildiği gibi `CCSprite` kullanarak döndürülüp `Rotation` özelliği. `Rotation` Özelliği tarafından sağlanan `CCNode` (için temel sınıfı `CCSprite`), başka bir deyişle, döndürme devralınmalıdır varlıkları uygulanabilir `CCNode` de. 
+Yukarıda gösterildiği gibi `CCSprite` kullanarak döndürülebilir `Rotation` özelliği. `Rotation` Özelliği tarafından sağlanır `CCNode` (için temel sınıf `CCSprite`), yani döndürme devralınacak varlıkları uygulanabilir `CCNode` de. 
 
-Bazı oyunlar hedef yüz şekilde döndürülüp nesnelere gerektirir. Örnek bir oynatıcı hedefi veya kullanıcı ekran burada temas noktası doğru giden bir alanı sevk çekim bilgisayar denetimli bir ikincisinde verilebilir. Ancak, bir dönüş değeri ilk tabanlı Döndürülmüş varlık konumu ve yüz hedef konumu hesaplanması gerekir.
+Bazı oyunlar, bunlar hedef yüz için döndürülecek nesne gerektirir. Bir bilgisayar denetimli ikincisinde bir oynatıcı hedef ya da kullanıcının ekran burada temas noktası doğru giden bir alanı sevk atma örneklerindendir. Ancak, dönüş değeri ilk tabanlı Döndürülmüş varlık konumunu ve yüz için hedef konumu hesaplanması gerekir.
 
 Bu işlem birkaç adımı gerektirir:
 
- - Tanımlayan *uzaklık* hedef. Uzaklık döndürme varlık ve hedef varlık arasındaki X ve Y uzaklığı ifade eder.
- - Uzaklık döndürüleceği açıyı (aşağıda ayrıntılı olarak açıklanmıştır) arktanjantını Trigonometri işlevini kullanarak hesaplama.
- - 0 sağa ve beklemediğiniz Döndürülmüş zaman döndürme varlık işaret yönü doğru işaret eden derece arasında bir fark için ayarlama.
- - Matematik döndürme (saatin tersi yönde) ve CocosSharp döndürme (saat yönünde) arasındaki fark için ayarlama.
+ - Tanımlama *uzaklığı* hedef. X ve Y uzaklık hedef varlık döndürme varlık arasındaki uzaklığı ifade eder.
+ - Uzaklık döndürüleceği açıyı (aşağıda ayrıntılı olarak açıklanmıştır) arktanjantını Trigonometri işlevini kullanarak hesaplanıyor.
+ - Sağa ve geri Döndürülmüş olduğunda döndürme varlığı işaret yön doğrultusunda gösteren 0 derece arasında bir fark için ayarlanıyor.
+ - Matematik döndürme (saat yönünün tersine) CocosSharp döndürme (saat yönünde) arasındaki fark için ayarlanıyor.
 
-(Bir varlık yazılması varsayılır) aşağıdaki işlevi bir hedef yüz varlık döndürür:
+Yüz tanıma bir hedef Varlık (bir varlıkta yazılacak varsayıldı) aşağıdaki işlevi döndürür:
 
 
 ```csharp
@@ -242,7 +242,7 @@ public void FacePoint(float targetX, float targetY)
 } 
 ```
 
-Yukarıdaki kod, burada kullanıcının ekran gibi değecek noktası bakarken şekilde bir varlık döndürmek için kullanılabilir:
+Yukarıdaki kod, burada kullanıcının ekran aşağıdaki gibi oncollisionstay noktası yüzler için bir varlık döndürmek için kullanılabilir:
 
 
 ```csharp
@@ -256,40 +256,40 @@ private void HandleInput(System.Collections.Generic.List<CCTouch> touches, CCEve
 } 
 ```
 
-Bu kod, aşağıdaki davranış oluşur:
+Bu kod, aşağıdaki davranışa neden olur:
 
-![](math-images/image5.gif "Bu kod bu davranışa neden olur")
+![](math-images/image5.gif "Bu kod bu davranışla sonuçlanır.")
 
-#### <a name="using-atan2-to-convert-offsets-to-angles"></a>Atan2 kullanarak açıları kaydırır
+#### <a name="using-atan2-to-convert-offsets-to-angles"></a>Atan2 kullanarak dönüştürmek için açıları kaydırır
 
-`System.Math.Atan2` Bir açının uzaklığı dönüştürmek için kullanılabilir. İşlev adı `Atan2` trigonometrik işlevi arktanjantını gelir. "2" soneki bu işlev standart ayıran `Atan` kesinlikle arktanjantını matematiksel davranışını eşleşen işlevi. Arctangent -90 arasında bir değer döndüren bir işlev değil ve + 90 derece (veya eşdeğeri radyan cinsinden). Bilgisayar oyunları dahil olmak üzere birçok uygulama, genellikle tam bir 360 derece değerleri gerektiren böylece `Math` sınıfı içerir `Atan2` bu gereksinimi karşılamak için.
+`System.Math.Atan2` Açı için bir uzaklık dönüştürmek için kullanılabilir. İşlev adı `Atan2` trigonometrik işlevi arktanjantını gelir. "2" soneki bu işlev standart ayırır `Atan` kesinlikle arktanjantını matematik davranışını eşleşen işlevi. Arktanjant, -90 arasında bir değer döndüren bir işlev olan ve + 90 derece (veya eşdeğer radyan cinsinden). Birçok uygulama, bilgisayar oyunları dahil olmak üzere değerlerin tam bir 360 derece genellikle gerektirir böylece `Math` sınıfı içeren `Atan2` bu ihtiyacı karşılamak için.
 
-Yukarıdaki kod Y parametresi ilk olarak, ardından X parametresi çağrılırken geçtiğini fark `Atan2` yöntemi. Bu geriye doğru normal X, Y konum koordinatlarını sıralama arasındadır. Daha fazla bilgi için [Atan2 belgeleri bkz](https://msdn.microsoft.com/library/system.math.atan2(v=vs.110).aspx).
+Yukarıdaki kod Y parametresi ilk olarak, ardından X parametresi çağırırken geçmesini fark `Atan2` yöntemi. Geriye dönük normal X, Y koordinatları konumu sıralama gelen budur. Daha fazla bilgi için [Atan2 belgelere bakın](https://msdn.microsoft.com/library/system.math.atan2(v=vs.110).aspx).
 
-Ayrıca dikkate değerdir dönüş değeri, `Atan2` radyan cinsinden olduğu açıları ölçmek için kullanılan başka bir birimdir. Bu kılavuz değil radyan ayrıntılarını içerir, ancak unutmayın, tüm trigonometrik işlevler `System.Math` ad alanı, herhangi bir değere derece CocosSharp nesnelerde kullanılmadan önce dönüştürülmesi gerekir böylece radyan kullanın. Radyan cinsinden hakkında daha fazla bilgi bulunabilir [radian Wikipedia sayfasındaki](http://en.wikipedia.org/wiki/Radian).
+Ayrıca hatalarının ayıklanabileceğini belirtmekte yarar döndürülen değeri, `Atan2` radyan cinsinden olacağı açıları ölçmek için kullanılan başka bir birimdir. Bu kılavuzda değil radyan ayrıntılarını kapsar, ancak göz önünde bulundurun, tüm trigonometrik işlevler `System.Math` ad alanını kullanacak radyan için herhangi bir değere derece CocosSharp nesneler üzerinde kullanılmadan önce dönüştürülmelidir. Radyan cinsinden hakkında daha fazla bilgi bulunabilir [radian Wikipedia sayfasında](http://en.wikipedia.org/wiki/Radian).
 
-#### <a name="forward-angle"></a>İletme açı
+#### <a name="forward-angle"></a>İletme açısı
 
-Bir kez `FacePoint` yöntemi için radyan cinsinden açı dönüştürür, onu tanımlayan bir `forwardAngle` değeri. Bu değer döndürme değeri 0 değerine eşit olduğunda varlık'ın kullanıma yönelik açıyı temsil eder. Bu örnekte, varlık yukarı, 90 derece matematiksel bir döndürme (aksine CocosSharp dönüş) kullanırken olduğu karşılıklı olduğunu varsayalım. Biz döndürme CocosSharp için henüz ters henüz bu yana matematiksel döndürme burada kullanırız.
+Bir kez `FacePoint` yöntemi açı radyana dönüştürür, tanımladığı bir `forwardAngle` değeri. Bu değeri, dönüş değeri 0 olduğunda varlık yaşıyor açıyı temsil eder. Bu örnekte, 90 derece matematiksel bir döndürme (aksine CocosSharp döndürme) kullanırken olduğu varlık yukarı, yaşıyor varsayıyoruz. Biz döndürme CocosSharp için henüz ters henüz bu yana matematik döndürme burada kullanırız.
 
-Aşağıdaki hangi bir varlıkla gösterir bir `forwardAngle` 90 derece aşağıdaki gibi görünmelidir:
+Bir varlık ile aşağıdaki gösterir bir `forwardAngle` 90 derece aşağıdaki gibi görünmelidir:
 
-![](math-images/image6.png "Bu varlıkta forwardAngle 90 derece ile aşağıdaki gibi görünmelidir gösterir")
+![](math-images/image6.png "Bu bir forwardAngle 90 derece sahip bir varlık aşağıdaki gibi görünmelidir gösterir.")
 
 
 ### <a name="angled-velocity"></a>Açılı hız
 
-Şu ana kadar açının bir uzaklık dönüştürme inceledik. Bu bölümde, diğer bir yol gider – açı alır ve X dönüştürür ve Y değerleri. Bu karşılıklı yönü veya sevk karşılıklı yönde taşır bir madde işareti çekim alanı sevk taşıma bir araba ortak örnekler. 
+Şu ana kadar bir açının bir uzaklık dönüştürme inceledik. Bu bölümde, başka bir şekilde aşması – açı alır ve X dönüştürür ve Y değerleri. Bir araba, karşılıklı yönünü veya bir boşluk sevk karşılıklı yönde taşıyan bir madde işareti atma sevk taşıma ortak örneklerindendir. 
 
-Kavramsal olarak, hız, geri döndürülen olduğunda istenen hız ilk tanımlama, ardından bu hız bir varlık karşılıklı açıyla döndürme hesaplanabilir. Bu kavram açıklamasına yardımcı olmak için hız (ve Hızlandırma) bir 2 boyutlu canlandırılabilir *vektör* (genellikle çizilmiş bir ok olarak). Vektör X ile hız değeri 100 ve Y = = 0 görselleştirilen gibi:
+Kavramsal olarak, hız, geri döndürülen, istenen hız ilk tanımlama, daha sonra bir varlığa yönelik bir açıyla, hız döndürme hesaplanabilir. Bu kavramı anlaşılmasına yardımcı olacak hız (ve Hızlandırma) bir 2 boyutlu görselleştirilebilir *vektör* (genellikle çizilmiş bir ok olarak). Bir vektör X ile hız değeri 100 ve Y = = 0 görselleştirilmiş gibi:
 
-![](math-images/image7.png "Vektör X ile hız değeri 100 ve Y = = 0 görselleştirilen gibi")
+![](math-images/image7.png "Bir vektör X ile hız değeri 100 ve Y = = 0 görselleştirilmiş gibi")
 
-Bu vektörü içinde yeni bir hız neden için döndürülebilir. Örneğin, 45 (yönünün döndürme kullanarak) derece vektör döndürme şunlara sebep olur:
+İçinde yeni bir hız elde etmek, bu vektörü döndürülebilir. Örneğin, vektör (yönünün döndürme kullanarak) 45 derece döndürme durum şunlara sebep olur:
 
-![](math-images/image8.png "Vektör 45 bu yönünün döndürme sonuçları kullanarak derece döndürme")
+![](math-images/image8.png "Vektör bu yönünün döndürme sonuçları kullanarak 45 derece döndürme")
 
-Neyse ki, hız, hızlandırma ve hatta konumu tüm değerlerin nasıl uygulandığını bakılmaksızın aynı kodla döndürülebilir. Aşağıdaki genel amaçlı işlevi tarafından CocosSharp döndürme değeri vektör döndürmek için kullanılabilir:
+Neyse ki, hız, hızlandırma ve hatta konumu tüm değerleri nasıl uygulandığına bakılmaksızın aynı kodla döndürülebilir. Aşağıdaki genel amaçlı işlevi, bir vektör döndürmek için bir CocosSharp dönüş değeri tarafından kullanılabilir:
 
 
 ```csharp
@@ -326,7 +326,7 @@ void RotateVector(ref CCVector2 vector, float cocosSharpDegrees)
 } 
 ```
 
-Tam bir anlayış `RotateVector` yöntemi, bu makalenin kapsamı dışındadır olan bazı Lineer Cebir, birlikte kosinüsünü ve sinüsünü trigonometrik işlevler aşina olan gerektirir. Ancak, bir kez uygulanan `RotateVector` yöntemi, hız vektör dahil olmak üzere herhangi bir vektör döndürmek için kullanılabilir. Örneğin, aşağıdaki kodu tarafından belirtilen yönde madde işareti yangın `rotation` değeri:
+Tam bir anlayış `RotateVector` yöntemi gerektirir, bu makalenin kapsamı dışındadır bazı doğrusal Cebir, birlikte kosinüsü ve sinüs trigonometrik işlevler hakkında bilgi sahibi olan. Ancak, bir kez gerçekleştirilen `RotateVector` yöntemi, hız vektör dahil olmak üzere herhangi bir vektör döndürmek için kullanılabilir. Örneğin, aşağıdaki kod bir madde işareti tarafından belirtilen yönde yangın `rotation` değeri:
 
 
 ```csharp
@@ -350,11 +350,11 @@ newBullet.VelocityY = velocity.Y;
 newBullet.Rotation = rotation; 
 ```
 
-Bu kodu aşağıdakine benzer oluşturabilir:
+Bu kod aşağıdaki gibi oluşturulabilir:
 
-![](math-images/image9.png "Bu kod bu ekran görüntüsüne benzer bir şey üretebilir")
+![](math-images/image9.png "Bu kod, bu ekran görüntüsüne benzer bir şey oluşturabilir")
 
 
 ## <a name="summary"></a>Özet
 
-Bu kılavuz 2B oyun geliştirmede ortak matematiksel kavramları kapsar. Hız ve Hızlandırma atayın ve kullanmayı gösterir ve nesneleri ve herhangi bir yönde taşıma vektörleri döndürmek alınmaktadır.
+Bu kılavuz, 2D oyun geliştirme ortak matematik kavramları kapsar. Atama ve hız ve Hızlandırma uygulamak gösterilmektedir ve nesneleri ve herhangi bir yönde hareket vektörleri döndürmek nasıl etkinleştireceğinizi de açıklar.

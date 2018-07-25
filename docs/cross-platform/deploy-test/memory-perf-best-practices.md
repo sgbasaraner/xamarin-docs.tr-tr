@@ -6,12 +6,12 @@ ms.assetid: 9ce61f18-22ac-4b93-91be-5b499677d661
 author: asb3993
 ms.author: amburns
 ms.date: 03/24/2017
-ms.openlocfilehash: c529d1d42d582cb49a906ad6fc39a191a7389f58
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: bd08e1f83f7b1752a2830bda1390ffae4f86b360
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997445"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242413"
 ---
 # <a name="cross-platform-performance"></a>Platformlar arası performans
 
@@ -340,7 +340,7 @@ Bu Web günlüğü gönderisinde daha fazla bilgi edinin: [nasıl için tutmak u
 
 ## <a name="optimize-image-resources"></a>Resim kaynakları en iyi duruma getirme
 
-Görüntüleri olan bazı uygulamaları kullanan en pahalı kaynaklara ve genellikle yüksek çözünürlüklerde yakalanır. Bu benzerleriyle ayrıntılarını tam oluşturur, ancak böyle görüntüler genellikle uygulama görüntü kodunu çözmek için daha fazla CPU kullanımı ve kodu çözülmüş görüntünün depolanması için daha fazla bellek gerektirir. Bunu görüntülemek için daha küçük bir boyuta ölçeğinin azaltılıp azaltılmayacağını bellekte yüksek çözünürlüklü bir görüntü çözülecek kısıp. Bunun yerine, CPU kullanımı ve bellek Ayak izi versiyonlarını çözümleme yakın tahmin edilen görüntü boyutu depolanan görüntüler oluşturarak azaltın. Örneğin, bir liste görünümünde görüntülenen görüntünün büyük olasılıkla tam ekranında görüntülenen bir görüntü daha düşük bir çözünürlüğe olmalıdır. Ayrıca, yüksek çözünürlüklü görüntülerin sürümlerin ölçeği en az bellek etkileyerek görüntüler verimli bir şekilde yüklenebilir. Daha fazla bilgi için [yük büyük bit eşlemler verimli](https://developer.xamarin.com/recipes/android/resources/general/load_large_bitmaps_efficiently/).
+Görüntüleri olan bazı uygulamaları kullanan en pahalı kaynaklara ve genellikle yüksek çözünürlüklerde yakalanır. Bu benzerleriyle ayrıntılarını tam oluşturur, ancak böyle görüntüler genellikle uygulama görüntü kodunu çözmek için daha fazla CPU kullanımı ve kodu çözülmüş görüntünün depolanması için daha fazla bellek gerektirir. Bunu görüntülemek için daha küçük bir boyuta ölçeğinin azaltılıp azaltılmayacağını bellekte yüksek çözünürlüklü bir görüntü çözülecek kısıp. Bunun yerine, CPU kullanımı ve bellek Ayak izi versiyonlarını çözümleme yakın tahmin edilen görüntü boyutu depolanan görüntüler oluşturarak azaltın. Örneğin, bir liste görünümünde görüntülenen görüntünün büyük olasılıkla tam ekranında görüntülenen bir görüntü daha düşük bir çözünürlüğe olmalıdır. Ayrıca, yüksek çözünürlüklü görüntülerin sürümlerin ölçeği en az bellek etkileyerek görüntüler verimli bir şekilde yüklenebilir. Daha fazla bilgi için [yük büyük bit eşlemler verimli](https://github.com/xamarin/recipes/tree/master/Recipes/android/resources/general/load_large_bitmaps_efficiently).
 
 Görüntü çözünürlüğü ne olursa olsun, resim kaynakları görüntüleme uygulamanın bellek Ayak izi önemli ölçüde artırabilirsiniz. Bu nedenle, bunlar yalnızca gerekli ve uygulama artık gerektirdiği hemen sonra serbest bırakılması oluşturulmalıdır.
 

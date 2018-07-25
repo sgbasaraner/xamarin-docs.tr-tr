@@ -1,21 +1,21 @@
 ---
-title: Android kaynak temelleri
+title: Android kaynakları temel bilgileri
 ms.prod: xamarin
 ms.assetid: ED32E7B5-D552-284B-6385-C3EDDCC30A4B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/01/2018
-ms.openlocfilehash: f6be1001e5d3455a94e677f1bb5dc52ca574b873
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 207644f5a5d3d346214ba090dcd450e55fde2657
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30764898"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241324"
 ---
-# <a name="android-resource-basics"></a>Android kaynak temelleri
+# <a name="android-resource-basics"></a>Android kaynakları temel bilgileri
 
-Neredeyse tüm Android uygulamaları, bunları kaynakları çeşit sahip olur; en azından genellikle kullanıcı arabirimi düzenleri XML dosyaları biçiminde sahiptirler. Bir Xamarin.Android uygulaması ilk oluşturulduğunda varsayılan kaynaklar Kurulumu Xamarin.Android proje şablonu tarafından şunlardır:
+Neredeyse tüm Android uygulamaları kaynakları çeşit bunları erişebilir. en az bunlar genellikle kullanıcı arabirimi düzenleri dosyaları XML biçiminde sahiptir. Bir Xamarin.Android uygulaması ilk oluşturulduğunda varsayılan kaynaklar Xamarin.Android projesi şablonu tarafından Kurulum şunlardır:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -27,44 +27,44 @@ Neredeyse tüm Android uygulamaları, bunları kaynakları çeşit sahip olur; e
  
 -----
 
-Varsayılan kaynakları beş dosyaların kaynaklar klasörüne oluşturuldu:
+Varsayılan kaynakları beş dosyaları kaynaklar klasörüne oluşturulmuştur:
 
 -  **Icon.PNG** &ndash; uygulama varsayılan simgesi
 
--  **Main.AXML** &ndash; bir uygulama için varsayılan kullanıcı arabirimi Düzen dosyası. Kullanan Android çalışırken Not **.xml** Xamarin.Android dosya uzantısını kullanır **.axml** dosya uzantısı.
+-  **Main.AXML** &ndash; bir uygulama için varsayılan kullanıcı arabirimi Düzen dosyası. Kullanan Android sırasında Not **.xml** Xamarin.Android dosya uzantısı kullanan **.axml** dosya uzantısı.
 
--  **Strings.xml** &ndash; uygulama yerelleştirme ile yardımcı olmak için bir dize tablosu
+-  **Strings.xml** &ndash; uygulama yerelleştirmesi ile yardımcı olmak için bir dize tablosu
 
--  **AboutResources.txt** &ndash; bu gerekli değildir ve güvenle silinebilir. Yalnızca, kaynak klasörü ve içindeki dosyaların üst düzey bir genel bakış sağlar.
+-  **AboutResources.txt** &ndash; bu gerekli değildir ve güvenli bir şekilde silinebilir. Yalnızca, kaynak klasör ve içindeki dosyaların üst düzey bir genel bakış sağlar.
 
--  **Resource.Designer.cs** &ndash; bu dosyayı otomatik olarak oluşturulur ve Xamarin.Android ve ayrı tutma benzersiz tarafından tutulan kimliğin her kaynağa atanmış. Bu çok benzer ve aynı amaca Java'da yazılmış bir Android uygulaması olurdu R.java dosya adıdır. Xamarin.Android araçları tarafından otomatik olarak oluşturulur ve zaman zaman yeniden oluşturulacak.
+-  **Resource.Designer.cs** &ndash; bu dosya otomatik olarak oluşturulan ve Xamarin.Android ve ayrı tutma benzersiz tarafından tutulan kimliğin her kaynağa atanmış. Bu, çok benzer ve aynı amaca R.java dosyanın Java dilinde yazılmış bir Android uygulaması gerekir. Xamarin.Android araçları tarafından otomatik olarak oluşturulur ve zaman zaman yeniden oluşturulacak.
 
 
 ## <a name="creating-and-accessing-resources"></a>Oluşturma ve kaynaklara erişme
 
-Kaynakları oluşturma, söz konusu kaynak türü için dizine dosya ekleme olarak kadar basittir. Aşağıdaki ekran Almanca yerel ayarlar için dize kaynaklarını projeye eklenen gösterir. Zaman **Strings.xml** dosyasına eklenmişse **yapı eylemi** otomatik olarak ayarlandı **AndroidResource** Xamarin.Android araçları tarafından:
+Kaynakları oluşturma, dosyaları söz konusu kaynak türü için dizine eklemek kadar kolaydır. Aşağıdaki ekran görüntüsünde, Alman yerel ayarlar için dize kaynakları bir projeye eklenen gösterir. Zaman **Strings.xml** dosyasına eklendi **derleme eylemi** otomatik olarak ayarlandığı **AndroidResource** Xamarin.Android araçları tarafından:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-![Derleme eylemi Strings.xml için AndroidResource ayarlamak için](android-resource-basics-images/02-build-action-vs.png)
+![Derleme eylemi Strings.xml AndroidResource için ayarlamak için](android-resource-basics-images/02-build-action-vs.png)
  
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-![Derleme eylemi Strings.xml için AndroidResource ayarlamak için](android-resource-basics-images/02-build-action-xs.png)
+![Derleme eylemi Strings.xml AndroidResource için ayarlamak için](android-resource-basics-images/02-build-action-xs.png)
  
 -----
  
 
-Bu, düzgün şekilde derleyip kaynakları APK dosyasına katıştırma Xamarin.Android araçlar sağlar. Eğer herhangi bir nedenle **yapı eylemi** ayarlanmazsa **Android kaynak**, dosyalar APK sonra dışlanır ve yükleme veya kaynaklara erişmek için her türlü girişim çalışma zamanı hatası ile sonuçlanır ve uygulama kilitleniyor.
+Bu, düzgün bir şekilde derleyin ve kaynakları APK dosyası için ekleme için Xamarin.Android araçlar sağlar. Eğer herhangi bir nedenle **derleme eylemi** ayarlı değil **Android kaynak**, ardından apk'yı dosyalar tutulur ve yüklemek veya kaynaklara erişmek için her türlü girişim bir çalışma zamanı hatasına neden ve Uygulama kilitlenir.
 
-Ayrıca, Android yalnızca küçük harf dosya adları için kaynak öğeleri desteklerken, Xamarin.Android biraz daha forgiving olduğunu dikkate almak önemlidir; büyük ve küçük dosya adları destekleyecektir. Resim adları için kuralı küçük alt çizgi ile ayırıcı olarak kullanmaktır (örneğin, **my\_görüntü\_name.png**). Tire veya boşluk ayırıcı olarak kullanılıyorsa, kaynak adları işlenemiyor unutmayın.
+Ayrıca, Android için kaynak öğeleri yalnızca küçük harf dosya adlarını desteklese de, Xamarin.Android biraz daha fazla forgiving olduğuna dikkat edin önemlidir; Bu, büyük ve küçük harflerin destekleyecektir. Görüntü adları alt çizgi ile küçük ayırıcı olarak kullanılacak kuraldır (örneğin, **my\_görüntü\_name.png**). Ayırıcı olarak tire veya boşluk kullandıysanız kaynak adları işlenemiyor unutmayın.
 
-Kaynakları projeye eklendikten sonra bir uygulamada kullanmak için iki yolu vardır &ndash; program aracılığıyla (içindeki kodu) veya XML dosyalarından.
+Kaynaklar için bir proje eklendikten sonra bunların bir uygulamada kullanmak için iki yolu vardır &ndash; program aracılığıyla (içinde kod) veya XML dosyaları.
 
 
 ## <a name="referencing-resources-programmatically"></a>Program aracılığıyla başvuru kaynakları
 
-Bu dosyaları programlı olarak erişmek için bunlar benzersiz kaynak kimliği atanır. Bu kaynak kimliği adlı özel bir sınıf içinde tanımlanan bir tamsayıdır `Resource`, dosyada bulunan **Resource.designer.cs**, ve şuna benzer:
+Bu dosyaları program aracılığıyla erişmek için bunlar benzersiz kaynak kimliği atanır. Bu kaynak kimliği olarak adlandırılan özel bir sınıf içinde tanımlanan bir tamsayıdır `Resource`, dosyada bulunan **Resource.designer.cs**, ve şuna benzer:
 
 ```csharp
 public partial class Resource
@@ -91,20 +91,20 @@ public partial class Resource
 }
 ```
 
-Her kaynak Kimliğinin kaynak türü için karşılık gelen bir iç içe geçmiş sınıf içinde yer alır. Örneğin, dosyayı **Icon.png** eklenen projeye Xamarin.Android güncelleştirilmiş `Resource` sınıfı, iç içe bir sınıf oluşturma adlı `Drawable` ile sabit bir iç adlı `Icon`.
-Bu dosyayı sağlar **Icon.png** kod başvurulabilir için `Resource.Drawable.Icon`. `Resource` Sınıfı değil el ile düzenlenmesi gerekir, üzerinde yapılan değişiklikleri Xamarin.Android tarafından üzerine yazılacak şekilde.
+Her kaynak Kimliğinin kaynak türü için karşılık gelen bir iç içe geçmiş bir sınıf içinde yer alır. Örneğin, dosyayı **Icon.png** eklenen projeye Xamarin.Android güncelleştirilmiş `Resource` iç içe geçmiş bir sınıf oluşturma sınıfı, adlandırılan `Drawable` ile sabit bir iç adlı `Icon`.
+Böylece, dosyanın **Icon.png** kod başvurulacak `Resource.Drawable.Icon`. `Resource` Sınıfı değil el ile düzenlenmesi gerekir, Xamarin.Android tarafından kendisine yapılan değişikliklerin üzerine yazılacak şekilde.
 
-Program aracılığıyla (kodda kaynakları) başvururken aşağıdaki söz dizimini kullanan kaynaklar sınıf hiyerarşisi erişilebilir:
+Program aracılığıyla (kodda kaynakları) başvururken aşağıdaki söz dizimini kullanan kaynakları sınıf hiyerarşisi erişilebilir:
 
 ```xml
 @[<PackageName>.]Resource.<ResourceType>.<ResourceName>
 ```
 
--  **PackageName** &ndash; kaynak sağlama ve yalnızca paketi ne zaman gerekli diğer paketleri kaynaklardan kullanılmaktadır.
+-  **PackageName** &ndash; kaynak sağlama ve yalnızca paketin ne zaman gerekli kaynakları diğer paketlerden kullanılmaktadır.
 
 -  **ResourceType** &ndash; yukarıda açıklanan kaynak sınıfı içinde iç içe kaynak türü budur.
 
--  **Kaynak adı** &ndash; (uzantısı olmadan) kaynak dosya adı veya bir XML öğesi olan kaynaklar için android: name özniteliği değeri budur.
+-  **Kaynak adı** &ndash; (uzantısı olmadan) kaynağının dosya adı veya bir XML öğesi olan kaynaklar için android: name özniteliğinin değerini budur.
 
 
 ## <a name="referencing-resources-from-xml"></a>XML'den başvuru kaynakları
@@ -115,13 +115,13 @@ Kaynakları bir XML dosyasında aşağıdaki tarafından erişilen özel bir sö
 @[<PackageName>:]<ResourceType>/<ResourceName>.
 ```
 
--  **PackageName** &ndash; kaynak sağlama ve yalnızca paketi ne zaman gerekli diğer paketleri kaynaklardan kullanılmaktadır.
+-  **PackageName** &ndash; kaynak sağlama ve yalnızca paketin ne zaman gerekli kaynakları diğer paketlerden kullanılmaktadır.
 
 -  **ResourceType** &ndash; kaynak sınıfı içinde iç içe kaynak türü budur.
 
--  **Kaynak adı** &ndash; bu kaynağın dosya adıdır (*olmadan* dosya türü uzantısı) veya değerini `android:name` özniteliği için bir XML öğesi olan kaynaklar.
+-  **Kaynak adı** &ndash; bu dosya kaynak adını, (*olmadan* dosya türü uzantısı) ya da değerini `android:name` bir XML öğesi olan kaynaklar için özniteliği.
 
-Örneğin bir düzen dosyanın içeriğini **Main.axml**, aşağıdaki gibidir:
+Örneğin bir düzen dosyası içeriğini **Main.axml**, aşağıdaki gibidir:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -136,8 +136,8 @@ Kaynakları bir XML dosyasında aşağıdaki tarafından erişilen özel bir sö
 </LinearLayout>
 ```
 
-Bu örnek sahip bir [ `ImageView` ](https://developer.xamarin.com/recipes/android/controls/imageview) adlı drawable bir kaynağı gerektiren **bayrağı**. `ImageView` Sahip kendi `src` özniteliğini **@drawable/flag**. Etkinlik başladığında, Android dizini içinde görüneceğini **kaynak/Drawable** adlı bir dosya için **flag.png** (dosya uzantısı gibi başka bir görüntü biçimi olabilir **flag.jpg**) Bu dosyayı yüklemek ve içinde görüntülemek `ImageView`.
-Bu uygulamayı çalıştırdığınızda, aşağıdaki resimde şöyle görünür:
+Bu örneğin bir [ `ImageView` ](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/imageview) adlı drawable kaynak gerektiren **bayrağı**. `ImageView` Sahip kendi `src` özniteliğini **@drawable/flag**. Android etkinliği başlatıldığında, dizinin içinde görüneceğini **kaynak/Drawable** adlı bir dosya için **flag.png** (dosya uzantısı gibi başka bir görüntü biçimi olabilir **flag.jpg**) Bu dosyayı yüklemek ve görüntüleyin `ImageView`.
+Bu uygulamayı çalıştırdığınızda, aşağıdaki görüntüde şöyle görünür:
 
 ![Yerelleştirilmiş ImageView](android-resource-basics-images/03-localized-screenshot.png)
 

@@ -1,37 +1,37 @@
 ---
 title: İOS özel biçimlendirme ekleme
-description: Bu makalede nasıl Xamarin.Forms özel Oluşturucu kullanmadan iOS özel görünüm ayarlanacağı açıklanmaktadır.
+description: Bu makalede, iOS özel görünüşünü Xamarin.Forms özel Oluşturucu kullanmadan ayarlamak açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: CE50E207-D092-4D88-8439-1B51F178E7ED
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/29/2016
-ms.openlocfilehash: 74a3cdc340cb09e8adf15ed0dd09315c985d18b5
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 3b8a440617dedfbe23f869e865b3cedae21d6c5b
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243538"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241383"
 ---
 # <a name="adding-ios-specific-formatting"></a>İOS özel biçimlendirme ekleme
 
-İOS özel ayarlamak için tek yönlü biçimlendirme oluşturmaktır bir [özel Oluşturucu](~/xamarin-forms/app-fundamentals/custom-renderer/index.md) bir denetim ve kümesi platforma özgü stilleri ve her platform için renk.
+İOS özel ayarlamak için tek yönlü biçimlendirme oluşturmaktır bir [özel Oluşturucu](~/xamarin-forms/app-fundamentals/custom-renderer/index.md) için Denetim ve kümesi platforma özgü stili ve renklerini her platform için.
 
-Xamarin.Forms iOS uygulamanızın görünüm dahil şeklini denetlemek için diğer seçenekleri:
+Xamarin.Forms iOS uygulamanızın görünümünü biçimini denetlemek için diğer seçenekler şunlardır:
 
-* Yapılandırma seçenekleri görüntülemek [ **Info.plist**](#info-plist)
-* Aracılığıyla denetim stilleri ayarlama [ `UIAppearance` API](#uiappearance)
+* Yapılandırma seçenekleri görüntüleme [ **Info.plist**](#info-plist)
+* Denetim stilleri aracılığıyla ayarlama [ `UIAppearance` API](#uiappearance)
 
-Bu alternatifleri aşağıda ele alınmıştır.
+Bu seçenekler aşağıda ele alınmıştır.
 
 <a name="info-plist"/>
 
 ## <a name="customizing-infoplist"></a>Info.plist özelleştirme
 
-**Info.plist** dosyası nasıl (ve olup olmadığı) durum çubuğu gösterildiği gibi iOS uygulamanın renderering bazı yönlerini yapılandırmalarını imkan tanır.
+**Info.plist** dosyasının nasıl (ve olup olmadığı) durum çubuğunda gösterilen gibi bir iOS uygulamasının renderering, bazı yönlerini yapılandırmalarını izin verir.
 
-Örneğin, [Yapılacaklar örnek](https://developer.xamarin.com/samples/xamarin-forms/Todo/) tüm platformlarda gezinti çubuğu ve metin rengi ayarlamak için aşağıdaki kodu kullanır:
+Örneğin, [Yapılacaklar örneği](https://developer.xamarin.com/samples/xamarin-forms/Todo/) tüm platformlarda gezinti çubuğu rengi ve metin rengini ayarlamak için aşağıdaki kodu kullanır:
 
 ```csharp
 var nav = new NavigationPage (new TodoListPage ());
@@ -39,15 +39,15 @@ nav.BarBackgroundColor = Color.FromHex("91CA47");
 nav.BarTextColor = Color.White;
 ```
 
-Sonuç ekran parçacığında gösterilir. Durum çubuğu öğeleri siyah olduğuna dikkat edin (bir platforma özgü özellik olduğundan bu Xamarin.Forms içinde ayarlanamaz).
+Ekran aşağıdaki kod parçacığında sonuçları gösterilmektedir. Durum çubuğu öğeleri siyah olduğuna dikkat edin (platforma özgü bir özellik olduğundan bu Xamarin.Forms içinde ayarlanamaz).
 
 ![](theme-images/status-default-sml.png "iOS Tema oluşturma")
 
-İdeal olarak durum çubuğu ayrıca beyaz olacaktır - bir şey biz doğrudan iOS projesinde gerçekleştirebilirsiniz. Aşağıdaki girdileri eklemek **Info.plist** beyaz olması için durum çubuğunda zorlamak için:
+İdeal olarak durum çubuğunu da beyaz olacaktır - sorun biz doğrudan iOS projesinde gerçekleştirebilirsiniz. Aşağıdaki girdileri ekleme **Info.plist** güvenilir listeye alınması için durum çubuğunu zorlamak için:
 
 ![](theme-images/info-plist.png "iOS Info.plist girişleri")
 
-veya karşılık gelen düzenleme **Info.plist** dosyasını doğrudan içerecek şekilde:
+veya karşılık gelen düzenleme **Info.plist** doğrudan dahil edilecek dosyası:
 
 ```xml
 <key>UIStatusBarStyle</key>
@@ -56,7 +56,7 @@ veya karşılık gelen düzenleme **Info.plist** dosyasını doğrudan içerecek
 <false/>
 ```
 
-Uygulamayı çalıştırdığınızda, gezinti çubuğunda yeşil ve onun metin (Xamarin.Forms biçimlendirme nedeniyle) beyaz artık *ve* durum çubuğu da iOS özel yapılandırma beyaz teşekkür metindir:
+Şimdi uygulamayı çalıştırdığınızda gezinti çubuğunda yeşil ve metin (Xamarin.Forms biçimlendirme nedeniyle) beyaz *ve* durum çubuğu metni ayrıca iOS özel yapılandırma beyaz teşekkür olan:
 
 ![](theme-images/status-white-sml.png "iOS Tema oluşturma")
 
@@ -66,9 +66,9 @@ Uygulamayı çalıştırdığınızda, gezinti çubuğunda yeşil ve onun metin 
 
 [ `UIAppearance` API](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md) fazla iOS denetim görsel özelliklerini ayarlamak için kullanılan *olmadan* oluşturmak zorunda kalmadan bir [özel Oluşturucu](~/xamarin-forms/app-fundamentals/custom-renderer/index.md).
 
-Tek satırlık bir kod ekleme **AppDelegate.cs** `FinishedLaunching` yöntemi kullanarak belirtilen tür, tüm denetimler stil kendi `Appearance` özelliği. Aşağıdaki kod iki örnek - Genel sekmesi stil oluşturma içeren çubuk ve geçiş denetimi:
+Tek bir satır kod ekleyerek **AppDelegate.cs** `FinishedLaunching` yöntemi kullanarak bir belirtilen türle tüm denetimleri stilini belirlemek kendi `Appearance` özelliği. Aşağıdaki kodu içeren iki örnek - Genel sekmesi stil çubuk ve geçiş denetimi:
 
-**AppDelegate.cs** iOS projesi içinde
+**AppDelegate.cs** iOS projesi
 
 ```csharp
 public override bool FinishedLaunching (UIApplication app, NSDictionary options)
@@ -88,39 +88,39 @@ public override bool FinishedLaunching (UIApplication app, NSDictionary options)
 
 Varsayılan olarak, seçili Sekme çubuğu simgesinde bir [ `TabbedPage` ](~/xamarin-forms/app-fundamentals/navigation/tabbed-page.md) mavi olacaktır:
 
-![](theme-images/tabbar-default.png "Varsayılan iOS TabbedPage sekmesini çubuğu simgesine")
+![](theme-images/tabbar-default.png "Varsayılan iOS TabbedPage Sekme çubuğu simgesi")
 
-Bu davranışı değiştirmek için ayarlanmış `UITabBar.Appearance` özelliği:
+Bu davranışı değiştirmek için Ayarla `UITabBar.Appearance` özelliği:
 
 ```csharp
 UITabBar.Appearance.SelectedImageTintColor = UIColor.FromRGB(0x91, 0xCA, 0x47); // green
 ```
 
-Bu, seçili sekme yeşil olması neden olur:
+Bu, seçilen sekmenin yeşil neden olur:
 
-![](theme-images/tabbar-custom.png "İOS TabbedPage sekmesini çubuğu simgesinde yeşil")
+![](theme-images/tabbar-custom.png "İOS Sekme çubuğu TabbedPage simgesinde yeşil")
 
-Bu API kullanarak Xamarin.Forms görünüşünü özelleştirme sağlar `TabbedPage` çok az kod ile iOS. Başvurmak [özelleştirme sekmeleri tarif](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/ios/customize-tabs/) sekme için belirli bir yazı tipi ayarlamak için özel Oluşturucu kullanma hakkında daha fazla bilgi.
+Bu API kullanarak Xamarin.Forms özelleştirme sağlar `TabbedPage` iOS çok az kod ile. Başvurmak [sekmeleri özelleştirme tarif](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/iOS/customize-tabs) belirli bir yazı tipi için sekmesinde ayarlamak için özel Oluşturucu kullanma hakkında daha fazla bilgi.
 
 ### <a name="uiswitch"></a>UISwitch
 
-`Switch` Denetim kolayca biçimlendirilebilir başka bir örnek verilmiştir:
+`Switch` Denetimi, kolayca biçimlendirilebilir başka bir örnek verilmiştir:
 
 ```csharp
 UISwitch.Appearance.OnTintColor = UIColor.FromRGB(0x91, 0xCA, 0x47); // green
 ```
 
-Bu iki Ekran yakalamalarını varsayılan Göster `UISwitch` solda ve özelleştirilmiş sürüm denetimi (ayar `Appearance`) içinde sağdaki [Yapılacaklar örnek](https://developer.xamarin.com/samples/xamarin-forms/Todo/):
+Bu iki ekran görüntüsü almayı varsayılan Göster `UISwitch` sola ve özelleştirilmiş sürümü üzerinde denetim (ayar `Appearance`) sağdaki [Yapılacaklar örneği](https://developer.xamarin.com/samples/xamarin-forms/Todo/):
 
-![](theme-images/switch-default.png "Varsayılan UISwitch rengi") ![ ] (theme-images/switch-custom.png "UISwitch renk özelleştirilmiş")
+![](theme-images/switch-default.png "Varsayılan UISwitch rengi") ![ ] (theme-images/switch-custom.png "özelleştirilmiş UISwitch rengi")
 
 ### <a name="other-controls"></a>Diğer denetimleri
 
-Birçok iOS kullanıcı arabirimi denetimlerini kendi varsayılan renkler ve kullanılarak ayarlanan diğer öznitelikleri olabilir [ `UIAppearance` API](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md).
+Çok sayıda iOS kullanıcı arabirimi denetimleri, kendi varsayılan renkleri ve diğer özniteliklerini kullanarak olabilir [ `UIAppearance` API](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md).
 
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [UIAppearance](~/ios/user-interface/ios-ui/introduction-to-the-appearance-api.md)
-- [Sekmeleri özelleştirme](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/ios/customize-tabs/)
+- [Sekmeleri özelleştirme](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/iOS/customize-tabs)

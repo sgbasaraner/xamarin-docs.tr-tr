@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 12/09/2015
-ms.openlocfilehash: f6ca8f0900c8bc325cc49a7484dabe5bf2534257
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 7f0e1c27f7d6a62dc43ac447c4f796d685a6cd91
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38999043"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241217"
 ---
 # <a name="device-orientation"></a>Cihaz yönü
 
@@ -91,7 +91,7 @@ Evrensel Windows Platformu (UWP üzerinde), desteklenen yönleri ayarlanmış **
 
 ## <a name="reacting-to-changes-in-orientation"></a>Yönlendirme değişikliklere tepki verme
 
-Xamarin.Forms, uygulamanızı paylaşılan kod yönünü değişiklikleri bildiren tüm yerel olaylarını sunmaz. Ancak, `SizeChanged` olayı `Page` tetiklenen genişliği veya yüksekliği `Page` değişiklikler. Zaman genişliğini `Page` yüksekliği büyükse yatay modda cihazdır. Daha fazla bilgi için [ekran yönlendirmeyi temel alarak bir görüntüyü](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/controls/screen-orientation/).
+Xamarin.Forms, uygulamanızı paylaşılan kod yönünü değişiklikleri bildiren tüm yerel olaylarını sunmaz. Ancak, `SizeChanged` olayı `Page` tetiklenen genişliği veya yüksekliği `Page` değişiklikler. Zaman genişliğini `Page` yüksekliği büyükse yatay modda cihazdır. Daha fazla bilgi için [ekran yönlendirmeyi temel alarak bir görüntüyü](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation).
 
 > [!NOTE]
 > Paylaşılan kod yönlendirme değişikliklerin bildirimleri almak için bir var olan ve ücretsiz NuGet paketi yoktur. Bkz: [GitHub deposunu](https://github.com/aliozgur/Xamarin.Plugins/tree/master/DeviceOrientation) daha fazla bilgi için.
@@ -475,4 +475,4 @@ protected override void OnSizeAllocated (double width, double height){
 - [Düzen (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Layout/)
 - [BusinessTumble örneği (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/BusinessTumble/)
 - [Esnek Düzen (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ResponsiveLayout)
-- [Ekran yönünü üzerinde temel alan bir görüntü görüntüleme](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/controls/screen-orientation/)
+- [Ekran yönünü üzerinde temel alan bir görüntü görüntüleme](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/screen-orientation)

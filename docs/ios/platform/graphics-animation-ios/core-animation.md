@@ -1,55 +1,55 @@
 ---
-title: Xamarin.iOS çekirdek animasyonda
-description: Bu makalede nasıl doğrudan alt düzey animasyon denetimi kullanmak için yüksek performanslı, Uıkit, akıcı animasyonları yanı sıra sağladığını gösteren çekirdek animasyon çerçevesi inceler.
+title: Xamarin.iOS temel animasyon
+description: Bu makalede nasıl doğrudan alt düzey animasyon denetimi kullanmak için yüksek performanslı, yanı sıra, Uıkit içinde akıcı animasyon tanıdığını gösteren çekirdek animasyon çerçevesi inceler.
 ms.prod: xamarin
 ms.assetid: D4744147-FACB-415B-8155-3A6B3C35E527
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 5cc6019ed148b870e38659eb30ac7f2738481a50
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 3d26e58822385c20f3c08d0b75ba468467c2c9b1
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786826"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242138"
 ---
-# <a name="core-animation-in-xamarinios"></a>Xamarin.iOS çekirdek animasyonda
+# <a name="core-animation-in-xamarinios"></a>Xamarin.iOS temel animasyon
 
-_Bu makalede nasıl doğrudan alt düzey animasyon denetimi kullanmak için yüksek performanslı, Uıkit, akıcı animasyonları yanı sıra sağladığını gösteren çekirdek animasyon çerçevesi inceler._
+_Bu makalede nasıl doğrudan alt düzey animasyon denetimi kullanmak için yüksek performanslı, yanı sıra, Uıkit içinde akıcı animasyon tanıdığını gösteren çekirdek animasyon çerçevesi inceler._
 
-iOS içeren [ *çekirdek animasyon* ](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/CoreAnimation_guide/Introduction/Introduction.html) uygulamanızda görünümler için animasyon desteği sağlamak için.
-Tüm tabloları kaydırma ve farklı görünümleri arasında geçirmeyi gibi iOS son derece kesintisiz animasyonları yanı sıra bunların çekirdek animasyonu dahili dayandığından yaparlar gerçekleştirin.
+iOS içerir [ *çekirdek animasyon* ](https://developer.apple.com/library/ios/documentation/Cocoa/Conceptual/CoreAnimation_guide/Introduction/Introduction.html) uygulamanızı görünümlerde animasyon desteği sağlamak için.
+Tüm iOS gibi tablodan kaydırma ve farklı görünümleri arasında çekerek yedekliliğe kesintisiz animasyonlarda yanı sıra çekirdek animasyonu dahili olarak bağımlı olduğundan yaptıkları gerçekleştirin.
 
-Çekirdek animasyon ve çekirdek grafikleri çerçeveleri güzel, oluşturmak için birlikte çalışabilir animasyonlu 2B grafik. Aslında çekirdek animasyon inanılmaz, sinematik deneyimlerini oluşturmada 2B grafik 3B uzaydaki bile da dönüştürebilirsiniz. Bu makalenin kapsamı dışındadır 3B olmasına rağmen ancak gerçek 3B grafik oluşturmak için bir şey OpenGL ES gibi ya da oyunlar Aç MonoGame gibi bir API için kullanmanız gerekir.
+Temel animasyon ve temel grafikler çerçeveleri göz alıcı, oluşturmaya birlikte çalışabilir animasyonlu 2B grafikler. Aslında çekirdek animasyon harika, sinematik deneyimler oluşturma 3B alanda 2B grafikler bile da dönüştürebilirsiniz. 3B bu makalenin kapsamı dışında olsa da ancak gerçek 3B grafik oluşturmak için bir şey MonoGame gibi bir API için oyunlar etkinleştirin ya da OpenGL ES gibi kullanmanız gerekir.
 
 <a name="Using_Core_Animation" />
 
-## <a name="core-animation"></a>Çekirdek animasyon
+## <a name="core-animation"></a>Temel animasyon
 
-iOS çekirdek animasyon çerçeve görünümleri arasında geçiş, menüler kayan ve birkaçıdır etkileri kaydırma gibi animasyon efektlerini oluşturmak için kullanılır. Animasyon ile çalışmak için iki yolu vardır:
+iOS temel animasyon çerçeve görünümler arasında geçiş, menüler kayan ve dizileri etkileri kaydırma gibi animasyon efektleri oluşturmak için kullanılır. Animasyon ile çalışmak için iki yolu vardır:
 
-- [Uıkit aracılığıyla](#Using_UIKit_Animation), görünüm tabanlı animasyonları ve bunun yanı sıra denetleyicileri arasında animasyonlu geçişler içerir.
-- [Çekirdek animasyon aracılığıyla](#Using_Core_Animation), doğrudan geçirmiş denetimi için izin verme katmanları.
+- [Uıkit aracılığıyla](#Using_UIKit_Animation), görünüm tabanlı animasyonlar yanı sıra denetleyiciler arasındaki animasyonlu geçişlerini içerir.
+- [Temel animasyon aracılığıyla](#Using_Core_Animation), doğrudan daha ayrıntılı denetim için izin verme katmanları.
 
 <a name="Using_UIKit_Animation" />
 
 ## <a name="using-uikit-animation"></a>Uıkit animasyon kullanma
 
-Uıkit animasyon bir uygulama eklemek kolaylaştıran çeşitli özellikler sunar. Çekirdek animasyon dahili kullansa da, yalnızca görünümleri ve denetleyicilerini çalışması için onu hemen soyutlar.
+Uıkit animasyon bir uygulamaya eklemek kolaylaştıran birçok özellik sunar. Temel animasyon dahili olarak kullanılıyor olsa da, yalnızca görünümleri ve denetleyicileri ile çalışmak için onu dengelediği.
 
-Bu bölümde dahil olmak üzere Uıkit animasyon özelliklerini ele alınmıştır:
+Bu bölümde dahil olmak üzere Uıkit animasyon özellikleri açıklanmaktadır:
 
--  Denetleyicileri arasındaki geçişleri
--  Görünümler arasında geçişler
--  Görünüm özelliği animasyon
+-  Denetleyiciler arasındaki geçişleri
+-  Görünümler arasında geçiş
+-  Özellik animasyon görüntüle
 
 
-### <a name="view-controller-transitions"></a>Görünüm denetleyicisini geçişleri
+### <a name="view-controller-transitions"></a>Görünüm geçişlerini görüntüleme
 
- `UIViewController` Görünüm denetleyicileri üzerinden arasında geçiş için yerleşik destek sağlar `PresentViewController` yöntemi. Kullanırken `PresentViewController`, ikinci denetleyici geçişi isteğe bağlı olarak animasyon uygulanabilir.
+ `UIViewController` Görünüm denetleyicileri üzerinden arasında geçiş için yerleşik destek sağlar `PresentViewController` yöntemi. Kullanırken `PresentViewController`, ikinci denetleyici geçiş isteğe bağlı olarak animasyonu oluşturulabilen.
 
-Örneğin, burada bir düğme ilk denetleyicideki temas çağırır iki denetleyicileri uygulamayla göz önünde bulundurun `PresentViewController` ikinci bir denetleyici görüntülemek için. Hangi geçiş animasyon ikinci denetleyici göstermek için kullanılan denetlemek için yalnızca ayarlamak kendi [ `ModalTransitionStyle` ](https://developer.xamarin.com/api/type/UIKit.UIModalTransitionStyle/) aşağıda gösterildiği gibi özelliği:
+Örneğin, iki denetleyicileriyle burada ilk denetleyicisi de bir düğme temas çağıran bir uygulama düşünün `PresentViewController` ikinci bir denetleyici görüntülenecek. İkinci denetleyici göstermek için kullanılan hangi geçiş animasyon denetlemek için ayarlamanız yeterlidir, [ `ModalTransitionStyle` ](https://developer.xamarin.com/api/type/UIKit.UIModalTransitionStyle/) aşağıda gösterildiği gibi özelliği:
 
 ```csharp
 SecondViewController vc2 = new SecondViewController {
@@ -57,28 +57,28 @@ SecondViewController vc2 = new SecondViewController {
 };
 ```
 
-Bu durumda bir `PartialCurl` animasyon kullanılır, birkaç diğerleri de dahil olmak üzere, kullanılabilir, ancak:
+Bu durumda bir `PartialCurl` animasyon kullanılır, diğerleri birçok dahil olmak üzere, kullanılabilir, ancak:
 
--  `CoverVertical` – Slayt yukarı ekranın en altındaki
--  `CrossDissolve` – Eski görünümü yavaşça & Yeni Görünüm belirerek girer
+-  `CoverVertical` – Slaytları ekranın alt
+-  `CrossDissolve` – Eski görünüm yavaşça & Yeni Görünüm belirerek girer
 -  `FlipHorizontal` -Sağdan sola Yatay Çevir. İşten çıkarma üzerinde soldan sağa geçiş çevirir.
 
 
-Geçiş animasyon geçmesini `true` ikinci bağımsız değişkeni olarak `PresentViewController`:
+Geçiş animasyon eklemek gibi geçirmek `true` ikinci bağımsız değişkeni olarak `PresentViewController`:
 
 ```csharp
 PresentViewController (vc2, true, null);
 ```
 
-Geçişin nasıl göründüğünü aşağıdaki ekran gösterilir `PartialCurl` durumu:
+Geçişi nasıl göründüğünü aşağıdaki ekran görüntüsünde gösterilmektedir `PartialCurl` çalışması:
 
  ![](core-animation-images/06-view-transitions.png "Bu ekran PartialCurl geçiş gösterir")
 
-### <a name="view-transitions"></a>Görünüm geçişleri
+### <a name="view-transitions"></a>Görünüm geçişlerini
 
-Denetleyiciler arasındaki geçişleri yanı sıra Uıkit hareketlendirme geçişler için başka bir görünüm takas görünümler arasında da destekler.
+Denetleyiciler arasındaki geçişler yanı sıra Uıkit takas etmek için başka bir görünüm için görünüm arasında hareketlendirme geçişleri de destekler.
 
-Örneğin, bir denetleyicisiyle yaşadığınız deyin `UIImageView`, resimdeki dokunma ikinci bir yere görüntülenmelidir `UIImageView`. Görüntü animasyon için görünümün değerlendirmesi ikinci görüntü görünümüne geçiş çağırmak kadar kolaydır `UIView.Transition`, onu `toView` ve `fromView` aşağıda gösterildiği gibi:
+Denetleyicili deyin olduğu gibi `UIImageView`, ikinci bir görüntüye dokunma burada görüntülenmelidir `UIImageView`. Görüntü animasyon uygulamak için ikinci resim görünümüne geçiş değerlendirmesi görünümünün çağırmak kadar basittir `UIView.Transition`, iletmeden `toView` ve `fromView` aşağıda gösterildiği gibi:
 
 ```csharp
 UIView.Transition (
@@ -90,25 +90,25 @@ UIView.Transition (
     completion: () => { Console.WriteLine ("transition complete"); });
 ```
 
-`UIView.Transition` Ayrıca alır bir `duration` ne kadar süreyle animasyon çalışır, denetimleri parametre yanı [ `options` ](https://developer.xamarin.com/api/type/UIKit.UIViewAnimationOptions/) ve hareket hızı işlevi animasyon gibi şeyler belirtmek için. Buna ek olarak, animasyon tamamlandığında çağrılacak bir tamamlanma işleyicisini belirtebilirsiniz.
+`UIView.Transition` Ayrıca alır bir `duration` animasyonun ne kadar süre çalıştığında, denetimleri parametre olarak [ `options` ](https://developer.xamarin.com/api/type/UIKit.UIViewAnimationOptions/) animasyon gibi şeyleri ve Hızlandırma işlevini belirtmek için. Ayrıca animasyon tamamlandığında çağrılacak bir tamamlama işleyicisi da belirtebilirsiniz.
 
-Ekran görüntüsünün altında göster görüntü arasında animasyonlu geçiş ne zaman görünümleri `TransitionFlipFromTop` kullanılır:
+Görüntü arasındaki animasyonlu geçiş ne zaman show aşağıdaki ekran görüntüsünde görünümleri `TransitionFlipFromTop` kullanılır:
 
- ![](core-animation-images/07-animated-transition.png "Bu ekran TransitionFlipFromTop kullanıldığında görüntü görünümler arasında animasyonlu geçiş gösterir")
+ ![](core-animation-images/07-animated-transition.png "Bu ekran animasyonlu TransitionFlipFromTop kullanıldığında görüntü görünüm arasında geçiş gösterir")
 
 ### <a name="view-property-animations"></a>Görünüm özellik animasyonları
 
-Uıkit destekleyen üzerinde çeşitli özellikler animasyon `UIView` ücretsiz olarak dahil olmak üzere sınıfı:
+Uıkit destekleyen çeşitli özellikler üzerinde animasyon `UIView` ücretsiz olarak dahil olmak üzere sınıfı:
 
 -  Çerçeve
 -  Sınırları
 -  Merkez
--  Alfa
+-  alfa
 -  Dönüştürme
 -  Renk
 
 
-Özellik değişiklikleri belirterek animasyonlarına örtük olarak gerçekleşecek bir `NSAction` temsilci statik olarak geçirilen `UIView.Animate` yöntemi. Örneğin, aşağıdaki kodu orta noktası canlandırır bir `UIImageView`:
+Özellik değişiklikleri belirterek animasyonlarına örtük olarak gerçekleşecek bir `NSAction` temsilci statik olarak geçirilen `UIView.Animate` yöntemi. Örneğin, aşağıdaki kod merkez noktasını canlandırır bir `UIImageView`:
 
 ```csharp
 pt = imgView.Center;
@@ -126,29 +126,29 @@ UIView.Animate (
 );
 ```
 
-Bu bir görüntünün geri ve İleri ekran üstte ortasının içinde aşağıda gösterildiği gibi olur:
+Bu bir görüntüyü geri ve İleri ekranın üst kısmında animasyon ekleme aşağıda gösterildiği gibi olur:
 
- ![](core-animation-images/08-animate-center.png "Bir görüntü ve geriye ekranın üst kısmında çıktısı olarak animasyon ekleme")
+ ![](core-animation-images/08-animate-center.png "Bir görüntüyü geri ve İleri ekranın üst kısmında çıktısı olarak animasyon ekleme")
 
-İle `Transition` yöntemi, `Animate` birlikte hareket hızı işlevi ayarlamak süre sağlar. Bu örnek ayrıca kullanılan `UIViewAnimationOptions.Autoreverse` değerinden ilk birini animasyon animasyonun seçeneği. Ancak, bu kod ayrıca ayarlar `Center` ilk değerini tamamlama işleyicisinde dön. Animasyonun özellik değerlerini zamanla enterpolasyonla olsa da, gerçek model özelliğinin her zaman ayarlanmış son değer değeridir. Bu örnekte, değerin bir sağ tarafında yakın değerlendirmesi noktasıdır. Ayarlamadan `Center` başlangıç noktasına olduğu yere nedeniyle animasyon tamamlandıktan `Autoreverse` animasyon tamamlandıktan sonra ayarlanan, görüntünün geri sağ tarafında aşağıda gösterildiği gibi ek:
+Olduğu gibi `Transition` yöntemi `Animate` birlikte hızlandırma işlevini ayarlamak süre sağlar. Bu örnek ayrıca kullanılan `UIViewAnimationOptions.Autoreverse` seçeneği, ilk bir değerden canlandırmak animasyon neden olur. Ancak, bu kod ayrıca ayarlar `Center` ilk değeriyle bir tamamlama işleyicisi dönün. Animasyonun özellik değerlerini zamanla ilişkilendirme, ancak gerçek model özelliğinin her zaman ayarlanan son değeri değerdir. Bu örnekte, bir noktasını sağ tarafına yakın değerlendirmesi bir değerdir. Ayarlamadan `Center` başlangıç noktasına olduğu yere nedeniyle animasyonun tamamlandığı `Autoreverse` animasyon tamamlandıktan sonra ayarlanan, görüntünün geri sağ aşağıda gösterildiği gibi ek bileşen:
 
- ![](core-animation-images/09-animation-complete.png "Animasyon tamamlandıktan sonra ilk noktasına merkezi ayarlamadan görüntünün geri sağ tarafında Daya")
+ ![](core-animation-images/09-animation-complete.png "Animasyon tamamlandıktan sonra başlangıç noktasına merkezi ayarlamadan görüntü geri sağ Yasla")
 
-## <a name="using-core-animation"></a>Çekirdek animasyon kullanma
+## <a name="using-core-animation"></a>Temel animasyon kullanma
 
- `UIView` animasyon yeteneğinin çok izin ve uygulama kolaylığı nedeniyle mümkünse kullanılmalıdır. Daha önce belirtildiği gibi UIView animasyonları çekirdek animasyon çerçevesi kullanın. Ancak, bazı şeyleri ile yapılamaz `UIView` bir görünümle animasyonlu ek özellikler animasyonu veya doğrusal olmayan bir yol boyunca enterpolasyonla gibi animasyonları. Daha hassas denetim ihtiyaç duyacağınız bu gibi durumlarda çekirdek animasyon doğrudan de kullanılabilir.
+ `UIView` animasyonları çok sayıda özellik izin ve mümkünse kolay uygulama nedeniyle kullanılmalıdır. Daha önce bahsedildiği gibi Uıview animasyonları çekirdek animasyon çerçevesi kullanın. Ancak, bazı şeyler ile yapılamaz `UIView` animasyonları olan bir görünümü hareketlendirilemeyebilir ek özellikleri veya doğrusal olmayan bir yol boyunca ilişkilendirme gibi. Böyle durumlarda, daha hassas bir denetim gereken çekirdek animasyon doğrudan de kullanılabilir.
 
 ### <a name="layers"></a>Katmanları
 
-Çekirdek animasyon ile çalışırken, animasyon aracılığıyla gerçekleşir *katmanları*, türü olan `CALayer`. Yoktur, bir katman hiyerarşisi çok hiyerarşisini görüntüleme gibi bir katman bir görünüme kavramsal olarak benzerdir. Aslında, görünümler, kullanıcı etkileşimi için destek ekleyen görünümüyle Katmanlar yedekleyin. Görünümün aracılığıyla herhangi bir görünüm katmanı erişebilirsiniz `Layer` özelliği. Bağlam aslında, kullanılan `Draw` yöntemi `UIView` katmandan gerçekte oluşturulur. Dahili olarak, yedekleme katman bir `UIView` sahip ne çağırır olan görünüme kendisi, kendi temsilci `Draw`. İçin çizim sırasında bunu bir `UIView`, aslında kendi katmana çizim.
+Temel animasyon ile çalışırken, animasyon aracılığıyla gerçekleşir *katmanları*, türü olan `CALayer`. Yoktur, bir katman hiyerarşisi çok hiyerarşisini görüntüle gibi bir katman görünümüne kavramsal olarak benzer. Aslında, görünümler, kullanıcı etkileşimi için destek ekleme görünümü katmanları yedekleyin. Herhangi bir görünümü görünümün aracılığıyla katmanı erişebileceğiniz `Layer` özelliği. Bağlam, kullanılan `Draw` yöntemi `UIView` katmandan gerçekten oluşturulur. Dahili olarak, yedekleme katmanı bir `UIView` sahip ne çağrıları görünüm için kendisini ayarlamak, temsilci `Draw`. Çizim için bunu bir `UIView`, kendi katmanına gerçekten çizim.
 
-Katman animasyonları örtük veya açık olabilir. Örtük animasyonları tanımlayıcı. Yalnızca katman özelliklerini değiştirmeniz gerekir bildirme ve animasyon yalnızca çalışır. Açık bir animasyon, diğer yandan bir katmana eklenen bir animasyon sınıfı aracılığıyla oluşturulur. Açık bir animasyon animasyonun nasıl oluşturulduğunu üzerinde ek denetim sağlar. Örtük ve açık animasyonları daha derinlemesine içine aşağıdaki bölümleri inceleyin.
+Katman animasyonları, örtük veya açık olabilir. Örtük animasyonları tanımlayıcı. Yalnızca katman özelliklerini değiştirmeniz gerekir bildirmek ve animasyon yalnızca çalışır. Açık animasyonları, diğer yandan bir katmana eklenen bir animasyon sınıfı aracılığıyla oluşturulur. Açık animasyonları animasyon nasıl oluşturulduğunu üzerinde ek denetim sağlar. Örtük ve açık animasyonları daha derinlemesine içine aşağıdaki bölümleri inceleyin.
 
 ### <a name="implicit-animations"></a>Örtük animasyonları
 
-Bir katman özelliklerini animasyon bir örtük animasyonun yoludur. `UIView` animasyon örtük animasyonları oluşturun. Ancak, bir katman de karşı doğrudan örtük animasyonları oluşturabilirsiniz.
+Bir katman özelliklerine animasyon ekleme yollarından biri örtük bir animasyon ' dir. `UIView` animasyonları örtük animasyonlar oluşturun. Ancak, doğrudan bir katman de karşı örtük animasyonlar oluşturabilirsiniz.
 
-Örneğin, aşağıdaki kod bir katmanın ayarlar `Contents` bir görüntüden kenarlık genişliğini ve rengini ayarlar ve bir görünümün katman alt katman katmanı ekler:
+Örneğin, aşağıdaki kod bir katmanın ayarlar `Contents` bir görüntüden bir kenarlık genişliği ve rengine ayarlar ve bir görünüm katmanı alt katman katmanı ekler:
 
 ```csharp
 public override void ViewDidLoad ()
@@ -167,7 +167,7 @@ public override void ViewDidLoad ()
 }
 ```
 
-Katman için örtük bir animasyon eklemek için yalnızca özelliği değişiklikleri sarmalamak bir `CATransaction`. Bu gibi bir görünüm animasyon ile canlandırılabilir olmayacaktır özellikleri sağlar `BorderWidth` ve `BorderColor` aşağıda gösterildiği gibi:
+Katman için örtük bir animasyon eklemek için basitçe özellik değişiklikleri kaydırma bir `CATransaction`. Bu gibi bir görünüm animasyonla canlandırılabilir olmazdı özellikleri sağlayan `BorderWidth` ve `BorderColor` aşağıda gösterildiği gibi:
 
 ```csharp
 public override void ViewDidAppear (bool animated)
@@ -183,21 +183,21 @@ public override void ViewDidAppear (bool animated)
 }
 ```
 
-Bu kod ayrıca katmanın canlandırır `Position`, superlayer's koordinatları üst soldan ölçülen katmanın bağlantı noktasının konumunu olduğu. Bir katman bağlantı noktasını katmanın koordinat sistemi içinde normalleştirilmiş bir noktasıdır.
+Bu kod ayrıca katmanın canlandırır `Position`, katmanın demir atma noktası ölçülen superlayer'ın koordinatları üst soldan konumu olduğu. Bir katmanı bağlantı noktasını, katmanın koordinat sistemi içinde normalleştirilmiş bir noktasıdır.
 
-Aşağıdaki şekilde, konum ve bağlantı noktası gösterilmektedir:
+Konum ve bağlantı noktasını aşağıdaki şekilde gösterilmiştir:
 
- ![](core-animation-images/10-postion-anchorpt.png "Bu şekil, konum ve bağlantı noktası gösterir.")
+ ![](core-animation-images/10-postion-anchorpt.png "Bu şekilde konum ve bağlantı noktası gösterilmektedir.")
 
-Örnek çalıştırdığınızda `Position`, `BorderWidth` ve `BorderColor` aşağıdaki ekran görüntülerinde gösterildiği gibi animasyon ekleme:
+Örneği çalıştırdığınızda `Position`, `BorderWidth` ve `BorderColor` aşağıdaki ekran görüntülerinde gösterildiği gibi animasyon ekleme:
 
- ![](core-animation-images/11-implicit-animation.png "Örnek çalıştırdığınızda, konum, BorderWidth ve BorderColor gösterildiği gibi animasyon ekleme")
+ ![](core-animation-images/11-implicit-animation.png "Örnek çalıştırıldığında, konum, BorderWidth ve BorderColor gösterildiği gibi animasyon ekleme")
 
-### <a name="explicit-animations"></a>Açık bir animasyon
+### <a name="explicit-animations"></a>Açık animasyonları
 
-Örtük animasyonları ek olarak, çekirdek animasyon çeşitli devralınmalıdır sınıfları içerir. `CAAnimation` imkan sağlayan daha sonra bir katmana açıkça eklenen animasyonları yalıtma. Bunlar, bir animasyon başlangıç değerini değiştirerek, animasyonları gruplandırma ve ana kare doğrusal olmayan yollara izin verecek şekilde belirtme gibi animasyonları geçirmiş denetime izin verir.
+Örtük animasyonları ek olarak, devralınan sınıflar çeşitli temel animasyon içeren `CAAnimation` sağlayan ardından katmana açıkça eklenen animasyonları kapsüller. Bu, animasyon başlangıç değerini değiştirerek, animasyonları gruplandırma ve ana kareleri doğrusal olmayan yollara izin verecek şekilde belirtme gibi animasyon üzerinde daha ayrıntılı denetim sağlar.
 
-Aşağıdaki kod kullanarak bir açık animasyon örneği gösterir bir `CAKeyframeAnimation` daha önce (örtük animasyon bölümünde) gösterilen katman için:
+Aşağıdaki kod örneği kullanarak bir açık animasyon gösterir bir `CAKeyframeAnimation` daha önce (örtük animasyon bölümünde) gösterilen katman için:
 
 ```csharp
 public override void ViewDidAppear (bool animated)
@@ -228,19 +228,19 @@ public override void ViewDidAppear (bool animated)
 }
 ```
 
-Bu kod değişiklikleri `Position` sonra ana kare animasyonunun tanımlamak için kullanılan bir yol oluşturarak katmanın. Dikkat katmanın `Position` son değerine ayarlanmış `Position` animasyon gelen. Bu, katman aniden için döndürecekti kendi `Position` animasyon önce animasyonun sunu ve gerçek model değerleri yalnızca değiştiğinden. Animasyon model değeri son değerine ayarlayarak katman kalmak animasyonun sonunda yerinde.
+Bu kod değişikliklerini `Position` sonra bir ana kare animasyon tanımlamak için kullanılan bir yol oluşturarak katmanın. Dikkat katmanın `Position` son değeri olarak ayarlanır `Position` animasyon öğesinden. Bu, katman aniden geri döner, `Position` animasyon önce animasyon sunu değer ve gerçek model değerinden yalnızca değiştiğinden. Animasyon model değeri son değerine ayarlayarak katmanı kalın animasyon sonunda bir yerde.
 
-Aşağıdaki ekran görüntüleri ile belirtilen yol görüntünün ortasının içeren katmanını göster:
+Aşağıdaki ekran görüntüleri içeren görüntü ile belirtilen yol animasyonu katmanı göster:
 
- ![](core-animation-images/12-explicit-animation.png "Bu ekran görüntüsünü belirtilen yol animasyon içeren katmanı gösterir")
+ ![](core-animation-images/12-explicit-animation.png "Bu ekran görüntüsü ile belirtilen yol animasyon içeren bir katman gösterir")
  
 ## <a name="summary"></a>Özet
 
-Bu makalede aracılığıyla sağlanan animasyon özellikleri inceledik *çekirdek animasyon* çerçeveleri. Çekirdek animasyon, hem nasıl Uıkit animasyonları destekler ve doğrudan alt düzey animasyon denetimi için nasıl kullanılabileceğini gösteren bileşen başvuru incelenir.
+Bu makalede aracılığıyla sağlanan animasyon özellikler inceledik *çekirdek animasyon* çerçeveleri. Biz Uıkit içinde animasyon nasıl güç katan hem doğrudan alt düzey animasyon denetimi için nasıl kullanılabileceğini gösteren temel animasyon incelenir.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Çekirdek animasyon örneği](https://developer.xamarin.com/samples/monotouch/GraphicsAndAnimation/)
+- [Temel animasyon örneği](https://developer.xamarin.com/samples/monotouch/GraphicsAndAnimation/)
 - [Temel Grafikler](~/ios/platform/graphics-animation-ios/core-graphics.md)
-- [Grafikler ve animasyon gözden geçirme](~/ios/platform/graphics-animation-ios/graphics-animation-walkthrough.md)
-- [Temel Animasyon](https://developer.xamarin.com/recipes/ios/animation/coreanimation)
+- [Grafikler ve animasyon için izlenecek yol](~/ios/platform/graphics-animation-ios/graphics-animation-walkthrough.md)
+- [Temel Animasyon](https://github.com/xamarin/recipes/tree/master/Recipes/ios/animation/coreanimation)

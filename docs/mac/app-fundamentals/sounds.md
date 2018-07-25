@@ -1,38 +1,38 @@
 ---
-title: İçinde Xamarin.Mac ile AVAudioPlayer ses çalma
-description: Bu belge, bir Xamarin.Mac uygulaması ile AVAudioPlayer ses çalınmaya açıklar. Bir üst düzey ve daha tam olarak ele diğer belgelere yönelik bağlantılar AVAudioPlayer açıklanır.
+title: Xamarin.Mac'te AVAudioPlayer ile ses çalma
+description: Bu belge, bir Xamarin.Mac uygulamasını AVAudioPlayer ile ses çal açıklar. Bu bir yüksek düzeyde ve daha tam olarak ele diğer belgelere bağlantılar AVAudioPlayer açıklanır.
 ms.prod: xamarin
 ms.assetid: 4A683A94-F75D-4EAF-8497-E9443653250B
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/19/2016
-ms.openlocfilehash: 9e5b9ec43189999f8a0aee29eb50221b494e2133
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 03a0207ce8c742f0ca98ab6c75ed3e7b2f37d09e
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34791861"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241364"
 ---
-# <a name="playing-sound-with-avaudioplayer-in-xamarinmac"></a>İçinde Xamarin.Mac ile AVAudioPlayer ses çalma
+# <a name="playing-sound-with-avaudioplayer-in-xamarinmac"></a>Xamarin.Mac'te AVAudioPlayer ile ses çalma
 
 ## <a name="about-the-avaudioplayer"></a>AVAudioPlayer hakkında
 
-`AVAudioPlayer` Bellek veya dosyası sınıfı kayıttan yürütme ses verileri için kullanılır. Apple Bu sınıf akış ağ yapmakta olduğunuz veya ses g/ç düşük gecikme gerektiren sürece uygulamanızda ses çalınmaya kullanılmasını önerir.
+`AVAudioPlayer` Sınıfı, kayıttan yürütme ses veri kullanılır, bellek veya dosyası. Apple, ağ akışını yapıyor ya da düşük gecikme süresi ses g/ç gerektiren uygulamanızda ses yürütmek için bu sınıfın kullanılmasını önerir.
 
-Kullanabileceğiniz `AVAudioPlayer` sınıfı aşağıdakileri yapın:
+Kullanabileceğiniz `AVAudioPlayer` aşağıdakileri yapmak için sınıfı:
 
-- İsteğe bağlı döngü ile tüm Duration ses yürütün.
+- İsteğe bağlı döngü ile herhangi bir süre sesler yürütün.
 - İsteğe bağlı eşitleme ile aynı anda birden çok ses yürütün.
-- Birim, oynatma hızını ve her çalmasını stereo konumlandırma denetler.
-- İleri sarma veya geri sarma gibi özellikleri destekler.
-- Kayıttan yürütme düzeyi ölçüm verileri alın.
+- Birim, kayıttan yürütme hızını ve her çalmasını stereo konumlandırma denetler.
+- İleri veya Geri Sar gibi özellikleri destekler.
+- Kayıttan yürütme düzeyi ölçümü verilerini alın.
 
-`AVAudioPlayer` iOS, tvOS ve macOS .aif, .wav veya .mp3 gibi tarafından sağlanan herhangi bir ses biçiminde ses destekler.
+`AVAudioPlayer` iOS, tvOS ve macOS .aif, .wav veya .mp3 gibi tarafından sağlanan herhangi bir ses biçimi sesleri destekler.
 
-## <a name="playing-sounds-in-macos"></a>MacOS içinde ses çalma
+## <a name="playing-sounds-in-macos"></a>MacOS ses çalma
 
-MacOS aynı ses araç sınıfları iOS olarak desteklediğinden, bizim iOS bakın [AVAudioPlayer oyun sesle](https://developer.xamarin.com/recipes/ios/media/sound/avaudioplayer/) Xamarin.Mac uygulama yürütmeyi ses tam ayrıntıları için belgeleri.
+İOS, macOS, iOS olarak aynı ses araç sınıfları desteklediğinden, lütfen bakın [AVAudioPlayer ile ses oyun](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/sound/avaudioplayer) bir Xamarin.Mac uygulamasını yürütmeyi ses tam Ayrıntılar için.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

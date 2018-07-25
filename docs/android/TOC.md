@@ -9,6 +9,7 @@
 ##### [Cihaz Özellikleri](get-started/installation/android-emulator/device-properties.md)
 ##### [Sorun giderme](get-started/installation/android-emulator/troubleshooting.md)
 #### [Android Cihaz Kurulumu](get-started/installation/set-up-device-for-development.md)
+#### [Microsoft OpenJDK Önizleme](get-started/installation/openjdk.md)
 ### [Hello, Android](get-started/hello-android/index.md)
 #### [Bölüm 1: Hızlı Başlangıç](get-started/hello-android/hello-android-quickstart.md)
 #### [Bölüm 2: Derinlemesine İnceleme](get-started/hello-android/hello-android-deepdive.md)

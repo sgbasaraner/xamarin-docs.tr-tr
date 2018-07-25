@@ -1,102 +1,102 @@
 ---
-title: iOS Tasarımcısı temelleri
-description: Bu kılavuz, iOS için Xamarin Tasarımcısı tanıtır. İOS Tasarımcısı denetimleri görsel olarak düzenlemek için nasıl kullanılacağı, bu denetimleri kodda erişmek nasıl ve özelliklerini düzenlemek nasıl gösterir.
+title: iOS Designer bilgileri
+description: Bu kılavuz, iOS için Xamarin Tasarımcı sunar. Bu, iOS Tasarımcısı görsel olarak denetimleri düzenlemek için nasıl kullanılacağını ve kodda bu denetimlerin nasıl özelliklerini düzenlemek nasıl gösterir.
 ms.prod: xamarin
 ms.assetid: E7045E41-0DEF-416B-BCDB-52502350F61C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/31/2018
-ms.openlocfilehash: 7e36a402619813214e821f3060e053d76c99cfb7
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 6905eddbc4488b08f9c9e896efe5f980e0e03345
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30784264"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242374"
 ---
-# <a name="ios-designer-basics"></a>iOS Tasarımcısı temelleri
+# <a name="ios-designer-basics"></a>iOS Designer bilgileri
 
-_Bu kılavuz, iOS için Xamarin Tasarımcısı tanıtır. İOS Tasarımcısı denetimleri görsel olarak düzenlemek için nasıl kullanılacağı, bu denetimleri kodda erişmek nasıl ve özelliklerini düzenlemek nasıl gösterir._
+_Bu kılavuz, iOS için Xamarin Tasarımcı sunar. Bu, iOS Tasarımcısı görsel olarak denetimleri düzenlemek için nasıl kullanılacağını ve kodda bu denetimlerin nasıl özelliklerini düzenlemek nasıl gösterir._
 
-İOS için Xamarin Tasarımcısı Xcode'nın arabirimi Oluşturucu için benzer bir görsel bir arabirim Tasarımcısı ve Android Tasarımcısı olur. Bazı özelliklerinin Mac ve Visual Studio 2015 ve 2017 için Visual Studio, sürükle ve bırak düzenleme, olay işleyicileri kurmak için bir arabirim ve özel denetimler oluşturma olanağı ile entegrasyon içerir.
+İOS için Xamarin Tasarımcı Xcode'un arabirim Oluşturucu için benzer bir görsel arabirim tasarımcı ve Android Designer ' dir. Bazı özelliklerinin Mac ve Visual Studio 2015 ve 2017 için Visual Studio, sürükle ve bırak düzenleme, bir arabirim olay işleyicilerini ayarlama ve özel denetimler oluşturma olanağı ile entegrasyon içerir.
 
 ## <a name="requirements"></a>Gereksinimler
 
-İOS Tasarımcısı Windows Mac için Visual Studio ve Visual Studio 2015 ve 2017 kullanılabilir. Xcode çalışmıyor ancak Visual Studio 2015 veya 2017 Tasarımcısı iOS düzgün yapılandırılmış bir Mac yapı ana bağlantısı gerektirir.
+İOS Tasarımcısı Windows üzerinde Mac için Visual Studio ve Visual Studio 2015 ve 2017'de kullanılabilir olur. Xcode çalışmıyor ancak Visual Studio 2015 veya 2017, iOS Designer düzgün bir şekilde yapılandırılmış bir Mac derleme konağı bağlantısı gerektirir.
 
 Bu kılavuzda ele içeriği bilindiğini varsayar [Başlarken kılavuzları](~/ios/get-started/index.md).
 
 <a name="how-it-works" />
 
-## <a name="how-the-ios-designer-works"></a>İOS Tasarımcısı nasıl çalışır?
+## <a name="how-the-ios-designer-works"></a>İOS Designer nasıl çalışır?
 
-Bu bölümde, bir kullanıcı arabirimi oluşturma ve kodu bağlanma Tasarımcısı iOS nasıl kolaylaştırır açıklanmaktadır.
+Bu bölümde, bir kullanıcı arabirimi oluşturmak ve kodu bağlanarak iOS Designer nasıl kolaylaştıran açıklanmaktadır.
 
-Bir uygulamanın kullanıcı arabirimini görsel olarak tasarlamak geliştiricilerin iOS Tasarımcısı sağlar. Kısmında özetlendiği gibi [film şeritleri giriş](~/ios/user-interface/storyboards/index.md) Kılavuzu, film şeridi açıklayan bir uygulaması, yaptığınız ekranlar (Görünüm denetleyicileri) Bu görünüm denetleyicileri ve uygulamanın Genel gezinti akış yerleştirilen arabirim öğeleri (görünümler) . 
+İOS Designer, geliştiricilerin bir uygulamanın kullanıcı arabirimini görsel olarak tasarlamanıza olanak tanır. Açıklandığı şekilde [görsel taslaklara giriş](~/ios/user-interface/storyboards/index.md) Kılavuzu, bir görsel taslak açıklayan bir uygulamayı oluşturan ekranları (Görünüm denetleyicisi) Bu görünüm denetleyicileri ve uygulamanın Genel gezinti akış yer arabirim öğeleri (görünümleri) . 
 
-Bir görünüm denetleyicisini iki bölümden oluşur: iOS Tasarımcısı görsel bir sunumdur ve ilişkili bir C# sınıfı:
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
-
-[![Bir görünüm denetleyicisi Tasarımcısı iOS](introduction-images/1-storyboardwithviewcontroller-vsmac.png "Tasarımcısı iOS bir görünüm denetleyicisi")](introduction-images/1-storyboardwithviewcontroller-vsmac-large.png#lightbox)
-
-[![Bir görünüm denetleyicisini kodunu](introduction-images/2-viewcontrollercode-vsmac.png "bir görünüm denetleyicisi için kod")](introduction-images/2-viewcontrollercode-vsmac-large.png#lightbox)
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-[![Bir görünüm denetleyicisi Tasarımcısı iOS](introduction-images/1-storyboardwithviewcontroller-vs.png "Tasarımcısı iOS bir görünüm denetleyicisi")](introduction-images/1-storyboardwithviewcontroller-vs-large.png#lightbox)
-
-[![Bir görünüm denetleyicisini kodunu](introduction-images/2-viewcontrollercode-vs.png "bir görünüm denetleyicisi için kod")](introduction-images/2-viewcontrollercode-vs-large.png#lightbox)
-
------
-
-Varsayılan durumundayken bir görünüm denetleyicisini tüm işlevleri sağlamaz; denetimler ile doldurulması gerekir. Bu denetimler görünüm denetleyicisinin görünümü, tüm ekran içeriğinin içeren dikdörtgen yerleştirilir. Çoğu görünüm denetleyicileri bir düğmeyi içeren bir görünüm denetleyicisini gösterir aşağıdaki ekran görüntüsünde gösterildiği gibi düğmeleri, etiketler ve metin alanları gibi ortak denetimler içerir: 
+Görünüm denetleyicisi iki bölümden oluşur: iOS Designer'daki görsel gösterimi ve ilişkili bir C# sınıfı:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Bir düğmeyi içeren bir görünüm denetleyicisini](introduction-images/3-viewcontrollerwithbutton-vsmac.png "bir düğmeyi içeren bir görünüm denetleyicisi")](introduction-images/3-viewcontrollerwithbutton-vsmac-large.png#lightbox)
+[![İOS Designer'daki görünüm denetleyicisi](introduction-images/1-storyboardwithviewcontroller-vsmac.png "iOS Designer'daki görünüm denetleyicisi")](introduction-images/1-storyboardwithviewcontroller-vsmac-large.png#lightbox)
+
+[![Görünüm denetleyicisi kodunu](introduction-images/2-viewcontrollercode-vsmac.png "kodunu bir görünüm denetleyicisi")](introduction-images/2-viewcontrollercode-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Bir düğmeyi içeren bir görünüm denetleyicisini](introduction-images/3-viewcontrollerwithbutton-vs.png "bir düğmeyi içeren bir görünüm denetleyicisi")](introduction-images/3-viewcontrollerwithbutton-vs-large.png#lightbox)
+[![İOS Designer'daki görünüm denetleyicisi](introduction-images/1-storyboardwithviewcontroller-vs.png "iOS Designer'daki görünüm denetleyicisi")](introduction-images/1-storyboardwithviewcontroller-vs-large.png#lightbox)
+
+[![Görünüm denetleyicisi kodunu](introduction-images/2-viewcontrollercode-vs.png "kodunu bir görünüm denetleyicisi")](introduction-images/2-viewcontrollercode-vs-large.png#lightbox)
 
 -----
 
-Statik metin içeren etiketler gibi bazı denetimler, görünüm denetleyiciye eklenir ve tek başına sol. Ancak, daha sık çok değil, denetimlerini programlı olarak özelleştirilmelidir. Örneğin, bir olay işleyicisi kodunda eklenmesi gerekir böylece tıklar düğmesi dokunduğunuz olduğunda, bir şey yapmanız gerekir.
+Varsayılan durumda, bir görünüm denetleyicisi herhangi bir işlevsellik sağlamaz; denetimler ile doldurulması gerekir. Bu denetimler, ekranın içeriğin tümünü içeren dikdörtgen alan görünümü denetleyicinin Görünümü'nde yerleştirilir. Bir düğme içeren bir görünüm denetleyicisi gösteren aşağıdaki ekran görüntüsünde gösterildiği gibi çoğu görünüm denetleyicileri düğmeler, etiketler ve metin alanları gibi ortak denetimler içerir: 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-Erişim ve kod düğmesini işlemek için benzersiz bir tanımlayıcı içermelidir. Açma düğmesini seçerek benzersiz bir tanımlayıcı belirtin **özellikleri paneli**ve ayarı kendi **adı** "SubmitButton" gibi bir değer alanı:
-
-[![Düğmenin adı özellikleri defterinde ayarlama](introduction-images/4-settingbuttonname-vsmac.png "özellikleri defterinde düğmenin adı ayarlama")](introduction-images/4-settingbuttonname-vsmac-large.png#lightbox)
+[![Bir düğme içeren bir görünüm denetleyicisi](introduction-images/3-viewcontrollerwithbutton-vsmac.png "bir düğme içeren bir görünüm denetleyicisi")](introduction-images/3-viewcontrollerwithbutton-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Erişim ve kod düğmesini işlemek için benzersiz bir tanımlayıcı içermelidir. Açma düğmesini seçerek benzersiz bir tanımlayıcı belirtin **Özellikler penceresini**ve ayarı kendi **adı** "SubmitButton" gibi bir değer alanı:
-
-[![Düğmenin adı Özellikler penceresinde ayarlama](introduction-images/4-settingbuttonname-vs.png "Özellikler penceresinde düğmenin adı ayarlama")](introduction-images/4-settingbuttonname-vs-large.png#lightbox)
+[![Bir düğme içeren bir görünüm denetleyicisi](introduction-images/3-viewcontrollerwithbutton-vs.png "bir düğme içeren bir görünüm denetleyicisi")](introduction-images/3-viewcontrollerwithbutton-vs-large.png#lightbox)
 
 -----
 
-Düğme bir ada sahip, kodda erişilebilir. Ancak bu nasıl çalışır?
+Statik metin içeren etiket gibi bazı denetimler, görünüm denetleyiciye eklenir ve tek başına sol. Ancak, daha fazla değildir, denetimleri program aracılığıyla özelleştirilmelidir. Örneğin, bir olay işleyici kodu eklenmesi için yukarıda eklediğiniz düğmeye dokunduğunuzda bir şey yapmanız gerekir.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-İçinde **çözüm paneli**, gezinme için **ViewController.cs** ve ortaya açığa gösterge üzerinde tıklatarak Görünüm denetleyicinin `ViewController` sınıf tanımı yayılma iki dosyaları, her biri içeren bir [parçalı sınıf](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) tanımı:
+Kod düğmeye erişim ve düzenleme için benzersiz bir tanımlayıcı olmalıdır. Açma düğmesini seçerek benzersiz bir tanımlayıcı sağlar **özellikler panelinde**ve ayarı kendi **adı** "SubmitButton" gibi bir değer alanı:
 
-[![İki ViewController sınıfı oluşturan dosyaları: ViewController.cs ve ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vsmac.png "iki ViewController sınıfı oluşturan dosyaları: ViewController.cs ve ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vsmac-large.png#lightbox)
+[![Ayar Özellikler panelinde bir düğmenin adı](introduction-images/4-settingbuttonname-vsmac.png "özellikler panelinde bir düğmenin adı ayarlama")](introduction-images/4-settingbuttonname-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-İçinde **Çözüm Gezgini**, gezinme için **ViewController.cs** ve ortaya açığa gösterge üzerinde tıklatarak Görünüm denetleyicinin `ViewController` sınıf tanımını yayılan her iki dosya içeren bir [parçalı sınıf](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) tanımı:
+Kod düğmeye erişim ve düzenleme için benzersiz bir tanımlayıcı olmalıdır. Açma düğmesini seçerek benzersiz bir tanımlayıcı sağlar **Özellikler penceresi**ve ayarı kendi **adı** "SubmitButton" gibi bir değer alanı:
 
-[![İki ViewController sınıfı oluşturan dosyaları: ViewController.cs ve ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vs.png "iki ViewController sınıfı oluşturan dosyaları: ViewController.cs ve ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vs-large.png#lightbox)
+[![Özellikler penceresinde bir düğmenin adı ayarlama](introduction-images/4-settingbuttonname-vs.png "Özellikler penceresinde bir düğmenin adı ayarlama")](introduction-images/4-settingbuttonname-vs-large.png#lightbox)
 
 -----
 
-- **ViewController.cs** ilgili özel kod ile doldurulması gerekir `ViewController` sınıfı. Bu dosyadaki `ViewController` sınıfı görünüm denetleyicisini yaşam döngüsü yöntemleri için çeşitli iOS yanıt, kullanıcı arabirimini özelleştirmek ve düğmesi dokunur gibi giriş kullanıcıya yanıt.
+Düğmeyi bir ada sahip, kod içinde erişilebilir. Ancak bu nasıl çalışır?
 
-- **ViewController.designer.cs** iOS görsel olarak oluşturulan arabirimi kodu eşlemek için tasarımcısı tarafından oluşturulan oluşturulmuş bir dosya değil. Bu dosyadaki değişiklikler üzerine beri değiştirilmemelidir. Bu dosya özelliği bildirimlerinde olanaklı hale getirir kodunu `ViewController` erişimi, göre sınıf **adı**, denetimleri kümesini yukarı iOS Tasarımcısı. Açma **ViewController.designer.cs** aşağıdaki kodu ortaya çıkarır:
+# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
+
+İçinde **çözüm bölmesi**, gezinme için **ViewController.cs** ve ortaya açığa gösterge üzerinde tıklayarak görünümü denetleyicinin `ViewController` sınıf tanımı yayılma iki dosyaları, her biri içeren bir [kısmi sınıf](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) tanımı:
+
+[![İki ViewController sınıfı oluşturan dosyalar: ViewController.cs ve ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vsmac.png "iki ViewController sınıfı oluşturan dosyalar: ViewController.cs ve ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vsmac-large.png#lightbox)
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+İçinde **Çözüm Gezgini**, gezinme için **ViewController.cs** ve ortaya açığa gösterge üzerinde tıklayarak görünümü denetleyicinin `ViewController` sınıf tanımı yayılan her iki dosya içeren bir [kısmi sınıf](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods) tanımı:
+
+[![İki ViewController sınıfı oluşturan dosyalar: ViewController.cs ve ViewController.designer.cs](introduction-images/5-twoviewcontrollerfiles-vs.png "iki ViewController sınıfı oluşturan dosyalar: ViewController.cs ve ViewController.designer.cs")](introduction-images/5-twoviewcontrollerfiles-vs-large.png#lightbox)
+
+-----
+
+- **ViewController.cs** ilgili özel kod ile doldurulmalıdır `ViewController` sınıfı. Bu dosyadaki `ViewController` sınıf görünümü denetleyicisi yaşam döngüsü yöntemleri için çeşitli iOS yanıt, kullanıcı arabirimini özelleştirme ve düğmesine dokunduğunda gibi giriş kullanıcıya yanıt.
+
+- **ViewController.designer.cs** iOS görsel olarak oluşturulan arabirimi için kod eşlemek için tasarımcı tarafından oluşturulan bir oluşturulan dosya. Bu dosyada yapılan değişikliklerin üzerine yazılır olduğundan, değiştirilmemelidir. Bu dosyadaki özellik bildirimleri olanaklı hale getirir, kod için `ViewController` göre erişimi, sınıf **adı**, denetimleri kümesini ayarlama iOS Designer'daki. Açma **ViewController.designer.cs** aşağıdaki kodu gösterir:
 
 ```csharp
 namespace Designer
@@ -119,9 +119,9 @@ namespace Designer
 }
 ```
 
-`SubmitButton` Özellik bildirimi bağlanan tüm `ViewController` sınıfı değil - yalnızca **ViewController.designer.cs** dosyasına – film şeridi tanımlanmış düğme. Bu yana **ViewController.cs** parçası tanımlar `ViewController` sınıfı, erişimi olduğundan `SubmitButton`.
+`SubmitButton` Özellik bildiriminde bağlanan tüm `ViewController` sınıfı değil - yalnızca **ViewController.designer.cs** dosyasına – film şeridi tanımlanmış düğme. Bu yana **ViewController.cs** parçası tanımlar `ViewController` sınıfı erişimi olan `SubmitButton`.
 
-IntelliSense şimdi tanıdığı aşağıdaki ekran görüntüsü gösterilmektedir `SubmitButton` başvuru **ViewController.cs**:
+Aşağıdaki ekran görüntüsünde IntelliSense şimdi algıladığını gösterir `SubmitButton` başvuru **ViewController.cs**:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
@@ -133,27 +133,27 @@ IntelliSense şimdi tanıdığı aşağıdaki ekran görüntüsü gösterilmekte
 
 -----
 
-Bu bölümde gösterilmiştir bir düğme Tasarımcısı iOS oluşturma ve bu düğme kodda erişim.
+Bu bölümde gösterilmiştir iOS Designer'daki bir düğme oluşturma ve bu düğme kod erişim.
 
-Bu belgenin geri kalanında Tasarımcısı iOS başka bir genel bakış sağlar.
+Bu belgenin geri kalanında iOS Designer başka bir genel bakış sağlar.
 
-## <a name="ios-designer-basics"></a>iOS Tasarımcısı temelleri
+## <a name="ios-designer-basics"></a>iOS Designer bilgileri
 
-Bu bölüm iOS Tasarımcısı bölümlerini tanıtır ve gezinti özellikleri sağlar.
+Bu bölümde iOS Designer parçalarını tanıtır ve tura özellikleri sağlar.
 
-### <a name="launching-the-ios-designer"></a>İOS Tasarımcısı başlatma
+### <a name="launching-the-ios-designer"></a>İOS Designer başlatılıyor
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-Mac için Visual Studio ile oluşturulan Xamarin.iOS projeleri film şeridi içerir. Film şeridi içeriğini görüntülemek için .storyboard dosyasına çift tıklayarak **çözüm paneli**:
+Xamarin.iOS projeleri Mac için Visual Studio ile oluşturulmuş bir görsel taslak içerir. Görsel taslak içeriğini görüntülemek için .storyboard dosyasına çift tıklayın **çözüm bölmesi**:
 
-[![Film şeridi açmak iOS Tasarımcısı](introduction-images/7-storyboardopen-vsmac.png "film şeridi açmak iOS Tasarımcısı")](introduction-images/7-storyboardopen-vsmac-large.png#lightbox)
+[![İOS Tasarımcısı bir görsel taslağı Aç](introduction-images/7-storyboardopen-vsmac.png "iOS Tasarımcısı bir görsel taslağı Aç")](introduction-images/7-storyboardopen-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Visual Studio 2015 veya 2017 ile oluşturulan çoğu Xamarin.iOS projeleri film şeridi içerir. Film şeridi içeriğini görüntülemek için .storyboard dosyasına çift tıklayarak **Çözüm Gezgini**:
+Çoğu Xamarin.iOS projeleri Visual Studio 2015 veya 2017 ile oluşturulmuş bir görsel taslak içerir. Görsel taslak içeriğini görüntülemek için .storyboard dosyasına çift tıklayın **Çözüm Gezgini**:
 
-[![Film şeridi açmak iOS Tasarımcısı](introduction-images/7-storyboardopen-vs.png "film şeridi açmak iOS Tasarımcısı")](introduction-images/7-storyboardopen-vs-large.png#lightbox)
+[![İOS Tasarımcısı bir görsel taslağı Aç](introduction-images/7-storyboardopen-vs.png "iOS Tasarımcısı bir görsel taslağı Aç")](introduction-images/7-storyboardopen-vs-large.png#lightbox)
 
 -----
 
@@ -161,89 +161,89 @@ Visual Studio 2015 veya 2017 ile oluşturulan çoğu Xamarin.iOS projeleri film 
 
 ### <a name="ios-designer-features"></a>iOS Tasarımcısı özellikleri
 
-İOS Tasarımcısı altı birincil bölümü vardır:
+İOS Designer altı birincil bölümü vardır:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![İOS Tasarımcısı bölümlerini](introduction-images/8-sixpartsofiosdesigner-vsmac.png "Tasarımcısı iOS bölümleri")](introduction-images/8-sixpartsofiosdesigner-vsmac-large.png#lightbox)
+[![İOS Designer bölümlerini](introduction-images/8-sixpartsofiosdesigner-vsmac.png "iOS Designer bölümleri")](introduction-images/8-sixpartsofiosdesigner-vsmac-large.png#lightbox)
 
-1. **Tasarım yüzeyini** – iOS tasarımcının birincil çalışma. Belge alanında gösterilen, kullanıcı arabirimleri, görsel yapımı sağlar.
-2. **Kısıtlamaları araç** – sağlayan bir kullanıcı arabirimi öğeleri konumlandırmak için modu ve kısıtlama düzenleme modu, iki farklı şekilde düzenleyerek çerçevesini arasında geçiş yapmak için.
-3. **Araç kutusu** – listeler denetleyicileri, nesneler, denetimler, veri görünümleri, hareketi tanıyıcıları, windows ve bu çubuklarını tasarım yüzeyine sürüklenen ve bir kullanıcı arabirimi eklenir.
-4. **Özellikler paneli** – kimlik, görsel stiller, erişilebilirlik, Düzen ve davranış dahil olmak üzere seçili denetim özelliklerini gösterir.
-5. **Belge Anahattı** – düzenlenmekte arabirimi düzenini oluşturma denetimleri ağaç gösterir. İOS Tasarımcısı seçer ve özelliklerini gösterir ağacındaki bir öğeyi tıklayarak **özellikleri paneli**. Bu, belirli bir denetim fazla iç içe kullanıcı arabiriminde seçmek için kullanışlıdır.
-6. **Alt araç** – Tasarımcısı iOS aygıtı, Yönlendirme ve yakınlaştırma gibi .storyboard veya .xib dosya biçimini değiştirmek için seçenekleri içerir.
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-[![İOS Tasarımcısı bölümlerini](introduction-images/8-sixpartsofiosdesigner-vs.png "Tasarımcısı iOS bölümleri")](introduction-images/8-sixpartsofiosdesigner-vs-large.png#lightbox)
-
-1. **Tasarım yüzeyini** – iOS tasarımcının birincil çalışma. Belge alanında gösterilen, kullanıcı arabirimleri, görsel yapımı sağlar.
-2. **Kısıtlamaları araç** – sağlayan bir kullanıcı arabirimi öğeleri konumlandırmak için modu ve kısıtlama düzenleme modu, iki farklı şekilde düzenleyerek çerçevesini arasında geçiş yapmak için.
-3. **Araç kutusu** – listeler denetleyicileri, nesneler, denetimler, veri görünümleri, hareketi tanıyıcıları, windows ve bu çubuklarını tasarım yüzeyine sürüklenen ve bir kullanıcı arabirimi eklenir.
-4. **Özellikler penceresi** – kimlik, görsel stiller, erişilebilirlik, Düzen ve davranış dahil olmak üzere seçili denetim özelliklerini gösterir.
-5. **Belge Anahattı** – düzenlenmekte arabirimi düzenini oluşturma denetimleri ağaç gösterir. İOS Tasarımcısı seçer ve özelliklerini gösterir ağacındaki bir öğeyi tıklayarak **Özellikler penceresini**. Bu, belirli bir denetim fazla iç içe kullanıcı arabiriminde seçmek için kullanışlıdır.
-6. **Alt araç** – Tasarımcısı iOS aygıtı, Yönlendirme ve yakınlaştırma gibi .storyboard veya .xib dosya biçimini değiştirmek için seçenekleri içerir.
-
------
-
-### <a name="design-workflow"></a>İş akışı tasarım
-
-#### <a name="adding-a-control-to-the-interface"></a>Arabirimine denetim ekleme
-
-Bir denetim için bir arabirim eklemek için buradan sürükleyin **araç** ve tasarım yüzeyine bırakın. Ekleme ya da bir denetim konumlandırma dikey ve yatay yönergeleri dikey Merkezi, yatay ortada ve kenar boşlukları gibi yaygın olarak kullanılan düzeni konumlar vurgula:
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
- 
-![Tasarım yüzeyine yönergeleri yaygın olarak kullanılan düzeni konumlar vurgulayın](introduction-images/9-layoutguides-vsmac.png "tasarım yüzeyine yönergeleri yaygın olarak kullanılan düzeni konumlar vurgulayın.")
+1. **Tasarım yüzeyine** – iOS Tasarımcısı birincil çalışma alanı. Belge alanında gösterilen görsel yapımı kullanıcı arabirimleri sağlar.
+2. **Kısıtlamalar araç çubuğu** – çerçeve içinde bir kullanıcı arabirimi öğeleri konumlandırmak için modu ve kısıtlama düzenleme modu, iki farklı şekilde düzenleme arasında geçiş yapmak için izin verir.
+3. **Araç kutusu** – listeler denetleyicileri, nesneleri, denetimler, veri görünümleri, hareket tanıyıcılar, windows ve çubukları, sürüklenen tasarım yüzeyine sürükleyin ve bir kullanıcı arabirimine eklendi.
+4. **Özellikleri paneli** – kimlik, görsel stilleri, erişilebilirlik, Düzen ve davranış da dahil olmak üzere, seçilen denetimin özelliklerini gösterir.
+5. **Belge Anahattı** – düzenlenmekte olan arabirimi düzenini oluşturan denetimlerin ağacını gösterir. Bir öğe ağacında tıklayarak iOS Designer'daki seçer ve onun özelliklerini gösteren **özellikler panelinde**. Bu, bir iç içe geçmiş kullanıcı arabiriminde belirli bir denetimi seçmek için kullanışlıdır.
+6. **Alt araç çubuğu** – iOS Designer, cihaz, Yönlendirme ve yakınlaştırma gibi .storyboard veya .xib dosya biçimini değiştirmek için seçenekler içerir.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-![Tasarım yüzeyine yönergeleri yaygın olarak kullanılan düzeni konumlar vurgulayın](introduction-images/9-layoutguides-vs.png "tasarım yüzeyine yönergeleri yaygın olarak kullanılan düzeni konumlar vurgulayın.")
+[![İOS Designer bölümlerini](introduction-images/8-sixpartsofiosdesigner-vs.png "iOS Designer bölümleri")](introduction-images/8-sixpartsofiosdesigner-vs-large.png#lightbox)
+
+1. **Tasarım yüzeyine** – iOS Tasarımcısı birincil çalışma alanı. Belge alanında gösterilen görsel yapımı kullanıcı arabirimleri sağlar.
+2. **Kısıtlamalar araç çubuğu** – çerçeve içinde bir kullanıcı arabirimi öğeleri konumlandırmak için modu ve kısıtlama düzenleme modu, iki farklı şekilde düzenleme arasında geçiş yapmak için izin verir.
+3. **Araç kutusu** – listeler denetleyicileri, nesneleri, denetimler, veri görünümleri, hareket tanıyıcılar, windows ve çubukları, sürüklenen tasarım yüzeyine sürükleyin ve bir kullanıcı arabirimine eklendi.
+4. **Özellikler penceresi** – kimlik, görsel stilleri, erişilebilirlik, Düzen ve davranış da dahil olmak üzere, seçilen denetimin özelliklerini gösterir.
+5. **Belge Anahattı** – düzenlenmekte olan arabirimi düzenini oluşturan denetimlerin ağacını gösterir. Bir öğe ağacında tıklayarak iOS Designer'daki seçer ve onun özelliklerini gösteren **Özellikler penceresi**. Bu, bir iç içe geçmiş kullanıcı arabiriminde belirli bir denetimi seçmek için kullanışlıdır.
+6. **Alt araç çubuğu** – iOS Designer, cihaz, Yönlendirme ve yakınlaştırma gibi .storyboard veya .xib dosya biçimini değiştirmek için seçenekler içerir.
 
 -----
 
-Yukarıdaki örnekte mavi noktalı çizgi ile düğmesi yerleşimi yardımcı olmak için bir yatay ortada visual hizalama kılavuz sağlar.
+### <a name="design-workflow"></a>İş akışı tasarlayın
 
-# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
+#### <a name="adding-a-control-to-the-interface"></a>Arabirimi denetim ekleme
 
-#### <a name="context-menu-commands"></a>Bağlam menü komutları
-
-Bir bağlam menüsü tasarım yüzeyine hem de kullanılabilir **belge anahattı**. Bu menü komutlarını sağlar Seçili denetim ve iç içe geçmiş bir hiyerarşideki görünümlerle çalışırken yararlı, kendi üst:
-
-[![Tasarım yüzeyine bağlam menüsünde](introduction-images/10-contextmenudesignsurface-vsmac.png "tasarım yüzeyine bağlam menüsü")](introduction-images/10-contextmenudesignsurface-vsmac-large.png#lightbox)
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
------
-
-### <a name="constraints-toolbar"></a>Kısıtlamaları araç çubuğu
+Bir arabirim için bir denetim eklemek için ondan sürükleyin **araç kutusu** ve tasarım yüzeyine bırakın. Ekleme veya bir denetimin konumlandırma, dikey ve yatay yönergeleri merkezi dikey, yatay merkezine ve kenar boşlukları gibi Düzen sık kullanılan konumlar vurgular:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
  
-[![Contraints araç](introduction-images/11-constraintstoolbar-vsmac.png "kısıtlamaları araç çubuğu")](introduction-images/11-constraintstoolbar-vsmac-large.png#lightbox)
+![Tasarım yüzeyinde, Düzen sık kullanılan konumlar yönergeleri vurgulayın](introduction-images/9-layoutguides-vsmac.png "tasarım yüzeyinde yönergeleri Düzen sık kullanılan konumlar vurgulayın.")
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Contraints araç](introduction-images/11-constraintstoolbar-vs.png "kısıtlamaları araç çubuğu")](introduction-images/11-constraintstoolbar-vs-large.png#lightbox)
+![Tasarım yüzeyinde, Düzen sık kullanılan konumlar yönergeleri vurgulayın](introduction-images/9-layoutguides-vs.png "tasarım yüzeyinde yönergeleri Düzen sık kullanılan konumlar vurgulayın.")
 
 -----
 
-Kısıtlamaları araç güncelleştirildi ve artık iki denetimlerin oluşur: düzenleme modunda çerçeve / kısıtlaması düzenleme modu Değiştir ve güncelleştirme kısıtlamaları / güncelleştirmesi çerçeveler düğmesi.
+Yukarıdaki örnekte mavi noktalı çizgi düğmesi yerleştirmenize yardımcı olması için bir yatay merkezine visual hizalama kılavuz sağlar.
 
-#### <a name="frame-editing-mode--constraint-editing-mode-toggle"></a>Düzenleme modunda çerçeve / kısıtlaması düzenleme modu Değiştir
+# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-İOS Tasarımcısı önceki sürümlerde tasarım yüzeyine zaten seçilmiş bir görünümü tıklatarak düzenleme modu ve kısıtlama düzenleme modunu çerçeve arasında yükseğe. Şimdi, iki durumlu düğme denetim kısıtlamaları araç çubuğunda düzenleme modunu bunlar arasında geçiş yapar.
+#### <a name="context-menu-commands"></a>Bağlam menüsü komutları
+
+Tasarım yüzeyinde hem de bağlam menüsünde kullanılabilir **belge anahattı**. Bu menü komutlarını sağlar. seçili denetime ve kendi üst iç içe hiyerarşisini görünümlerde ile çalışırken yararlıdır:
+
+[![Tasarım yüzeyinde bağlam menüsü](introduction-images/10-contextmenudesignsurface-vsmac.png "tasarım yüzeyinde bağlam menüsü")](introduction-images/10-contextmenudesignsurface-vsmac-large.png#lightbox)
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+-----
+
+### <a name="constraints-toolbar"></a>Kısıtlamalar araç çubuğu
+
+# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
+ 
+[![Kısıtlamaları araç](introduction-images/11-constraintstoolbar-vsmac.png "kısıtlamalar araç çubuğu")](introduction-images/11-constraintstoolbar-vsmac-large.png#lightbox)
+
+# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+
+[![Kısıtlamaları araç](introduction-images/11-constraintstoolbar-vs.png "kısıtlamalar araç çubuğu")](introduction-images/11-constraintstoolbar-vs-large.png#lightbox)
+
+-----
+
+Kısıtlamalar araç çubuğu güncelleştirildi ve artık iki denetimi içerir: düzenleme modunda çerçeve / kısıtlaması düzenleme modunu Aç/Kapat ve güncelleştirme kısıtlamaları / kare düğme güncelleştirin.
+
+#### <a name="frame-editing-mode--constraint-editing-mode-toggle"></a>Çerçeve düzenleme modu / kısıtlaması düzenleme modunu Aç/Kapat
+
+İOS Designer önceki sürümlerinde, bir tasarım yüzeyinde zaten seçili Görünüm'çerçeve düzenleme modu ve kısıtlama düzenleme modu arasında açılıp. Artık, bir iki durumlu denetimin kısıtlamalar araç çubuğu düzenleme modunu bunlar arasında geçiş yapar.
 
 - Çerçeve düzenleme modu:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-![Düzenleme Modu düğmesini çerçeve](introduction-images/12a-frameeditingmode-vsmac.png "düzenleme modu düğmesini çerçeve")
+![Çerçeve düzenleme modu düğmesini](introduction-images/12a-frameeditingmode-vsmac.png "çerçeve düzenleme modu düğmesi")
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-![Düzenleme Modu düğmesini çerçeve](introduction-images/12a-frameeditingmode-vs.png "düzenleme modu düğmesini çerçeve")
+![Çerçeve düzenleme modu düğmesini](introduction-images/12a-frameeditingmode-vs.png "çerçeve düzenleme modu düğmesi")
 
 -----
 
@@ -251,152 +251,152 @@ Kısıtlamaları araç güncelleştirildi ve artık iki denetimlerin oluşur: d�
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-![Düzenleme Modu düğmesini kısıtlaması](introduction-images/12b-constrainteditingmode-vsmac.png "kısıtlaması düzenleme modu düğmesi")
+![Kısıtlama düzenleme modu düğmesini](introduction-images/12b-constrainteditingmode-vsmac.png "kısıtlama düzenleme modu düğmesi")
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-![Düzenleme Modu düğmesini kısıtlaması](introduction-images/12b-constrainteditingmode-vs.png "kısıtlaması düzenleme modu düğmesi")
+![Kısıtlama düzenleme modu düğmesini](introduction-images/12b-constrainteditingmode-vs.png "kısıtlama düzenleme modu düğmesi")
 
 -----
 
-#### <a name="update-constraints--update-frames-button"></a>Kısıtlamaları güncelleştirme / güncelleştir çerçeveler düğmesi
+#### <a name="update-constraints--update-frames-button"></a>Kısıtlamaları güncelleştir / güncelleştir çerçeveler düğmesi
 
-Güncelleştirme kısıtlamaları / güncelleştirme çerçeve düzenleme modunda çerçeve sağındaki düğmesi yer alır / kısıtlaması düzenleme modu Değiştir.
+Güncelleştirme kısıtlamaları / güncelleştirme çerçeve düzenleme modu çerçeve sağındaki düğmesi yer alır / kısıtlaması düzenleme modunu aç/kapat.
 
-- Düzenleme modunda çerçevesinde, bu düğmeye tıkladığınızda, kendi kısıtlamalarla eşleşen tüm seçili öğeleri çerçeveler ayarlar.
-- Kısıtlama düzenleme modunda bu düğmeye tıkladığınızda, kendi çerçeveler eşleştirmek için herhangi bir seçili öğe kısıtlamaları ayarlar.
+- Düzenleme modunda çerçevesinde, bu düğmeye tıklandığında, tüm seçili öğelerin kendi kısıtlamalarla eşleşen çerçeveleri ayarlar.
+- Kısıtlama düzenleme modunda, bu düğmeye tıklandığında çerçevelerine eşleştirilecek herhangi bir seçili öğe kısıtlamaları ayarlar.
 
-### <a name="bottom-toolbar"></a>Alt kısımdaki araç
+### <a name="bottom-toolbar"></a>Alt araç çubuğu
 
-Alt kısımdaki araç aygıt, Yönlendirme ve iOS Tasarımcısı film şeridi veya .xib bir dosyayı görüntülemek için kullanılan yakınlaştırma seçmek için bir yol sağlar:
+Alt araç çubuğunun, cihaz, Yönlendirme ve yakınlaştırma iOS Tasarımcısı bir görsel taslak veya .xib dosyasını görüntülemek için kullanılan seçmek için bir yol sağlar:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Bir cihaz ve tasarım yüzeyine yönünü seçmek için kullanılan alt kısımdaki araç](introduction-images/13-bottomtoolbar-vsmac.png "bir cihaz ve tasarım yüzeyine yönünü seçmek için kullanılan alt araç çubuğu")](introduction-images/13-bottomtoolbar-vsmac-large.png#lightbox)
+[![Bir cihaz ve tasarım yüzeyi için yönlendirmeyi seçmek için kullanılacak alt araç çubuğunun](introduction-images/13-bottomtoolbar-vsmac.png "bir cihaz ve tasarım yüzeyi için yönlendirmeyi seçmek için kullanılacak alt araç çubuğu")](introduction-images/13-bottomtoolbar-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Bir cihaz ve tasarım yüzeyine yönünü seçmek için kullanılan alt kısımdaki araç](introduction-images/13-bottomtoolbar-vs.png "bir cihaz ve tasarım yüzeyine yönünü seçmek için kullanılan alt araç çubuğu")](introduction-images/13-bottomtoolbar-vs-large.png#lightbox)
+[![Bir cihaz ve tasarım yüzeyi için yönlendirmeyi seçmek için kullanılacak alt araç çubuğunun](introduction-images/13-bottomtoolbar-vs.png "bir cihaz ve tasarım yüzeyi için yönlendirmeyi seçmek için kullanılacak alt araç çubuğu")](introduction-images/13-bottomtoolbar-vs-large.png#lightbox)
 
 -----
 
-#### <a name="device-and-orientation"></a>Aygıt ve yönü
+#### <a name="device-and-orientation"></a>Cihaz ve yönü
 
-Genişletildiğinde, alt kısımdaki araç tüm cihazlar, yönler ve/veya uyarlamalar geçerli belgeye uygulanabilir görüntüler. Tıklatarak tasarım yüzeyine görüntülenen görünümü değiştirir. 
+Genişletildiğinde, tüm cihazlar, yönlendirmeler ve/veya uyarlamaları geçerli belge için uygun alt araç çubuğunun görüntüler. Bunları tıklayarak tasarım yüzeyinde görüntülenen görünümü değiştirir. 
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Alt kısımdaki araç genişletilmiş aygıtları ve yönleri gösterecek şekilde](introduction-images/14-bottomtoolbarexpanded-vsmac.png "aygıtları ve yönleri gösterecek şekilde Genişletilmiş Alt araç çubuğu")](introduction-images/14-bottomtoolbarexpanded-vsmac-large.png#lightbox)
+[![Cihazlar ve yönlendirmelerine göstermek için alt araç çubuğunun Genişletilmiş](introduction-images/14-bottomtoolbarexpanded-vsmac.png "cihazları ve yönlendirmelerine göstermek üzere genişletilip alt araç çubuğu")](introduction-images/14-bottomtoolbarexpanded-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Alt kısımdaki araç genişletilmiş aygıtları ve yönleri gösterecek şekilde](introduction-images/14-bottomtoolbarexpanded-vs.png "aygıtları ve yönleri gösterecek şekilde Genişletilmiş Alt araç çubuğu")](introduction-images/14-bottomtoolbarexpanded-vs-large.png#lightbox)
+[![Cihazlar ve yönlendirmelerine göstermek için alt araç çubuğunun Genişletilmiş](introduction-images/14-bottomtoolbarexpanded-vs.png "cihazları ve yönlendirmelerine göstermek üzere genişletilip alt araç çubuğu")](introduction-images/14-bottomtoolbarexpanded-vs-large.png#lightbox)
 
 -----
 
-Bir cihaz seçip yönü yalnızca nasıl Tasarımcısı iOS tasarım önizlemeleri sağlanır değiştiğine dikkat edin. Geçerli seçim bağımsız olarak, kısıtlamalar uygulanır tüm cihazlar ve yönler sürece yeni eklenen **Düzenle nitelikler** düğmesi kullanıldığından aksi belirtmek için.
+Bir cihaz seçip yönü yalnızca iOS Designer tasarım nasıl Önizleme değiştiğine dikkat edin. Geçerli seçimi bağımsız olarak, eklenen kısıtlamalar uygulanır tüm cihazları ve yönlendirmelerine sürece **nitelikleri Düzenle** düğmesi, aksi takdirde belirtmek için kullanılmıştı.
 
-Zaman [boyut sınıfları](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes) olan [etkin](~/ios/user-interface/storyboards/unified-storyboards.md#enabling-size-classes), **Düzenle nitelikler** düğmesi, genişletilmiş alt araç çubuğunda görünür.  Tıklatarak **Düzenle nitelikler** düğmesi yönlendirmesini ve seçilen aygıt tarafından temsil edilen boyutu sınıfı dayalı bir arabirim değişim oluşturma seçeneklerini görüntüler. Aşağıdaki örnekler göz önünde bulundurun:
+Zaman [boyut sınıfları](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes) olan [etkin](~/ios/user-interface/storyboards/unified-storyboards.md#enabling-size-classes), **nitelikleri Düzenle** düğmesi, genişletilmiş alt araç çubuğunda görünür.  Tıklayarak **nitelikleri Düzenle** düğmesi seçili cihaz ve yönlendirmesini tarafından temsil edilen boyut sınıfına dayalı bir arabirim Varyasyon oluşturmak için seçenekleri görüntüler. Aşağıdaki örnekleri dikkate alın:
 
-- Varsa **iPhone SE** / **dikey**, olan seçili popover compact genişlik, normal Yükseklik boyutu sınıfı için bir arabirimi çeşitlemesi oluşturmak için seçenekler sağlar. 
-- Varsa **iPad Pro 9.7"** / **yatay** / **tam ekran** olan seçili popover için bir arabirimi çeşitlemesi oluşturmak için seçenekler sunan Normal genişlik, normal Yükseklik boyutu sınıfı.
+- Varsa **iPhone SE** / **dikey**, olan seçili popover compact genişlik, yükseklik normal boyut sınıfına için bir arabirimi Varyasyon oluşturmak için seçenekler sağlar. 
+- Varsa **iPad Pro 9.7"** / **yatay** / **tam ekran** olduğu belirlenirse, popover için bir arabirimi Varyasyon oluşturmak için seçenekler sağlar Normal genişlik, yükseklik normal boyut sınıfı.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Arabirim değiştirecek şekilde boyutu sınıfı tarafından kullanılan alt kısımdaki araç](introduction-images/15-edittraitsbutton-vsmac.png "bir arabirim değiştirecek şekilde boyutu sınıfı tarafından kullanılan alt araç çubuğu")](introduction-images/15-edittraitsbutton-vsmac-large.png#lightbox)
+[![Boyut sınıfına göre farklı bir arabirim için kullanılan alt araç çubuğunun](introduction-images/15-edittraitsbutton-vsmac.png "boyut sınıfına göre farklı bir arabirim için kullanılan alt araç çubuğu")](introduction-images/15-edittraitsbutton-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Arabirim değiştirecek şekilde boyutu sınıfı tarafından kullanılan alt kısımdaki araç](introduction-images/15-edittraitsbutton-vs.png "bir arabirim değiştirecek şekilde boyutu sınıfı tarafından kullanılan alt araç çubuğu")](introduction-images/15-edittraitsbutton-vs-large.png#lightbox)
+[![Boyut sınıfına göre farklı bir arabirim için kullanılan alt araç çubuğunun](introduction-images/15-edittraitsbutton-vs.png "boyut sınıfına göre farklı bir arabirim için kullanılan alt araç çubuğu")](introduction-images/15-edittraitsbutton-vs-large.png#lightbox)
 
 -----
 
 #### <a name="zoom-controls"></a>Yakınlaştırma denetimleri
 
-Tasarım yüzeyi birkaç denetimleri yakınlaştırma destekler:
+Tasarım yüzeyinde, çeşitli denetimler yakınlaştırma destekler:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
  
-![Alt kısımdaki araç yakınlaştırma denetimlerinde](introduction-images/16-zoomcontrols-vsmac.png "alt kısımdaki araç yakınlaştırma denetimleri")
+![Alt araç çubuğunun yakınlaştırma denetimleri](introduction-images/16-zoomcontrols-vsmac.png "alt araç çubuğunun yakınlaştırma denetimleri")
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-![Alt kısımdaki araç yakınlaştırma denetimlerinde](introduction-images/16-zoomcontrols-vs.png "alt kısımdaki araç yakınlaştırma denetimleri")
+![Alt araç çubuğunun yakınlaştırma denetimleri](introduction-images/16-zoomcontrols-vs.png "alt araç çubuğunun yakınlaştırma denetimleri")
 
 -----
 
 Denetimleri aşağıdakileri içerir:
 
-1. Uyacak şekilde Yakınlaştır
+1. Sığacak kadar Yakınlaştır
 2. Uzaklaştır
 3. Yakınlaştır
-4. Gerçek Boyut (1:1 piksel boyutu)
+4. Gerçek Boyut (1:1 piksel boyutunu)
 
-Bu denetimler, tasarım yüzeyine yakınlaştırmanın. Çalışma zamanında uygulama kullanıcı arabiriminin etkilemez.
+Bu denetimleri tasarım yüzeyinde yakınlaştırma ayarlayın. Uygulamanın çalışma zamanında kullanıcı arabirimi etkilemez.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-### <a name="properties-pad"></a>Özellikler paneli
+### <a name="properties-pad"></a>Özellikleri paneli
 
-Kullanım **özellikleri paneli** kimlik, görsel stiller, erişilebilirlik ve davranışını düzenlemek için. Aşağıdaki ekran görüntüsü gösterilmektedir **özellikleri paneli** düğmesi için seçenekleri:
+Kullanım **özellikler panelinde** kimlik, görsel stilleri, erişilebilirlik ve denetiminin davranışını düzenlenecek. Aşağıdaki ekran görüntüsünde gösterilmektedir **özellikler panelinde** düğmesi seçenekleri:
 
-[![Düğme Özellikleri paneli](introduction-images/17-buttonpropertiespad-vsmac.png "özellikleri paneli düğmesi")](introduction-images/17-buttonpropertiespad-vsmac-large.png#lightbox)
-#### <a name="properties-pad-sections"></a>Özellikler paneli bölümleri
+[![Bir düğme için özellikler panelini](introduction-images/17-buttonpropertiespad-vsmac.png "özellikler panelinde düğmesi")](introduction-images/17-buttonpropertiespad-vsmac-large.png#lightbox)
+#### <a name="properties-pad-sections"></a>Özellikler panelini bölümler
 
-**Özellikleri paneli** üç bölümleri içerir:
+**Özellikler panelinde** üç bölümleri içerir:
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 ### <a name="properties-window"></a>Özellikler Penceresi
 
-Kullanım **Özellikler penceresini** kimlik, görsel stiller, erişilebilirlik ve davranışını düzenlemek için. Aşağıdaki ekran görüntüsü gösterilmektedir **Özellikler penceresini** düğmesi için seçenekleri:
+Kullanım **Özellikler penceresi** kimlik, görsel stilleri, erişilebilirlik ve denetiminin davranışını düzenlenecek. Aşağıdaki ekran görüntüsünde gösterilmektedir **Özellikler penceresi** düğmesi seçenekleri:
 
-[![Düğme için Özellikler penceresini](introduction-images/17-buttonpropertieswindow-vs.png "düğmesi için Özellikler penceresi")](introduction-images/17-buttonpropertieswindow-vs-large.png#lightbox)
+[![Bir düğme için Özellikler penceresini](introduction-images/17-buttonpropertieswindow-vs.png "bir düğme için Özellikler penceresi")](introduction-images/17-buttonpropertieswindow-vs-large.png#lightbox)
 
-#### <a name="properties-window-sections"></a>Özellikler penceresi bölümleri
+#### <a name="properties-window-sections"></a>Özellikler penceresi bölümler
 
-**Özellikler penceresini** üç bölümleri içerir:
+**Özellikler penceresi** üç bölümleri içerir:
 
 -----
 
-1.  **Pencere öğesi** – ana adı, sınıf, stil özellikleri, vb. gibi denetimin özelliklerini. Denetimin içeriğini yönetmeye yönelik özellikleri genellikle burada yerleştirilir.
-2.  **Düzen** – konumu ve boyutu kısıtlamaları ve çerçeveleri gibi denetimin izlemek özellikleri burada listelenir.
-3.  **Olayları** – olayların ve olay işleyicileri belirtilen burada. Dokunma, vb. dokunun, sürükle olayları işlemek için kullanışlıdır. Olayları doğrudan kodunda ele alınabilir.
+1.  **Pencere öğesi** – denetimin adını, sınıf, stil özellikleri, vb. gibi ana özellikleri. Denetimin içeriğini yönetmek için özellikler genellikle burada yerleştirilir.
+2.  **Düzen** – kısıtlamaları ve çerçeveleri de dahil olmak üzere, denetimin boyutunu ve konumunu izlemenize özellikleri burada listelenir.
+3.  **Olayları** – olayları ve olay işleyicileri belirtilen burada. Dokunma, vb. dokunun, sürükle olay işleme için kullanışlıdır. Olayları doğrudan kod içinde ele alınabilir.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-#### <a name="editing-properties-in-the-properties-pad"></a>Özellikler panelinde özelliklerini düzenleme
+#### <a name="editing-properties-in-the-properties-pad"></a>Özellikler panelindeki özelliklerini düzenleme
 
-Tasarım yüzeyine görsel düzenleme yanı sıra iOS Tasarımcısı destekler özelliklerinde düzenleme **özellikleri paneli**. Kullanılabilir özellikler aşağıdaki ekran görüntüleri gösterildiği gibi seçili denetime bağlı olarak değişir:
+Görsel tasarım yüzeyinde düzenlemenin yanı sıra iOS Designer destekler özelliklerinde düzenleme **özellikler panelinde**. Kullanılabilir özellikler üzerinde seçili denetimi, aşağıdaki ekran görüntüleri ile gösterildiği gibi bağlı olarak değişir:
 
-[![Düğme Özellikleri](introduction-images/18a-buttonpropertiespad-vsmac.png "düğme özellikleri")](introduction-images/18a-buttonpropertiespad-vsmac-large.png#lightbox)
+[![Düğme Özellikleri](introduction-images/18a-buttonpropertiespad-vsmac.png "düğmesi özellikleri")](introduction-images/18a-buttonpropertiespad-vsmac-large.png#lightbox)
 
-[![Denetleyici özellikleri görüntüle](introduction-images/18b-viewcontrollerpropertiespad-vsmac.png "Denetleyicisi Özellikleri Görüntüle")](introduction-images/18b-viewcontrollerpropertiespad-vsmac-large.png#lightbox)
+[![Görüntüleme Denetleyicisi Özellikleri](introduction-images/18b-viewcontrollerpropertiespad-vsmac.png "Denetleyicisi Özellikleri Görüntüle")](introduction-images/18b-viewcontrollerpropertiespad-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-#### <a name="editing-properties-in-the-properties-window"></a>Özellikleri penceresinde özelliklerini düzenleme
+#### <a name="editing-properties-in-the-properties-window"></a>Özellikler penceresinde özelliklerini düzenleme
 
-Tasarım yüzeyine görsel düzenleme yanı sıra iOS Tasarımcısı destekler özelliklerinde düzenleme **Özellikler penceresini**. Kullanılabilir özellikler aşağıdaki ekran görüntüleri gösterildiği gibi seçili denetime bağlı olarak değişir:
+Görsel tasarım yüzeyinde düzenlemenin yanı sıra iOS Designer destekler özelliklerinde düzenleme **Özellikler penceresi**. Kullanılabilir özellikler üzerinde seçili denetimi, aşağıdaki ekran görüntüleri ile gösterildiği gibi bağlı olarak değişir:
 
-[![Düğme Özellikleri](introduction-images/18a-buttonpropertieswindow-vs.png "düğme özellikleri")](introduction-images/18a-buttonpropertieswindow-vs-large.png#lightbox)
+[![Düğme Özellikleri](introduction-images/18a-buttonpropertieswindow-vs.png "düğmesi özellikleri")](introduction-images/18a-buttonpropertieswindow-vs-large.png#lightbox)
 
-[![Denetleyici özellikleri görüntüle](introduction-images/18b-viewcontrollerpropertieswindow-vs.png "Denetleyicisi Özellikleri Görüntüle")](introduction-images/18b-viewcontrollerpropertieswindow-vs-large.png#lightbox)
+[![Görüntüleme Denetleyicisi Özellikleri](introduction-images/18b-viewcontrollerpropertieswindow-vs.png "Denetleyicisi Özellikleri Görüntüle")](introduction-images/18b-viewcontrollerpropertieswindow-vs-large.png#lightbox)
 
 -----
 
 > [!IMPORTANT]
-> Özellikler paneli şimdi gösterir kimlik bölümünde bir **Modülü** alan. Bu bölümde yalnızca SWIFT sınıfları ile birlikte çalışırken doldurmak gereklidir. Modül adı namespaced olan SWIFT sınıfları için girmek için kullanın.
+> Kimlik bölümünde özellikler panelinde şimdi gösterir bir **Modülü** alan. Bu bölümde yalnızca Swift sınıflarla birlikte çalışırken doldurmak gereklidir. Namespaced olan Swift sınıflar için bir modül adı girmek için kullanın.
 
 #### <a name="default-values"></a>Varsayılan değerler
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-Birçok özelliklerinde **özellikleri paneli** herhangi bir değer veya varsayılan bir değer gösterir. Ancak, uygulamanın kodunu hala bu değerleri değiştirebilir. **Özellikleri paneli** değerleri kodda göstermez.
+Birçok özelliklerinde **özellikler panelinde** herhangi bir değer veya varsayılan değeri gösterir. Ancak, uygulama kodunun yine de bu değerleri değiştirebilir. **Özellikler panelinde** kodda ayarlanmış değerleri göstermez.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Birçok özelliklerinde **Özellikler penceresini** herhangi bir değer veya varsayılan bir değer gösterir. Ancak, uygulamanın kodunu hala bu değerleri değiştirebilir. **Özellikler penceresini** değerleri kodda göstermez.
+Birçok özelliklerinde **Özellikler penceresi** herhangi bir değer veya varsayılan değeri gösterir. Ancak, uygulama kodunun yine de bu değerleri değiştirebilir. **Özellikler penceresi** kodda ayarlanmış değerleri göstermez.
 
 -----
 
@@ -404,29 +404,29 @@ Birçok özelliklerinde **Özellikler penceresini** herhangi bir değer veya var
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-Çeşitli olayları için özel olay işleyicileri belirtmek için kullanın **olayları** sekmesinde **özellikleri paneli**. Örneğin, aşağıdaki ekran görüntüsünde bir `HandleClick` yöntemi işler düğmenin **Touch içinde** olay:
+Çeşitli olayları için özel olay işleyicileri belirtmek için kullanın **olayları** sekmesinde **özellikler panelinde**. Örneğin, aşağıdaki ekran görüntüsünde, bir `HandleClick` yöntemi işler düğmenin **Touch içinde** olay:
 
-[![Özellikler paneliyle düğmesi için ayarlanan bir olay işleyicisi](introduction-images/19-buttonpropertiespadevents-vsmac.png "düğmesi için ayarlanan bir olay işleyicisi ile özellikleri paneli")](introduction-images/19-buttonpropertiespadevents-vsmac-large.png#lightbox)
+[![Özellikleri paneli, bir düğme için ayarlanmış bir olay işleyicisi ile](introduction-images/19-buttonpropertiespadevents-vsmac.png "düğmesi için ayarlanan bir olay işleyicisi ile özellikleri paneli")](introduction-images/19-buttonpropertiespadevents-vsmac-large.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Çeşitli olayları için özel olay işleyicileri belirtmek için kullanın **olayları** sekmesinde **Özellikler penceresini**. Örneğin, aşağıdaki ekran görüntüsünde bir `HandleClick` yöntemi işler düğmenin **Touch içinde** olay:
+Çeşitli olayları için özel olay işleyicileri belirtmek için kullanın **olayları** sekmesinde **Özellikler penceresi**. Örneğin, aşağıdaki ekran görüntüsünde, bir `HandleClick` yöntemi işler düğmenin **Touch içinde** olay:
 
-[![Özellikler penceresi düğmesi için ayarlanan bir olay işleyicisi ile](introduction-images/19-buttonpropertieswindowevents-vs.png "düğmesi için ayarlanan bir olay işleyicisi ile Özellikler penceresi")](introduction-images/19-buttonpropertieswindowevents-vs-large.png#lightbox)
+[![Özellikler penceresinde, bir düğme için ayarlanmış bir olay işleyicisi ile](introduction-images/19-buttonpropertieswindowevents-vs.png "düğmesi için ayarlanan bir olay işleyicisi ile Özellikler penceresi")](introduction-images/19-buttonpropertieswindowevents-vs-large.png#lightbox)
 
 -----
 
-Olay işleyici belirtilen sonra aynı ada sahip bir yöntem karşılık gelen görünüm denetleyici sınıfına eklenmesi gerekir. Aksi halde, bir `unrecognized selector` özel durum düğmesi dokunduğunuz olduğunda oluşur:
+Bir olay işleyicisi belirtilen sonra aynı ada sahip bir yöntem için karşılık gelen görünüm denetleyicisi sınıfını eklenmesi gerekir. Aksi takdirde, bir `unrecognized selector` düğmeye dokunulduğunda özel durum oluşur:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![Tanınmayan Seçici istisna](introduction-images/20-unrecognizedselector-vsmac.png "tanınmayan seçici özel durumu")](introduction-images/20-unrecognizedselector-vsmac-large.png#lightbox)
+[![Tanınmayan Seçici istisna](introduction-images/20-unrecognizedselector-vsmac.png "tanınmayan seçici özel durum")](introduction-images/20-unrecognizedselector-vsmac-large.png#lightbox)
 
-Olay işleyici sonra içinde belirtilen unutmayın **özellikleri paneli**, iOS Tasarımcısı hemen karşılık gelen kod dosyasını açın ve yöntem bildirimi eklemesini sağlar. 
+İçinde belirtilen bundan sonra bir olay işleyicisi Not **özellikler panelinde**, iOS Tasarımcısı hemen karşılık gelen kod dosyasını açın ve yöntem bildiriminde eklemesini sağlar. 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![Tanınmayan Seçici istisna](introduction-images/20-unrecognizedselector-vs.png "tanınmayan seçici özel durumu")](introduction-images/20-unrecognizedselector-vs-large.png#lightbox)
+[![Tanınmayan Seçici istisna](introduction-images/20-unrecognizedselector-vs.png "tanınmayan seçici özel durum")](introduction-images/20-unrecognizedselector-vs-large.png#lightbox)
 
 -----
 
@@ -434,7 +434,7 @@ Olay işleyici sonra içinde belirtilen unutmayın **özellikleri paneli**, iOS 
 
 ### <a name="outline-view"></a>Anahat görünümü
 
-İOS Tasarımcısı, anahat olarak denetimleri hiyerarşisini bir arabirimin de görüntüleyebilirsiniz. Anahat seçilerek kullanılabilir **belge anahattı** sekmesinde, aşağıda gösterildiği gibi:
+İOS Designer, denetimlerin bir arabirimin hiyerarşi anahat olarak da görüntüleyebilirsiniz. Ana hat seçilerek kullanılabilir **belge anahattı** sekmesinde, aşağıda gösterildiği gibi:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
@@ -446,17 +446,17 @@ Olay işleyici sonra içinde belirtilen unutmayın **özellikleri paneli**, iOS 
 
 -----
 
-Anahat görünümünde seçili Denetim tasarım yüzeyine Seçili denetimi ile eşitlenmiş olarak tutulur.  Bu özellik, bir iç içe arabirimi hiyerarşisinden öğeyi seçmek için kullanışlıdır.
+Ana görünümünde seçili denetimi tasarım yüzeyinde Seçili denetimi ile eşitlenmiş olarak tutulur.  Bu özellik, bir iç içe arabirimi hiyerarşiden bir öğeyi seçmek için yararlıdır.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-## <a name="revert-to-xcode"></a>Xcode için geri
+## <a name="revert-to-xcode"></a>Xcode için geri döndürme
 
-İOS Tasarımcısı ve Xcode arabirimi Oluşturucu birbirinin yerine kullanmak da mümkündür. Film şeridi veya .xib dosyası Xcode arabirimi Oluşturucusu'nda açmak için dosyayı sağ tıklatın ve **birlikte Aç > Xcode arabirimi Oluşturucu**aşağıdaki ekran görüntüsüne gösterildiği gibi:
+İOS Tasarımcısı ve Xcode arabirim Oluşturucu dönüşümlü olarak kullanıp mümkündür. Xcode arabirim oluşturucu içinde bir film şeridi veya .xib dosya açmak için dosyasını sağ tıklatın ve **birlikte Aç > Xcode arabirim Oluşturucu**ekran aşağıda gösterildiği gibi:
 
-[![Film şeridi Xcode arabirimi Oluşturucusu'nda açmayı](introduction-images/22-openinxcodeinterfacebuilder-vsmac.png "Xcode arabirimi Oluşturucusu'nda bir film şeridi açma")](introduction-images/22-openinxcodeinterfacebuilder-vsmac-large.png#lightbox)
+[![Xcode içinde arabirim oluşturucu görsel taslak açma](introduction-images/22-openinxcodeinterfacebuilder-vsmac.png "Xcode arabirim oluşturucu görsel taslak açma")](introduction-images/22-openinxcodeinterfacebuilder-vsmac-large.png#lightbox)
 
-Xcode arabirimi Oluşturucusu'nda Düzenlemeleri yaptıktan sonra dosyayı kaydedin ve Mac için Visual Studio'ya geri dönün Değişiklikleri Xamarin.iOS projesi eşitler.
+Xcode arabirim Oluşturucu'da düzenlemeler yaptıktan sonra dosyayı kaydedin ve Mac için Visual Studio'ya geri dönün Xamarin.iOS projesi için değişiklikleri eşitler.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
@@ -464,23 +464,23 @@ Xcode arabirimi Oluşturucusu'nda Düzenlemeleri yaptıktan sonra dosyayı kayde
 
 ## <a name="xib-support"></a>.xib desteği
 
-İOS Tasarımcısı oluşturma, düzenleme ve .xib dosyalarını yönetme destekler. Bu uygulamanın görünümü hiyerarşisine eklenebilir, respresent tek, özel görünümler XML dosyalarıdır. Film şeridi birçok ekranları ve bunları arasındaki geçişler temsil eder ancak .xib dosyası genellikle tek bir görünüm veya bir uygulamadaki ekran arabirimini temsil eder.
+İOS Designer, oluşturma, düzenleme ve yönetme .xib dosyaları destekler. Bu uygulama için hiyerarşisini görüntüle eklenebilir, respresent tek ve özel görünümler XML dosyalarıdır. Görsel taslak birçok ekranlar ve bunlar arasındaki geçişleri temsil eder, oysa .xib dosyası genellikle tek bir görünüm veya bir uygulamada ekranı arabirimini temsil eder.
 
-Çözüm – .xib dosyaları, film şeridi veya kod – oluşturmak ve bir kullanıcı arabirimi sürdürmek için en iyi çalıştığı birçok görüşlerini vardır. Gerçekte, mükemmel bir çözüm ve iş elinizdeki için en iyi aracı dikkate değer her zaman olur. Bu, .xib dosyaları özel tablo görünümü hücresi gibi bir uygulama birden çok yerde gereken özel bir görünüm temsil etmek üzere kullanıldığında genellikle en güçlü belirtti. 
+Hakkında – .xib dosyaları, film şeritleri veya kod – çözümü oluşturmak ve bir kullanıcı arabirimi sürdürmek için en uygun birçok fikirlerini vardır. Gerçekte, mükemmel çözümü yoktur ve her zaman en uygun aracı işi eldeki dikkate değer olur. Bu, bir özel tablo görünümü hücresi gibi bir uygulama birden çok yerde gereken özel bir görünümü temsil etmek için kullanıldığında genellikle en güçlü .xib dosyaları belirtti. 
 
-İçinde aşağıdaki tarif .xib dosyalarını kullanma hakkında daha fazla belge bulunabilir:
+.Xib dosyaları kullanma hakkında daha fazla belge içinde aşağıdaki tarifleri bulunabilir:
 
-- [Şablonu görüntüleme .xib kullanma](https://developer.xamarin.com/recipes/ios/general/templates/using_the_ios_view_xib_template/)
-- [Özel bir .xib kullanarak bir TableViewCell oluşturma](https://developer.xamarin.com/recipes/ios/content_controls/tables/custom-tableviewcell/)
-- [Başlatma bir .xib kullanarak ekran oluşturma](https://developer.xamarin.com/recipes/ios/general/templates/launchscreen-xib/)
+- [Görünüm .xib şablonu kullanma](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/templates/using_the_ios_view_xib_template)
+- [Özel bir .xib kullanarak bir TableViewCell oluşturma](https://github.com/xamarin/recipes/tree/master/Recipes/ios/content_controls/tables/custom-tableviewcell)
+- [Başlatma bir .xib kullanarak bir ekran oluşturma](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/templates/launchscreen-xib)
 
-Film şeritleri kullanılmasıyla ilgili daha fazla bilgi için bkz [film şeritleri giriş](~/ios/user-interface/storyboards/index.md).
+Görsel Taslaklar kullanımına ilişkin daha fazla bilgi için [görsel taslaklara giriş](~/ios/user-interface/storyboards/index.md).
 
-Bu ve diğer iOS Tasarımcısı ile ilgili kılavuzları çoğu Xamarin.iOS yeni proje şablonları film şeridi varsayılan olarak sağlar. bu yana kullanıcı arabirimleri oluşturmak için film şeritleri kullanımını standart yaklaşımı olarak bakın.
+Bu ve diğer iOS Designer ile ilgili Kılavuzlar çoğu Xamarin.iOS yeni proje şablonları, varsayılan olarak bir görsel taslak sağladıklarından dolayı kullanıcı arabirimleri oluşturmak için görsel Taslaklar kullanımını standart bir yaklaşım olarak bakın.
 
 ## <a name="summary"></a>Özet
 
-Bu kılavuz özelliklerini açıklayan ve anahat güzel kullanıcı arabirimleri tasarlama için sunduğu araçları Tasarımcısı iOS bir giriş sağlanır.
+Bu kılavuz, iOS Designer, anahat güzel kullanıcı arabirimleri tasarlama için sunduğu araçları ve özellikleri açıklayan bir giriş sağlanır.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
@@ -488,7 +488,7 @@ Bu kılavuz özelliklerini açıklayan ve anahat güzel kullanıcı arabirimleri
 - [iOS Designable denetimleri gözden geçirme](~/ios/user-interface/designer/ios-designable-controls-walkthrough.md)
 - [Hello, iOS](~/ios/get-started/hello-ios/index.md)
 - [Çok Ekranlı Hello, iOS ](~/ios/get-started/hello-ios-multiscreen/index.md)
-- [Android Tasarımcı genel bakış](~/android/user-interface/android-designer/index.md)
+- [Android Designer genel bakış](~/android/user-interface/android-designer/index.md)
 - [Parçalı Sınıflar ve Yöntemler](https://docs.microsoft.com/dotnet/csharp/programming-guide/classes-and-structs/partial-classes-and-methods)
-- [İOS - 2014 (video) gelişmesi için Xamarin tasarımcısı içine Dalma](https://www.youtube.com/watch?v=W4H9uLjoEjM)
-- [Başlatma ekranı (video) oluşturmak için iOS Tasarımcısı kullanma](https://university.xamarin.com/lightninglectures/using-the-ios-designer-to-create-a-launch-screen)
+- [İOS - 2014 (video) gelişmek için Xamarin Tasarımcı içinde incelemenizi](https://www.youtube.com/watch?v=W4H9uLjoEjM)
+- [İOS Designer kullanarak başlatma ekran (video) oluşturma](https://university.xamarin.com/lightninglectures/using-the-ios-designer-to-create-a-launch-screen)

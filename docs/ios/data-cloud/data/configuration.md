@@ -1,26 +1,26 @@
 ---
-title: Xamarin.iOS içinde SQLite yapılandırma
-description: Bu belge, bir Xamarin.iOS uygulaması bir SQLite veritabanı dosyasında konumunu belirlemek açıklar. Bu kavramlar olsun seçili veri erişim mekanizması ilgilidir.
+title: SQLite Xamarin.ios'ta yapılandırma
+description: Bu belge, bir Xamarin.iOS uygulaması bir SQLite veritabanı dosyasında konumunu belirlemek açıklar. Bu alan seçili veri erişim mekanizması ne olursa olsun ilgili kavramlardır.
 ms.prod: xamarin
 ms.assetid: E5582F4B-AD74-420F-9E6D-B07CFB420B3A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 10/11/2016
-ms.openlocfilehash: 57645c0bb947a60a3d74436b752210d1bac18124
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: f170aa753ff490b75ab66ac858051516935876fe
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784387"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241272"
 ---
-# <a name="configuring-sqlite-in-xamarinios"></a>Xamarin.iOS içinde SQLite yapılandırma
+# <a name="configuring-sqlite-in-xamarinios"></a>SQLite Xamarin.ios'ta yapılandırma
 
-Xamarin.iOS uygulamanızı SQLite kullanmak için veritabanı dosyası için doğru dosya konumu belirlemek gerekir.
+SQLite Xamarin.iOS kullanmak için veritabanı dosyası için doğru dosya konumu belirlemeniz gerekir.
 
 ## <a name="database-file-path"></a>Veritabanı dosya yolu
 
-Kullandığınız veri erişim yöntemine bağımsız olarak, veriler ile SQLite depolanabilir önce bir veritabanı dosyası oluşturmanız gerekir. Dosya konumu, hedeflediğiniz hangi platformu bağlı olarak farklı olacaktır. İOS için geçerli bir yol oluşturmak için aşağıdaki kod parçacığında gösterildiği gibi ortam sınıfını kullanabilirsiniz:
+SQLite ile veri depolanabilir önce kullandığınız hangi veri erişim yönteminden bağımsız olarak, bir veritabanı dosyası oluşturmanız gerekir. Dosya konumu, hedeflediğiniz platformdan bağlı olarak farklı olacaktır. İOS için geçerli bir yol oluşturmak için aşağıdaki kod parçacığında gösterildiği gibi ortam sınıfını kullanabilirsiniz:
 
 ```csharp
 string dbPath = Path.Combine (
@@ -29,9 +29,9 @@ string dbPath = Path.Combine (
 // dbPath contains a valid file path for the database file to be stored
 ```
 
-Veritabanı dosyasının depolanacağı karar verirken dikkate edilecek diğer noktalar vardır. İos'ta yedeklenen otomatik olarak (veya değil) veritabanına isteyebilirsiniz.
+Veritabanı dosyasının depolanacağı karar verirken dikkate gereken diğer noktalar vardır. İos'ta, yedeklenen otomatik olarak (veya etkinleştirmezsiniz) veritabanına isteyebilirsiniz.
 
-Platformlar arası uygulamanızdaki her platformda farklı bir konum kullanmak istiyorsanız, bir derleme yönergesi gösterildiği gibi her platform için farklı bir yol oluşturmak için kullanabilirsiniz:
+Platformlar arası uygulamanızdaki her platformda farklı bir konum kullanmak istiyorsanız, bir derleyici yönergesi gösterildiği gibi her platform için farklı bir yol oluşturmak için kullanabilirsiniz:
 
 ```csharp
 var sqliteFilename = "MyDatabase.db3";
@@ -47,13 +47,13 @@ string libraryPath = Path.Combine (documentsPath, "..", "Library"); // Library f
 var path = Path.Combine (libraryPath, sqliteFilename);
 ```
 
-Başvurmak [dosya sistemi ile çalışma](~/ios/app-fundamentals/file-system.md) İos'ta kullanmak için hangi dosya konumları hakkında daha fazla bilgi için makalenin. Bkz: [Çapraz Platform uygulamaları oluşturma](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) belge her platform için özel kod yazmanıza olanak derleyici yönergeleri kullanma hakkında daha fazla bilgi için.
+Başvurmak [dosya sistemiyle çalışmak](~/ios/app-fundamentals/file-system.md) makale İos'ta kullanmak için hangi dosya konumları hakkında daha fazla bilgi için. Bkz: [Çapraz Platform uygulamaları oluşturma](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) belge her platform için özel kod yazmak için derleyici yönergeleri kullanma hakkında daha fazla bilgi için.
 
 ## <a name="threading"></a>İş Parçacığı Oluşturma
 
-Çoklu iş parçacıkları arasında aynı SQLite veritabanı bağlantısı kullanmamalısınız. Açmak için kullanın ve sonra aynı iş parçacığı üzerinde oluşturduğunuz tüm bağlantıları kapatın dikkatli olun.
+Çoklu iş parçacıkları arasında aynı SQLite veritabanı bağlantısı kullanmamalıdır. Açın, kullanmak ve aynı iş parçacığında oluşturduğunuz tüm bağlantıları kapatın konusunda dikkatli olun.
 
-Kodunuzu aynı anda birden çok iş parçacığından SQLite veritabanı erişmeye çalışan değil emin olmak için bu gibi bir veritabanına erişmek için kalacaklarını her bir kilit el ile alın:
+Kodunuzu SQLite veritabanındaki kullanıcıyla aynı anda birden fazla iş parçacığından erişmek çalışırken değil emin olmak için şunun gibi bir veritabanına erişmek için oluşturacağınız her bir kilit el ile uygulayın:
 
 ```csharp
 object locker = new object(); // class level private field
@@ -63,12 +63,12 @@ lock (locker){
 }
 ```
 
-Tüm veritabanı erişimi (okuma, yazma, güncelleştirmeler, vb.) ile aynı kilit alınmalı. Kilit yan tümcesi içinde iş basit tutulur ve ayrıca bir kilit sürebilir diğer yöntemleri çağırmaz sağlayarak bir kilitlenme durumdan kaçınmak için dikkatli olunması gerekir!
+Tüm veritabanı erişimi (okuma, yazma, güncelleştirmeler vb.) ile aynı kilit alınmalı. Kilit yan tümcesi içinde iş basit tutulur ve ayrıca bir kilit sürebilir diğer yöntemler ile çağırmaz sağlayarak bir kilitlenme durumdan kaçınmak için dikkatli olunması gerekir!
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [ADO'da Basic (örnek)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
-- [ADO'da Gelişmiş (örnek)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
-- [iOS veri tarif](https://developer.xamarin.com/recipes/ios/data/sqlite/)
+- [DataAccess Basic (örnek)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
+- [DataAccess Gelişmiş (örnek)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
+- [iOS veri tarifleri](https://github.com/xamarin/recipes/tree/master/Recipes/ios/data/sqlite)
 - [Xamarin.Forms veri erişimi](~/xamarin-forms/app-fundamentals/databases.md)

@@ -1,246 +1,246 @@
 ---
-title: Xamarin.iOS uygulamaları hata ayıklama
-description: Bu belgede hata ayıklayıcı Mac veya Visual Studio 2017 için Visual Studio'da ayarı kesme noktaları, kablosuz hata ayıklama ve daha fazlasını içeren bir Xamarin.iOS uygulaması hata ayıklamak için nasıl kullanılacağını açıklar.
+title: Xamarin.iOS uygulamaları için hata ayıklama
+description: Bu belge hata ayıklayıcı Mac ya da Visual Studio 2017 için Visual Studio'da hata ayıklama ayarı kesme noktaları, kablosuz hata ayıklama ve daha fazlası dahil olmak üzere bir Xamarin.iOS uygulaması için nasıl kullanılacağını açıklar.
 ms.prod: xamarin
 ms.assetid: 05460010-99E1-DC38-F855-2D691EF54484
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/19/2017
-ms.openlocfilehash: 494dfad0ba3d26147604ce1bca1de49fac318811
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 4b21a69e49c8c7fd79de8edac9858c4714657f1c
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785440"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242322"
 ---
-# <a name="debugging-xamarinios-apps"></a>Xamarin.iOS uygulamaları hata ayıklama
+# <a name="debugging-xamarinios-apps"></a>Xamarin.iOS uygulamaları için hata ayıklama
 
-_Xamarin.iOS uygulamaları Visual Studio'da yerleşik hata ayıklayıcısı ile Mac veya Visual Studio hata ayıklaması yapılabilir._
+_Xamarin.iOS uygulamaları Visual Studio veya Mac için Visual Studio'da yerleşik hata ayıklayıcısı ile ayıklanabilir._
 
-Visual Studio için C# ve diğer yönetilen dilleri kod hata ayıklama için Mac'ın yerel hata ayıklama desteği ve kullanmak [LLDB](http://lldb.llvm.org/tutorial.html) C hata ayıklamak gerektiğinde, C++ ya da Objective C değiştirebildiğiniz, Xamarin.iOS projenizi ile bağlama.
+Visual Studio için C# ve başka yönetilen dillerde kod hata ayıklama için Mac yerel hata ayıklama desteği ve kullanmak [LLDB](http://lldb.llvm.org/tutorial.html) C hata ayıklamak ihtiyacınız olduğunda, Objective C ya da C++ koduna, Xamarin.iOS projenizi bağlama.
 
 
 > [!NOTE]
-> Hata ayıklama modunda uygulamaları derlediğinizde, her kod satırı izlenmiş gibi Xamarin.iOS daha yavaştır ve çok daha büyük uygulamalar oluşturur. Serbest bırakmadan önce yayın derlemesi yaptığınızdan emin olun.
+> Uygulama hata ayıklama modunda derleme yaptığınızda, Xamarin.iOS her kod satırı izleme gibi daha yavaş ve büyük uygulamalar oluşturur. Serbest bırakmadan önce bir yayın yapısı yaptığınızdan emin olun.
 
-Xamarin.iOS hata ayıklayıcı IDE'yi tümleştirilmiştir ve geliştiricilerin simulator ve cihazda Xamarin.iOS tarafından desteklenen yönetilen dillerinden biri ile oluşturulan Xamarin.iOS uygulamalarda hata ayıklama olanak tanır.
+Xamarin.iOS hata ayıklayıcı, IDE'ye tümleşiktir ve bu hizmet sayesinde geliştiriciler, simülatör ve cihazda Xamarin.iOS tarafından desteklenen yönetilen dillerinden biri ile oluşturulmuş Xamarin.iOS uygulamalarında hata ayıklamak.
 
-Xamarin.iOS hata ayıklayıcı kullanan [Mono yumuşak hata ayıklayıcı](http://www.mono-project.com/docs/advanced/runtime/docs/soft-debugger/), oluşturulan kod ve Mono çalışma zamanı hata ayıklama deneyimini sağlamak üzere IDE ile işbirliği anlamına gelir. Bu Bilgi Bankası veya iş Birliği hata ayıklaması programdan olmadan bir program denetleyen sabit hata ayıklayıcıları LLDB veya MDB gibi farklıdır.
+Xamarin.iOS hata ayıklayıcı kullanan [Mono geçici hata ayıklayıcı](http://www.mono-project.com/docs/advanced/runtime/docs/soft-debugger/), oluşturulan kod ve Mono çalışma zamanı hata ayıklama deneyimini sağlamak için IDE ile işbirliği anlamına gelir. Bu bilgi veya hata ayıklanan programın işbirliği olmadan bir program denetleyen sabit hata ayıklayıcıları LLDB veya MDB gibi farklıdır.
 
-## <a name="setting-breakpoints"></a>Kesme noktalarını ayarlama
+## <a name="setting-breakpoints"></a>Kesme noktaları ayarlama
 
-İlk adımdır için uygulamanızın hatalarını ayıklama başlatmaya hazır olduğunuzda [uygulamanızı kesme noktalarını ayarlayın](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/set_a_breakpoint/). Bu kod, bölmek istediğiniz satır numarasını yanındaki Düzenleyicisi kenar boşluğu alanı tıklayarak gerçekleştirilir:
+İlk adımıdır için uygulamanızı hata ayıklamaya başlamak hazır olduğunuzda [kesme noktaları ayarlayın, uygulamanızın](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint). Bu, kesmek istediğiniz kod satırı sayısını yanındaki Düzenleyici kenar boşluğu alanına tıklayarak gerçekleştirilir:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![](debugging-in-xamarin-ios-images/debugging1.png "Kesme noktalarını ayarlama")](debugging-in-xamarin-ios-images/debugging1.png#lightbox)
+[![](debugging-in-xamarin-ios-images/debugging1.png "Kesme noktaları ayarlama")](debugging-in-xamarin-ios-images/debugging1.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![](debugging-in-xamarin-ios-images/debugging1a.png "Kesme noktalarını ayarlama")](debugging-in-xamarin-ios-images/debugging1a.png#lightbox)
+[![](debugging-in-xamarin-ios-images/debugging1a.png "Kesme noktaları ayarlama")](debugging-in-xamarin-ios-images/debugging1a.png#lightbox)
 
 -----
 
-Kodunuzda giderek ayarlanan tüm kesme noktaları görüntüleyebilirsiniz **kesme noktaları paneli**:
+Kodunuzda giderek ayarlanan kesme noktaları görüntüleyebileceğiniz **kesme noktaları paneli**:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 [![](debugging-in-xamarin-ios-images/image0a.png "Kesme noktaları paneli")](debugging-in-xamarin-ios-images/image0a.png#lightbox)
 
- Kesme noktaları paneli otomatik olarak görüntülenmiyorsa, onu görünen seçerek yapabileceğiniz _Görünüm > Windows hata ayıklama > kesme noktaları_
+ Kesme noktaları paneli otomatik olarak görüntülenmiyorsa, görünür seçerek yapabileceğiniz _Görüntüle > Windows hata ayıklama > kesme noktaları_
  
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 [![](debugging-in-xamarin-ios-images/image0.png "Kesme noktaları paneli")](debugging-in-xamarin-ios-images/image0.png#lightbox)
 
- Kesme noktaları paneli otomatik olarak görüntülenmiyorsa, onu görünen seçerek yapabileceğiniz _hata ayıklama > Windows > kesme noktaları_
+ Kesme noktaları paneli otomatik olarak görüntülenmiyorsa, görünür seçerek yapabileceğiniz _hata ayıklama > Windows > kesme noktaları_
  
 -----
 
-Herhangi bir uygulama hata ayıklama başlamadan önce her zaman yapılandırma ayarlandığından emin olun **hata ayıklama**, bu yararlı birtakım Araçlar kesme noktaları gibi hata ayıklama, veri görselleştiriciler kullanarak ve çağrı yığını görüntüleme desteklemek için içeriyor:
+Herhangi bir uygulamanın hatalarını ayıklamaya başlamadan önce her zaman yapılandırma ayarlandığından emin olun **hata ayıklama**gibi bu yararlı birtakım Araçlar kesme noktaları gibi hata ayıklama, görselleştiriciler verileri kullanarak ve çağrı yığınını görüntüleme desteği içerir:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![](debugging-in-xamarin-ios-images/debugging7.png "Hata ayıklama simulator'da")](debugging-in-xamarin-ios-images/debugging7.png#lightbox)
-[![](debugging-in-xamarin-ios-images/debugging7a.png "fiziksel cihaz üzerindeki hata ayıklama")](debugging-in-xamarin-ios-images/debugging7a.png#lightbox)
+[![](debugging-in-xamarin-ios-images/debugging7.png "Simulator'da hata ayıklama")](debugging-in-xamarin-ios-images/debugging7.png#lightbox)
+[![](debugging-in-xamarin-ios-images/debugging7a.png "fiziksel bir cihazda hata ayıklama")](debugging-in-xamarin-ios-images/debugging7a.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![](debugging-in-xamarin-ios-images/debugging7c.png "Hata ayıklama simulator'da")](debugging-in-xamarin-ios-images/debugging7c.png#lightbox)
-[![](debugging-in-xamarin-ios-images/debugging7d.png "fiziksel cihaz üzerindeki hata ayıklama")](debugging-in-xamarin-ios-images/debugging7d.png#lightbox)
+[![](debugging-in-xamarin-ios-images/debugging7c.png "Simulator'da hata ayıklama")](debugging-in-xamarin-ios-images/debugging7c.png#lightbox)
+[![](debugging-in-xamarin-ios-images/debugging7d.png "fiziksel bir cihazda hata ayıklama")](debugging-in-xamarin-ios-images/debugging7d.png#lightbox)
 
 -----
 
-## <a name="start-debugging"></a>Hata ayıklama başlatılamıyor
-Hata ayıklama başlatmak için hedef cihazı seçin veya IDE'yi benzer:
+## <a name="start-debugging"></a>Hata Ayıklamayı Başlat
+Hata ayıklamayı başlatmak için hedef cihaz seçin veya IDE'nizi benzer:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-[![](debugging-in-xamarin-ios-images/debugging7b.png "Hedef cihazı seçin")](debugging-in-xamarin-ios-images/debugging7b.png#lightbox)
+[![](debugging-in-xamarin-ios-images/debugging7b.png "Hedef cihaz seçin")](debugging-in-xamarin-ios-images/debugging7b.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-[![](debugging-in-xamarin-ios-images/debugging7e.png "Hedef cihazı seçin")](debugging-in-xamarin-ios-images/debugging7e.png#lightbox)
+[![](debugging-in-xamarin-ios-images/debugging7e.png "Hedef cihaz seçin")](debugging-in-xamarin-ios-images/debugging7e.png#lightbox)
 
 -----
 
 
 
-Ardından tuşlarına basarak uygulamanızı dağıtmak **Yürüt** düğmesi.
+Tuşuna basarak uygulamanızı dağıtmaya **Play** düğmesi.
 
-Bir kesme noktası isabet zaman kodu vurgulanan sarı olur:
+Kod, bir kesme noktasına ulaştığınızda, vurgulanan sarı olur:
 
 [![](debugging-in-xamarin-ios-images/image2.png "Kod vurgulanan sarı olur")](debugging-in-xamarin-ios-images/image2.png#lightbox)
 
-Hata ayıklama nesneleri değerlerini İnceleme gibi araçları, bu noktada kodunuzda neler hakkında daha fazla bilgi almak için kullanılabilir:
+Hata ayıklama gibi nesneleri değerlerini İnceleme araçları, bu noktada kodunuzda olup bitenler hakkında daha fazla bilgi almak için kullanılabilir:
 
 [![](debugging-in-xamarin-ios-images/image3.png "Bir renk değeri görüntüleme")](debugging-in-xamarin-ios-images/image3.png#lightbox)
 
 ## <a name="conditional-breakpoints"></a>Koşullu kesme noktaları
 
-Ayrıca, altında bir kesme noktası gerçekleşmelidir, bu ekleme olarak bilinir durumlarda dikte kurallarını ayarlayabilmeniz için bir *koşullu kesme noktası*.
+Kuralları altında bir kesme noktası ortaya, bu ekleme olarak bilinir duruma dikte de ayarlayabilirsiniz bir *koşullu kesme noktası*.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-Koşullu kesme noktası ayarlamak için erişim **kesme noktası Özellikleri penceresinde**, hangi yapılabilir iki yolla:
+Koşullu kesme noktası ayarlamak için erişim **kesme noktası Özellikler penceresi**, hangi yapılabilir iki yolla:
 
 
-- Yeni koşullu kesme noktası eklemek için bir kesme noktası ayarlamak istediğiniz kodu satır numarasını solundaki Düzenleyicisi kenar boşluğu sağ tıklatın ve yeni kesme seçin:
+- Yeni bir koşullu kesme noktası eklemek için bir kesme noktası ayarlamak istediğiniz kod için satır numarası solundaki Düzenleyici kenar sağ tıklayın ve yeni kesme noktası seçin:
 
     [![](debugging-in-xamarin-ios-images/image4.png "Yeni kesme noktası seçin")](debugging-in-xamarin-ios-images/image4.png#lightbox)
 
-- Varolan bir kesme noktası için bir koşul eklemek için kesme noktası sağ tıklatın ve **kesme noktası özellikleri** veya **kesme noktaları paneli** aşağıda gösterilen özellikleri düğmesini seçin:
+- Varolan bir kesme noktası için bir koşul eklemek için kesme noktasına sağ tıklatın ve **kesme noktası özelliklerini** veya **kesme noktaları paneli** aşağıda gösterilen Özellikler düğmesi seçin:
 
     [![](debugging-in-xamarin-ios-images/image5.png "Kesme noktaları paneli")](debugging-in-xamarin-ios-images/image5.png#lightbox)
 
 
-Bu gibi durumlarda, altında istediğiniz koşulu sonra gerçekleşecek şekilde kesme noktasına girebilirsiniz:
+Bu gibi durumlarda, istediğiniz koşulu sonra gerçekleşmesi için kesme noktasına girebilirsiniz:
 
-[![](debugging-in-xamarin-ios-images/image6.png "Koşul için gerçekleşmesi kesme noktası girin")](debugging-in-xamarin-ios-images/image6.png#lightbox)
+[![](debugging-in-xamarin-ios-images/image6.png "Gerçekleşmesi kesme noktası koşulunu girin")](debugging-in-xamarin-ios-images/image6.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Koşullu kesme noktası Visual Studio 2015'te ilk ayarlamak için [normal bir kesme noktası belirleyerek](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/set_a_breakpoint/). Bağlam menüsünü görüntülemek için kesme noktası sağ tıklatın:
+Visual Studio 2015'te, ilk koşullu kesme noktası ayarlamak için [normal bir kesme noktası ayarlamak](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint). Bağlam menüsünü görüntülemek için kesme noktasına sağ tıklayın:
 
  [![](debugging-in-xamarin-ios-images/image4vs.png "Kesme noktası bağlam menüsü")](debugging-in-xamarin-ios-images/image4vs.png#lightbox)
 
-Seçin **koşullar...**  görüntülemek için _kesme noktası ayarları_ menüsü:
+Seçin **koşulları...**  görüntülenecek _kesme noktası ayarları_ menüsü:
 
- [![](debugging-in-xamarin-ios-images/image6vs.png "Kesme noktası ayarları menüsü")](debugging-in-xamarin-ios-images/image6vs.png#lightbox)
+ [![](debugging-in-xamarin-ios-images/image6vs.png "Kesme noktası ayarlar menüsü")](debugging-in-xamarin-ios-images/image6vs.png#lightbox)
 
-Burada, gerçekleşmesi için kesme altında istediğiniz koşulları girebilirsiniz
+Gerçekleşmesi için kesme noktası altında istediğiniz koşulları buraya girin
 
-Visual Studio'nun önceki sürümleri kesme noktası koşulları kullanma hakkında daha fazla bilgi için başvurmak [Visual Studio'nun belgelerine](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints) bu konuda.
+Visual Studio'nun önceki sürümlerinde kesme noktası koşulları kullanma hakkında daha fazla bilgi için [Visual Studio'nun belgeleri](https://docs.microsoft.com/visualstudio/debugger/using-breakpoints) bu konuda.
 
 -----
 
 ## <a name="navigating-through-code"></a>Kodda gezinme
 
-Bir kesme noktası erişildiğinde hata ayıklama araçları program yürütme üzerinde denetim elde etmenizi sağlar. IDE dört düğmeleri, çalıştırmak ve kod üzerinden adım sağlayan görüntüler.
+Bir kesme noktasına ulaşıldığında hata ayıklama araçları program yürütme denetime yararlanmanıza olanak tanıyacak. IDE, böylece çalıştırma ve kodunuz içinde adım adım dört düğme görüntülenir.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-Mac için Visual Studio'da bunlar aşağıdaki gibi görünür:
+Mac için Visual Studio'da, aşağıdakine benzer olacaktır:
 
- [![](debugging-in-xamarin-ios-images/image7.png "Geliştirici program yürütme denetime almak hata ayıklama araçlarını etkinleştirme")](debugging-in-xamarin-ios-images/image7.png#lightbox)
+ [![](debugging-in-xamarin-ios-images/image7.png "Geliştirici program yürütme üzerinde denetim altına almak hata ayıklama araçlarını etkinleştir")](debugging-in-xamarin-ios-images/image7.png#lightbox)
 
 Bunlar:
 
-- **Yürüt/Durdur** – bu begin/kadar sonraki kesme kod yürütmek durdur.
-- **Step Over** – bu kodun sonraki satırında, yürütülür. Sonraki satıra bir işlev çağrısı ise, adım üzerinde işlevi yürütmek ve olacak kodun sonraki satırında Dur _sonra_ işlevi.
-- **Step Into** – bu kodun sonraki satırında, ayrıca yürütülür. Sonraki satıra bir işlev çağrısı ise, Step Into işlevi ilk satırında, satır satır hata ayıklama işlevinin devam etmenize izin vererek durdurur. Sonraki satıra bir işlev değil, aynı Step Over olarak davranır.
-- **Step Out** – bu satırına geçerli işlevi burada çağrıldı döndürür.
+- **Yürütme/durdurma** – bu başlamak/sonraki kesme noktasına kadar bir kod yürütmeden durdurma.
+- **Step Over** – Bu kod sonraki satırı yürütür. Sonraki satır bir işlev çağrısı ise, adım üzerinde işlevi yürütme ve eder stop kodun sonraki satırında _sonra_ işlevi.
+- **İçine adımla** – Bu ayrıca sonraki kod satırına yürütülür. Sonraki satır bir işlev çağrısı ise, içine adımla işlevin ilk satır, satır satır işlevi, hata ayıklamaya devam etmenize imkan sağlar durdurur. Sonraki satır bir işlev değilse, aynı Step Over olarak davranır.
+- **Step Out** – bu satıra burada geçerli işlev çağrıldı döndürür.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Visual Studio'da bunlar aşağıdaki gibi görünür:
+Visual Studio'da, aşağıdaki gibi görünür:
 
-[![](debugging-in-xamarin-ios-images/image7vs.png "Geliştirici program yürütme denetime almak hata ayıklama araçlarını etkinleştirme")](debugging-in-xamarin-ios-images/image7vs.png#lightbox)
+[![](debugging-in-xamarin-ios-images/image7vs.png "Geliştirici program yürütme üzerinde denetim altına almak hata ayıklama araçlarını etkinleştir")](debugging-in-xamarin-ios-images/image7vs.png#lightbox)
 
 Bunlar:
 
-- **Yürüt/Durdur** – bu begin/kadar sonraki kesme kod yürütmek durdur.
-- **Step Over (F11)** – bu kodun sonraki satırında, yürütülür. Sonraki satıra bir işlev çağrısı ise, adım üzerinde işlevi yürütmek ve olacak kodun sonraki satırında Dur _sonra_ işlevi.
-- **Step Into (F10)** – bu kodun sonraki satırında, ayrıca yürütülür. Sonraki satıra bir işlev çağrısı ise, Step Into işlevi ilk satırında, satır satır hata ayıklama işlevinin devam etmenize izin vererek durdurur. Sonraki satıra bir işlev değil, aynı Step Over olarak davranır.
-- **Step Out (Shift + F11)** – bu satırına geçerli işlevi burada çağrıldı döndürür.
+- **Yürütme/durdurma** – bu başlamak/sonraki kesme noktasına kadar bir kod yürütmeden durdurma.
+- **Adımla (F11)** – Bu kod sonraki satırı yürütür. Sonraki satır bir işlev çağrısı ise, adım üzerinde işlevi yürütme ve eder stop kodun sonraki satırında _sonra_ işlevi.
+- **İçine adımla (F10)** – Bu ayrıca sonraki kod satırına yürütülür. Sonraki satır bir işlev çağrısı ise, içine adımla işlevin ilk satır, satır satır işlevi, hata ayıklamaya devam etmenize imkan sağlar durdurur. Sonraki satır bir işlev değilse, aynı Step Over olarak davranır.
+- **Step Out (Shift + F11)** – bu satıra burada geçerli işlev çağrıldı döndürür.
 
-Derinlik belgelerinde hata ayıklama hakkında daha fazla bilgi için bkz: [gidin kodu Visual Studio hata ayıklayıcısı ile](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger).
+Derinlik belgelerinde hata ayıklama hakkında daha fazla bilgi için bkz. [gidin ve Visual Studio hata koduyla](https://docs.microsoft.com/visualstudio/debugger/navigating-through-code-with-the-debugger).
 
 -----
 
 ### <a name="breakpoints"></a>Kesme noktaları
 
-İçin başlangıç noktası iOS uygulamaları (10) saniye sayıda sağlar ve tamamlamak önemlidir `FinishedLaunching` uygulama temsilci yöntemi. Uygulama bu yöntem 10 saniye içinde tamamlanmazsa iOS işlemi sonlandırın.
+İçin başlangıç noktası iOS uygulamaları yalnızca birkaç saniye (10) sağlar ve tamamlamak önemlidir `FinishedLaunching` yöntemi uygulama ekleyin. Uygulama bu yöntem 10 saniye içinde tamamlanmazsa, iOS işlem sonlandırılır.
 
-Başka bir deyişle, programınızın başlangıç kod kesme noktalarını ayarlayın neredeyse mümkün değildir. Başlangıç kodunuzdaki hataları ayıklamanıza istiyorsanız, bazı, başlatma gecikmesi ve bir zamanlayıcı çağrılan yöntem içine ya da diğer bazı FinishedLaunching sonlandırıldı sonra çalıştırılan geri çağırma yöntemi formunda yerleştirin.
+Bu, programınızın başlatma kodunu üzerinde kesme noktaları ayarlamak neredeyse imkansız olduğu anlamına gelir. Başlangıç kodunuzu hata ayıklamak istiyorsanız, bazı başlatılmasını geciktirmek ve Zamanlayıcı çağrılan yönteme girmeyi veya diğer türde bir FinishedLaunching sonlandıktan sonra çalıştırılan bir geri çağırma yöntemi put gerekir.
 
-## <a name="device-diagnostics"></a>Aygıt tanılama
+## <a name="device-diagnostics"></a>Cihaz tanılama
 
-Hata ayıklayıcı ayarlanırken bir hata varsa, ekleyerek ayrıntılı tanılama etkinleştirebilirsiniz "-v - v - v" proje seçeneklerinizi ek mtouch değişkenlerinde için. Bu ayrıntılı hata bilgileri aygıt konsola yazdırır.
+Hata ayıklayıcı ayarlanırken bir hata varsa, ekleyerek ayrıntılı tanılama etkinleştirebilirsiniz "-v - v - v", proje seçenekleri diğer mtouch bağımsız değişkenleri için. Bu, ayrıntılı hata bilgileri cihaz konsola yazdırır.
 
  <a name="WiFi_Debugging" />
 
 ## <a name="wireless-debugging"></a>Hata ayıklama kablosuz
 
-Uygulamanızı cihazlarınızda USB bağlantısı üzerinden hata ayıklamak için Xamarin.iOS içinde varsayılan değerdir. Bazen USB aygıtı test etmek için takma/yönlendiriciyi ExternalAccessory destekli uygulamaları geliştirmek için kablo gerekiyor olabilir. Bu durumlarda, kablosuz ağ üzerinden hata ayıklama amacıyla kullanabilirsiniz.
+Xamarin.iOS, uygulamanızda cihazlarınızda USB bağlantısı üzerinden hata ayıklamak için varsayılandır. Bazen bir USB cihazı test etmek için takma/modemi çıkarmayı ExternalAccessory destekli uygulamaları geliştirmek için kablo gerekiyor olabilir. Bu gibi durumlarda, kablosuz ağ üzerinden hata ayıklama kullanabilirsiniz.
 
-Kablosuz dağıtımı ve hata ayıklama hakkında daha fazla bilgi için başvurmak [kablosuz dağıtım](~/ios/deploy-test/wireless-deployment.md) Kılavuzu.
+Kablosuz dağıtım ve hata ayıklama hakkında daha fazla bilgi için [kablosuz dağıtım](~/ios/deploy-test/wireless-deployment.md) Kılavuzu.
 
 <a name="Technical_Details" />
 
 ## <a name="technical-details"></a>Teknik Ayrıntılar
 
-Xamarin.iOS yeni Mono yumuşak hata ayıklayıcı kullanır. Ayrı bir işlemde denetlemek için işletim sistemi arabirimleri kullanarak ayrı bir işlemde denetleyen bir program standart Mono debugger, kablo protokolü aracılığıyla hata ayıklama işlevselliği kullanıma Mono çalışma zamanı sağlayarak yumuşak hata ayıklayıcı çalışır.
+Xamarin.iOS yeni Mono geçici hata ayıklayıcı kullanır. Ayrı bir işlemde denetlemek için işletim sistemi arabirimlerini kullanarak ayrı bir işlemde denetleyen bir program olan standart Mono hata ayıklayıcısını, geçici hata ayıklayıcı, kablo protokolü aracılığıyla hata ayıklama işlevselliği kullanıma sunma Mono çalışma zamanı sağlayarak çalışır.
 
-Başlangıçta, hata ayıklaması kişiler olacak bir uygulama hata ayıklayıcı ve hata ayıklayıcısı başlatılır çalışılacak. İçinde bir Xamarin.iOS Visual Studio için Xamarin Mac aracı uygulamada (Visual Studio) ve hata ayıklayıcısı arasında Orta adam gibi davranır.
+Başlangıçta, hataları ayıklanan kişi olarak bir uygulama hata ayıklayıcı ve hata ayıklayıcı başlar çalışılacak. Xamarin.ios'ta Visual Studio için Xamarin Mac Aracısı'nı (Visual Studio'da) ve hata ayıklayıcı arasındaki orta adam gibi davranır.
 
-Bu yazılım hata ayıklayıcı İşbirlikçi bir hata ayıklama düzeni cihazında çalıştırılan gerektirir. Bu hata ayıklama kod hata ayıklamayı desteklemek için her dizisi noktada ek kod içerecek şekilde işaretlenir gibi daha büyük olacaktır zaman ikili dosyanız derlemeler anlamına gelir.
+Bu geçici bir hata ayıklayıcı ortak bir hata ayıklama düzeni cihazda çalıştırırken gerektirir. Başka bir deyişle, hata ayıklama kodu her dizisi noktada hata ayıklamayı desteklemek için ek bir kod içerecek şekilde işaretlenmiş gibi daha büyük ne zaman ikili dosyanız oluşturur.
 
 <a name="Accessing_the_Console" />
 
 
 ## <a name="accessing-the-console"></a>Konsol erişme
 
-Kilitlenme günlükleri ve konsol sınıfı çıktısını iPhone konsola gönderilir. "Düzenleyici" kullanma ve Cihazınızı Düzenleyici'yi seçerek Xcode ile bu konsolu erişebilir.
+Kilitlenme günlüklerini ve konsolu sınıfı çıktısını iPhone konsola gönderilir. Bu konsol organizer, cihaz seçilerek ve "şablonda" Xcode ile erişebilirsiniz.
 
-Alternatif olarak, Xcode başlatmak istiyor musunuz, Apple'nın kullanabilirsiniz [iPhone yapılandırma yardımcı programını](http://www.apple.com/support/iphone/enterprise/) doğrudan konsoluna erişmek için. Bu alan için bir sorun hata ayıklama durumunda, konsol günlükleri bir Windows makineden erişebilir yöntemlerine sahiptir.
+Alternatif olarak, Xcode ' başlatmak istiyor musunuz, Apple'nın kullanabilirsiniz [iPhone yapılandırma yardımcı programı](http://www.apple.com/support/iphone/enterprise/) doğrudan konsoluna erişmek için. Bu, bir sorun alanına hata ayıklaması yapıyorsanız, konsol günlüklerini bir Windows makineden erişebilirsiniz yöntemlerine sahiptir.
 
-Visual Studio kullanıcılar için kullanılabilir birkaç günlükleri çıkış penceresinde, ancak daha kapsamlı ve ayrıntılı günlükleri için Mac geçmeniz.
+Visual Studio kullanıcılar için kullanılabilir birkaç günlükleri çıkış penceresinde, ancak daha kapsamlı ve ayrıntılı günlükleri için bir Mac bilgisayarınızda geçmeniz.
 
 -----
 
 <a name="Debugging_Mono's_Class_Libraries" />
 
 
-## <a name="debugging-monos-class-libraries"></a>Mono'nın sınıf kitaplıkları hata ayıklama
+## <a name="debugging-monos-class-libraries"></a>Mono'nın sınıf kitaplıklarında hata ayıklama
 
-Mono'nın sınıf kitaplıkları için kaynak kodunu Xamarin.iOS birlikte ve şeyler başlık altında nasıl çalıştığınız görmek için hata ayıklayıcı tek adımda için bunu kullanabilirsiniz.
+Mono'nın sınıf kitaplıkları için kaynak kodu Xamarin.iOS birlikte ve şeyleri nasıl başlık altında çalışmakta olduğunuz görmek için tek adımda hata ayıklayıcı için bunu kullanabilirsiniz.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 Bu özellik, hata ayıklama sırasında daha fazla bellek tüketir olduğundan, bu varsayılan olarak kapalıdır.
 
 
-Bu özelliği etkinleştirmek için emin olun **yalnızca proje kodunda hata ayıklama; framework koda adım yapmanız** seçeneği altında kaldırıldığında _Mac için Visual Studio > Tercihler > hata ayıklayıcı_ gösterildiği gibi menüsü Aşağıda:
+Bu özelliği etkinleştirmek için emin **yalnızca proje kodunda hata ayıklama; çerçeve koduna geçme kodlarındaki** seçeneği altında kaldırıldığında _Mac için Visual Studio > Tercihler > hata ayıklayıcı_ gösterildiği gibi menüsü Aşağıda:
 
-[![](debugging-in-xamarin-ios-images/debugging6.png "Mono'nın sınıf kitaplıkları hata ayıklama")](debugging-in-xamarin-ios-images/debugging6.png#lightbox)
+[![](debugging-in-xamarin-ios-images/debugging6.png "Mono'nın sınıf kitaplıklarında hata ayıklama")](debugging-in-xamarin-ios-images/debugging6.png#lightbox)
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-Sınıf kitaplıkları Visual Studio'da hata ayıklamak için devre dışı bırakmalısınız **sadece kendi kodumu** altında _hata ayıklama > Seçenekler_ menüsü. İçinde _hata ayıklama > Genel_ düğümü, Temizle **sadece kendi kodumu etkinleştir** onay kutusu:
+Sınıf kitaplıkları Visual Studio'da hata ayıklamak için devre dışı bırakmalısınız **yalnızca kendi kodum** altında _Hata Ayıkla > Seçenekler_ menü. İçinde _hata ayıklama > Genel_ düğümü, NET **yalnızca benim kodumu etkinleştir** onay kutusu:
 
-[![](debugging-in-xamarin-ios-images/debugging6vs.png "Mono'nın sınıf kitaplıkları hata ayıklama")](debugging-in-xamarin-ios-images/debugging6vs.png#lightbox)
+[![](debugging-in-xamarin-ios-images/debugging6vs.png "Mono'nın sınıf kitaplıklarında hata ayıklama")](debugging-in-xamarin-ios-images/debugging6vs.png#lightbox)
 
 -----
 
-Bunu yaptıktan sonra uygulama ve tek adımda Mono'nın çekirdek sınıf kitaplıkları hiçbirine başlatabilirsiniz.
+Bunu yaptıktan sonra uygulamanızı ve tek adımda Mono'nın temel sınıf kitaplıkları birini başlatabilirsiniz.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Xamarin ile hata ayıklama](/visualstudio/mac/debugging/)
 - [Veri Görselleştirmeleri](/visualstudio/mac/data-visualizations/)
-- [Bir kesme noktası ayarlama](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/set_a_breakpoint/)
-- [Kod aracılığıyla adım](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/step_through_code/)
-- [Günlük penceresine çıkış bilgileri](https://developer.xamarin.com/recipes/cross-platform/ide/debugging/output_information_to_log_window/)
+- [Bir kesme noktası ayarlayın](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/set_a_breakpoint)
+- [Kodu adımlayın](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/step_through_code)
+- [Günlük penceresini çıkış bilgileri](https://github.com/xamarin/recipes/tree/master/Recipes/cross-platform/ide/debugging/output_information_to_log_window)

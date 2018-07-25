@@ -1,26 +1,26 @@
 ---
 title: Renderscript giriş
-description: Bu kılavuz Renderscript tanıtır ve iç Renderscript API'nin bir Xamarin.Android uygulamasındaki bu hedefleri API düzeyi 17 veya daha yüksek kullanımı açıklanmaktadır.
+description: Bu kılavuz, Renderscript tanıtır ve bu hedefleri API düzeyi 17 veya daha yüksek iç Renderscript API'SİNİN bir Xamarin.Android uygulamasındaki nasıl kullanıldığını açıklar.
 ms.prod: xamarin
 ms.assetid: 378793C7-5E3E-40E6-ABEE-BEAEF64E6A47
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/06/2018
-ms.openlocfilehash: f9e21a51c409c5444f137a63eb2c6fadfef03cbe
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 3331eb579f0aa2d7f29508773c588455c134f56a
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30772022"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241194"
 ---
 # <a name="an-introduction-to-renderscript"></a>Renderscript giriş
 
-_Bu kılavuz Renderscript tanıtır ve iç Renderscript API'nin bir Xamarin.Android uygulamasındaki bu hedefleri API düzeyi 17 veya daha yüksek kullanımı açıklanmaktadır._
+_Bu kılavuz, Renderscript tanıtır ve bu hedefleri API düzeyi 17 veya daha yüksek iç Renderscript API'SİNİN bir Xamarin.Android uygulamasındaki nasıl kullanıldığını açıklar._
 
 ## <a name="overview"></a>Genel Bakış
 
-Renderscript kapsamlı hesaplama kaynaklarını gerektiren Android uygulamalar performansını iyileştirme amacıyla Google tarafından oluşturulan bir programlama çerçevesidir. Düşük düzey ve yüksek bir performans temel API olan [C99](http://en.wikipedia.org/wiki/C99). Düşük düzey CPU, GPU veya DSPs çalışacak API olduğu için Renderscript aşağıdakilerden birini yapmanız gerekebilir Android uygulamaları için uygundur:
+Renderscript kapsamlı hesaplama kaynaklarını gerektiren Android uygulamalarının performansını iyileştirme amacıyla Google tarafından oluşturulan bir programlama çerçevesidir. Düşük düzey, yüksek bir performans temel API olduğu [C99](http://en.wikipedia.org/wiki/C99). Düşük düzeyde CPU, GPU'ları veya DSPs üzerinde çalışacak bir API olduğundan, Renderscript aşağıdakilerden herhangi birini gerçekleştirmek gerekebilir Android uygulamaları için uygundur:
 
 * Grafikler
 * Görüntü işleme
@@ -28,74 +28,74 @@ Renderscript kapsamlı hesaplama kaynaklarını gerektiren Android uygulamalar p
 * Sinyal işleme
 * Matematik yordamları
 
-Renderscript kullanacağınız `clang` ve betikleri APK paketlenmiş LLVM bayt koduna derleyin. Uygulamasını ilk kez çalıştırdığınızda, cihaz üzerindeki için makine koda LLVM bayt kodu derlenecek. Bu mimari, kendileri için her işlemci cihazda kendilerini okuma ve yazma gerek kalmadan makine kodu geliştiricilere avantajlarından yararlanmak bir Android uygulamasını sağlar.
+Renderscript kullanacağı `clang` ve betikleri APK paketlenmiş LLVM bayt kodu derleyin. Uygulamayı ilk kez çalıştırdığınızda, cihaz üzerindeki için makine koda LLVM bayt kod derlenir. Bu mimari, her işlemci için cihazda kendilerini yazmak zorunda makine kodu geliştiricilere avantajlarından yararlanmak için bir Android uygulamasına izin verir.
 
-Renderscript yordamı iki bileşeni vardır:
+Renderscript yordama iki bileşeni vardır:
 
-1. **Renderscript çalışma zamanı** &ndash; Renderscript yürütmek için sorumlu olan yerel API'ları budur. Bu uygulama için yazılmış Renderscripts içerir.
+1. **Renderscript çalışma zamanı** &ndash; Renderscript yürütmek için sorumlu olan yerel API'lerin budur. Bu uygulama için yazılan tüm Renderscripts içerir.
 
-2. **Android çerçevesinden sarmalayıcıları yönetilen** &ndash; yönetilen bir Android uygulaması denetlemek ve komut dosyaları ve Renderscript çalışma zamanı ile etkileşime girmesine izin ver sınıfları. Renderscript çalışma zamanı denetlemek için sağlanan framework sınıfları ek olarak, Android zincirinin Renderscript kaynak kodu inceleyin ve Android uygulama tarafından kullanım için yönetilen sarmalayıcı sınıflar oluşturur.
+2. **Android çerçevesi yönetilen sarmalayıcıları** &ndash; yönetilen denetlemek ve Renderscript çalışma zamanı ve betikleri ile etkileşim kurmak bir Android uygulaması sağlayan sınıflar. Renderscript çalışma zamanı denetlemek için framework tarafından sağlanan sınıflarının yanı sıra, Android araç zinciri Renderscript kaynak kodunu inceleyin ve Android uygulama tarafından kullanım için yönetilen sarmalayıcı sınıfları oluşturur.
 
 Aşağıdaki diyagram, bu bileşenlerin nasıl ilişkili olduğunu gösterir:
 
-![Android Framework Renderscript çalışma zamanı ile nasıl etkileşim kurduğunu gösteren diyagram](renderscript-images/renderscript-01.png)
+![Android çerçevesi Renderscript çalışma zamanı ile nasıl etkileştiğini gösteren diyagram](renderscript-images/renderscript-01.png)
 
-Android uygulamada Renderscripts kullanarak ilgili üç önemli kavramları şunlardır:
+Bir Android uygulaması'nda Renderscripts kullanma için üç önemli kavram vardır:
 
-1. **Bir bağlam** &ndash; A yönetilen Renderscript için kaynakları ayırır ve geçirmek ve Renderscript veri almak Android uygulaması sağlayan Android SDK tarafından sağlanan API.
+1. **Bir bağlam** &ndash; yönetilen Renderscript için kaynakları ayırır ve Renderscript veri alıp geçirmek Android uygulamasını sağlayan Android SDK tarafından sağlanan API.
 
-2. **A _çekirdek işlem_**  &ndash; olarak da bilinen _kök çekirdek_ veya _çekirdek_, bu işi yapan bir yordam. Çekirdek C işlevine çok benzer; ayrılmış bellek tüm veriler üzerinde çalışan paralelleştirilebilir bir yordamdır.
+2. **A _çekirdek işlem_**  &ndash; olarak da bilinen _kök çekirdek_ veya _çekirdek_bu çalışır bir yordam. Çekirdek C işlevine çok benzer; ayrılmış bellekteki tüm verileri üzerinde çalıştırılacak paralelleştirilebilir bir yordamdır.
 
-3. **Bellek tahsis** &ndash; veri çekirdek gelen ve giden geçirilen bir  _[ayırma](https://developer.xamarin.com/api/type/Android.Renderscripts.Allocation/)_. Bir çekirdek bir giriş olabilir ve/veya bir ayırma çıkış.
+3. **Ayrılan bellek** &ndash; çekirdek gelen ve giden veri geçirilen bir  _[ayırma](https://developer.xamarin.com/api/type/Android.Renderscripts.Allocation/)_. Bir çekirdek bir giriş olabilir ve/veya bir ayırma çıkış.
 
-[Android.Renderscripts](https://developer.xamarin.com/api/namespace/Android.Renderscripts/) ad alanı Renderscript çalışma zamanı ile etkileşim için sınıflar içerir. Özellikle, [ `Renderscript` ](https://developer.xamarin.com/api/type/Android.Renderscripts.RenderScript/) sınıfı yaşam döngüsü ve kaynakları Renderscript altyapısı yöneteceğiniz. Android uygulaması bir veya daha fazla başlatmalıdır [ `Android.Renderscripts.Allocation` ](https://developer.xamarin.com/api/type/Android.Renderscripts.Allocation/) nesneleri. Bir ayırma ayırma ve Android uygulaması ve Renderscript çalışma zamanı arasında paylaşılan bellek erişme sorumlu olan yönetilen bir API'dir. Genellikle, bir ayırma için giriş oluşturulur ve isteğe bağlı olarak başka bir ayırma çekirdek çıktısının oluşturulur. Renderscript çalışma zamanı altyapısı ve ilgili yönetilen sarmalayıcı sınıflar ayırmaları tarafından tutulan bellek erişimi yönetir, ek iş yapmak Android uygulama geliştiricisi için gerek yoktur.
+[Android.Renderscripts](https://developer.xamarin.com/api/namespace/Android.Renderscripts/) ad alanı Renderscript çalışma zamanı ile etkileşim kurmaya yönelik sınıflar içerir. Özellikle, [ `Renderscript` ](https://developer.xamarin.com/api/type/Android.Renderscripts.RenderScript/) sınıfı Renderscript altyapı kaynaklarını ve yaşam döngüsü yönetecektir. Android uygulaması bir veya daha fazla başlatmalıdır [ `Android.Renderscripts.Allocation` ](https://developer.xamarin.com/api/type/Android.Renderscripts.Allocation/) nesneleri. Ayırma, ayırma ve Android uygulaması ve Renderscript çalışma zamanı arasında paylaşılan bellek erişim sorumlu olduğu yönetilen bir API'dir. Genellikle, bir ayırma için giriş oluşturulur ve çekirdek çıktısını tutmak için isteğe bağlı olarak başka bir ayırma oluşturulur. Renderscript çalışma zamanı motoru ve ilişkili yönetilen sarmalayıcı sınıfları Tahsisatlar tarafından tutulan bellek erişimi yönetir, hiçbir ek iş yapması bir Android uygulama geliştiricisi için gerek yoktur.
 
-Bir veya daha fazla bir ayırma içerecek [Android.Renderscripts.Elements](https://developer.xamarin.com/api/type/Android.Renderscripts.Element/).
-Her ayırma verileri tanımlayan özel bir tür öğelerdir.
-Ayırma eşleşmelidir çıktı öğesi türlerini giriş öğesinin türü. Yürütürken bir Renderscript her bir öğesinde paralel giriş ayırma üzerinden yineleme ve sonuçları çıkış yazma ayırma. İki tür öğeler şunlardır:
+Bir veya daha fazla ayırma içerecek [Android.Renderscripts.Elements](https://developer.xamarin.com/api/type/Android.Renderscripts.Element/).
+Her ayırma verileri tanımlayan özel bir tür öğeleridir.
+Öğe türleri ayırma eşleşmelidir çıktı türleri input öğesi. Yürütülürken, bir Renderscript her öğesine paralel giriş ayırma üzerinden yineleme yapma ve sonuçları çıktı yazma ayırma. Öğelerin iki tür vardır:
 
 - **Basit tür** &ndash; kavramsal olarak bu C veri türü ile aynı olur `float` veya `char`.
 
 - **Karmaşık tür** &ndash; bu tür bir C benzer `struct`.
 
-Renderscript altyapısı her ayırma öğelerinde çekirdek tarafından gerekli ile uyumlu olduğundan emin olmak için bir çalışma zamanı denetimi gerçekleştirir. Veri türü ayırma öğeleri çekirdek bekleniyor veri türü eşleşmiyorsa, bir özel durum.
+Renderscript altyapısı, her ayırma öğeleri çekirdek tarafından gerekli ile uyumlu olmasını sağlamak için bir çalışma zamanı denetimi gerçekleştirir. Ayırma öğelerin veri türü çekirdek bekleniyor veri türü eşleşmiyorsa bir özel durum oluşturulur.
 
-Tüm Renderscript tekrar alt öğesi olan bir türü tarafından sarılır [ `Android.Renderscripts.Script` ](https://developer.xamarin.com/api/type/Android.Renderscripts.Script/) sınıfı. `Script` Sınıfı için Renderscript parametrelerini ayarlamak, uygun ayarlamak için kullanılan `Allocations`, ve Renderscript çalıştırın. Var olan iki `Script` Android SDK sınıflarında:
+Bir alt öğesi olan bir tür tarafından tüm Renderscript çekirdekler sarmalanır [ `Android.Renderscripts.Script` ](https://developer.xamarin.com/api/type/Android.Renderscripts.Script/) sınıfı. `Script` Sınıfı için bir Renderscript parametrelerini ayarlamak için uygun ayarlayın kullanılır `Allocations`, ve Renderscript çalıştırın. İki `Script` Android SDK'sı sınıflarında:
 
 
-- **`Android.Renderscripts.ScriptIntrinsic`** &ndash; Bazı daha yaygın Renderscript görevleri Android SDK'ın paketlenmiştir ve öğesinin bir alt kümesi tarafından erişilebilir [ScriptIntrinsic](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsic/) sınıfı. Bir geliştirici almak için zaten sağlanan olarak uygulamalarında bu komut dosyalarını kullanmak için hiçbir ek adımlar gerek yoktur.
+- **`Android.Renderscripts.ScriptIntrinsic`** &ndash; En yaygın Renderscript görevlerden bazılarını Android SDK'yı paketlenir ve öğesinin tarafından erişilebilir [ScriptIntrinsic](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsic/) sınıfı. Bir geliştirici almak için zaten sağlanan bu betikleri uygulamalarında kullanmak için herhangi bir ekstra adım gerek yoktur.
 
-- **`ScriptC_XXXXX`** &ndash; Olarak da bilinen _kullanıcı komut dosyaları_, bunlar Geliştiricileriniz tarafından geliştirilen ve APK paketlenen betiklerdir. Derleme zamanında Android zincirinin Android uygulamada kullanılacak komut dosyaları sağlayacak yönetilen sarmalayıcı sınıflar oluşturur.
-  Bu oluşturulan sınıflar adı önekine sahip Renderscript dosyasının adıdır `ScriptC_`. Yazma ve kullanıcı komut dosyaları ekleme, Xamarin.Android ve bu kılavuzun kapsamı dışında kalan resmi olarak desteklenmez.
+- **`ScriptC_XXXXX`** &ndash; Olarak da bilinen _kullanıcı betikleri_, bunlar Geliştiricileriniz tarafından geliştirilen ve APK paketlenmiş betiklerdir. Derleme zamanında Android uygulamasında kullanılmak üzere komut dosyalarını tanıyacak yönetilen sarmalayıcı sınıfları Android araç zinciri oluşturur.
+  Oluşturulan sınıfın adı ön ekine sahip Renderscript dosyanın adıdır `ScriptC_`. Yazma ve kullanıcı komut dosyaları ekleme, bu kılavuzun kapsamı dışındadır ve Xamarin.Android resmi olarak desteklenmez.
 
-Bu iki tür, yalnızca `StringIntrinsic` Xamarin.Android tarafından desteklenir. Bu kılavuz, bir Xamarin.Android uygulaması'nda iç komut dosyaları kullanmayı ele alınacaktır.
+Bu iki tür, yalnızca `StringIntrinsic` Xamarin.Android tarafından desteklenir. Bu kılavuz, bir Xamarin.Android uygulamasına iç betiklerini kullanma işlemi ele alınmaktadır.
 
 ## <a name="requirements"></a>Gereksinimler
 
-Bu kılavuz, hedef API düzeyi 17 veya daha yüksek Xamarin.Android uygulamalar için kullanılır. Kullanımını _kullanıcı komut dosyaları_ bu kılavuzda ele alınmamaktadır.
+Bu kılavuz, hedef API düzeyi 17 veya üzeri Xamarin.Android uygulamalarında kullanılır. Kullanımını _kullanıcı betikleri_ bu kılavuzda ele alınmamaktadır.
 
-[Xamarin.Android V8 destek kitaplığı](https://www.nuget.org/packages/Xamarin.Android.Support.v8.RenderScript/) backports instrinsic Renderscript API'nin Android SDK'ın eski sürümlerini hedefleyen uygulamalar için. Bu paket için bir Xamarin.Android projesi ekleme uygulamaları Android iç betikleri yararlanmak için SDK'ın bu hedef eski sürümleri izin vermelidir.
+[Xamarin.Android V8 destek kitaplığı](https://www.nuget.org/packages/Xamarin.Android.Support.v8.RenderScript/) backports ' % s'instrinsic Renderscript API'nin Android SDK'sının daha eski sürümlerini hedefleyen uygulamalar için. Bu paket için bir Xamarin.Android projesi ekleme uygulamaları, eski sürümlerini hedefleyen iç betikleri yararlanmak için Android SDK'sının izin vermesi gerekir.
 
-## <a name="using-intrinsic-renderscripts-in-xamarinandroid"></a>İç Renderscripts Xamarin.Android içinde kullanma
+## <a name="using-intrinsic-renderscripts-in-xamarinandroid"></a>Xamarin.Android iç Renderscripts kullanma
 
-İç komut dosyalarını en az miktarda ek kod yoğun bilgi işlem görevleri gerçekleştirmek için harika bir yoludur. Bunlar büyük arası bölümünde cihazların en iyi performans sağlamak için ayarlanmış el olmuştur.
-Yönetilen kod daha hızlı bir şekilde x 10 ve özel bir C uygulamasını daha sonra 2-3 x kez çalıştırmak bir iç komut dosyası için seyrek değil. Tipik işleme senaryoları çoğunu iç komut dosyaları tarafından ele alınmıştır. Bu liste iç komut dosyalarının Xamarin.Android geçerli komut açıklanmaktadır:
+İç komut en az miktarda bir ek kod ile bilgi işlem açısından yoğun kaynak gerektiren görevleri gerçekleştirmek için harika bir yoludur. Bunlar, cihazların büyük bir çapraz bölüm üzerinde en iyi performans sunmak için ayarlanmış el olmuştur.
+10 kat daha hızlı bir şekilde yönetilen kod ve özel bir C uygulaması daha sonra 2-3 x kez çalıştırmak bir iç betiği için sık karşılaşılan bir durum değil. Tipik bir işleme senaryoların çoğunun iç betikler tarafından ele alınmaktadır. İç komut listesi Xamarin.Android geçerli betiklerde açıklanmaktadır:
 
 - [ScriptIntrinsic3DLUT](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsic3DLUT//) &ndash; 3B arama tablosu kullanarak RGBA için RGB dönüştürür. 
 
-- [ScriptIntrinsicBLAS](https://developer.android.com/reference/android/renderscript/ScriptIntrinsicBLAS.html) &ndash; Provideshigh performans Renderscript API'leri için [BLAS](http://www.netlib.org/blas/). (Temel Lineer Cebir alt programlar) BLAS temel vektör ve matris işlemleri gerçekleştirmek için standart yapı taşlarını sağlar yordamları ' dir. 
+- [ScriptIntrinsicBLAS](https://developer.android.com/reference/android/renderscript/ScriptIntrinsicBLAS.html) &ndash; Provideshigh performans Renderscript API'leri için [BLAS](http://www.netlib.org/blas/). (Temel doğrusal Cebir alt programlar) BLAS temel vektör ve matris işlemlerini gerçekleştirmek için standart yapı taşlaı sağlayan yordamları ' dir. 
 
-- [ScriptIntrinsicBlend](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsicBlend) &ndash; iki ayırmaları birlikte karıştırır.
+- [ScriptIntrinsicBlend](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsicBlend) &ndash; iki ayırmalarını birlikte karıştırır.
 
-- [ScriptIntrinsicBlur](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsicBlur) &ndash; Gauss Bulanıklığı bir ayırma için geçerlidir.
+- [ScriptIntrinsicBlur](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsicBlur) &ndash; Gauss Bulanıklaştırma ayırma için geçerlidir.
 
-- [ScriptIntrinsicColorMatrix](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsicColorMatrix/) &ndash; (yani değişiklik renkler ton Ayarla) bir ayırma için renk matrisi uygular.
+- [ScriptIntrinsicColorMatrix](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsicColorMatrix/) &ndash; (yani hue ayarlamak değişiklik renkler) bir ayırma için renk matrisi geçerlidir.
 
-- [ScriptIntrinsicConvolve3x3](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsicConvolve3x3/) &ndash; 3 x 3 renk matrisi bir ayırma için geçerlidir.
+- [ScriptIntrinsicConvolve3x3](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsicConvolve3x3/) &ndash; 3 x 3 renk matrisi ayırma için geçerlidir.
 
-- [ScriptIntrinsicConvolve5x5](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsicConvolve5x5/) &ndash; 5 x 5 renk matrisi bir ayırma için geçerlidir.
+- [ScriptIntrinsicConvolve5x5](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsicConvolve5x5/) &ndash; 5 x 5 renk matrisi ayırma için geçerlidir.
 
-- [ScriptIntrinsicHistogram](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsicHistogram/) &ndash; bir iç histogram Filtresi.
+- [ScriptIntrinsicHistogram](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsicHistogram/) &ndash; iç histogram filtre.
 
 - [ScriptIntrinsicLUT](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsicLUT/) &ndash; kanal başına arama tablosu bir arabellek için geçerlidir.
 
@@ -103,17 +103,17 @@ Yönetilen kod daha hızlı bir şekilde x 10 ve özel bir C uygulamasını daha
 
 - [ScriptIntrinsicYuvToRGB](https://developer.xamarin.com/api/type/Android.Renderscripts.ScriptIntrinsicYuvToRGB/) &ndash; YUV arabellek için RGB dönüştürür.
 
-Her iç komut dosyalarının hakkında ayrıntılı bilgi için lütfen API belgelerine bakın.
+Her iç betikleri hakkında ayrıntılı bilgi için lütfen API belgelerine başvurun.
 
-Sonraki Renderscript bir Android uygulamasını kullanmaya yönelik temel adımlar açıklanmıştır.
+Bir Android uygulaması'nda Renderscript kullanma temel adımları daha sonra açıklanmaktadır.
 
-**Renderscript bağlamı oluşturma** &ndash; [ `Renderscript` ](https://developer.xamarin.com/api/type/Android.Renderscripts.RenderScript/) Renderscript bağlamı çevresinde yönetilen bir sarmalayıcı sınıftır ve denetim başlatma, kaynak yönetimi ve temizleme. Renderscript nesnesi kullanılarak oluşturulan `RenderScript.Create` bir parametre olarak (örneğin, bir etkinlik) bir Android bağlamı alan Üreteç yöntemi. Aşağıdaki kod satırını Renderscript içeriği başlatılamıyor gösterilmiştir:
+**Renderscript bağlam oluşturma** &ndash; [ `Renderscript` ](https://developer.xamarin.com/api/type/Android.Renderscripts.RenderScript/) Renderscript bağlam çevresinde yönetilen sarmalayıcı bir sınıftır denetlemenizi kaynak yönetimi, başlatma ve temizleme. Renderscript nesnesi kullanılarak oluşturulan `RenderScript.Create` (örneğin, bir etkinliği) Android bir bağlam parametresi olarak alan fabrika yöntemi. Aşağıdaki kod satırını Renderscript bağlamı başlatılamıyor gösterilmektedir:
 
 ```csharp
 Android.Renderscripts.RenderScript renderScript = RenderScript.Create(this);
 ```
 
-**Ayırmaları oluşturma** &ndash; iç betik bağlı olarak, bir veya iki oluşturmak gerekli olabilir `Allocation`s. [ `Android.Renderscripts.Allocation` ](https://developer.xamarin.com/api/type/Android.Renderscripts.Allocation/) Sınıfı bir ayırma için bir iç örnekleme ile yardımcı olmak için birkaç Fabrika yöntemleri vardır. Örnek olarak, aşağıdaki kod parçacığını nasıl bit eşlemler için ayırma oluşturulacağını gösterir.
+**Ayırmaları oluşturma** &ndash; iç betik bağlı olarak, bir veya iki tane oluşturmak gerekli olabilir `Allocation`s. [ `Android.Renderscripts.Allocation` ](https://developer.xamarin.com/api/type/Android.Renderscripts.Allocation/) Sınıfı bir ayırma için bir iç örnekleme ile yardımcı olmak için birkaç Fabrika yöntemleri vardır. Örneğin, aşağıdaki kod parçacığı ayırma için bit eşlemler oluşturma işlemini gösterir.
 
 ```csharp
 Android.Graphics.Bitmap originalBitmap;
@@ -123,20 +123,20 @@ Android.Renderscripts.Allocation inputAllocation = Allocation.CreateFromBitmap(r
                                                      AllocationUsage.Script);
 ```
 
-Genellikle, bu oluşturmak için gerekli olacaktır bir `Allocation` bir komut dosyasının çıktı verileri tutmak için. Bu aşağıdaki kod parçacığında nasıl kullanılacağını gösterir `Allocation.CreateTyped` ikinci bir örneğini oluşturmak için yardımcı `Allocation` aynı özgün olarak yazın:
+Genellikle, bu oluşturmak için gerekli olacaktır bir `Allocation` bir betiğin çıktı verilerini tutacak. Bu aşağıdaki kod parçacığını nasıl kullanılacağını gösterir `Allocation.CreateTyped` ikinci bir örneğini oluşturmak için yardımcı `Allocation` aynı aslı yazın:
 
 ```csharp
 Android.Renderscripts.Allocation outputAllocation = Allocation.CreateTyped(renderScript, inputAllocation.Type);
 ```
 
-**Komut dosyası sarmalayıcı örneği** &ndash; iç betik Sarmalayıcı sınıfların her biri yardımcı yöntemler olmalıdır (genellikle adlı `Create`) komut dosyaları için bir sarmalayıcı nesnesi örneği için. Aşağıdaki kod parçacığını örneği oluşturmak nasıl bir örneği olan bir `ScriptIntrinsicBlur` nesne ölçeklendirilmelidir. `Element.U8_4` Yardımcı yöntem 4 alanlarının 8 bit işaretsiz tamsayı değerleri, verileri tutmak için uygun olan bir veri türü tanımlayan bir öğe oluşturacak bir `Bitmap` nesnesi:
+**Komut dosyası kapsayıcı örneği** &ndash; iç betik Sarmalayıcı sınıfların her birini yardımcı yöntemler olmalıdır (genellikle adlı `Create`) komut dosyaları için bir sarmalayıcı nesnesini örnekleme için. Aşağıdaki kod parçacığı örneği oluşturmak nasıl bir örneğidir bir `ScriptIntrinsicBlur` nesnenin Bulanıklığı. `Element.U8_4` Yardımcı yöntem 4 alan 8 bitlik işaretsiz tamsayı değerleri, verileri tutmak için uygun olan bir veri türü tanımlayan bir öğe oluşturur bir `Bitmap` nesnesi:
 
 ```csharp
 Android.Renderscripts.ScriptIntrinsicBlur blurScript = ScriptIntrinsicBlur.Create(renderScript, Element.U8_4(renderScript));
 ```
 
-**Allocation(s), ayarlanan parametreler & komut dosyasını çalıştır Ata** &ndash; `Script` SAX bir `ForEach` Renderscript gerçekten çalıştırılacak yöntemi. Bu yöntem her yineleme `Element` içinde `Allocation` giriş verilerini tutan. Bazı durumlarda sağlamak gerekli olabilir bir `Allocation` çıkış tutar.
-`ForEach` Çıkış içeriğinin üzerine ayırma. Bu örnek önceki adımlardan gelen kod parçacıkları taşımak için bir giriş ayırma atayabilir, bir parametre ve son olarak komut dosyasını çalıştırmak nasıl gösterir (çıkış sonuçları kopyalama ayırma):
+**Allocation(s), ayarlanan parametreler & betiğini Çalıştır Ata** &ndash; `Script` sağlar sınıfını bir `ForEach` Renderscript çalıştırdığı için yöntemi. Bu yöntem her yineleme `Element` içinde `Allocation` girdi verilerini tutan. Bazı durumlarda sağlamak gerekli olabilir bir `Allocation` çıktısını tutan.
+`ForEach` Çıkış içeriğin üzerine yazılacağı ayırma. Bu örnek önceki adımdan kod parçacıklarını yürütmek için bir giriş ayırma atamak, bir parametre ve son olarak komut dosyasını çalıştırmak nasıl gösterir (çıktı sonuçları kopyalama ayırma):
 
 ```csharp
 blurScript.SetInput(inputAllocation);
@@ -144,17 +144,17 @@ blurScript.SetRadius(25);  // Set a pamaeter
 blurScript.ForEach(outputAllocation);
 ```
 
-Kullanıma isteyebilirsiniz [Renderscript görüntüyle Ölçeklendirilmelidir](https://developer.xamarin.com/recipes/android/other_ux/drawing/blur_an_image_with_renderscript/) tarif, bir iç komut dosyasının içinde Xamarin.Android nasıl kullanılacağı tam bir örneği verilmiştir.
+Kullanıma isteyebilirsiniz [Renderscript görüntüyle bulanıklaştıran](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/drawing/blur_an_image_with_renderscript) tarif, içinde Xamarin.Android iç bir betik kullanmayı, tam bir örnek verilmiştir.
 
 ## <a name="summary"></a>Özet
 
-Bu kılavuz, Renderscript ve bir Xamarin.Android uygulaması kullanma sunulur. Kısaca Renderscript nedir ve bir Android uygulamasını nasıl çalıştığı açıklanır. Bazı Renderscript ve arasındaki farkı anahtar bileşenlerini açıklanan _kullanıcı komut dosyaları_ ve _instrinsic betikleri_. Son olarak, bu kılavuz, bir Xamarin.Android uygulaması'nda iç bir komut dosyası kullanarak adımları açıklanmıştır.
+Bu kılavuz, Renderscript ve bir Xamarin.Android uygulamasına kullanma kullanıma sunulmuştur. Kısaca Renderscript nedir ve bir Android uygulaması içinde nasıl çalıştığı açıklanmıştır. Bazı anahtar bileşenleri Renderscript ve arasındaki farkı açıklanan _kullanıcı betikleri_ ve _instrinsic betikleri_. Son olarak, bu kılavuz, bir Xamarin.Android uygulaması'nda iç bir komut dosyası kullanma adımları açıklanmıştır.
 
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Android.Renderscripts ad alanı](https://developer.xamarin.com/api/namespace/Android.Renderscripts/)
-- [Görüntüyü Renderscript ölçeklendirilmelidir](https://developer.xamarin.com/recipes/android/other_ux/drawing/blur_an_image_with_renderscript/)
+- [Görüntüyü Renderscript bulanıklaştıran](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/drawing/blur_an_image_with_renderscript)
 - [Renderscript](https://developer.android.com/guide/topics/renderscript/compute.html)
 - [Öğretici: Renderscript ile çalışmaya başlama](https://software.intel.com/en-us/articles/renderscript-basic-sample-for-android-os)

@@ -1,97 +1,97 @@
 ---
-title: Film şeritleri Xamarin.iOS içinde giriş
-description: Bu belge film şeritleri Xamarin.iOS içindeki bir giriş sağlar. Bir kullanıcı arabirimi tanımlamak için bir film şeridi nasıl kullanıldığını açıklar, segues ve iOS Tasarımcısı film şeridi dosyalarını düzenlemek için kullanma.
+title: Xamarin.iOS, görsel taslaklara giriş
+description: Bu belge, Xamarin.iOS film şeritleri tanıtılmaktadır. Bir kullanıcı arabirimi tanımlamak için bir görsel taslak nasıl kullanıldığını açıklar, etkinleştirilir ve iOS Tasarımcısı görsel taslak dosyalarını düzenlemek için kullanma.
 ms.prod: xamarin
 ms.assetid: A3339BD2-9F56-7965-25F5-4B7C991EB775
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: 3366da2f5dc869c7b075bf32be238a1ebd3145d7
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: bd8fee1b8f1941203bb0e6f00e261cbfbbccc9a7
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34790974"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242348"
 ---
-# <a name="introduction-to-storyboards-in-xamarinios"></a>Film şeritleri Xamarin.iOS içinde giriş
+# <a name="introduction-to-storyboards-in-xamarinios"></a>Xamarin.iOS, görsel taslaklara giriş
 
-Bu kılavuz size hangi film şeridi anlatılmıştır olduğu ve bazı – Segues gibi anahtar bileşenlerini inceleyin. Biz nasıl film şeritleri oluşturulabilir ve kullanılan, en göreceğiz ve avantajları sahip oldukları için bir geliştirici.
+Bu kılavuzda biz hangi görsel taslak açıklayacak olduğunu ve anahtar bileşenleri – geçişler Uyarlamasız gibi bazılarını inceleyin. Nasıl görsel Taslaklar oluşturulabilir ve kullanılan en inceleyeceğiz ve sağladığı avantajları bir geliştirici için vardır.
 
-Film şeridi dosya biçimi görsel bir sunumdur UI bir iOS uygulamasının Apple tarafından sunulmadan önce geliştiriciler XIB dosyaları her görünüm denetleyicisi için oluşturulan ve her görünüm arasında gezinti el ile programlanmış.  Film şeridi kullanarak görünüm denetleyicileri ve tasarım yüzeyi üzerlerinde arasında gezinti tanımlamak Geliştirici olanak tanır ve uygulamanın kullanıcı arabirimi WYSIWYG düzenleme sunar.
+Görsel taslak dosyası biçimi görsel bir temsili kullanıcı arabiriminin bir iOS uygulamasının Apple tarafından sunulmadan önce geliştiriciler XIB dosyaları her görünüm denetleyicisi için oluşturulan ve her görünüm arasında gezinti el ile programlanır.  Görsel taslak kullanarak görünüm denetleyicisi hem tasarım yüzeyinde bunlar arasında gezinti tanımlayın Geliştirici sağlar ve WYSIWYG düzenleme uygulamanın kullanıcı arabirimini sunar.
 
-Film şeridi oluşturulan, açılabilir ve Xamarin iOS Tasarımcısı ile düzenlenemez. Bu kılavuz olur de izlenecek tasarımcının Gezinti programlamak için C# kullanırken, film şeritleri oluşturmak için nasıl kullanılacağı.
+Görsel taslak oluşturulabilir, açtığınız ve Xamarin iOS Designer ile düzenlenemez. Bu kılavuz size ayrıca izlenecek yol Tasarımcı Gezinti programlamak için C# kullanırken, film şeridi oluşturmak için nasıl kullanılacağını
 
 
 ## <a name="requirements"></a>Gereksinimler
 
-Film şeritleri Xamarin iş yükleri yüklü Visual Studio 2015 ve 2017 veya Mac için Visual Studio tasarımcısında iOS ile kullanılabilir.
+Görsel Taslaklar yüklü Xamarin iş yükleri ile iOS Designer, Mac için Visual Studio veya Visual Studio 2015 ve 2017 ile kullanılabilir.
 
-## <a name="what-is-a-storyboard"></a>Film şeridi nedir?
+## <a name="what-is-a-storyboard"></a>Görsel taslak nedir?
 
-Film şeridi bir uygulamadaki tüm ekranlar visual gösterimidir. Her Sahne temsil eden ile gerisinde, bir dizi içeren bir *View Controller* ve kendi *görünümleri*. Bu görünümler nesneleri içerebilir ve [denetimleri](~/ios/user-interface/controls/index.md) uygulamanız ile etkileşim kurmak kullanıcı izin. Bu koleksiyon görünümleri ve denetimlerin (veya *subviews*) olarak bilinen bir *içerik görünümü hiyerarşi*. Planda bağlı tarafından görünüm denetleyicileri arasında bir geçiş temsil eden nesneler ü. Bu normal olarak ilk görünümündeki bir nesne ve bağlantı görünümü arasında segue oluşturarak elde edilir. Tasarım yüzeyine ilişkilerde aşağıdaki görüntü gösterilmiştir:
+Görsel Taslak, uygulamadaki tüm ekranların visual gösterimidir. Her Sahne temsil eden ile planda bir dizi içeren bir *görünüm denetleyicisi* ve kendi *görünümleri*. Bu görünümler nesneleri içerebilir ve [denetimleri](~/ios/user-interface/controls/index.md) kullanıcınızın uygulamayla etkileşmesi sağlayacaktır. Bu görünüm ve koleksiyonu (veya *subviews*) olarak bilinen bir *içerik hiyerarşisini görüntüle*. Sahneleri bağlı Görünüm denetleyicileri arasında bir geçiş temsil eden nesneler tarafından ü. Bu normalde bir segue başlangıç görünümü bir nesne ile bağlantı görünümü oluşturarak elde edilir. Tasarım yüzeyinde ilişkileri, aşağıdaki görüntüde gösterilmiştir:
 
- [![](images/storyboardsview.png "Tasarım yüzeyine ilişkileri bu görüntüde gösterilmiştir")](images/storyboardsview.png#lightbox)
+ [![](images/storyboardsview.png "Tasarım yüzeyinde ilişkileri bu görüntüde gösterilmiştir.")](images/storyboardsview.png#lightbox)
 
-Gösterildiği gibi film şeridi her, planda zaten işlenmiş içerikle düzenleme ve bunları arasındaki bağlantıları gösterir.  Bu noktada, planda hakkında bir İphone'da konuşurken bir varsaymak güvenli olduğunu belirtmeye değer olan *Sahne* şeridinde birine eşit olan *ekran* cihazda içerik. Ancak, birden çok Sahne aynı anda – görünür olması mümkündür iPad ile Örneğin, bir Popover görünümü denetleyicisi kullanarak.
+Gösterildiği gibi film şeridi her, planda zaten işlenmiş içerikle düzenleme ve bunlar arasındaki bağlantıları gösterir.  Bu noktada, perde hakkında İphone'da konuşurken tek varsaymak güvenli olduğunu hatalarının ayıklanabileceğini belirtmekte yarar *Sahne* şeridinde birine eşit olup *ekran* cihazda içerik. Ancak, bir iPad birden çok Sahne tek bir seferde – görünür olması mümkündür, örneğin, Popover görünüm denetleyicisi kullanma.
 
-Film şeritleri kullanarak uygulamanızın kullanıcı Arabirimi, özellikle Xamarin kullanırken oluşturmak için birçok avantajı vardır. İlk olarak, UI görsel gösterimi olarak dahil olmak üzere tüm nesneleri – ise [özel denetimler](~/ios/user-interface/designer/ios-designable-controls-overview.md) – tasarım zamanında işlenir. Bu derleme veya görünümünü ve akış görselleştirebilirsiniz Uygulamanızı dağıtmadan önce anlamına gelir. Yukarıdaki resmi gibi ele alın. Biz Hızlı Bakış yüzey kaç planda var olan tasarım, her görünüm düzenini ve her şeyi nasıl ilişkili olduğunu anlayabilirsiniz. Film şeritleri ne kadar güçlü yapan budur.
+Xamarin kullanırken özellikle uygulamanızın kullanıcı Arabirimi oluşturmak için görsel Taslaklar kullanarak birçok avantajı vardır. İlk olarak, kullanıcı Arabirimi, görsel bir temsili olarak dahil olmak üzere tüm nesneleri – olduğu [özel denetimler](~/ios/user-interface/designer/ios-designable-controls-overview.md) – tasarım zamanında işlenir. Bu derleme veya görünümünü ve akış görselleştirebilirsiniz Uygulamanızı dağıtmadan önce anlamına gelir. Yukarıdaki görüntüde, örneğin yararlanın. Biz hızlı bir bakış yüzey kaç sahneler var olan tasarım, her görünüm düzenini ve her şeyi nasıl ilişkili olduğunu anlayabilirsiniz. Görsel Taslaklar güçlü kılan budur.
 
-Olaylar, özellikle Tasarımcısı iOS kullanırken film şeritleri ile daha kolay yönetilebilir. Çoğu kullanıcı Arabirimi denetimlerini olası olayları listesini özellikleri defterinde gerekir. Olay işleyicisi buraya eklenen ve görünüm denetleyicileri sınıfı kısmi yönteminde tamamlandı...
+İOS Designer kullanırken özellikle görsel Taslaklar ile daha kolay yönetilebilir olaylardır. Çoğu UI denetimleri, Özellikler panelinde olası olayların bir listesi gerekir. Olay işleyicisi buraya eklenen ve görünüm denetleyicileri sınıfı kısmi bir yöntemin içinde tamamlandı...
 
-Film şeridi içeriğini bir XML dosyası olarak depolanır. AT derleme zamanı, tüm `.storyboard` nibs bilinen ikili dosyalara derlenmiş dosyalar. Çalışma zamanında bu nibs başlatılamadı ve yeni görünümler oluşturmak için örneği.
+Görsel taslak içeriğini bir XML dosyası olarak depolanır. AT derleme zamanı, tüm `.storyboard` dosyaları nibs bilinen ikili dosyalarına derlenir. Çalışma zamanında bu nibs başlatılır ve yeni görünümler oluşturmak için örneği.
 
-## <a name="segues"></a>Segues
+## <a name="segues"></a>Etkinleştirilir
 
-A *Segue*, veya *ü nesne*, iOS geliştirme planda arasında bir geçiş temsil etmek için kullanılır. Bir segue oluşturmak için basılı **Ctrl** anahtar ve tıklatıp sürükleme bir Sahne alanından diğerine. Biz bizim fareyi sürüklediğinizde, aşağıdaki resimde gösterildiği gibi segue burada götürür belirten mavi bağlayıcı görüntülenir:
+A *Segue*, veya *ü nesne*, iOS geliştirme görünümler arasında geçiş temsil etmek için kullanılır. Bir segue oluşturmak için basılı **Ctrl** anahtarı ve başka bir click-sürükleyin bir Sahne gelen. Size sunduğumuz fare sürükleme sırasında aşağıdaki resimde gösterildiği gibi segue burada önünü açacak belirten mavi bir bağlayıcı görünür:
 
- [![](images/createsegue.png "Bu görüntüde gösterildiği gibi segue burada götürür belirten mavi bağlayıcı görüntülenir")](images/createsegue.png#lightbox)
+ [![](images/createsegue.png "Bu görüntüde gösterildiği gibi segue burada önünü açacak belirten mavi bir bağlayıcı görünür")](images/createsegue.png#lightbox)
 
-Fare yukarı üzerinde bize bizim segue eylemini seçin izin vererek bir menüsü görüntülenir. Görüntülere benzeyebilir: 
+Fare yukarı üzerinde bize bizim segue eylemi seçin izin vererek bir menü görünür. Aşağıdaki görüntülerin benzeyebilir: 
 
-**Ön iOS 8 ve boyut sınıfları**:
+**Öncesi iOS 8 ve boyut sınıfları**:
 
-[![](images/segue1.png "Boyutu sınıfları olmadan eylem ü açılır")](images/segue1.png#lightbox)
+[![](images/segue1.png "Boyut sınıflarını olmadan eylem ü açılır")](images/segue1.png#lightbox)
 
-**Boyutu sınıfları ve Uyarlamalı Segues kullanırken**:
+**Boyut sınıflarını ve Uyarlamalı etkinleştirilir kullanırken**:
 
-[![](images/16new.png "Boyut sınıfına sahip eylem ü açılır")](images/16new.png#lightbox)
+[![](images/16new.png "Boyut sınıflarını eylem ü açılan listesi")](images/16new.png#lightbox)
 
 > [!IMPORTANT]
-> Windows sanal makineniz için VMWare kullanıyorsanız, CTRL tuşuna basıp tıklayın olarak eşlenmiş _sağ_ fare düğmesini varsayılan olarak. Bir Segue oluşturmak için klavye tercihlerinizi aracılığıyla düzenleyin **Tercihler** > **klavye ve fare** > **Fare kısayolları** ve yeniden eşleme, **İkincil düğme** aşağıda gösterildiği gibi:
+> Windows sanal makineniz için VMWare kullanıyorsanız, Ctrl tuşunu olarak eşleştirilir _sağ_ varsayılan olarak, fare düğmesi. Bir Segue oluşturmak için klavye tercihlerinizi aracılığıyla Düzenle **tercihleri** > **klavye ve fare** > **Fare kısayolları** ve yeniden eşleme, **İkincil düğme** aşağıda gösterildiği gibi:
 > 
-> [![](images/image22.png "Klavye ve fare tercih ayarları")](images/image22.png#lightbox)
+> [![](images/image22.png "Klavye ve fare tercih ayarlarını")](images/image22.png#lightbox)
 > 
-> Artık normal olarak, görünüm denetleyicileri arasında segue ekleyebilmek için olması gerekir.
+> Artık normal olarak, görünüm denetleyicileri arasında bir segue eklemeniz mümkün olması gerekir.
 
-Geçişler, yeni bir görünüm denetleyicisi kullanıcıya nasıl sunulur ve nasıl film şeridi alanındaki diğer görünüm denetleyicileriyle etkileşim giving her denetime farklı tür vardır. Bunlar, aşağıda açıklanmıştır. Ayrıca, bir alt kümesi için bir özel geçiş uygulamak için bir segue nesnesi de mümkündür:
+Geçişler, her kullanıcı için yeni bir görünüm denetleyicisi nasıl sunulur ve nasıl diğer görsel taslak görünüm denetleyicileri ile etkileşim giving denetime farklı türde vardır. Bunlar aşağıda açıklanmıştır. Ayrıca, özel bir geçiş uygulamak için segue nesne alt sınıfı için de mümkündür:
 
--  **Göster / itme** – push ü Gezinti yığını görünüm denetleyicisini ekler. Bu, anında iletme kaynaklanan görünüm denetleyicisini yığınına eklenen görünüm denetleyicisini aynı gezinti denetleyicisine parçası olduğunu varsayar. Bu aynı şeyi yapar `pushViewController` ve veriler ekranında arasındaki bazı ilişki olduğunda genellikle kullanılır. Push kullanarak ü geri düğmesini ve başlığı her görünüm yığında detaya gitme hiyerarşisini görüntüleme gezinmeyi sağlayan eklenmiş olan bir gezinti çubuğu sahip olmanın lüks sağlar.
--  **Kalıcı** – bir kalıcı segue herhangi iki görünüm denetleyicileri gösterildikten animasyonlu geçişin seçeneğiyle projenizdeki arasında bir ilişki oluşturun. Alt Görünüm denetleyicisini tamamen görünüme duruma, üst görünüm denetleyicisini soyutlamaması. Bir itme ü, da bize geri düğmesini ekler; ne zaman kalıcı bir kullanarak ü `DismissViewController` önceki görünüm denetleyiciye dönebilmek için kullanılması gerekir.
--  **Özel** – her özel segue öğesinin bir alt kümesi oluşturulabilir ` UIStoryboardSegue`.
--  **Bırakma** – bırakma bir ü geri İtme veya kalıcı arasında gezinmek için kullanılan – Örneğin, kalıcı olarak sunulan görünüm denetleyicisini kapatarak ü. Bu, ek olarak yalnızca biri bırakma, ancak bir dizi itme ve kalıcı segues ve tek bir gezinti hiyerarşinizdeki birden çok adımı eylemi bırakma geri dönün. Bırakmayla nasıl kullanılacağını anlamak için okuyun iOS ü [oluşturma, bırakma Segues](https://developer.xamarin.com/recipes/ios/general/storyboard/unwind_segue/) tarif.
--  **Sourceless** – sourceless segue ilk görünüm denetleyicisini içeren Sahne gösterir ve bu nedenle, kullanıcının görüntüleyebileceği önce görürsünüz. Aşağıda gösterilen segue tarafından temsil edilen:  
+-  **Göster / anında iletme** – bir anında iletme ü görünüm denetleyicisi için gezinme yığınında ekler. Bu anında iletme kaynaklanan görünüm denetleyicisi yığına eklenen görünüm denetleyicisi olarak aynı gezinti denetleyicisi bir parçası olduğunu varsayar. Bu aynı şeyi yapar `pushViewController` ve veriler ekranında arasındaki bazı ilişki olduğunda genel olarak kullanılır. Anında iletme kullanarak ü bir geri düğmesi ve başlık yığında Gezinti görünüm hiyerarşisi aracılığıyla detaya izin vererek her bir görünüme eklenmiş olan bir gezinti çubuğu yaşama lüks sağlar.
+-  **Kalıcı** – bir kalıcı segue gösterilen bir animasyonlu geçiş seçeneği ile projenizdeki herhangi iki görünüm denetleyicileri arasında bir ilişki oluşturun. Alt Görünüm denetleyicisi tamamen görünüme duruma, üst görünüm denetleyicisi gizlememeniz. Bu bizim için geri düğmesi ekler bir anında iletme ü; ne zaman kalıcı bir kullanarak ü `DismissViewController` önceki görünüm denetleyiciye döndürmek için kullanılmalıdır.
+-  **Özel** – herhangi bir özel öğesinin segue oluşturulabilir ` UIStoryboardSegue`.
+-  **Geriye doğru izleme** geriye doğru izleme bir ü geri İtme veya kalıcı arasında gezinmek için kullanılan – Örneğin, kalıcı olarak sunulan görünüm denetleyicisi kapatarak ü. Bu, ek olarak yalnızca biri geriye doğru izleyebilirsiniz, ancak anında iletme ve kalıcı bir dizi etkinleştirilir ve tek bir gezinti hiyerarşinizdeki birden çok adım eylem bırakma geri dönün. Bir bırakma nasıl kullanılacağını anlamak için okuyun iOS ü [oluşturma, bırakma etkinleştirilir](https://github.com/xamarin/recipes/tree/master/Recipes/ios/general/storyboard/unwind_segue) tarif.
+-  **Sourceless** – ilk görünüm denetleyicisini içeren sahneye sourceless segue gösterir ve bu nedenle, kullanıcının görüntüleyebileceği önce görürsünüz. Aşağıda gösterilen segue tarafından temsil edilir:  
 
     [![](images/sourcelesssegue.png "Sourceless segue")](images/sourcelesssegue.png#lightbox)
 
 ### <a name="adaptive-segue-types"></a>Uyarlamalı ü türleri
 
- iOS 8 sunulan [boyutu sınıfları](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes) tüm iOS cihazları için bir kullanıcı Arabirimi oluşturmak geliştiriciler etkinleştirilmesi, tüm kullanılabilir ekran boyutlarına çalışmak bir iOS film şeridi dosya izin vermek için. Varsayılan olarak, tüm yeni Xamarin.iOS uygulamaları boyutu sınıfları kullanır. Eski Proje boyutu sınıftan kullanmak için başvurmak [film şeritleri birleşik giriş](~/ios/user-interface/storyboards/unified-storyboards.md) Kılavuzu. 
+ iOS 8 sunulan [boyut sınıfları](~/ios/user-interface/storyboards/unified-storyboards.md#size-classes) geliştiricilerin tüm iOS cihazları için bir kullanıcı Arabirimi oluşturmak tüm kullanılabilir ekran boyutlarıyla çalışacak şekilde bir iOS görsel taslak dosyası izin vermek için. Varsayılan olarak, tüm yeni Xamarin.iOS uygulama boyut sınıfları kullanır. Boyut sınıfları daha eski bir projesinden kullanmak için başvurmak [birleşik görsel taslaklara giriş](~/ios/user-interface/storyboards/unified-storyboards.md) Kılavuzu. 
  
-Boyutu sınıflarını kullanarak herhangi bir uygulama aynı zamanda yeni kullanacağı [ *Uyarlamalı Segues*](~/ios/user-interface/storyboards/unified-storyboards.md). Boyutu sınıfları kullanırken, biz doğrudan wether belirtme olmayan olduğunu unutmayın bir iPhone veya iPad kullanıyoruz. Diğer bir deyişle, bakılmaksızın aynı çalışmak için sahip ne kadar Gayrimenkul her zaman görünür bir UI oluşturuyoruz. Ortam yüksek ve en iyi şekilde nasıl içerik sunmak belirleme Uyarlamalı Segues çalışın. Uyarlamalı Segues aşağıda gösterilmektedir: 
+Boyut sınıflarını kullanan uygulamalar ayrıca yeni kullanacağı [ *Uyarlamalı etkinleştirilir*](~/ios/user-interface/storyboards/unified-storyboards.md). Boyut sınıfları kullanırken, biz doğrudan Unified belirtme değil olduğunu unutmayın. iPhone veya iPad kullanıyoruz. Diğer bir deyişle aynı şekilde çalışmak için sahip ne kadar Emlak bağımsız olarak her zaman görünür bir UI oluşturuyoruz. Ortam yüksek ve en iyi şekilde nasıl içerik sunmak belirleme Uyarlamalı geçişler Uyarlamasız çalışın. Uyarlamalı etkinleştirilir aşağıda gösterilmektedir: 
 
-[![](images/adaptivesegue.png "Uyarlamalı Segues açılır")](images/adaptivesegue.png#lightbox)
+[![](images/adaptivesegue.png "Uyarlamalı etkinleştirilir açılır")](images/adaptivesegue.png#lightbox)
 
 |Ü|Açıklama|
 |--- |--- |
-|Göster|Bu çok benzer bir itme ü ancak ekran içeriğini dikkate alır.|
-|Ayrıntıları Göster|Uygulama bir ana ve ayrıntı görünümünde (örneğin, bir bölme görünüm denetleyicisinde iPad) görüntüler, içeriği ayrıntı görünümü değiştirir. Uygulamanın yalnızca ana veya ayrıntı gösterirse, içerik görünümü denetleyicisi yığınının tepesindeki yerini alır.|
-|Sunum|Bu kalıcı segue benzer ve sunu ve geçiş stilleri için seçilmesine izin verir.|
-|Popover sunu|Bu içerik popover gösterir|
+|Show|Bu çok benzer bir anında iletme ü ancak ekran içeriğini hesaba katar.|
+|Ayrıntıları Göster|İçerik, uygulamada bir ana ve ayrıntı görünümü (örneğin, ipad'de bir Bölünmüş Görünüm denetleyicisi) görüntülenirse, ayrıntı görünümü yerini alır. Uygulamayı yalnızca ana veya ayrıntı görüntülerse, içerik görünümü denetleyicisi yığın üstüne yerini alır.|
+|Sunum|Bu kalıcı segue için benzer ve sunu ve geçiş stilleri seçime olanak sağlar.|
+|Popover sunu|Bu içerik bir popover sunar|
 
-### <a name="transferring-data-with-segues"></a>İle veri aktarma Segues
+### <a name="transferring-data-with-segues"></a>İle veri aktarımı etkinleştirilir
 
-Bir segue yararları geçişleri ile sona ermez. Görünüm denetleyicileri arasında veri aktarımını yönetmek için de kullanılabilir. Bu geçersiz kılma tarafından sağlanır `PrepareForSegue` ilk görünüm denetleyicisini ve kendisini veri işleme yöntemi. Segue tetiklendiğinde – Örneğin, bir düğme basma ile – uygulama yeni görünüm denetleyicisini hazırlama olanağı sağlayarak bu yöntemi çağırır *önce* herhangi Gezinti oluşur. Aşağıdaki kod gelen [Phoneword](https://developer.xamarin.com/samples/monotouch/Hello_iOS/) örnek, bu gösterir: 
+Bir segue avantajlarını geçişleri ile sona ermez. Görünüm denetleyicileri arasında veri aktarımını yönetmek için de kullanılabilir. Bu geçersiz kılma tarafından sağlanır `PrepareForSegue` başlangıç görünümü denetleyicisi ve kendimize veri işleme yöntemi. Segue tetiklendiğinde – örneğin düğmesine basma ile – uygulama yeni görünüm denetleyicisini hazırlamak için bir fırsat sağlar, bu yöntemi çağırır *önce* herhangi bir gezinti gerçekleşir. Aşağıdaki kod öğesinden [Phoneword](https://developer.xamarin.com/samples/monotouch/Hello_iOS/) örneği, bu gösterir: 
 
 
 ```csharp
@@ -109,13 +109,13 @@ NSObject sender)
 }
 ```
 
-Bu örnekte, `PrepareForSegue` segue kullanıcı tarafından tetiklendiğinde yöntemi çağrılır. Biz öncelikle 'alıcı' görünümü denetleyici örneği oluşturun ve bu View Controller segue's hedef olarak ayarlamanız gerekir. Bu, aşağıdaki kod satırı tarafından gerçekleştirilir:
+Bu örnekte, `PrepareForSegue` segue kullanıcı tarafından tetiklendiğinde yöntemi çağrılır. İlk 'alma' görünüm denetleyicisi örneği oluşturun ve bu görünüm denetleyicisi segue'nın hedefi olarak ayarlamak sahibiz. Bu, aşağıdaki kod satırı tarafından gerçekleştirilir:
 
 ```csharp
 var callHistoryContoller = segue.DestinationViewController as CallHistoryController;
 ```
 
-Yöntemi şimdi özelliklerini ayarlamak için gönderebilen `DestinationViewController`. Bu örnekte, biz bu avantajlarından adlı bir liste geçirerek önlemlerin `PhoneNumbers` için `CallHistoryController` ve aynı ada sahip bir nesneye atama:
+Yöntemi artık özellikleri ayarlamak için özelliğine sahiptir `DestinationViewController`. Bu örnekte Biz bu avantajı olarak adlandırılan bir liste geçirerek önlemlerin `PhoneNumbers` için `CallHistoryController` ve aynı ada sahip bir nesneye atama:
 
 ```csharp
 if (callHistoryContoller != null) {
@@ -123,25 +123,25 @@ if (callHistoryContoller != null) {
     }
 ```
 
-Geçiş tamamlandıktan sonra kullanıcının göreceği `CallHistoryController` doldurulan listesi.
+Geçiş tamamlandıktan sonra kullanıcının göreceği `CallHistoryController` ile doldurulmuş bir listesi.
 
-## <a name="adding-a-storyboard-to-a-non-storyboard-project"></a>Film şeridi film şeridi olmayan projeye ekleme
+## <a name="adding-a-storyboard-to-a-non-storyboard-project"></a>Görsel taslağı bir görsel taslak olmayan projeye ekleniyor
 
-Bazen daha önce film şeridi olmayan dosya film şeridi eklemeniz gerekebilir. Visual Studio'da Mac için bir kez bunu aşağıdaki adımları izleyerek basitleştirilmesi:
+Bazen bir görsel taslak önceden görsel taslak olmayan dosya eklemeniz gerekebilir. Visual Studio'da Mac için bir kez bunu aşağıdaki adımları izleyerek basitleştirilmesi:
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-1. Göz atarak yeni bir film şeridi dosya oluşturma **Dosya > Yeni Dosya > iOS > Film şeridi**aşağıda gösterildiği gibi: 
+1. Göz atarak yeni bir görsel taslak dosyası oluşturma **Dosya > Yeni Dosya > iOS > Film şeridi**, aşağıda gösterildiği gibi: 
     
     [![](images/new-storyboard-xs.png "Yeni dosya iletişim kutusu")](images/new-storyboard-xs.png#lightbox)
 
-2. Film şeridi adınızı ekleme **ana arabirimi** bölümünü **Info.plist**, aşağıda gösterildiği gibi:
+2. Görsel taslak adınızı ekleme **ana arabirimi** bölümünü **Info.plist**, aşağıda gösterildiği gibi:
     
     [![](images/infoplist.png "Info.plist Düzenleyicisi")](images/infoplist.png#lightbox)
     
-    Bunu ilk görünüm denetleyiciye başlatmasını eşdeğeri yapar `FinishedLaunching` yöntemi uygulama temsilci içinde. Bu seçenek kümesi ile uygulamayı bir pencere (aşağıya bakın) başlatır, ana film şeridi yükler ve film şeridi'nın ilk View Controller (sourceless Segue yanında bir) örneği olarak atar `RootViewController` özelliği penceresinin ve ardından yapar pencerenin ekranda görünür.
+    Bunu, ilk görünüm denetleyicisi örnekleme eşit yapar `FinishedLaunching` yöntemi içinde uygulama temsilcisi. Bu seçenek kümesi ile uygulama bir pencere (aşağıya bakın) başlatır, ana görsel taslak yükler ve şeridinin ilk görünüm denetleyicisi (sourceless Segue yanında bir) örneği olarak atar `RootViewController` özellik penceresi ve ardından yapar pencereyi ekranda görünür.
 
-3. İçinde `AppDelegate`, varsayılan geçersiz kılma `Window` penceresi özelliği uygulamak için aşağıdaki kod ile yöntemi:
+3. İçinde `AppDelegate`, varsayılanın `Window` penceresi özelliği uygulamak için aşağıdaki kod ile yöntemi:
         
         public override UIWindow Window {
             get;
@@ -150,17 +150,17 @@ Bazen daha önce film şeridi olmayan dosya film şeridi eklemeniz gerekebilir. 
             
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. Projeye sağ tıklayarak yeni bir film şeridi dosya oluşturma **Ekle > Yeni Dosya > iOS > boş film şeridi**aşağıda gösterildiği gibi: 
+1. Projeye sağ tıklayarak yeni bir görsel taslak dosyası oluşturma **Ekle > Yeni Dosya > iOS > boş görsel taslak**, aşağıda gösterildiği gibi: 
     
     [![](images/new-storyboard-vs.png "Yeni öğe iletişim kutusu")](images/new-storyboard-vs.png#lightbox)
 
-2. Film şeridi adınızı ekleme **ana arabirimi** iOS aşağıda gösterildiği gibi uygulama bölümü:
+2. Görsel taslak adınızı ekleme **ana arabirimi** aşağıda gösterildiği gibi uygulama iOS bölümünü:
     
     [![](images/ios-app.png "Info.plist Düzenleyicisi")](images/ios-app.png#lightbox)
     
-    Bunu ilk görünüm denetleyiciye başlatmasını eşdeğeri yapar `FinishedLaunching` yöntemi uygulama temsilci içinde. Bu seçenek kümesi ile uygulamayı bir pencere (aşağıya bakın) başlatır, ana film şeridi yükler ve film şeridi'nın ilk View Controller (sourceless Segue yanında bir) örneği olarak atar `RootViewController` özelliği penceresinin ve ardından yapar pencerenin ekranda görünür.
+    Bunu, ilk görünüm denetleyicisi örnekleme eşit yapar `FinishedLaunching` yöntemi içinde uygulama temsilcisi. Bu seçenek kümesi ile uygulama bir pencere (aşağıya bakın) başlatır, ana görsel taslak yükler ve şeridinin ilk görünüm denetleyicisi (sourceless Segue yanında bir) örneği olarak atar `RootViewController` özellik penceresi ve ardından yapar pencereyi ekranda görünür.
 
-3. İçinde `AppDelegate`, varsayılan geçersiz kılma `Window` penceresi özelliği uygulamak için aşağıdaki kod ile yöntemi:
+3. İçinde `AppDelegate`, varsayılanın `Window` penceresi özelliği uygulamak için aşağıdaki kod ile yöntemi:
 
         public override UIWindow Window {
             get;
@@ -169,53 +169,53 @@ Bazen daha önce film şeridi olmayan dosya film şeridi eklemeniz gerekebilir. 
             
 -----
 
-## <a name="creating-a-storyboard-with-the-ios-designer"></a>Film şeridi iOS Tasarımcısı ile oluşturma
+## <a name="creating-a-storyboard-with-the-ios-designer"></a>İOS Designer ile görsel taslak oluşturma
 
-Film şeridi, Mac ve Visual Studio için Visual Studio ile sorunsuz bir şekilde tümleştirilmiştir iOS için Xamarin Tasarımcısı'nı kullanarak oluşturulabilir.
+Görsel Taslak, iOS, Mac ve Visual Studio için Visual Studio ile sorunsuz bir şekilde tümleştirilmiştir Xamarin Tasarımcısı'nı kullanarak oluşturulabilir.
 
-Film şeritleri oluşturmak için iOS Tasarımcısı ile çalışmaya başlamak için izleyin [Hello, iOS Multiscreen](~/ios/get-started/hello-ios-multiscreen/index.md) Kılavuzu. Bu kılavuzda görünüm Segues ve denetimlerinizi olaylarına nasıl ele alınacağını kullanarak denetleyicileri arasında gezinme inceleyeceksiniz.
+Görsel taslakları oluşturmak için iOS Designer'ı kullanmaya başlamak için izleyin [iOS çok ekranlı Hello](~/ios/get-started/hello-ios-multiscreen/index.md) Kılavuzu. Bu izlenecek yolda geçişler Uyarlamasız ve denetimlerinizi olaylarına nasıl ele alınacağını kullanarak görünüm denetleyicileri arasında gezinti inceleyeceksiniz.
 
-## <a name="instantiate-storyboards-manually"></a>Film şeritleri el ile örneği
+## <a name="instantiate-storyboards-manually"></a>Görsel Taslaklar el ile örneği
 
-Film şeritleri film şeridi tek tek görünüm denetleyicileri hala kullanılarak oluşturulabilir ancak tek tek XIB dosyaları projenizdeki tamamen Değiştir `Storyboard.InstantiateViewController`.
+Görsel taslakları görsel taslak tek görünüm denetleyicileri kullanılarak yine de oluşturulabilir ancak tek XIB dosyaları projenizde, tamamen değiştirin `Storyboard.InstantiateViewController`.
 
-Bazen uygulamaları tasarımcı tarafından sağlanan yerleşik film şeridi geçişleri ile işlenemez özel gereksinimleri vardır. Aynı düğmesi, bir uygulamanın geçerli durumunu bağlı olarak farklı ekranlar başlatan bir uygulama oluşturmak için olsaydı Örneğin, biz geçişi kendisini programı ve görünüm denetleyicileri el ile oluşturmak isteyebilirsiniz.
+Bazen uygulamalar, tasarımcı tarafından sağlanan yerleşik film şeridi geçişleri ile işlenemez özel gereksinimleri vardır. Aynı düğmesi, bir uygulamanın geçerli durumuna bağlı olarak farklı ekranları başlatan bir uygulama oluşturmak için olsaydık Örneğin, size geçişi kendimize programı ve görünüm denetleyicileri el ile oluşturmak isteyebilirsiniz.
 
-Aşağıdaki ekran görüntüsünde, iki görünüm denetleyicisinde bizim tasarım yüzeyi hiçbir aralarında ü gösterir. Sonraki bölümde, geçiş kodu nasıl ayarlanabilir size yol gösterecek.
+Aşağıdaki ekran görüntüsünde, aralarında iki görünüm denetleyicisi bizim tasarım yüzeyinde olmayan ü gösterir. Sonraki bölümde bu geçiş kodunu nasıl ayarlanabilir yol gösterir.
 
- [![](images/viewcontrollerspink.png "Bu ekran görüntüsünde iki görünüm denetleyicisinde tasarım yüzeyine hiçbir aralarında ü gösterir")](images/viewcontrollerspink.png#lightbox)
+ [![](images/viewcontrollerspink.png "Bu ekran görüntüsünde, aralarında iki görünüm denetleyicisi tasarım yüzeyinde olmayan ü gösterilmektedir.")](images/viewcontrollerspink.png#lightbox)
 
-1. Ekleme bir _iPhone film şeridi boş_ var olan bir proje proje için:
+1. Ekleme bir _boş iPhone görsel taslağı_ mevcut projeler için:
     
-    [![](images/add-storyboard1.png "Film şeridi ekleme")](images/add-storyboard1.png#lightbox)
+    [![](images/add-storyboard1.png "Görsel taslak ekleme")](images/add-storyboard1.png#lightbox)
 
-2. Yeni oluşturulan şeridinde açmak için çift tıklayın ve yeni bir ekleme **Gezinti denetleyicisi** tasarım yüzeyine. Gezinti denetleyicisi olduğu gibi gelen bir kök görünümü denetleyicisiyle aşağıda gösterildiği gibi varsayılan olarak UI olmayan:
+2. Yeni oluşturulan şeridinde açmak için çift tıklayın ve yeni bir **Gezinti denetleyicisi** tasarım yüzeyine bırakın. Gezinti denetleyicisi olduğundan bu gelen kök görünüm denetleyicisi ile aşağıda gösterildiği gibi varsayılan olarak UI olmayan:
 
-    [![](images/uinavigationcontroller.png "Görünüm denetleyicileriyle Segues")](images/uinavigationcontroller.png#lightbox)
+    [![](images/uinavigationcontroller.png "Görünüm denetleyicileri ile etkinleştirilir")](images/uinavigationcontroller.png#lightbox)
 
-3. Seçin _View Controller_ altındaki siyah çubuğunda tıklatarak. Tasarımcıda 's **özelliği paneli**altında **kimlik** biz benzersiz bir kimliği yanı sıra özel bir sınıf için Görünüm denetleyicisini belirtebilirsiniz. Ayarlama **sınıf adı** ve **film şeridi kimliği** için `MainViewController`.
+3. Seçin _görünüm denetleyicisi_ altında siyah çubuğuna tıklayın. İçinde tasarımcının **özellik paneli**altında **kimlik** biz benzersiz bir kimliği yanı sıra özel bir sınıf için Görünüm denetleyicisi belirtebilirsiniz. Ayarlama **sınıf adı** ve **film şeridi kimliği** için `MainViewController`.
 
     [![](images/identitypanelnew.png "Özel bir sınıf belirtin")](images/identitypanelnew.png#lightbox)
 
-4. Daha sonra biz bizim film şeridi görünümü denetleyicilerinden örneği oluşturmak ihtiyacınız olacak ve bizim kodda başvurmak görsel taslak haline getirme kimliği kullanır. Film şeridi kimliği eşleşecek şekilde geri yükleme kimliği ayarlama durumu geri yüklenmesi gerekiyorsa, görünüm denetleyicisini doğru yeniden sağlar.
+4. Daha sonra bizim görsel taslak görünüm denetleyicilerini örneklemek ihtiyacımız ve bunları bizim kodda başvurmak için görsel taslak kimliği kullanır. Görsel taslak kimliği eşleştirmek için geri yükleme kimliği olarak ayarlanması durumunda geri yüklenmesi gerekiyorsa görünüm denetleyicisi doğru şekilde yeniden sağlar.
 
-5. Şu anda yalnızca bir görünüm denetleyicisi sahibiz. Başka bir görünüm denetleyicisi tasarım yüzeyine sürükleyin. İçinde **özelliği paneli**, sınıf ve film şeridi Kimliğine kimliği altında ayarlamak `PinkViewController`aşağıda gösterildiği gibi:
+5. Şu anda yalnızca bir görünüm denetleyicisi sahibiz. Başka bir görünüm denetleyicisi tasarım yüzeyine sürükleyin. İçinde **özellik paneli**, kimliği altında sınıf ve görsel taslak Kimliğine ayarlayın `PinkViewController`, aşağıda gösterildiği gibi:
 
     [![](images/pinkvcnew.png "Özellik paneli")](images/pinkvcnew.png#lightbox)
     
-    IDE görünümü denetleyicileri için özel bu sınıfları oluşturur. Bunlar görüntülenebilir **çözüm paneli**aşağıdaki ekran görüntüsünde gösterildiği gibi:
+    IDE görünüm denetleyicileri bu özel sınıflar oluşturur. Bunlar görüntülenebilir **çözüm bölmesi**aşağıdaki ekran görüntüsünde gösterildiği gibi:
     
-    [![](images/solution-pad.png "Çözüm paneli")](images/solution-pad.png#lightbox)
+    [![](images/solution-pad.png "Çözüm bölmesi")](images/solution-pad.png#lightbox)
 
-6. İçinde `PinkViewController`, denetleyicinin çerçeve merkezi tıklayarak görünümü seçin. Özellikler panelinde görünüm altında değiştirme **arka plan** macenta için:
+6. İçinde `PinkViewController`, denetleyicinin çerçeve ortasına doğru tıklayarak görünümü seçin. Özellikler panelinde altında Görünüm değiştirme **arka plan** Eflatun için:
     
-    [![](images/pinkcontroller.png "Arka plan rengini ayarlama")](images/pinkcontroller.png#lightbox)
+    [![](images/pinkcontroller.png "Arka plan rengini ayarla")](images/pinkcontroller.png#lightbox)
 
-7. Son olarak, bir düğmesinden sürükleyin **araç** üzerine `MainViewController`. İsteğe bağlı olarak özellikleri defterinde adını verin `PinkButton` ve başlık aşağıda gösterildiği gibi GoToPink:
+7. Son olarak, düğme sürükleyin **araç kutusu** üzerine `MainViewController`. İsteğe bağlı olarak özellikler panelinde adını verin `PinkButton` ve başlık aşağıda gösterildiği gibi GoToPink:
 
-    [![](images/pinkbutton.png "Düğme adı ayarlama")](images/pinkbutton.png#lightbox)
+    [![](images/pinkbutton.png "Düğme adı ayarlayın")](images/pinkbutton.png#lightbox)
 
-Film şeridi tamamlandı, ancak biz projeyi şimdi dağıtırsanız, biz boş bir ekran alırsınız. Hala bizim film şeridi kullanın ve ilk görünüm olarak hizmet verecek bir kök görünümü denetimi ayarlamak için IDE bildirmek ihtiyacımız olmasıdır. Normalde bu bizim proje seçenekleri yukarıda gösterildiği gibi yapılabilir. Ancak bu örnekte, şunları yapacağız aşağıdakileri ekleyerek kodda, aynı sonucu elde **AppDelegate**:
+Görsel taslak tamamlandı, ancak biz proje artık dağıtırsanız, boş bir ekran elde edersiniz. Yine de bizim film şeridi kullanın ve ilk görünüm olarak görev yapacak bir kök görünüm denetleyicisini ayarlamak için IDE bildirmek ihtiyacımız olmasıdır. Normalde bu proje seçeneklerimiz, yukarıda gösterildiği gibi yapılabilir. Ancak bu örnekte olacak aşağıdakileri ekleyerek kodda, aynı sonucu elde **AppDelegate**:
 
 ```csharp
 public partial class AppDelegate : UIApplicationDelegate
@@ -238,9 +238,9 @@ public partial class AppDelegate : UIApplicationDelegate
     }
 ```
 
-Çok fazla kod olan, ancak yalnızca birkaç satır bilginiz. İlk olarak, biz bizim film şeridi kaydetmek **AppDelegate** film şeridi'nın adını geçirerek **MainStoryboard**. Ardından, biz çağırarak film şeridi ilk görünüm denetleyicisinden örneği oluşturmak için uygulama söyleyin `InstantiateInitialViewController` bizim şeridinde ve bu görünüm denetleyicisini bizim uygulamanın kök görünümü denetleyicisi olarak ayarlar. Bu yöntem kullanıcı görür, ilk ekran belirler ve bu görünüm denetleyicisini yeni bir örneğini oluşturur.
+Bu kod, ancak yalnızca birkaç satır bilginiz. İlk olarak biz bizim görsel taslakla kaydetmeden **AppDelegate** şeridinin adı geçirerek **MainStoryboard**. Ardından, biz çağırarak bir film şeridini başlangıç görünümü denetleyicisi oluşturmak için uygulama söyleyin `InstantiateInitialViewController` bizim şeridinde ve bu görünüm denetleyicisi bizim uygulamanın kök görünüm denetleyicisi ayarladık. Bu yöntem, kullanıcının gördüğü, ilk ekran belirler ve bu görünüm denetleyicisi yeni bir örneğini oluşturur.
 
-Bildirim IDE oluşturdu çözüm bölmesinde bir `MainViewcontroller.cs` sınıfı ve onun `corresponding designer.cs` zaman eklediğimiz sınıf adı 4. adımda özellikleri paneli için. Bu sınıf bir taban sınıf içeren özel bir oluşturucu oluşturulmuş görebiliriz:
+IDE oluşturduğunuz çözüm bölmesinde bildirimi bir `MainViewcontroller.cs` sınıfı ve kendi `corresponding designer.cs` zaman ekledik sınıf adı için özellikler panelini 4. adımda. Bu sınıf bir taban sınıfı içeren özel bir oluşturucu oluşturulan görebiliriz:
 
 ```csharp
 public MainViewController (IntPtr handle) : base (handle) 
@@ -249,7 +249,7 @@ public MainViewController (IntPtr handle) : base (handle)
 ```
 
 
-Tasarımcı kullanarak film şeridi oluştururken, IDE otomatik olarak Ekle [[Kaydet]](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/) özniteliği en üstündeki `designer.cs` sınıfı ve belirtilen film şeridi kimliği aynı olan bir dize tanımlayıcı geçirin önceki adımı. Bu C# film şeridi ilgili Sahne bağlar.
+Tasarımcı kullanarak görsel taslak oluşturma, IDE otomatik olarak ekler [[kaydetme]](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/) özniteliği en üstündeki `designer.cs` sınıfı ve görsel taslak belirtilen kimliği aynı olan bir dize tanımlayıcısı geçirin önceki adımı. Bu C# film şeridinde ilgili sahneye bağlayacaksınız.
 
 , Varolan bir sınıfa eklemek istediğiniz belirli bir noktada **değil** Tasarımcısı'nda oluşturulmuş. Bu durumda, bu sınıf normal olarak kaydetmeniz:
 
@@ -265,9 +265,9 @@ public MainViewController (IntPtr handle) : base (handle)
 }
 ```
 
-Sınıflar ve yöntemler kaydetme hakkında daha fazla bilgi için başvurmak [türü kayıt](http://docs.xamarin.com/guides/ios/advanced_topics/registrar/) belgeleri.
+Sınıflar ve yöntemler kaydetme ile ilgili daha fazla bilgi için [türü Kaydedici](http://docs.xamarin.com/guides/ios/advanced_topics/registrar/) belgeleri.
 
-Bu sınıftaki son adım wire düğmesi ve pembe görünüm denetleyicisini geçişi. Örneği `PinkViewController` film şeridi görünümünden; daha sonra biz push programlayacaksınız ile ü `PushViewController`örnek kod gösterildiği gibi:
+Bu sınıf son adımında, wire düğmesi ve pembe görünüm denetleyicisi geçiş. Örneği `PinkViewController` Film şeridinden; ardından, size bir anında iletme programlayacaksınız ile ü `PushViewController`gösterildiği örnek kod gibi:
 
 ```csharp
 public partial class MainViewController : UIViewController
@@ -305,40 +305,40 @@ public partial class MainViewController : UIViewController
 }
 ```
 
-Uygulamayı çalıştırmak 2 ekran uygulama üretir:
+Uygulamayı çalıştıran 2 ekranlı bir uygulama oluşturur:
 
-![](images/finishedstoryboard.png "Çalışma ekranları örnek uygulaması")
+![](images/finishedstoryboard.png "Örnek uygulama ekranları çalıştırın")
 
-## <a name="conditional-segues"></a>Koşullu Segues
+## <a name="conditional-segues"></a>Koşullu etkinleştirilir
 
-Genellikle, bir görünüm denetleyicisinden diğerine taşıma belirli bir koşulun bağlıdır. Biz basit oturum açma ekranı yapıyorsanız Örneğin, biz yalnızca sonraki ekrana taşımak istersiniz *varsa* kullanıcı adı ve parola doğrulanmış.
+Genellikle, bir görünüm denetleyicisinden diğerine taşıma sırasında belirli bir koşulu bağlıdır. Biz basit bir oturum açma ekranını yapıyorsanız Örneğin, biz yalnızca sonraki ekrana taşınır istersiniz *varsa* kullanıcı adı ve parola doğrulandı.
 
-Sonraki örnekte Yukarıdaki örnek parola alanı ekleyeceğiz. Kullanıcı yalnızca erişmek açabilirler *PinkViewController* doğru parolayı girin, aksi takdirde bir hata görüntülenir.
+Sonraki örnekte Yukarıdaki örnek parola alanı ekleyeceğiz. Kullanıcı yalnızca erişmek mümkün olacaktır *PinkViewController* doğru parola girmeleri, aksi takdirde bir hata görüntülenir.
 
-Başlamadan önce 1-8'i yukarıdaki adımları izleyin. Bu adımda biz bizim film şeridi oluşturma, kullanıcı arabirimimizi oluşturmak ve kullanmak için hangi görünüm denetleyicisini bizim uygulama temsilci söyleyin başlamadan RootViewController olduğu gibi.
+Başlamadan önce 1 – 8 yukarıdaki adımları izleyin. Bu adımda biz bizim görsel taslak oluşturma, kullanıcı Arabirimimizi oluşturmak ve kullanmak için hangi görünüm denetleyicisi bizim uygulama temsilci başlayın RootViewController olduğu gibi.
 
-1. Şimdi, şimdi bizim UI'yi oluşturmak ve listelenen ek görünümler ekleme `MainViewController` aşağıdaki ekran görüntüsünde gibi görünmesi için:
+1. Şimdi, şimdi kullanıcı Arabirimimizi yapı ve listelenen ek görünümler eklemek `MainViewController` aşağıdaki ekran görüntüsünde gibi görünmesi için:
 
     - UITextField
         - Ad: PasswordTextField
-        - Yer tutucu: 'gizli parolayı girin'
+        - Yer tutucu: 'gizli parolasını girin'
     - UILabel
         - Metin: ' hata: yanlış parola. Değil geçirdiğiniz!'
         - Renk: kırmızı
         - Hizalama: merkezi
         - Satırlar: 2
-        - 'Hidden' onay kutusu işaretli 
+        - 'Hidden' onay kutusunu işaretli 
         
     [![](images/passwordvc.png "Merkezi satırları")](images/passwordvc.png#lightbox)
     
-2. Pembe git düğmesi ve görünüm denetleyici Ctrl-düşürmesini tarafından arasında Segue oluşturma *PinkButton* için *PinkViewController*, seçerek **anında** üzerinde fare yukarı . 
+2. Pembe Git düğmesiyle Ctrl-sürükleyerek görünüm denetleyicisi arasında bir Segue oluşturma *PinkButton* için *PinkViewController*, seçerek **anında iletme** üzerinde fare yukarı . 
 
-3. Üzerinde Segue'ı tıklatın ve bu verin *tanımlayıcısı* `SegueToPink`:
+3. Üzerinde Segue tıklayın ve verin *tanımlayıcı* `SegueToPink`:
 
-    [![](images/namesegue.png "Üzerinde Segue'ı tıklatın ve tanımlayıcı SegueToPink verin")](images/namesegue.png#lightbox)  
+    [![](images/namesegue.png "Üzerinde Segue tıklayın ve tanımlayıcı SegueToPink verin")](images/namesegue.png#lightbox)  
     
 
-4. Son olarak, aşağıdaki ShouldPerformSegue yöntemine ekleyin `MainViewController` sınıfı:
+4. Son olarak, aşağıdaki ShouldPerformSegue yöntemi ekleme `MainViewController` sınıfı:
 
     ```csharp
     public override bool ShouldPerformSegue (string segueIdentifier, NSObject sender)
@@ -358,139 +358,139 @@ Başlamadan önce 1-8'i yukarıdaki adımları izleyin. Bu adımda biz bizim fil
     }
     ```
 
-Bu kodda segueIdentifier eşleştirdik bizim `SegueToPink` ü biz bir koşul; sınayabilir şekilde bu durumda geçerli bir parola. Bizim koşul döndürürse `true`, Segue gerçekleştirir ve sunacaktır `PinkViewController`. Varsa `false`, yeni görünüm denetleyicisini değil sunulur.
+Bu kodda biz için segueIdentifier sözleşmenizle bizim `SegueToPink` ü bir koşul; ardından sınayabiliriz şekilde bu durumda geçerli bir parola. Bizim koşul döndürürse `true`, Segue gerçekleştirir ve sunacaktır `PinkViewController`. Varsa `false`, yeni görünüm denetleyicisi değil sunulur.
 
-Biz bu yaklaşım tüm Segue bu görünüm denetleyicisindeki ShouldPerformSegue yöntemi segueIdentifier bağımsız değişkeni denetleyerek uygulayabilirsiniz. Bir Segue tanımlayıcısını – yalnızca bu durumda sahibiz `SegueToPink`.
+Biz bu yaklaşım bu görünüm denetleyicisi üzerinde herhangi bir Segue ShouldPerformSegue yöntemi segueIdentifier bağımsız değişkeni kontrol ederek uygulayabilirsiniz. Bir Segue tanımlayıcısını – yalnızca bu durumda sahibiz `SegueToPink`.
 
-Storyboards.Conditional çözümde başvurmak [el ile film şeritleri örnek](https://developer.xamarin.com/samples/monotouch/ManualStoryboard/) çalışan bir örnek için.
+Storyboards.Conditional çözümde başvurmak [el ile görsel Taslaklar örnek](https://developer.xamarin.com/samples/monotouch/ManualStoryboard/) çalışan bir örnek için.
 
 <a name="Using-Storyboard-References" />
 
-## <a name="using-storyboard-references"></a>Film şeridi başvuruları kullanma
+## <a name="using-storyboard-references"></a>Görsel taslak başvuruları kullanma
 
-Film şeridi başvuru büyük ve karmaşık bir film şeridi tasarım alabilir ve özgün başvurulan küçük film şeritleri içine bölün olanak tanır, böylece kaldırma karmaşıklık kaldırma ve elde edilen tek tek yaparak daha kolay tasarım film şeritleri ve korur.
+Bir görsel taslak başvuru büyük ve karmaşık bir görsel taslak tasarım alıp özgün başvurulan daha küçük görsel Taslaklar ile sonu sağlar, böylece kaldırma karmaşıklığı kaldırarak ve ortaya çıkan tek tek yapmak daha kolay tasarım film şeritleri ve korur.
 
-Ayrıca, bir film şeridi başvuru sağlayabilir bir _bağlantı_ aynı film şeridi veya farklı bir üzerinde belirli bir görünüm içindeki başka bir görünüm için.
+Ayrıca, bir görsel taslak başvurusu sağlayabilir bir _bağlantı_ aynı görsel taslak veya belirli bir Sahne farklı bir şirket içinde başka bir sahneye.
 
 <a name="Referencing-an-External-Storyboard" />
 
-### <a name="referencing-an-external-storyboard"></a>Bir dış film şeridi başvurma
+### <a name="referencing-an-external-storyboard"></a>Dış bir görsel taslağı başvurma
 
-Bir dış film şeridi başvuru eklemek için aşağıdakileri yapın:
+Dış bir görsel taslağı bir başvuru eklemek için aşağıdakileri yapın:
 
-1. İçinde **Çözüm Gezgini**, proje adına sağ tıklayın ve seçin **Ekle** > **yeni dosya...**   >  **iOS** > **film şeridi**. Girin bir **adı** tıklatın ve yeni film şeridi için **yeni** düğmesi:
+1. İçinde **Çözüm Gezgini**, proje adını sağ tıklatın ve seçin **Ekle** > **yeni dosya...**   >  **iOS** > **film şeridi**. Girin bir **adı** tıklayın ve yeni bir film şeridi için **yeni** düğmesi:
     
     [![](images/ref01.png "Yeni dosya iletişim kutusu")](images/ref01.png#lightbox)
     
-2. Normalde olur ve değişikliklerinizi kaydetmek gibi yeni film şeridi'nın planda düzenini tasarım: 
+2. Normalde olur ve değişikliklerinizi kaydedin, yeni şeridinin sahneler düzenini tasarlamak: 
     
-    [![](images/ref02.png "Yeni Sahne düzeni")](images/ref02.png#lightbox)
+    [![](images/ref02.png "Yeni bir Sahne düzeni")](images/ref02.png#lightbox)
     
-3. Başvuru iOS Tasarımcısı eklemek zorunda kalacaklarını film şeridi açın.
+3. İOS Designer'daki başvuru eklemek için uygulayacağınız film şeridini açın.
 
-4. Sürükleme bir **film şeridi başvuru** gelen **araç** tasarım yüzeyine: 
+4. Sürükleme bir **film şeridi başvuru** gelen **araç kutusu** tasarım yüzeyine: 
     
-    [![](images/ref03.png "Film şeridi başvurusu")](images/ref03.png#lightbox)
+    [![](images/ref03.png "Bir görsel taslak başvurusu")](images/ref03.png#lightbox)
     
-5. İçinde **pencere öğesi** sekmesinde **özellikleri Explorer**, adını seçin **film şeridi** yukarıda oluşturduğunuz: 
+5. İçinde **pencere öğesi** sekmesinde **özellikleri Gezgini**, adını seçin **film şeridi** yukarıda oluşturduğunuz: 
 
     [![](images/ref04.png "Pencere öğesi sekmesi")](images/ref04.png#lightbox)
     
-6. Bir kullanıcı Arabirimi pencere öğesi (örneğin, bir düğme gibi) var olan bir görünüm üzerinde denetim tıklayın ve oluşturmak için yeni bir Segue **film şeridi başvuru** yeni oluşturduğunuz: 
+6. Bir kullanıcı Arabirimi pencere öğesi (örneğin, bir düğme) üzerinde var olan bir Sahne denetimini tıklayın ve oluşturmak için yeni bir Segue **film şeridi başvuru** oluşturduğunuz: 
 
     [![](images/ref05.png "Bir segue oluşturma")](images/ref05.png#lightbox) 
     
 7. Açılan menüden seçin **Göster** Segue tamamlamak için: 
 
-    [![](images/ref06.png "Segue tamamlamak için Göster seçme")](images/ref06.png#lightbox) 
+    [![](images/ref06.png "Segue tamamlanması seçme Göster")](images/ref06.png#lightbox) 
     
-8. Film şeridi için yaptığınız değişiklikleri kaydedin.
+8. Görsel taslak için değişikliklerinizi kaydedin.
 
-Uygulamayı çalıştırın ve Kimden, dış film şeridi Başvurusu'nda belirtilen film şeridi ilk görünüm denetleyicisinden Segue oluşturulan UI öğesinde kullanıcı tıkladığında görüntülenir.
+Uygulamayı çalıştırdığınızda ve dış film şeridi Başvurusu'nda belirtilen görsel taslağın ilk görünümü denetleyicisinden gelen Segue oluşturduğunuz kullanıcı kullanıcı Arabirimi öğesinde tıkladığında görüntülenir.
 
 <a name="Referencing-a-Specific-Scene-in-an-External-Storyboard" />
 
-### <a name="referencing-a-specific-scene-in-an-external-storyboard"></a>Bir dış film şeridi belirli Sahne başvurma
+### <a name="referencing-a-specific-scene-in-an-external-storyboard"></a>Belirli bir dış bir görsel taslağı sahnede başvurma
 
-Belirli bir Sahne başvuru eklemek için bir dış film şeridi (ve değil ilk View Controller), aşağıdakileri yapın:
+Belirli bir Sahne bir başvuru eklemek için dış bir görsel taslağı (ve ilk görünüm denetleyicisi değil), aşağıdakileri yapın:
 
-1. İçinde **Çözüm Gezgini**, dış film şeridi düzenlemek üzere açmak için çift tıklayın.
+1. İçinde **Çözüm Gezgini**, dış film düzenlemek üzere açmak için çift tıklayın.
 
-2. Yeni bir görünüm ekleyin ve yerleşimi normal olarak tasarlamanız: 
+2. Yeni bir Sahne ekleme ve düzenini tasarlamak, normalde yaptığınız gibi: 
 
-    [![](images/ref07.png "Yeni Sahne düzeni")](images/ref07.png#lightbox)
+    [![](images/ref07.png "Yeni bir Sahne düzeni")](images/ref07.png#lightbox)
     
-3. İçinde **pencere öğesi** sekmesinde **özellikleri Explorer**, girin bir **film şeridi kimliği** yeni Sahne ait görünüm denetleyicisi için: 
+3. İçinde **pencere öğesi** sekmesinde **özellikleri Gezgini**, girin bir **film şeridi kimliği** yeni sahnenin görünüm denetleyicisi için: 
 
-    [![](images/ref08.png "Yeni planda görünümü denetleyici için bir film şeridi kimliği girin")](images/ref08.png#lightbox)
+    [![](images/ref08.png "Yeni bir Sahne görünümü denetleyici için bir görsel taslak kimliği girin")](images/ref08.png#lightbox)
     
-3. Başvuru iOS Tasarımcısı eklemek zorunda kalacaklarını film şeridi açın.
+3. İOS Designer'daki başvuru eklemek için uygulayacağınız film şeridini açın.
 
-4. Sürükleme bir **film şeridi başvuru** gelen **araç** tasarım yüzeyine: 
+4. Sürükleme bir **film şeridi başvuru** gelen **araç kutusu** tasarım yüzeyine: 
 
-    [![](images/ref03.png "Film şeridi başvurusu")](images/ref03.png#lightbox)
+    [![](images/ref03.png "Bir görsel taslak başvurusu")](images/ref03.png#lightbox)
     
-5. İçinde **pencere öğesi** sekmesinde **özellikleri Explorer**, adını seçin **film şeridi** ve **başvuru kimliği** (film şeridi kimliği), Yukarıda oluşturduğunuz Sahne: 
+5. İçinde **pencere öğesi** sekmesinde **özellikleri Gezgini**, adını seçin **film şeridi** ve **başvuru kimliği** (görsel taslak kimliği), Yukarıda oluşturduğunuz Sahne: 
 
     [![](images/ref09.png "Pencere öğesi sekmesi ")](images/ref09.png#lightbox)
     
-6. Bir kullanıcı Arabirimi pencere öğesi (örneğin, bir düğme gibi) var olan bir görünüm üzerinde denetim tıklayın ve oluşturmak için yeni bir Segue **film şeridi başvuru** yeni oluşturduğunuz: 
+6. Bir kullanıcı Arabirimi pencere öğesi (örneğin, bir düğme) üzerinde var olan bir Sahne denetimini tıklayın ve oluşturmak için yeni bir Segue **film şeridi başvuru** oluşturduğunuz: 
 
     [![](images/ref10.png "Bir segue oluşturma")](images/ref10.png#lightbox) 
     
 7. Açılan menüden seçin **Göster** Segue tamamlamak için: 
 
-    [![](images/ref06.png "Segue tamamlamak için Göster seçme")](images/ref06.png#lightbox) 
+    [![](images/ref06.png "Segue tamamlanması seçme Göster")](images/ref06.png#lightbox) 
     
-8. Film şeridi için yaptığınız değişiklikleri kaydedin.
+8. Görsel taslak için değişikliklerinizi kaydedin.
 
-Uygulamayı çalıştırın ve kullanıcı olduğunda tıkladığında, Segue, Sahne ile oluşturulan UI öğesi üzerinde verilen **film şeridi kimliği** dış film şeridi Başvurusu'nda belirtilen film şeridi görüntülenir.
+Uygulamayı çalıştırma ve kullanıcı olduğunda tıkladığında Segue from, Sahne ile oluşturduğunuz kullanıcı Arabirimi öğesinde belirtilen **film şeridi kimliği** dış film şeridi Başvurusu'nda belirtilen görsel taslağın görüntülenir.
 
 <a name="Referencing-a-Specific-Scene-in-the-Same-Storyboard" />
 
-### <a name="referencing-a-specific-scene-in-the-same-storyboard"></a>Aynı film şeridi belirli Sahne başvurma
+### <a name="referencing-a-specific-scene-in-the-same-storyboard"></a>Aynı film şeridi belirli sahnede başvurma
 
-Belirli bir Sahne aynı film şeridi başvuru eklemek için aşağıdakileri yapın:
+Belirli bir Sahne aynı film şeridini bir başvuru eklemek için aşağıdakileri yapın:
 
-1. İçinde **Çözüm Gezgini**, film şeridi düzenlemek üzere açmak için çift tıklayın.
+1. İçinde **Çözüm Gezgini**, film şeridini düzenlemek üzere açmak için çift tıklayın.
 
-2. Yeni bir görünüm ekleyin ve yerleşimi normal olarak tasarlamanız: 
+2. Yeni bir Sahne ekleme ve düzenini tasarlamak, normalde yaptığınız gibi: 
 
-    [![](images/ref11.png "Yeni Sahne düzeni")](images/ref11.png#lightbox)
+    [![](images/ref11.png "Yeni bir Sahne düzeni")](images/ref11.png#lightbox)
 
-3. İçinde **pencere öğesi** sekmesinde **özellikleri Explorer**, girin bir **film şeridi kimliği** yeni Sahne ait görünüm denetleyicisi için: 
+3. İçinde **pencere öğesi** sekmesinde **özellikleri Gezgini**, girin bir **film şeridi kimliği** yeni sahnenin görünüm denetleyicisi için: 
 
     [![](images/ref12.png "Pencere öğesi sekmesi")](images/ref12.png#lightbox)
     
-3. Sürükleme bir **film şeridi başvuru** gelen **araç** tasarım yüzeyine: 
+3. Sürükleme bir **film şeridi başvuru** gelen **araç kutusu** tasarım yüzeyine: 
 
-    [![](images/ref03.png "Film şeridi başvurusu")](images/ref03.png#lightbox)
+    [![](images/ref03.png "Bir görsel taslak başvurusu")](images/ref03.png#lightbox)
     
-5. İçinde **pencere öğesi** sekmesinde **özellikleri Explorer**seçin **başvuru kimliği** (film şeridi kimliği), yukarıda oluşturduğunuz Sahne: 
+5. İçinde **pencere öğesi** sekmesinde **özellikleri Gezgini**seçin **başvuru kimliği** (görsel taslak kimliği) yukarıda oluşturduğunuz sahnenin: 
 
     [![](images/ref13.png "Pencere öğesi sekmesi")](images/ref13.png#lightbox)
     
-6. Bir kullanıcı Arabirimi pencere öğesi (örneğin, bir düğme gibi) var olan bir görünüm üzerinde denetim tıklayın ve oluşturmak için yeni bir Segue **film şeridi başvuru** yeni oluşturduğunuz: 
+6. Bir kullanıcı Arabirimi pencere öğesi (örneğin, bir düğme) üzerinde var olan bir Sahne denetimini tıklayın ve oluşturmak için yeni bir Segue **film şeridi başvuru** oluşturduğunuz: 
 
     [![](images/ref14.png "Bir segue oluşturma")](images/ref14.png#lightbox) 
     
 7. Açılan menüden seçin **Göster** Segue tamamlamak için: 
 
-    [![](images/ref06.png "Segue tamamlamak için Göster seçme")](images/ref06.png#lightbox) 
+    [![](images/ref06.png "Segue tamamlanması seçme Göster")](images/ref06.png#lightbox) 
     
-8. Film şeridi için yaptığınız değişiklikleri kaydedin.
+8. Görsel taslak için değişikliklerinizi kaydedin.
 
-Uygulamayı çalıştırın ve kullanıcı olduğunda tıkladığında, Segue, Sahne ile oluşturulan UI öğesi üzerinde verilen **film şeridi kimliği** film şeridi Başvurusu'nda belirtilen aynı film şeridi görüntülenir.
+Uygulamayı çalıştırma ve kullanıcı olduğunda tıkladığında Segue from, Sahne ile oluşturduğunuz kullanıcı Arabirimi öğesinde belirtilen **film şeridi kimliği** film şeridi Başvurusu'nda belirtilen aynı film şeridi görüntülenir.
 
 ## <a name="summary"></a>Özet
 
-Bu makalede film şeritleri ve nasıl iOS uygulamaları geliştirme faydalı olabilir kavramını sunmaktadır. Planda, görünüm denetleyicileri, görünümleri ve görünüm hiyerarşileri ve planda Segues farklı türleri ile birlikte nasıl bağlantılı anlatılmaktadır.  Bu ayrıca başlatmasını görünüm denetleyicileri el ile bir film şeridi ve oluşturma koşullu Segues araştırır.
+Bu makalede film şeritleri ve nasıl iOS uygulamaları geliştirmede daha avantajlı olabilir kavramını sunar. Planda, görünüm denetleyicileri, görünümleri ve görünüm hiyerarşileri ve sahneler geçişler Uyarlamasız farklı türde birlikte nasıl bağlı ele alır.  Bu da Görünüm denetleyicileri örnekleme el ile bir görsel taslak ve oluşturma koşullu geçişler Uyarlamasız keşfediyor.
 
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [El ile film şeridi (örnek)](https://developer.xamarin.com/samples/ManualStoryboard/)
+- [El ile görsel Taslak (örnek)](https://developer.xamarin.com/samples/ManualStoryboard/)
 - [İOS Tasarımcısı giriş](~/ios/user-interface/designer/introduction.md)
-- [Film şeritleri için dönüştürme](http://developer.apple.com/library/ios/#releasenotes/Miscellaneous/RN-AdoptingStoryboards/)
+- [Görsel taslaklara dönüştürme](http://developer.apple.com/library/ios/#releasenotes/Miscellaneous/RN-AdoptingStoryboards/)
 - [UIStoryboard sınıf başvurusu](https://developer.apple.com/library/ios/#documentation/UIKit/Reference/UIStoryboard_Class/Reference/Reference.html)

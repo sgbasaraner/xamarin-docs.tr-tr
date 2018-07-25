@@ -1,33 +1,33 @@
 ---
-title: Çekirdek grafikleri ve çekirdek animasyon Xamarin.iOS içinde kullanma
-description: Bu makalede nasıl çekirdek grafikleri ve çekirdek animasyon kullanan bir uygulama oluşturmak adım adım gösterilmektedir. Görüntüyü bir yol boyunca seyahat animasyon nasıl yanı sıra nasıl yanıt olarak kullanıcı dokunma ekranında çizileceğini gösterir.
+title: Temel grafikler ve animasyon çekirdek Xamarin.ios'ta kullanma
+description: Bu makalede adım adım temel grafikler ve animasyon Core kullanan bir uygulamanın nasıl oluşturulacağını gösterir. Bu yol boyunca her fırsatta seyahat etmeye görüntü animasyon uygulamak nasıl yanı sıra nasıl yanıt olarak kullanıcı dokunmatik ekranda çizileceğini gösterir.
 ms.prod: xamarin
 ms.assetid: 4B96D5CD-1BF5-4520-AAA6-2B857C83815C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: 7a4399a5d62e2000c2a15a65da8e0e427dc039e0
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: cecfd7f3a9678f298af3ed547aa7b50a18238729
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787061"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242010"
 ---
-# <a name="using-core-graphics-and-core-animation-in-xamarinios"></a>Çekirdek grafikleri ve çekirdek animasyon Xamarin.iOS içinde kullanma
+# <a name="using-core-graphics-and-core-animation-in-xamarinios"></a>Temel grafikler ve animasyon çekirdek Xamarin.ios'ta kullanma
 
-Bu kılavuz için size çekirdek grafikleri yanıtta giriş touch kullanmayı yol çizme alınacaktır. Ardından, ekleyeceğiz bir `CALayer` yol boyunca animasyon bir görüntü içeren.
+Bu kılavuz için giriş dokunmaya yanıt olarak temel grafikler kullanarak bir yol çizmek için kullanacağız. Daha sonra ekleyeceğiz bir `CALayer` içeren bir görüntü sizi yol boyunca animasyon uygular.
 
 Aşağıdaki ekran görüntüsünde tamamlanan uygulama gösterilir:
 
-![](graphics-animation-walkthrough-images/00-final-app.png "Tamamlanan uygulama")
+![](graphics-animation-walkthrough-images/00-final-app.png "Tamamlanmış uygulama")
 
-Yükleme başlamadan önce *GraphicsDemo* bu kılavuzu eşlik eden örnek. Karşıdan yüklenebilir [burada](https://developer.xamarin.com/samples/monotouch/GraphicsAndAnimation/) ve içinde bulunan **GraphicsWalkthrough** directory başlatma adlı proje **GraphicsDemo_starter** , üzerine çift tıklatarak ve Açık `DemoView` sınıfı.
+Yükleme başlamadan önce *GraphicsDemo* bu kılavuzu eşlik eden örnek. Bu indirilebilir [burada](https://developer.xamarin.com/samples/monotouch/GraphicsAndAnimation/) ve içinde bulunan **GraphicsWalkthrough** dizin adlı projeyi Başlat **GraphicsDemo_starter** üzerine çift tıklayarak ve Açık `DemoView` sınıfı.
 
 ## <a name="drawing-a-path"></a>Bir yol çizme
 
 
-1. İçinde `DemoView` eklemek bir `CGPath` değişken sınıfına ve oluşturucuda örneği. Ayrıca iki bildirme `CGPoint` değişkenleri `initialPoint` ve `latestPoint`, biz içinden biz oluşturmak yolu dokunma noktası yakalamak için kullanacağınız:
+1. İçinde `DemoView` ekleme bir `CGPath` değişken sınıfına ve oluşturucuda örneği. Ayrıca iki bildirmek `CGPoint` değişkenleri `initialPoint` ve `latestPoint`, size, biz oluşturmak yolu touch noktası yakalamak için kullanacağız:
     
     ```csharp
     public class DemoView : UIView
@@ -53,7 +53,7 @@ Yükleme başlamadan önce *GraphicsDemo* bu kılavuzu eşlik eden örnek. Karş
     using Foundation;
     ```
 
-3. Ardından, geçersiz kılma `TouchesBegan` ve `TouchesMoved,` ve ilk dokunma noktası ve her sonraki dokunma noktası sırasıyla yakalamak için aşağıdaki uygulamaları ekleyin:
+3. Ardından, geçersiz kılma `TouchesBegan` ve `TouchesMoved,` ve ilk dokunmatik noktası ve her bir sonraki touch noktasına sırasıyla yakalamak için aşağıdaki uygulamaları ekleyin:
 
     ```csharp
     public override void TouchesBegan (NSSet touches, UIEvent evt){
@@ -80,9 +80,9 @@ Yükleme başlamadan önce *GraphicsDemo* bu kılavuzu eşlik eden örnek. Karş
     }
     ```
 
-    `SetNeedsDisplay` rötuşları hareket etmesi için her zaman çağrılacağı `Draw` sonraki çalıştırma döngü geçişte çağrılabilir.
+    `SetNeedsDisplay` dokunuşları taşımak için sırayla her zaman çağrılacağı `Draw` sonraki çalıştırma döngü geçişte çağrılabilir.
 
-4. Satırları yoluna ekleyeceğiz `Draw` yöntemi ve kullanımı ile çizmek için kırmızı kesikli bir çizgi. [Uygulama `Draw` ](~/ios/platform/graphics-animation-ios/core-graphics.md) aşağıda kod ile:
+4. Satırları yoluna ekleyeceğiz `Draw` yöntemi ve kullanımı ile çizmek için kırmızı, kesikli bir çizgi. [Uygulama `Draw` ](~/ios/platform/graphics-animation-ios/core-graphics.md) aşağıda kod ile:
 
     ```csharp
     public override void Draw (CGRect rect){
@@ -116,15 +116,15 @@ Yükleme başlamadan önce *GraphicsDemo* bu kılavuzu eşlik eden örnek. Karş
     }
     ```
 
-Biz uygulamayı şimdi çalıştırırsanız, biz ekranda çizmek için aşağıdaki ekran görüntüsünde gösterildiği gibi touch:
+Biz uygulamayı şimdi çalıştırırsanız, biz ekranda çizim yapmak için aşağıdaki ekran görüntüsünde gösterildiği gibi dokunma:
 
-![](graphics-animation-walkthrough-images/01-path.png "Ekranda çizme")
+![](graphics-animation-walkthrough-images/01-path.png "Ekranda çizim")
 
-## <a name="animating-along-a-path"></a>Bir yol boyunca animasyon ekleme
+## <a name="animating-along-a-path"></a>Yol boyunca animasyon ekleme
 
-Yol çizmek kullanıcıların izin vermek için kod uygulamış olan, bir katman çizilmiş yol boyunca animasyon için kod ekleyelim.
+Bir yol çizmek kullanıcılara izin verecek kod uyguladık, katman çizilen yol üzerinde animasyonunu oluşturma için kod ekleyelim.
 
-1. İlk olarak, ekleyin bir [ `CALayer` ](~/ios/platform/graphics-animation-ios/core-animation.md) değişken sınıfına ve oluşturucuda oluşturun:
+1. İlk olarak, ekleme bir [ `CALayer` ](~/ios/platform/graphics-animation-ios/core-animation.md) değişken sınıfına ve oluşturucuda oluşturun:
 
     ```csharp
     public class DemoView : UIView
@@ -149,7 +149,7 @@ Yol çizmek kullanıcıların izin vermek için kod uygulamış olan, bir katman
             }
     ```
 
-2. Kullanıcı kendi parmak ekranından yukarı kaldırır, ardından, katman bir görünümün katman alt katman ekleyeceğiz. Ardından, yolu kullanarak ana kare animasyonunun katmanın animasyon oluşturacağız `Position`.
+2. Kullanıcı kendi parmak ekranından'kurmak kaldırıncaya, ardından, katman bir görünümün katmanı alt katman ekleyeceğiz. Ardından yolu kullanarak bir ana kare animasyon katmanın hareketlendirme oluşturacağız `Position`.
 
     Bunu geçersiz kılmak için ihtiyacımız gerçekleştirmek için `TouchesEnded` ve aşağıdaki kodu ekleyin:
 
@@ -172,17 +172,17 @@ Yol çizmek kullanıcıların izin vermek için kod uygulamış olan, bir katman
         }
     ```
 
-3. Uygulamayı şimdi ve çizim sonra çalıştırmak, bir katman bir görüntü ile eklenir ve geçen çizilmiş yol boyunca:
+3. Artık ve çizim sonra uygulamayı çalıştırmak, görüntü ile bir katman eklenir ve dolaşan çizilen yol:
 
-![](graphics-animation-walkthrough-images/00-final-app.png "Bir görüntü ile bir katman eklenir ve geçen çizilmiş yol boyunca")
+![](graphics-animation-walkthrough-images/00-final-app.png "Görüntü ile bir katman eklendikten ve dolaşan çizilen yol")
 
 ## <a name="summary"></a>Özet
 
-Bu makalede, biz grafikler ve animasyon kavramları birbirine bağlı bir örnek adım adım gösterildi. İlk olarak, size çekirdek grafikleri bir yol çizmek için nasıl kullanılacağı gösterilmiştir bir `UIView` yanıt kullanıcı dokunma olarak. Daha sonra çekirdek animasyon bu yol boyunca seyahat bir görüntü oluşturmak için nasıl kullanılacağı gösterilmiştir.
+Bu makalede, biz grafikler ve animasyon kavramları birbirine bağlı bir örnek adım adım gösterildi. İlk olarak biz temel grafikler bir yol çizmek için nasıl kullanılacağını gösterdi bir `UIView` kullanıcı dokunmaya yanıt. Ardından çekirdek animasyon yol seyahat bir görüntü oluşturmak için nasıl kullanılacağını gösterdi.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Temel Animasyon](~/ios/platform/graphics-animation-ios/core-animation.md)
 - [Temel Grafikler](~/ios/platform/graphics-animation-ios/core-graphics.md)
-- [Animasyon tarif çekirdek](https://developer.xamarin.com/recipes/ios/animation/coreanimation)
+- [Temel animasyon tarifleri](https://github.com/xamarin/recipes/tree/master/Recipes/ios/animation/coreanimation)

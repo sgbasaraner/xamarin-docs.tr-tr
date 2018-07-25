@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/19/2017
-ms.openlocfilehash: 292b0814cba446c97042ba1fe52ad9414ba74760
-ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
+ms.openlocfilehash: ac9a90373878035ffa8ac0be9da8993bf189b6b3
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39203065"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241259"
 ---
 # <a name="advanced-concepts--internals"></a>Gelişmiş Kavramlar ve İç İşlevler
 
@@ -26,4 +26,4 @@ Bu makalede, .NET Standard 2.0 kullanarak bir Xamarin.Forms uygulaması dönüş
 
 ## <a name="dependency-resolutiondependency-resolutionmd"></a>[Bağımlılık Çözümlemesi](dependency-resolution.md)
 
-Özel oluşturucular, efektler ömrünü ve yapı üzerinde denetim uygulamanın bağımlılık ekleme kapsayıcısına sahip olacak şekilde bu makalede bir bağımlılık çözümleme yöntemi Xamarin.Forms eklemesine açıklanmaktadır ve `DependencyService` uygulamaları.
+Bu makalede, bir uygulamanın bağımlılık ekleme kapsayıcısını oluşturma ve özel oluşturucular, efektler ömrünü üzerinde denetime sahip olacak şekilde bir bağımlılık çözümleme yöntemi Xamarin.Forms eklemesine açıklanır ve `DependencyService` uygulamaları.

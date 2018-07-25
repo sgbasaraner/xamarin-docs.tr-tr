@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/13/2018
-ms.openlocfilehash: 2ec9ba6e39673b5a60911f9a9ae70474dbe2443b
-ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
+ms.openlocfilehash: 9774dcad14c2e2fc7e1203ef887a19f4b96218ba
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39203117"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241481"
 ---
 # <a name="xamarinforms-editor"></a>Xamarin.Forms Düzenleyicisi
 
@@ -106,7 +106,7 @@ Eşdeğer C# kodu verilmiştir:
 var editor = new Editor { Keyboard = Keyboard.Chat };
 ```
 
-Her klavye örnekler bulunabilir bizim [tarifler](https://developer.xamarin.com/recipes/cross-platform/xamarin-forms/choose-keyboard-for-entry/) depo.
+Her klavye örnekler bulunabilir bizim [tarifler](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/choose-keyboard-for-entry) depo.
 
 [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) Sınıfı de sahip bir [ `Create` ](xref:Xamarin.Forms.Keyboard.Create*) büyük/küçük harf, yazım denetimi ve öneri davranışı belirtilerek bir klavye özelleştirmek için kullanılan Üreteç yöntemi. [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) sabit listesi değerleri ile özelleştirilmiş yöntemi için bağımsız değişkeni olarak belirtilen `Keyboard` döndürülen. `KeyboardFlags` Numaralandırma aşağıdaki değerleri içerir:
 

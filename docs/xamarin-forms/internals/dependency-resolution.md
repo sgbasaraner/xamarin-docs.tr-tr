@@ -1,22 +1,22 @@
 ---
 title: Xamarin.Forms içinde bağımlılık çözümlemesi
-description: Uygulamanın bağımlılık ekleme kapsayıcısını özel oluşturucular, efektleri ve DependencyService uygulamaları ömrünü ve yapı üzerinde denetime sahip olacak şekilde bu makalede, bir bağımlılık çözümleme yöntemi Xamarin.Forms eklenmek üzere nasıl açıklanmaktadır. .
+description: Bu makalede, bir uygulamanın bağımlılık ekleme kapsayıcısını özel oluşturucular, efektleri ve DependencyService uygulamaları ömrünü ve yapı üzerinde denetime sahip olacak şekilde bir bağımlılık çözümleme yöntemi Xamarin.Forms ekleme açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 491B87DC-14CB-4ADC-AC6C-40A7627B2524
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/23/2018
-ms.openlocfilehash: b9e49d32dd4b0b02c742cd829eafabd1c55230f0
-ms.sourcegitcommit: 4c0093ee5d4aeb16c0e6f0c740c4796736971651
+ms.openlocfilehash: 8235b6fb5fda2a414cf192dd66007d1d02f232aa
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/23/2018
-ms.locfileid: "39203173"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242387"
 ---
 # <a name="dependency-resolution-in-xamarinforms"></a>Xamarin.Forms içinde bağımlılık çözümlemesi
 
-_Uygulamanın bağımlılık ekleme kapsayıcısını özel oluşturucular, efektleri ve DependencyService uygulamaları ömrünü ve yapı üzerinde denetime sahip olacak şekilde bu makalede, bir bağımlılık çözümleme yöntemi Xamarin.Forms eklenmek üzere nasıl açıklanmaktadır. . Kod örnekleri alınmıştır [bağımlılık çözümlemesi](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/) örnek._
+_Bu makalede, bir uygulamanın bağımlılık ekleme kapsayıcısını özel oluşturucular, efektleri ve DependencyService uygulamaları ömrünü ve yapı üzerinde denetime sahip olacak şekilde bir bağımlılık çözümleme yöntemi Xamarin.Forms ekleme açıklanmaktadır. Kod örnekleri alınmıştır [bağımlılık çözümlemesi](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/) örnek._
 
 Model-View-ViewModel (MVVM) desenini kullanan Xamarin.Forms uygulaması bağlamında bir bağımlılık ekleme kapsayıcısını ve Hizmetleri kaydetme ve bunları görünümü modellerini ekleme kaydetme ve çözümleme görünüm modelleri için kullanılabilir. Görünüm modeli oluşturma sırasında gerekli olan herhangi bir bağımlılığın kapsayıcıya ekler. Bu bağımlılıkların oluşturulmadı, kapsayıcı oluşturur ve ilk bağımlılıklarını çözümler. Görünüm modellerini bağımlılıkları ekleme örnekleri dahil olmak üzere, bağımlılık ekleme hakkında daha fazla bilgi için bkz. [bağımlılık ekleme](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md).
 
@@ -170,7 +170,7 @@ void RegisterTypes()
 }
 ```
 
-Bu örnekte, `App.RegisterTypeWithParameters` yöntemi kayıtları `VideoPlayerRenderer` bağımlılık ekleme kapsayıcısını ile kayıt yöntemi, sağlama `MainActivity` örneği eklenmiş olarak `Context` bağımsız değişkeni ve `Logger`türü eklenmiş olarak `ILogger` bağımsız değişken.
+Bu örnekte, `App.RegisterTypeWithParameters` yöntemi kayıtları `VideoPlayerRenderer` bağımlılık ekleme kapsayıcısına sahip. Kayıt yöntemi, sağlar `MainActivity` örneği eklenmiş olarak `Context` bağımsız değişkeni ve `Logger` türü eklenmiş olarak `ILogger` bağımsız değişken.
 
 ### <a name="registering-effects"></a>Etkileri kaydediliyor
 

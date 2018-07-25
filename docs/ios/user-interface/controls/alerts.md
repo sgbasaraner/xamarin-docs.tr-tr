@@ -1,48 +1,48 @@
 ---
-title: Xamarin.iOS içinde uyarıları görüntüleme
-description: Bu belge, iOS 8 sunulan API'leri UIAlertController kullanarak Xamarin.iOS içinde uyarıları görüntülemek açıklar.
+title: Xamarin.iOS uyarıları görüntüleme
+description: Bu belge, iOS 8'de sunulan API'ler UIAlertController kullanarak Xamarin.ios'ta uyarı görüntüleyecek şekilde açıklar.
 ms.prod: xamarin
 ms.assetid: 61C671E9-3757-4052-86E4-28640025A34A
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/21/2017
-ms.openlocfilehash: 88233cb1ac31b2669fdc38bbc9b0835a45c6b0ce
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 788e62b30dbf533df059b0c3805e04ecf7b857aa
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34789602"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241346"
 ---
-# <a name="displaying-alerts-in-xamarinios"></a>Xamarin.iOS içinde uyarıları görüntüleme
+# <a name="displaying-alerts-in-xamarinios"></a>Xamarin.iOS uyarıları görüntüleme
 
-İOS 8 ile başlayarak, UIAlertController tamamlanmış değiştirilen UIActionSheet sahiptir ve UIAlertView hem de artık kullanım.
+İOS 8 ile başlayarak, tamamlanan değiştirilen UIActionSheet UIAlertController sahip ve UIAlertView hem biri artık kullanım dışı bırakılmıştır.
 
-UIView alt sınıflarının olan yerine, sınıfları UIAlertController UIViewController sınıfıdır.
+Adornerset'in alt Uıview olan değiştirildi, sınıflardan farklı olarak UIAlertController bir uıviewcontroller'ı sınıfıdır.
 
-Kullanım `UIAlertControllerStyle` görüntülemek için uyarı türünü belirtmek için. Bu uyarı türleri şunlardır:
+Kullanım `UIAlertControllerStyle` görüntülenecek uyarı türünü belirtmek için. Bu uyarı türleri şunlardır:
 
 - **UIAlertControllerStyleActionSheet**
-    * Ön iOS 8 Bu bir UIActionSheet olabilirdi
+    * Öncesi iOS 8 bir UIActionSheet olabilirdi
 - **UIAlertControllerStyleAlert**
-    * Ön iOS 8 Bu UIAlertView olabilirdi 
+    * Öncesi iOS 8 UIAlertView olabilirdi 
 
-Bir uyarı denetleyicisi oluştururken almak için gereken üç adım vardır:
+Olduğunda bir uyarı denetleyicisi oluşturmak için gereken üç adım vardır:
 
-- Oluşturma ve uyarı şununla yapılandırma
+- Oluşturma ve şununla uyarı yapılandırma
     * Başlık
     * iletisi
     * preferredStyle
     
-- (İsteğe bağlı) Bir metin alanı Ekle
+- (İsteğe bağlı) Bir metin alanı ekleyin
 - Gerekli eylemleri ekleme
-- Görünüm denetleyicisi sunar
+- Görünüm denetleyicisi var
 
-En basit uyarı bu ekran görüntüsünde gösterildiği gibi tek bir düğme içerir:
+En basit uyarı, bu ekran görüntüsünde gösterildiği gibi tek bir düğmeye içerir:
 
- ![Bir düğme uyar](alerts-images/alert1.png)
+ ![Bir düğmeye sahip uyarı](alerts-images/alert1.png)
 
-Basit bir uyarı görüntülemek üzere kod aşağıdaki gibidir:
+Basit bir uyarı görüntülemek için kod aşağıdaki gibidir:
 
 ```csharp
 okayButton.TouchUpInside += (sender, e) => {
@@ -58,9 +58,9 @@ okayButton.TouchUpInside += (sender, e) => {
 };
 ```
 
-Birden fazla seçeneği olan bir uyarı görüntüleme benzer bir şekilde yapılır, ancak iki eylemler ekleyebilirsiniz. Örneğin, aşağıdaki ekran görüntüsünde iki düğme olan bir uyarı gösterir:
+Birden fazla seçenek içeren bir uyarı görüntüleme benzer şekilde yapılır, ancak iki eylemler ekleyin. Örneğin, aşağıdaki ekran görüntüsünde iki düğme olan bir uyarı gösterir:
 
- ![ İki düğmeleriyle uyar](alerts-images/alert2.png)
+ ![ İki düğme ile uyar](alerts-images/alert2.png)
 
 ```csharp
 okayCancelButton.TouchUpInside += ((sender, e) => {
@@ -77,11 +77,11 @@ okayCancelButton.TouchUpInside += ((sender, e) => {
 });
 ```
 
-Uyarılar ayrıca aşağıdaki ekran görüntüsüne benzer bir eylem sayfası görüntüleyebilirsiniz:
+Uyarıları, aşağıdaki ekran görüntüsüne benzer bir eylem sayfası da görüntüleyebilirsiniz:
 
- ![Eylem Sayfası Uyarısı](alerts-images/alert3.png)
+ ![Eylem sayfası uyarı](alerts-images/alert3.png)
 
-Düğmeleri, uyarı ile eklenir `AddAction` yöntemi:
+Düğmeler uyarı ile eklenir `AddAction` yöntemi:
 
 ```csharp
 actionSheetButton.TouchUpInside += ((sender, e) => {
@@ -113,5 +113,5 @@ actionSheetButton.TouchUpInside += ((sender, e) => {
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Denetimleri (örnek)](https://developer.xamarin.com/samples/Controls/)
-- [Uyarı denetleyicisi](https://developer.xamarin.com/recipes/ios/standard_controls/alertcontroller/)
+- [Denetimler (örnek)](https://developer.xamarin.com/samples/Controls/)
+- [Uyarı denetleyicisi](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/alertcontroller)

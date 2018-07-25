@@ -1,22 +1,22 @@
 ---
 title: Xamarin.iOS etiketler
-description: Bu belge içinde Xamarin.iOS etiketleri kullanmayı açıklar. Etiketleri program aracılığıyla ve iOS Tasarımcısı ile nasıl oluşturulacağını açıklar.
+description: Bu belge Xamarin.ios'ta etiketleri kullanmayı açıklar. Bu program aracılığıyla ve iOS Designer ile etiketler oluşturma işlemini açıklar.
 ms.prod: xamarin
 ms.assetid: 54DA1221-13E4-4D45-B263-5F22A0AC7B53
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/11/2017
-ms.openlocfilehash: 653c6cf8e7d0d3499402ec4f0d62cdd118707176
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: b52bdbd41eaafbc5e6c78e1f8514b701fd78bd6b
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34789895"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241919"
 ---
 # <a name="labels-in-xamarinios"></a>Xamarin.iOS etiketler
 
-`UILabel` Okuma yalnızca metin denetimi, tek veya çok satırlı görüntülemek için kullanılır. 
+`UILabel` Okuma yalnızca metin denetimi, tek ve çok satırlı görüntülemek için kullanılır. 
 
 ## <a name="implementing-a-label"></a>Bir etiket uygulama
 
@@ -26,35 +26,35 @@ Yeni bir etiket örneği tarafından oluşturulan bir [ `UILabel` ](https://deve
 UILabel label = new UILabel();
 ```
 
-### <a name="labels-and-storyboards"></a>Etiketleri ve film şeritleri
+### <a name="labels-and-storyboards"></a>Etiketleri ve görsel Taslaklar
 
-UI Tasarımcısı iOS kullanırken bir etiket ekleyebilirsiniz. Arama **etiket** içinde **araç** ve görünümünüze sürükleyin:
+UI iOS Designer kullanırken bir etiket ekleyebilirsiniz. Arama **etiket** içinde **araç kutusu** görünümünüzü sürükleyin:
 
 ![Araç kutusunda Etiket](labels-images/image3.png)
 
-Aşağıdaki özellikler özellikleri defterinde ayarlanabilir:
+Aşağıdaki özellikler, Özellikler panelinde ayarlanabilir:
 
-![Etiket özelliği paneli](labels-images/image2.png)
+![Etiketi özellik bölmesi](labels-images/image2.png)
 
-- **Metin bağlamı** – düz veya öznitelikli. Düz metin ayarlamanıza olanak tanır [biçimlendirme özniteliklerini](#Formatting_Text_and_Label) tüm dizeyi üzerinde. Öznitelikli metinleri farklı karakterler veya sözcükler dizesindeki biçimlendirme ayarlamanıza olanak tanır.
-- **Renk, yazı tipi hizalama** – etiketi uygulanabilir biçimlendirme öznitelikleri.
-- **Satırları** – etiketi yayılabilir satır sayısını ayarlar. Bunu ayarlamak için gereken sayıda satır kullanılacak etiket izin vermek için 0.
-- **Davranış** – etkin veya Highlighted için ayarlanabilir. Etkin olan varsayılan olarak ayarlanırsa, devre dışı bırakılmış metin açık bir gri renkte görüntülenir. Vurgulanan varsayılan olarak devre dışıdır ve bir kullanıcı tarafından seçildiğinde vurgulanan durumuyla çizilmesi etiket sağlar.
+- **Metin içeriği** – düz veya öznitelikli. Düz metin ayarlamanıza olanak tanır [biçimlendirme özniteliklerini](#Formatting_Text_and_Label) üzerindeki tüm dize. Öznitelikli metinleri farklı karakter veya dize sözcükleri biçimlendirme ayarlamanıza olanak sağlar.
+- **Renk, yazı tipi, hizalama** – biçimlendirme etiketi uygulanabilir öznitelikleri.
+- **Satırları** – etiketi yayılabilir satır sayısını ayarlar. Bunu ayarlamak için gerekli sayıda satır kullanılacak etiketi izin vermek için 0.
+- **Davranış** – etkin veya vurgulanan için ayarlanabilir. Etkin olan varsayılan olarak ayarlanırsa, devre dışı bırakılmış metinlerin açık gri renkte görüntülenir. Vurgulanan etiket bir kullanıcı tarafından seçildiğinde vurgulanan durumuyla çizilmesini sağlar ve varsayılan olarak devre dışıdır.
 - **Baselane ve satır sonu** – 
-    - Basline belirler nasıl olması metnin yazı tipi boyutlarını belirtilen farklı ise konumlandırıldı.
-    - Satır sonları nasıl bir dize Sarmalanan veya kaldırılacak tek bir çizgi uzunsa kesilmiş belirler.
-- **Daralma** – boyutta yazı tipi etiketi içinde nasıl küçültülmüş gerekirse belirler.
-- **Vurgulanmış, gölge uzaklığı** – Hightlighted ve gölge rengini ayarlamanıza olanak tanır ve gölge uzaklığı.
+    - Basline belirler nasıl olması metnin yazı tipi boyutlarını belirtilen farklı ise konumlandırılmış.
+    - Satır sonlarını nasıl bir dize sarmalanmış veya kaldırılacak tek satırdan uzun olduğunda kesilmiş belirleyin.
+- **Otomatik olarak küçültme** – gerekirse belirler, yazı tipi boyutu bir etiketi içinde nasıl simge.
+- **Gölge uzaklığı vurgulanmış** – vurgulanan ve gölge rengini ayarlamanıza olanak tanır ve gölge uzaklığı.
 
-## <a name="truncating-and-wrapping"></a>Kesilmesiyle ve kaydırma
+## <a name="truncating-and-wrapping"></a>Kırpmadan ve sarmalama
 
-İOS satırını kullanarak bilgi sonları için başvurmak [kesmek ve Kaydır](https://developer.xamarin.com/recipes/ios/standard_controls/labels/uilabel-truncate-wrap-text/) tarif.
+İOS satırını kullanarak bilgi sonu için başvurmak [Kes ve Kaydır](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/labels/uilabel-truncate-wrap-text) tarif.
 
 <a name="Formatting_Text_and_Label"/>
 
-## <a name="formatting-text-and-label"></a>Metin ve etiket biçimlendirme
+## <a name="formatting-text-and-label"></a>Biçimlendirme metni ve etiket
 
-Bir etiket kullandığınız dize biçimlendirmek için tüm dizeyi özniteliklerinde biçimlendirmeyi ayarlayın ya da olabilir veya öznitelikli dizeleri kullanabilirsiniz. Aşağıdaki örnekler, bu uygulama gösterir:
+Etikette kullandığınız dizeyi biçimlendirmek için tüm dizeyi özniteliklerinde biçimlendirmeyi ayarlayın ya da olabilir veya öznitelikli dizelerini kullanabilirsiniz. Aşağıdaki örnekler, bu uygulama işlemini gösterir:
 
 ```csharp
 label = new UILabel(){
@@ -74,9 +74,9 @@ label.AttributedText = new NSAttributedString(
             );
 ```
 
-Stil metin kullanma hakkında daha fazla bilgi için `NSAttributedString` başvurmak [stili metin](https://developer.xamarin.com/recipes/ios/standard_controls/text_field/style_text/) tarif.
+Metin stil kullanma hakkında daha fazla bilgi için `NSAttributedString` başvurmak [stili metin](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/text_field/style_text) tarif.
 
-Varsayılan etiketleri sahip `Enabled` true ayarlanmış, ancak için ayarlamak için olası bir belirli denetim devre dışı bırakıldı ipucu kullanıcıya vermek için devre dışı bırakılır:
+Varsayılan olarak etiketlere sahip `Enabled` true, ancak bunu ayarlamak için olası kullanıcıya belirli bir denetimin devre dışı bir ipucu vermek için devre dışı bırakıldı:
 
 ```csharp
 label.Enabled = false;
@@ -84,9 +84,9 @@ label.Enabled = false;
 
 Bu etiket açık gri renge iOS kısıtlamaları ekran aşağıdaki örnek görüntüde gösterildiği gibi ayarlar:
 
-![İOS devre dışı düğmesi](labels-images/image1.png)
+![İOS düğmesini devre dışı](labels-images/image1.png)
 
-Ek efektler için etiket metni için vurgu ve gölge metin renkleri de ayarlayabilirsiniz:
+Ayrıca, ek etkileri için etiket metni için vurgulama ve gölge metin rengi ayarlayabilirsiniz:
 
 ```csharp
 label.Highlighted = true;
@@ -98,9 +98,9 @@ label.ShadowOffset = new CoreGraphics.CGSize(1.0f, 1.0f);
 
 Bu gibi metin görüntüleyen:
 
-![Metni vurgulama ve gölge ayarlayın](labels-images/image4.png)
+![Vurgulama ve metin kümesinde gölge](labels-images/image4.png)
 
-Bir UILabel yazı tipini değiştirme hakkında daha fazla bilgi için bkz [yazı tipini değiştir](https://developer.xamarin.com/recipes/ios/standard_controls/labels/change_the_font/) tarif.
+Yazı tipini bir UILabel değiştirme ile ilgili daha fazla bilgi için [yazı tipini değiştir](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/labels/change_the_font) tarif.
 
 
 

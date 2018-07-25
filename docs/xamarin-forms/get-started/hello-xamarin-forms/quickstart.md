@@ -8,12 +8,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/13/2018
-ms.openlocfilehash: 5b5f8c80e49d66ed3bd8b008c975d1cfeda93ed4
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 7399cab611b726eb7bb72928f504086fb842fb74
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38832390"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39242439"
 ---
 # <a name="xamarinforms-quickstart"></a>Xamarin.Forms hızlı başlangıç
 
@@ -306,7 +306,7 @@ Phoneword uygulamayı şu şekilde oluşturun:
     }
     ```
 
-    Değişiklikleri kaydetmek **PhoneDialer.cs** tuşuna basarak **CTRL + S**ve dosyayı kapatın.
+    Bu kodu en son Android API'SİNİN kullanıyorsanız varsaydığını unutmayın. Değişiklikleri kaydetmek **PhoneDialer.cs** tuşuna basarak **CTRL + S**ve dosyayı kapatın.
 
 21. İçinde **Çözüm Gezgini**, **Phoneword.Android** proje, çift **MainActivity.cs** açmak için tüm şablon kodunu kaldırın ve değiştirin Aşağıdaki kodu:
 
@@ -729,7 +729,7 @@ Phoneword uygulamayı şu şekilde oluşturun:
     }
     ```
 
-    Değişiklikleri kaydetmek **PhoneDialer.cs** seçerek **Dosya > Kaydet** (veya basarak  **&#8984; + S**) ve dosyayı kapatın.
+    Bu kodu en son Android API'SİNİN kullanıyorsanız varsaydığını unutmayın. Değişiklikleri kaydetmek **PhoneDialer.cs** seçerek **Dosya > Kaydet** (veya basarak  **&#8984; + S**) ve dosyayı kapatın.
 
 21. İçinde **çözüm bölmesi**, **Phoneword.Droid** çift tıklayın, proje **MainActivity.cs** açmak için tüm şablon kodunu kaldırın ve aşağıdaki kod ile değiştirin :
 

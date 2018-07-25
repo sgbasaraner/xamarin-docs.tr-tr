@@ -1,58 +1,58 @@
 ---
 title: Tarih Seçici
-description: Takvim tarihleri DatePickerDialog ve DialogFragment kullanarak seçme
+description: Takvim tarihlerini DatePickerDialog ile DialogFragment seçme
 ms.prod: xamarin
 ms.assetid: F2BCD8D4-8957-EA53-C5A8-6BB603ADB47B
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 01/22/2018
-ms.openlocfilehash: 916a9c74fa28b99e799eef80db822e86cfda617d
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 8f4e6318d904efb2f77c36732fc6519699f72ac9
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30764989"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241142"
 ---
 # <a name="date-picker"></a>Tarih Seçici
 
 ## <a name="overview"></a>Genel Bakış
 
-Ne zaman bir kullanıcı bir Android uygulamasına giriş gereken durumlar vardır. Bu konuda yardımcı olması için Android çerçevesi sağlar [ `DatePicker` ](https://developer.xamarin.com/api/type/Android.Widget.DatePicker/) pencere öğesi ve [ `DatePickerDialog` ](https://developer.xamarin.com/api/type/Android.App.DatePickerDialog/) . `DatePicker` Kullanıcıların yıl, ay ve gün cihazlar ve uygulamalar arasında tutarlı bir arayüz seçmesine izin verir. `DatePickerDialog` Yalıtan bir yardımcı sınıf olan `DatePicker` bir iletişim kutusu.
+Ne zaman bir kullanıcı bir Android uygulamasına giriş verilerini gereken durumlar vardır. Bu konuda yardımcı olmak üzere Android çerçevesi sağlar [ `DatePicker` ](https://developer.xamarin.com/api/type/Android.Widget.DatePicker/) pencere öğesi ve [ `DatePickerDialog` ](https://developer.xamarin.com/api/type/Android.App.DatePickerDialog/) . `DatePicker` Kullanıcıların yıl, ay ve gün cihazlarınız ve uygulamalarınız arasında tutarlı bir arayüz seçmesine izin verir. `DatePickerDialog` Kapsülleyen bir yardımcı sınıftır `DatePicker` bir iletişim kutusu.
 
-Modern Android uygulamaları görüntülemesi gereken `DatePickerDialog` içinde bir [ `DialogFragment` ](https://developer.xamarin.com/api/type/Android.App.DialogFragment/). Bu DatePicker popup iletişim kutusu olarak görüntülemek bir uygulama izin verir veya bir etkinlikte katıştırılmış. Ayrıca, `DialogFragment` yaşam döngüsü ve uygulanmalı kod miktarının azaltılması iletişim görüntüsünü yönetir.
+Modern Android uygulamaları görüntülemesi gereken `DatePickerDialog` içinde bir [ `DialogFragment` ](https://developer.xamarin.com/api/type/Android.App.DialogFragment/). Bu tarih seçici açılan iletişim kutusu olarak görüntülemek bir uygulama izin verir veya katıştırılmış bir etkinlik. Ayrıca, `DialogFragment` yaşam döngüsü ve uygulanması gereken kod miktarını azaltarak iletişim görünümünü yönetir.
 
-Bu kılavuz nasıl kullanılacağı gösterilmektedir `DatePickerDialog`, içinde Sarmalanan bir `DialogFragment`. Örnek uygulamayı görüntüler `DatePickerDialog` kullanıcı bir etkinlikte düğmesini tıklattığında kalıcı bir iletişim kutusu olarak. Tarih kullanıcı tarafından ayarlanmış olduğunda bir `TextView` seçilmedi tarihi ile güncelleştirir.
+Bu kılavuz nasıl kullanılacağını gösteren `DatePickerDialog`, içinde sarmalanmış bir `DialogFragment`. Örnek uygulamayı görüntüler `DatePickerDialog` kullanıcı bir etkinlik bir düğmeye tıkladığında kalıcı bir iletişim kutusu olarak. Tarih kullanıcı tarafından ayarlanmış olduğunda bir `TextView` seçilen tarihten güncelleştirir.
 
 [![Tarih Seçici iletişim kutusu tarafından izlenen çekme tarih ekran düğmesi](date-picker-images/image-01-sml.png)](date-picker-images/image-01.png#lightbox)
 
 ## <a name="requirements"></a>Gereksinimler
 
-Bu kılavuz için örnek uygulama Android 4.1 (API düzeyi hedefler
-16) ya da daha yüksek, ancak Android 3.0 (API düzeyi 11 veya üzeri) için geçerlidir. Eski sürümleriyle Android projesi ve bazı kod değişiklikleri Android destek kitaplığı v4 eklenmesi desteklemek mümkündür.
+Bu kılavuz için örnek uygulamayı Android 4.1 (API düzeyi hedefler
+16) ya da daha yüksek, ancak Android 3.0 (API düzeyi 11 veya üstü) için geçerlidir. Eski sürümleriyle Android projesi ve bazı kod değişikliklerini Android kitaplık desteği v4 eklenmesini desteklemek mümkündür.
 
 ## <a name="using-the-datepicker"></a>DatePicker kullanma
 
-Bu örnek uzatır `DialogFragment`. Bir alt konak ve görüntüleme bir `DatePickerDialog`:
+Bu örnek genişletecek `DialogFragment`. Alt ana bilgisayar ve görüntüleme bir `DatePickerDialog`:
 
-![Tarih Closeup Seçici iletişim kutusu](date-picker-images/image-02.png)
+![Tarih Seçici Closeup iletişim](date-picker-images/image-02.png)
 
-Kullanıcı bir tarih seçer ve tıklar **Tamam** düğmesini `DatePickerDialog` yöntemi çağıracak [ `IOnDateSetListener.OnDateSet` ](https://developer.xamarin.com/api/member/Android.App.DatePickerDialog+IOnDateSetListener.OnDateSet/p/Android.Widget.DatePicker/System.Int32/System.Int32/System.Int32/).
-Bu arabirim barındırarak uygulanır `DialogFragment`. Kullanıcı tıklarsa **iptal** düğmesi, parça ve iletişim kendilerini kapatmak sonra.
+Kullanıcı bir tarih seçer ve tıkladığında **Tamam** düğmesi `DatePickerDialog` yöntemini çağıracaksınız [ `IOnDateSetListener.OnDateSet` ](https://developer.xamarin.com/api/member/Android.App.DatePickerDialog+IOnDateSetListener.OnDateSet/p/Android.Widget.DatePicker/System.Int32/System.Int32/System.Int32/).
+Bu arabirim barındırarak uygulanır `DialogFragment`. Kullanıcı tıklarsa **iptal** düğmesi, ardından parça ve iletişim kendilerini kapat.
 
-Birkaç yolu vardır `DialogFragment` seçilen tarihten barındırma etkinlik döndürebilirsiniz:
+Birkaç şekilde `DialogFragment` seçilen tarihten barındırma etkinliği döndürebilir:
 
-1. **Bir yöntemi çağırma veya bir özellik Ayarla** &ndash; etkinlik, bir özellik veya yöntem bu değeri ayarlamak için özel olarak sağlayabilir.
+1. **Bir yöntem çağırma veya bir özelliği ayarlamak** &ndash; etkinlik, bir özellik veya yöntem bu değeri ayarlamak için özel olarak sağlayabilir.
 
-2. **Bir olayı** &ndash; `DialogFragment` olacak olay tanımlayabilirsiniz ne zaman yükseltilmiş `OnDateSet` çağrılır.
+2. **Bir olay tetikleyebilir** &ndash; `DialogFragment` olacak bir olayı tanımlayabilir arandığında `OnDateSet` çağrılır.
 
-3. **Kullanım bir `Action`**  &ndash; `DialogFragment` çağırabileceği bir `Action<DateTime>` etkinliğin tarihini görüntülemek için. Etkinlik sağlayacak `Action<DateTime` başlatılırken `DialogFragment`. Bu örnek üçüncü teknik kullanıyor ve etkinlik sağlamanızı gerektiren bir `Action<DateTime>` için `DialogFragment`.
+3. **Kullanım bir `Action`**  &ndash; `DialogFragment` çağırabilirsiniz bir `Action<DateTime>` etkinliğinde tarih görüntülenecek. Etkinlik sağlayacak `Action<DateTime` örneklerken `DialogFragment`. Bu örnek üçüncü tekniği kullanın ve etkinlik sağlamasını bir `Action<DateTime>` için `DialogFragment`.
 
 
 
 ### <a name="extending-dialogfragment"></a>DialogFragment genişletme
 
-Görüntüleme ilk adımı bir `DatePickerDialog` için sınıfıdır `DialogFragment` ve uygulama `IOnDateSetListener` arabirimi:
+Görüntüleme ilk adımı bir `DatePickerDialog` alt sınıfı için `DialogFragment` ve uygulama `IOnDateSetListener` arabirimi:
 
 ```csharp
 public class DatePickerFragment : DialogFragment, 
@@ -92,19 +92,19 @@ public class DatePickerFragment : DialogFragment,
 }
 ```
 
-`NewInstance` Yöntemi yeni bir örneğini oluşturmak için çağrılır `DatePickerFragment`. Bu yöntem alır bir `Action<DateTime>` , çağrılabilir kullanıcı tıkladığında **Tamam** düğmesini `DatePickerDialog`.
+`NewInstance` Yöntemi yeni bir örneğini oluşturmak için çağrıldığında `DatePickerFragment`. Bu yöntem bir `Action<DateTime>` , çağrılacak kullanıcı tıkladığında **Tamam** düğmesine `DatePickerDialog`.
 
-Görüntülenecek parçası olduğunda, Android yöntemi çağırın `OnCreateDialog`. Bu yöntem yeni bir oluşturacak `DatePickerDialog` nesne ve geçerli tarih ve geri çağırma nesnesi ile başlatma (geçerli örneği olduğu `DatePickerFragment`).
+Görüntülenecek parçası olduğunda Android yöntemini çağıracaksınız `OnCreateDialog`. Bu yöntem yeni bir oluşturma `DatePickerDialog` nesne ve geçerli tarih ve geri çağırma nesnesi ile Başlat (geçerli örneği olduğu `DatePickerFragment`).
 
 
 > [!NOTE]
-> Unutmayın, ay değeri olduğunda `IOnDateSetListener.OnDateSet` çağrılır 0-11 ve değil 1-12 aralığındadır. Ayın 1 için (bağlı olarak ay seçildiği) 31 Aralık içinde olacaktır.
+> Unutmayın, ay değeri olduğunda `IOnDateSetListener.OnDateSet` çağrılan 0-11 ve değil 1-12 aralığında olan. Ayın gününü 1 için (bağlı olarak ay seçildiği) 31 aralığında olacaktır.
 
 
 
-### <a name="showing-the-datepickerfragment"></a>DatePickerFragment gösterme
+### <a name="showing-the-datepickerfragment"></a>DatePickerFragment gösteriliyor
 
-Şimdi `DialogFragment` bırakıldı uygulanan, bu bölümde bir etkinlikte parça kullanmayı inceleyeceksiniz. Bu kılavuzu eşlik eden örnek uygulamasında etkinliği örneği oluşturulmaz `DialogFragment` kullanarak `NewInstance` Üreteç yöntemi ve onu çağırma sonra görünen `DialogFragment.Show`. Örnek oluşturma bir parçası olarak `DialogFragment`, etkinlik geçirmeden bir `Action<DateTime>`, tarih görüntülenir bir `TextView` etkinlik tarafından barındırılan:
+Şimdi `DialogFragment` olmuştur uygulanır, bu bölümde bir etkinlikte parça kullanmayı inceleyeceksiniz. Bu kılavuzu eşlik eden örnek uygulamada, etkinlik örneği oluşturmak `DialogFragment` kullanarak `NewInstance` Üreteç yöntemi ve onu çağırmak sonra görünen `DialogFragment.Show`. Örnekleme işleminin bir parçası olarak `DialogFragment`, etkinliği geçirir bir `Action<DateTime>`, tarih görüntülenir bir `TextView` etkinlik tarafından barındırılır:
 
 ```csharp
 [Activity(Label = "@string/app_name", MainLauncher = true, Icon = "@drawable/icon")]
@@ -137,7 +137,7 @@ public class MainActivity : Activity
 
 ## <a name="summary"></a>Özet
 
-Bu örnek nasıl görüntüleneceğini ele alınan bir `DatePicker` pencere öğesi olarak açılan kalıcı bir iletişim kutusu bir Android etkinlik bir parçası olarak. Bir örnek DialogFragment uygulama sağlanan ve ele `IOnDateSetListener` arabirimi. Bu örnek ayrıca DialogFragment seçili tarihini görüntülemek için etkinliği ana bilgisayar ile nasıl etkileşim gösterilmektedir.
+Bu örnek nasıl görüntüleneceğini ele alınan bir `DatePicker` Android etkinliği bir parçası olarak açılan kalıcı iletişim kutusu olarak pencere öğesi. Ele alınan ve örnek DialogFragment uygulama sağlanan `IOnDateSetListener` arabirimi. Bu örnek ayrıca DialogFragment seçilen tarihten görüntülemek için etkinliği konakla nasıl etkileşimde bulunabilir gösterilmiştir.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
@@ -146,4 +146,4 @@ Bu örnek nasıl görüntüleneceğini ele alınan bir `DatePicker` pencere öğ
 - [DatePicker](https://developer.xamarin.com/api/type/Android.Widget.DatePicker/)
 - [DatePickerDialog](https://developer.xamarin.com/api/type/Android.App.DatePickerDialog/)
 - [DatePickerDialog.IOnDateSetListener](https://developer.xamarin.com/api/type/Android.App.DatePickerDialog+IOnDateSetListener/)
-- [Bir tarih seçin](https://github.com/xamarinhttps://developer.xamarin.com/recipes/tree/master/android/controls/datepicker/select_a_date)
+- [Bir tarih seçin](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/datepicker/select_a_date)

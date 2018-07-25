@@ -1,38 +1,38 @@
 ---
-title: Xamarin AVAudioPlayer ile tvOS içinde ses çalma
-description: Bu makalede, bir yardımcı sınıfı ses bir AVAudioPlayer bir Xamarin.iOS uygulaması kullanarak kayıttan yürütmeyi denetlemek için nasıl kullanılacağı gösterilmektedir.
+title: AVAudioPlayer, Xamarin ile tvOS içinde ses çalma
+description: Bu makalede, ses bir AVAudioPlayer bir Xamarin.iOS uygulamasına kullanmanın kayıttan yürütmeyi denetlemek için bir yardımcı sınıfını kullanmayı gösterir.
 ms.prod: xamarin
 ms.assetid: E0305572-DC64-48BB-BD97-0A5096E6CA04
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/16/2017
-ms.openlocfilehash: 7d95a8ea6c22c0d897d8ccfe0c2ca401f6523783
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 2ce1d4b8564ef9599581aabd6a72ba3af12ec251
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34788640"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241357"
 ---
-# <a name="playing-sound-in-tvos-with-avaudioplayer-in-xamarin"></a>Xamarin AVAudioPlayer ile tvOS içinde ses çalma
+# <a name="playing-sound-in-tvos-with-avaudioplayer-in-xamarin"></a>AVAudioPlayer, Xamarin ile tvOS içinde ses çalma
 
 ## <a name="about-the-avaudioplayer"></a>AVAudioPlayer hakkında
 
-`AVAudioPlayer` Kayıttan yürütme ses veriler için bellek veya dosyası kullanılır. Apple Bu sınıf akış ağ yapmakta olduğunuz veya ses g/ç düşük gecikme gerektiren sürece uygulamanızda ses çalınmaya kullanılmasını önerir.
+`AVAudioPlayer` Kayıttan ses veriler için bellek veya dosyası kullanılır. Apple, ağ akışını yapıyor ya da düşük gecikme süresi ses g/ç gerektiren uygulamanızda ses yürütmek için bu sınıfın kullanılmasını önerir.
 
 Kullanabileceğiniz `AVAudioPlayer` aşağıdakileri yapmak için:
 
-- İsteğe bağlı döngü ile tüm Duration ses yürütün.
+- İsteğe bağlı döngü ile herhangi bir süre sesler yürütün.
 - İsteğe bağlı eşitleme ile aynı anda birden çok ses yürütün.
-- Birim, oynatma hızını ve her çalmasını stereo konumlandırma denetler.
-- İleri sarma veya geri sarma gibi özellikleri destekler.
-- Kayıttan yürütme düzeyi ölçüm verileri alın.
+- Birim, kayıttan yürütme hızını ve her çalmasını stereo konumlandırma denetler.
+- İleri veya Geri Sar gibi özellikleri destekler.
+- Kayıttan yürütme düzeyi ölçümü verilerini alın.
 
-`AVAudioPlayer` iOS, tvOS ve OS X gibi sağladığı tüm ses biçiminde ses destekler `.aif`, `.wav` veya `.mp3`.
+`AVAudioPlayer` ses gibi iOS, tvOS ve OS X tarafından sağlanan ses biçimi destekler `.aif`, `.wav` veya `.mp3`.
 
-## <a name="playing-sounds-in-tvos"></a>İçinde tvOS ses çalma
+## <a name="playing-sounds-in-tvos"></a>TvOS içinde ses çalma
 
-Bizim iOS tvOS aynı ses araç sınıfları iOS olarak desteklediğinden, lütfen bkz [AVAudioPlayer oyun sesle](http://developer.xamarin.com/recipes/ios/media/sound/avaudioplayer/) Xamarin.tvOS uygulama yürütmeyi ses tam ayrıntıları için belgeleri.
+İOS, tvOS aynı ses araç sınıfları iOS olarak desteklediğinden, lütfen bakın [AVAudioPlayer ile ses oyun](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/sound/avaudioplayer) yürütmeyi ses bir Xamarin.tvOS uygulamasında tam Ayrıntılar için.
 
 
 

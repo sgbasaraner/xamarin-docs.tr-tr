@@ -6,20 +6,20 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 10/11/2016
-ms.openlocfilehash: cf474015b28d9708d69719b38348391091040a28
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: b3a7858361d25f26807ea328e8bfdd30ca8d483b
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30762590"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241885"
 ---
 # <a name="configuration"></a>Yapılandırma
 
-Xamarin.Android uygulamanıza SQLite kullanmak için veritabanı dosyası için doğru dosya konumu belirlemek gerekir.
+SQLite Xamarin.Android kullanmak için veritabanı dosyası için doğru dosya konumu belirlemeniz gerekir.
 
 ## <a name="database-file-path"></a>Veritabanı dosya yolu
 
-Kullandığınız veri erişim yöntemine bağımsız olarak, veriler ile SQLite depolanabilir önce bir veritabanı dosyası oluşturmanız gerekir. Dosya konumu, hedeflediğiniz hangi platformu bağlı olarak farklı olacaktır. Android için geçerli bir yol oluşturmak için aşağıdaki kod parçacığında gösterildiği gibi ortam sınıfını kullanabilirsiniz:
+SQLite ile veri depolanabilir önce kullandığınız hangi veri erişim yönteminden bağımsız olarak, bir veritabanı dosyası oluşturmanız gerekir. Dosya konumu, hedeflediğiniz platformdan bağlı olarak farklı olacaktır. Android için geçerli bir yol oluşturmak için aşağıdaki kod parçacığında gösterildiği gibi ortam sınıfını kullanabilirsiniz:
 
 ```csharp
 string dbPath = Path.Combine (
@@ -28,9 +28,9 @@ string dbPath = Path.Combine (
 // dbPath contains a valid file path for the database file to be stored
 ```
 
-Veritabanı dosyasının depolanacağı karar verirken dikkate edilecek diğer noktalar vardır. Örneğin, Android, iç veya dış depolama kullanmayı seçebilirsiniz.
+Veritabanı dosyasının depolanacağı karar verirken dikkate gereken diğer noktalar vardır. Örneğin, Android, iç veya dış depolama kullanılıp kullanılmayacağını seçebilirsiniz.
 
-Platformlar arası uygulamanızdaki her platformda farklı bir konum kullanmak istiyorsanız, bir derleme yönergesi gösterildiği gibi her platform için farklı bir yol oluşturmak için kullanabilirsiniz:
+Platformlar arası uygulamanızdaki her platformda farklı bir konum kullanmak istiyorsanız, bir derleyici yönergesi gösterildiği gibi her platform için farklı bir yol oluşturmak için kullanabilirsiniz:
 
 ```csharp
 var sqliteFilename = "MyDatabase.db3";
@@ -46,13 +46,13 @@ string libraryPath = Path.Combine (documentsPath, "..", "Library"); // Library f
 var path = Path.Combine (libraryPath, sqliteFilename);
 ```
 
-Android dosya sistemi kullanılarak hakkında ipuçları için bkz [dosyalara Gözat](https://developer.xamarin.com/recipes/android/data/Files/Browse_Files) tarif. Bkz: [Çapraz Platform uygulamaları oluşturma](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) belge her platform için özel kod yazmanıza olanak derleyici yönergeleri kullanma hakkında daha fazla bilgi için.
+Dosya sistemi Android kullanma hakkında ipuçları için başvurmak [dosyalara Gözat](https://github.com/xamarin/recipes/tree/master/Recipes/android/data/files/browse_files) tarif. Bkz: [Çapraz Platform uygulamaları oluşturma](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md) belge her platform için özel kod yazmak için derleyici yönergeleri kullanma hakkında daha fazla bilgi için.
 
 ## <a name="threading"></a>İş Parçacığı Oluşturma
 
-Çoklu iş parçacıkları arasında aynı SQLite veritabanı bağlantısı kullanmamalısınız. Açmak için kullanın ve sonra aynı iş parçacığı üzerinde oluşturduğunuz tüm bağlantıları kapatın dikkatli olun.
+Çoklu iş parçacıkları arasında aynı SQLite veritabanı bağlantısı kullanmamalıdır. Açın, kullanmak ve aynı iş parçacığında oluşturduğunuz tüm bağlantıları kapatın konusunda dikkatli olun.
 
-Kodunuzu aynı anda birden çok iş parçacığından SQLite veritabanı erişmeye çalışan değil emin olmak için bu gibi bir veritabanına erişmek için kalacaklarını her bir kilit el ile alın:
+Kodunuzu SQLite veritabanındaki kullanıcıyla aynı anda birden fazla iş parçacığından erişmek çalışırken değil emin olmak için şunun gibi bir veritabanına erişmek için oluşturacağınız her bir kilit el ile uygulayın:
 
 ```csharp
 object locker = new object(); // class level private field
@@ -62,12 +62,12 @@ lock (locker){
 }
 ```
 
-Tüm veritabanı erişimi (okuma, yazma, güncelleştirmeler, vb.) ile aynı kilit alınmalı. Kilit yan tümcesi içinde iş basit tutulur ve ayrıca bir kilit sürebilir diğer yöntemleri çağırmaz sağlayarak bir kilitlenme durumdan kaçınmak için dikkatli olunması gerekir!
+Tüm veritabanı erişimi (okuma, yazma, güncelleştirmeler vb.) ile aynı kilit alınmalı. Kilit yan tümcesi içinde iş basit tutulur ve ayrıca bir kilit sürebilir diğer yöntemler ile çağırmaz sağlayarak bir kilitlenme durumdan kaçınmak için dikkatli olunması gerekir!
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [ADO'da Basic (örnek)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
-- [ADO'da Gelişmiş (örnek)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
-- [Android veri tarif](https://developer.xamarin.com/recipes/android/data/)
+- [DataAccess Basic (örnek)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Basic)
+- [DataAccess Gelişmiş (örnek)](https://github.com/xamarin/mobile-samples/tree/master/DataAccess/Advanced)
+- [Android veri tarifleri](https://github.com/xamarin/recipes/tree/master/Recipes/android/data)
 - [Xamarin.Forms veri erişimi](~/xamarin-forms/app-fundamentals/databases.md)

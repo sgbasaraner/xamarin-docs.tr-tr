@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 03/06/2017
-ms.openlocfilehash: b593815df9ce942a98496806116bacfa63e2a2d9
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: dafa60ff57f34bd4169af48e380079d9637d8d26
+ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38999041"
+ms.lasthandoff: 07/25/2018
+ms.locfileid: "39241113"
 ---
 # <a name="picking-a-photo-from-the-picture-library"></a>Resim Kitaplığı'ndan bir fotoğraf çekme
 
@@ -48,7 +48,7 @@ Bu arabirim, platforma özgü kod kullanarak tüm platformlarda uygulanır.
 
 ## <a name="ios-implementation"></a>iOS uygulaması
 
-İOS uygulaması `IPicturePicker` arabirim kullanımları [ `UIImagePickerController` ](https://developer.xamarin.com/api/type/UIKit.UIImagePickerController/) açıklandığı [ **Galeriden bir fotoğraf seçin** ](https://developer.xamarin.com/recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery/) tarif ve [örnek kod](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery).
+İOS uygulaması `IPicturePicker` arabirim kullanımları [ `UIImagePickerController` ](https://developer.xamarin.com/api/type/UIKit.UIImagePickerController/) açıklandığı [ **Galeriden bir fotoğraf seçin** ](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery) tarif ve [örnek kod](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery).
 
 İOS uygulaması bulunan [ `PicturePickerImplementation` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/iOS/PicturePickerImplementation.cs) iOS projesi bir sınıfta örnek kod. Bu sınıf için görünür hale getirmek için `DependencyService` manager, sınıf gerekir ile tanımlanan bir [`assembly`] öznitelik türü `Dependency`, ve sınıfı genel olmalıdır ve açıkça uygulama `IPicturePicker` arabirimi:
 
@@ -146,7 +146,7 @@ Bir iOS uygulamasına kullanıcıdan telefonun fotoğraf kitaplığınıza eriş
 
 ## <a name="android-implementation"></a>Android uygulaması
 
-Android uygulaması açıklanan tekniği kullanan [ **bir görüntü seçin** ](https://developer.xamarin.com/recipes/android/other_ux/pick_image/) tarif ve [örnek kod](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image). Ancak, kullanıcı bir resim Resim Kitaplığı'ndan seçtiğinde çağrılan yöntem olan bir `OnActivityResult` öğesinden türetilen bir sınıfta geçersiz kılma `Activity`. Bu nedenle, normal [ `MainActivity` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/Droid/MainActivity.cs) Android projesi sınıfında takıma bir alan, özellik ve geçersiz kılma `OnActivityResult` yöntemi:
+Android uygulaması açıklanan tekniği kullanan [ **bir görüntü seçin** ](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image) tarif ve [örnek kod](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image). Ancak, kullanıcı bir resim Resim Kitaplığı'ndan seçtiğinde çağrılan yöntem olan bir `OnActivityResult` öğesinden türetilen bir sınıfta geçersiz kılma `Activity`. Bu nedenle, normal [ `MainActivity` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/DependencyService/DependencyServiceSample/Droid/MainActivity.cs) Android projesi sınıfında takıma bir alan, özellik ve geçersiz kılma `OnActivityResult` yöntemi:
 
 ```csharp
 public class MainActivity : FormsAppCompatActivity
@@ -314,6 +314,6 @@ Dokunarak `Image` öğesi sayfa normal olarak döndürür.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Fotoğraf galerisinden (iOS) seçin.](https://developer.xamarin.com/recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery/)
-- [Bir görüntü (Android) seçin](https://developer.xamarin.com/recipes/android/other_ux/pick_image/)
+- [Fotoğraf galerisinden (iOS) seçin.](https://github.com/xamarin/recipes/tree/master/Recipes/ios/media/video_and_photos/choose_a_photo_from_the_gallery)
+- [Bir görüntü (Android) seçin](https://github.com/xamarin/recipes/tree/master/Recipes/android/other_ux/pick_image)
 - [DependencyService (örnek)](https://developer.xamarin.com/samples/xamarin-forms/DependencyService/DependencyServiceSample)
