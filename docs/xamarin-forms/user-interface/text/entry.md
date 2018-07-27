@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/16/2018
-ms.openlocfilehash: 272887f0abb0785f959c542e65789d7645a583f1
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 5ccd2a653e5190df11a58477905e868b25878e44
+ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241231"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39270118"
 ---
 # <a name="xamarinforms-entry"></a>Xamarin.Forms giriş
 
@@ -86,7 +86,7 @@ var entry = new Entry { Keyboard = Keyboard.Chat };
 
 Her klavye örnekler bulunabilir bizim [tarifler](https://github.com/xamarin/recipes/tree/master/Recipes/xamarin-forms/Controls/choose-keyboard-for-entry) depo.
 
-[ `Keyboard` ](xref:Xamarin.Forms.Keyboard) Sınıfı de sahip bir [ `Create` ](xref:Xamarin.Forms.Keyboard.Create*) büyük/küçük harf, yazım denetimi ve öneri davranışı belirtilerek bir klavye özelleştirmek için kullanılan Üreteç yöntemi. [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) sabit listesi değerleri ile özelleştirilmiş yöntemi için bağımsız değişkeni olarak belirtilen `Keyboard` döndürülen. `KeyboardFlags` Numaralandırma aşağıdaki değerleri içerir:
+[ `Keyboard` ](xref:Xamarin.Forms.Keyboard) Sınıfı de sahip bir [ `Create` ](xref:Xamarin.Forms.Keyboard.Create*) büyük/küçük harf, yazım denetimi ve öneri davranışı belirtilerek bir klavye özelleştirmek için kullanılan Üreteç yöntemi. [`KeyboardFlags`](xref:Xamarin.Forms.KeyboardFlags) özelleştirilmiş ile yöntemi için bağımsız değişkeni olarak belirtilen sabit listesi değerleri `Keyboard` döndürülen. `KeyboardFlags` Numaralandırma aşağıdaki değerleri içerir:
 
 - [`None`](xref:Xamarin.Forms.KeyboardFlags.None) – herhangi bir özellik için klavyeyi eklenir.
 - [`CapitalizeSentence`](xref:Xamarin.Forms.KeyboardFlags.CapitalizeSentence) – Girilen her cümlede ilk sözcüğün ilk harfini otomatik olarak büyük olduğunu gösterir.

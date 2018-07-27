@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/23/2018
-ms.openlocfilehash: 8235b6fb5fda2a414cf192dd66007d1d02f232aa
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 2379c8ddc4bea6dd97bc4febd055dd8dfef39beb
+ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242387"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39270494"
 ---
 # <a name="dependency-resolution-in-xamarinforms"></a>Xamarin.Forms içinde bağımlılık çözümlemesi
 
@@ -111,7 +111,7 @@ Bir uygulama bir kapsayıcı türlerinden çözmek için bir bağımlılık çö
 
 Kayıt türü bir platform projesinde aşağıdaki `IContainer` nesne gerekir oluşturulur, hangi çağrılarak gerçekleştirilir `BuildContainer` yöntemi. Autofac'ın bu metodu çağıran `Build` metodunda `ContainerBuilder` örneğini yapılan kayıtları içeren yeni bir bağımlılık ekleme kapsayıcısını oluşturur.
 
-İçinde aşağıdaki bölümlerde bir `Logger` uygulayan sınıf `ILogger` arabirim, sınıf oluşturucuları eklenmiş olur. `Logger` Sınıfının Implements basit günlüğe kaydetme işlevini kullanarak `Debug.WriteLine` yöntemi ve Hizmetleri özel oluşturucular, efektler nasıl yerleştirilebilir göstermek için kullanılır ve [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) uygulamaları.
+İçinde aşağıdaki bölümlerde bir `Logger` uygulayan sınıf `ILogger` arabirim içinde sınıf oluşturucuları eklenmiş. `Logger` Sınıfının Implements basit günlüğe kaydetme işlevini kullanarak `Debug.WriteLine` yöntemi ve Hizmetleri özel oluşturucular, efektler nasıl yerleştirilebilir göstermek için kullanılır ve [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) uygulamaları.
 
 ### <a name="registering-custom-renderers"></a>Özel oluşturucular kaydediliyor
 

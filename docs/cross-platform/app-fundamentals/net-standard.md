@@ -1,93 +1,92 @@
 ---
-title: Kod paylaşmak için .NET standart kitaplıkları kullanma
-description: Bu belgede .NET standart kitaplıkları kod paylaşmak için nasıl kullanılacağı açıklanmaktadır. .NET standart kitaplığı oluşturma, ayarlarını düzenleme ve bir uygulama kullanarak açıklanır.
+title: Kodu paylaşmak için .NET standart kitaplıkları kullanma
+description: Bu belge, kodu paylaşmak için .NET standart kitaplıkları kullanmayı açıklar. Uygulamayı kullanarak bir .NET Standard kitaplığı oluşturmak ve ayarlarını düzenleme ele alınmaktadır.
 ms.prod: xamarin
 ms.assetid: 8C30F8D3-1920-453E-9E8B-D40696736FF2
-author: asb3993
-ms.author: amburns
-ms.date: 04/12/2017
-ms.openlocfilehash: 82a89309e6462462471f42c3504d109ff0722917
-ms.sourcegitcommit: 5db075bdd0b62d5d1d1567c267303a6a1888c8f2
+author: conceptdev
+ms.author: crdun
+ms.date: 07/18/2018
+ms.openlocfilehash: 65ba1915a2a968a14f0ce21bcada76e1b83531b0
+ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34806796"
+ms.lasthandoff: 07/26/2018
+ms.locfileid: "39270639"
 ---
-# <a name="using-net-standard-libraries-to-share-code"></a>Kod paylaşmak için .NET standart kitaplıkları kullanma
+# <a name="net-standard-library-code-sharing"></a>.NET standard kitaplığı kod paylaşımı
 
-## <a name="net-standard"></a>.NET standart
+.NET standart kitaplıkları, Xamarin ve .NET Core dahil olmak üzere tüm .NET platformları için Tekdüzen API vardır. Tek bir .NET Standard kitaplığı oluşturun ve .NET Standard platformu destekleyen herhangi bir çalışma zamanını şuradan kullanın. Başvurmak [bu grafik](https://docs.microsoft.com/dotnet/standard/net-standard#net-implementation-support) desteklenen platformlar hakkında ayrıntılar için.
 
-.NET standart kitaplığı, tüm .NET çalışma zamanları üzerinde kullanılabilir olması için hedeflenen .NET API'leri resmi bir özelliğidir. Standart Kitaplığı arkasında motivasyon büyük bütünlüğünü .NET ekosistemi saptamaktır.
-[ECMA 335](https://github.com/dotnet/coreclr/blob/master/Documentation/project-docs/dotnet-standards.md) .NET çalışma zamanı davranışı benzerliği kurmaya devam eder ancak hiçbir benzer spec .NET kitaplığı uygulamaları için .NET temel sınıf kitaplıkları (BCL) için.
+.NET Standard sürümleri 1.0 1.6 aracılığıyla .NET Framework'ün artımlı olarak daha büyük alt kümelerini sunarken, .NET Standard 2.0 Xamarin uygulamaları için ve mevcut taşınabilir sınıf kitaplıkları taşıma için en iyi düzeyde desteği sağlar.
 
-Bunu bir Basitleştirilmiş, yeni nesil düşünebilirsiniz [taşınabilir sınıf kitaplığı](https://msdn.microsoft.com/library/gg597391.aspx).
-.NET Core dahil olmak üzere tüm .NET platformları için Tekdüzen bir API ile tek bir kitaplıktır. Yalnızca tek bir .NET standart kitaplığı oluşturun ve .NET standart platformunu destekleyen herhangi bir çalışma zamanını şuradan kullanın.
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
+# <a name="visual-studio-for-mactabmacos"></a>[Mac için Visual Studio](#tab/macos)
 
 ## <a name="visual-studio-for-mac"></a>Mac için Visual Studio
 
-Bu bölümde nasıl oluşturulacağı ve .NET standart Mac için Visual Studio kullanarak kitaplığı kullanmak anlatılmaktadır Tam bir uygulama için .NET standart kitaplığı örnek bölümüne bakın.
+Bu bölüm .NET Standard Mac için Visual Studio kullanarak kitaplığı oluşturulacağı ve kullanılacağı konusunda yol göstermektedir
 
-### <a name="creating-a-net-standard-library"></a>.NET standart kitaplığı oluşturma
+### <a name="creating-a-net-standard-library"></a>.NET Standard kitaplığı oluşturma
 
-Çözümünüz için bir .NET standart Kitaplığı eklemek oldukça doğrudan ileriye doğru olur.
+.NET Standard kitaplığı çözümünüze eklemek oldukça oldukça kolaydır.
 
-1. Yeni Proje Ekle iletişim kutusunda seçin `.NET Core` kategori ve ardından `Class Library(.NET Core)`.
+1. İçinde **Yeni Proje Ekle** iletişim kutusunda **.NET Core** kategorisi ve ardından **.NET Standard Kitaplığı**:
 
-  **Not:** bu şablonu adlandırılacak `.NET Standard` Mac için Visual Studio gelecek bir sürümünde
+    ![.NET Standard kitaplığı oluşturma](net-standard-images/vsm01-m157.png "yeni .NET Standard kitaplığı oluşturma")
 
-  ![.NET Core sınıf kitaplığı oluşturmak](net-standard-images/vsm01.png "yeni bir .NET çekirdek sınıf kitaplığı oluşturma")
+2. Sonraki ekranda, hedef Framework'ü - seçin **.NET Standard 2.0** önerilir:
 
-2. .NET standart kitaplığı proje Çözüm Gezgini'nde gösterildiği gibi görünür. Bağımlılıklar düğümü kitaplığı kullandığını belirtmek [NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library/).
+    [![.NET Standard 2.0 seçin](net-standard-images/vsm01a-m157-sml.png)](net-standard-images/vsm01a-m157.png#lightbox)
 
-  ![Çözümdeki bağımlılıklar düğümü .NET standart gösterir](net-standard-images/vsm02.png)
+3. Proje adı son ekranında, yazın ve tıklayın **Oluştur**.
 
-#### <a name="editing-net-standard-library-settings"></a>.NET standart kitaplığı ayarlarını düzenleme
+4. .NET Standard kitaplığı projesi, Çözüm Gezgini'nde görüldüğü gibi görünür. Bağımlılıklar düğümü kitaplığı kullandığını belirtmek [NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library/).
 
-.NET standart kitaplık ayarları görüntülenebilir ve projeye sağ tıklayıp seçerek değiştirilen `Options` bu ekran görüntüsünde gösterildiği gibi:
+    ![Çözümdeki bağımlılıklar düğümü .NET Standard gösterir](net-standard-images/vsm02-m157.png)
 
-![Proje seçenekleri .NET standart hedef çerçevede Düzenle](net-standard-images/vsm03.png "proje seçenekleri .NET standart hedef Framework sürümü Düzenle")
+#### <a name="editing-net-standard-library-settings"></a>.NET Standard kitaplığı ayarlarını düzenleme
 
-Sürümünüz içinde değiştirebileceğiniz `netstandard` değiştirerek `Target Framework` aşağı açılan değer.
+.NET Standard kitaplığı ayarları görüntülenebilir ve projeye sağ tıklayıp `Options` bu ekran görüntüsünde gösterildiği gibi:
+
+![.NET Standard hedef çerçeve proje Seçenekleri Düzenle](net-standard-images/vsm03-m157.png ".NET standart hedef çerçeve proje seçenekleri sürümü Düzenle")
+
+Sürümünüz içinde değiştirebilirsiniz `netstandard` değiştirerek `Target Framework` açılan değeri.
 
 **Ek olarak:** düzenleyebileceğiniz `.csproj` doğrudan bu değeri değiştirmek için.
 
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
+# <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 ## <a name="visual-studio-2017-windows"></a>Visual Studio 2017 (Windows)
 
-Bu bölümde oluşturmak ve .NET standart Visual Studio kullanarak kitaplığı kullanmak nasıl aracılığıyla anlatılmaktadır. Tam bir uygulama için .NET standart kitaplığı örnek bölümüne bakın.
+Bu bölümde, oluşturma ve .NET Standard Visual Studio kullanarak kitaplığı kullanma hakkında bilgi vermektedir.
 
-### <a name="creating-a-net-standard-library"></a>.NET standart kitaplığı oluşturma
+### <a name="creating-a-net-standard-library"></a>.NET Standard kitaplığı oluşturma
 
-#### <a name="visual-studio-2017"></a>Visual Studio 2017
+.NET Standard kitaplığı çözümünüze eklemek oldukça oldukça kolaydır.
 
-Çözümünüz için bir .NET standart Kitaplığı eklemek oldukça doğrudan ileriye doğru olur.
+1. İçinde **yeni proje** iletişim kutusunda **.NET Standard** kategorisi ve ardından **sınıf kitaplığı (.NET Standard)**.
 
-1. Yeni Proje Ekle iletişim kutusunda seçin `.NET Standard` kategori ve ardından `Class Library(.NET Standard)`.
+    ![Yeni bir .NET standart sınıf kitaplığı oluşturma](net-standard-images/vs01-w157.png "yeni .NET Standard sınıf kitaplığı oluşturma")
 
-  ![Yeni bir .NET standart sınıf kitaplığı oluşturmak](net-standard-images/vs01.png "oluştur yeni .NET standart sınıf kitaplığı")
+2. .NET Standard kitaplığı projesi, Çözüm Gezgini'nde görüldüğü gibi görünür. Bağımlılıklar düğümü kitaplığı kullandığını belirtmek [NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library/).
 
-2. .NET standart kitaplığı proje Çözüm Gezgini'nde gösterildiği gibi görünür. Bağımlılıklar düğümü kitaplığı kullandığını belirtmek [NETStandard.Library](https://www.nuget.org/packages/NETStandard.Library/).
+    ![Proje klasöründeki NETStandard.Library](net-standard-images/vs02-w157.png "çözümde .NET Standard projesi")
 
-  ![Proje klasöründeki NETStandard.Library](net-standard-images/vs02.png "çözümde .NET standart proje")
+### <a name="editing-net-standard-library-settings"></a>.NET Standard kitaplığı ayarlarını düzenleme
 
-#### <a name="editing-net-standard-library-settings"></a>.NET standart kitaplığı ayarlarını düzenleme
+.NET Standard kitaplığı ayarları görüntülenebilir ve projeye sağ tıklayıp **özellikleri** bu ekran görüntüsünde gösterildiği gibi:
 
-.NET standart kitaplık ayarları görüntülenebilir ve projeye sağ tıklayıp seçerek değiştirilen `Properties` bu ekran görüntüsünde gösterildiği gibi:
+![.NET standard hedef çerçeve proje özelliklerinde Düzenle](net-standard-images/vs03-w157.png "diğer projeleri aynı şekilde .NET Standard Kitaplığı Başvurusu")
 
-![Proje Özellikleri'nde .NET standart hedef çerçeveyi Düzenle](net-standard-images/vs03.png "diğer projeler aynı şekilde .NET standart Kitaplığı Başvurusu")
+**Ek olarak:** düzenleyebileceğiniz `.csproj` doğrudan düzenlemek için `TargetFramework` hedeflenen öğesi ve hangi sürüm olarak değiştirin (ör.) `<TargetFramework>netstandard2.0</TargetFramework>`).
 
-Sürümünüz içinde değiştirebileceğiniz `netstandard` değiştirerek `Target Framework` aşağı açılan değer.
+### <a name="using-a-net-standard-library-project"></a>.NET Standard kitaplığı projesi kullanarak
 
-**Ek olarak:** düzenleyebileceğiniz `.csproj` doğrudan bu değeri değiştirmek için.
+.NET Standard kitaplığı oluşturulduktan sonra ona bir başvuru uyumlu hiçbir uygulama veya kitaplık projesi başvuruları normalde eklediğiniz yolla ekleyebilirsiniz. Visual Studio'da başvurular düğümüne sağ tıklayın ve seçin **Başvuru Ekle...**  dönersiniz **projeleri > Çözüm** gösterildiği sekmesinde:
 
-#### <a name="using-net-standard-library"></a>.NET standart kitaplığı kullanma
-
-.NET standart kitaplığı oluşturulduktan sonra aynı şekilde normalde başvurular ekleyin herhangi uyumlu bir uygulama veya kitaplık projeye ait bir başvuru ekleyebilirsiniz. Visual Studio'da başvurular düğümünü sağ tıklatın ve seçin `Add Reference...` için geçiş `Solution : Projects` sekmesinde gösterildiği gibi:
-
-![.NET standart kitaplığı başvuran](net-standard-images/vs04.png "Visual Studio'da, başvuruları düğümüne sağ tıklayın ve Başvuru Ekle seçin... ardından gösterildiği gibi çözüm projeleri sekmesine geçin")
+![.NET Standard kitaplığı başvuran](net-standard-images/vs04.png "Visual Studio'da, başvurular düğümüne sağ tıklayın ve Başvuru Ekle... seçin sonra gösterildiği gibi çözüm projelerinden sekmeye geçin")
 
 -----
 
+## <a name="related-links"></a>İlgili bağlantılar
+
+* [.NET standard](https://docs.microsoft.com/dotnet/standard/net-standard) -ayrıntılı bilgiler ve PCL karşılaştırma.
