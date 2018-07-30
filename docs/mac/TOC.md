@@ -6,6 +6,7 @@
 ## [Uygulama Temelleri](app-fundamentals/index.md)
 ### [Erişilebilirlik](app-fundamentals/accessibility.md)
 ### [Ortak Desenler ve Deyimler](app-fundamentals/patterns.md)
+### [Konsol uygulamaları](app-fundamentals/console.md)
 ### [macOS API’leri](app-fundamentals/mac-apis.md)
 ### [.xib Dosyaları](app-fundamentals/xib.md)
 ### [.storyboard/.xib-less Kullanıcı Arabirimi Tasarımı](app-fundamentals/xibless-ui.md)
