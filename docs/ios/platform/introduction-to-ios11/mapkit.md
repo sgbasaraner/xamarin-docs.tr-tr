@@ -1,41 +1,41 @@
 ---
-title: İOS 11 MapKit yeni özellikler
-description: 'Bu belgede iOS 11 yeni MapKit özellikleri açıklanmaktadır: işaretçileri, pusula düğmesi, Ölçek görünümünde ve kullanıcı izleme düğmesi gruplandırma.'
+title: İOS 11 mapkit'teki yeni özellikler
+description: "Bu belge iOS 11'deki yeni MapKit özellikleri açıklar: gruplandırma işaretçileri, pusula düğmesi, Ölçek görünümü ve kullanıcı izleme düğmesi."
 ms.prod: xamarin
 ms.assetid: 304AE5A3-518F-422F-BE24-92D62CE30F34
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 08/30/2016
-ms.openlocfilehash: f73078a2dcbaeefeb5608ce7ec1e2c12b261acad
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 08/30/2017
+ms.openlocfilehash: c060a7bbc8d5968aeaca5f84743cdf22513dfbec
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787412"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350592"
 ---
-# <a name="new-features-in-mapkit-on-ios-11"></a>İOS 11 MapKit yeni özellikler
+# <a name="new-features-in-mapkit-on-ios-11"></a>İOS 11 mapkit'teki yeni özellikler
 
 iOS 11 MapKit için aşağıdaki yeni özellikleri ekler:
 
-- [Kümeleme ek açıklaması](#clustering)
+- [Ek açıklama kümeleme](#clustering)
 - [Pusula düğmesi](#compass)
-- [Ölçek görünümü](#scale)
+- [Ölçek görüntüle](#scale)
 - [Kullanıcı izleme düğmesi](#user-tracking)
 
-![Kümelenmiş işaretçileri gösteren harita ve düğmesi pusula](mapkit-images/cyclemap-heading.png)
+![Kümelenmiş işaretçileri gösteren harita ve düğme compass](mapkit-images/cyclemap-heading.png)
 
 <a name="clustering" />
 
 ## <a name="automatically-grouping-markers-while-zooming"></a>Yakınlaştırma sırasında otomatik olarak gruplandırma işaretçileri
 
-Örnek [MapKit örnek "Tandm"](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/) nasıl Kümelemesi özelliğini yeni iOS 11 ek açıklama uygulandığını gösterir.
+Örnek [MapKit örnek "Tandm"](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/) nasıl Kümelemesi özelliğini yeni iOS 11 ek açıklama uygulanacağı gösterilmektedir.
 
-### <a name="1-create-an-mkpointannotation-subclass"></a>1. Oluşturma bir `MKPointAnnotation` alt sınıfı
+### <a name="1-create-an-mkpointannotation-subclass"></a>1. Oluşturma bir `MKPointAnnotation` öğesinin alt sınıfı
 
-Noktası ek açıklama sınıfı harita üzerinde her işaretçisi temsil eder. Kullanarak tek tek eklenebilir `MapView.AddAnnotation()` veya kullanarak bir dizinin `MapView.AddAnnotations()`.
+Nokta ek açıklama sınıfı eşlemedeki her işaretçisi temsil eder. Kullanarak tek tek eklenebilir `MapView.AddAnnotation()` veya kullanarak bir dizi `MapView.AddAnnotations()`.
 
-Noktası ek açıklama sınıflarının görsel bir sahip değil ve bunlar yalnızca işaretçisi ile ilişkili verileri temsil etmek için gereklidir (en önemlisi, `Coordinate` enlem ve boylam harita üzerinde olan özelliği) ve herhangi bir özel özellik:
+Noktası ek açıklama sınıflar görsel gösterimi yoktur, bunlar yalnızca işaretleyiciyle ilişkili verileri temsil etmek için gereklidir (en önemlisi de `Coordinate` özelliğinin, enlem ve boylam harita üzerinde) ve herhangi bir özel özellikler:
 
 ```csharp
 public class Bike : MKPointAnnotation
@@ -57,18 +57,18 @@ public class Bike : MKPointAnnotation
 }
 ```
 
-### <a name="2-create-an-mkmarkerannotationview-subclass-for-single-markers"></a>2. Oluşturma bir `MKMarkerAnnotationView` tek işaretlerin alt sınıfı
+### <a name="2-create-an-mkmarkerannotationview-subclass-for-single-markers"></a>2. Oluşturma bir `MKMarkerAnnotationView` tek işaretçileri için alt sınıfı
 
-İşaretçi ek açıklama görünümü her ek açıklama visual gösterimidir ve özellikleri gibi kullanılarak biçimlendirilmiş:
+İşaret ek açıklama görünüm her ek açıklama görsel temsilini olduğu ve özellikleri gibi kullanılarak stil uygulanmış:
 
-- **MarkerTintColor** – işaret rengini.
-- **GlyphText** – görüntülenen metin işaretçisi.
-- **GlyphImage** – işaret görüntülenir görüntüyü ayarlar.
-- **DisplayPriority** – z düzenini (yığın davranış) belirler harita olduğunda işaretçileri olan kalabalık. Aşağıdakilerden birini kullanmak `Required`, `DefaultHigh`, veya `DefaultLow`.
+- **MarkerTintColor** – işaret rengi.
+- **GlyphText** – metin işaretçisi görüntülenir.
+- **GlyphImage** – işaretçisi gösterilen görüntüyü ayarlar.
+- **DisplayPriority** – (yığın davranış) z düzenini belirler harita olduğunda işaretçileriyle kalabalık. Birini `Required`, `DefaultHigh`, veya `DefaultLow`.
 
-Otomatik kümelemeyi desteklemek için de ayarlamanız gerekir:
+Otomatik küme desteklemek için de ayarlamanız gerekir:
 
-- **ClusteringIdentifier** – bu hangi işaretçileri birlikte kümelenmiş denetler. Aynı tanımlayıcı tüm işaretlerini kullanın veya birlikte gruplanır şeklini denetlemek için farklı tanımlayıcılar kullanın.
+- **ClusteringIdentifier** – bu hangi işaretçileri birlikte kümelenmiş denetler. Tüm işaretleri için aynı tanımlayıcıyı kullanın veya birlikte gruplanır denetlenmesine farklı tanımlayıcılar kullanın.
 
 ```csharp
 [Register("BikeView")]
@@ -104,15 +104,15 @@ public class BikeView : MKMarkerAnnotationView
   }
 ```
 
-### <a name="3-create-an-mkannotationview-to-represent-clusters-of-markers"></a>3. Oluşturma bir `MKAnnotationView` işaretçileri kümelerini göstermek için
+### <a name="3-create-an-mkannotationview-to-represent-clusters-of-markers"></a>3. Oluşturma bir `MKAnnotationView` işaretçilerinin kümeleri temsil etmek için
 
-While işaretçileri kümesini temsil eden ek açıklama görünümü _verebilir_ basit görüntü olmalıdır, kullanıcıların kaç işaretçileri birlikte gruplandırılmış hakkında görsel Yardım sağlamak için uygulama beklediğiniz.
+While bir kümesine işaretlerinin temsil eden ek açıklama görünümü _verebilir_ basit bir görüntü olması, kullanıcıların kaç işaretçileri birlikte gruplanmış hakkında görsel ipuçlarını sağlama uygulamanın beklediğiniz.
 
-[Örnek koduna](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/) CoreGraphics işaretçileri her işaret türü oranını halka grafik gösterimi yanı sıra küme sayısı işlemek için kullanır.
+[Örnek kod](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/) CoreGraphics her işaret türü oranını halka grafik gösterimi yanı sıra küme sayısı işlemek için kullanır.
 
 Ayrıca ayarlamanız gerekir:
 
-- **DisplayPriority** – z düzenini (yığın davranış) belirler harita olduğunda işaretçileri olan kalabalık. Aşağıdakilerden birini kullanmak `Required`, `DefaultHigh`, veya `DefaultLow`.
+- **DisplayPriority** – (yığın davranış) z düzenini belirler harita olduğunda işaretçileriyle kalabalık. Birini `Required`, `DefaultHigh`, veya `DefaultLow`.
 - **CollisionMode** – `Circle` veya `Rectangle`.
 
 ```csharp
@@ -181,32 +181,32 @@ public class ClusterView : MKAnnotationView
 
 ### <a name="4-register-the-view-classes"></a>4. Kayıt görünümü sınıfları
 
-Ne zaman harita görünümü denetimi oluşturulur ve bir görünüme eklenen, harita içeri ve dışarı uzaklaştırılacağını gibi otomatik kümeleme davranışı etkinleştirmek için ek açıklama görünüm türleri kaydedin:
+Ne zaman harita görünümü denetimi oluşturulur ve bir görünüm eklendi, eşleme giriş ve çıkış uzaklaştırılacağını gibi otomatik küme davranışı etkinleştirmek için ek açıklama görünüm türleri kaydedin:
 
 ```csharp
 MapView.Register(typeof(BikeView), MKMapViewDefault.AnnotationViewReuseIdentifier);
 MapView.Register(typeof(ClusterView), MKMapViewDefault.ClusterAnnotationViewReuseIdentifier);
 ```
 
-### <a name="5-render-the-map"></a>5. Harita işlemek!
+### <a name="5-render-the-map"></a>5. Harita işleme!
 
-Harita işlendiğinde ek açıklama işaretçileri kümelenmiş veya yakınlaştırma düzeyine bağlı olarak çizilir. Yakınlaştırma düzeyi değiştikçe işaretçileri kümeleri ve bu moddan animasyon.
+Harita işlendiğinde ek açıklama işaretlerini kümelenmiş veya yakınlaştırma düzeyine bağlı olarak çizilir. Yakınlaştırma düzeyi değiştikçe işaretçileri kümeleri içine ve dışına animasyon.
 
-![Simulator haritada kümelenmiş işaretçilerini gösterme](mapkit-images/cyclemap-sml.png)
+![Simülatör kümelenmiş işaretçilerini haritada gösterme](mapkit-images/cyclemap-sml.png)
 
-Başvurmak [eşlemeleri bölüm](~/ios/user-interface/controls/ios-maps/index.md) MapKit verilerle görüntüleme hakkında daha fazla bilgi.
+Başvurmak [eşler bölüm](~/ios/user-interface/controls/ios-maps/index.md) MapKit ile verileri görüntüleme hakkında daha fazla bilgi.
 
 <a name="compass" />
 
 ## <a name="compass-button"></a>Pusula düğmesi
 
-iOS 11 harita dışında pusula açılır ve başka bir yere görünümü işlemek için yeteneği ekler. Bkz: [Tandm örnek uygulaması](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/) bir örnek.
+iOS 11 compass harita dışında açılır ve başka bir yere görünüm işlemek için özelliği ekler. Bkz: [Tandm örnek uygulaması](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample/) örneği.
 
-(Harita yönlendirmesini değiştiğinde dinamik animasyon dahil), bir pusula gibi görünen bir düğme oluşturmak ve başka bir denetimde işler.
+(Harita yönlendirme değiştiğinde Canlı animasyon dahil), bir compass gibi görünen bir düğme oluşturmak ve başka bir denetimde işler.
 
 ![Gezinti çubuğunda pusula düğmesi](mapkit-images/compass-sml.png)
 
-Aşağıdaki kodu pusula düğmesi oluşturur ve gezinti çubuğunda işler:
+Aşağıdaki kod, pusula düğmesi oluşturur ve gezinti çubuğunda işler:
 
 ```csharp
 var compass = MKCompassButton.FromMapView(MapView);
@@ -215,15 +215,15 @@ NavigationItem.RightBarButtonItem = new UIBarButtonItem(compass);
 MapView.ShowsCompass = false; // so we don't have two compasses!
 ```
 
-`ShowsCompass` Özelliği, varsayılan pusula harita görünümünü içinde görünürlüğünü denetlemek için kullanılabilir.
+`ShowsCompass` Özellik eşleme görünümü içinde varsayılan compass görünürlüğünü denetleme için kullanılabilir.
 
 <a name="scale" />
 
-## <a name="scale-view"></a>Ölçek görünümü
+## <a name="scale-view"></a>Ölçek görüntüle
 
-Başka bir yerde görünümü kullanarak ölçek eklemek `MKScaleView.FromMapView()` görünüm hiyerarşideki başka bir yerde eklemek için ölçek görünümünde örneğini almak için yöntemi.
+Başka bir yerde görünümü kullanarak ölçek eklemek `MKScaleView.FromMapView()` görünümü hiyerarşideki başka bir yerde eklemek için ölçek görünümü örneğini almak için yöntemi.
 
-![Haritada yayılan ölçek görünümü](mapkit-images/scale-sml.png)
+![Bir haritada yayılan ölçek görüntüle](mapkit-images/scale-sml.png)
 
 ```csharp
 var scale = MKScaleView.FromMapView(MapView);
@@ -233,15 +233,15 @@ View.AddSubview(scale); // constraints omitted for simplicity
 MapView.ShowsScale = false; // so we don't have two scale displays!
 ```
 
-`ShowsScale` Özelliği, varsayılan pusula harita görünümünü içinde görünürlüğünü denetlemek için kullanılabilir.
+`ShowsScale` Özellik eşleme görünümü içinde varsayılan compass görünürlüğünü denetleme için kullanılabilir.
 
 <a name="user-tracking" />
 
 ## <a name="user-tracking-button"></a>Kullanıcı izleme düğmesi
 
-Kullanıcı izleme düğmesi, kullanıcının geçerli konumuna haritada toplanır. Kullanım `MKUserTrackingButton.FromMapView()` düğmesinin bir örneği elde, biçimlendirme değişiklikleri uygulamak ve başka bir yerde görünüm hiyerarşisinde eklemek için yöntem.
+Kullanıcı izleme düğmesi, kullanıcının geçerli konumuna haritada ortalar. Kullanım `MKUserTrackingButton.FromMapView()` görünümü hiyerarşideki başka bir yere ekleyin düğmeyi örneğini almak ve biçimlendirme değişiklikleri uygulamak için yöntemi.
 
-![Haritada yayılan kullanıcı konumu düğmesi](mapkit-images/user-location-sml.png)
+![Bir haritada yayılan kullanıcı konumu düğmesi](mapkit-images/user-location-sml.png)
 
 ```csharp
 var button = MKUserTrackingButton.FromMapView(MapView);

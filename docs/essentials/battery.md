@@ -5,12 +5,12 @@ ms.assetid: 47EB26D8-8C62-477B-A13C-6977F74E6E43
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 1ed0ef5e013967545e739733c887702325f60c3f
-ms.sourcegitcommit: ec50c626613f2f9af51a9f4a52781129bcbf3fcb
+ms.openlocfilehash: 1deafed85e9400bf7d4592fc06f71c22cc0015f0
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/05/2018
-ms.locfileid: "37855061"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353460"
 ---
 # <a name="xamarinessentials-battery"></a>Xamarin.Essentials: pil
 
@@ -29,7 +29,7 @@ Erişim için **pil** işlevselliğini aşağıdaki platforma özgü Kurulum ger
 Açık **AssemblyInfo.cs** altında dosya **özellikleri** klasör ekleyin:
 
 ```csharp
-[assembly: UsesPermission(Android.Manifest.Permission.Battery)]
+[assembly: UsesPermission(Android.Manifest.Permission.BatteryStats)]
 ```
 
 YA da Android bildirimini güncelleştir:
@@ -37,10 +37,10 @@ YA da Android bildirimini güncelleştir:
 Açık **AndroidManifest.xml** altında dosya **özellikleri** klasörü ve içine aşağıdaki **bildirim** düğümü.
 
 ```xml
-<uses-permission android:name="android.permission.BATTERY" />
+<uses-permission android:name="android.permission.BATTERY_STATS" />
 ```
 
-Anroid projeye sağ tıklayın ve proje özelliklerini açın. Altında **Android bildirim** Bul **gerekli izinler:** alan ve onay **pil** izni. Bu otomatik olarak güncelleştirecektir **AndroidManifest.xml** dosya.
+Android projeye sağ tıklayın ve proje özelliklerini açın. Altında **Android bildirim** Bul **gerekli izinler:** alan ve onay **pil** izni. Bu otomatik olarak güncelleştirecektir **AndroidManifest.xml** dosya.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
@@ -93,7 +93,7 @@ switch (source)
     case BatteryPowerSource.Battery:
         // Being powered by the battery
         break;
-    case BatteryPowerSource.Ac:
+    case BatteryPowerSource.AC:
         // Being powered by A/C unit
         break;
     case BatteryPowerSource.Usb:
@@ -138,12 +138,12 @@ Hiçbir platform farklılıklarını.
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
 * Cihaz API'leri test etmek için kullanılmalıdır. 
-* Yalnızca döndürür `Ac` veya `Battery` için `PowerSource`. 
+* Yalnızca döndürür `AC` veya `Battery` için `PowerSource`.
 * Titreşim iptal etmek mümkün değildir.
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-* Yalnızca döndürür `Ac` veya `Battery` için `PowerSource`. 
+* Yalnızca döndürür `AC` veya `Battery` için `PowerSource`.
 
 -----
 

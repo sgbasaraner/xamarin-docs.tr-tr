@@ -1,93 +1,94 @@
 ---
 title: Xamarin.iOS arama API'leri
-description: Bu makalede, bilgi ve Xamarin.iOS uygulamalarınızı içinde özellikleri arayın yapmalarına izin vermek için yeni uygulama arama iOS 9 tarafından sağlanan API'leri kullanarak kapsar.
+description: Bu makale, kullanıcıların bilgi ve Xamarin.iOS uygulamalarınız içinde özellikleri arayın izin vermek için yeni uygulama arama iOS 9 tarafından sağlanan API'leri kullanarak kapsar.
 ms.prod: xamarin
 ms.assetid: 7323EB3D-A78F-4BF0-9990-3160C7E83CF0
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: bc62ad34af0b9b98f0475599a08946122badd21e
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 03/20/2017
+ms.openlocfilehash: 4e73e1bc34df8628790a3734e5b3b32a687fdf14
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34788182"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351658"
 ---
 # <a name="search-apis-in-xamarinios"></a>Xamarin.iOS arama API'leri
 
-_Bu makalede, bilgi ve Xamarin.iOS uygulamalarınızı içinde özellikleri arayın yapmalarına izin vermek için uygulama arama iOS 9 tarafından sağlanan API'lerini kullanarak kapsar._
+_Bu makale, bilgi ve Xamarin.iOS uygulamalarınızdaki özellikleri aramak kullanıcıların uygulama arama iOS 9 tarafından sağlanan API'leri kullanarak kapsar._
 
-Arama iOS 9 bilgilere ve bir Xamarin.iOS uygulaması içindeki özelliklere erişmek için yeni yollar sağlamak için genişletilmiştir. Yeni uygulama arama API'lerini kullanarak, uygulama içeriğini Spotlight ve Safari arama sonuçları iletim ve Siri anımsatıcıları ve öneriler aranabilir yapılır. Bu etkinlikler ve uygulamanızda ayrıntılı bilgileri hızlı bir şekilde erişmesine olanak tanır.
+Arama, içinde iOS 9 bilgilere ve bir Xamarin.iOS uygulaması içinde özelliklere erişim için yeni yollar sağlamak için genişletilmiştir. Yeni uygulama arama API'leri kullanarak, uygulama içeriği yenilik ve Safari'nin Arama sonuçlarıyla, iletim ve Siri anımsatıcılar ve öneriler aranabilir yapılır. Bu etkinlikleri ve uygulamanızda ayrıntılı bilgileri kolayca erişmesine olanak tanır.
 
-Ayrıca, yeni arama API'leri, önceki arama uygulaması deneyimi olmadan, uygulamanızda arama tümleştirmek kolaylaştırır. Bu nedenle, Apple genellikle bir iOS 9 uygulamanın içeriği Evrensel aranabilir uygulama arama'yı kullanarak yapmak için birkaç saat sürer talepleri.
+Ayrıca, yeni arama API'leri arama önceki arama uygulaması deneyimi olmadan uygulamanıza tümleştirmek kolaylaştırır. Bu nedenle, genellikle bir iOS 9 uygulamanın içeriği Evrensel aranabilir kullanarak uygulama arama yapmak için birkaç saat sürer Apple talepleri.
 
-[![](images/intro01.png "İOS 9 uygulama içeriğini uygulama arama'yı kullanarak evrensel aranabilir örneği")](images/intro01.png#lightbox)
+[![](images/intro01.png "İOS 9 uygulama içeriği Evrensel uygulama arama ile aranabilir örneği")](images/intro01.png#lightbox)
 
-Uygulama arama üç ayrı API'lerinin oluşur:
+Uygulama araması üç ayrı API'leri oluşur:
 
-1. [**NSUserActivity** ](nsuseractivity.md) -Bu, Apple iOS 8 yayımlanan iletimi API bir uzantısıdır. Genel ve özel olarak uygulama etkileşim geçmişi aranabilir yapmak için kullanılır) kullanıcı tarafından.
+1. [**NSUserActivity** ](nsuseractivity.md) -Bu, Apple iOS 8'de yayınlanan İletimli API bir uzantısıdır. Genel ve özel olarak uygulama etkileşimi geçmişi aranabilir yapmak için kullanılır) kullanıcı tarafından.
 
-2. [**Çekirdek Spotlight** ](corespotlight.md) -arama sonuçlarında sunulacak içeriği dizini oluşturmak bir uygulama sağlar. Bir veritabanı burada öğeleri eklenir ve kaldırılır ve bu bir uygulama içinde dizin özel içerik için en iyi yoludur API gibi çalışır.
+2. [**Çekirdek Spotlight** ](corespotlight.md) -bir uygulamanın dizin içeriği arama sonuçlarında gösterilmesini sağlar. Burada öğeleri eklendi ve kaldırıldı ve bu uygulama içinde özel içerik dizini en iyi yolu API veritabanı gibi çalışır.
 
-3. [**WebMarkup** ](web-markup.md) - içeriklerini bir web arabirimi üzerinden erişim sağlayan uygulamalar için (değil yalnızca uygulama içinde). Web içeriği, Apple tarafından gezinme ve uygulamanıza kullanıcının iOS 9 cihazında derin bağlama sağlayan özel bağlantılar ile işaretlenebilir.
+3. [**WebMarkup** ](web-markup.md) - içeriklerinin bir web arabirimi üzerinden erişim sağlayan uygulamalar (değil yalnızca uygulama içinde). Web içeriği, Apple tarafından gezinme ve uygulamanıza kullanıcının iOS 9 cihazında ayrıntılı bağlantı sağlama sağlayan özel bağlantılar ile işaretlenebilir.
 
 ## <a name="selecting-an-app-search-approach"></a>Bir uygulama arama yaklaşım seçme
 
-Hangi uygulamak için bu yöntemlerin karar uygulamanız tarafından sağlanan etkileşim türlerini ve onu sunar içerik türünü bağlıdır.
+Hangi uygulamak için bu yöntemlerin karar, uygulamanız tarafından sağlanan etkileşim türlerini ve sunduğu içerik türünü bağlıdır.
 
 Aşağıdaki yönergeleri kullanın:
 
-- [**NSUserActivity** ](nsuseractivity.md) – hem ortak ve özel içerik ve ayrıca, uygulamanızın içinde gezinti noktalarının aranabilirliğini aranabilirliğini sağlamak için bu framework kullanın.
+- [**NSUserActivity** ](nsuseractivity.md) – hem ortak ve özel içeriği hem de uygulamanızın içinde gezinti noktalarının aranabilirliğini aranabilirliğini sağlamak için bu çerçeveyi kullanın.
 
-- [**Çekirdek Spotlight** ](corespotlight.md) – aranabilirliğini cihazda depolanan özel veri sağlamak için bu framework kullanın.
+- [**Çekirdek Spotlight** ](corespotlight.md) – aranabilirliğini cihazda depolanan özel veri sağlamak için bu çerçeveyi kullanın.
 
-- [**Web biçimlendirme** ](web-markup.md) – bu çerçeve, içeriği yalnızca uygulama içinde ancak uygulamanın Web sitesinden sunmak uygulamaları aranabilirliğini sağlamak için kullanın.
+- [**Web biçimlendirmesi** ](web-markup.md) – aranabilirliğini içeriklerini uygulama içinde ancak uygulamanın Web sitesinden değil yalnızca mevcut uygulamaları sağlamak için bu çerçeveyi kullanın.
 
-Her uygulama yaklaşımlar farklıdır ve olabilir arama, ayrı ayrı ancak Apple bunları birlikte çalışacak biçimde tasarlanan kullanılır. Belirli bir öğeyi dizini oluşturmak için birden fazla yaklaşımı kullanarak, aynı kullandığınızdan emin olun **öğesi kimliği** her iki yaklaşımın üzerinde bu nedenle bu kişi bağlantıları iş birlikte.
+Her uygulama yaklaşımları farklıdır ve olabilir arama, ayrı ayrı, ancak Apple bunları birlikte çalışmak üzere tasarlanan kullanılır. Belirli bir öğeyi dizini oluşturmak için birden fazla yaklaşımı kullanarak, aynı kullandığınızdan emin olun **öğesi kimliği** her yaklaşımı, bu nedenle kişi bağlantıları iş birlikte.
 
-Birden fazla yaklaşımı kullanarak içeriğinizi son kullanıcı tarafından bulundu, ancak aynı zamanda gelen öğenizin derecelendirme arama içinde artırmaya yardımcı olur, yalnızca sağlar.
+Birden fazla yaklaşımı kullanarak içeriğinizi son kullanıcı tarafından bulundu ancak ayrıca arama içinde öğenizin sıralamasından geliştirmeye yardımcı yalnızca sağlar.
 
-Sıralama işlemi sırasında Geliştirici çoğunlukla saydam belirli bir öğe ile kullanıcı etkileşimi yoğun bu derece (örneğin kullanıcı bağlantısı basmaya) hafiftir.
-Zengin ve bilgilendirici öğeleri sağlayarak, bir kullanıcı, içeriği ile etkileşim kurmak için bu nedenle, derecelendirme oluşturma enticed emin emin olabilirsiniz.
+Derecelendirme işlemde çalışırken çoğunlukla saydam bir geliştirici olarak belirli bir öğe ile kullanıcı etkileşimi yoğun olarak bu dereceyi (örneğin bir bağlantı basmaya kullanıcı) üzerinde ağırlıklandıran.
+Zengin, bilgilendirici öğeleri sağlayarak kullanıcı içeriğinizi ile etkileşim kurmak için bu nedenle, sıralama yükseltme enticed emin emin olabilirsiniz.
 
 ## <a name="what-content-to-index"></a>Dizin içeriği
 
-Apple uygulamanızda için arama dizinleri sağlamak için aşağıdaki önerileri hangi içerik ve eylemleri sağlar:
+Apple için uygulamanıza arama dizinleri sağlamak için aşağıdaki önerileri hangi içerik ve eylemleri sağlar:
 
- - Herhangi bir içerik görüntülediğinde, oluşturulan veya kullanıcı tarafından uygulamanızın içinde seçkin.
- - Gezinti noktaları ve Özellikler uygulama içinde.
- - Şeyleri yeni iletiler, içerik veya yakın zamanda cihaza indirilip uygulamanız tarafından görüntülenen öğelerinin diğer türleri gibi.
+ - Herhangi bir içerik görüntülenebilir, oluşturulan veya kullanıcı tarafından uygulamanızın içinde seçkin.
+ - Gezinti noktaları ve uygulama içinde özellikleri.
+ - Yeni iletileri, içeriği veya yakın zamanda cihaza indirilip uygulamanız tarafından görüntülenen öğelerin diğer türleri gibi şeyler.
 
-## <a name="app-search-enhancements"></a>Uygulama arama geliştirmeleri
+## <a name="app-search-enhancements"></a>Uygulama araması geliştirmeleri
 
-İOS 10 çekirdek Spotlight bazı geliştirmeler gibi uygulama ara sağlar:
+İOS 10 temel odak noktası, bazı geliştirmeler gibi uygulama ara içerir:
 
-- **Nun ayrıntılı bağlantı popülerliği (ile fark gizlilik)** -ayrıntılı bağlantılı uygulama içeriği arama sonuçlarında yükseltmek için bir yol sağlar.
-- **Uygulama arama** -yeni `CSSearchQuery` uygulama Spotlight arama özelliğine posta, mesajlar ve notlar uygulamaları nasıl çalışmasına benzer sağlamak için sınıf.
-- **Arama devamlılık** - Spotlight veya Safari bir arama başlatır ve ardından bir uygulamayı açmak kullanıcının izin verir ve arama devam edin.
-- **Doğrulama sonuçlarını görselleştirme** -Apple'nın [uygulama arama API Doğrulama Aracı](https://search.developer.apple.com/appsearch-validation-tool) şimdi testleri preforming görsel bir Web sitesinin biçimlendirme ve derin bağlama görüntüler.
-- **İleti görüntü paylaşım uygulamasını** -Spotlight aramalarda görünmesi (üzerinden bir ileti uygulama uzantısı) iletilerindeki paylaşmak için sağlanan popüler uygulama görüntüleri sağlar.
+- **Kitle kaynaklı ayrıntılı bağlantı popülerliği (ile fark gizlilik)** -ayrıntılı bağlantılı uygulama içeriği arama sonuçlarında yükseltmek için bir yol sağlar.
+- **Uygulama içi arama** -yeni `CSSearchQuery` uygulamanın Spotlight arama özelliğine benzer posta, mesajlar ve notlar uygulamaları nasıl sağlamak için sınıf.
+- **Arama devamlılık** - Spotlight veya Safari bir arama başlatın, ardından bir uygulama açma açmasına olanak sağlar ve bu aramanın devam.
+- **Doğrulama sonuçlarını görselleştirme** -Apple'nın [uygulama arama API Doğrulama Aracı](https://search.developer.apple.com/appsearch-validation-tool) artık testleri preforming bir Web sitesinin işaretleme ve derin bağlama görsel bir temsilini görüntüler.
+- **İleti görüntü paylaşım uygulamasının** -Spotlight arama görünmesini (ileti uygulaması uzantısı) üzerinden mesajları alıp içinde paylaşmak için sağlanan popüler uygulama görüntüleri sağlar.
 
-Daha fazla bilgi için lütfen bkz bizim [uygulama arama geliştirmeleri](~/ios/platform/search/app-search-enhancements.md) Kılavuzu.
+Daha fazla bilgi edinmek için bkz. bizim [uygulama araması geliştirmeleri](~/ios/platform/search/app-search-enhancements.md) Kılavuzu.
 
-### <a name="proactive-suggestions"></a>Öngörülü önerileri
+### <a name="proactive-suggestions"></a>Proaktif öneriler
 
-iOS 10 proaktif olarak yararlı bilgiler otomatik olarak kullanıcı için uygun zamanlarda sunmak sistem vererek yönlendirmeli katılım bir uygulama için yeni yolları gösterir. Yalnızca, iOS 9 derin arama Spotlight, iletim ve Siri öneriler, bir uygulama kullanıcıya aşağıdaki konumlardan sistemi tarafından sunulan işlevselliği kullanıma iOS 10 ile kullanarak uygulama ekleme yeteneği sağlanan:
+iOS 10 proaktif olarak yararlı bilgiler otomatik olarak kullanıcıya uygun zamanlarda sunmak üzere sistem vererek sürüş engagement bir uygulama için yeni yollarını sunar. Yalnızca olarak iOS 9 spot, iletim ve Siri öneriler, bir uygulama kullanıcıya aşağıdaki konumlardan sistemi tarafından sunulan işlevselliği kullanıma sunabileceğiniz iOS 10 ile kullanarak uygulama için ayrıntılı arama ekleme olanağı sağlanan:
 
 - Uygulama değiştirici
 - Kilit ekranı
 - CarPlay
-- Eşlemeleri
+- Haritalar
 - Siri etkileşimleri
 - QuickType önerileri 
 
-Bir uygulama teknolojileri koleksiyonu gibi kullanarak sisteme bu işlevselliği kullanıma sunan [NSUserActivity](https://developer.xamarin.com/api/type/Foundation.NSUserActivity/), web biçimlendirme, çekirdek Spotlight, MapKit, Media Player ve Uıkit.
+Bir uygulamanın gibi teknolojileri koleksiyonunu kullanarak sisteme bu işlevselliği kullanıma sunma [NSUserActivity](https://developer.xamarin.com/api/type/Foundation.NSUserActivity/), temel bakış, MapKit, Media Player ve Uıkit web biçimlendirmesi.
 
-Daha fazla bilgi için lütfen bkz bizim [öngörülü önerileri](~/ios/platform/search/proactive-suggestions.md) Kılavuzu.
+Daha fazla bilgi edinmek için bkz. bizim [proaktif öneriler](~/ios/platform/search/proactive-suggestions.md) Kılavuzu.
 
 ## <a name="summary"></a>Özet
 
-Bu makalede yeni kapsamına arama API özellikleri, iOS 9 Xamarin.iOS uygulamaları için sağlar. Bu kapsamdaki [NSUserActivity](nsuseractivity.md), [çekirdek Spotlight](corespotlight.md) ve [Web biçimlendirme](web-markup.md) içerik dizin oluşturma için yöntemleri. Belirtilen arama yaklaşım ne zaman kullanılmalı ve hangi içerik türlerini olmalıdır kısa tartışması ile tamamlandı dizini.
+Bu makalede yeni kapsamına arama API'si özellikleri, iOS 9, xamarin iOS uygulamaları için sağlar. Bunu ele [NSUserActivity](nsuseractivity.md), [temel bakış](corespotlight.md) ve [Web biçimlendirmesi](web-markup.md) yöntemleri için içerik dizini mi oluşturuyorsunuz. Belirtilen arama yaklaşım ne zaman kullanılması gerektiğini ve hangi içerik türlerini olmalıdır kısa bir açıklama ile tamamlandı dizini.
 
 
 
@@ -96,4 +97,4 @@ Bu makalede yeni kapsamına arama API özellikleri, iOS 9 Xamarin.iOS uygulamala
 - [iOS 9 örnekleri](https://developer.xamarin.com/samples/ios/iOS9/)
 - [iOS 9 geliştiricileri için](https://developer.apple.com/ios/pre-release/)
 - [iOS 9.0](https://developer.apple.com/library/prerelease/ios/releasenotes/General/WhatsNewIniOS/Articles/iOS9.html)
-- [Uygulama arama Programlama Kılavuzu](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/AppSearch/index.html#//apple_ref/doc/uid/TP40016308)
+- [Uygulama araması Programlama Kılavuzu](https://developer.apple.com/library/prerelease/ios/documentation/General/Conceptual/AppSearch/index.html#//apple_ref/doc/uid/TP40016308)

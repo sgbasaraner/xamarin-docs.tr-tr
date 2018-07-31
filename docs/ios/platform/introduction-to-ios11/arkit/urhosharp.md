@@ -1,66 +1,66 @@
 ---
-title: Xamarin.iOS UrhoSharp ARKit kullanarak
-description: Bu belge Xamarin.iOS ARKit uygulamada ayarlama açıklar ve ardından nasıl çerçeveleri, kamera ayarlamak nasıl işlendiğini adresindeki arar nasıl algılanacağını düzeyi, aydınlatma ve daha fazla ile nasıl çalışılacağı. Ayrıca UrhoSharp ve HoloLens için kod yazma anlatılmaktadır.
+title: ARKit Xamarin.iOS içinde UrhoSharp kullanma
+description: Bu belgede bir Xamarin.iOS ARKit uygulamada ayarlama açıklanır ve nasıl çerçeveler, kamera ayarlamak nasıl işlendiğini konumunda görünür nasıl düzeyi, aydınlatma ve daha fazlası ile çalışmayı öğrenin. Ayrıca, HoloLens için kod yazma ve UrhoSharp anlatılmaktadır.
 ms.prod: xamarin
 ms.assetid: 877AF974-CC2E-48A2-8E1A-0EF9ABF2C92D
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 08/01/2016
-ms.openlocfilehash: 0d70b1f751d5aa6b6c8fa578f53ba1ac8260cfa1
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 08/01/2017
+ms.openlocfilehash: 728082eb27684c2176feb2038b7948986ce6a694
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787109"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351697"
 ---
-# <a name="using-arkit-with-urhosharp-in-xamarinios"></a>Xamarin.iOS UrhoSharp ARKit kullanarak
+# <a name="using-arkit-with-urhosharp-in-xamarinios"></a>ARKit Xamarin.iOS içinde UrhoSharp kullanma
 
-Girişiyle [ARKit](https://developer.apple.com/arkit/), Apple yaptı, geliştiricilerin genişletilmiş gerçekte uygulamaları oluşturmak için basit. ARKit Cihazınızı tam konumunu izleyebilir ve dünya üzerindeki çeşitli yüzeyleri algılamak ve sonra kodunuza dışında ARKit gelen veriler blend Geliştirici kadar olur.
+Sunulmasıyla birlikte [ARKit](https://developer.apple.com/arkit/), Apple vermiştir, genişletilmiş gerçeklik uygulamaları oluşturmak, geliştiriciler için basit. ARKit cihazınızın görselinizin tam konumunu izleyebilir ve tüm dünyaya çeşitli yüzeyleri algılamak ve ardından dışında ARKit kodunuza gelen verileri karıştırmak için geliştirici kadar olan.
 
-[UrhoSharp](~/graphics-games/urhosharp/index.md) 3B uygulamaları oluşturmak için kullanabileceğiniz bir kapsamlı ve kullanımı kolay 3B API sağlar.   Bunların her ikisi de olabilir birlikte, dünya hakkında fiziksel bilgi sağlamak için ARKit ve sonuçları işlemek için Urho karıştırılan.
+[UrhoSharp](~/graphics-games/urhosharp/index.md) 3B uygulamalar oluşturmak için kullanabileceğiniz kapsamlı ve kullanımı kolay 3B API'si sağlar.   Bunların her ikisi de olabilir birlikte dünyanın fiziksel bilgi sağlamak için ARKit ve sonuçları işlemek için Urho karışık.
 
-Bu sayfa, birlikte harika genişletilmiş gerçekte uygulamaları oluşturmak için bu iki dünyanın bağlanmak açıklanmaktadır.
+Bu sayfada birlikte harika genişletilmiş gerçeklik uygulamaları oluşturmak için bu iki platformdan da bağlanma açıklanır.
 
 
 ## <a name="the-basics"></a>Temeller
 
-Yapmak istiyoruz mevcut 3B dünyanın en üstünde iPhone tarafından görülen içeriktir.   3B içerikle telefonun kameradan gelen içeriği karıştırmak için olur ve kullanıcının telefon emin olmak için yer taşınırken 3B nesne davranır olduğu gibi bu yer parçası - bu nesneleri bu dünyaya sabitleme tarafından gerçekleştirilir.
+Yapmak istediğimiz dünyanın en üstünde mevcut 3B içerik iPhone tarafından görülen aynıdır.   3B içeriğe sahip telefonun kameradan gelen içeriği gibi işlevlerle birleştirmek ister uygulamadır ve telefonun kullanıcı emin olmak için odaya taşınırken 3B nesne davranış olduğu gibi bu yer parçası - bu nesneler bu dünyaya bağlama tarafından gerçekleştirilir.
 
-![Animasyonlu şekilde ARKit](urhosharp-images/image1.gif)
+![ARKit animasyonlu şekilde](urhosharp-images/image1.gif)
 
 
-Urho kitaplığı biz bizim 3B varlıklar yüklemek ve bunları dünya yerleştirmek için kullanacağınız ve biz ARKit kamera ve bunun yanı sıra telefon dünyadaki konumunu'ten gelen video akışına almak için kullanır.   Kullanıcı kendi telefon ile taşınırken, Urho altyapısı görüntüleme koordinat sistemini güncelleştirmek için konumda değişiklikleri kullanacağız.
+Biz Urho kitaplığı bizim 3B varlıkları yükleme ve bunları dünya üzerinde yerleştirmek için kullanacağınız ve kamera ve bunun yanı sıra telefon, dünya konumu geldiğini video akışını almak için ARKit biz kullanacaklardır.   Kullanıcının kendi telefon ile hareket ettikçe Urho altyapısı görüntüleme koordinat sistemini güncelleştirmek için konumda değişiklikleri kullanacağız.
 
-Bu şekilde, 3B alanda bir nesne getirin ve kullanıcı geçerse, 3B nesnenin konumunu yerinde ve burada yerleştirilen konumu yansıtır.
+Bu şekilde bir nesneyi 3B alanda yerleştirmek ve kullanıcı taşır, bu yerleştirildiği konum ve yer 3B nesnenin konumu yansıtır.
 
-## <a name="setting-up-your-application"></a>Uygulamanızı kurma
+## <a name="setting-up-your-application"></a>Uygulamanızı ayarlama
 
 ### <a name="ios-application-launch"></a>iOS uygulamasını başlatma
 
-İOS uygulamanızı oluşturmak ve 3B içeriğiniz başlatmak gereken, bir uygulama öğesinin bir alt kümesi oluşturarak bunu [ `Urho.Application` ](https://developer.xamarin.com/api/type/Urho.Application/) ve Kurulum kodunuzu kılarak sağlamak `Start` yöntemi.  Burada, Sahne verilerle, olay işleyicileri olan kurulum vb. doldurulmuş budur.
+İOS uygulamanızın oluşturun ve 3B içeriğinize başlatmak için gereken, öğesinin bir uygulama oluşturarak bunu [ `Urho.Application` ](https://developer.xamarin.com/api/type/Urho.Application/) ve Kurulum kodunuzu geçersiz kılarak sağlamak `Start` yöntemi.  Burada, Sahne, olay işleyicileri olan kurulum vb. doldurulmuş budur.
 
-Size sunulan bir `Urho.ArkitApp` alt sınıf `Urho.Application` ve kendi `Start` yöntemi ağır lifting yapar.   Tüm yapmanız gereken uygulama, varolan Urho türünde olması için temel sınıf değiştirin `Urho.ArkitApp` ve, urho Sahne dünyada çalışacak bir uygulamaya sahip.
+Ekledik bir `Urho.ArkitApp` alt sınıflara ayıran sınıfı `Urho.Application` ve kendi `Start` yöntemi kaynaklanan ağır yüklerden yapar.   Tüm yapmanız gereken uygulama, var olan Urho temel sınıf türünde olması değiştirmek `Urho.ArkitApp` ve dünyada, urho Sahne çalışır bir uygulamanız varsa.
 
 ### <a name="the-arkitapp-class"></a>ArkitApp sınıfı
 
-Bu sınıf, işletim sistemi tarafından teslim edilir uygun Varsayılanları, hem bir Sahne bazı anahtar nesnelerle kümesi ve aynı zamanda ARKit olayları işleme sağlar.
+Bu sınıf, işletim sistemi tarafından teslim edilen haliyle bir dizi kullanışlı Varsayılanları, bazı anahtar nesneleri ile Sahne hem yanı sıra ARKit olayların işlenmesini sağlar.
 
-Kurulum gerçekleşir `Start` sanal yöntemi.   Bu yöntem, bir alt kümesi üzerinde geçersiz kıldığınızda, ana zinciri için kullanarak emin olmanız gerekir `base.Start()` kendi uygulama.
+Kurulumu gerçekleşir `Start` sanal yöntem.   Ebeveyniniz zincirdeki kullanarak emin olmak gerekir, alt üzerinde bu yöntemi geçersiz kıldığınızda, `base.Start()` kendi uygulama.
 
-`Start` Yöntemi Sahne, Görünüm penceresi, kamera ve tek yönlü ışığı ayarlar ve bu ortak özellikleri olarak ortaya çıkarır:
+`Start` Yöntemi görünüm, Görünüm penceresi, kamera ve bir Yönlü ışık ayarlar ve ortak özellikler olarak ortaya çıkarır:
 
 - bir [ `Scene` ](https://developer.xamarin.com/api/type/Urho.Scene/) , nesneleri depolamak için
-- bir yön [ `Light` ](https://developer.xamarin.com/api/type/Urho.Light/) gölgeleri ve konumu aracılığıyla kullanılabilir olan `LightNode` özelliği
-- bir [ `Camera` ](https://developer.xamarin.com/api/type/Urho.Camera/) bileşenleri ARKit bir güncelleştirme uygulamaya teslim ederken güncelleştirilir ve
+- yönlü [ `Light` ](https://developer.xamarin.com/api/type/Urho.Light/) shadows ve konumu aracılığıyla kullanılabilir olan `LightNode` özelliği
+- bir [ `Camera` ](https://developer.xamarin.com/api/type/Urho.Camera/) bileşenlerinde ARKit uygulamaya bir güncelleştirme sunduğunda güncelleştirilir ve
 - bir [ `ViewPort` ](https://developer.xamarin.com/api/type/Urho.Viewport/) sonuçları görüntüleme.
 
 
-### <a name="your-code"></a>Kodunuz
+### <a name="your-code"></a>Kodunuzu
 
-Ardından alt sınıf gereken `ArkitApp` sınıfı ve geçersiz kılma `Start` yöntemi.   Yönteminizi yapmanız gereken ilk şey zinciri kadar olan `ArkitApp.Start` çağırarak `base.Start()`.  Bundan sonra ArkitApp tarafından özellikler Kurulumu nesnelerinizi Sahne eklemek için ışık, gölge veya ele almak istediğiniz olayları özelleştirme için kullanabilirsiniz.
+Ardından alt sınıfı için ihtiyacınız `ArkitApp` sınıf ve geçersiz kılma `Start` yöntemi.   Yönteminizi yapmanız gereken ilk şey zinciri kadar olan `ArkitApp.Start` çağırarak `base.Start()`.  Bundan sonra Özellikler Kurulumu tarafından ArkitApp dilediğinizi kullanabilirsiniz nesnelerinizi sahneye eklemek için ışıkları, gölgeler veya kullanmak istediğiniz olayları özelleştirme.
 
-ARKit/UrhoSharp örnek doku animasyonlu bir karakterle yükler ve aşağıdaki uygulama ile animasyon oynar:
+ARKit/UrhoSharp örnek dokular animasyonlu bir karakterle yükler ve aşağıdaki uygulama ile animasyon oynar:
 
     ```csharp
     public class MutantDemo : ArkitApp
@@ -90,43 +90,43 @@ ARKit/UrhoSharp örnek doku animasyonlu bir karakterle yükler ve aşağıdaki u
     }
     ```
 
-Ve gerçekten genişletilmiş gerçekte görüntülenmesini 3B içeriğinizi sağlamak için bu noktada yapmanız gereken tüm bu.
+Ve gerçekten tüm genişletilmiş gerçeklik modunda görüntülenen 3B içeriğinize sağlamak için bu noktada yapmanız gerekir.
 
-Varlıklarınızı bu biçimine dışa aktarmak gereken şekilde Urho 3B modeller ve animasyonları için özel biçimler kullanır.   Gibi araçları kullanabilirsiniz [Urho3D Blender eklenti](https://github.com/reattiva/Urho3D-Blender) ve [UrhoAssetImporter](https://github.com/EgorBo/UrhoAssetImporter) , dönüştürebilir bu varlıkları DBX, DAE, OBJ, harmanlama, gibi popüler biçimlerden 3B-Max biçime Urho tarafından gerekli.
+Bu biçime varlıklarınızı dışarı aktarmak gereken şekilde Urho 3B modeller ve animasyonlar için özel biçimler kullanır.   Araçları gibi kullanabileceğiniz [Urho3D Blender eklentisi](https://github.com/reattiva/Urho3D-Blender) ve [UrhoAssetImporter](https://github.com/EgorBo/UrhoAssetImporter) , dönüştürebilir bu varlıkları DBX, DAE, OBJ, Blend gibi popüler biçimlerinden 3B-Max biçime Urho tarafından gerekli.
 
-Urho kullanarak 3B uygulamaları oluşturma hakkında daha fazla bilgi için [UrhoSharp giriş](~/graphics-games/urhosharp/introduction.md) Kılavuzu.
+Urho kullanarak 3B uygulamalar oluşturma hakkında daha fazla bilgi edinmek için [UrhoSharp giriş](~/graphics-games/urhosharp/introduction.md) Kılavuzu.
 
 ## <a name="arkitapp-in-depth"></a>Derinlemesine ArkitApp
 
 > [!NOTE]
-> Bu bölüm, UrhoSharp ve ARKit varsayılan deneyimini özelleştirmek istiyorsanız veya tümleştirme nasıl çalıştığı hakkında daha derin bir hakkında bilgi edinme geliştiriciler için hazırlanmıştır.   Bu bölümde okumak gerekli değildir.
+> Bu bölümde UrhoSharp ARKit ve varsayılan deneyim özelleştirmek istiyorsanız ya da tümleştirme birlikte nasıl çalıştığı hakkında daha ayrıntılı bir öngörü almak istediğiniz geliştiricilere yöneliktir.   Bu bölümde okumak gerekli değildir.
 
-ARKit API oldukça basittir, oluşturma ve yapılandırma bir [ARSession](https://developer.apple.com/documentation/arkit/arsession) hangi nesne sonra teslim başlatın [ARFrame](https://developer.apple.com/documentation/arkit/arframe) nesneleri.   Bu cihaz tahmini gerçek konumunu yanı sıra kamera tarafından yakalanan görüntü, her iki içerir.
+ARKit API oldukça basittir, oluşturma ve yapılandırma bir [ARSession](https://developer.apple.com/documentation/arkit/arsession) hangi nesne sonra sunmaya başlayın [ARFrame](https://developer.apple.com/documentation/arkit/arframe) nesneleri.   Bu cihaz tahmini gerçek konumunu yanı sıra kamera tarafından yakalanan görüntü, her iki içerir.
 
-Biz kamera tarafından bize bizim 3B içerikle teslim edilmesini görüntüleri oluşturma ve olması olasılığını aygıt konumu ve konumu eşleşecek şekilde UrhoSharp kamerayı ayarlayın.
+Biz bir kamera tarafından bize 3B içeriklerimizde teslim edilen görüntüleri oluşturma ve kameraya UrhoSharp olasılığını cihaz konumu ve konumu eşleşecek şekilde ayarlayın.
 
-Aşağıdaki diyagramda yer aldığı gösterilmektedir `ArkitApp` sınıfı:
+Yer alan aşağıdaki diyagramda gösterilmiştir `ArkitApp` sınıfı:
 
-[![Sınıfları ve ArkitApp ekranları diyagramı](urhosharp-images/image2.png)](urhosharp-images/image2.png#lightbox)
+[![Sınıfları ve ArkitApp ekranlara diyagramı](urhosharp-images/image2.png)](urhosharp-images/image2.png#lightbox)
 
-### <a name="rendering-the-frames"></a>Çerçeve oluşturma
+### <a name="rendering-the-frames"></a>Çerçeve işleme
 
-Basit bir fikirdir, kamera birleştirilmiş görüntü üretmek için bizim 3B grafik ile dışında gelen video birleştirin.     Şu anda yakalanan bu görüntüleri bir dizi sırayla alınıyor ve biz bu girişi ile Urho Sahne karışık.
+Basit bir uygulamadır, birleştirilmiş görüntü üretmek için sunduğumuz 3B grafikler ile kamera dışında yakında video birleştirin.     Biz bu yakalanan görüntülerin bir dizi sırayla alma ve biz bu giriş Urho Sahne ile karışık.
 
-Bunu yapmanın en kolay yolu eklemektir bir [ `RenderPathCommand` ](https://developer.xamarin.com/api/type/Urho.RenderPathCommand/) ana [ `RenderPath` ](https://developer.xamarin.com/api/type/Urho.RenderPath/).  Bu, tek bir çerçeve çizmek için gerçekleştirilen komutlar kümesidir.  Bu komut, görünüm penceresinin biz geçirmek doku ile doldurur.    Bu işlem ilk çerçevesi ayarlar yapılıyor ve gerçek tanımı içinde th yapılır **ARRenderPath.xml** bu noktada yüklenen dosyası.
+Eklemek için bunu yapmanın en kolay yolu olan bir [ `RenderPathCommand` ](https://developer.xamarin.com/api/type/Urho.RenderPathCommand/) ana [ `RenderPath` ](https://developer.xamarin.com/api/type/Urho.RenderPath/).  Bu, tek bir çerçeve çizmek için gerçekleştirilen komutları kümesidir.  Bu komut, görünüm penceresinin biz geçirin herhangi bir doku ile doldurur.    Bu işlem ilk karede ayarlar ve gerçek tanımı içinde th yapılır **ARRenderPath.xml** bu noktada yüklenen dosyası.
 
-Ancak, biz bu iki dünyanın birlikte karıştırmak için iki sorunları karşılaştığı:
-
-
-1. İos'ta, GPU dokuları iki gücünü çözünürlüğü olmalıdır, ancak biz kameradan alırsınız çerçeveler güç iki, örneğin: çözümleme gerekmez: 1280 x 720.
-2. Çerçeve içinde kodlanır [YUV](https://en.wikipedia.org/wiki/YUV) iki görüntü tarafından - luma ve berraklığının temsil biçimi.
-
-YUV çerçeveler iki farklı çözümler gelir.  aydınlatma (gri ölçek görüntü temelde) ve çok daha küçük 640 x 360 chrominance bileşeni için temsil eden bir 1280 x 720 görüntüsü:
-
-![Birleştirme Y ve UV bileşenleri gösteren resim](urhosharp-images/image3.png)
+Ancak Biz bu iki platformdan da karıştırarak için iki sorunu kalmaktadır:
 
 
-OpenGL ES kullanarak tam bir renkli resim çizmek için biz aydınlatma (Y bileşeni) ve chrominance (UV düzlemleri) doku yuvaları geçen küçük bir gölgelendirici yazmak zorunda.  UrhoSharp içinde adları - "sDiffMap" ve "sNormalMap" olması ve RGB biçime Dönüştür:
+1. İOS, GPU dokular ikinin üssü bir çözüm sahip olmalıdır, ancak biz kameradan alacak çerçeveleri gibi ikinin, cihazlar çözüm yok: 1280 x 720.
+2. Çerçeve içinde kodlanır [YUV](https://en.wikipedia.org/wiki/YUV) iki görüntü tarafından - luma ve kroma temsil biçimi.
+
+İki farklı çözünürlükte YUV çerçeveleri gelir.  aydınlatma (gri tonlamalı görüntü temelde) ve çok daha küçük 640 x 360 chrominance bileşeni için temsil eden bir 1280 x 720 görüntüsü:
+
+![UV bileşenleri ve birleştirme Y gösteren görüntü](urhosharp-images/image3.png)
+
+
+OpenGL ES kullanarak tam renkli görüntüsünü çizmek için biz aydınlatma (Y bileşeni) ve chrominance (UV düzlemleri) doku yuvaları alan küçük bir gölgelendirici yazmanız gerekir.  İçinde UrhoSharp adlarına - "sDiffMap" ve "sNormalMap" sahiptir ve bunları RGB biçime Dönüştür:
 
 ```csharp
 mat4 ycbcrToRGBTransform = mat4(
@@ -140,7 +140,7 @@ vec4 ycbcr = vec4(texture2D(sDiffMap, vTexCoord).r,
 gl_FragColor = ycbcrToRGBTransform * ycbcr;
 ```
 
-İki çözüm gücünü yok doku işlemek için aşağıdaki parametrelerle Texture2D tanımlamak sahibiz:
+İki çözüm gücünü yok doku işlemek için aşağıdaki parametrelerle Texture2D tanımlamak sunuyoruz:
 
 ```chsarp
 // texture for UV-plane;
@@ -152,27 +152,27 @@ cameraUVtexture.SetAddressMode(TextureCoordinate.U, TextureAddressMode.Clamp);
 cameraUVtexture.SetAddressMode(TextureCoordinate.V, TextureAddressMode.Clamp);
 ```
 
-Böylece biz yakalanan görüntülerin arka plan olarak işlemek ve yukarıdaki tüm Sahne gibi korkutucu mutant işlemek kullanabilirsiniz.
+Bu nedenle arka plan olarak yakalanan görüntülerini işlemek ve gibi scary mutant üzerindeki herhangi bir Sahneyi işleme olanağına duyuyoruz.
 
 ### <a name="adjusting-the-camera"></a>Kamera ayarlama
 
-`ARFrame` Nesneleri tahmini aygıt konumu da içerir.  Biz oyun kamera ARFrame taşımak ihtiyacımız - ARKit önce bir sorun teşkil izleme cihaz yönlendirmesini (Top, aralık ve yaw) ve işleme sabitlenmiş hologramı video üstünde - ancak Cihazınızı biraz taşırsanız - edilmesi değildi artık kayma.
+`ARFrame` Nesneleri tahmini cihaz konumu da içerir.  Biz ARFrame game kamerayı hareket ihtiyacımız - ARKit önce bir sorun teşkil izleme cihaz yönü (toplama, aralık ve yaw) ve işleme video üzerine sabitlenmiş bir hologramı - fakat Cihazınızı biraz taşırsanız - hologramları değildi artık farklı.
 
-Jiroskop gibi yerleşik algılayıcılar hareketleri izleyebilmesi için olmadığından bu durum, yalnızca hızlandırmasını olabilir.  Her çerçeve ve ayıklar özellik noktalarını izlemek için ve bu nedenle bize doğru bir vermek ARKit çözümlemeler taşıma ve dönüş verileri içeren matris dönüştürün.
+Jiroskop gibi yerleşik sensör hareketlerini izlemek mümkün değildir çünkü bu durumda, yalnızca hızlandırma yapabilirler.  Her bir dilimi ve ayıklar özellik noktalarını izlemek için ve bu nedenle doğru bir bulunun mümkün ARKit çözümlemeleri taşıma ve dönüş verileri içeren matris dönüştürün.
 
-Örneğin, bu size geçerli konumu nasıl elde edebilirsiniz.
+Örneğin, bu size geçerli konumun nasıl elde edebilirsiniz.
 
 ```csharp
 var row = arCamera.Transform.Row3;
 CameraNode.Position = new Vector3(row.X, row.Y, -row.Z);
 ```
 
-Kullanırız `-row.Z` çünkü ARKit sağ koordinat sistemi kullanır.
+Kullandığımız `-row.Z` çünkü ARKit bir sağ taraf yönelimli koordinat sistemini kullanır.
 
 
-### <a name="plane-detection"></a>Düzlemi algılama
+### <a name="plane-detection"></a>Düzlem algılama
 
-ARKit yatay düzlemleri algılayabilir ve bu özellik, gerçek dünya ile etkileşime olanak sağlar, örneğin, biz mutant gerçek bir tablo veya kat yerleştirebilirsiniz. Bunu yapmanın en kolay yolu, HitTest yöntemi (raycasting) kullanmaktır. Ekran koordinatları dönüştürür (0,5; 0,5 Center) gerçek dünya koordinat içine (0; 0 0 olan ilk çerçeve konumu).
+ARKit yatay düzlemleri algılayabilir ve gerçek dünyayla etkileşimde bulunmak bu yeteneği sağlar, örneğin, biz mutant gerçek bir tablo ya da bir zemin üzerinde yerleştirebilirsiniz. Bunu yapmanın en kolay yolu HitTest yöntemi (koruyabilmesi) kullanmaktır. Ekran koordinatları dönüştürür (0,5; 0,5 Merkezi) gerçek dünya koordinatları içinde (0; 0 0, ilk çerçeve konumdur).
 
 ```chsarp
 protected Vector3? HitTest(float screenX = 0.5f, float screenY = 0.5f)
@@ -188,7 +188,7 @@ protected Vector3? HitTest(float screenX = 0.5f, float screenY = 0.5f)
 }
 ```
 
-Şimdi biz nereye bağlı olarak yatay yüzeyini biz dokunun aygıt ekranında mutant yerleştirebilirsiniz:
+Şimdi biz bağlı olarak yatay bir yüzeyi biz dokunun cihaz ekranında mutant yerleştirebilirsiniz:
 
 ```chsarp
 void OnTouchEnd(TouchEndEventArgs e)
@@ -201,11 +201,11 @@ void OnTouchEnd(TouchEndEventArgs e)
 }
 ```
 
-![Görünüm hareket ettikçe değiştirme animasyonlu şekil düzeyi](urhosharp-images/image4.gif)
+![Animasyonlu şekil değiştirme görünümü hareket ettikçe düzeyi](urhosharp-images/image4.gif)
 
-### <a name="realistic-lighting"></a>Gerçekçi ışık
+### <a name="realistic-lighting"></a>Gerçekçi aydınlatma
 
-Gerçek dünya aydınlatma koşullarına bağlı olarak sanal Sahne daha iyi çevresindeki öğelerden eşleşecek şekilde koyu veya açık olması gerekir. ARFrame içeren biz Urho ortam ışığı ayarlamak için kullanabileceğiniz bir LightEstimate özelliği bu yapılır şöyle:
+Gerçek dünya ışık koşullara göre daha açık veya koyu kendi ortamı daha iyi eşleşecek şekilde sanal Sahne olmalıdır. ARFrame Urho çevresel ışık ayarlamak için kullanabileceğiniz bir LightEstimate özelliği içeren yapıldığını şöyle:
 
 
     var ambientIntensity = (float) frame.LightEstimate.AmbientIntensity / 1000f;
@@ -215,14 +215,14 @@ Gerçek dünya aydınlatma koşullarına bağlı olarak sanal Sahne daha iyi çe
 
 ### <a name="beyond-ios---hololens"></a>İOS - HoloLens
 
-UrhoSharp [önde gelen tüm işletim sistemlerinde çalışan](~/graphics-games/urhosharp/platform/index.md), başka bir yerde mevcut kodunuzu yeniden kullanabilirsiniz.
+UrhoSharp [tüm önemli işletim sistemlerinde çalışan](~/graphics-games/urhosharp/platform/index.md), başka bir yerde mevcut kodunuzu yeniden kullanabilirsiniz.
 
-HoloLens, üzerinde çalıştığı en heyecan verici platformları biridir.   Bu, kolayca UrhoSharp kullanarak harika Engagement'ta gerçekte uygulamaları oluşturmak için HoloLens ve iOS arasında geçiş yapabilirsiniz, anlamına gelir.
+HoloLens en heyecan verici platformları üzerinde çalıştığı biridir.   Bu, kolayca UrhoSharp kullanma harika genişletilmiş gerçeklik uygulamaları oluşturmak için HoloLens ve iOS arasında geçiş yapabilirsiniz, anlamına gelir.
 
-MutantDemo kaynakta bulabileceğiniz [github.com/EgorBo/ARKitXamarinDemo](https://github.com/EgorBo/ARKitXamarinDemo).
+MutantDemo kaynakta bulabilirsiniz [github.com/EgorBo/ARKitXamarinDemo](https://github.com/EgorBo/ARKitXamarinDemo).
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [UrhoSharp](~/graphics-games/urhosharp/index.md)
-- [(İle UrhoSharp) ARKitXamarinDemo (örnek)](https://github.com/EgorBo/ARKitXamarinDemo)
+- [ARKitXamarinDemo (ile UrhoSharp) (örnek)](https://github.com/EgorBo/ARKitXamarinDemo)

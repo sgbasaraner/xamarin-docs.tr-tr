@@ -1,49 +1,50 @@
 ---
-title: C# Primer Objective-C geliştiricileri için
-description: Bu belgede C# Objective-C geliştiriciler için açıklanmaktadır. Karşılaştırır ve protokolleri ve arabirimler, kategoriler ve genişletme yöntemleri, çerçevelerinin ve derlemeler, seçiciler, adlandırılmış parametreleri ve daha inceleyerek iki dil karşılaştırır.
+title: Objective-C geliştiricileri için C# temel bilgileri
+description: Bu belgede C# Objective-C geliştiricileri için açıklanmaktadır. Karşılaştırır ve iki dilden protokolleri ve arabirimler, kategoriler ve genişletme yöntemleri, çerçeveler ve derlemeleri, seçicileri ve adlandırılmış parametreleri ve daha fazlasını inceleyerek karşılaştırır.
 ms.prod: xamarin
 ms.assetid: 00285CBD-AE5E-4126-8F22-6B231B9467EA
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 514841bb18ebed72c07377ff95127dff247f0d71
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/05/2017
+ms.openlocfilehash: 7fbc37a561b0a1c0b0d5a16fea2892e7faf1a86b
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786219"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351515"
 ---
-# <a name="c-primer-for-objective-c-developers"></a>C# Primer Objective-C geliştiricileri için
+# <a name="c-primer-for-objective-c-developers"></a>Objective-C geliştiricileri için C# temel bilgileri
 
-_Xamarin.iOS platformlar genelinde paylaşılmak üzere C# yazılan platform belirsiz kod sağlar. Ancak, var olan iOS uygulamaları zaten oluşturulmuş Objective-C kodunu yararlanan isteyebilirsiniz. Bu makalede Xamarin ve C# dili taşımak isteyen Objective-C geliştiriciler için kısa bir primer görev yapar._
+_Xamarin.iOS platformlar arasında paylaşılması için C# dilinde yazılmış platformdan kod sağlar. Bununla birlikte, mevcut iOS uygulamaları zaten oluşturulmuş Objective-C kodunun yararlanmak isteyebilirsiniz. Bu makalede, Xamarin ve C# dili taşımak isteyen Objective-C geliştiricileri için kısa bir öncü görev yapar._
 
-iOS ve OS X uygulamaları Objective-C geliştirilen avantajını Xamarin C# burada platforma özgü kodu gerekli değildir, yerlerde yararlanarak Apple olmayan aygıtlarda kullanılacak kodun izin verme. Web Hizmetleri gibi şeyler, JSON ve XML Ayrıştırma ve özel algoritmaları daha sonra bir platformlar arası şekilde kullanılabilir.
+iOS ve OS X uygulamaları Objective-C içinde geliştirilen avantajını Xamarin C# platforma özgü kod olduğu gerekli yerlerde yararlanarak Apple olmayan cihazlarda kullanılmak üzere bu tür kod izin verme. Web Hizmetleri gibi şeyler, JSON ve XML Ayrıştırma ve özel algoritmalarını sonra bir platformlar arası şekilde kullanılabilir.
 
-Varolan Objective-C varlıklarını korurken Xamarin yararlanmak için önceki C# bir teknoloji olarak yönetilen, C# dünyasına Objective-C kodunu yüzey bağlamaları bilinen Xamarin gelen gösterilebilir. Ayrıca, isterseniz, kod taşınmasını--satır için C# de olabilir. Bağımsız olarak bir yaklaşım ancak bağlama veya bağlantı noktası oluşturma, bazı bilgisine Objective-C hem C# Xamarin.iOS varolan Objective-C kodla etkili bir şekilde yararlanmak gereklidir.
+Objective-C mevcut varlıklarınızı korurken Xamarin avantajlarından yararlanmak için eski C# için bir teknoloji olarak yönetilen, C# dünyasına Objective-C kodunun yüzey bağlamaları, bilinen Xamarin gelen sunulabilir. Ayrıca isterseniz, kod taşınmasını-satır satır için C# de olabilir. Bağımsız olarak bir yaklaşım ancak bağlama veya bağlantı noktası oluşturma, hem Objective-C ve C# biraz bilgi Xamarin.iOS ile mevcut Objective-C kodunu etkili bir şekilde yararlanmak gereklidir.
 
 ## <a name="objective-c-interop"></a>Objective-C birlikte çalışma
 
-Şu anda C# hedefi C'den çağrılabilir Xamarin.iOS kullanarak bir kitaplığı oluşturmak için desteklenen bir mekanizma yoktur Bu ana nedeni, Mono çalışma zamanı de yanı sıra bağlama gereklidir olmasıdır. Ancak, hedefi-kullanıcı arabirimleri de dahil olmak üzere C, mantığınızı çoğunluğu hala oluşturabilirsiniz. Bunu yapmak için kitaplığa Objective-C kodunu kaydırma ve ona bir bağlama oluşturun. Xamarin.iOS uygulaması bootstrap için gereklidir (oluşturmanız gerekir anlamına `Main` giriş noktası). Bundan sonra Objective-C C# bağlama (veya P/Invoke aracılığıyla) gösterilen, herhangi bir mantık olabilir. Bu şekilde, Objective-C platform belirli mantığı tutmak ve C# platform belirsiz bölümleri geliştirin.
+Şu anda C# kullanarak Objective-c çağrılabilir Xamarin.iOS kitaplık oluşturmak için desteklenen bir mekanizma yoktur Bu temel nedeni Mono çalışma zamanı ayrıca yanı sıra bağlama gereklidir. Ancak, Objective-kullanıcı arabirimleri de dahil olmak üzere C dilinde mantığınızı çoğunu yine de oluşturabilirsiniz. Bunu yapmak için bir kitaplıkta Objective-C kodu kaydırmak ve ona bir bağlama oluşturun. Xamarin.iOS uygulama bootstrap için gereklidir (oluşturmanız gerekir yani `Main` giriş noktası). Bundan sonra başka bir mantık Objective-C, C# için sunulan bağlama (veya P/Invoke aracılığıyla) olabilir. Bu şekilde, platforma özgü mantık Objective-C içinde tutmak ve C# platformu belirsiz parçaları geliştirin.
 
-Bu makalede bazı anahtar benzerlikler vurgular, aynı zamanda öncü C# ile Xamarin.iOS, taşırken Objective-C kodunu var veya bu C# taşıma bağlama olup olmadığını sunmak için her iki dilde birkaç farkları karşılaştırır.
+Bu makalede bazı önemli benzerlikler vurgular, aynı zamanda bazı farklılıklar öncü C# ile Xamarin.iOS, taşırken Objective-C kodunun mevcut ya da bunu C# için taşıma bağlama olup olmadığını sunmak için her iki dilde karşılaştırır.
 
-Diğer belgelerde bağlamaları oluşturma hakkında bilgi için bkz [Objective-C bağlama](~/ios/platform/binding-objective-c/index.md).
+Diğer belgelerin içinde bağlamalar oluşturma hakkında bilgi edinmek için bkz [Objective-C bağlama](~/ios/platform/binding-objective-c/index.md).
 
-## <a name="language-comparison"></a>Dil karşılaştırma
+## <a name="language-comparison"></a>Dil karşılaştırması
 
-Objective-C ve C# çok farklı diller sözdizimsel olarak hem çalışma zamanı açısından ' dir. Objective-C dinamik bir dildir ve C# statik olarak yazılan bir ileti geçirme düzenini kullanır. Syntax-wise, içerdiği için Java dışındaki birçok yetenek Son yıllarda olgunlaştığından olsa da C#, Java'dan temel sözdizimini çoğunu türetilen ancak Objective-C Smalltalk gibi ' dir.
+Objective-C ve C# çok farklı dillerde sözdizimsel olarak hem de çalışma zamanı açısından ' dir. Objective-C, dinamik bir dildir ve C# statik olarak yazılmış bir ileti geçirme düzeni kullanır. Syntax-wise, dahil edilmesi için Java ötesinde birçok özellikleri Son yıllarda olgunlaştığından olsa da C# temel sözdizimi, Java'dan çoğunu türetilen Objective-C Smalltalk gibi takvimidir.
 
-Bununla hem Objective-C ve C# işlevinde benzer birkaç dil özellikleri vardır. Objective-C C bu benzerlikler anlama #, Objective-C koddan C# bağlamaya oluştururken veya bağlantı noktası oluşturma zaman yararlıdır.
+Objective-C ve C# işlevinde benzer birçok dil özellikleri vardır. Bununla birlikte. Objective-C ile C bu benzerlikler anlama # Objective-C kodunu C# bağlama oluştururken veya taşırken kullanışlıdır.
 
 ### <a name="protocols-vs-interfaces"></a>Protokolleri vs. Arabirimler
 
-Objective-C hem C# tek devralma dili gösterilebilir. Bununla birlikte, her iki dilde belirli bir sınıf içinde birden çok arabirim uygulamak için destek vardır. Bu mantıksal birimleri Objective-C olarak adlandırılan *protokolleri* C# ' ta bunlar adlandırılır ancak *arabirimleri*. İmplementation-Wise, bir C# arabirimi ve bir Objective-C Protokolü arasındaki temel fark isteğe bağlı yöntemler ikinci olabilir değil. Daha fazla bilgi için bkz: [olayları, temsilciler ve protokolleri](~/ios/app-fundamentals/delegates-protocols-and-events.md) makalesi.
+Objective-C hem C# tek devralma dilleri edilir. Ancak, her iki dil belirli bir sınıfta birden çok arabirim uygulamak için desteği vardır. Objective-C içinde bu mantıksal arabirimleri olarak adlandırılan *protokolleri* C# dilinde çağrılır ancak *arabirimleri*. İsteğe bağlı yöntemler ikinci olabilir implementation-Wise, Objective-C protokolü ile bir C# arabirimi arasındaki ana fark olduğu. Daha fazla bilgi için [olaylar, temsilciler ve protokolleri](~/ios/app-fundamentals/delegates-protocols-and-events.md) makalesi.
 
-### <a name="categories-vs-extension-methods"></a>Kategoriler vs. Genişletme yöntemleri
+### <a name="categories-vs-extension-methods"></a>Kategorileri vs. Genişletme yöntemleri
 
-Objective-C uygulama kodu kullanarak değil sahip olduğunuz bir sınıfa eklenecek yöntemleri sağlayan *kategorileri*. C# ' ta benzer bir kavram olarak Bilineni aracılığıyla kullanılabilir *genişletme yöntemleri*.
+Objective-C, uygulama kodu kullanarak değil olan bir sınıfa eklenecek yöntemleri sağlayan *kategorileri*. C# benzer bir kavram olarak Bilineni aracılığıyla kullanılabilir *genişletme yöntemleri*.
 
-Genişletme yöntemleri statik yöntemler C# Objective-c sınıfı yöntemlere benzer olduğu bir sınıf için statik yöntemler eklemenize olanak sağlar Örneğin, aşağıdaki kodu adlı bir yöntem ekler `ScrollToBottom` için `UITextView` sırayla Objective-C bağlı bir yönetilen sınıf olan sınıf `UITextView` Uıkit sınıfından:
+Genişletme yöntemleri statik yöntemler C# sınıfı yöntemleri Objective-c benzer olduğu bir sınıf için statik yöntemler eklemenize olanak sağlar Örneğin, adında bir yöntem aşağıdaki kodu ekler `ScrollToBottom` için `UITextView` sırayla Objective-C bağlı yönetilen bir sınıf olan sınıf `UITextView` Uıkit sınıfı:
 
 ```csharp
 public static class UITextViewExtensions
@@ -55,33 +56,33 @@ public static class UITextViewExtensions
 }
 ```
 
-Ardından, bir örneği olduğunda bir `UITextView` oluşturulan kodda yöntemi aşağıda gösterildiği gibi otomatik tamamlama listesinde kullanılabilir olur:
+Ardından, örneği bir `UITextView` oluşturulan kodda yöntemi aşağıda gösterildiği gibi otomatik tamamlama listesinde kullanılabilir olur:
 
- ![](primer-images/01-extensionmethodintellisense.png "AutoComplete seçeneğini kullanılabilir yöntemi")
+ ![](primer-images/01-extensionmethodintellisense.png "Otomatik Tamamlama'yı kullanılabilir yöntemi")
 
-Genişletme yöntemi çağrıldığında örneği bağımsız değişkeni gibi geçirilen `textView` Bu örnekte.
+Genişletme yöntemi çağrıldığında örneği bağımsız değişken gibi geçirilen `textView` Bu örnekte.
 
-### <a name="frameworks-vs-assemblies"></a>Çerçeveler vs. Derlemeler
+### <a name="frameworks-vs-assemblies"></a>Çerçeveleri vs. Derlemeleri
 
-Objective-C paketleri çerçeveler bilinen özel dizinlerde ilgili sınıflar. Ancak, C# ve .NET derlemelerini önceden derlenmiş kod yeniden kullanılabilir BITS sağlamak için kullanılır. İOS dışında ortamlarda, çalışma zamanında derlenen tam zamanında (JIT) bulunduğu Ara dil kodu (IL) derlemeleri içerir. Ancak, Apple JIT iOS uygulamalarında izin vermiyor. Bu nedenle Xamarin iOS hedefleme C# kod derlenmiş öncesinde (Uygulama Nesne AĞACI) zamandır uygulama paketine eklenen meta veri dosyalarının yanı sıra tek bir UNIX yürütülebilir üretir.
+Objective-C paketleri çerçeveler bilinen özel dizinlerde ilgili sınıflar. Ancak, C# ve .NET derlemeleri önceden derlenmiş kod yeniden kullanılabilir BITS sağlamak için kullanılır. İOS dışında ortamlarda, çalışma zamanında derlenmiş tam zamanında (JIT) olan ara dil kodu (IL) derlemeleri içerir. Ancak, Apple JIT iOS uygulamalarında izin vermez. Xamarin ile İos'u hedefleyen C# kodu derlenmiş zaman önce (AOT), bu nedenle tek bir UNIX yürütülebilir dosya uygulama paketine dahil edilen meta verileri dosyaların yanı sıra üretir.
 
-### <a name="selectors-vs-named-parameters"></a>Seçici vs. Adlandırılmış parametreler
+### <a name="selectors-vs-named-parameters"></a>Seçiciler vs. Adlandırılmış parametreler
 
-Objective-C yöntemleri, kendi yapısı gereği seçiciler parametre adları kendiliğinden içerir. Örneğin bir seçici gibi `AddCrayon:WithColor:` her bir parametreyi kodda kullanıldığında anlamı temizleyin kolaylaştırır. C# isteğe bağlı olarak adlandırılmış bağımsız değişkenler de destekler.
+Objective-C yöntemleri, doğaları gereği Seçici parametre adları kendiliğinden içerir. Örneğin bir seçici gibi `AddCrayon:WithColor:` her bir parametre kod içinde kullanıldığında anlamı Temizle kolaylaştırır. C# isteğe bağlı olarak adlandırılmış bağımsız değişkenler de destekler.
 
-Örneğin, kullanarak C# bağımsız değişkenleri adlı benzer bir kod olacaktır:
+Örneğin, benzer kodu kullanarak C# adlandırılmış bağımsız değişkenler şu şekilde olur:
 
 ```csharp
 AddCrayon (crayon: myCrayon, color: UIColor.Blue);
 ```
 
-C# sürüm dil 4.0 bu desteği eklendi ancak pratikte, çok sık kullanılmaz. Kodunuzda açık olmasını istiyorsanız, ancak desteği yoktur.
+C# dilinin 4.0 sürümünde eklenen bu destek olsa da, uygulamada, çok sık kullanılmaz. Kodunuzda açık olmasını istiyorsanız, ancak desteği yoktur.
 
-### <a name="headers-and-namespaces"></a>Üstbilgiler ve ad alanları
+### <a name="headers-and-namespaces"></a>Üst bilgiler ve ad alanları
 
-Objective-C C bir alt kümesi olan, uygulama dosyasından ayrı ortak bildirimleri üstbilgileri kullanır. C# üstbilgi dosyalarını kullanmaz. Objective-C C# kodu ad alanlarında yer alır. Kod bazı ad alanında kullanılabilir dahil etmek istiyorsanız, her iki kullanarak bir ekleme uygulama dosyasını veya üstüne yönergesi nitelemek tam ad alanını türüyle.
+Objective-C C bir alt kümesi olan, uygulama dosyasından ayrı genel bildirimleri üst bilgileri kullanır. C# üstbilgi dosyası kullanmaz. Objective-C, C# kodu alanlarında yer alır. Bazı ad alanında kullanılabilir bir kodu eklemek istiyorsanız, her iki kullanarak bir ekleme yönergesi uygulama dosyası veya üstüne uygun türü ile tam ad alanı.
 
-Örneğin, aşağıdaki kodu içeren `UIKit` ad alanı, her sınıf bu ad alanında uygulama kullanılabilir hale getirir:
+Örneğin, aşağıdaki kodu içeren `UIKit` ad alanı, o ad alanında her sınıfın uygulaması için kullanılabilir hale getirme:
 
 ```csharp
 using UIKit
@@ -91,11 +92,11 @@ namespace MyAppNamespace
 }
 ```
 
-Ayrıca, yukarıdaki kodu ad anahtar sözcüğü uygulama dosyasının kendisini için kullanılacak ad alanını ayarlar. Birden çok uygulama dosyaları aynı ad paylaşıyorsanız, kullanarak bir ad alanı içerecek şekilde gerek yoktur kapsanan olarak de yönergesi.
+Ayrıca, yukarıdaki kod ad alanı anahtar sözcüğü uygulama dosyası kendisi için kullanılan ad alanını ayarlar. Birden çok uygulama dosyaları aynı ad paylaşıyorsanız, using ad alanı içerecek şekilde gerek yoktur de yönergesi olarak belirtilir.
 
 ### <a name="properties"></a>Özellikler
 
-Objective-C hem C# erişimci yöntemleri geçici üst düzey bir soyutlama sağlamak için özellikler kavramı vardır. Objective C'de @property derleyici yönergesi erişimci yöntemleri etkili bir şekilde oluşturmak için kullanılır. Buna karşılık, C# dili içinde özellikleri için destek içerir. Bir C# özelliği, aşağıdaki örneklerde gösterildiği gibi bir yedekleme alanını veya daha kısa bir kullanarak erişen uzun stili, otomatik özellik sözdizimi kullanılarak uygulanabilir:
+Objective-C hem C# erişimci metotlarını etrafında üst düzey bir soyutlama sağlamak için özellikler kavramı vardır. Objective C'de @property derleyici yönergesi, erişimci metotlarını etkili bir şekilde oluşturmak için kullanılır. Buna karşılık, C# dili içinde özellikleri için destek içerir. Aşağıdaki örneklerde gösterildiği gibi bir destek alanı veya daha kısa bir kullanarak erişen uzun stili, otomatik özelliği söz dizimini kullanarak bir C# özelliği uygulanabilir:
 
 ```csharp
 // automatic property syntax
@@ -116,15 +117,15 @@ public string Address {
 
 ### <a name="static-keyword"></a>Static anahtar sözcüğü
 
-*Statik* anahtar sözcüğü Objective-C ve C# arasında çok farklı anlama sahiptir. Objective-C statik işlevleri, bir işlev geçerli dosyasının kapsamını sınırlamak için kullanılır. C# ' ta ancak, kapsam aracılığıyla korunur *ortak*, *özel* ve *iç* anahtar sözcükler.
+*Statik* anahtar sözcüğü Objective-C ve C# arasında çok farklı bir anlama sahiptir. Objective-C içinde statik İşlevler, geçerli dosya için bir işlev kapsamını sınırlamak için kullanılır. C# dilinde ancak kapsam aracılığıyla korunur *genel*, *özel* ve *iç* anahtar sözcükleri.
 
-Static anahtar sözcüğü bir değişkende Objective-C uygulandığında, değişkenin değerini işlev çağrıları arasında tutar.
+Static anahtar sözcüğü, Objective-C, bir değişkene uygulandığında değişken işlev çağrıları arasında değerini korur.
 
-C# static anahtar sözcüğü de vardır. Bir yönteme uygulandığında, etkili bir şekilde aynı şey yapan `+` değiştiricisi mu Objective-c Yani, bir sınıf yöntemi oluşturur. Benzer şekilde, alanları, özellikleri ve olayları gibi diğer yapıların uygulandığında, bu bölümü içinde yerine bu türdeki herhangi bir örneğine sahip olarak bildirilen türü kolaylaştırır. İçinde sınıf içinde tanımlanan tüm yöntemleri de statik olması gerekir, statik bir sınıf de yapabilirsiniz.
+C# statik bir anahtar sözcüğü de vardır. Bir yönteme uygulandığında, bu etkili bir şekilde aynı şeyi yapan `+` değiştiricisi mu Objective-c Yani, bir sınıf yöntemi oluşturur. Benzer şekilde, alanlar, özellikler ve olaylar gibi diğer yapıları uygulandığında, bu bölümü içinde yerine bu türün bir örneği ile bildirildikleri türü kolaylaştırır. Ayrıca, bir sınıf içinde tanımlanan tüm yöntemleri de statik olmalıdır, bir statik sınıf yapabilirsiniz.
 
 ### <a name="nsarray-vs-list-initialization"></a>NSArray vs. Liste Başlatma
 
-Objective-C değişmez değer sözdizimi ile kullanmak için artık içerir `NSArray`, başlatmak kolaylaştırır. C# ancak adlı bir daha zengin türüne sahip bir `List` olduğu *genel*, türü de denir listesini tutar sağlanabilir kodla (C++ şablonlarında gibi) bir liste oluşturur. Ayrıca, listeler, aşağıda gösterildiği gibi otomatik başlatma sözdizimini destekler:
+Objective-C değişmez değer söz dizimi ile kullanmak için artık içerir `NSArray`, başlatmak kolaylaştırır. C# değiştirilirse adlı daha zengin bir türü bir `List` olduğu *genel*, türü de denir listesini tutar sağlanabilir kodla (c++ şablonları gibi) bir liste oluşturur. Ayrıca, listeler, aşağıda gösterildiği gibi otomatik başlatma söz dizimi destekler:
 
 ```csharp
 MyClass object1 = new MyClass ();
@@ -134,7 +135,7 @@ List<MyClass> myList = new List<MyClass>{ object1, object2 };
 
 ### <a name="blocks-vs-lambda-expressions"></a>Blokları vs. Lambda İfadeleri
 
-Objective-C kullanan *blokları* kapanışlar oluşturmak için oluşturabileceğiniz yapabilen bir işlev satır içi kullanın nerede içine durumu. C# lambda ifadeleri kullanımı ile benzer bir kavramı vardır. C# lambda ifadeleri ile oluşturulan `=>` aşağıda gösterildiği gibi işleci:
+Objective-C kullanan *blokları* kapanışlar oluşturmak için oluşturabileceğiniz yapabilen bir işlevi satır içi kullanın nerede içine durumu. C# lambda ifadeleri kullanarak benzer bir kavram vardır. C# lambda ifadeleri ile oluşturulan `=>` aşağıda gösterildiği gibi işleç:
 
 ```csharp
 (args) => {
@@ -146,4 +147,4 @@ Lambda ifadeleri hakkında daha fazla bilgi için bkz: Microsoft'un [C# programl
 
 ## <a name="summary"></a>Özet
 
-Bu makalede dil özellikleri çeşitli contrasted Objective-C ve C#. Bazı durumlarda, lambda ifadeleri bloklarına gibi her iki dilde ve genişletme yöntemleri kategorileri arasında mevcut benzer özellikleri çağrılır. Ayrıca, burada dilleri ayırmak, gibi ad alanları gibi C# ve static anahtar sözcüğü anlamını ile yerler contrasted.
+Bu makalede çeşitli dil özellikleri karşıtlıklar Objective-C ve C#. Bazı durumlarda, lambda ifadeleri için blokları gibi her iki dil ve genişletme yöntemleri için kategoriler arasındaki farklara benzer özellikleri çağrılır. Ayrıca, burada dilleri birleştirmek, gibi ad olarak C# ve anlamı static anahtar sözcüğü ile yerler karşıtlıklar.

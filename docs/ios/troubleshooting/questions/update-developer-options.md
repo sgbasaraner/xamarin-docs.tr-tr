@@ -1,24 +1,25 @@
 ---
-title: Nasıl iOS güncelleştirdikten sonra ı Geliştirici seçenekleri etkinleştirebileceğiniz?
+title: Nasıl ı güncelleştirdikten sonra Geliştirici seçeneklerini etkinleştirebileceğiniz?
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: F38BD21E-0C21-43FF-80A6-BB4A88DB88A5
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 9eb25676cc4a3a0679d6a02fc64fef5632f76e33
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/03/2018
+ms.openlocfilehash: 80a705f64a1079ced204b677715f5566c410fd36
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30775490"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350881"
 ---
-# <a name="how-can-i-reenable-developer-options-after-updating-ios"></a>Nasıl iOS güncelleştirdikten sonra ı Geliştirici seçenekleri etkinleştirebileceğiniz?
+# <a name="how-can-i-reenable-developer-options-after-updating-ios"></a>Nasıl ı güncelleştirdikten sonra Geliştirici seçeneklerini etkinleştirebileceğiniz?
 
-Bir iOS hata Geliştirici seçenekleri iOS sürümlerini güncelleştirdikten sonra kaybolmasına neden olabilir, bu iOS geçerken gözlenmiştir 8.x. Bu seçenekler aşağıdaki adımlarla yeniden iler hale:
+İOS hata kaybolmasını iOS sürümleri güncelleştirdikten sonra Geliştirici seçeneklerini neden olabilir, bu iOS geçiş yaparken gözlemlenir 8.x. Bu seçenekler aşağıdaki adımlarla yeniden iler hale:
 
 1. İOS cihazı Mac geliştirme makinenize bağlayın.
 2. Xcode başlatın.
-3. Açık **penceresi > aygıtları** & Cihazınızı seçin.
-4. Xcode simgeleri kopyalama tamamlanması için bekleyin ve cihazın Settings.app Geliştirici ayarları için kontrol edin.
-5. Cihaz yeniden başlatın.
+3. Açık **penceresi > cihazlar** & Cihazınızı seçin.
+4. Simgeleri kopyalanıyor tamamlanması için Xcode bekleyin ve sonra Geliştirici ayarları için cihazın Settings.app olup olmadığını denetleyin.
+5. Cihazı yeniden başlatın.

@@ -5,12 +5,12 @@ ms.assetid: 78856C0D-76BB-406E-A880-D5A3987B7D64
 author: redth
 ms.author: jodick
 ms.date: 05/04/2018
-ms.openlocfilehash: fae5f5f0f15d80e2f3bdce26b8beb5f6fae2f81f
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 2dfdb7051b269e73c68290a557849b9ae606c165
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38830459"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353301"
 ---
 # <a name="xamarinessentials-secure-storage"></a>Xamarin.Essentials: Güvenli Depolama
 
@@ -51,13 +51,27 @@ using Xamarin.Essentials;
 Kaydetmek için bir değer için bir verilen _anahtar_ Güvenli Depolama:
 
 ```csharp
-await SecureStorage.SetAsync("oauth_token", "secret-oauth-token-value");
+try
+{
+  await SecureStorage.SetAsync("oauth_token", "secret-oauth-token-value");
+}
+catch (Exception ex)
+{
+  // Possible that device doesn't support secure storage on device.
+}
 ```
 
 Güvenli depolamadan bir değer almak için:
 
 ```csharp
-var oauthToken = await SecureStorage.GetAsync("oauth_token");
+try
+{
+  var oauthToken = await SecureStorage.GetAsync("oauth_token");
+}
+catch (Exception ex)
+{
+  // Possible that device doesn't support secure storage on device.
+}
 ```
 
 > [!NOTE]
@@ -80,7 +94,7 @@ SecureStorage.RemoveAll();
 
 # <a name="androidtabandroid"></a>[Android](#tab/android)
 
-[Android KeyStore](https://developer.android.com/training/articles/keystore.html) değeri içine kaydedilmeden önce şifrelemek için kullanılan şifreleme anahtarı depolamak için kullanılan bir [paylaşılan tercihleri](https://developer.android.com/training/data-storage/shared-preferences.html) bir dosya adı ile **[YOUR-APP-PAKETİNİ-ID] .xamarinessentials** .  Paylaşılan tercihleri dosyasında kullanılan anahtarı bir _MD5 karma değeri_ yöntemlere geçirilen anahtarın `SecureStorage` API'nin.
+[Android KeyStore](https://developer.android.com/training/articles/keystore.html) değeri içine kaydedilmeden önce şifrelemek için kullanılan şifreleme anahtarı depolamak için kullanılan bir [paylaşılan tercihleri](https://developer.android.com/training/data-storage/shared-preferences.html) bir dosya adı ile **[YOUR-APP-PAKETİNİ-ID] .xamarinessentials** .  Paylaşılan tercihleri dosyasında kullanılan anahtarı bir _MD5 karma değeri_ yöntemlere geçirilen anahtarın `SecureStorage` API'leri.
 
 ## <a name="api-level-23-and-higher"></a>API düzeyi 23 ve üzeri
 
@@ -90,7 +104,7 @@ Yeni API düzeyleri hakkında bir **AES** anahtar Android KeyStore alınan ve ku
 
 Eski API düzeylerini üzerinde depolama Android KeyStore yalnızca destekler. **RSA** ile kullanılan anahtarlar, bir **ECB/RSA/PKCS1Padding** şifrelemek için şifreleme bir **AES** (rastgele anahtar Çalışma zamanında oluşturulan) ve paylaşılan tercihleri dosyası anahtarı altında depolanan _SecureStorageKey_, biri değil zaten oluşturuldu.
 
-Tüm şifrelenmiş değerler uygulama CİHAZDAN kaldırıldığında kaldırılır.
+**SecureStorage** kullanan [tercihleri](preferences.md) API ve aynı veri kalıcılığı ana hatlarıyla belirtilen aşağıdaki [tercihleri](preferences.md#persistence) belgeleri. Bir cihaz API düzeyi 22 veya daha düşük API düzeyi 23 ve daha yüksek yükseltir, bu tür bir şifreleme uygulama yüklenmediği sürece kullanılacak devam eder veya **RemoveAll** çağrılır.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 
@@ -100,11 +114,11 @@ Bazı durumlarda Anahtarlık verileri iCloud ile eşitlenir ve uygulama kaldırm
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-[DataProtectionProvider](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) UWP cihazlarda güvenli bir şekilde şifrelenen değerleri için kullanılır.
+[DataProtectionProvider](https://docs.microsoft.com/uwp/api/windows.security.cryptography.dataprotection.dataprotectionprovider) UWP cihazlarda güvenli bir şekilde şifrelenmiş değerler için kullanılır.
 
-Şifrelenen değerleri depolanır `ApplicationData.Current.LocalSettings`, adıyla bir kapsayıcı içinde **[YOUR-uygulama-kimliği] .xamarinessentials**.
+Şifrelenmiş değerler depolanır `ApplicationData.Current.LocalSettings`, adıyla bir kapsayıcı içinde **[YOUR-uygulama-kimliği] .xamarinessentials**.
 
-Uygulama kaldırma neden _LocalSettings_ve tüm şifrelenmiş değerler de kaldırılacak.
+**SecureStorage** kullanan [tercihleri](preferences.md) API ve aynı veri kalıcılığı ana hatlarıyla belirtilen aşağıdaki [tercihleri](preferences.md#persistence) belgeleri.
 
 -----
 

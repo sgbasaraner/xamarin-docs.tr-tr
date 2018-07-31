@@ -5,12 +5,12 @@ ms.assetid: E1B1F152-B1D5-4227-965E-C0AEBF528F49
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 54c165e15e725caaecb1573b74cfe295170db141
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 96b4ee0487034c651bec1dfb168fed7567b63c96
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38848615"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353704"
 ---
 # <a name="xamarinessentials-connectivity"></a>Xamarin.Essentials: bağlantı
 
@@ -40,7 +40,7 @@ Açık **AndroidManifest.xml** altında dosya **özellikleri** klasörü ve içi
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 ```
 
-Anroid projeye sağ tıklayın ve proje özelliklerini açın. Altında **Android bildirim** Bul **gerekli izinler:** alan ve onay **erişim ağ durumu** izni. Bu otomatik olarak güncelleştirecektir **AndroidManifest.xml** dosya.
+Android projeye sağ tıklayın ve proje özelliklerini açın. Altında **Android bildirim** Bul **gerekli izinler:** alan ve onay **erişim ağ durumu** izni. Bu otomatik olarak güncelleştirecektir **AndroidManifest.xml** dosya.
 
 # <a name="iostabios"></a>[iOS](#tab/ios)
 

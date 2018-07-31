@@ -1,44 +1,45 @@
 ---
-title: iOS Gelişmiş kavramları ve dahili bileşenleri
-description: Bu konuda MonoTouch API tasarım, derlemeler ve sınıflar gelen .NET temel sınıf kitaplığı'nı (BCL) ve Visual Studio Mac için Xcode'nın arabirimi oluşturucusu ve Apple'nın araç zinciri ile nasıl tümleşik çalıştığını içine arar.
+title: iOS Gelişmiş kavramlar ve iç işlevler
+description: Bu konuda MonoTouch API tasarımı, derlemeleri ve sınıfları .NET temel sınıf kitaplığı (BCL) gelen ve Mac için Visual Studio, Xcode'nın arabirim oluşturucu ve Apple'nın araç zinciri ile nasıl tümleştirildiğini arar.
 ms.prod: xamarin
 ms.assetid: 951713CD-D6AD-981C-A09E-4F2C98588D8B
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 2ed2d48a54e4170ae640766cf5fbf7d3744cd165
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/05/2017
+ms.openlocfilehash: aca113448038df8b22eeb858acb48ee17a7809e2
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786905"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350868"
 ---
-# <a name="ios-advanced-concepts-and-internals"></a>iOS Gelişmiş kavramları ve dahili bileşenleri
+# <a name="ios-advanced-concepts-and-internals"></a>iOS Gelişmiş kavramlar ve iç işlevler
 
-_Bu konuda MonoTouch API tasarım, derlemeler ve sınıflar gelen .NET temel sınıf kitaplığı'nı (BCL) ve Visual Studio Mac için Xcode'nın arabirimi oluşturucusu ve Apple'nın araç zinciri ile nasıl tümleşik çalıştığını içine arar._
+_Bu konuda MonoTouch API tasarımı, derlemeleri ve sınıfları .NET temel sınıf kitaplığı (BCL) gelen ve Mac için Visual Studio, Xcode'nın arabirim oluşturucu ve Apple'nın araç zinciri ile nasıl tümleştirildiğini arar._
 
 ##  <a name="api-designiosinternalsapi-designindexmd"></a>[API Tasarımı](~/ios/internals/api-design/index.md)
 
-Tasarım ilkeleri API bağlama arkasında açıklanmaktadır.
+API bağlama arkasında tasarım ilkeleri açıklanır.
 
 ##  <a name="available-assembliescross-platforminternalsavailable-assembliesmd"></a>[Kullanılabilir Bütünleştirilmiş Kodlar](~/cross-platform/internals/available-assemblies.md)
 
-Kullanılabilir derleme ve sınıf gelen .NET temel sınıf kitaplığı'nı (BCL) listeler.
+Kullanılabilir derlemeler ve sınıfları .NET temel sınıf kitaplığı (BCL) öğesinden listeler.
 
 ##  <a name="xib-code-generationiosinternalsxib-code-generationmd"></a>[XIB Kodu Oluşturma](~/ios/internals/xib-code-generation.md)
 
-Ayrıca, Mac ve Xcode'nın arabirimi Oluşturucu için Visual Studio nasıl arabirimi Oluşturucu tasarım UI kullanmanıza olanak sağlayan kapsar.
+Ayrıca, Mac ve arabirim Oluşturucu Xcode'un Visual Studio nasıl UI tasarım için arabirim Oluşturucu kullanmanıza olanak tanır kapsar.
 
 > [!IMPORTANT]
-> Bu belge, yalnızca Xcode'nın arabirimi Oluşturucu ile Mac'ın tümleştirme için Visual Studio açıklar. İOS Tasarımcısı hakkında daha fazla bilgi için lütfen gözden [iOS Tasarımcısı](~/ios/user-interface/designer/index.md) belge.
+> Bu belge, Visual Studio için arabirim Oluşturucu yalnızca Xcode'un Mac tümleştirmesiyle açıklar. İOS Designer hakkında daha fazla bilgi için lütfen inceleyin [iOS Tasarımcısı](~/ios/user-interface/designer/index.md) belge.
 
 ##  <a name="ios-architectureiosinternalsarchitecturemd"></a>[iOS Mimarisi](~/ios/internals/architecture.md)
 
-Xamarin.iOS uygulamaları Mono yürütme ortamında çalıştırın ve ARM assembler dili için C# kodu derlemek için tam şimdi, zaman Tıkların derleme kullanın. En düşük düzeyde Xamarin.iOS bu kılavuzda araştırır
+Xamarin.iOS uygulamaları Mono yürütme ortamında çalıştırın ve tam isterseniz, zaman (AOT) derleme ARM bütünleştirilmiş kod dili için C# kodu derlemek için kullanın. Bu kılavuzda Xamarin.iOS düşük bir düzeyde keşfediyor
 
-##  <a name="objective-c-selectorsiosinternalsobjective-c-selectorsmd"></a>[Objective-C seçiciler](~/ios/internals/objective-c-selectors.md)
+##  <a name="objective-c-selectorsiosinternalsobjective-c-selectorsmd"></a>[Objective-C seçicileri](~/ios/internals/objective-c-selectors.md)
 
-Notlar ve Objective-C seçiciler (yöntemleri) doğrudan çağırmak için kullanım.
+Notlar ve kullanım Objective-C seçicileri (yöntem) doğrudan çağırmak için.
 
 ##  <a name="limitationslimitationsmd"></a>[Sınırlamalar](limitations.md)
 

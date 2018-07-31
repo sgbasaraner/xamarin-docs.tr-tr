@@ -1,40 +1,41 @@
 ---
-title: Objective-C geliştiriciler için Xamarin
-description: Bu belge, Objective-C geliştiriciler için Xamarin.iOS açıklamasını sağlar. C# Objective-C geçiş yapma, C# kullanmak için bir Objective-C Kitaplığı bağlamak nasıl ve platformlar arası mobil uygulamasının nasıl oluşturulacağını açıklayan kılavuzlara bağlar.
+title: Objective-C geliştiricileri için Xamarin
+description: Bu belge, Objective-C geliştiricileri için bir Xamarin.iOS açıklamasını sağlar. Bu, C# için Objective-C geçiş yapma, nasıl kullanılmak üzere C# bir Objective-C kitaplığını bağlama ve platformlar arası mobil uygulamanın nasıl oluşturulacağını açıklayan kılavuzları bağlar.
 ms.prod: xamarin
 ms.assetid: 9F3C86A3-403E-4025-99CA-99FCA86DC828
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 027ef8cabc55ace41bcf201b8355aab8ca6ec625
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/05/2017
+ms.openlocfilehash: 574bd4c0b6bed639230dbfb6209eb78216e8e47b
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786057"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351014"
 ---
-# <a name="xamarin-for-objective-c-developers"></a>Objective-C geliştiriciler için Xamarin
+# <a name="xamarin-for-objective-c-developers"></a>Objective-C geliştiricileri için Xamarin
 
-Kendi kullanıcı olmayan arabirimi taşımak için iOS hedefleyen geliştiriciler için bir yol, böylece kullanılabilmesi için platform belirsiz için C# kod Xamarin teklifler herhangi bir yere C# Xamarin.Android aracılığıyla Android ve Windows çeşitli özellikleri dahil olmak üzere kullanılabilir. Ancak, yalnızca, C# Xamarin ile kullanmak için var olan becerileri ve Objective-C kodunu yararlanamaz anlamına gelmez. Xamarin tüm yerel iOS ve OS X platformunu tanıyor ve ona Uıkit, çekirdek animasyon, çekirdek Foundation ve çekirdek grafikleri gibi birkaçıdır memnuniyet API'leri gösterir çünkü aslında, Objective-C bilerek, daha iyi bir Xamarin.iOS Geliştirici hale getirir. Aynı anda LINQ ve genel türler yanı sıra, zengin .NET sınıf kitaplıkları yerel uygulamalarınızda kullanmak için temel gibi özellikler içeren C# dili gücünü alın.
+İOS olmayan kullanıcı arabirimini taşımak hedefleyen geliştiriciler için bir yol, böylece kullanılabilir platform bağımsızlığı için C# kod Xamarin teklifler herhangi bir C# Xamarin.Android aracılığıyla Android ve Windows çeşitli türdeki dahil olmak üzere kullanılabilir. Yalnızca C# ile Xamarin kullanıyor ancak, mevcut becerilerini ve Objective-C kodunun yararlanamaz anlamına gelmez. Xamarin yerel iOS ve OS X platformunu bildiğiniz ve sevdiğiniz Uıkit, çekirdek animasyon, çekirdek Foundation ve temel grafikler gibi birkaç API'leri kullanıma sunduğundan, Objective-C bilerek, daha iyi bir Xamarin.iOS Geliştirici yapar. Aynı anda LINQ ve genel türler yanı sıra, zengin .NET native uygulamalarınızda kullanılmak üzere sınıf kütüphaneleri temel gibi özellikler dahil olmak üzere C# dili'nın gücünü edinin.
 
-Ayrıca, Xamarin, varolan Objective-C yararlanmanızı sağlar varlıklar bir teknoloji aracılığıyla bilmeniz bağlar. Sadece Objective-C statik kitaplık oluşturma ve onu C# için bir bağlama aracılığıyla aşağıdaki çizimde gösterildiği gibi kullanıma:
+Ayrıca, Xamarin, varolan bir Objective-C yararlanmanıza olanak tanır varlıklar bir teknoloji aracılığıyla bağlamaları bildirin. Yalnızca Objective-C içinde statik kitaplık oluşturma ve bunu C# ' tan bir bağlama aracılığıyla Aşağıdaki diyagramda gösterildiği gibi kullanıma:
 
- [![](images/01-bindings.png "Objective-C C# için bir bağlama aracılığıyla kullanıma sunulan statik kitaplığa")](images/01-bindings.png#lightbox)
+ [![](images/01-bindings.png "Objective-c C# ' tan bir bağlama aracılığıyla kullanıma sunulan bir statik kitaplık")](images/01-bindings.png#lightbox)
 
-Bu kullanıcı Arabirimi olmayan koda sınırlı olması gerekmez. Bağlamaları Objective-C da geliştirilmiş kullanıcı arabirimi kodu getirebilir.
+Bu kullanıcı Arabirimi olmayan kodu sınırlı olması gerekmez. Bağlamaları de Objective-C içinde geliştirilen bir kullanıcı arabirimi kodu kullanıma sunabilirsiniz.
 
-## <a name="transitioning-from-objective-c"></a>Objective-C ' geçiş
+## <a name="transitioning-from-objective-c"></a>Objective-C geçiş
 
-C# kodu zaten bilmeniz ile tümleştirmek nasıl gösteren tranistion Xamarin için kullanılan çok sayıda kolaylığı yardımcı olmak için belgeleri sitemizi hakkında bilgi bulabilirsiniz. Başlamanıza yardımcı olmak için bazı önemli noktalar:
+Zaten bildiğiniz şeyleri ile C# kodu tümleştirmek nasıl gösteren xamarin, tranistion deseninizi oluşturmayı kolaylaştırmak amacıyla belgeleri sitemizi hakkında bilgi bulabilirsiniz. Başlamanıza yardımcı olmak için bazı önemli noktalar şunlardır:
 
--   [C# Primer Objective-C geliştiriciler için](primer.md) - bir Xamarin ve C# dili taşımak isteyen Objective-C geliştiriciler için primer kısa. 
--   [İzlenecek yol: bir Objective-C Kitaplığı bağlama](~/ios/platform/binding-objective-c/walkthrough.md) -Xamarin.iOS uygulamasının varolan Objective-C kodu yeniden kullanma için adım adım kılavuz. 
+-   [Objective-C geliştiricileri için temel C# bilgileri](primer.md) - bir Xamarin ve C# dili taşımak isteyen Objective-C geliştiricileri için temel bilgileri kısa. 
+-   [İzlenecek yol: bir Objective-C kitaplığını bağlama](~/ios/platform/binding-objective-c/walkthrough.md) -Xamarin.iOS uygulamasının mevcut Objective-C kodu yeniden kullanmak için adım adım kılavuz. 
 
 
-## <a name="binding-objective-c"></a>Objective-C bağlama
+## <a name="binding-objective-c"></a>Objective-C'yi bağlama
 
-Nasıl karşılaştırır C# Objective-C için bir kavrayın bağlama izlenecek yol yukarıdaki çalıştıktan sonra Xamarin platformuna geçiş için iyi şeklinde olacaktır. İzleme, Xamarin.iOS bağlama teknolojileri hakkında daha ayrıntılı bilgi, kapsamlı bağlama başvuru dahil olmak üzere kullanılabilir [bağlama Objective-C](~/ios/platform/binding-objective-c/index.md) bölümü.
+Nasıl karşılaştırır C# Objective-C, bir kavrayın sahip ve yukarıdaki bağlama Kılavuzu çalıştıktan sonra geçiş için Xamarin platformunu iyi şeklinde olacaktır. Kapsamlı bağlama başvurusunu dahil olmak üzere yukarı Xamarin.iOS bağlaması teknolojileri hakkında ayrıntılı bilgi için bir izleme kullanıma sunulmuştur [bağlama Objective-C](~/ios/platform/binding-objective-c/index.md) bölümü.
 
 ## <a name="cross-platform-development"></a>Platformlar Arası Geliştirme
 
-Son olarak, Xamarin.iOS için taşıdıktan sonra örnek olay incelemeleri bulunanyenidenkullanılabilir,platformlararasıkoduoluşturmakiçineniyiuygulamalarilebirliktedevleopedsahibizbaşvuruuygulamalardahilolmaküzeresahibizplatformlararasıkılavuzukullanımaistediğiniz[ Çapraz Platform uygulamaları oluşturma bölümüne](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md).
+Son olarak, Xamarin.iOS için taşıdıktan sonra örnek olay incelemeleri devleoped, birlikte içindebulunanyenidenkullanılabilir,platformlararasıkodoluşturmakiçineniyiuygulamalarsahibizbaşvuruuygulamalarıdahilolmaküzeresahibizplatformlararasırehberikullanımaisteyebilirsiniz[ Çapraz Platform uygulamaları oluşturma bölümünde](~/cross-platform/app-fundamentals/building-cross-platform-applications/index.md).

@@ -1,25 +1,26 @@
 ---
-title: Xamarin ile bir Mac VM kullanabilir miyim?
+title: Bir Mac sanal Makinesini Xamarin ile kullanabilir miyim?
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 386C9030-8865-48DE-8AF7-42909C7055E9
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: 30b47d3b7941807b49cc6df74568f605b1fe2b23
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/03/2018
+ms.openlocfilehash: 9d257d7662f359a7cbfb6fa740d22021ac89ef35
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30776647"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350943"
 ---
-# <a name="can-i-use-a-mac-vm-with-xamarin"></a>Xamarin ile bir Mac VM kullanabilir miyim? 
+# <a name="can-i-use-a-mac-vm-with-xamarin"></a>Bir Mac sanal Makinesini Xamarin ile kullanabilir miyim? 
 
-## <a name="mac-hardware"></a>Mac donanım
+## <a name="mac-hardware"></a>Mac donanımı
 Evet; Apple'nın kullanım koşullarını izlemek dikkatli olun.
 
 ## <a name="non-mac-hardware"></a>Mac donanım
-Yok; Apple'nın kullanım koşullarını bu kullanım izin vermez.
+Hayır; Apple'nın kullanım koşullarını, bu kullanım tanımaz.
 
 ### <a name="see-also"></a>Ayrıca Bkz.
 - [Apple yasal](https://www.apple.com/legal/)

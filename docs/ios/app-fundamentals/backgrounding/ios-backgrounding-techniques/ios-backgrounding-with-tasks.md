@@ -1,36 +1,37 @@
 ---
-title: iOS görevlerle Backgrounding
-description: Bu belge, bir uygulamanın arka planda yerleştirilir sonra uzun süre çalışan görevleri gerçekleştirmek için arka plan görevleri kullanmayı açıklar.
+title: iOS ile görevleri arka planda işleme
+description: Bu belgenin arka plan görevlerini uygulamanın arka planda yerleştirildikten sonra uzun süre çalışan görevleri gerçekleştirmek için nasıl kullanılacağını açıklar.
 ms.prod: xamarin
 ms.assetid: 205D230E-C618-4D69-96EE-4B91D7819121
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: a95ca128bc6de7b2adc75511a581f5d2779d9c06
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 03/18/2017
+ms.openlocfilehash: 9d304ee64e7716413febc475e721f5eb39043109
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784361"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351544"
 ---
-# <a name="ios-backgrounding-with-tasks"></a>iOS görevlerle Backgrounding
+# <a name="ios-backgrounding-with-tasks"></a>iOS ile görevleri arka planda işleme
 
-İos'ta backgrounding gerçekleştirmek için basit backgrounding gereksinimlerinizi görevlere bölme ve arka planda çalışan görevler için yoldur. Görevler altında katı bir zaman sınırı olan ve genellikle yaklaşık 600 saniye (10 dakika) bir uygulamanın iOS 6 arka plana taşındıktan sonra işleme süresini ve 10 dakikadan az iOS 7 + alabilirsiniz.
+İos'ta arka planda işleme gerçekleştirmek için en basit yolu, backgrounding gereksinimlerinizi görevlere ayırma ve görevleri arka planda çalışmaya sağlamaktır. Görevleri, katı bir zaman sınırı olan ve tipik olarak yaklaşık 600 saniye (10 dakika) bir uygulama, iOS 6 arka plana taşındıktan sonra işleme süresi ve 10 dakikadan az iOS 7 + alın.
 
-Arka plan görevleri üç kategoride ayrılabilir:
+Arka plan görevleri, üç kategoriye bölünmüştür:
 
-1.  **Arka plan güvenli görevleri** - herhangi bir yerinde çağrılan sahip olduğu bir görev uygulama uygulama girin arka kesintiye uğramış istemediğiniz.
-1.  **DidEnterBackground görevleri** - sırasında çağrılan `DidEnterBackground` temizleme ve durum kaydetme yardımcı olmak üzere uygulama yaşam döngüsü yöntemi.
-1.  **Arka plan aktarımları (iOS 7 +)** -özel türde bir arka plan görevi iOS 7 ağ aktarımı gerçekleştirmek için kullanılır. Normal görevleri, arka plan aktarımları önceden belirlenen bir süre sınırı yoktur.
+1.  **Güvenli arka plan görevleri** - dünyanın her yerinde çağrılan bir görev olduğu uygulama uygulama girmeniz gereken arka plan kesintiye istemediğiniz.
+1.  **DidEnterBackground görevleri** - sırasında çağrılan `DidEnterBackground` temizleme ve durum kaydetme yardımcı olmak için uygulama yaşam döngüsü yöntemi.
+1.  **Arka plan aktarımları (iOS 7 +)** -iOS 7 ağ aktarımı gerçekleştirmek için özel bir arka plan görev türü kullanılır. Normal görevlerden farklı olarak, arka plan aktarımları önceden belirlenen bir süre sınırı yoktur.
 
 
-Arka plan için güvenli ve `DidEnterBackground` görevlerdir iOS 6 ve iOS 7, bazı küçük farklar ile kullanmak güvenli. Şimdi bu iki tür görev daha ayrıntılı araştırın.
+Arka plan için güvenli ve `DidEnterBackground` görevleridir hem iOS 6 ve iOS 7, bazı küçük farklar ile kullanmak üzere güvenli. Şimdi bu iki tür görevleri daha ayrıntılı inceleyin.
 
-## <a name="creating-background-safe-tasks"></a>Arka plan güvenli görevler oluşturma
+## <a name="creating-background-safe-tasks"></a>Güvenli arka plan görevleri oluşturma
 
-Bazı uygulamalar, uygulamanın durumu değiştirmelisiniz iOS tarafından kesintiye döndürmemelidir görevleri içerir. Bu görevleri kesintiye gelen korumak için bir iOS uzun süre çalışan görevler olarak kaydolmak için yoludur. Bu desen uygulamanızda nerede kesintiye bir görev kullanıcı put uygulama arka plan içine gereken istemediğiniz her yerde kullanabilirsiniz. Bu model için harika bir aday sunucunuza yeni kullanıcının kayıt bilgileri gönderme veya oturum açma bilgilerini doğrulama gibi görevleri olacaktır.
+Bazı uygulamalar, uygulama durumu değiştiğinde iOS tarafından kesintiye olmamalıdır görevleri içerir. Bu görevler kesintiye gelen korumak için bir iOS uzun soluklu görevlerin olarak kaydetmek için yoludur. Bu düzen uygulamanızda nerede kesintiye bir görev kullanıcı put uygulamanın arka planda gereken istemediğiniz her yerde kullanabilirsiniz. Bu düzen için harika bir aday sunucunuza yeni bir kullanıcının kayıt bilgilerini göndermeye ve oturum açma bilgilerinin doğrulanması gibi görevleri olacaktır.
 
-Aşağıdaki kod parçacığını arka planda çalıştırmak için bir görev kaydetme gösterir:
+Aşağıdaki kod parçacığı, arka planda çalıştırılacak bir görev kaydetme gösterir:
 
 ```csharp
 nint taskID = UIApplication.SharedApplication.BeginBackgroundTask( () => {});
@@ -41,17 +42,17 @@ FinishLongRunningTask(taskID);
 UIApplication.SharedApplication.EndBackgroundTask(taskID);
 ```
 
-Bir görev benzersiz bir tanımlayıcı ile kayıt işlemini çiftleri `taskID`ve eşleştirmelerinde sarmalar `BeginBackgroundTask` ve `EndBackgroundTask` çağrıları. Çağrı vermiyoruz tanımlayıcısını oluşturmak için `BeginBackgroundTask` yöntemi `UIApplication` nesne ve uzun süre çalışan görev üzerinde yeni bir iş parçacığı genellikle başlatın. Görev tamamlandığında diyoruz `EndBackgroundTask` ve aynı tanımlayıcıda geçirin. İOS, uygulama sonlandıracak bu önemlidir, çünkü bir `BeginBackgroundTask` çağrısı eşleşen yok `EndBackgroundTask`.
+Kayıt işlemine benzersiz bir tanımlayıcıya sahip bir görevi çiftlerini `taskID`ve ardından eşleşen sarmalar `BeginBackgroundTask` ve `EndBackgroundTask` çağrıları. Tanımlayıcısını oluşturmak için size bir çağrı yapmak `BeginBackgroundTask` metodunda `UIApplication` nesne ve uzun süre çalışan görev genellikle yeni bir iş parçacığı başlatın. Görev tamamlandığında diyoruz `EndBackgroundTask` ve aynı tanımlayıcıda geçirin. Bu önemlidir, iOS, uygulama sonlandırılır çünkü bir `BeginBackgroundTask` çağrı eşleşen bir yok `EndBackgroundTask`.
 
 > [!IMPORTANT]
-> Ana iş parçacığı ya da uygulamanın gereksinimlerine bağlı olarak bir arka plan iş parçacığı güvenli arka plan görevleri çalıştırabilir.
+> Güvenli arka plan görevleri, ana iş parçacığı veya bir arka plan iş parçacığı, uygulama gereksinimlerine bağlı olarak çalıştırabilirsiniz.
 
 
-## <a name="performing-tasks-during-didenterbackground"></a>DidEnterBackground sırasında görevleri gerçekleştirme
+## <a name="performing-tasks-during-didenterbackground"></a>Sırasında DidEnterBackground görevlerini gerçekleştirme
 
-Uzun süre çalışan bir görev arka plan güvenli hale getirme yanı sıra kayıt uygulama arka planda put gibi görevleri kazandırın için kullanılabilir. iOS sağlayan bir olay yönteminde *AppDelegate* adlı bir sınıf `DidEnterBackground` uygulama durumunu Kaydet, kullanıcı verilerini kaydetme ve uygulama arka geçirilmeden önce duyarlı içeriği şifrelemek için kullanılabilir. Bu yöntemden almak için yaklaşık beş saniyede bir uygulama yok veya sonlandırıldı. Bu nedenle, tamamlamak için birden fazla beş saniye sürebilir temizleme görevleri gelen çağrılabilir içinde `DidEnterBackground` yöntemi. Bu görevleri ayrı bir iş parçacığı üzerinde çağrılması gerekir.
+Uzun süre çalışan görevleri arka plan güvenli hale getirmenin yanı sıra uygulamanın arka planda put gibi görevleri başlatmasını kaydı kullanılabilir. iOS sağlayan bir olay yönteminde *AppDelegate* adlı sınıf `DidEnterBackground` uygulama durumunu Kaydet, kullanıcı verilerini kaydedin ve uygulamanın arka planda girmeden önce hassas içerik şifrelemek için kullanılabilir. Bu yöntemden yaklaşık olarak beş saniyede bir uygulamaya sahip veya sonlandırıldı. Bu nedenle, tamamlamak için birden fazla beş saniye sürebilir temizleme görevleri gelen çağrılabilir içinde `DidEnterBackground` yöntemi. Bu görevlerin ayrı bir iş parçacığında çağrılmalıdır.
 
-Neredeyse aynı, uzun süre çalışan bir görev kaydı işlemidir. Aşağıdaki kod parçacığını bu eylemde gösterilmektedir:
+Neredeyse aynı, uzun süre çalışan bir görev kaydetme işlemidir. Aşağıdaki kod parçacığı, bunu eylem göstermektedir:
 
 ```csharp
 public override void DidEnterBackground (UIApplication application) {
@@ -63,29 +64,29 @@ public override void DidEnterBackground (UIApplication application) {
 }
 ```
 
-Geçersiz kılarak başlamak `DidEnterBackground` yönteminde `AppDelegate`, biz bizim göreviyle kaydetmek burada `BeginBackgroundTask` önceki örnekte yaptığımız gibi. Ardından, size yeni bir iş parçacığı oluşturma ve bizim uzun süre çalışan görev gerçekleştirin. Unutmayın `EndBackgroundTask` çağrısı şimdi yapıldığında gelen uzun süre çalışan görev içinde beri `DidEnterBackground` yöntemi zaten döndürdü.
+Geçersiz kılarak başlamak `DidEnterBackground` yönteminde `AppDelegate`, biz bizim göreviyle kaydetmeden burada `BeginBackgroundTask` önceki örnekte yaptığımız gibi. Ardından, size yeni bir iş parçacığı oluşturma ve müşterilerimizin uzun süre çalışan görev gerçekleştirin. Unutmayın `EndBackgroundTask` çağrı artık yapılır gelen uzun süre çalışan görev içinde beri `DidEnterBackground` yöntemi zaten döndürdü.
 
 > [!IMPORTANT]
-> iOS kullanan bir [izleme mekanizması](http://developer.apple.com/library/ios/qa/qa1693/_index.html) uygulamanın UI yanıt verebilir durumda kalmasını sağlamak için. Çok fazla zaman harcayan bir uygulama `DidEnterBackground` kullanıcı Arabiriminde vermemeye. Arka planda çalıştırılacak görevleri kapalı oluşturan verir `DidEnterBackground` zamanında kullanıcı Arabiriminin yanıt verebilir durumda kalmasını ve uygulama sonlandırılması izleme engelleyerek, döndürülecek.
+> iOS kullanan bir [İzleyici mekanizması](http://developer.apple.com/library/ios/qa/qa1693/_index.html) bir uygulamanın UI duyarlı kaldığından emin olmak için. Uygulamanın içinde çok fazla zaman harcadığını `DidEnterBackground` Arabiriminde yanıt vermemeye başlıyor. Arka planda çalıştırılacak görevleri devre dışı başlatılmadan sağlayan `DidEnterBackground` UI esnek tutma ve uygulama sonlandırma gelen izleme engelleyerek zamanında, döndürülecek.
 
 
-## <a name="handling-background-task-time-limits"></a>İşleme arka plan görevi zaman sınırları
+## <a name="handling-background-task-time-limits"></a>İşleme arka plan görev süre sınırı
 
-iOS yerleştirir katı sınırları üzerinde uzun bir arka plan görevi çalıştırabilirsiniz nasıl ve `EndBackgroundTask` ayrılan süre içinde çağrı yapılır değil, uygulama sonlandırılacak. Kalan backgrounding süre ve sona erme işleyicileri gerektiğinde kullanarak izleyen tarafından iOS uygulamanın sonlandırma önleyebilirsiniz.
+iOS yerleştirir katı sınırları üzerinde uzun bir arka plan görevini çalıştırabilirsiniz nasıl ve `EndBackgroundTask` ayrılan süre içinde çağrı yapılır değil, uygulama sonlandırılacak. Kalan süre arka planda işleme ve sona erme işleyicileri gerektiğinde kullanarak izleyen tarafından uygulama sonlandırılıyor iOS önleyebilirsiniz.
 
 ### <a name="accessing-background-time-remaining"></a>Kalan arka plan zaman erişme
 
-Kayıtlı görevler içeren bir uygulama için arka plan taşınsa, kayıtlı görevleri çalıştırmak yaklaşık 600 saniye alırsınız. Görev sahip statik kullanarak tamamlamak için ne kadar süre kontrol edebilirsiniz `BackgroundTimeRemaining` özelliği `UIApplication` sınıfı. Aşağıdaki kod bize bizim arka plan görevi ayrıldı saniye cinsinden zaman verin:
+Kayıtlı görevleri ile bir uygulama arka plana taşıdıysanız, kayıtlı görevleri çalıştırmak yaklaşık 600 saniye alırsınız. Biz görev içeriyor'using static tamamlanması ne kadar süre denetleyebilirsiniz `BackgroundTimeRemaining` özelliği `UIApplication` sınıfı. Aşağıdaki kod bize bizim arka plan görevi kalan saniye cinsinden süre verecektir:
 
 ```csharp
 double timeRemaining = UIApplication.SharedApplication.BackgroundTimeRemaining;
 ```
 
-### <a name="avoiding-app-termination-with-expiration-handlers"></a>Sona erme işleyicileri ile uygulama sonlandırma önleme
+### <a name="avoiding-app-termination-with-expiration-handlers"></a>Sona erme işleyicilerle kaçınarak uygulamayı sonlandırma
 
-Erişimi vermiş yanı sıra `BackgroundTimeRemaining` özelliği, iOS üzerinden arka plan zaman aşımı işlemek için normal bir yöntem sunar bir **sona erme işleyici**. Bir isteğe bağlı bir görev için ayrılan süresi dolmak üzere olduğunda, yürütülen kod bloğunu budur. Sona erme işleyici kodu çağırır `EndBackgroundTask` ve uygulama iyi davrandığından ve iOS görev çalıştığında dışında olsa bile uygulama sonlandırma engeller gösterir görev kimliği geçirir. `EndBackgroundTask` sona erme işleyici içinde yanı sıra yürütme normal seyrinde çağrılmalıdır. 
+Erişim verme yanı sıra `BackgroundTimeRemaining` özelliği, iOS, arka plan zaman aşımı ile işlemek için normal bir yol sağlar bir **sona erme işleyici**. Bu görev için ayrılan süre dolmak üzere olduğunda yürütülen kodu isteğe bağlı bir bloğudur. Sona erme işleyicisinde kodu çağıran `EndBackgroundTask` ve uygulamayı da davrandığını ve iOS görev çalıştığında dışında olsa bile uygulama sonlandırma engeller gösterir görev kimliği, geçirir. `EndBackgroundTask` sona erme işleyici içinde yanı sıra normal seyrinde yürütme çağrılmalıdır. 
 
-Sona erme işleyici, aşağıda gösterildiği gibi bir lambda ifadesi kullanarak anonim bir işlevi ifade edilir:
+Sona erme işleyici, aşağıda gösterildiği gibi bir lambda ifadesi kullanarak anonim bir işlev ifade edilir:
 
 ```csharp
 Task.Factory.StartNew( () => {
@@ -105,43 +106,43 @@ Task.Factory.StartNew( () => {
 });
 ```
 
-Sona erme işleyicileri kodu çalıştırmak gerekli değildir; ancak, bir arka plan görevine sahip bir sona erme işleyicisi her zaman kullanmalısınız.
+Sona erme işleyicileri kodu çalıştırmak gerekli değildir; ancak, bir arka plan görevine sahip her zaman bir sona erme işleyicisi kullanmanız gerekir.
 
  <a name="background_tasks_in_iOS_7" />
 
 ## <a name="background-tasks-in-ios-7"></a>İOS 7 + arka plan görevleri
 
-İOS 7 arka plan görevleri ile en büyük değişiklik değil görevlerin nasıl uygulanır, ancak çalıştırdıklarında ' dir.
+İOS 7 arka plan görevleri ile ilgili en büyük değişiklik görevleri nasıl uygulanmaz, ancak çalıştırdıklarında değildir.
 
-Ön iOS 7, arka planda çalışan bir görev 600 saniye tamamlamak için olduğunu hatırlayın. Bu sınır için bir neden, arka planda çalışan bir görev cihaz uyanık görev süresince tutmanız şöyledir:
+Öncesi iOS 7, arka planda çalışan bir görev 600 saniye tamamlanması olduğunu hatırlayın. Arka planda çalışan bir görev cihaz uyanık görevin süresi boyunca engelleneceği, bu sınır için bir neden verilmiştir:
 
  [![](ios-backgrounding-with-tasks-images/ios6.png "Uygulama uyanık öncesi iOS 7 tutma görev grafiği")](ios-backgrounding-with-tasks-images/ios6.png#lightbox)
 
-iOS 7 arka plan işlemesi uzun pil ömrü için optimize edilmiştir. İOS 7'de, backgrounding fırsatçılıktan olur: cihaz uyku ve cihaz telefon görüşmeleri, bildirimler, gelen e-posta ve diğer işlemek için çağrıldığında bunun yerine bunların işlenmesini parçalar gittiğinde cihaz uyanık tutma yerine görevleri Uy Ortak kesintiler. Aşağıdaki diyagramda bir görevin nasıl kopmuş olabilir içine Insight sağlar Yukarı:
+iOS 7 arka plan işlemesi uzun pil ömrü için optimize edilmiştir. İOS 7'de, arka planda işleme fırsatçı olur: cihaz uyku ve cihazın telefon görüşmeleri, bildirimler, gelen e-posta ve diğer işlemek için çağrıldığında bunun yerine bunların işlenmesini öbekler halinde gittiğinde cihaz uyanık tutmak yerine görevleri Uy Ortak kesintiler. Aşağıdaki diyagramda bir görevin nasıl kopabilir Öngörüler sağlar. ayarlama:
 
- [![](ios-backgrounding-with-tasks-images/ios7.png "Grafik bozuk görevinin sonrası iOS 7 öbekleri")](ios-backgrounding-with-tasks-images/ios7.png#lightbox)
+ [![](ios-backgrounding-with-tasks-images/ios7.png "Graf bozuk görevin chunks sonrası iOS 7")](ios-backgrounding-with-tasks-images/ios7.png#lightbox)
 
-Çalışma zamanı görevi artık sürekli olmadığından, ağ aktarımı gerçekleştirmek görevleri iOS 7 farklı şekilde ele gerekir. Geliştiriciler kullanmaları `NSURlSession` ağ aktarımları işlemek için API. Sonraki bölümde arka plan aktarımları bir genel bakıştır.
+Çalışma zamanı görevi, artık sürekli olmadığı için iOS 7 ' ağ aktarımı gerçekleştirmek görevleri farklı işlenmesi gerekir. Geliştiriciler kullanmaları `NSURlSession` ağ aktarımları işlemek için API. Sonraki bölümde, arka plan aktarımları bir genel bakıştır.
 
  <a name="background-transfers" />
 
 ## <a name="background-transfers"></a>Arka plan aktarımları
 
-İOS 7 arka plan aktarımları omurga yenilikler `NSURLSession` API. `NSURLSession` görevler oluşturma olanak tanır:
+Temel arka plan aktarımları iOS 7'deki yenilikler `NSURLSession` API. `NSURLSession` görevler oluşturmak sağlıyor:
 
-1.  Ağ ve aygıt kesintiler içeriğinden aktarın.
+1.  Ağ ve cihaz kesintiler aracılığıyla içerik aktarın.
 1.  Büyük dosyaları yükleme ve indirme ( *arka plan Aktarım Hizmeti* ).
 
 
-Bunun nasıl çalıştığına daha yakın bir göz atalım.
+Bunun nasıl çalıştığını daha yakından göz atalım.
 
-### <a name="nsurlsession-api"></a>NSURLSession API
+### <a name="nsurlsession-api"></a>Nsurlsession'ı API
 
- `NSURLSession` bir güçlü içeriği ağ üzerinden aktarılması için bir API'dir. Ağ kesintilerine ve uygulama durumları değişiklikleri üzerinden veri aktarımı işlemek için araçlar sağlar.
+ `NSURLSession` güçlü bir API ağ üzerinden içerik aktarmak için ' dir. Bu, ağ kesintileri ve uygulama durumlarını değişiklikleri üzerinden veri aktarımı işlemek için araçları kümesi sağlar.
 
-`NSURLSession` API sırayla ilgili veri öbekleri ağ üzerinden shuttle için görevler oluşturma, bir veya birkaç oturum oluşturur. Görevler, hızlı ve güvenilir bir şekilde veri aktarmak için zaman uyumsuz olarak çalışır. Çünkü `NSURLSession` olduğu zaman uyumsuz, her oturum sistem ve uygulama bir Aktarım tamamlandığında bilmeniz izin vermek için tamamlama işleyici blok gerektirir.
+`NSURLSession` API sırayla, ilgili veri blokları ağında shuttle için görevler oluşturabilir, bir veya birden fazla oturum oluşturur. Görevler zaman uyumsuz olarak hızlı ve güvenilir bir şekilde veri aktarmak için çalıştırın. Çünkü `NSURLSession` olduğu zaman uyumsuz, her oturum sistem ve uygulama bir Aktarım tamamlandığında bilmeniz izin vermek için bir tamamlama işleyicisi blok gerektirir.
 
-Ön iOS 7 ve sonrası iOS 7 üzerinde geçerli bir ağ aktarımı gerçekleştirmek için kontrol bir `NSURLSession` kuyruğa aktarımları için kullanılabilir ve düzenli arka plan görevi değilse aktarımı gerçekleştirmek için kullanın:
+Öncesi iOS 7 ve sonrası iOS 7 geçerli bir ağ aktarımı gerçekleştirmek için denetleme bir `NSURLSession` kuyruğa aktarımları için kullanılabilir ve düzenli arka plan görevi değilse aktarımı gerçekleştirmek için kullanın:
 
 ```csharp
 if ([NSURLSession class]) {
@@ -154,16 +155,16 @@ else {
 ```
 
 > [!IMPORTANT]
-> İOS 6 arka plan UI güncelleştirmeleri desteklemez ve uygulamayı sonlandıracak gibi iOS 6 uyumlu kodda arka plan Arabiriminden güncelleştirmek için çağrıları yapma kaçının.
+> İOS 6, arka plan UI güncelleştirmeleri desteklemez ve uygulamayı sona erdirir arka planda iOS 6 uyumlu kod, kullanıcı Arabiriminden güncelleştirmek için çağrıları yapmaktan kaçının.
 
 
-`NSURLSession` API zengin bir kimlik doğrulamasını işleyecek, başarısız aktarımlarını yönetmek ve - ancak değil sunucu-tarafı - istemci tarafı hata raporu özellikleri kümesi içerir. İOS 7 görev Kesintiler çalışma zamanı sunulan köprüsü yardımcı olur ve hızlı ve güvenilir bir şekilde büyük dosyaları aktarmak için de destek sağlar. Sonraki bölümde bu ikinci özellik araştırır.
+`NSURLSession` API'yi içeren zengin bir özellikler kimlik doğrulamasını gerçekleştirmesini başarısız aktarımlarını yönetmek ve - ancak değil sunucu-tarafı - istemci tarafı hataları bildirin. İOS 7 görev Kesintiler çalışma zamanı sunulan köprüsü yardımcı olur ve büyük dosyaları hızlı ve güvenilir bir şekilde aktarmak için de destek sağlar. Sonraki bölümde bu ikinci bir özelliği keşfediyor.
 
 ### <a name="background-transfer-service"></a>Arka plan Aktarım Hizmeti
 
-İOS 7 önce yükleyerek veya arka planda dosya indirme güvenilmez. Arka plan görevleri çalıştırmak için sınırlı bir süre alabilir ancak bir dosya aktarım süresini ağ ve dosya boyutuna göre değişir. İOS 7'de, kullandığımız bir `NSURLSession` başarıyla karşıya yükleyin ve büyük dosyaları indirin. Belirli `NSURLSession` büyük dosyaları arka planda ağ aktarımı işleme oturumu türü olarak bilinir *arka plan Aktarım Hizmeti*.
+İOS 7 önce yükleme veya arka planda dosya indirme güvenilmez. Arka plan görevleri çalıştırmak için sınırlı bir süre yararlanabilirsiniz, ancak dosya boyutu ve ağ ile bir dosya aktarım süresini değişir. İOS 7'de, kullandığımız bir `NSURLSession` başarıyla karşıya yüklemek ve büyük dosyaları indirmek için. Belirli `NSURLSession` ağ aktarımı büyük dosyaları arka planda işleme oturum türü olarak bilinen *arka plan Aktarım Hizmeti*.
 
-Arka plan Aktarım Hizmeti kullanılarak başlatılan aktarımları işletim sistemi tarafından yönetilir ve kimlik doğrulama ve hataları işlemek için API'ler sağlar. Aktarımları göre rastgele bir zaman sınırı bağımlı olmadığından kullanılabilmesi için karşıya yükleme veya büyük dosyaları karşıdan yüklemek için otomatik güncelleştirme ve arka plan içeriği. Başvurmak [arka plan aktarım izlenecek](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/background-transfer-walkthrough.md) hizmeti uygulama hakkında ayrıntılar için.
+Aktarımları arka plan aktarım hizmetini kullanarak tarafından başlatılan işletim sistemi tarafından yönetilir ve kimlik doğrulaması ve hataları işlemek için API'leri sağlar. Aktarımları göre rastgele bir zaman sınırı bağımlı olmadığından kullanılabilmesi için karşıya yükleme veya büyük dosyaları indirmek için otomatik güncelleştirme içeriği arka plan ve daha fazlasını. Başvurmak [arka plan aktarım izlenecek](~/ios/app-fundamentals/backgrounding/ios-backgrounding-walkthroughs/background-transfer-walkthrough.md) hizmeti uygulama hakkında ayrıntılar için.
 
-Arka plan Aktarım Hizmeti, genellikle arka plan Fetch veya içeriği arka planda yenileme uygulamaları yardımcı olmak için Uzak bildirimleri ile eşleştirilmiş. Sonraki iki bölümde iOS 6 ve iOS 7 arka planda çalışan tüm uygulamaların kaydetme kavramını tanıtır.
+Arka plan Aktarım Hizmeti genellikle arka planda getirme veya uygulamaların arka planda içeriğini yenilemek amacıyla uzak bildirimler ile eşleştirilir. Sonraki iki bölümden biz iOS 6 ve iOS 7 arka planda çalıştırılacak tüm uygulamaları kaydetme kavramını sunar.
 

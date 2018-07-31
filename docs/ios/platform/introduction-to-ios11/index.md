@@ -1,70 +1,70 @@
 ---
-title: İOS 11 giriş
-description: İOS 11 ARKit, CoreML, MapKit, PDFKit, SiriKit, görme framework ve daha da dahil olmak üzere, özelliklerini açıklayan çeşitli kılavuzları bu belge bağlantılar.
+title: İOS 11'e giriş
+description: Bu belge bağlantıları çeşitli kılavuzlara iOS 11, ARKit, CoreML, MapKit, PDFKit, SiriKit, Vision çerçevesi ve daha fazlası gibi özellikleri açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 22C38EA6-6DA9-4B92-B41B-814E589033F6
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 09/19/2016
-ms.openlocfilehash: dca4d9889d90f10626840dfc722e439fd60c5756
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 09/19/2017
+ms.openlocfilehash: e4e544679dbed2701c50d5596d4907451653090e
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787513"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351063"
 ---
-# <a name="introduction-to-ios-11"></a>İOS 11 giriş
+# <a name="introduction-to-ios-11"></a>İOS 11'e giriş
 
-_Yeni iOS 11 deneyin Xamarin ile API'leri._
+_Yeni iOS 11'i deneyin Xamarin ile API'leri._
 
 > [!NOTE]
-> Başlamadan önce gözden [Başlarken](get-started.md) sayfa Xcode 9 yükleme hakkında yönergeler için.
+> Başlamadan önce gözden [Başlarken](get-started.md) Xcode 9 yükleme hakkında yönergeler için sayfa.
 
-![ARKit örneği](images/arkit.png) ![AR yerleştirme nesneleri](images/arkit2.png) ![CoreML örneği](images/coreml.png) ![MapKit örneği](images/mapkit.png) ![Görme dikdörtgenler örneği](images/vision1.png) ![Görme yüzeyleri örneği](images/vision2.png) ![Sürükleme ve bırakma örneği](images/drag-drop.png) ![Sürükleme ve bırakma örneği](images/drag-drop2.png) ![SiriKit örneği](images/sirikit.png)
+![ARKit örneği](images/arkit.png) ![AR yerleştirme nesneleri](images/arkit2.png) ![CoreML örneği](images/coreml.png) ![MapKit örneği](images/mapkit.png) ![İşleme dikdörtgenler örneği](images/vision1.png) ![İşleme yüzleri örneği](images/vision2.png) ![Sürükle ve bırak örnek](images/drag-drop.png) ![Sürükle ve bırak örnek](images/drag-drop2.png) ![SiriKit örneği](images/sirikit.png)
 
-iOS 11 çerçeveleri çeşitli arasında çok sayıda yeni özellikleri ve geliştirmeleri içerir:
+iOS 11 çerçeveleri çeşitli arasında çok sayıda yeni özellik ve geliştirmeleri içerir:
 
-## <a name="preparing-your-app-for-ios-11updating-your-appindexmd"></a>[Uygulamanızı 11 iOS için hazırlama](updating-your-app/index.md)
+## <a name="preparing-your-app-for-ios-11updating-your-appindexmd"></a>[İOS 11 için uygulamanızı hazırlama](updating-your-app/index.md)
 
-Apple mimarisi güncelleştirmeleri, yeni görsel değişiklikler ve bir iOS 11 güncelleştirilmiş iTunes Bağlan işlemlerinde anlatılmıştır. Xamarin.iOS uygulamanızı yeni sürüm için hazırlandığından emin olmak için bu kılavuzu kullanın.
+Apple mimarisi güncelleştirmeleri, yeni görsel değişiklikler ve bir iOS 11 güncelleştirilmiş iTunes Connect işlemi sundu. Xamarin.iOS uygulamanıza yeni sürüm için hazırlandığından emin olmak için bu kılavuzu kullanın.
 
 ## <a name="arkitarkitindexmd"></a>[ARKit](arkit/index.md)
 
-ARKit Engagement'ta gerçekte iOS, cihazın kamera üzerinden dünyayla etkileşime girmesine izin vererek getirir.
-Xamarin ile de kullanabileceğiniz [ARKit UrhoSharp ile](arkit/urhosharp.md).
+ARKit genişletilmiş gerçeklik, iOS, cihazın kamerasını dünyayla etkileşimde izin vererek getirir.
+Xamarin ile de kullanabilirsiniz [ile UrhoSharp ARKit](arkit/urhosharp.md).
 
 ## <a name="coremlcoremlmd"></a>[CoreML](coreml.md)
 
-Machine learning modellerini tümleştirilmiş CoreML iOS 11 uygulamalarla. Varolan modelleri analiz sorunları izin vermek için uygulama projelere içerecek şekilde basit API CoreML çerçevesi sağlar sağ uygulama.
+Makine öğrenimi modelleri, iOS 11 uygulamalarda CoreML tümleştirilebilir. CoreML framework uygulaması projelere sorunları Analiz edilecek izin vermek için mevcut modelleri birleştirmek için basit bir API sağlar. uygulama sağ.
 
 ## <a name="corenfccorenfcmd"></a>[CoreNFC](corenfc.md)
 
-iPhone 7 ve daha yeni aygıtları etiketli ürünleri, yerler veya tüm dünyada şeyler algılamak uygulamaları etkinleştirme yakın alan iletişimi (NFC) etiketleri okuyabilir.
+iPhone 7 ve daha yeni cihazlarda yakın alan iletişimi (NFC) etiketler, etiketli ürünleri, yer veya tüm dünyada şeyler algılamak uygulamaları etkinleştirme okuyabilirsiniz.
 
 ## <a name="drag-and-dropdrag-and-dropmd"></a>[Sürükleme ve Bırakma](drag-and-drop.md)
 
-Sürükle ve bırak framework dokunarak veri hareket etmek için iOS genelinde destek getirir. İPad cihazında hem içinde hem de farklı uygulamalar arasında sürükleyebilirsiniz; iPhone karşın, yalnızca aynı uygulama içinde sürükleyebilirsiniz. Özelleştirme, zengin veri türleri, animasyonları ve işleme Çoklu dokunmatik hareketleri dahil olmak üzere birçok türden desteği yoktur.
+Sürükle ve bırak framework dokunarak veri taşımak için iOS geniş destek sunar. İPad üzerinde hem içinde hem de farklı uygulamalar arasında sürükleyebilirsiniz; iPhone karşın, yalnızca aynı uygulama içinde sürükleyebilirsiniz. Özelleştirme, zengin veri türleri, animasyonları ve dokunma hareketlerini işleme dahil olmak üzere birçok türden desteği yoktur.
 
 ## <a name="mapkitmapkitmd"></a>[MapKit](mapkit.md)
 
-MapKit bazı geliştirmeler, gruplandırma ve görünümüne pusula ekleyerek otomatik işaret desteği dahil olmak üzere sahiptir.
+MapKit geliştirmeleri, gruplandırma ve görünüme pusula ekleyerek otomatik işaret desteği dahil olmak üzere birçok vardır.
 
 ## <a name="pdfkit"></a>PDFKit
 
-PDFKit getiren PDF oluşturma ve düzenleme özellikleri uygulamalarınızı 11, İos'ta kullanıma sunulmuştur.
+PDFKit getirme PDF oluşturma ve düzenleme özellikleri uygulamalarınıza iOS 11, kullanıma sunuldu.
 
 ## <a name="sirikitsirikitmd"></a>[SiriKit](sirikit.md)
 
-Siri artık listeleri ve notları ve diğer uygulama adları gibi diğer geliştirmeler dahil olmak üzere daha da fazla etkileşimleri destekler.
+Siri artık daha da fazla etkileşim, listeleri ve notları ve diğer uygulama adları gibi diğer geliştirmeler de dahil olmak üzere destekler.
 
 ## <a name="visionvisionmd"></a>[Vision](vision.md)
 
-Görüntü çeşitli yüz algılama ve tanıma, CoreML modelleri, yeni barkod algılama API'leri, metin ve yatay algılama ve daha fazla genel nesne algılama gibi ve izleme iOS için işleme ve analizi özellik getirir.
+Görüntü çeşitli izleme ve yüz algılama ve tanıma, CoreML modelleri, yeni barkod algılama API'leri, metin ve gelecekte olan algılama ve daha genel nesne algılama gibi iOS, işleme ve analiz özellikleri sunar.
 
 ## <a name="samples"></a>Örnekler
 
-C# çeşitli sahibiz [örnekleri](https://developer.xamarin.com/samples/ios/iOS11/) başlamanıza yardımcı olmak için:
+C# birçok sahibiz [örnekleri](https://developer.xamarin.com/samples/ios/iOS11/) başlamanıza yardımcı olmak için:
 
 * [ARKit örnek](https://developer.xamarin.com/samples/monotouch/ios11/ARKitSample/)
 * [ARKit yerleştirme nesneleri](https://developer.xamarin.com/samples/monotouch/ios11/ARKitPlacingObjects/)
@@ -72,26 +72,26 @@ C# çeşitli sahibiz [örnekleri](https://developer.xamarin.com/samples/ios/iOS1
 * [CoreML örnek](https://developer.xamarin.com/samples/monotouch/ios11/CoreML)
 * [CoreML resim tanıma örneği](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLImageRecognition)
 * [Azure özel modeliyle CoreML](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLAzureModel)
-* [CoreNFC etiketi okuyucu örneği](https://developer.xamarin.com/samples/monotouch/ios11/NFCTagReader/)
-* [Tablo görünümünde sürükleyip](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropTableView)
-* [Koleksiyon görünümü sürükleyip](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropCollectionView)
-* [Özel Görünüm sürükleyip](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropCustomView)
+* [Okuyucu örnek CoreNFC etiketi](https://developer.xamarin.com/samples/monotouch/ios11/NFCTagReader/)
+* [Sürükleyip bırakma Tablo görünümü](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropTableView)
+* [Sürükleyip bırakma koleksiyon görünümü](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropCollectionView)
+* [Sürükle ve bırak özel görünüm](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropCustomView)
 * [DragBoard sürükle ve bırak örnek](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropDragBoard)
 * [MapKit örnek](https://developer.xamarin.com/samples/monotouch/ios11/MapKitSample)
 * [SiriKit örnek](https://developer.xamarin.com/samples/monotouch/ios11/SiriKitSample/)
 * [Güncelleştirilmiş fotoğraf framework örnek](https://developer.xamarin.com/samples/monotouch/ios11/SamplePhotoApp/)
-* [Görme & CoreML örnek](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLVision)
-* [Görme dikdörtgenler algılama örnek](https://developer.xamarin.com/samples/monotouch/ios11/VisionRects)
-* [Görme yüz algılama örnek](https://developer.xamarin.com/samples/monotouch/ios11/VisionFaces)
+* [Vizyonu ve CoreML örnek](https://developer.xamarin.com/samples/monotouch/ios11/CoreMLVision)
+* [İşleme dikdörtgenler algılama örneği](https://developer.xamarin.com/samples/monotouch/ios11/VisionRects)
+* [İşleme yüzleri algılama örneği](https://developer.xamarin.com/samples/monotouch/ios11/VisionFaces)
 * [PDKFit pencere öğeleri örnek](https://developer.xamarin.com/samples/monotouch/ios11/PDFAnnotationWidgetsAdvanced)
 * [PDFKit Filigran örnek](https://developer.xamarin.com/samples/monotouch/ios11/PDFDocumentWatermark)
 
 ## <a name="more-information"></a>Daha fazla bilgi
 
-İOS 11 hakkında daha fazla bilgi için Apple'nın ziyaret [iOS 11 yenilikler](https://developer.apple.com/ios/) belgeleri.
+Apple iOS 11 hakkında daha fazla bilgi için ziyaret [iOS 11 ' yenilikler](https://developer.apple.com/ios/) belgeleri.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Yeni iOS 11 (Apple) nedir](https://developer.apple.com/ios/)
+- [Yeni iOS 11'i (Apple) nedir](https://developer.apple.com/ios/)
 - [Xamarin iOS 11 örnekleri](https://developer.xamarin.com/samples/ios/iOS11/)

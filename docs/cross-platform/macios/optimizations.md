@@ -1,27 +1,27 @@
 ---
-title: En iyi duruma getirme derleme
-description: Bu belgede Xamarin.iOS ve Xamarin.Mac uygulamalar için derleme zamanında uygulanan çeşitli iyileştirmeler açıklanmaktadır.
+title: Derleme iyileştirmeleri
+description: Bu belgede, Xamarin.iOS ve Xamarin.Mac uygulamaları için derleme zamanında uygulanan çeşitli iyileştirmeler açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 84B67E31-B217-443D-89E5-CFE1923CB14E
 author: bradumbaugh
 ms.author: brumbaug
-dateupdated: 04/16/2018
-ms.openlocfilehash: abdd1223c0105156580b8f23fc2c020f2f45caa6
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 04/16/2018
+ms.openlocfilehash: 432511a35f9f285d2c0060b5521256f834bb35ea
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33918779"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351645"
 ---
-# <a name="build-optimizations"></a>En iyi duruma getirme derleme
+# <a name="build-optimizations"></a>Derleme iyileştirmeleri
 
-Bu belgede Xamarin.iOS ve Xamarin.Mac uygulamalar için derleme zamanında uygulanan çeşitli iyileştirmeler açıklanmaktadır.
+Bu belgede, Xamarin.iOS ve Xamarin.Mac uygulamaları için derleme zamanında uygulanan çeşitli iyileştirmeler açıklanmaktadır.
 
-## <a name="remove-uiapplicationensureuithread--nsapplicationensureuithread"></a>UIApplication.EnsureUIThread Kaldır / NSApplication.EnsureUIThread
+## <a name="remove-uiapplicationensureuithread--nsapplicationensureuithread"></a>UIApplication.EnsureUIThread kaldırın / NSApplication.EnsureUIThread
 
-Çağrı kaldırır [UIApplication.EnsureUIThread] [ 1] (için Xamarin.iOS) veya `NSApplication.EnsureUIThread` (için Xamarin.Mac).
+Çağrıları kaldırır [UIApplication.EnsureUIThread] [ 1] (için Xamarin.iOS) veya `NSApplication.EnsureUIThread` (için Xamarin.Mac).
 
-Bu en iyi duruma getirme aşağıdaki kod türde değişir:
+Bu iyileştirme, aşağıdaki kodun türünü değiştirir:
 
 ```csharp
 public virtual void AddChildViewController (UIViewController childController)
@@ -44,15 +44,15 @@ Bu iyileştirme bağlayıcı etkin olmasını gerektirir ve yalnızca yöntemler
 
 Varsayılan sürüm için etkin olarak oluşturur.
 
-Geçirerek varsayılan davranışı geçersiz kılınabilir `--optimize=[+|-]remove-uithread-checks` mtouch/mmp için.
+Varsayılan davranış, geçirerek kılınabilir `--optimize=[+|-]remove-uithread-checks` mtouch/mmp için.
 
 [1]: https://developer.xamarin.com/api/member/UIKit.UIApplication.EnsureUIThread/
 
 ## <a name="inline-intptrsize"></a>Satır içi IntPtr.Size
 
-Inlines sabit değer olarak `IntPtr.Size` hedef platformlara göre.
+Satır içleri sabit değer, `IntPtr.Size` göre hedef platformu.
 
-Bu en iyi duruma getirme aşağıdaki kod türde değişir:
+Bu iyileştirme, aşağıdaki kodun türünü değiştirir:
 
 ```csharp
 if (IntPtr.Size == 8) {
@@ -62,7 +62,7 @@ if (IntPtr.Size == 8) {
 }
 ```
 
-(64-bit platformu için oluştururken) aşağıdaki noktaları:
+(64-bit platformu oluştururken) aşağıdaki içine:
 
 ```csharp
 if (8 == 8) {
@@ -74,19 +74,19 @@ if (8 == 8) {
 
 Bu iyileştirme bağlayıcı etkin olmasını gerektirir ve yalnızca yöntemleriyle uygulanır `[BindingImpl (BindingImplOptions.Optimizable)]` özniteliği.
 
-Varsayılan olarak tek bir mimari hedefleme varsa etkinleştirildiğinden ya da platform derleme (**Xamarin.iOS.dll**, **Xamarin.TVOS.dll**, **Xamarin.WatchOS.dll** veya  **Xamarin.Mac.dll**).
+Varsayılan olarak tek bir mimarisini hedeflemek, etkinleştirildiğinden veya platform derleme için (**Xamarin.iOS.dll**, **Xamarin.TVOS.dll**, **Xamarin.WatchOS.dll** veya  **Xamarin.Mac.dll**).
 
-Birden fazla mimari hedefleme, bu en iyi duruma getirme 32-bit sürümü ve uygulama 64-bit sürümü için farklı derlemeleri oluşturur ve her iki sürümünü de etkili bir şekilde azaltılması yerine son uygulama boyutunun artırılması, uygulama bulunması gerekir .
+Birden çok mimarileri hedefleyen, bu en iyi duruma getirme 32 bit sürümü ve 64 bit sürümü uygulamanın farklı derlemelerde oluşturur ve iki sürümü de etkili bir şekilde azalan yerine son uygulama artırıldığında, bu uygulamayı dahil edilmesi gerekir .
 
-Geçirerek varsayılan davranışı geçersiz kılınabilir `--optimize=[+|-]inline-intptr-size` mtouch/mmp için.
+Varsayılan davranış, geçirerek kılınabilir `--optimize=[+|-]inline-intptr-size` mtouch/mmp için.
 
 ## <a name="inline-nsobjectisdirectbinding"></a>Satır içi NSObject.IsDirectBinding
 
-`NSObject.IsDirectBinding` belirli bir örneği bir sarmalayıcı türü olup olmadığını belirleyen bir örnek özelliği (bir sarmalayıcı türü bir yerel türüyle eşleyen bir yönetilen türü; örnek yönetilen `UIKit.UIView` yazın yerel eşlenir `UIView` türü - karşıtı olduğu bir kullanıcı türü Bu durumda `class MyUIView : UIKit.UIView` bir kullanıcı türü olacaktır).
+`NSObject.IsDirectBinding` belirli bir örneğine bir kapsayıcı türü olup olmadığını belirleyen bir örnek özelliği (bir sarmalayıcı türü bir yerel türüyle eşleyen bir yönetilen türü; örnek yönetilen `UIKit.UIView` yazın yerel eşlenir `UIView` türü - tersine, bir kullanıcı türü Bu durumda `class MyUIView : UIKit.UIView` bir kullanıcı türü olacaktır).
 
-Değerini bilmeniz gereken `IsDirectBinding` değeri hangi sürümünün belirlediğinden Objective-C çağrılırken `objc_msgSend` kullanmak için.
+Değerini bilmeniz gereken `IsDirectBinding` değeri hangi sürümünün belirlediğinden Objective-C içinde çağrılırken `objc_msgSend` kullanılacak.
 
-Yalnızca aşağıdaki kodu verilir:
+Yalnızca aşağıdaki kodu verilen:
 
 ```csharp
 class UIView : NSObject {
@@ -117,7 +117,7 @@ class MyUIView : UIView {
 }
 ```
 
-Biz, belirleyebilirsiniz `UIView.SomeProperty` değerini `IsDirectBinding` bir sabit değil ve satır içi olamaz:
+Uygulamasında belirleyebiliriz `UIView.SomeProperty` değerini `IsDirectBinding` bir sabit değil ve satır içine alınmış olamaz:
 
 ```csharp
 void uiView = new UIView ();
@@ -126,7 +126,7 @@ void myView = new MyUIView ();
 Console.WriteLine (myView.SomeProperty); // prints 'false'
 ```
 
-Ancak, tüm türleri uygulamasında bakın ve devralınmalıdır türü yok belirlemek mümkün olması `NSUrl`, ve bu nedenle satır içi daha güvenlidir `IsDirectBinding` bir sabit değere `true`:
+Ancak, tüm türlerin uygulamasında bakmak ve devralma türü yok belirlemek mümkün `NSUrl`, ve bu nedenle satır içi daha güvenlidir `IsDirectBinding` bir sabit değere `true`:
 
 ```csharp
 void myURL = new NSUrl ();
@@ -134,7 +134,7 @@ Console.WriteLine (myURL.SomeOtherProperty); // prints 'true'
 // There's no way to make SomeOtherProperty print anything but 'true', since there are no NSUrl subclasses.
 ```
 
-Özellikle, bu en iyi duruma getirme kod aşağıdaki türde değişir (Bu bağlama kodudur `NSUrl.AbsoluteUrl`):
+Özellikle, bu en iyi duruma getirme aşağıdaki kodun türünü değiştirir (Bu, bağlama kodunu `NSUrl.AbsoluteUrl`):
 
 ```csharp
 if (IsDirectBinding) {
@@ -144,7 +144,7 @@ if (IsDirectBinding) {
 }
 ```
 
-Aşağıdaki içine (zaman onu belirlenebilir hiçbir alt sınıflarının olduğunu `NSUrl` uygulamasında):
+Aşağıdaki içine (ne zaman bunu belirlenebilir hiçbir alt sınıflarından birini olduğunu `NSUrl` uygulamasında):
 
 ```csharp
 if (true) {
@@ -156,13 +156,13 @@ if (true) {
 
 Bu iyileştirme bağlayıcı etkin olmasını gerektirir ve yalnızca yöntemleriyle uygulanır `[BindingImpl (BindingImplOptions.Optimizable)]` özniteliği.
 
-Bu her zaman Xamarin.iOS için varsayılan olarak etkindir ve her zaman Xamarin.Mac için varsayılan olarak devre dışı (dinamik olarak Xamarin.Mac derlemelerde yüklemek mümkün olduğundan, belirli bir sınıfın hiçbir zaman sınıflandırma belirlemek mümkün değildir).
+Bu her zaman Xamarin.iOS için varsayılan olarak etkindir ve her zaman Xamarin.Mac için varsayılan olarak devre dışı (dinamik olarak Xamarin.Mac derlemeleri yüklemek mümkün olduğundan, belirli bir sınıfın hiç sınıflandırma belirlemek mümkün değildir).
 
-Geçirerek varsayılan davranışı geçersiz kılınabilir `--optimize=[+|-]inline-isdirectbinding` mtouch/mmp için.
+Varsayılan davranış, geçirerek kılınabilir `--optimize=[+|-]inline-isdirectbinding` mtouch/mmp için.
 
 ## <a name="inline-runtimearch"></a>Satır içi Runtime.Arch
 
-Bu en iyi duruma getirme aşağıdaki kod türde değişir:
+Bu iyileştirme, aşağıdaki kodun türünü değiştirir:
 
 ```csharp
 if (Runtime.Arch == Arch.DEVICE) {
@@ -172,7 +172,7 @@ if (Runtime.Arch == Arch.DEVICE) {
 }
 ```
 
-(aygıt için oluştururken) aşağıdaki noktaları:
+(cihaz için oluştururken) aşağıdaki içine:
 
 ```csharp
 if (Arch.DEVICE == Arch.DEVICE) {
@@ -186,11 +186,11 @@ Bu iyileştirme bağlayıcı etkin olmasını gerektirir ve yalnızca yöntemler
 
 Xamarin.iOS (Xamarin.Mac için kullanılamaz) için varsayılan olarak her zaman etkindir.
 
-Geçirerek varsayılan davranışı geçersiz kılınabilir `--optimize=[+|-]inline-runtime-arch` mtouch için.
+Varsayılan davranış, geçirerek kılınabilir `--optimize=[+|-]inline-runtime-arch` mtouch için.
 
-## <a name="dead-code-elimination"></a>Ölü kod eleme
+## <a name="dead-code-elimination"></a>Ölü kod ortadan kaldırılması
 
-Bu en iyi duruma getirme aşağıdaki kod türde değişir:
+Bu iyileştirme, aşağıdaki kodun türünü değiştirir:
 
 ```csharp
 if (true) {
@@ -206,7 +206,7 @@ içine:
 Console.WriteLine ("Doing this");
 ```
 
-Ayrıca, bu gibi sabit karşılaştırmaları de değerlendirir:
+Ayrıca, bu gibi sabit karşılaştırmalar da değerlendirir:
 
 ```csharp
 if (8 == 8) {
@@ -216,13 +216,13 @@ if (8 == 8) {
 }
 ```
 
-ve belirleyen ifade `8 == 8` olan bir her zaman doğru ve azaltmak için:
+ve böylelikle ifade `8 == 8` olduğu bir her zaman true ve azaltmak için:
 
 ```csharp
 Console.WriteLine ("Doing this");
 ```
 
-Aşağıdaki kod türünü dönüştürebilirsiniz satır içi kullanım iyileştirmeleri ile birlikte kullanıldığında güçlü bir iyileştirme olmasıdır (Bu bağlama kodudur `NFCIso15693ReadMultipleBlocksConfiguration.Range`):
+Aşağıdaki kod türü dönüştürebilirsiniz inlining'i iyileştirmeleri ile birlikte kullanıldığında güçlü bir iyileştirme olmasıdır (Bu, bağlama kodunu `NFCIso15693ReadMultipleBlocksConfiguration.Range`):
 
 ```csharp
 NSRange ret;
@@ -254,7 +254,7 @@ if (IsDirectBinding) {
 return ret;
 ```
 
-Bu içine (64-bit aygıt için oluştururken ve ayrıca mümkün olduğunda olmadığından emin olun hiçbir `NFCIso15693ReadMultipleBlocksConfiguration` uygulama sınıflarında):
+Bu oturum (64-bit cihaz için oluşturma sırasında ve ayrıca mümkün olduğunda olmadığından emin olmak hiçbir `NFCIso15693ReadMultipleBlocksConfiguration` uygulama sınıflarında):
 
 ```csharp
 NSRange ret;
@@ -262,7 +262,7 @@ ret = global::ObjCRuntime.Messaging.NSRange_objc_msgSend (this.Handle, Selector.
 return ret;
 ```
 
-Uygulama Nesne AĞACI derleyici zaten şöyle ölü kod ortadan kaldırmak mümkün olmakla birlikte, bu en iyi duruma getirme artık kullanılmaz ve bu nedenle (başka bir yerde kullanılan sürece) kaldırılabilir birden çok yöntem bulunmaktadır görmeye bağlayıcı anlamına bağlayıcı içinde yapılır :
+AOT derleyici zaten böyle ölü kod ortadan kaldırmak kullanabilirsiniz, ancak bu en iyi duruma getirme, artık kullanılmaz ve bu nedenle (başka bir yerde kullanılan sürece) kaldırılabilir birden çok yöntem olduğunu görmeye bağlayıcı anlamına bağlayıcı içinde gerçekleştirilir. :
 
 * `global::ObjCRuntime.Messaging.NSRange_objc_msgSend_stret`
 * `global::ObjCRuntime.Messaging.NSRange_objc_msgSendSuper`
@@ -270,15 +270,15 @@ Uygulama Nesne AĞACI derleyici zaten şöyle ölü kod ortadan kaldırmak mümk
 
 Bu iyileştirme bağlayıcı etkin olmasını gerektirir ve yalnızca yöntemleriyle uygulanır `[BindingImpl (BindingImplOptions.Optimizable)]` özniteliği.
 
-(Bağlayıcı etkinleştirildiğinde) her zaman varsayılan olarak etkindir.
+(Bağlayıcı etkin olduğunda) her zaman varsayılan olarak etkindir.
 
-Geçirerek varsayılan davranışı geçersiz kılınabilir `--optimize=[+|-]dead-code-elimination` mtouch/mmp için.
+Varsayılan davranış, geçirerek kılınabilir `--optimize=[+|-]dead-code-elimination` mtouch/mmp için.
 
 ## <a name="optimize-calls-to-blockliteralsetupblock"></a>BlockLiteral.SetupBlock çağrıları en iyi duruma getirme
 
-Xamarin.iOS/Mac çalışma zamanı, temsilci için yönetilen bir Objective-C bloğu oluştururken blok imza bilmek ister. Bu oldukça pahalı bir işlem olabilir. Bu en iyi duruma getirme blok imza derleme zamanında hesaplamak ve çağırmak için IL değiştirme bir `SetupBlock` yönteminin imzasını bunun yerine bağımsız değişken olarak alan. Bunun yapılması, çalışma zamanında imza hesaplamak için gereken önler.
+Xamarin.iOS/Mac çalışma zamanı, temsilci bir Objective-C bloğu için bir yönetilen oluştururken blok imza bilmek ister. Bu çok pahalı bir işlem olabilir. Bu iyileştirme blok imza oluşturma zamanında hesaplamak ve çağırmak için IL değiştirme bir `SetupBlock` imza, bunun yerine bağımsız değişken olarak alan yöntemi. Bunun yapılması, çalışma zamanında imzayı hesaplama gereksinimini ortadan kaldırır.
 
-Bu bir blok 10-15 faktörüyle çağırma hızlandırır kıyaslamaları gösterir.
+Bu bir blok 10 ila 15 faktörüyle çağırma hızlandırır Kıyaslama gösterir.
 
 Aşağıdaki dönüştüren [kod](https://github.com/xamarin/xamarin-macios/blob/018f7153441d9d7e0f58e2046f39eeb46f1ff480/src/UIKit/UIAccessibility.cs#L198-L211):
 
@@ -304,49 +304,49 @@ public static void RequestGuidedAccessSession (bool enable, Action<bool> complet
 
 Bu iyileştirme bağlayıcı etkin olmasını gerektirir ve yalnızca yöntemleriyle uygulanır `[BindingImpl (BindingImplOptions.Optimizable)]` özniteliği.
 
-Statik kayıt (statik kayıt aygıt yapılar için varsayılan olarak etkindir ve statik kayıt sürüm için varsayılan olarak etkindir Xamarin.Mac derlemeler Xamarin.iOS içinde) kullanırken, varsayılan olarak etkindir.
+Statik kayıt şirketi (statik kayıt şirketi, cihaz derlemeleri için varsayılan olarak etkindir ve statik kayıt şirketi, yayın için varsayılan olarak etkindir Xamarin.Mac kapsadığı Xamarin.ios'ta) kullanırken, varsayılan olarak etkindir.
 
-Geçirerek varsayılan davranışı geçersiz kılınabilir `--optimize=[+|-]blockliteral-setupblock` mtouch/mmp için.
+Varsayılan davranış, geçirerek kılınabilir `--optimize=[+|-]blockliteral-setupblock` mtouch/mmp için.
 
-## <a name="optimize-support-for-protocols"></a>Destek protokoller için en iyi duruma getirme
+## <a name="optimize-support-for-protocols"></a>Protokoller için desteği en iyi duruma getirme
 
-Xamarin.iOS/Mac çalışma zamanı nasıl yönetilen türleri uygulayan Objective-C protokolleri hakkında bilgi gerekiyor. Bu bilgiler arabirimleri (ve bu arabirimleri özniteliklerinde), depolanan çok verimli bir biçimde değil veya bağlayıcı kolay değil.
+Xamarin.iOS/Mac çalışma zamanı, yönetilen türleri uygulayan Objective-C protokolleri hakkında bilgi gerekiyor. Bu bilgiler arabirimleri (ve bu arabirimler özniteliklerinde), depolanan çok verimli bir biçimde değil veya bağlayıcı kullanıma uygun değil.
 
-Bir örnektir bu arabirimleri tüm Protokolü üyelerinde hakkındaki bilgileri depolamak bir `[ProtocolMember]` başvurular bu üyeler parametre türleri için başka şeylerin özniteliği. Bunun anlamı yalnızca bu tür arabirimi uygulama bu arabiriminde kullanılan tüm türleri korumak bağlayıcı yapar, isteğe bağlı üyeleri için bile uygulama hiçbir zaman çağıran veya uygular.
+Bir örnek olduğundan bu arabirimlerin tüm Protokolü üyeleri hakkında bilgi depolamak bir `[ProtocolMember]` , parametre türleri bu üyelerin başvuruları içeren diğer özelliklerin yanı sıra özniteliği. Yani bu arabiriminde kullanılan tüm türler korumak bağlayıcı böyle bir arabirim yalnızca uygulama oluşturacak, isteğe bağlı üyeleri için bile uygulama hiçbir zaman çağırır veya uygular.
 
-Bu iyileştirme gerekli bilgilerin kolay ve hızlı çalışma zamanında bulmak çok az bellek kullanır verimli bir biçimde depolamak statik kayıt hale getirir.
+Bu iyileştirme, gerekli tüm bilgileri kolay ve hızlı çalışma zamanında bulmak çok az bellek kullanan verimli bir biçimde depolamak statik kayıt şirketi hale getirir.
 
-Bu mutlaka bu arabirimleri ya da ilgili özniteliklerin herhangi birini korumak gerekmez, bu bağlayıcı öğretir.
+Bu mutlaka bu arabirimler ve ilgili öznitelikleri korumak gerekmeyen, bağlayıcı kurabileceğinizi öğreneceksiniz.
 
-Bu iyileştirme bağlayıcı ve statik kayıt etkin olmasını gerektirir.
+Bu iyileştirme, bağlayıcı ve statik kayıt şirketi etkinleştirilmesini gerektirir.
 
-Bağlayıcı ve statik kayıt etkin olduğunda Xamarin.iOS üzerinde bu en iyi duruma getirme varsayılan olarak etkindir.
+Xamarin.iOS üzerinde bağlayıcı hem statik kaydedici etkin olduğunda bu en iyi duruma getirme varsayılan olarak etkindir.
 
-Xamarin.Mac üzerinde bu en iyi duruma getirme derlemeleri dinamik olarak yükleme Xamarin.Mac destekler ve bu derlemeler edilmemiş derleme zamanında bilinen (ve dolayısıyla en iyi duruma getirilmezse çünkü) varsayılan olarak hiçbir zaman etkindir.
+Xamarin.Mac üzerinde bu en iyi duruma getirme derlemeler dinamik olarak yükleme Xamarin.Mac destekler ve bu derlemeler değil alınan derleme zamanında bilinen (ve bu nedenle en nedeniyle) varsayılan olarak, hiçbir zaman etkinleştirilir.
 
-Geçirerek varsayılan davranışı geçersiz kılınabilir `--optimize=-register-protocols` mtouch/mmp için.
+Varsayılan davranış, geçirerek kılınabilir `--optimize=-register-protocols` mtouch/mmp için.
 
-## <a name="remove-the-dynamic-registrar"></a>Dinamik kayıt kaldırma
+## <a name="remove-the-dynamic-registrar"></a>Dinamik kayıt şirketi Kaldır
 
-Xamarin.iOS ve Xamarin.Mac çalışma zamanı için destek içerir [yönetilen türlerini kaydetme](https://developer.xamarin.com/guides/ios/advanced_topics/registrar/) Objective-C çalışma zamanı. Derleme zamanında veya çalışma zamanında (veya kısmen derleme zamanında ve çalışma zamanında rest) ya da yapılabilir, ancak tamamen derleme zamanında yapılır, çalışma zamanında yapmak için destek kodunu kaldırılabilir demektir. Bu uygulama boyutu, önemli bir düşüş özellikle uzantıları gibi daha küçük uygulamaları veya watchOS uygulamalar için sonuçlanır.
+Hem Xamarin.iOS ve Xamarin.Mac çalışma zamanı desteği dahil [yönetilen türlerini kaydetme](https://developer.xamarin.com/guides/ios/advanced_topics/registrar/) Objective-C çalışma zamanı ile. Derleme zamanında veya çalışma zamanında (ya da kısmen derleme zamanı ve çalışma zamanında rest) ya da yapılabilir, ancak tamamen oluşturma zamanında gerçekleştirilir, çalışma zamanında yapmak için destek kodunu kaldırılabilir demektir. Uygulama boyutu, önemli bir azalma özellikle uzantıları gibi daha küçük uygulamalar veya watchOS uygulamalarının sonuçlanır.
 
-Bu en iyi duruma getirme statik kayıt ve bağlayıcı etkin olmasını gerektirir.
+Bu iyileştirme, statik kayıt şirketi ve bağlayıcı etkinleştirilmesini gerektirir.
 
-Bağlayıcı dinamik kayıt ve kaldırmak deneyecek şekilde IF kaldırmak güvenli olup olmadığını belirlemek deneyecek.
+Bağlayıcı dinamik kayıt şirketi ve kaldırılacağı denemesi için IF kaldırmak güvenli olup olmadığını belirlemeye çalışır.
 
-Xamarin.Mac yükleme derlemeler (hangi derleme zamanında bilinen değil) çalışma zamanında dinamik olarak desteklediğinden, derleme zamanında bu güvenli iyileştirme olup olmadığını belirlemek mümkün değildir. Başka bir deyişle, bu en iyi duruma getirme Xamarin.Mac uygulamalar için varsayılan olarak hiçbir zaman etkindir.
+Xamarin.Mac yükleme derlemeleri (hangi derleme zamanında bilinen değil) çalışma zamanında dinamik olarak desteklediğinden, oluşturma zamanında bu güvenli bir iyileştirme olup olmadığını belirlemek mümkün değildir. Başka bir deyişle, bu en iyi duruma getirme Xamarin.Mac uygulamaları için varsayılan olarak hiçbir zaman etkindir.
 
-Geçirerek varsayılan davranışı geçersiz kılınabilir `--optimize=[+|-]remove-dynamic-registrar` mtouch/mmp için.
+Varsayılan davranış, geçirerek kılınabilir `--optimize=[+|-]remove-dynamic-registrar` mtouch/mmp için.
 
-Dinamik kayıt kaldırmak için varsayılan kılınırsa, algılarsa bağlayıcı uyarıları yayma güvenli değildir (ancak dinamik kayıt hala kaldırılacak).
+Dinamik kayıt şirketi kaldırmak için varsayılan kılınırsa, algılarsa bağlayıcı uyarıları yayar güvenli değildir (ancak yine de dinamik kayıt şirketi kaldırılacak).
 
 ## <a name="inline-runtimedynamicregistrationsupported"></a>Satır içi Runtime.DynamicRegistrationSupported
 
-Inlines değeri, `Runtime.DynamicRegistrationSupported` derleme zamanında belirlenen.
+Satır içleri değeri, `Runtime.DynamicRegistrationSupported` derleme sırasında belirlenen.
 
-Dinamik kayıt kaldırılırsa (bkz [dinamik kayıt kaldırma](#remove-the-dynamic-registrar) iyileştirme), bu bir sabit değer `false` değerini, aksi takdirde bir sabit değer `true` değeri.
+Dinamik kayıt şirketi kaldırılırsa (bkz [dinamik kayıt şirketi kaldırmak](#remove-the-dynamic-registrar) iyileştirme), bu bir sabittir `false` değerini, aksi takdirde bir sabit `true` değeri.
 
-Bu en iyi duruma getirme aşağıdaki kod türde değişir:
+Bu iyileştirme, aşağıdaki kodun türünü değiştirir:
 
 ```csharp
 if (Runtime.DynamicRegistrationSupported) {
@@ -356,13 +356,13 @@ if (Runtime.DynamicRegistrationSupported) {
 }
 ```
 
-dinamik kayıt kaldırıldığında aşağıdaki noktaları:
+dinamik kayıt şirketi çıkarıldığında aşağıdaki içine:
 
 ```csharp
 throw new Exception ("dynamic registration is not supported");
 ```
 
-dinamik kayıt değil kaldırıldığında aşağıdaki noktaları:
+dinamik kayıt şirketi değil kaldırıldığında aşağıdaki içine:
 
 ```csharp
 Console.WriteLine ("do something");
@@ -370,17 +370,17 @@ Console.WriteLine ("do something");
 
 Bu iyileştirme bağlayıcı etkin olmasını gerektirir ve yalnızca yöntemleriyle uygulanır `[BindingImpl (BindingImplOptions.Optimizable)]` özniteliği.
 
-(Bağlayıcı etkinleştirildiğinde) her zaman varsayılan olarak etkindir.
+(Bağlayıcı etkin olduğunda) her zaman varsayılan olarak etkindir.
 
-Geçirerek varsayılan davranışı geçersiz kılınabilir `--optimize=[+|-]inline-dynamic-registration-supported` mtouch/mmp için.
+Varsayılan davranış, geçirerek kılınabilir `--optimize=[+|-]inline-dynamic-registration-supported` mtouch/mmp için.
 
-## <a name="precompute-methods-to-create-managed-delegates-for-objective-c-blocks"></a>Objective-C blokları yönetilen temsilciler oluşturmak için yöntem önceden hesaplar
+## <a name="precompute-methods-to-create-managed-delegates-for-objective-c-blocks"></a>Objective-C blokları için yönetilen temsilci oluşturmak için yöntemleri önceden hesaplar
 
-Objective-C Seçici, çağırdığında bir blok bir parametre olarak alır ve ardından yönetilen kod kılınmadı Xamarin.iOS yöntemi sahip / Xamarin.Mac çalışma zamanı bloğu için bir temsilci oluşturmanız gerekiyor.
+Objective-C Seçici, çağırdığında bir blok bir parametre olarak alır ve ardından yönetilen kod Xamarin.iOS yöntemi geçersiz kılınmış olan / Xamarin.Mac çalışma zamanı bloğu için bir temsilci oluşturmak gerekir.
 
-Bağlama Oluşturucu tarafından oluşturulan bağlama kodu içerecek bir `[BlockProxy]` türüyle belirten özniteliği bir `Create` bunu yapabilirsiniz yöntemi.
+Bağlama Oluşturucu tarafından oluşturulan bağlama kodu içerecek bir `[BlockProxy]` türüyle belirten özniteliği bir `Create` Bunu yapmak için yöntemi.
 
-Aşağıdaki Objective-C kodunu verilen:
+Aşağıdaki Objective-C kodu verilen:
 
 ```objc
 @interface ObjCBlockTester : NSObject {
@@ -404,7 +404,7 @@ Aşağıdaki Objective-C kodunu verilen:
 @end
 ```
 
-ve aşağıdaki bağlama kodu:
+ve aşağıdaki bağlama kodunu:
 
 ```csharp
 [BaseType (typeof (NSObject))]
@@ -415,7 +415,7 @@ interface ObjCBlockTester
 }
 ```
 
-Oluşturucunun üretir:
+Oluşturucu oluşturur:
 
 ```csharp
 [Register("ObjCBlockTester", true)]
@@ -503,15 +503,15 @@ static class Trampolines
 }
 ```
 
-Objective-C çağırdığında `[ObjCBlockTester callClassCallback]`, Xamarin.iOS / Xamarin.Mac çalışma zamanı sırasında görünür `[BlockProxy (typeof (Trampolines.NIDActionArity1V0))]` parametre özniteliği. Ardından görüneceğini `Create` bu türünün yöntemi ve temsilci oluşturmak için bu yöntemi çağırın.
+Objective-C çağırdığında `[ObjCBlockTester callClassCallback]`, Xamarin.iOS / Xamarin.Mac çalışma zamanı sırasında görünür `[BlockProxy (typeof (Trampolines.NIDActionArity1V0))]` parametre özniteliği. Bunun ardından görünür `Create` ilgili türdeki yöntem ve temsilci oluşturmak için bu yöntemi çağırın.
 
-Bu iyileştirme bulacaksınız `Create` yapı saat ve statik kayıt yöntemi, (Bu çok daha hızlıdır ve ayrıca bağlayıcı tanır yansıma ve öznitelik kullanmayı meta veri belirteçleri kullanarak çalışma zamanında yöntemi arar kodu üretir Uygulama küçülterek karşılık gelen çalışma zamanı kodu kaldırmak için).
+Bu iyileştirme bulabilirsiniz `Create` yöntemi derleme zaman ve statik kayıt şirketi (Bu çok daha hızlıdır ve bağlayıcı de tanır yansıma ve öznitelik kullanmayı meta veri belirteçleri kullanarak çalışma zamanında yöntemi arayan kod üretir Uygulama küçülterek karşılık gelen çalışma zamanı kod kaldırmak için).
 
-Mmp/mtouch bulamıyor ise `Create` yöntemi, bir MT4174/MM4174 uyarı gösterilir ve arama çalışma zamanında yerine gerçekleştirilir.
-En olası neden bağlama kodu gerekli olmadan el ile yazılmış `[BlockProxy]` öznitelikleri.
+Mmp/mtouch bulamıyor ise `Create` yöntemi MT4174/MM4174 uyarısı gösterilir ve arama çalışma zamanında yerine gerçekleştirilir.
+En olası neden gerekli olmadan bağlama kodunu el ile yazılan `[BlockProxy]` öznitelikleri.
 
-Bu iyileştirme etkinleştirilecek statik kayıt gerektirir.
+Bu en iyi duruma getirme statik kaydedici etkin olmasını gerektirir.
 
-(Statik kayıt etkin olduğu sürece) her zaman varsayılan olarak etkindir.
+(Statik kaydedici etkin olduğu sürece) her zaman varsayılan olarak etkindir.
 
-Geçirerek varsayılan davranışı geçersiz kılınabilir `--optimize=[+|-]static-delegate-to-block-lookup` mtouch/mmp için.
+Varsayılan davranış, geçirerek kılınabilir `--optimize=[+|-]static-delegate-to-block-lookup` mtouch/mmp için.

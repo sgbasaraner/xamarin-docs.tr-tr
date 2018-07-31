@@ -5,12 +5,12 @@ ms.assetid: 06A03553-D212-43A2-9E6E-C2D2D93EB136
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: a5c559653bff38c692f0b1d881d5d8f4cac3d383
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 8c471f64c14a2e41693c450e02f89e7ac845d060
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38831417"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353366"
 ---
 # <a name="xamarinessentials-flashlight"></a>Xamarin.Essentials: Fener yeri
 
@@ -42,7 +42,7 @@ Açık **AndroidManifest.xml** altında dosya **özellikleri** klasörü ve içi
 <uses-permission android:name="android.permission.CAMERA" />
 ```
 
-Anroid projeye sağ tıklayın ve proje özelliklerini açın. Altında **Android bildirim** Bul **gerekli izinler:** alan ve onay **Fener yeri** ve **kamera** izinleri. Bu otomatik olarak güncelleştirecektir **AndroidManifest.xml** dosya.
+Android projeye sağ tıklayın ve proje özelliklerini açın. Altında **Android bildirim** Bul **gerekli izinler:** alan ve onay **Fener yeri** ve **kamera** izinleri. Bu otomatik olarak güncelleştirecektir **AndroidManifest.xml** dosya.
 
 Bu izinleri ekleyerek [Google Play otomatik olarak cihazlarıyla dışarıdan filtre](http://developer.android.com/guide/topics/manifest/uses-feature-element.html#permissions-features) belirli donanım olmadan. Bu sorunu, uygulamanızı AssemblyInfo.cs dosyası Android projenize aşağıdaki ekleyerek alabilirsiniz:
 
@@ -96,9 +96,9 @@ catch (Exception ex)
 
 ## <a name="platform-implementation-specifics"></a>Platform uygulaması özellikleri
 
-### <a name="androidtabandroid-specifics"></a>[Android](#tab/android-specifics)
+### <a name="androidtabandroid"></a>[Android](#tab/android)
 
-Cihazın işletim sistemi temelinde optmized Fener yeri sınıfı olmuştur.
+Cihazın işletim sistemi temelinde Fener yeri sınıfı optimize edilmiştir.
 
 #### <a name="api-level-23-and-higher"></a>API düzeyi 23 ve üzeri
 
@@ -108,11 +108,11 @@ Yeni API düzeyleri [Torch modu](https://developer.android.com/reference/android
 
 Kamera yüzey doku etkinleştirmek veya devre dışı bırakmak için oluşturulan `FlashMode` kamera birimi. 
 
-### <a name="iostabios-specifics"></a>[iOS](#tab/ios-specifics)
+### <a name="iostabios"></a>[iOS](#tab/ios)
 
 [AVCaptureDevice](https://developer.xamarin.com/api/type/AVFoundation.AVCaptureDevice/) açma ve kapatma Torch ve cihazın Flash modu için kullanılır.
 
-### <a name="uwptabuwp-specifics"></a>[UWP](#tab/uwp-specifics)
+### <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
 [Lamp](https://docs.microsoft.com/en-us/uwp/api/windows.devices.lights.lamp) arkasındaki etkinleştirmek veya devre dışı bırakmak için cihazın ilk lamp algılamak için kullanılır.
 

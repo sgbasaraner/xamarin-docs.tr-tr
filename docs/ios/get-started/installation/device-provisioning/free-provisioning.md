@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 07/16/2018
-ms.openlocfilehash: 22ac17e211562eccbc49cc213e06079e77dd08c0
-ms.sourcegitcommit: e98a9ce8b716796f15de7cec8c9465c4b6bb2997
+ms.openlocfilehash: 0f2418994e02c9e83506071f14901d22af4b8a66
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39111163"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353327"
 ---
 # <a name="free-provisioning-for-xamarinios-apps"></a>Ücretsiz xamarin iOS uygulamaları için hazırlama
 
@@ -35,7 +35,7 @@ Uygulama bir aygıta dağıtmak için ücretsiz sağlama kullanmak için:
 - Xamarin.iOS uygulamanızı açık uygulama kimliği, joker değil uygulama kimliğini kullanmanız gerekir
 - Xamarin.iOS uygulamanızda kullanılan paket grubu tanımlayıcısı, benzersiz olmalıdır ve başka bir uygulamada daha önce kullanılmış olamaz. Ücretsiz sağlama ile kullanılan herhangi bir paket grubu tanımlayıcısı **olamaz** yeniden kullanılabilir.
 - Zaten dağıtılmış bir uygulama, ücretsiz sağlama ile bu uygulama dağıtamazsınız.
-- Uygulama Hizmetleri uygulamanıza kullanıyorsa, bir sağlama profili içinde ayrıntılı olarak oluşturmanız gerekecektir [cihaz sağlama](~/ios/get-started/installation/device-provisioning/index.md#appservices) Kılavuzu. 
+- Uygulama Hizmetleri uygulamanıza kullanıyorsa, bir sağlama profili içinde ayrıntılı olarak oluşturmanız gerekecektir [cihaz sağlama](~/ios/get-started/installation/device-provisioning/index.md#provisioning-for-application-services) Kılavuzu. 
 
 Bir göz atın [sınırlamaları](#limitations) ilişkili sınırlamaları hakkında daha fazla bilgi için bu belgenin bölüm sağlama ücretsiz ve başvurduğu [uygulama dağıtım kılavuzları](~/ios/deploy-test/app-distribution/index.md) hakkında daha fazla bilgi iOS uygulamaları dağıtma.
 
@@ -144,4 +144,4 @@ Bu kılavuz, avantajları ve bir iOS cihazında uygulamaları yüklemek için ü
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Cihaz sağlama](~/ios/get-started/installation/device-provisioning/index.md)
-- [Uygulama hizmetleri için hazırlama](~/ios/get-started/installation/device-provisioning/index.md#appservices)
+- [Uygulama hizmetleri için hazırlama](~/ios/get-started/installation/device-provisioning/index.md#provisioning-for-application-services)

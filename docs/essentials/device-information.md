@@ -5,12 +5,12 @@ ms.assetid: A1AC5373-926A-4FB6-8D7D-4B87EB8EB522
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: b7246afca19607ef2f70288d4643696f4ac35d52
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 18fe081372cc190e5ead2045f36d63652f8702c3
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38831493"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353808"
 ---
 # <a name="xamarinessentials-device-information"></a>Xamarin.Essentials: Cihaz bilgileri
 
@@ -29,7 +29,7 @@ using Xamarin.Essentials;
 Aşağıdaki bilgileri, API aracılığıyla sunulur:
 
 ```csharp
-// Device Model (SMG-950U)
+// Device Model (SMG-950U, iPhone10,6)
 var device = DeviceInfo.Model;
 
 // Manufacturer (Samsung)
@@ -72,7 +72,15 @@ var deviceType = DeviceInfo.DeviceType;
 
 ## <a name="device-type"></a>Cihaz Türü
 
-`DeviceInfo.DeviceType` Uygulama şu işletim sistemlerini çalıştıran fiziksel veya sanal cihaz için olup olmadığını belirlemek için bir numaralandırma ilişkilendirir. Sanal cihaz simülatörü veya öykünücü ' dir.
+`DeviceInfo.DeviceType` Uygulama bir fiziksel veya sanal cihazda çalışıp çalışmadığını belirlemek için bir numaralandırma ilişkilendirir. Sanal cihaz simülatörü veya öykünücü ' dir.
+
+## <a name="platform-implementation-specifics"></a>Platform uygulaması özellikleri
+
+# <a name="iostabios"></a>[iOS](#tab/ios)
+
+iOS geliştiricileri belirli iOS cihaz adını almak için bir API kullanıma sunmuyor. Donanım tanımlayıcı gibi döndürülür _iPhone10, 6_ iPhone X ifade eder. Bu tanımlayıcıların ilişkin bir eşleme, Apple tarafından sağlanan değil, ancak bulunabilir [Wiki iPhone](https://www.theiphonewiki.com/wiki/Models) (resmi olmayan kaynak kaynağı).
+
+--------------
 
 ## <a name="api"></a>API
 

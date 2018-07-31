@@ -1,86 +1,86 @@
 ---
 title: İCloud Xamarin.iOS ile kullanma
-description: Bu belge iCloud ve Xamarin.iOS uygulamaları kullanımını açıklar. Anahtar-değer depolama, belge depolama ve İcloud'a yedekleme açıklanır.
+description: Bu belge, iCloud ve Xamarin.iOS uygulamalarının kullanımını açıklar. Anahtar-değer deposu, belge depolaması ve İcloud'a yedekleme ele alınmaktadır.
 ms.prod: xamarin
 ms.assetid: C6F3B87C-C195-4434-EF14-D66E63894F09
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/09/2016
-ms.openlocfilehash: 032d5f01ae63e5aececa14390300c28623c4f371
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: b72ecc40994d9336c4941f3db700796edd80e81f
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785550"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353223"
 ---
 # <a name="using-icloud-with-xamarinios"></a>İCloud Xamarin.iOS ile kullanma
 
-İOS 5 iCloud depoda API uygulamalarının kullanıcı belgeleri ve uygulamaya özgü verileri merkezi bir konuma kaydedebilir ve kullanıcının tüm cihazlardan bu öğelere erişmesine olanak sağlar.
+İOS 5, iCloud depolama API'si, uygulamaların kullanıcı belgeleri ve uygulamaya özgü verileri merkezi bir konuma kaydedin ve bu öğeleri kullanıcının tüm cihazlardan erişmesine izin verir.
 
-Dört depolama türleri kullanılabilir:
+Dört tür depolama vardır:
 
-- **Anahtar-değer depolama** - üzerinde küçük miktarda veri uygulamanız ile paylaşmak için bir kullanıcının diğer aygıtlar.
+- **Anahtar-değer deposu** - küçük miktarlarda veri uygulamanız ile paylaşım için bir kullanıcının diğer cihazlarına.
 
-- **UIDocument depolama** - kullanıcının iCloud hesabıyla UIDocument öğesinin bir alt kümesi kullanarak belgeleri ve diğer verileri depolamak için.
+- **UIDocument depolama** - kullanıcının iCloud hesabıyla UIDocument öğesinin kullanarak belgeleri ve diğer verileri depolamak için.
 
-- **CoreData** -SQLite veritabanı depolama.
+- **CoreData** -SQLite veritabanı depolama alanı.
 
-- **Tek tek dosyalar ve dizinler** - çok sayıda farklı dosya doğrudan dosya sistemini de yönetmek için.
+- **Tek tek dosyalar ve dizinler** - çok sayıda farklı dosya dosya sistemindeki doğrudan yönetmek için.
 
-Bu belge - anahtar-değer çiftleri ve UIDocument sınıfları - ilk iki türleri ve Xamarin.iOS içinde bu özellikleri kullanmak nasıl anlatılmaktadır.
+Bu belge, ilk iki tür - UIDocument görünümünüzde ve anahtar-değer çiftleri - ve Xamarin.iOS içinde bu özellikleri kullanmak nasıl ele alır.
 
 > [!IMPORTANT]
-> Apple [araçlar sağlar](https://developer.apple.com/support/allowing-users-to-manage-data/) Avrupa Birliği'nın genel veri koruma düzenleme (GDPR) düzgün bir şekilde işlemek geliştiricilere yardımcı olmak için.
+> Apple [araçlar sağlar](https://developer.apple.com/support/allowing-users-to-manage-data/) Avrupa Birliği'nin genel veri koruma yönetmeliği (GDPR) düzgün bir şekilde işlemek geliştiricilerin yardımcı olmak için.
 
 ## <a name="requirements"></a>Gereksinimler
 
 - Xamarin.iOS en son kararlı sürümü
 - Xcode 8 veya daha yeni
-- Visual Studio Mac veya Visual Studio 2015 ve sonraki sürümleri için.
+- Visual Studio Mac veya Visual Studio 2015 veya daha yeni.
 
 ## <a name="preparing-for-icloud-development"></a>İCloud geliştirme için hazırlama
 
-Uygulamaların iCloud hem de kullanacak şekilde yapılandırılması gerekir [Apple sağlama portalı](https://developer.apple.com/account/ios/overview.action) ve proje. İCloud için geliştirme (veya örnekleri çalışırken) aşağıdaki adımları izlemeden önce.
+Uygulamalar, iCloud hem de kullanmak için yapılandırılmalıdır [Apple sağlama portalı](https://developer.apple.com/account/ios/overview.action) ve proje. İCloud için geliştirme (veya örneklerini gözden çalışırken) aşağıdaki adımları izlemeden önce.
 
-İCloud erişmek için bir uygulamayı doğru şekilde yapılandırmak için:
+İCloud erişmek için bir uygulama düzgün şekilde yapılandırmak için:
 
--   **Sistem kullanıcısı kimliği Bul** -oturum açma [developer.apple.com](http://developer.apple.com) ve ziyaret **üye merkezi > hesabınız > Geliştirici hesabı Özet** , takım kimliği (veya tek geliştiriciler için tek tek Kimliği almak için ). 10 karakter dizesi olacaktır ( **A93A5CM278** örneğin)-bu "kapsayıcı tanımlayıcının" bölümü oluşturur.
+-   **Teamıd değeri Bul** -oturum açma [developer.apple.com](http://developer.apple.com) ziyaret edin **üye Merkezi'nde > hesabınızı > Geliştirici hesap özeti** , takım kimliği (veya tek geliştiriciler için tek tek Kimliği almak için ). 10 karakter olacak ( **A93A5CM278** örneğin)-Bu, "kapsayıcı tanımlayıcı" bölümünü oluşturur.
 
--   **Yeni bir uygulama kimliği oluşturma** - bir uygulama kimliği oluşturma, özetlenen adımları izleyin [cihaz sağlamayı Kılavuzu depolama teknolojileri bölümü için sağlama](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)ve kontrol ettiğinizden emin olun **iCloud** olarak bir izin verilen hizmeti:
+-   **Yeni bir uygulama kimliği oluşturma** - uygulama kimliği oluşturma, konusunda özetlenen adımları [Store teknolojileri bölümü için cihaz sağlama kılavuzuna sağlama](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md)ve kontrol ettiğinizden emin olun **iCloud** olarak bir hizmet izin verilen:
 
- [![](introduction-to-icloud-images/icloud-sml.png "İCloud izin verilen bir hizmet olarak denetleyin")](introduction-to-icloud-images/icloud.png#lightbox)
+ [![](introduction-to-icloud-images/icloud-sml.png "İCloud izin verilen bir hizmet olarak işaretleyin")](introduction-to-icloud-images/icloud.png#lightbox)
 
-- **Yeni bir sağlama profili oluşturun** - sağlama profili oluşturun, özetlenen adımları izleyin [cihaz sağlamayı Kılavuzu](~/ios/get-started/installation/device-provisioning/index.md#Provisioning_Profile) .
+- **Yeni bir sağlama profili oluşturma** - bir sağlama profili oluşturmak için özetlenen adımları izleyin [cihaz sağlama Kılavuzu](~/ios/get-started/installation/device-provisioning/index.md#provisioning-your-device) .
 
-- **Kapsayıcı tanımlayıcı için Entitlements.plist Ekle** -kapsayıcı tanımlayıcı biçimi `TeamID.BundleID`. Daha fazla bilgi için bkz [yetkilendirmeler ile çalışma](~/ios/deploy-test/provisioning/entitlements.md) Kılavuzu.
+- **Entitlements.plist dosyanıza Kapsayıcı tanımlayıcı Ekle** -kapsayıcı tanımlayıcı biçimi `TeamID.BundleID`. Daha fazla bilgi için [Yetkilendirmelerle çalışma](~/ios/deploy-test/provisioning/entitlements.md) Kılavuzu.
 
-- **Proje özelliklerini yapılandırma** - dosya olduğundan emin olun Info.plist **paket tanımlayıcısı** eşleşen **paket kimliği** ne zaman ayarlamak [bir uygulama kimliği oluşturma ](~/ios/deploy-test/provisioning/capabilities/index.md); Paket imzalama iOS kullanan bir **sağlama profili** iCloud uygulama hizmeti ile bir uygulama kimliği içeren ve **özel yetkilendirmeler** dosyası seçili. Bu tüm Visual Studio Proje Özellikler bölmesi altında yapılabilir.
+- **Proje özelliklerini yapılandırma** - dosya olun Info.plist dosyasında **paket grubu tanımlayıcısı** eşleşen **paket kimliği** ayarlanır [uygulama kimliği oluşturma ](~/ios/deploy-test/provisioning/capabilities/index.md); İOS paket grubu imzalama kullanan bir **sağlama profili** iCloud App Service ile bir uygulama kimliği içeren ve **özel yetkilendirmeler** dosya seçildi. Bu tüm Visual Studio'da proje Özellikler bölmesi altında yapılabilir.
 
-- **İCloud Cihazınızda etkinleştirmek** - gidin **ayarlar > iCloud** ve cihaz oturum emin olun.
-Seçin ve Aç **belgeleri & veri** seçeneği.
+- **Cihazınızda İcloud'u etkinleştir** - Git **Ayarları > iCloud** ve cihaz açtığınızdan emin olun.
+Seçin ve açın **belgeler ve veriler** seçeneği.
 
-- **İCloud test etmek için bir aygıt kullanmalıdır** -Simulator'da çalışmaz.
-Aslında, gerçekten iCloud eylem görmek için aynı Apple Kimliğiyle oturum imzalı iki veya daha fazla aygıtlar gerekir.
+- **İCloud test etmek için bir cihaz kullanmanız gerekir** -Simulator'da çalışmaz.
+Aslında, gerçekten iCloud iş başında görmek için aynı Apple ID ile oturum açmış iki veya daha fazla aygıtlar gerekir.
 
 
-## <a name="key-value-storage"></a>Anahtar-değer depolama
+## <a name="key-value-storage"></a>Anahtar-değer deposu
 
-Anahtar-değer depolama küçük miktarda bir kullanıcı arasında kalıcı cihazları - kitap veya dergi görüntülenen son sayfa gibi gibi veri yöneliktir. Anahtar-değer depolama için yedekleme yukarı verileri kullanılmamalıdır.
+Anahtar-değer deposu küçük miktarlarda arasında kalıcı cihazlar - bir kitap ya da dergi görüntülenen son sayfa gibi bir kullanıcı gibi veri yöneliktir. Anahtar-değer deposu yedeklenirken veri için kullanılmamalıdır.
 
 Anahtar-değer depolama kullanırken dikkat edilmesi gereken bazı sınırlamalar vardır:
 
-- **Maksimum anahtar boyutu** -anahtar adları 64 bayttan daha uzun olamaz.
+- **En fazla anahtar boyutu** -anahtar adları 64 bayttan daha uzun olamaz.
 
-- **En büyük değer boyutu** -tek bir değer birden fazla 64 KB depolanamıyor.
+- **Maksimum değer boyutu** -tek bir değer olarak birden fazla 64 KB depolanamıyor.
 
-- **Bir uygulama için en fazla anahtar değeri deposu boyutu** -uygulamalar yalnızca olarak toplamda en fazla 64 KB anahtar-değer veri depolayabilir. Bu sınırı aşan anahtarlarını ayarlamak için denemeleri başarısız olur ve önceki değeri korunur.
+- **Bir uygulama için en fazla anahtar-değer deposu boyutu** -uygulamalar yalnızca olarak toplam en fazla 64 KB anahtar-değer veri depolayabilir. Bu sınırı aşan anahtarlarını ayarlamak için denemeleri başarısız olur ve önceki değeri korunur.
 
-- **Veri türleri** - yalnızca temel türleri gibi dizeler, sayılar ve Boole değerlerini depolanabilir.
+- **Veri türleri** - yalnızca temel türler ister dizeler, sayılar ve Boole değerlerini depolanabilir.
 
-**İCloudKeyValue** örneğinde, nasıl çalıştığı gösterilmektedir. Örnek kod, her cihaz için adlı bir anahtar oluşturur: bir cihazda bu anahtarı ayarlayın ve başkalarına yayılan değerini izleyin. Ayrıca, aynı anda birçok cihazlarda düzenlerseniz, "herhangi bir cihazda - düzenlenebilen paylaşılan" adlı bir anahtar oluşturur, iCloud "(bir zaman damgası değişiklik kullanarak) WINS" değeri ve yayılan karar verir.
+**İCloudKeyValue** örnek, nasıl çalıştığını gösterir. Örnek kod, her cihaz için adlı bir anahtar oluşturur: bir cihazda bu anahtarı ayarlayıp başkalarına yayılan değeri izleyin. Ayrıca, tek seferde birçok cihazda düzenlerseniz, "herhangi bir cihazda - düzenlenebilen paylaşılan" adlı bir anahtar oluşturur, iCloud yayılan ve "(bir zaman damgası değişiklik kullanarak) WINS" değeri karar verir.
 
-Bu ekran örnek kullanımını göstermektedir. Değişiklik bildirimleri iCloud alındığında bunlar ekranın altındaki kaydırma metin görünümünde yazdırılan ve giriş alanları güncelleştirildi.
+Bu ekran örnek kullanımını göstermektedir. İCloud değişiklik bildirimi alındığında bunlar kayan ekranın metin görünümünde yazdırılır ve giriş alanlarına güncelleştirildi.
 
 
 
@@ -88,7 +88,7 @@ Bu ekran örnek kullanımını göstermektedir. Değişiklik bildirimleri iCloud
 
 ### <a name="setting-and-retrieving-data"></a>Veri alma ve ayarlama
 
-Bu kod bir dize değeri ayarlamak nasıl gösterir.
+Bu kod, bir dize değeri ayarlama işlemi gösterilmektedir.
 
 ```csharp
 var store = NSUbiquitousKeyValueStore.DefaultStore;
@@ -96,7 +96,7 @@ store.SetString("testkey", "VALUE IN THE CLOUD");  // key and value
 store.Synchronize();
 ```
 
-Eşitle çağırma değeri yalnızca yerel disk depolama için kalıcı sağlar. İcloud eşitleme arka planda gerçekleşir ve "uygulama kodu tarafından zorlanamaz". Ağ zayıf (ya da bağlantısı kesilmiş) ise bir güncelleştirmeyi daha uzun sürebilir ancak iyi bir ağ bağlantısına sahip eşitleme genellikle 5 saniye içinde gerçekleşir.
+Eşitleme çağırma değeri yalnızca yerel disk depolama için kalıcı sağlar. İcloud eşitleme arka planda gerçekleşir ve "uygulama kodu tarafından zorlanamıyor". Düşük (veya bağlantısı kesilmiş) ağ ise, bir güncelleştirme çok daha uzun sürebilir ancak iyi bir ağ bağlantısına sahip eşitleme genellikle 5 saniye içinde gerçekleşir.
 
 Bu kod bir değerle alabilirsiniz:
 
@@ -105,11 +105,11 @@ var store = NSUbiquitousKeyValueStore.DefaultStore;
 display.Text = store.GetString("testkey");
 ```
 
-Değer yerel veri deposundan alınır - bu yöntem, "en son" değerini almak için iCloud sunucularla iletişim kurmayı değil. iCloud yerel veri deposundaki kendi zamanlamaya göre güncelleştirilir.
+Değeri, yerel veri deposundan alınır: Bu yöntem, "son" değerini almak için iCloud sunucularla iletişim kurmayı değil. iCloud yerel veri deposundaki kendi zamanlamaya göre güncelleştirir.
 
 ### <a name="deleting-data"></a>Verileri silme
 
-Bir anahtar-değer çifti tamamen kaldırmak için bu gibi Kaldır yöntemi kullanın:
+Bir anahtar-değer çifti tamamen kaldırmak için Remove yöntemi bu gibi kullanın:
 
 ```csharp
 var store = NSUbiquitousKeyValueStore.DefaultStore;
@@ -117,10 +117,10 @@ store.Remove("testkey");
 store.Synchronize();
 ```
 
-### <a name="observing-changes"></a>Değişiklikleri Gözlemleme
+### <a name="observing-changes"></a>Değişiklikleri gözleme
 
-Değerleri bir gözlemci ekleyerek iCloud tarafından değiştirildiğinde uygulama bildirimleri de alabilirsiniz `NSNotificationCenter.DefaultCenter`.
-Aşağıdaki kod **KeyValueViewController.cs** `ViewWillAppear` yöntemi için bu bildirimleri dinlemek ve hangisinin anahtarları değiştirilmiş listesini oluşturmak nasıl gösterir:
+Değerleri bir gözlemci ekleyerek iCloud tarafından değiştirildiğinde bir uygulamanın bildirim de alabilir `NSNotificationCenter.DefaultCenter`.
+Aşağıdaki kodu **KeyValueViewController.cs** `ViewWillAppear` yöntemi için bu bildirimleri dinleyip hangi anahtarları değiştirilmiş bir liste oluşturmak nasıl gösterir:
 
 ```csharp
 keyValueNotification =
@@ -142,49 +142,49 @@ NSNotificationCenter.DefaultCenter.AddObserver (
 });
 ```
 
-Kodunuzu bazı listesiyle bunları yerel bir kopyasını güncelleştirmek veya yeni değerlerle UI güncelleştirme gibi değişen anahtarların önlem alabilirsiniz.
+Kodunuz sonra yerel bir kopyasını veya kullanıcı Arabirimi yeni değerlerle güncelleme gibi değiştirilen anahtarların listesi ile bazı eylemler gerçekleştirebilir.
 
-Değişiklik olası nedenleri şunlardır: HtmlRadioButton (0), InitialSyncChange (1) veya QuotaViolationChange (2). Nedeni erişebilir ve gerekirse farklı işlem gerçekleştirme (örneğin, bazı anahtarları sonucu olarak kaldırmanız gerekebilir bir *QuotaViolationChange*).
+Olası bir değişiklik nedenler: (0) HtmlRadioButton, InitialSyncChange (1) veya QuotaViolationChange (2). Nedeni erişim ve gerekirse farklı bir işlem gerçekleştirme (örneğin, sonucu olarak bazı anahtarları kaldırmanız gerekebilir bir *QuotaViolationChange*).
 
 ## <a name="document-storage"></a>Belge depolama
 
-İcloud'a belge depolama uygulamanıza (ve kullanıcıya) önemli olan verileri yönetmek için tasarlanmıştır. Dosyaları ve iCloud tabanlı Yedekleme sağlama ve kullanıcının tüm cihazlarda işlevselliği paylaşımı aynı anda sırada çalıştırmak için uygulamanız gereken diğer verileri yönetmek için kullanılabilir.
+İcloud'a belge depolama uygulamanıza (ve kullanıcı) önemli olan verileri yönetmek için tasarlanmıştır. Dosyaları ve uygulamanızı sağlayan iCloud tabanlı yedekleme ve kullanıcının tüm cihazlarda işlevselliği paylaşımı aynı anda sırada çalıştırmak için gereken diğer verileri yönetmek için kullanılabilir.
 
-Bu diyagramda, nasıl tüm birlikte uyduğunu gösterilmektedir. Her cihazın yerel depolama (UbiquityContainer) ve arka plan programı veri bulutta gönderip ilgilenir işletim sisteminin iCloud kaydedilen verilerin gerekir. Tüm dosya erişimi UbiquityContainer FilePresenter/eşzamanlı erişimi engellemek için FileCoordinator yapılmalıdır. `UIDocument` Sınıfı bu sizin için gerçekleştirir; Bu örnek UIDocument kullanmayı gösterir.
+Bu diyagramda, tüm birbirine nasıl uyduğunu gösterilmektedir. Her cihazın yerel depolama (UbiquityContainer) ve arka plan programı gönderme ve bulutta veri alma üstlenir işletim sisteminin iCloud üzerinde kaydedilen veriler var. Tüm dosya erişimi UbiquityContainer FilePresenter/eş zamanlı erişimi engellemek için FileCoordinator yapılmalıdır. `UIDocument` Sınıfı bu sizin için gerçekleştirir; Bu örnekte UIDocument kullanma işlemi gösterilmektedir.
 
- [![](introduction-to-icloud-images/icloud-overview.png "Belge depolama genel bakış")](introduction-to-icloud-images/icloud-overview.png#lightbox)
+ [![](introduction-to-icloud-images/icloud-overview.png "Belge depolamaya genel bakış")](introduction-to-icloud-images/icloud-overview.png#lightbox)
 
-Basit bir iCloudUIDoc örnek uygulayan `UIDocument` tek bir metin alanı içeren bir alt kümesi. Metin olarak işlenir bir `UITextView` ve düzenlemeleri yayılır diğer cihazları İcloud'a tarafından bir bildirim iletisi kırmızı olarak gösterilir. Örnek kod çakışma çözümü gibi daha gelişmiş iCloud özellikleri ile ilgilenir değil.
+Basit bir iCloudUIDoc örnek uygulayan `UIDocument` tek bir metin alanı içeren bir alt sınıfı. Metin olarak işlenen bir `UITextView` ve düzenlemeleri yayılır İcloud'a diğer cihazlar tarafından bir bildirim iletisi kırmızı olarak gösterilir. Örnek kod çakışma çözümü gibi daha gelişmiş iCloud özellikleri ile ilgilenir değil.
 
-Bu ekran metni değiştirme ve tuşuna basarak sonra örnek uygulaması - gösterir **UpdateChangeCount** belge diğer cihazları İcloud'a yoluyla eşitlenir.
+Metin değiştirme ve tuşuna basarak örnek uygulaması - bu ekran görüntüsünde gösterilmiştir **UpdateChangeCount** belge diğer cihazlara iCloud ile eşitlenir.
 
- [![](introduction-to-icloud-images/iclouduidoc.png "Bu ekran metni değiştirme ve UpdateChangeCount tuşuna basarak sonra örnek uygulaması gösterir")](introduction-to-icloud-images/iclouduidoc.png#lightbox)
+ [![](introduction-to-icloud-images/iclouduidoc.png "Bu ekran metin değiştirme ve UpdateChangeCount tuşuna basarak sonra örnek uygulamayı gösterir.")](introduction-to-icloud-images/iclouduidoc.png#lightbox)
 
-İCloudUIDoc örnek beş bölümü vardır:
+Beş iCloudUIDoc örnek bölümü vardır:
 
 1. **UbiquityContainer erişme** -iCloud etkin olup olmadığını ve bu durumda belirlemek, uygulamanızın iCloud depolama alanı yolu.
 
-1. **UIDocument alt sınıf oluşturma** -iCloud depolama model nesneleri arasındaki ara için bir sınıf oluşturun.
+1. **UIDocument alt sınıf oluşturarak** -Orta iCloud depolama ve model nesnelerinizi arasında bir sınıf oluşturun.
 
-1. **Bulma ve açma iCloud belgeleri** -kullanmak `NSFileManager` ve `NSPredicate` iCloud belgeleri bulmak ve bunları açmak için.
+1. **Bulma ve açma iCloud belgeleri** -kullanın `NSFileManager` ve `NSPredicate` iCloud belgeleri bulun ve bunları açmak için.
 
-1. **İcloud'a belge görüntüleme** -özelliklerinden kullanıma, `UIDocument` böylece UI denetimleri ile etkileşim kurabilirsiniz.
+1. **İCloud belgeleri görüntüleme** -özelliklerinden kullanıma sunma, `UIDocument` böylece kullanıcı Arabirimi denetimleri ile etkileşim kurabilir.
 
-1. **İCloud belgeleri kaydetme** -kullanıcı Arabiriminde yapılan değişiklikleri disk ve iCloud kalıcı emin olun.
+1. **İCloud belgeleri kaydetme** -kullanıcı Arabiriminde yapılan değişiklikler iCloud ve disk ile kalıcı emin olun.
 
-Tüm iCloud işlemleri çalıştırma (veya çalışması gerektiğini) böylece bunlar yapacağı olmasını beklerken zaman uyumsuz olarak engelleme. Bu örnekte gerçekleştirmeye üç farklı yolla görürsünüz:
+Tüm iCloud işlemleri çalıştırın (veya çalışması gereken) ve böylece bunlar birşeyler olmasını beklerken zaman uyumsuz olarak engellemez. Bunu gerçekleştirmenin örnekte üç farklı şekilde görürsünüz:
 
- **İş parçacığı** - `AppDelegate.FinishedLaunching` ilk çağrısı `GetUrlForUbiquityContainer` ana iş parçacığı engellenmesini önlemek için başka bir iş parçacığı üzerinde gerçekleştirilir.
+ **İş parçacığı** - `AppDelegate.FinishedLaunching` ilk çağrı `GetUrlForUbiquityContainer` ana iş parçacığı engellenmesini önlemek için başka bir iş parçacığı üzerinde gerçekleştirilir.
 
- **NotificationCenter** - zaman uyumsuz olduğunda bildirimleri için kaydediliyor gibi işlemleri `NSMetadataQuery.StartQuery` tamamlandı.
+ **NotificationCenter** - bildirimler zaman uyumsuz olduğunda kayıt gibi işlemler `NSMetadataQuery.StartQuery` tamamlandı.
 
- **Tamamlama işleyicileri** - yöntemler gibi zaman uyumsuz işlemleri tamamlama çalıştırmak için geçen `UIDocument.Open`.
+ **Tamamlama işleyicileri** - yöntemleriyle gibi zaman uyumsuz işlemleri tamamlama çalıştırmak için geçen `UIDocument.Open`.
 
 ### <a name="accessing-the-ubiquitycontainer"></a>UbiquityContainer erişme
 
-İcloud'a belge depolama kullanmanın ilk adımı iCloud etkin olup olmadığını ve bu durumda belirlemektir "yaygınlığıyla kapsayıcısının" konumu (cihazda iCloud etkin dosyaların depolandığı dizin).
+İcloud'a belge depolama kullanmanın ilk adımı iCloud etkin olup olmadığını ve bu durumda belirlemektir "yaygınlığıyla kapsayıcı" konumunu (cihazda iCloud etkin dosyaların depolandığı dizin).
 
-Bu kod `AppDelegate.FinishedLaunching` örnek yöntemi.
+Bu kodu `AppDelegate.FinishedLaunching` örnek yöntemi.
 
 ```csharp
 // GetUrlForUbiquityContainer is blocking, Apple recommends background thread or your UI will freeze
@@ -213,20 +213,20 @@ ThreadPool.QueueUserWorkItem (_ => {
 });
 ```
 
-Örnek Bunu yapmak karşın, bir uygulama için ön gelen her GetUrlForUbiquityContainer çağırma Apple önerir.
+Örnek Bunu yapmak olsa da, Apple, uygulama ön plana gelen her GetUrlForUbiquityContainer çağırma önerir.
 
 ### <a name="creating-a-uidocument-subclass"></a>UIDocument alt sınıf oluşturma
 
-Tüm iCloud dosyaları ve dizinleri (IE. herhangi bir şey UbiquityContainer dizinde saklanan) NSFilePresenter protokolünü uygulamaya yönelik ve bir NSFileCoordinator yazma NSFileManager yöntemlerini kullanarak yönetiliyor olması gerekir.
-En basit yolu, tümünü bunu kendiniz ancak bunu yapan UIDocument bir alt kümesi değil yazmaktır tüm için.
+Tüm iCloud dosyaları ve dizinleri (IE. herhangi bir şey UbiquityContainer dizinde depolanan) NSFilePresenter protokolünü uygulamaya ve bir NSFileCoordinator yazma NSFileManager yöntemler kullanılarak yönetilmesi gerekir.
+En basit yolu, tüm gerçekleştirmek için bunu kendiniz fakat bunu yapan UIDocument alt sınıfı değil yazmaktır tümünü sizin için.
 
-İCloud ile çalışmak için bir UIDocument alt uygulamalıdır yalnızca iki yöntemi vardır:
+UIDocument alt iCloud ile çalışmak için uygulamanız gereken yalnızca iki yöntem vardır:
 
-- **LoadFromContents** -, listelenen model sınıfı/es açmak, dosyanın içeriğini NSData geçirir.
+- **LoadFromContents** -NSData, listelenen model sınıfı/es açmak, dosyanın içeriğinin geçirir.
 
-- **ContentsForType** -disk (ve bulut) kaydetmek için model sınıfı/es NSData gösterimini sağlamak istek.
+- **ContentsForType** -disk (ve buluta) kaydetmek için istek modeli sınıfı/es NSData gösterimini temin etmeniz amacıyla.
 
-Bu örnek koddan **iCloudUIDoc\MonkeyDocument.cs** nasıl UIDocument uygulandığını gösterir.
+Bu örnek koddan **iCloudUIDoc\MonkeyDocument.cs** nasıl UIDocument uygulanacağı gösterilmektedir.
 
 ```csharp
 public class MonkeyDocument : UIDocument
@@ -274,11 +274,11 @@ public class MonkeyDocument : UIDocument
 }
 ```
 
-Veri modeli Bu örnekte çok basit - tek bir metin alanı. Veri modelinizi gerektiği bir Xml belgesi veya ikili veriler gibi karmaşık olabilir. UIDocument uygulama birincil rolü, model sınıflarınızı ve kaydedilen/yüklendi diskte bir NSData gösterimi arasında ifadelere çevrilmesidir.
+Veri modeli Bu örnekte çok basit - tek bir metin alanı. Veri modelinizi gibi karmaşık bir Xml belgesi veya ikili veri gibi gerekli olabilir. Birincil UIDocument uygulamasının model sınıflarınızı ve diske kaydedilmiş/yüklenen bir NSData gösterimi arasında çeviri yapmak için rolüdür.
 
-### <a name="finding-and-opening-icloud-documents"></a>Bulma ve iCloud belgeleri açma
+### <a name="finding-and-opening-icloud-documents"></a>Bulma ve açma iCloud belgeleri
 
-Örnek uygulamayı yalnızca tek bir dosyayı - sınama.txt - ilgilenir böylece kodu **AppDelegate.cs** oluşturur bir `NSPredicate` ve `NSMetadataQuery` özellikle bu dosya için aranacak. `NSMetadataQuery` Zaman uyumsuz olarak çalışır ve tamamlandığında bir bildirim gönderir. `DidFinishGathering` bildirim gözlemci tarafından çağrılır, sorgu durdurur ve kullandığı LoadDocument çağırır `UIDocument.Open` dosya yükleme ve içinde görüntüleme girişiminde tamamlama işleyici yöntemiyle bir `MonkeyDocumentViewController`.
+Örnek uygulamayı tek bir dosyayı - test.txt - yalnızca ilgilenir. böylece kodda **AppDelegate.cs** oluşturur bir `NSPredicate` ve `NSMetadataQuery` özellikle bu dosya için aranacak. `NSMetadataQuery` Zaman uyumsuz olarak çalışır ve tamamlandığında bir bildirim gönderir. `DidFinishGathering` bildirim gözlemci tarafından çağrıldığında, sorgu durdurur ve kullandığı LoadDocument çağırır `UIDocument.Open` dosyasını yükleyin ve görüntüleyin denemek için bir tamamlama işleyicisi yöntemiyle bir `MonkeyDocumentViewController`.
 
 ```csharp
 string monkeyDocFilename = "test.txt";
@@ -342,10 +342,10 @@ void LoadDocument (NSMetadataQuery metadataQuery)
 
 ### <a name="displaying-icloud-documents"></a>İCloud belgeleri görüntüleme
 
-Bir UIDocument görüntüleme için başka bir model sınıfı fark olmamalıdır
-- Özellikler kullanıcı Arabirimi denetimlerini, büyük olasılıkla kullanıcı tarafından düzenlenmiş ve modele geri yazılan görüntülenir.
+Bir UIDocument görüntülemek için başka bir model sınıfı farklı olmamalıdır
+- UI denetimleri, büyük olasılıkla kullanıcı tarafından düzenlenebilir ve modele geri yazılan özellikleri görüntülenir.
 
-Örnekte **iCloudUIDoc\MonkeyDocumentViewController.cs** MonkeyDocument metin olarak görüntüler bir `UITextView`. `ViewDidLoad` gönderilen bildirim dinler `MonkeyDocument.LoadFromContents` yöntemi. `LoadFromContents` iCloud dosyanın yeni verileri olduğunda bildirim belgenin güncelleştirildiğini gösterir böylece denir.
+Örnekte **iCloudUIDoc\MonkeyDocumentViewController.cs** MonkeyDocument metni görüntüler bir `UITextView`. `ViewDidLoad` gönderilen bildirim dinler `MonkeyDocument.LoadFromContents` yöntemi. `LoadFromContents` Yeni veri dosyası için iCloud sahip olduğunda bildirim belge güncelleştirilip güncelleştirilmediğini gösterir. böylece çağrılır.
 
 ```csharp
 NSNotificationCenter.DefaultCenter.AddObserver (this,
@@ -355,7 +355,7 @@ NSNotificationCenter.DefaultCenter.AddObserver (this,
 );
 ```
 
-Örnek kod bildirim işleyicisi UI - bu durumda herhangi bir çakışma algılaması veya çözümleme güncelleştirmek için bir yöntem çağırır.
+Örnek kod bildirim işleyicisi - kullanıcı Arabirimi, bu durumda herhangi bir çakışma algılaması veya çözüm olmadan güncelleştirmek için bir yöntem çağırır.
 
 ```csharp
 [Export ("dataReloaded:")]
@@ -367,9 +367,9 @@ void DataReloaded (NSNotification notification)
 }
 ```
 
-### <a name="saving-icloud-documents"></a>Kaydetme iCloud belgeleri
+### <a name="saving-icloud-documents"></a>İCloud belgeleri kaydetme
 
-Bir UIDocument çağırabilirsiniz İcloud'a eklemek için `UIDocument.Save` doğrudan (yeni belgeler için yalnızca) veya kullanarak varolan bir dosya taşıma `NSFileManager.DefaultManager.SetUbiquitious`. Kod örneği, doğrudan bu kodla yaygınlığıyla kapsayıcıda yeni bir belge oluşturur (iki tamamlama işleyicisi vardır burada için bir tane `Save` işlemi ve açık için başka bir):
+Bir UIDocument çağırabilirsiniz İcloud'a eklemek için `UIDocument.Save` doğrudan (yeni belgeler için yalnızca) veya kullanarak mevcut bir dosyayı taşıma `NSFileManager.DefaultManager.SetUbiquitious`. Örnek kod, doğrudan bu kodla yaygınlığıyla kapsayıcıda yeni bir belge oluşturur. (iki tamamlama işleyicisi vardır, burada bir `Save` işlemi, diğeri için Aç):
 
 ```csharp
 var docsFolder = Path.Combine (iCloudUrl.Path, "Documents"); // NOTE: Documents folder is user-accessible in Settings
@@ -394,7 +394,7 @@ if (saveSuccess) {
 }
 ```
 
-Sonraki değişiklikler belgeye "kaydedilmez" doğrudan, bunun yerine biz söyleyin `UIDocument` ile değişen `UpdateChangeCount`, ve otomatik olarak kaydetme disk işlemi için zamanlama:
+Belgedeki sonraki değişiklikler "kaydedilmez" doğrudan, bunun yerine size bildirmek `UIDocument` ile değişen `UpdateChangeCount`, ve bir disk işlemi Kaydet otomatik olarak zamanlar:
 
 ```csharp
 doc.UpdateChangeCount (UIDocumentChangeKind.Done);
@@ -402,41 +402,41 @@ doc.UpdateChangeCount (UIDocumentChangeKind.Done);
 
 ### <a name="managing-icloud-documents"></a>İCloud belgeleri yönetme
 
-Kullanıcıların iCloud belgelerde yönetebilir **belgeleri** ayarları; aracılığıyla uygulamanızı dışında "yaygınlığıyla kapsayıcısının" dizin silmek için geçirme ve dosya listesini görüntüleyebilirsiniz. Uygulama kodu belgeler kullanıcı tarafından nerede silinir durum kaldırabilir olmalıdır. İç uygulama verileri depolamaz **belgeleri** dizin.
+Kullanıcıların iCloud belgeleri yönetebilir **belgeleri** uygulamanızı; ayarlarından dışında "yaygınlığıyla kapsayıcısının" dizin dosya listesi ve silmek için kullanılan görüntüleyebilirsiniz. Uygulama kodu, belgeler kullanıcı tarafından burada silinir durumu işleyebilen olmalıdır. İç uygulama verileri depolamaz **belgeleri** dizin.
 
  [![](introduction-to-icloud-images/icloudstorage.png "İcloud'a belge iş akışını yönetme")](introduction-to-icloud-images/icloudstorage.png#lightbox)
 
 
 
-Bu uygulamayla ilgili iCloud belgelerinin durumunu bildiren cihazlarını iCloud etkinleştirilmiş bir uygulama kaldırmayı denediğinizde kullanıcılar ayrıca farklı uyarılar alırsınız.
+İCloud etkinleştirilmiş bir uygulama bu uygulamayla ilgili iCloud belgeleri durumunu bildiren cihazını kaldırmayı denediğinizde kullanıcılar farklı uyarılar da alırsınız.
 
- [![](introduction-to-icloud-images/icloud-delete1.png "Kullanıcının iCloud etkinleştirilmiş bir uygulama kullanıcıların cihazlarından kaldırma girişiminde bulunduğunda örnek iletişim")](introduction-to-icloud-images/icloud-delete1.png#lightbox)
+ [![](introduction-to-icloud-images/icloud-delete1.png "Kullanıcı cihazlarından iCloud etkinleştirilmiş bir uygulama kaldırmaya çalıştığında örnek iletişim")](introduction-to-icloud-images/icloud-delete1.png#lightbox)
 
- [![](introduction-to-icloud-images/icloud-delete2.png "Kullanıcının iCloud etkinleştirilmiş bir uygulama kullanıcıların cihazlarından kaldırma girişiminde bulunduğunda örnek iletişim")](introduction-to-icloud-images/icloud-delete2.png#lightbox)
+ [![](introduction-to-icloud-images/icloud-delete2.png "Kullanıcı cihazlarından iCloud etkinleştirilmiş bir uygulama kaldırmaya çalıştığında örnek iletişim")](introduction-to-icloud-images/icloud-delete2.png#lightbox)
 
 ## <a name="icloud-backup"></a>İcloud'a yedekleme
 
-İcloud'a yedekleme doğrudan geliştiriciler tarafından erişilen özelliği olmasa da, uygulamanızın tasarlarken kullanıcı deneyimini etkileyebilir.
-Apple sağlar [iOS veri depolama yönergeleri](http://developer.apple.com/icloud/documentation/data-storage/) geliştiricilerin kendi iOS uygulamalarını izleyin.
+İCloud yedeklemeyi, geliştiriciler tarafından doğrudan erişilebilen bir özelliği olmasa da, uygulamanızı tasarlarken, kullanıcı deneyimini etkileyebilir.
+Apple sağlar [iOS veri depolama yönergeleri](http://developer.apple.com/icloud/documentation/data-storage/) geliştiricilerin iOS uygulamalarını izleyin.
 
-En önemli konu olup uygulamanızı, kullanıcı tarafından oluşturulan (örneğin, içeriği sorunu başına hundred-plus megabayt depolar dergi okuyucu uygulama) olmayan büyük dosyaların depolandığı yerdir. Apple bu tür, İcloud'a yedeklenen ve gereksiz yere kullanıcının iCloud kota doldurun veri depolamayın tercih eder.
+Uygulamanızı olmayan kullanıcı tarafından oluşturulan (örneğin, sorun başına içeriğinin hundred-plus megabayt depolayan bir dergi okuyucu uygulama) büyük dosyalar olup olmadığını depolar en önemli husustur. Apple, bu tür, İcloud'a yedekleme ve gereksiz yere kullanıcının iCloud kota dolgu verileri depolamaz tercih eder.
 
-Büyük miktarlarda veri şöyle depolamak uygulamaları ya da onu yedeklenen (ör. değil kullanıcı dizinleri birinde depolamanız gerekir Önbellekleri veya tmp) veya `NSFileManager.SetSkipBackupAttribute` İcloud'a yedekleme işlemleri sırasında saymasıdır böylece bu dosyaları bir bayrak uygulanacak.
+Büyük miktarlarda benzer veri depolayan uygulamalar ya da bunu yedeklenen (örn. değil kullanıcı dizinleri birinde depolamanız gerekir Önbellekler veya tmp) veya `NSFileManager.SetSkipBackupAttribute` İcloud'a yedekleme işlemleri sırasında bunları yoksayar, böylece bu dosyalara bir bayrak uygulamak için.
 
 ## <a name="summary"></a>Özet
 
-Bu makalede iOS 5 dahil yeni iCloud özellik sunulmuştur. Projenizi iCloud kullanacak şekilde yapılandırmak için gereken ve örnekleri iCloud özellikleri uygulamak sağlanan adımları incelendi.
+Bu makalede, iOS 5 dahil yeni iCloud özelliğini kullanıma sunmuştur. Bu, projenizi iCloud kullanmak üzere yapılandırmak için gereken ve ardından iCloud özellikleri uygulamak örnekler sağlanan adımları incelenir.
 
-Anahtar-değer depolama örneğine benzer şekilde NSUserPreferences depolanan verilerin kısa süreli depolamak için iCloud'ın nasıl kullanılabileceğini gösterilmektedir. Nasıl daha fazla karmaşık veri depolanır ve birden çok cihazı iCloud aracılığıyla arasında eşitlenen UIDocument örnek gösterilmiştir.
+İCloud az miktarda bir benzer şekilde NSUserPreferences depolanan verileri depolamak için nasıl kullanılabileceğini anahtar-değer deposu örneği gösterilmektedir. Nasıl daha fazla karmaşık veri depolanabilir ve birden çok cihazda iCloud ile eşitlenmiş UIDocument örneği gösterilmiştir.
 
-Son olarak nasıl İcloud'a yedekleme eklenmesi uygulama tasarımınızı etkilemelidir hakkında kısa bir tartışma dahil.
+Son olarak nasıl İcloud'a yedekleme eklenmesini uygulama tasarımınızı etkilemelidir hakkında kısa bir açıklama dahil.
 
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Giriş için iCloud (örnek)](https://developer.xamarin.com/samples/monotouch/IntroductionToiCloud)
-- [iCloud Semineri örnek kod](https://github.com/xamarin/Seminars/tree/master/2012-03-22-iCloud)
-- [iCloud Semineri slayt](http://www.slideshare.net/Xamarin/using-icloud-with-monotouch)
+- [iCloud seminer örnek kod](https://github.com/xamarin/Seminars/tree/master/2012-03-22-iCloud)
+- [iCloud seminer slayt](http://www.slideshare.net/Xamarin/using-icloud-with-monotouch)
 - [iCloud NSUbiquitousKeyValueStore](https://developer.apple.com/library/prerelease/ios/)
 - [iCloud depolama](http://support.apple.com/kb/HT4847)

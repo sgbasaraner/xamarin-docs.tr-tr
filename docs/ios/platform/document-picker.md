@@ -1,77 +1,78 @@
 ---
-title: Xamarin.iOS belge seçicide
-description: Bu belge, belge Seçici iOS açıklar ve nasıl Xamarin.iOS içinde kullanılacağı açıklanır. İCloud, belgeler, ortak kurulum kodu, belge sağlayıcısı uzantıları ve daha fazlasını göz alır.
+title: Xamarin.iOS, belge Seçici
+description: Bu belge, belge Seçici iOS açıklar ve nasıl Xamarin.ios'ta kullanılacağı açıklanır. İCloud, belgeler, ortak kurulum kodu, belge sağlayıcısı uzantıları ve diğer göz sürer.
 ms.prod: xamarin
 ms.assetid: 89539D79-BC6E-4A3E-AEC6-69D9A6CC6818
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: efa1b589ad4afe26d8b87c3db1777660b3e27be6
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 06/05/2017
+ms.openlocfilehash: ca0c7a6e655fdc44aa673a59be71bc83044d3085
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786892"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353340"
 ---
-# <a name="document-picker-in-xamarinios"></a>Xamarin.iOS belge seçicide
+# <a name="document-picker-in-xamarinios"></a>Xamarin.iOS, belge Seçici
 
-Belge Seçici belgelerinin uygulamalar arasında paylaşılmasına olanak tanır. Bu belgeler, iCloud veya farklı bir uygulamanın dizinde depolanabilir. Belgeleri kümesi paylaşılan [belge sağlayıcısı uzantıları](~/ios/platform/extensions.md) kullanıcı cihazlarında yükledi. 
+Belge Seçici belgelerinin uygulamalar arasında paylaşılmasına olanak tanır. Bu belgeler, iCloud veya farklı bir uygulamanın dizinine depolanabilir. Belgeleri kümesi paylaşılan [belge sağlayıcısı uzantıları](~/ios/platform/extensions.md) kullanıcı cihazlarında yüklü. 
 
-Uygulamaları ve bulut arasında eşitlenen belgeleri tutma zorluk nedeniyle, bunlar belirli bir miktar gerekli karmaşıklık tanıtır.
+Uygulamaları ve bulut arasında eşitlenen belgeleri tutmak zorluğu nedeniyle, belirli bir miktarda gerekli karmaşıklığı tanıtır.
 
 ## <a name="requirements"></a>Gereksinimler
 
 Aşağıda sunulan bu makaledeki adımları tamamlamak için gereklidir:
 
--  **Xcode 7 ve iOS 8 veya daha yeni** – Apple'nın Xcode 7 ve iOS 8 veya daha yeni API'ler gereken yüklenmeli ve geliştirici bilgisayarda yapılandırılmış.
--  **Visual Studio veya Mac için Visual Studio** – Mac için Visual Studio en son sürümü yüklü olmalıdır.
--  **iOS aygıtı** – iOS 8 çalıştıran bir iOS cihazını veya üstü.
+-  **Xcode 7 ve iOS 8 veya daha yenisini** – Apple'nın Xcode 7 ve iOS 8 veya daha yeni API'lere gereken yüklenmeli ve geliştiricinin bilgisayarında yapılandırılmış.
+-  **Visual Studio veya Mac için Visual Studio** – Mac için Visual Studio'nun en son sürümü yüklü olması gerekir.
+-  **iOS cihazını** – iOS 8 çalıştıran bir iOS cihazını veya üzeri.
 
-## <a name="changes-to-icloud"></a>İcloud değişiklikleri
+## <a name="changes-to-icloud"></a>Değişiklikler icloud
 
-Belge Seçici yeni özelliklerini uygulamak için Apple'nın İcloud'a hizmeti aşağıdaki değişiklikler yapılmıştır:
+Belge Seçici'nün yeni özelliklerini uygulamak için Apple'nın İcloud'a hizmeti aşağıdaki değişiklikler yapılmıştır:
 
--  Arka plan programı iCloud CloudKit kullanarak, tamamen yeniden yazılmıştır.
--  Özellikleri olan mevcut iCloud iCloud sürücü yeniden adlandırıldı.
+-  Arka plan programı iCloud tamamen CloudKit kullanılarak yazılmıştır.
+-  Özellik değerinin mevcut iCloud iCloud sürücü olarak yeniden adlandırıldı.
 -  İcloud'a Microsoft Windows işletim sistemi için destek eklendi.
--  İCloud klasörü Mac OS Finder eklendi.
--  iOS aygıtları Mac OS iCloud klasörünün içeriğini erişebilir.
+-  Mac OS Finder'da iCloud klasörü eklendi.
+-  iOS cihazlar Mac OS iCloud klasörünün içeriğini erişebilir.
 
 > [!IMPORTANT]
-> Apple [araçlar sağlar](https://developer.apple.com/support/allowing-users-to-manage-data/) Avrupa Birliği'nın genel veri koruma düzenleme (GDPR) düzgün bir şekilde işlemek geliştiricilere yardımcı olmak için.
+> Apple [araçlar sağlar](https://developer.apple.com/support/allowing-users-to-manage-data/) Avrupa Birliği'nin genel veri koruma yönetmeliği (GDPR) düzgün bir şekilde işlemek geliştiricilerin yardımcı olmak için.
 
 ## <a name="what-is-a-document"></a>Bir belge nedir?
 
-İCloud belgede söz konusu olduğunda, tek başına tek bir varlık ve kullanıcı tarafından algılandığı şekilde. Bir kullanıcının belgeyi değiştirmek veya (örneğin, e-posta, kullanarak) diğer kullanıcılarla paylaşmak isteyebilirsiniz.
+İCloud belgede söz konusu olduğunda, tek başına tek bir varlık ve kullanıcı tarafından algılandığı şekilde. Bir kullanıcının belgeyi değiştirmesine veya (örneğin, e-posta kullanarak) diğer kullanıcılarla paylaşmak isteyebilirsiniz.
 
-Birkaç kullanıcı hemen sayfaları gibi belgeleri olarak açılış konuşması veya numaraları dosyaları algılar, dosya türlerini vardır. Ancak, iCloud bu kavramı sınırlı değildir. Örneğin, oyun (örneğin, bir Chess eşleşme) durumunu bir belge olarak kabul edilir ve değiştirebilirsiniz iCloud içinde depolanır. Bu dosyayı bir kullanıcının cihazlar arasında geçirilen ve bunları farklı bir aygıtta bıraktığı yerden oyun seçmek sağlar.
+Birden fazla kullanıcı hemen sayfaları gibi bir belge olarak açılış veya sayı dosyaları algılar dosyaları vardır. Ancak, iCloud bu kavramı için sınırlı değildir. Örneğin, (örneğin, bir Chess eşleşme) oyun durumunu bir belge olarak kabul edilir ve iCloud içinde depolanır. Bu dosya, bir kullanıcının cihazlar arasında geçirilebilir ve farklı bir cihaza bıraktığı yerden bir oyun çekme izin vermek.
 
-## <a name="dealing-with-documents"></a>Belgelerle ele alma
+## <a name="dealing-with-documents"></a>Belgelerle ilgilenme
 
-Belge Seçici Xamarin ile kullanmak için gerekli koda Dalma, bu makalede iCloud belgeleriyle çalışma yönelik en iyi uygulamaları kapak edecek ve birkaç mevcut API'lerini yapılan değişiklikleri belge Seçici desteklemek için gereken önce.
+Belge Seçici Xamarin ile kullanmak için gerekli koda atlama, bu makalede iCloud belgeleri ile çalışmak için en iyi karşılamak için gittiği ve mevcut API'lere yapılan değişiklikler birkaç belge Seçici desteklemek için gereken önce.
 
 ### <a name="using-file-coordination"></a>Dosya düzenleme kullanma
 
-Bir dosya birkaç farklı konumlardan değiştirilebildiğinden koordinasyon veri kaybını önlemek için kullanılması gerekir.
+Bir dosya, farklı konumlardan değiştirilebildiğinden, veri kaybını önlemek için koordinasyon kullanılması gerekir.
 
  [![](document-picker-images/image1.png "Dosya düzenleme kullanma")](document-picker-images/image1.png#lightbox)
 
 Yukarıdaki resimde bir göz atalım:
 
-1.  Dosya düzenleme kullanılarak bir iOS cihazı yeni bir belge oluşturur ve klasör İcloud'a kaydeder.
-2.  iCloud dağıtım her aygıt için bulut değiştirilen dosya kaydeder.
-3.  Bağlı bir Mac iCloud klasör değiştirilmiş dosyasında görür ve değişiklikleri dosyaya kopyalamak için dosya düzenleme kullanır.
-4.  Dosya düzenleme kullanmayan bir aygıtı dosyasına bir değişiklik yapar ve klasör İcloud'a kaydeder. Bu değişiklikler diğer cihazlara anında çoğaltılır.
+1.  Dosya düzenleme kullanarak bir iOS cihazı yeni bir belge oluşturur ve İcloud'a klasörüne kaydeder.
+2.  iCloud bulut her cihaza dağıtım için değiştirilmiş dosya kaydeder.
+3.  Bağlı bir Mac, değiştirilen dosya klasörü icloud'da görür ve dosya koordinasyon değişikliklerini dosyasına kopyalamak için kullanır.
+4.  Dosya düzenleme kullanmayan bir cihaz dosyasında bir değişiklik yapar ve İcloud'a klasörüne kaydeder. Bu değişiklikler, diğer cihazlara anında çoğaltılır.
 
-Özgün varsayın iOS cihazı veya Mac dosya düzenleme yaptıkları değişiklikleri şimdi kaybolur ve eşgüdümlü olmayan aygıt dosyasından sürümüyle üzerine. Veri kaybını önlemek için dosyayı düzenleme bir bulut tabanlı belgelerle çalışırken gerekliliktir.
+Özgün varsayar iOS cihaz veya Mac dosya düzenleme yaptıkları değişiklikleri kaybolur ve eşgüdümlü olmayan bir CİHAZDAN dosyasının sürümü üzerine artık. Veri kaybını önlemek için dosyayı düzenleme bulut tabanlı belgelerle çalışırken zorunluluktur.
 
 ### <a name="using-uidocument"></a>UIDocument kullanma
 
- `UIDocument` işleri basit hale getirir (veya `NSDocument` macOS üzerinde) geliştiricisi yaparak tüm ağır lifting. Sağlar uygulamanın kullanıcı Arabirimi engellemelerini önlemek için arka plan kuyruklarla dosya düzenleme yerleşik.
+ `UIDocument` şeyler basit hale getirir (veya `NSDocument` macos'ta) için geliştirici yaparak tüm ağır işlerin çoğunu. Sağladığı dosya düzenleme uygulamanın kullanıcı Arabiriminde engellemelerini önlemek için arka plan kuyrukları'yla oluşturulmuş.
 
- `UIDocument` birden çok sunan herhangi bir geliştirici amaç için bir Xamarin uygulaması geliştirme efor kolaylaştırır üst düzey API'leri gerektirir.
+ `UIDocument` birden çok kullanıma sunan herhangi bir geliştirici amaç için bir Xamarin uygulaması geliştirme sürecine kolaylaştıran üst düzey API'ler gerektirir.
 
-Aşağıdaki kod öğesinin bir alt kümesi oluşturur `UIDocument` depolamak ve metin iCloud almak için kullanılan genel bir metin tabanlı belgede uygulamak için:
+Aşağıdaki kod öğesinin oluşturur `UIDocument` iCloud metnini almak ve depolamak için kullanılan bir genel metin tabanlı belge uygulamak için:
 
 ```csharp
 using System;
@@ -151,13 +152,13 @@ namespace DocPicker
 }
 ```
 
-`GenericTextDocument` Yukarıda sunulan sınıfı bir Xamarin.iOS 8 uygulaması dış belgeleri ve belge Seçici ile çalışırken, bu makale kullanılır.
+`GenericTextDocument` Sınıfı üzerinde sunulan bir Xamarin.iOS 8 uygulaması dış belgeleri ve belge Seçici ile çalışırken bu makale boyunca kullanılır.
 
 ## <a name="asynchronous-file-coordination"></a>Zaman uyumsuz dosya düzenleme
 
-iOS 8 yeni dosya düzenleme API'leri aracılığıyla birkaç yeni zaman uyumsuz dosya düzenleme özellikleri sağlar. İOS 8 önce var olan tüm dosya düzenleme API'lerini tamamen zaman uyumlu. Bu, geliştirici uygulamanın UI Engellemesi dosya düzenleme önlemek için queuing kendi arka plan uygulamak için sorumlu anlamına gelir.
+iOS 8 yeni dosya koordinasyon API'leri aracılığıyla birkaç yeni zaman uyumsuz dosya düzenleme özellikleri sağlar. İOS 8 önce var olan tüm dosya koordinasyon API'lerini tamamen zaman uyumlu. Bu, geliştirici, kendi arka plan dosya koordinasyon uygulamanın kullanıcı Arabiriminde engellemesini önleyecek queuing uygulamak için sorumlu geliyordu.
 
-Yeni `NSFileAccessIntent` sınıfı, dosya ve gerekli koordinasyon türünü denetlemek için birkaç seçenek işaret eden bir URL içerir. Aşağıdaki kod, bir dosyayı bir konumdan diğerine taşıma gösterir amaçlarını kullanma:
+Yeni `NSFileAccessIntent` sınıfı, dosya ve gerekli koordinasyon türünü kontrol etmek için çeşitli seçenekler gösteren bir URL içerir. Aşağıdaki kod, bir dosya bir konumdan diğerine taşınmasını gösterir kullanarak hedefleri:
 
 ```csharp
 // Get source options
@@ -185,66 +186,66 @@ fileCoordinator.CoordinateAccess (intents, queue, (err) => {
 });
 ```
 
-## <a name="discovering-and-listing-documents"></a>Keşfetmek ve belgeleri listeleme
+## <a name="discovering-and-listing-documents"></a>Bulma ve belgeleri listeleme
 
-Bul ve belgeleri listelemek için varolan kullanarak yoludur `NSMetadataQuery` API'leri. Bu bölümde için eklenen yeni özellikler ele alınacaktır `NSMetadataQuery` olduğundan olun belgelerle çalışma bile daha önce.
+Bulmak ve belgeler listesinde mevcut kullanarak yoludur `NSMetadataQuery` API'leri. Bu bölüm için eklenen yeni özellikler ele alınacaktır `NSMetadataQuery` oluşturan belgelerle çalışma bile artık daha kolay.
 
-### <a name="existing-behavior"></a>Var olan davranışı
+### <a name="existing-behavior"></a>Varolan davranışı
 
-İOS 8, önce `NSMetadataQuery` gibi toplama yerel dosya değişiklikleri yavaştı: siler, oluşturur ve yeniden adlandırır.
+İOS 8, önce `NSMetadataQuery` gibi toplama yerel dosya değişiklikleri yavaşlama: siler, oluşturur ve yeniden adlandırır.
 
  [![](document-picker-images/image2.png "NSMetadataQuery yerel dosya değişiklikleri genel bakış")](document-picker-images/image2.png#lightbox)
 
 Yukarıdaki diyagramda:
 
-1.  Uygulama kapsayıcısında zaten mevcut dosyaların için `NSMetadataQuery` var olan `NSMetadata` kayıtları önceden oluşturulması ve uygulamaya anında kullanılabilir olmaları Biriktiricideki.
-1.  Uygulama uygulama kapsayıcıda yeni bir dosya oluşturur.
-1.  Önce bir gecikme olur `NSMetadataQuery` uygulama kapsayıcısı değişikliği görür ve gerekli oluşturur `NSMetadata` kaydı.
+1.  Uygulama kapsayıcısında mevcut dosyaları için `NSMetadataQuery` sahip `NSMetadata` kayıtları önceden oluşturulmuş ve bir uygulama için anında kullanılabilir olduklarından biriktirilir.
+1.  Uygulama uygulama kapsayıcısında yeni bir dosya oluşturur.
+1.  Önce bir gecikme `NSMetadataQuery` değişiklik uygulama kapsayıcısı'nda görür ve gerekli oluşturur `NSMetadata` kaydı.
 
 
-Oluşturulmasına gecikme nedeniyle `NSMetadata` iki veri kaynakları açmak kayıt, uygulama vardı: yerel dosya değişiklikleri için bir tane ve bulut için bir temel değişiklikler.
+Oluşturulmasını gecikme nedeniyle `NSMetadata` iki veri kaynakları açmak kayıt ve uygulama vardı: yerel dosya değişiklikleri için bir tane ve bulut için bir temel değişiklikler.
 
-### <a name="stitching"></a>Dikiş
+### <a name="stitching"></a>Birleştirme
 
-İOS 8 ' de `NSMetadataQuery` Stitching doğrudan yeni bir özellik ile kullanmak daha kolay olur:
+İOS 8 ' deki `NSMetadataQuery` birleştirme adlı doğrudan yeni bir özellik ile kullanmak daha kolaydır:
 
- [![](document-picker-images/image3.png "Yeni bir özellik ile NSMetadataQuery Stitching çağrılır")](document-picker-images/image3.png#lightbox)
+ [![](document-picker-images/image3.png "Birleştirme ile yeni bir özellik NSMetadataQuery çağırılır")](document-picker-images/image3.png#lightbox)
 
-Yukarıdaki diyagramda Stitching kullanma:
+Yukarıdaki diyagramda birleştirme kullanma:
 
-1.  Önceki gibi uygulama kapsayıcısında zaten mevcut dosyaların `NSMetadataQuery` var olan `NSMetadata` kayıtları önceden oluşturulması ve belleğe.
-1.  Uygulamanın dosya düzenleme kullanarak uygulama kapsayıcıda yeni bir dosya oluşturur.
-1.  Kanca uygulama kapsayıcısında değiştirilmesini ve çağrıları görür `NSMetadataQuery` gerekli oluşturmak için `NSMetadata` kaydı.
-1.  `NSMetadata` Kaydı doğrudan sonra dosya oluşturulur ve uygulama için kullanılabilir hale getirilir.
+1.  Önceki örneklerde olduğu gibi uygulama kapsayıcısında mevcut dosyaları için `NSMetadataQuery` sahip `NSMetadata` kayıtları önceden oluşturulmuş ve biriktirilir.
+1.  Uygulama uygulama kapsayıcısında dosya koordinasyon kullanarak yeni bir dosya oluşturur.
+1.  Uygulama kapsayıcısında bir kancası çağrıları ve değişikliği görür `NSMetadataQuery` gerekli oluşturmak için `NSMetadata` kaydı.
+1.  `NSMetadata` Kayıt doğrudan sonra dosya oluşturulur ve uygulama için kullanılabilir hale getirilir.
 
 
-Stitching kullanarak uygulama artık yerel izlemek için bir veri kaynağı açmak sahip ve dosya değişiklikleri bulut tabanlı. Uygulama üzerinde güvenebilirsiniz artık `NSMetadataQuery` doğrudan.
+Birleştirme kullanarak uygulaması artık yerel izlemek için bir veri kaynağı açmak ve bulut tabanlı dosya değişiklikleri. Uygulama üzerinde güvenebilirsiniz artık `NSMetadataQuery` doğrudan.
 
 > [!IMPORTANT]
-> Yukarıdaki bölümde sunulan gibi dosya düzenleme uygulama kullanıyorsa Dikiş yalnızca çalışır. Dosya düzenleme kullanılmadığından, API için var olan öncesi iOS 8 davranışı varsayılan.
+> Yukarıdaki bölümde sunulan dosya koordinasyon uygulama kullanıyorsa birleştirme yalnızca çalışır. Dosya koordinasyon kullanılmayan, API'leri varsayılan olarak öncesi iOS 8'deki mevcut davranışı.
 
 
 
 
 ### <a name="new-ios-8-metadata-features"></a>Yeni iOS 8 meta veri özellikleri
 
-Aşağıdaki yeni özellikleri için eklenene `NSMetadataQuery` iOS 8'de:
+Aşağıdaki yeni özellikler eklenmiş `NSMetadataQuery` iOS 8'de:
 
--   `NSMetatadataQuery` artık bulutta depolanan yerel olmayan belgeleri listeleyebilirsiniz.
--  Yeni API meta veri bilgileri bulut tabanlı belgelere erişmek için eklenmiştir. 
--  Yeni bir `NSUrl_PromisedItems` içeriklerini kullanılabilir yerel olarak olmayabilir veya dosyaların dosya özniteliklerini erişmek için olacak API.
--  Kullanmak `GetPromisedItemResourceValue` belirli bir dosya hakkında bilgi almak veya kullanmak için bir yöntem `GetPromisedItemResourceValues` aynı anda birden fazla dosyada bilgi almak için yöntemi.
+-   `NSMetatadataQuery` Şimdi yerel olmayan belgeler bulutta depolanan listeleyebilirsiniz.
+-  Meta veri bilgilerini bulut tabanlı belgelere erişmek için yeni API'ler eklenmiştir. 
+-  Yeni bir `NSUrl_PromisedItems` kullanılabilir içeriği yerel olarak olmayabilir veya dosyaların dosya özniteliklerine erişmek için olacak API.
+-  Kullanma `GetPromisedItemResourceValue` belirli bir dosya hakkında bilgi almak veya kullanmak için bir yöntem `GetPromisedItemResourceValues` aynı anda birden fazla dosya bilgi almak için yöntemi.
 
 
-Meta veri ilgilenmek için iki yeni dosya düzenleme bayrakları eklenmiştir:
+Meta veri başa çıkmak için iki yeni dosya koordinasyon bayrakları eklenmiştir:
 
 -   `NSFileCoordinatorReadImmediatelyAvailableMetadataOnly` 
 -   `NSFileCoordinatorWriteContentIndependentMetadataOnly` 
 
 
-Yukarıdaki bayraklarıyla belge dosyasının içeriği yerel olarak kendileri için kullanılacak kullanılabilir olması gerekmez.
+Yukarıdaki bayraklarıyla dosyanın içeriğini yerel olarak bunlar için kullanılmak üzere kullanılabilir olması gerekmez.
 
-Aşağıdaki kod kesimi nasıl kullanılacağını gösterir `NSMetadataQuery` belirli bir dosya varlığını sorgulamak ve yoksa dosyasını oluşturmak için:
+Aşağıdaki kod kesimi nasıl kullanılacağını gösterir `NSMetadataQuery` belirli bir dosyanın varlığını sorgulamak ve yoksa dosyasını oluşturmak için:
 
 ```csharp
 using System;
@@ -424,60 +425,60 @@ internal void RaiseDocumentLoaded(GenericTextDocument document) {
 
 ### <a name="document-thumbnails"></a>Belge küçük resimleri
 
-Apple belgeleri bir uygulama için listelerken en iyi kullanıcı deneyimini'nin önizlemeleri kullanmaktır hissettirir. Bunlar birlikte çalışmak istediğiniz belge hızlı bir şekilde tanımlayabilir bu son kullanıcılar bağlamı sağlar.
+Apple belgeleri uygulamanın listelerken en iyi kullanıcı deneyimini'nin Önizleme kullanmaktır hissettirir. Birlikte çalışmak istediğiniz belge hızlıca tanımlayabilirsiniz böylece bu son kullanıcıların bağlamı sağlar.
 
-İOS 8 önce belge önizlemeleri gösteren özel bir uygulaması gerekir. İOS için yeni 8 olan hızlı bir şekilde belge küçük resimleri ile çalışmak Geliştirici izin dosya sistemi öznitelikleri.
+İOS 8 önce belge önizlemeleri gösteren bir özel uygulaması gerekir. Yeni iOS 8 Geliştirici belge küçük resimleri ile hızlıca çalışmaya izin dosya sistem öznitelikleri olan.
 
-#### <a name="retrieving-document-thumbnails"></a>Belge küçük resimleri alma 
+#### <a name="retrieving-document-thumbnails"></a>Belge küçük resimleri alınıyor 
 
-Çağırarak `GetPromisedItemResourceValue` veya `GetPromisedItemResourceValues` yöntemleri `NSUrl_PromisedItems` API, bir `NSUrlThumbnailDictionary`, döndürülür. Bu sözlükteki şu anda yalnızca bir anahtardır `NSThumbnial1024X1024SizeKey` ve kendi eşleştirme `UIImage`.
+Çağırarak `GetPromisedItemResourceValue` veya `GetPromisedItemResourceValues` yöntemleri `NSUrl_PromisedItems` API, bir `NSUrlThumbnailDictionary`, döndürülür. Bu sözlükteki şu anda yalnızca anahtar `NSThumbnial1024X1024SizeKey` ve kendi eşleşen `UIImage`.
 
 #### <a name="saving-document-thumbnails"></a>Kaydetme belge küçük resimleri
 
-Küçük resim kaydetmek için en kolay yolu kullanmaktır `UIDocument`. Çağırarak `GetFileAttributesToWrite` yöntemi `UIDocument` ve dosyanın olduğunda küçük resim ayarlama, onu otomatik olarak kaydedilir. Arka plan programı iCloud bu değişikliği görmek ve İcloud'a yayar. Mac OS X üzerinde küçük resimleri için Geliştirici Hızlı Ara eklenti tarafından otomatik olarak oluşturulur.
+Bir küçük resim kaydetmek için en kolay yolu kullanmaktır `UIDocument`. Çağırarak `GetFileAttributesToWrite` yöntemi `UIDocument` ve dosyanın olduğunda küçük ayarı, bu otomatik olarak kaydedilir. Arka plan programı iCloud bu değişikliği görmek ve İcloud'a yayar. Mac OS X üzerinde küçük resimleri için Geliştirici Hızlı Ara eklenti tarafından otomatik olarak oluşturulur.
 
-Varolan API için yapılan değişiklikleri birlikte bir yerde dayalı iCloud belgelerle çalışmanın temelleri ile bir Xamarin iOS 8 belge Seçici View Controller uygulamak hazır duyuyoruz mobil uygulama.
-
-
-## <a name="enabling-icloud-in-xamarin"></a>Xamarin iCloud etkinleştirme
-
-Belge seçici bir Xamarin.iOS uygulaması kullanılmadan önce iCloud destek uygulamanızda hem Apple aracılığıyla etkinleştirilmesi gerekir. 
-
-Aşağıdaki adımları gözden geçirme için iCloud sağlama işlemidir.
-
-1. İCloud kapsayıcı oluşturun.
-2. Uygulama hizmeti iCloud içeren bir uygulama kimliği oluşturun.
-3. Bu uygulama kimliği içeren bir sağlama profili oluşturun
-
-[Özellikleriyle çalışma](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md) Kılavuzu ilk iki adım adım anlatılmaktadır. Bir sağlama profili oluşturmak için adımları [sağlama profili](~/ios/get-started/installation/device-provisioning/index.md#Provisioning_Profile) Kılavuzu.
+Mevcut API değişikliklerin yanı sıra yerinde tabanlı iCloud belgeleri ile çalışmanın temel bilgileri ile bir Xamarin iOS 8 belge Seçici görünüm denetleyicisi uygulamak hazırız mobil uygulaması.
 
 
+## <a name="enabling-icloud-in-xamarin"></a>Xamarin, iCloud etkinleştirme
 
-Aşağıdaki adımları gözden geçirme, uygulamanız için iCloud yapılandırma işlemi:
+Belge Seçici içinde bir Xamarin.iOS uygulaması kullanılmadan önce iCloud destek hem uygulamanızı hem Apple aracılığıyla etkinleştirilmesi gerekir. 
+
+Aşağıdaki adımları gözden geçirme için iCloud sağlama işlemi.
+
+1. İCloud bir kapsayıcı oluşturun.
+2. App Service iCloud içeren bir uygulama kimliği oluşturun.
+3. Bu uygulama kimliğini içeren bir sağlama profili oluşturma
+
+[Özellikleriyle çalışma](~/ios/deploy-test/provisioning/capabilities/icloud-capabilities.md) Kılavuzu, ilk iki adımları boyunca size yol gösterir. Bir sağlama profili oluşturmak için adımları izleyin. [sağlama profili](~/ios/get-started/installation/device-provisioning/index.md#provisioning-your-device) Kılavuzu.
+
+
+
+Aşağıdaki adımları gözden geçirme iCloud için uygulamanızı yapılandırma işlemi:
 
 Aşağıdakileri yapın:
 
-1.  Proje, Mac veya Visual Studio için Visual Studio'da açın.
-2.  İçinde **Çözüm Gezgini**, projeye sağ tıklayın ve seçenekleri seçin.
-3.  Seçenekler iletişim kutusu seç **iOS uygulama**, emin **paket tanımlayıcısı** tanımlanan bir eşleşen **uygulama kimliği** yukarıda uygulama için oluşturulan. 
-4.  Seçin **iOS paket imzalama**seçin **Geliştirici kimlik** ve **sağlama profili** yukarıda oluşturduğunuz.
-5.  Tıklatın **Tamam** düğmesine değişiklikleri kaydetmek ve iletişim kutusunu kapatın.
-6.  Sağ `Entitlements.plist` içinde **Çözüm Gezgini** düzenleyicisinde açın.
+1.  Proje, Visual Studio veya Mac için Visual Studio'da açın.
+2.  İçinde **Çözüm Gezgini**, projeye sağ tıklayın ve seçenekleri belirleyin.
+3.  Seçenekler iletişim kutusu seçme içinde **iOS uygulama**, emin **paket grubu tanımlayıcısı** içinde tanımlanan bir eşleşen **uygulama kimliği** yukarıda uygulama için oluşturulan. 
+4.  Seçin **iOS paket grubu imzalama**seçin **Geliştirici kimliği** ve **sağlama profili** yukarıda oluşturduğunuz.
+5.  Tıklayın **Tamam** değişiklikleri kaydetmek ve iletişim kutusunu kapatmak için düğme.
+6.  Sağ `Entitlements.plist` içinde **Çözüm Gezgini** Düzenleyicisi'nde açın.
 
     > [!IMPORTANT]
-    > Visual Studio'da, bunun üzerinde sağ tıklayarak yetkilendirmeler Düzenleyicisi'ni açmak seçerek gerekebilir **birlikte Aç...** ve özellik listesi Düzenleyici seçme
+    > Visual Studio'da, yetkilendirmeleri Düzenleyicisi'ni açın, üzerine sağ tıklayarak seçerek gerekebilir **birlikte Aç...** ve özellik listesi Düzenleyicisi seçme
 
-7.  Denetleme **etkinleştirmek iCloud** , **iCloud belgeleri** , **anahtar-değer depolama** ve **CloudKit** .
-8.  Olun **kapsayıcı** (yukarıda oluşturduğunuz gibi) uygulama için bulunmaktadır. Örnek: `iCloud.com.your-company.AppName`
+7.  Denetleme **etkinleştirme iCloud** , **iCloud belgeleri** , **anahtar-değer deposu** ve **CloudKit** .
+8.  Olun **kapsayıcı** (yukarıda oluşturulan gibi) için uygulama yok. Örnek: `iCloud.com.your-company.AppName`
 9.  Değişiklikleri dosyaya kaydedin.
 
-Yetkilendirmeler hakkında daha fazla bilgi için bkz [yetkilendirmeler ile çalışma](~/ios/deploy-test/provisioning/entitlements.md) Kılavuzu.
+Yetkilendirmeler hakkında daha fazla bilgi için bkz [Yetkilendirmelerle çalışma](~/ios/deploy-test/provisioning/entitlements.md) Kılavuzu.
 
-Yerinde yukarıdaki kurulumla uygulama artık bulut tabanlı belgeler ve yeni belge Seçici görünüm denetleyicisini kullanabilirsiniz.
+Yerinde yukarıdaki kurulum ile uygulama artık bulutta yer alan belgeler ve yeni belge Seçici görünüm denetleyicisi kullanabilirsiniz.
 
 ## <a name="common-setup-code"></a>Genel Kurulum kodu
 
-Belge Seçici görünüm denetleyicisiyle başlamadan önce gereken bazı standart kurulum kodu yok. Başlangıç uygulamanın değiştirerek `AppDelegate.cs` dosya ve şu şekilde görünür yapın:
+Belge Seçici görünüm denetleyicisi ile başlamadan önce gerekli bazı standart kurulum kodu yoktur. Başlangıç uygulamanın değiştirerek `AppDelegate.cs` dosyasını açıp aşağıdaki gibi görünmesi:
 
 ```csharp
 using System;
@@ -793,11 +794,11 @@ namespace DocPicker
 ```
 
 > [!IMPORTANT]
-> Yukarıdaki kod yukarıdaki keşfedin ve listeleme belgeler bölümünden kodu içerir. Gerçek bir uygulamada görüneceği şekilde tamamının, burada sunulur. Kolaylık olması için bu örnek ile tek, sabit kodlanmış bir dosya çalışır (`test.txt`) yalnızca.
+> Yukarıdaki kod, yukarıdaki keşfedin ve listeleme belgeler bölümünden kodu içerir. Gerçek bir uygulamada görüneceği şekilde sunabilen, burada gösterilir. Kolaylık olması için bu örnek, sabit kodlanmış, tek bir dosya ile çalışır (`test.txt`) yalnızca.
 
-Yukarıdaki kod, uygulamanın geri kalanına çalışmak kolaylaştırmak için çeşitli iCloud sürücü kısayolları kullanıma sunar.
+Yukarıdaki kod, uygulamanın geri kalanına çalışmak daha kolay hale getirmek için bazı iCloud sürücü kısayollar kullanıma sunar.
 
-Ardından, herhangi bir görünüm veya belge seçicisini kullanarak veya bulut tabanlı belgeleriyle çalışma görünüm kapsayıcısını aşağıdaki kodu ekleyin:
+Ardından, herhangi bir görünüm veya belge Seçici'yi kullanarak veya bulut tabanlı belgeleriyle çalışma görünüm kapsayıcısını aşağıdaki kodu ekleyin:
 
 ```csharp
 using CloudKit;
@@ -814,43 +815,43 @@ public AppDelegate ThisApp {
 #endregion
 ```
 
-Bu almak için bir kısayol ekler `AppDelegate` ve yukarıda oluşturduğunuz iCloud kısayolları erişebilirsiniz.
+Bu almak için bir kısayol ekler `AppDelegate` ve yukarıda oluşturulan iCloud kısayolları erişebilirsiniz.
 
-Bu kod yerinde belge Seçici View Controller bir Xamarin iOS 8 uygulaması'nda uygulama bir bakalım.
+Yerinde şu kodla belge Seçici görünüm denetleyicisi bir Xamarin iOS 8 uygulamasında uygulama göz atalım.
 
-## <a name="using-the-document-picker-view-controller"></a>Belge Seçici görünüm denetleyicisini kullanma
+## <a name="using-the-document-picker-view-controller"></a>Belge Seçici görünüm denetleyicisi kullanma
 
-İOS 8 önce uygulama içinde uygulamadan dışında belgeleri bulmak için hiçbir şekilde olduğundan başka bir uygulamaya ait belgelere erişmek oldukça zor.
+İOS 8 önce uygulamanın içinden uygulamada dışında belgeleri bulmak için hiçbir yolu olmadığından, başka bir uygulamaya ait belgelere erişmek çok zor oluyordu.
 
-### <a name="existing-behavior"></a>Var olan davranışı
+### <a name="existing-behavior"></a>Varolan davranışı
 
  [![](document-picker-images/image31.png "Varolan davranışı genel bakış")](document-picker-images/image31.png#lightbox)
 
-İOS 8 önce dış bir belgeye erişen bir bakalım:
+İOS 8 önce dış bir belgeye erişme göz atalım:
 
-1.  İlk kullanıcı, ilk olarak belgeyi oluşturan uygulamayı açmak gerekir.
-1.  Seçili belge ve `UIDocumentInteractionController` yeni uygulamaya belge göndermek için kullanılır.
-1.  Son olarak, özgün belgenin bir kopyasını yeni uygulamanın kapsayıcısında yerleştirilir.
+1.  İlk kullanıcı, belge orijinal olarak oluşturduğunuz uygulamayı açmak gerekir.
+1.  Seçili bir belge ve `UIDocumentInteractionController` yeni uygulamaya belge göndermek için kullanılır.
+1.  Son olarak, özgün belgenin bir kopyasını yeni uygulama kapsayıcısında yerleştirilir.
 
 
-Buradan belgeyi açmak ve düzenlemek ikinci uygulama için kullanılabilir.
+Buradan belgeyi açın ve düzenlemek ikinci uygulama için kullanılabilir.
 
-### <a name="discovering-documents-outside-of-an-apps-container"></a>Bir uygulamanın kapsayıcı dışında belgeleri keşfetme
+### <a name="discovering-documents-outside-of-an-apps-container"></a>Bir uygulamanın kapsayıcısı dışındaki belge bulma
 
-İOS 8'de, uygulamanın kendi uygulama kapsayıcısı dışındaki belgelere kolayca erişebilmesi için:
+İOS 8'de, uygulamanın kendi uygulama kapsayıcısı dışında belgeleri kolayca erişebilir:
 
- [![](document-picker-images/image32.png "Bir uygulamanın kapsayıcı dışında belgeleri keşfetme")](document-picker-images/image32.png#lightbox)
+ [![](document-picker-images/image32.png "Bir uygulamanın kapsayıcısı dışındaki belge bulma")](document-picker-images/image32.png#lightbox)
 
-Yeni İcloud'a belge Seçici kullanarak ( `UIDocumentPickerViewController`), bir iOS uygulaması, doğrudan bulmak ve erişim uygulama kapsayıcısı dışında. `UIDocumentPickerViewController` Kullanıcıya erişim izni vermek ve bunları düzenlemek için bir mekanizma bulunan belgeleri aracılığıyla izinleri sağlar.
+Yeni İcloud'a belge Seçici kullanarak ( `UIDocumentPickerViewController`), bir iOS uygulamasına doğrudan bulabilir ve erişim uygulama kapsayıcısı dışında. `UIDocumentPickerViewController` Kullanıcının erişim izni vermek ve bunları düzenlemek için bir mekanizma bulunan belgeleri aracılığıyla izinleri sağlar.
 
-Uygulamanın kendi belgeleri İcloud'a belge Seçicisi gösterilir ve bulmak ve bunlarla çalışmak diğer uygulamalar için kullanılabilir olmasını katılımı gerekir. Uygulama kapsayıcısı paylaşmak, düzenlemeden bir Xamarin iOS 8 uygulaması için `Info.plist` standart bir metin Düzenleyicisi'nde dosya ve sözlük altına aşağıdaki iki satırı ekleyin (arasında `<dict>...</dict>` etiketleri):
+Uygulamanın kendi belgeleri İcloud'a belge Seçici gösterilir ve diğer uygulamaları keşfetmek ve bunlarla çalışmak için kullanılabilir olmasını katılımı gerekir. Uygulama kapsayıcısı paylaşın, düzenleyin bir Xamarin iOS 8 uygulamanın `Info.plist` standart bir metin Düzenleyicisi'nde dosya ve sözlük altına aşağıdaki iki satırı ekleyin (arasında `<dict>...</dict>` etiketleri):
 
 ```xml
 <key>NSUbiquitousContainerIsDocumentScopePublic</key>
 <true/>
 ```
 
-`UIDocumentPickerViewController` Kullanıcının belgeler seçmesine izin veren bir harika yeni kullanıcı Arabirimi sağlar. Belge Seçici View Controller bir Xamarin iOS 8 uygulaması'nda görüntülemek için aşağıdakileri yapın:
+`UIDocumentPickerViewController` Belgeleri seçmesine izin veren bir harika yeni kullanıcı Arabirimi sağlar. Belge Seçici görünüm denetleyicisi bir Xamarin iOS 8 uygulamada görüntülemek için aşağıdakileri yapın:
 
 ```csharp
 using MobileCoreServices;
@@ -902,63 +903,63 @@ if (presentationPopover!=null) {
 ```
 
 > [!IMPORTANT]
-> Geliştirici çağırmalısınız `StartAccessingSecurityScopedResource` yöntemi `NSUrl` harici bir belge erişilmeden önce. `StopAccessingSecurityScopedResource` Yöntemi çağrılır, belge yüklenirken hemen sonra güvenlik kilidi serbest bırakmak için.
+> Geliştirici çağırmalıdır `StartAccessingSecurityScopedResource` yöntemi `NSUrl` bir harici belge erişilmeden önce. `StopAccessingSecurityScopedResource` Belge yüklendikten hemen sonra güvenlik kilidi metodu çağrılmalıdır.
 
 ### <a name="sample-output"></a>Örnek Çıktı
 
-Yukarıdaki kod bir belge bir iPhone cihazında çalıştırdığınızda Seçici nasıl görüntüleyecektir örneği şöyledir:
+Yukarıdaki kod, bir belge bir iPhone cihaza çalıştırdığınızda Seçici nasıl görüntüleyebilir, bir örnek aşağıda verilmiştir:
 
 1.  Kullanıcı uygulamayı başlatır ve ana arabirimi görüntülenir:   
  
-    [![](document-picker-images/image33.png "Ana arabirimi görüntülenir")](document-picker-images/image33.png#lightbox)
-1.  Kullanıcı Tap'ları **eylem** ekranın üstündeki düğmesi ve seçmek için sorulan bir **belge sağlayıcısı** kullanılabilir sağlayıcılar listesinden:   
+    [![](document-picker-images/image33.png "Temel arabirim görüntülenir")](document-picker-images/image33.png#lightbox)
+1.  Kullanıcı Tap'ları **eylem** ekranın üstünde düğme ve seçmek için kullanıcıdan bir **belge sağlayıcısı** kullanılabilir sağlayıcılar listesinden:   
  
     [![](document-picker-images/image34.png "Kullanılabilir sağlayıcılar listesinden bir belge sağlayıcısı seçin")](document-picker-images/image34.png#lightbox)
-1.  **Belge Seçici View Controller** görüntülenen seçili **belge sağlayıcısı**:   
+1.  **Belge Seçici görünüm denetleyicisi** görüntülenen seçili **belge sağlayıcısı**:   
  
-    [![](document-picker-images/image35.png "Belge Seçici View Controller görüntülenir")](document-picker-images/image35.png#lightbox)
-1.  Kullanıcı dokunur üzerinde bir **belgenin klasör** içeriğini görüntülemek için:   
+    [![](document-picker-images/image35.png "Belge Seçici görünüm denetleyicisi görüntülenir")](document-picker-images/image35.png#lightbox)
+1.  Kullanıcı dokunduğunda üzerinde bir **belge klasörü** içeriğini görüntülemek için:   
  
-    [![](document-picker-images/image36.png "Belgenin klasör içeriği")](document-picker-images/image36.png#lightbox)
-1.  Kullanıcının seçtiği bir **belge** ve **belge Seçici** kapalı.
-1.  Ana arabirimi görünürler, **belge** dış kapsayıcı ve görüntülenen içeriği yüklenir.
+    [![](document-picker-images/image36.png "Belge klasör içeriği")](document-picker-images/image36.png#lightbox)
+1.  Kullanıcının seçtiği bir **belge** ve **belge Seçici** kapatılır.
+1.  Temel arabirim görünürler, **belge** dış kapsayıcı ve görüntülenen içeriği yüklenir.
 
 
-Belge Seçici View Controller gerçek görüntüsünü belge kullanıcı cihazda yüklü olduğu ve hangi belge Seçici modu uygulama olmuştur sağlayıcılarının bağlıdır. Yukarıdaki örnekte açık modunu kullanıyor, diğer modu türleri aşağıda ayrıntılı olarak açıklanmıştır.
+Belge Seçici görünüm denetleyicisi gerçek görüntülenmesini belge kullanıcı cihazda yüklü ve hangi belge Seçici modu uygulama sonlandırıldı sağlayıcılarında bağlıdır. Yukarıdaki örnekte, Aç modunu kullanıyor, diğer modu türleri aşağıda ayrıntılı olarak açıklanmıştır.
 
 ## <a name="managing-external-documents"></a>Dış belgeleri yönetme
 
-Yukarıdaki 8, iOS önce anlatıldığı gibi bir uygulama yalnızca uygulama kapsayıcısı parçası olan belgeleri erişebilir. İOS 8 bir uygulama, dış kaynaklardan belgeleri erişebilirsiniz:
+İOS 8, önce yukarıda açıklandığı gibi bir uygulama yalnızca uygulama kapsayıcısı parçası olan belgelere erişebilir. İOS 8'de bir uygulama, dış kaynaklardan gelen belgeleri erişebilirsiniz:
 
- [![](document-picker-images/image37.png "Dış belgeler genel bakış yönetme")](document-picker-images/image37.png#lightbox)
+ [![](document-picker-images/image37.png "Yönetmeye harici belgelere genel bakış")](document-picker-images/image37.png#lightbox)
 
-Kullanıcı bir belge bir dış kaynaktan seçtiğinde başvuru belgesini özgün belgesini işaret uygulama kapsayıcısı yazılır.
+Kullanıcı bir belgeyi bir dış kaynaktan seçtiğinde, bir başvuru belgesini özgün belgede işaret eden bir uygulama kapsayıcısı yazılır.
 
-Bu yeni özelliği var olan uygulamalara ekleme yardımcı olmak için birkaç yeni özellik için eklenmiştir `NSMetadataQuery` API. Genellikle, bir uygulamanın uygulama kapsayıcısı içinde dinamik listesi belgeleri bulunabilen belge kapsama kullanır. Bu kapsamı kullanarak, yalnızca belgeleri uygulama kapsayıcıdaki gösterilmeye devam eder.
+Bu yeni özellik mevcut uygulamalara ekleme yardımcı olmak için çeşitli yeni özellikler eklenmiş `NSMetadataQuery` API. Genellikle, bir uygulama, uygulama kapsayıcısı içinde Canlı listesi belgelere bulunabilen belge kapsamı kullanır. Bu kapsamı kullanarak, yalnızca uygulama kapsayıcısı içindeki belgeler görüntülenecek devam eder.
 
-Yeni bulunabilen dış belge kapsamı kullanarak uygulama kapsayıcısı dışında canlı ve meta veriler için döndürün belgeleri döndürür. `NSMetadataItemUrlKey` URL'ye belge gerçekten bulunduğu işaret edecek.
+Yeni bulunabilen dış belge kapsamı kullanarak uygulama kapsayıcısı dışında canlı ve meta verileri döndürülmeleri belgeleri döndürür. `NSMetadataItemUrlKey` URL'sine belge gerçekten bulunduğu yeri gösterir.
 
-Bazen bir uygulama tarafından th başvuru işaret belgeler birlikte çalışmak istediğiniz değil. Bunun yerine, uygulama başvuru belgeyle doğrudan çalışmak ister. Örneğin, uygulamanın kullanıcı arabiriminde uygulama klasöründe belgeyi görüntülemek için veya bir klasörün içine başvuruları dolaşmak izin vermek için isteyebilirsiniz.
+Bazen bir uygulama th başvuru tarafından işaret edilen belgelerle çalışmak üzere istememektedir. Bunun yerine, uygulama başvuru belgesini ile doğrudan çalışmak ister. Örneğin, uygulamanın kullanıcı arabiriminde uygulamanın klasöründeki belgeyi görüntülemek veya bir klasörün içine başvuruları değiştirmemiz izin vermek için isteyebilirsiniz.
 
-İOS 8 ' de yeni bir `NSMetadataItemUrlInLocalContainerKey` başvuru belgesini doğrudan erişmek için sağlanan. Bu anahtar, bir uygulama kapsayıcısındaki harici belge gerçek referansı işaret eder.
+İOS 8 ' deki yeni `NSMetadataItemUrlInLocalContainerKey` başvuru belgesini doğrudan erişmek için sağlanan. Bu anahtar, gerçek bir uygulama kapsayıcısında harici belge başvuru işaret eder.
 
-`NSMetadataUbiquitousItemIsExternalDocumentKey` Bir belge uygulamanın kapsayıcıya dış olup olmadığını test etmek için kullanılır. `NSMetadataUbiquitousItemContainerDisplayNameKey` Harici bir belge özgün kopyasını barındıran kapsayıcı adı erişmek için kullanılır.
+`NSMetadataUbiquitousItemIsExternalDocumentKey` Belgeye bir uygulamanın kapsayıcıya dış olup olmadığını test etmek için kullanılır. `NSMetadataUbiquitousItemContainerDisplayNameKey` Bir harici belge özgün kopyasını barındıran bir kapsayıcı adı erişmek için kullanılır.
 
 ### <a name="why-document-references-are-required"></a>Belge başvuruları neden gereklidir
 
-Bu iOS 8 dış belgelere erişmek için başvurular kullanan ana nedeni, güvenlik olmasıdır. Hiçbir uygulama başka bir uygulama kullanıcının kapsayıcıya erişim verilir. Yalnızca belge Seçici, çalışan giden işlem dışı olduğundan ve sistem geniş erişimi yapabilirsiniz.
+Dış belgelere erişmek için başvurular, iOS 8 kullanan temel nedeni, güvenlik sağlıyor. Uygulama, tüm diğer uygulamanın kapsayıcıya erişim verilir. Belge Seçici, çalışan giden işlem olduğundan ve sistem genelinde erişim sahip yapabilirsiniz.
 
-Belge Seçici kullanarak uygulama kapsayıcısı dışında bir belge almanın tek yolu olduğundan ve URL tarafından döndürülen Seçici güvenlik kapsamına ise. Güvenlik kapsamı URL seçili belgenin belge bir uygulama erişim vermek için gereken kapsamlı haklar birlikte yeterli bilgiler içerir.
+Belge Seçici'yi kullanarak uygulama kapsayıcısı dışında belgeye almanın tek yolu olduğundan ve güvenlik kapsamı Seçici URL tarafından döndürülen, yapılır. Kapsamlı güvenlik URL'si seçili belgeye belgeye bir uygulama erişimi vermek için gerekli olan kapsamlı hakların birlikte yeterli bilgi içerir.
 
-Güvenlik kapsamı URL bir dize olarak serileştirilmiş ve ardından seri durumundan çıkarılan, güvenlik bilgilerini kaybolur ve dosya URL'den erişilemez olacaktır dikkate almak önemlidir. Belge başvurusu özelliği tarafından bu URL'leri işaret dosyaları geri almak için bir mekanizma sağlar.
+Güvenlik kapsamı URL'si bir dize olarak serileştirilmiş ve json'dan seri, güvenlik bilgileri kaybolur ve dosya URL'den erişilemez unutulmaması önemlidir. Belge başvuru özelliği, bu URL'ler tarafından işaret edilen dosyaları geri almak için bir mekanizma sağlar.
 
-Uygulama edindiğinde bunu bir `NSUrl` başvuru belgeleri birinden zaten sahip bağlı güvenlik kapsamı ve dosyaya erişmek için kullanılabilir. Bu nedenle, yüksek oranda Geliştirici kullanmanız önerilir `UIDocument` , tüm bu bilgileri ve işlemler için bunları işleme için.
+Uygulama edinirse bunu bir `NSUrl` başvuru belgeleri birinden zaten eklenmiş güvenlik kapsamına sahiptir ve dosyaya erişmek için kullanılabilir. Bu nedenle, son derece Geliştirici kullanmanız önerilir `UIDocument` olduğundan, tüm bu bilgileri ve işlemler için işleme.
 
 ### <a name="using-bookmarks"></a>Yer İşaretlerini Kullanma
 
-Her zaman belirli bir belgeyi için örneğin, durumu geri yüklemesinin yaparken dönmek için uygulamanın belgeleri numaralandırmak için uygun değildir. iOS 8 doğrudan belirli bir belge hedef yer işaretleri oluşturmak için bir mekanizma sağlar.
+Her zaman belirli bir belge için örneğin durumu geri yüklemesinin yaparken geri dönmek için bir uygulamanın belgeleri numaralandırmak için uygun değildir. iOS 8 doğrudan belirli bir belge hedef yer işaretleri oluşturmak için bir mekanizma sağlar.
 
-Aşağıdaki kod bir yer işareti gelen oluşturacak bir `UIDocument`'s `FileUrl` özelliği:
+Aşağıdaki kod, bir yer işaretinden oluşturacak bir `UIDocument`'s `FileUrl` özelliği:
 
 ```csharp
 // Trap all errors
@@ -988,7 +989,7 @@ catch (Exception e) {
 }
 ```
 
-Varolan yer işareti API varolan karşı bir yer işareti oluşturmak için kullanılan `NSUrl` , kaydedilebilir ve dış dosyası doğrudan erişim sağlamak için yüklenir. Aşağıdaki kod, yukarıda oluşturduğunuz bir yer işareti geri yükler:
+Mevcut yer işareti API varolan karşı bir yer işareti oluşturmak için kullanılan `NSUrl` , kaydedilebilir ve dış dosya doğrudan erişim sağlamak için yüklenir. Aşağıdaki kod, yukarıda oluşturulan bir yer işareti geri yükler:
 
 ```csharp
 if (Bookmark != null) {
@@ -1015,135 +1016,135 @@ if (Bookmark != null) {
 }
 ```
 
-## <a name="open-vs-import-mode-and-the-document-picker"></a>VS açın. İçe aktarma moduna ve belge Seçici
+## <a name="open-vs-import-mode-and-the-document-picker"></a>VS açın. İçeri aktarma moduna ve belge Seçici
 
-Belge Seçici View Controller iki farklı mod işlem özellikleri:
+Belge Seçici görünüm denetleyicisi işleminin iki farklı mod sunar:
 
-1.  **Açık mod** – kullanıcı seçer ve harici belge belge Seçici oluştururken güvenlik kapsamına yer işareti uygulama kapsayıcısında bu modda.   
+1.  **Açık modu** – Bu mod, kullanıcının seçtiği ve dış belge belge Seçici kapsamlı bir güvenlik yer işareti uygulama kapsayıcısında oluşturduğunuzda.   
  
-    [![](document-picker-images/image37.png "Uygulama kapsayıcısında yer işareti bir güvenlik kapsamı")](document-picker-images/image37.png#lightbox)
-1.  **İçe aktarma moduna** – Bu mod, kullanıcı seçtiğinde ve dış belge, belge Seçici değil bir yer işareti oluşturur ancak bunun yerine, geçici bir konuma dosyaya kopyalayın ve bu konumda belge uygulama erişim sağlar:   
+    [![](document-picker-images/image37.png "Yer işareti uygulama kapsayıcısında bir güvenlik kapsamı")](document-picker-images/image37.png#lightbox)
+1.  **İçeri aktarma moduna** – Bu mod, kullanıcının seçtiği ve dış belge, belge Seçici değil bir yer işareti oluşturur ancak bunun yerine, geçici bir konuma dosyaya kopyalayın ve belge bu konuma erişim sağlar:   
  
-    [![](document-picker-images/image38.png "Belge Seçici dosyayı geçici bir konuma kopyalayın ve bu konumda belge uygulama erişim sağlamak")](document-picker-images/image38.png#lightbox)   
- Uygulama herhangi bir nedenle sonlandırıldıktan sonra geçici konuma boşaltılır ve dosya kaldırıldı. Uygulama dosyasına erişimi tutması gerekiyorsa, bir kopya yapmak ve uygulama kapsayıcısı yerleştirin.
+    [![](document-picker-images/image38.png "Belge Seçici dosya geçici bir konuma kopyalayın ve belge bu konumdaki uygulama erişim sağlamak")](document-picker-images/image38.png#lightbox)   
+ Uygulama herhangi bir nedenle sonlandırıldığında geçici konuma boşaltılıp boşaltılmaması ve dosya kaldırılır. Uygulama dosyasına erişimi tutması gerekiyorsa, bunu bir kopyasını oluşturun ve uygulama kapsayıcısı yerleştirin.
 
 
-Açma modu, uygulama başka bir uygulama ile birlikte çalışın ve bu uygulama ile belgeye yapılan değişiklikler paylaşın isteyen yararlıdır. Uygulama, bir belgeyi kendi değişiklikler başka uygulamalarla paylaşma istediğinizde değil alma modu kullanılır.
+Modunu açın, uygulama başka bir uygulama ile işbirliği yapabilir ve belge bu uygulama ile yapılan tüm değişiklikler istediğinde yararlıdır. İçeri aktarma moduna, uygulamanın kendi değişiklikleri belgeye başka uygulamalarla paylaşma istemediği gerektiğinde kullanılır.
 
-## <a name="making-a-document-external"></a>Bir belge dış yapma
+## <a name="making-a-document-external"></a>Bir belgeyi harici hale getirme
 
-Yukarıda belirtildiği gibi iOS 8 uygulamanın kendi uygulama kapsayıcısı dışında kapsayıcıları erişimi yok. Uygulamayı yerel olarak veya geçici bir konuma kendi kapsayıcıya yazma sonra sonuçta elde edilen belgenin uygulama kapsayıcısı dışında konumu seçilen kullanıcıya taşımak için özel belge modu kullanın.
+Yukarıda belirtildiği gibi bir iOS 8 uygulama kapsayıcıları, kendi uygulama kapsayıcısı dışında erişimi yok. Uygulama yerel olarak veya geçici bir konuma kendi kapsayıcıya yazma ardından seçilen konum bir kullanıcıya uygulama kapsayıcısı dışında sonuç belgesi taşımak için bir özel belge modunu kullanın.
 
-Bir belge harici bir konuma taşımak için aşağıdakileri yapın:
+Bir belge bir dış konuma taşımak için aşağıdakileri yapın:
 
-1.  Önce yeni bir belge yerel ya da geçici bir konumda oluşturun.
+1.  İlk yerel ya da geçici bir konumda yeni bir belge oluşturun.
 1.  Oluşturma bir `NSUrl` yeni belgesine işaret eder.
-1.  Yeni bir belge Seçici görünümü denetleyicisi açmak ve onu geçirin `NSUrl` modu ile `MoveToService` . 
-1.  Kullanıcı yeni bir konum seçtikten sonra belgenin geçerli konumundan yeni konuma taşınır.
-1.  Böylece dosyayı hala oluşturma uygulama tarafından erişilebilen bir başvuru belgesini uygulamanın uygulama kapsayıcıya yazılır.
+1.  Yeni belge Seçici görünüm denetleyicisi açın ve geçirin `NSUrl` modu ile `MoveToService` . 
+1.  Kullanıcı yeni bir konum seçtikten sonra belge geçerli konumundan yeni konumuna taşınır.
+1.  Böylece dosyayı yine de oluşturma uygulama tarafından erişilebilen bir başvuru belgesini uygulamanın uygulama kapsayıcısı için yazılır.
 
 
-Aşağıdaki kod, bir belge harici bir konuma taşımak için kullanılabilir: `var picker = new UIDocumentPickerViewController (srcURL, UIDocumentPickerMode.MoveToService);`
+Aşağıdaki kod, bir belge bir dış konuma taşımak için kullanılabilir: `var picker = new UIDocumentPickerViewController (srcURL, UIDocumentPickerMode.MoveToService);`
 
-Yukarıdaki işlem tarafından döndürülen başvuru belgesini tam olarak bir belge Seçici açık modu tarafından oluşturulan aynı değil. Ancak, uygulama bir başvuruyu tutma olmadan bir belgeyi Taşı isteyebilir zamanlar vardır.
+Yukarıdaki işlem tarafından döndürülen başvuru belgesini tam olarak bir belge Seçici açık modu tarafından oluşturulan aynıdır. Ancak, uygulama buna bir başvuru korumadan belge taşımak isteyebilirsiniz zamanlar vardır.
 
 Bir başvuru oluşturmadan bir belge taşımak için kullanın `ExportToService` modu. Örnek: `var picker = new UIDocumentPickerViewController (srcURL, UIDocumentPickerMode.ExportToService);`
 
-Kullanırken `ExportToService` modu, belge dış kapsayıcıya kopyalanır ve varolan kopyayı özgün konumunda bırakılır.
+Kullanırken `ExportToService` modu, belge dış kapsayıcıya kopyalanır ve kopyası, özgün konumunda bırakılır.
 
 ## <a name="document-provider-extensions"></a>Belge sağlayıcısı uzantıları
 
-İOS 8 Apple bunlar gerçekten var olduğu olsun, bulut tabanlı belgeleri hiçbirini erişebilmeleri için son kullanıcı istemektedir. Bu hedefe ulaşmak için iOS 8 bir yeni belge sağlayıcısı uzantısı mekanizma sağlar.
+İOS 8 Apple son kullanıcının aslında mevcut oldukları fark etmeksizin, bulut tabanlı belgelerine erişmek için izin istiyor. Bu hedefe ulaşmak için iOS 8 yeni bir belge sağlayıcısı uzantı mekanizması sağlar.
 
 ### <a name="what-is-a-document-provider-extension"></a>Bir belge sağlayıcısı uzantısı nedir?
 
-Kısacası, bir belge sağlayıcısı tam aynı şekilde varolan iCloud depolama konumu olarak erişilebilir bir uygulama alternatif belge depolama sağlamak için bir yol bir geliştirici veya bir üçüncü taraf, uzantısıdır.
+Kısacası, bir belge sağlayıcısı mevcut iCloud depolama konumu olarak tam olarak aynı şekilde erişilebilir bir uygulama alternatif belge depolama sağlamak için bir yol için bir geliştirici ya da üçüncü bir tarafa, uzantısıdır.
 
-Kullanıcı bu alternatif depolama konumları belge Seçicisi'nden birini seçebilirsiniz ve tam aynı erişim modları (açık, alma, taşıma veya dışa aktarma) bu konumda bulunan dosyalarıyla çalışmak için kullanabilirsiniz.
+Kullanıcı bu alternatif depolama konumlarından birine belge seçiciden seçebilir ve bunlar tam aynı erişim modları (açık, içeri aktarma, taşıma veya dışarı aktarma) bu konumda bulunan dosyalarla çalışmak için kullanabilirsiniz.
 
-Bu, iki farklı uzantıları kullanılarak uygulanır:
+Bu işlem, iki farklı uzantıları kullanılarak uygulanır:
 
--  **Belge seçicisini uzantısı** – sağlar bir `UIViewController` bir alternatif depolama konumundan bir belge seçmek kullanıcı için bir grafik arabirim sağlayan bir alt kümesi. Bu alt belge Seçici View Controller bir parçası olarak görüntülenir.
--  **Dosya uzantısını girin** – bu dosyaları içeriği sağlamayla ilgilenen bir kullanıcı Arabirimi olmayan uzantısıdır. Bu uzantılar dosya düzenleme sağlanır ( `NSFileCoordinator` ). Bu dosya düzenleme gerekli olduğu başka bir önemli bir durumdur.
+-  **Belge Seçici uzantısı** – sağlar bir `UIViewController` öğesinin alt sınıfı bir belge bir alternatif bir depolama konumundan seçim yapması için bir grafik arabirim sağlar. Bu alt belge Seçici görünüm denetleyicisi bir parçası olarak görüntülenir.
+-  **Dosya uzantısını girin** – bu dosyaların içeriğini sağlamayla ilgilenen bir UI olmayan uzantısıdır. Bu uzantıları dosya koordinasyon sağlanır ( `NSFileCoordinator` ). Bu dosya düzenleme gerekli olduğu başka bir önemli bir durumdur.
 
 
-Aşağıdaki diyagramda, belge sağlayıcısı uzantıları ile çalışırken, normal veri akışı gösterilmektedir:
+Belge sağlayıcısı uzantıları ile çalışırken, aşağıdaki diyagramda tipik veri akışı gösterilmektedir:
 
- [![](document-picker-images/image39.png "Belge sağlayıcısı uzantıları ile çalışırken bu diyagramda normal veri akışı gösterilmektedir")](document-picker-images/image39.png#lightbox)
+ [![](document-picker-images/image39.png "Bu diyagramda tipik veri akışı, belge sağlayıcısı uzantıları ile çalışırken gösterilmektedir.")](document-picker-images/image39.png#lightbox)
 
 Aşağıdaki süreç gerçekleşir:
 
 1.  Uygulama ile çalışmak için bir dosya seçmek izin vermek için bir belge Seçici denetleyicisi sunar.
-1.  Kullanıcının seçtiği bir alternatif dosya konumu ve özel `UIViewController` uzantısı kullanıcı arabirimini görüntülemek için çağrılır.
-1.  Kullanıcı bir dosyayı bu konumdan seçer ve URL belge seçiciye geçirilir.
-1.  Belge Seçici dosyanın URL seçer ve kullanıcının üzerinde çalışmak uygulamaya döndürür.
-1.  URL uygulamaya dosyaların içeriğini döndürmek için dosya Düzenleyicisi'ni geçirilir.
-1.  Dosya Düzenleyicisi dosyasını almak için özel dosya sağlayıcısı uzantısını çağırır.
-1.  Dosya içeriğini dosya düzenleyiciye döndürülür.
-1.  Dosya içeriğini uygulamaya döndürülür.
+1.  Bir alternatif dosya konumu ve özel kullanıcının seçtiği `UIViewController` uzantısı kullanıcı arabirimini görüntülemek için çağrılır.
+1.  Kullanıcı bu konumdan bir dosya seçer ve belge seçiciye geçirilen URL.
+1.  Belge Seçici dosya URL'si seçer ve üzerinde çalışmak kullanıcının uygulamaya döndürür.
+1.  URL dosya içeriğini bir uygulamaya geri dönmek için bu dosya Düzenleyici geçirilir.
+1.  Dosya Düzenleyicisi dosyasını almak için özel dosya sağlayıcı uzantısı çağırır.
+1.  Dosyanın içeriğini dosya Düzenleyicisi ile döndürülür.
+1.  Dosyasının içeriğini bir uygulamaya döndürülür.
 
 
 ### <a name="security-and-bookmarks"></a>Güvenlik ve yer işaretleri
 
-Bu bölümde nasıl belge sağlayıcısı uzantıları olan yer işaretleri works aracılığıyla güvenlik ve kalıcı dosya erişimini hızlı bir göz atalım. Belge başvuru sisteminin parçası olmadıklarından otomatik olarak güvenlik ve yer işaretleri uygulama kapsayıcıya kaydeder, belge sağlayıcısı iCloud belge sağlayıcısı uzantıları yok.
+Bu bölümde, yer işaretleri çalışır belge sağlayıcısı uzantıları aracılığıyla güvenlik ve sürekli dosya nasıl erişeceğini Hızlı Bakış sürer. Belge başvuru sisteminin bir parçası olmadıklarından İcloud'a belge sağlayıcısı, uygulama kapsayıcısı için güvenlik ve yer işaretlerini otomatik olarak kaydeder, farklı olarak belge sağlayıcısı uzantıları yok.
 
-Örneğin: kendi şirket çapında güvenli veri deposu sağlayan bir kurumsal ayarında Yöneticiler erişilen veya ortak iCloud sunucuları tarafından işlenen gizli şirket bilgileri istemezsiniz. Bu nedenle, yerleşik belge başvuru sistemi kullanılamaz.
+Örneğin: kendi şirket çapındaki güvenli veri deposu sağlayan bir kurumsal ayarında Yöneticiler erişilen veya genel iCloud sunucuları tarafından işlenen gizli Kurumsal bilgilerin istemezsiniz. Bu nedenle, yerleşik belge başvuru sistemi kullanılamaz.
 
-Yer işareti sistem hala kullanılabilir ve doğru şekilde işaretli bir URL işlemek ve tarafından işaret belgesinin içeriğini döndürmek için dosya sağlayıcısı uzantısını sorumluluğundadır.
+Yer işareti sistem hala kullanılabilir ve işaretli bir URL doğru şekilde işlemek ve tarafından işaret edilen belgesinin içeriğini döndürmek için dosya sağlayıcı uzantısı sorumluluğundadır.
 
-Güvenlik nedeniyle, iOS 8 hakkında uygulama erişimi hangi dosya sağlayıcısı içinde hangi tanımlayıcısına olan bilgi devam ederse bir yalıtım katmanı vardır. Tüm dosya erişimi bu yalıtım katmanı tarafından denetlenir unutulmamalıdır.
+Güvenlik nedenleriyle, iOS 8 hakkında uygulama erişimi için hangi dosya sağlayıcısı içinde hangi tanımlayıcısı olan bilgileri kalıcı bir yalıtım katmanı vardır. Tüm dosya erişimi bu yalıtım katmanı tarafından denetlenir unutulmamalıdır.
 
-Aşağıdaki diyagramda yer işaretleri ve bir belge sağlayıcısı uzantısı ile çalışırken, veri akışı gösterilmektedir:
+Aşağıdaki diyagramda, yer işaretleri ve belge sağlayıcısı uzantısı ile çalışırken, veri akışı gösterilmektedir:
 
- [![](document-picker-images/image40.png "Bu diyagramda yer işaretleri ve bir belge sağlayıcısı uzantısı ile çalışırken veri akışı gösterilmektedir")](document-picker-images/image40.png#lightbox)
+ [![](document-picker-images/image40.png "Bu diyagramda veri akışı, yer işaretleri ve belge sağlayıcısı uzantısı ile çalışırken gösterilmektedir.")](document-picker-images/image40.png#lightbox)
 
 Aşağıdaki süreç gerçekleşir:
 
-1.  Uygulama hakkında arka plan girmek için ve durumuna kalıcı olması gerekiyor. Çağırır `NSUrl` alternatif depolama alanında bir dosya için bir yer işareti oluşturmak için.
-1.  `NSUrl` belgede kalıcı bir URL almak için dosya sağlayıcısı uzantısını çağırır. 
-1.  Dosya sağlayıcısı uzantısını URL'yi bir dize olarak döndürür. `NSUrl` .
-1.  `NSUrl` URL bir yer işaretine sunmaktadır ve uygulamaya döndürür.
-1.  Uygulama arka planda yüklenmesini uyanır ve durumunu geri yüklemek gerektiğinde işaretine geçirir `NSUrl` .
-1.  `NSUrl` dosyanın URL'sini dosya sağlayıcısı uzantısıyla çağırır.
-1.  Dosya uzantısı sağlayıcısı dosyası erişir ve dosya konumunu döndürür `NSUrl` .
+1.  Uygulama arka planda yaklaşık girmektir ve durumu kalıcı hale getirilmesi. Çağrı `NSUrl` alternatif depolama alanında bir dosya için bir yer işareti oluşturmak için.
+1.  `NSUrl` belgede kalıcı bir URL almak için dosya sağlayıcı uzantısı çağırır. 
+1.  Dosya sağlayıcı uzantısı URL'yi bir dize olarak döndürür. `NSUrl` .
+1.  `NSUrl` URL bir yer işaretine oluşturur ve uygulamaya döndürür.
+1.  Uygulama arka planda yüklenmesini uyanır ve durumunu geri yüklemek gereken zaman ve yer işaretine geçirir `NSUrl` .
+1.  `NSUrl` dosyanın URL'si ile dosya sağlayıcı uzantısı çağırır.
+1.  Dosya uzantısı sağlayıcısı dosyaya erişir ve dosyaya konumunu döndürür `NSUrl` .
 1.  Dosya konumu güvenlik bilgileri ile birlikte ve uygulamaya döndürdü.
 
 
-Buradan, uygulama dosyaya erişmek ve ile normal olarak çalışır.
+Buradan uygulama dosyaya erişim ve birlikte normal şekilde çalışır.
 
 ### <a name="writing-files"></a>Dosyalara yazma
 
-Bu bölümde nasıl alternatif bir konuma yazma ile belge sağlayıcısı uzantısı çalışır dosyaları hızlı bir göz atalım. İOS uygulamasının uygulama kapsayıcısı içinde disk bilgileri kaydetmek için dosyayı düzenleme kullanır. Kısa süre içinde dosya başarılı bir şekilde yazıldıktan sonra dosya sağlayıcısı uzantısını değişikliği bildirilir.
+Bu bölümde, nasıl alternatif bir konuma yazma ile belge sağlayıcısı uzantısı çalışır dosyaları Hızlı Bakış sürer. İOS uygulama dosya koordinasyon bilgileri uygulama kapsayıcı içinde diske kaydetmek için kullanır. Kısa bir süre içinde dosya başarıyla yazıldıktan sonra dosya sağlayıcı uzantısı değişikliği bildirim alırsınız.
 
-Bu noktada, dosya sağlayıcısı uzantısını dosyayı alternatif bir konuma yüklemeyi başlatabilir (veya dosyayı karşıya yükleyin kirli ve gerektiren olarak işaretle).
+Bu noktada, dosya sağlayıcı uzantısı alternatif bir konuma dosyasının karşıya yüklenmesi başlatabilir (veya dosya kirli ve gerektiren karşıya yükleme olarak işaretle).
 
 ### <a name="creating-new-document-provider-extensions"></a>Yeni belge sağlayıcısı uzantıları oluşturma
 
-Yeni belge sağlayıcısı uzantıları oluşturma giriş bu makalenin kapsamı dışında bağlıdır. Bu bilgiler, burada, kullanıcı iOS cihazını yükledi uzantıları dayanan göstermek için bir uygulama erişim belge depolama konumları iCloud konumu sağlanan Apple dışında gerekebilir sağlanır.
+Yeni belge sağlayıcısı uzantıları oluşturmak, giriş niteliğindeki bu makalenin kapsamı dışında olur. Bu bilgiler, burada, bir kullanıcı, iOS cihazlarının yükledi uzantıları temel alınarak göstermek için uygulama erişimi belge iCloud konum Apple dışındaki depolama konumlarına olabilir sağlanır.
 
-Geliştirici belge Seçici kullanırken bu olgu dikkat etmeniz gerekir ve dış belgeleriyle çalışma. Bunlar bu belgenin iCloud içinde barındırılan varsayımında bulunmamalıdır.
+Geliştirici belge Seçici kullanırken bu duruma dikkat edin olmalıdır ve dış belgeleriyle çalışma. Bunlar bu belge iCloud barındırılan varsayımında bulunmamalıdır.
 
-Bir depolama sağlayıcısı veya belge seçicisini uzantısı oluşturma hakkında daha fazla bilgi için lütfen bkz [uygulama uzantıları giriş](~/ios/platform/extensions.md) belge.
+Bir depolama sağlayıcısı veya belge Seçici uzantısı oluşturma hakkında daha fazla bilgi için lütfen bkz [uygulama uzantıları giriş](~/ios/platform/extensions.md) belge.
 
 ## <a name="migrating-to-icloud-drive"></a>Sürücü İcloud'a geçirme
 
-İOS 8, kullanıcılar, varolan iCloud kullanarak belgeler sistem iOS 7 (ve önceki sistemleri) kullanılan veya var olan belgeler için yeni iCloud sürücü mekanizması geçirmek seçebilirsiniz devam etmeyi seçebilirsiniz.
+İOS 8, kullanıcılar, mevcut iCloud kullanarak belgeleri sistemi iOS 7 (ve önceki sistemleri) kullanılan veya varolan belgeleri yeni iCloud sürücü mekanizmasına geçirilecek seçebilirsiniz devam etmek seçebilirsiniz.
 
-Mac OS X Yosemite üzerinde Apple sağlamaz geriye dönük uyumluluk tüm belgeleri sürücü İcloud'a geçirilmesi gerekir ya da bunlar artık güncelleştirilmesi aygıtlarda.
+Mac OS X Yosemite Apple sağlamaz geriye dönük uyumluluk tüm belgeleri sürücü İcloud'a geçirilmelidir ya da bunlar artık güncelleştirilmesi cihazlar arasında.
 
-Bir kullanıcının hesabını sürücü İcloud'a geçirildikten sonra iCloud sürücü kullanarak yalnızca cihazlarda bu cihazlar arasında belgeleri değişiklikleri yaymak yapabilirsiniz.
+Bir kullanıcı hesabının sürücü İcloud'a geçirildikten sonra yalnızca cihazlar iCloud sürücü kullanarak bu cihazları arasında belgeleri değişiklikleri yaymak erişemeyecek.
 
 > [!IMPORTANT]
-> Geliştiricilerin bu makalede ele alınan yeni özellikler yalnızca kullanıcı hesabının sürücü İcloud'a geçirdiyseniz kullanılabilir olduğunu bilmeniz gerekir. 
+> Geliştiriciler bu makalede ele alınan yeni özellikler yalnızca kullanıcının hesabı sürücü İcloud'a geçirdiyseniz kullanılabilir olduğunu bilmeniz gerekir. 
 
 ## <a name="summary"></a>Özet
 
-Bu makalede, varolan icloud API'leri iCloud sürücü ve yeni belge Seçici View Controller desteklemek için gereken değişiklikleri ele. Dosya eşgüdümü ve neden bulut tabanlı belgelerle çalışırken önemlidir kapsamına. Bulut tabanlı bir Xamarin.iOS uygulaması belgelerde etkinleştirmek için gereken kurulum kapsamdaki ve bir uygulamanın uygulama belge Seçici görünüm denetleyicisini kullanarak kapsayıcı dışında belgelerle çalışma bir tanıtım bakış verilen.
+Bu makalede mevcut icloud API'leri iCloud sürücü ve yeni belge Seçici görünüm denetleyicisi desteklemek için gerekli değişiklikleri kapsamına. Dosya düzenleme ve bulut tabanlı belgelerle çalışırken önemi kapsamına. Bulut tabanlı bir Xamarin.iOS uygulaması belgelerde etkinleştirmek için gereken kurulumu kapsamında ve belgeleri belge Seçici görünüm denetleyicisi kullanarak bir uygulamanın uygulama kapsayıcısı dışında çalışan bir tanıtım bakış verilen.
 
-Ayrıca, bu makalede kısaca belge sağlayıcısı uzantıları ve neden Geliştirici belgeleri bulut tabanlı işleyebilir uygulamaları yazarken bunlarla ilgili dikkat etmeniz gerekir ele.
+Ayrıca, belge sağlayıcısı uzantıları ve neden Geliştirici belgeleri bulut tabanlı işleyebileceği uygulamaları yazarken bunları bilmeniz gerekir bu makalede kısaca ele.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [DocPicker (örnek)](https://developer.xamarin.com/samples/monotouch/ios8/DocPicker/)
 - [iOS 8’e Giriş](~/ios/platform/introduction-to-ios8.md)
-- [Uygulama uzantıları giriş](~/ios/platform/extensions.md)
+- [Giriş uygulaması uzantıları](~/ios/platform/extensions.md)

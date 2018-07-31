@@ -4,13 +4,13 @@ description: Geliştiriciler, kullanıcıların mobil uygulamaları için platfo
 ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
-ms.date: 05/04/2018
-ms.openlocfilehash: 97dc5494f37da1590178bc90feb673889598bdd7
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.date: 07/30/2018
+ms.openlocfilehash: 5c625e32a70e196b5562225bdf985cd4b3a6f5db
+ms.sourcegitcommit: 0e1b64b0aa8fc0e78f0feff3c8b39a4cb8c1da61
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38831559"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39361008"
 ---
 # <a name="xamarinessentials"></a>Xamarin.Essentials
 
@@ -43,8 +43,10 @@ Bu Xamarin.Essentials özellikleri uygulamalarınızla tümleştirmek için kıl
 * [Coğrafi kodlama](geocoding.md?context=xamarin/xamarin-forms) – Geocode ve ters geocode adresleri ve koordinatları.
 * [Coğrafi konum](geolocation.md?context=xamarin/xamarin-forms) – cihazın GPS konumu alınamıyor.
 * [Jiroskop](gyroscope.md?context=xamarin/xamarin-forms) – cihazın üç birincil ekseni etrafında döndürme izleyin.
+* [Başlatıcı](launcher.md?context=xamarin/xamarin-forms) – sistem tarafından bir URI'yı açmak için bir uygulama sağlar.
 * [Magnetometer](magnetometer.md?context=xamarin/xamarin-forms) – cihazın yönlendirme dünyanın manyetik alan göreli algılayın.
-* [MainThread](main-thread.md?content=xamarin/xamarin-forms) – kod uygulamanın ana iş parçacığı üzerinde çalıştırın. 
+* [MainThread](main-thread.md?content=xamarin/xamarin-forms) – kod uygulamanın ana iş parçacığı üzerinde çalıştırın.
+* [Haritalar](maps.md?content=xamarin/xamarin-forms) – belirli bir konuma haritalar uygulaması'nı açın.
 * [Tarayıcıyı](open-browser.md?context=xamarin/xamarin-forms) – hızlı ve kolay bir şekilde belirli bir Web sitesi bir tarayıcıda açın.
 * [Yönlendirme algılayıcı](orientation-sensor.md?context=xamarin/xamarin-forms) – üç boyutlu alanında cihaz'ın yönünü alır.
 * [Çeviricisi](phone-dialer.md?context=xamarin/xamarin-forms) – Numara Çeviricisi'ni açın.

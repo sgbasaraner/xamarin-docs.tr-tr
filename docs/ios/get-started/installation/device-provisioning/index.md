@@ -1,69 +1,63 @@
 ---
-title: Cihaz Xamarin.iOS için hazırlama
-description: Bu belge, böylece bir uygulamayı test etmek için kullanılabilir bir cihaz hazırlayın açıklar. Ayrıca, anında iletme bildirimleri gibi özelliklerini kullanabilmesi için bir uygulama yapılandırma anlatılmaktadır.
+title: Cihaz Xamarin.iOS için sağlama
+description: Bu belgede, böylece bir uygulamayı test etmek için kullanılabilir bir cihaz sağlama işlemi açıklanır. Ayrıca, anında iletme bildirimleri gibi özellikleri kullanabilmesi için bir uygulama yapılandırma anlatılmaktadır.
 ms.prod: xamarin
 ms.assetid: CACA5236-3C90-F6DF-FD4E-0797B61670CE
 ms.technology: xamarin-ios
 author: asb3993
 ms.author: amburns
 ms.date: 05/06/2018
-ms.openlocfilehash: 9721cc40319f0b4d6f0869eabccb84256122fb02
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: f0d6d2343350455a101033aced7cec0c31695503
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34785794"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353236"
 ---
-# <a name="device-provisioning-for-xamarinios"></a>Cihaz Xamarin.iOS için hazırlama
+# <a name="device-provisioning-for-xamarinios"></a>Cihaz Xamarin.iOS için sağlama
 
-Bir Xamarin.iOS uygulaması geliştirme sırasında fiziksel bir aygıtı uygulamaya ayrıca simulator dağıtarak test etmek için gereklidir. Yalnızca aygıt hataları ve performans sorunlarını bellek ya da ağ bağlantısı gibi donanım sınırları nedeniyle bir cihazda çalıştırıldığında, gerçekleşen. Fiziksel cihaz üzerindeki test etmek için cihaz olmalıdır *sağlanan*, ve Apple gerekir haberdar cihaz test etmek için kullanılacaktır.
+Bir Xamarin.iOS uygulaması geliştirmeye devam ederken, uygulamayı fiziksel bir cihaz için ayrıca simülatöre dağıtılıyor tarafından test etmek için gereklidir. Yalnızca cihaz hataları ve performans sorunlarını, bellek veya ağ bağlantısı gibi donanım sınırları nedeniyle bir cihazda çalıştırıldığında, dizin. Fiziksel bir cihazda test etmek için cihaz olmalıdır *sağlanan*, ve Apple gerekir hakkında bilgi sahibi olmak cihaz test için kullanılacak.
 
-Aşağıdaki görüntü vurgulanan bölümlerde iOS sağlama için ayarlanmış almak için gerekli adımları gösterir:
+Aşağıdaki görüntüde vurgulanan bölümler iOS sağlama için kurulum için gerekli olan adımları göster:
 
-[![](images/provisioningdiagram.png "Bu görüntü vurgulanan bölümlerde iOS sağlama için ayarlanmış almak için gerekli adımları gösterir")](images/provisioningdiagram.png#lightbox)
+[![](images/provisioningdiagram.png "Bu görüntüde vurgulanan bölümler iOS sağlama için kurulum için gerekli olan adımları Göster")](images/provisioningdiagram.png#lightbox)
 
-Bundan sonra sonraki adım uygulamayı dağıtmaktır. Dağıtım hakkında daha fazla bilgi için ziyaret [uygulama dağıtım](~/ios/deploy-test/app-distribution/index.md) kılavuzları.
+Bundan sonra sonraki adım uygulamayı dağıtmaktır. Dağıtım hakkında daha fazla bilgi için ziyaret [uygulama dağıtımı](~/ios/deploy-test/app-distribution/index.md) Kılavuzlar.
 
-Uygulama bir cihaza dağıtmadan önce Apple Developer Program, etkin bir aboneliğiniz gerek *veya* kullanmak [ücretsiz sağlama](~/ios/get-started/installation/device-provisioning/free-provisioning.md). Apple iki program seçenekleri sunar:
+Uygulamayı bir cihaza dağıtmadan önce Apple'nın Geliştirici programına etkin bir aboneliğiniz olması gerekir *veya* kullanın [ücretsiz sağlama](~/ios/get-started/installation/device-provisioning/free-provisioning.md). Apple, programı iki seçenek sunar:
 
-- **Apple Developer Program** – bir kişi veya kuruluş, Apple Developer Program geliştirmenize olanak veren test ve uygulamaları dağıtmak temsil olmanıza bakılmaksızın.
-- **Apple Geliştirici Kurumsal programı** – Kurumsal programdır geliştirmek ve şirket içi uygulamalar yalnızca dağıtmak istediğiniz kuruluşlar için en uygun. Kurumsal programı'nın üyeleri iTunes Bağlan erişiminiz yoksa ve oluşturulan uygulamalarını uygulama mağazasında yayımlanamaz.
+- **Apple Developer Program** – bir kişi veya bir kuruluş, Apple Developer Program geliştirmek, test ve uygulamaları dağıtmak temsil olmanıza bakılmaksızın.
+- **Apple Geliştirici Kurumsal programı** – Enterprise program geliştirin ve yalnızca şirket içi uygulamaları dağıtmak istediğiniz kuruluşlar için en uygun. Kurumsal programı üyeleri iTunes Connect için erişimi yoktur ve oluşturulan uygulamaları App Store için yayımlanamaz.
 
+Bu programlardan birini kaydetmek için ziyaret [Apple Developer Portal'a](https://developer.apple.com/programs/enroll/) kaydedilecek. Bir Apple geliştirici olarak kaydetmek için bunun gerekli olduğunu unutmayın bir [Apple kimliği](https://appleid.apple.com/). Bu kılavuzda varsayımıyla oluşturuldu, **olan** bir Apple Geliştirici programının üyesi.
 
-Ya da bu programlar kaydetmek için ziyaret [Apple Geliştirici Portalı](https://developer.apple.com/programs/enroll/) kaydetmek için. Apple geliştirici olarak kaydetmek için bunun gerekli olduğunu unutmayın bir [Apple kimliği](https://appleid.apple.com/). Bu kılavuz varsayımıyla oluşturuldu, **olan** bir Apple Developer Program üyesi.
+Alternatif olarak, Apple sunulan [ücretsiz sağlama](~/ios/get-started/installation/device-provisioning/free-provisioning.md) sağlayan tek bir uygulama, tek bir cihaz üzerinde çalıştırmak Xcode 7'de *olmadan* Apple'nın Geliştirici programının üyesi olmak. Bu şekilde, ayrıntılı olarak sağlanırken bir dizi sınırlandırması olan [burada](~/ios/get-started/installation/device-provisioning/free-provisioning.md#limitations).
 
-Alternatif olarak, Apple sunulan [ücretsiz sağlama](~/ios/get-started/installation/device-provisioning/free-provisioning.md) tek bir cihaz üzerinde çalıştırmak tek bir uygulama sağlayan Xcode 7 *olmadan* Apple Developer Program üyesi olma. Bu şekilde ayrıntılı ayrılırken bir dizi sınırlama olan [burada](~/ios/get-started/installation/device-provisioning/free-provisioning.md#limitations).
+Bir cihazda çalışan herhangi bir uygulama kümesi meta verileri içermesi gerekir (veya *parmak izi*), uygulama ve geliştirici ile ilgili bilgiler içerir. Apple, uygulama ile dağıtım yapılırken müdahaleye uğramadığından emin olmak için bu parmak izi veya üzerinde çalışan, kullanıcının cihazına kullanır. Sertifika isteme kullanıcıdan Apple kimliği bir geliştirici olarak kaydolun ve bir uygulama Kimliğini kurmak için uygulama geliştiricileri gerektirerek elde edilir ve uygulamanın dağıtılacağı cihazı kaydedin.
 
-Bir cihazda çalışan herhangi bir uygulama meta verileri kümesi içermesi gerekir (veya *parmak izi*), uygulama ve geliştirici hakkında bilgiler içerir. Apple uygulama için dağıtımı sırasında değiştirilmiş değil olduğundan emin olmak için bu parmak izine veya üzerinde çalışan, bir kullanıcının aygıtının kullanır. Uygulama geliştiriciler geliştirici olarak kendi Apple Kimliği'ni kaydetmeniz ve bir uygulama kimliği Kurulum gerektirerek elde edilen bir sertifika istemek ve uygulama dağıtılacak cihazı kaydedin.
+Bir uygulama bir cihaza dağıtım yaparken, bir sağlama profili iOS cihazına de yüklenir. Uygulama oluşturma zamanında birlikte imzalandığı ve şifreli olarak Apple tarafından imzalanır bilgileri doğrulamak için sağlama profili yok. Bir uygulama bir cihaza denetleyerek yerleştirilip yerleştirilemediğini birlikte, sağlama profili ve 'parmak izi' denetimleri belirleyin:
 
-Bir cihaza bir uygulama dağıtımı sırasında bir sağlama profili iOS cihazında da yüklenir. Uygulama ile derleme zamanında imzalandığı ve şifreleme açısından Apple tarafından imzalanmış bilgileri doğrulamak için sağlama profil yok. Bir uygulama bir cihaza denetleyerek dağıtılabilir durumunda birlikte, sağlama profili ve 'parmak izi' denetimleri belirleyin:
+- **Kimin** (Sertifikalar – uygulama edilmiş açtığı sağlama profilinde bir ilgili ortak anahtara sahip bir özel anahtara sahip? Sertifika, bir geliştirme ekibi ile de Geliştirici ilişkilendirir)
+- **Ne** (tek tek uygulama kimliği – uygulama kimliği ve sağlama profilinde Info.plist eşleşme paket grubu tanımlayıcısı kümesinde mu?)
+- **Burada** (cihaz-cihaz sağlama profilinde yer alan?)
 
-- **Kimin** (Sertifikalar – uygulama edilmiş açtığı sağlama profilinde karşılık gelen bir ortak anahtara sahip bir özel anahtara sahip mi? Sertifika, ayrıca Geliştirici geliştirme ekibi ile ilişkilendirir)
-- **Ne** (tek tek uygulama kimliği – Info.plist eşleşmeyi uygulama kimliği ve sağlama profilinde paket tanımlayıcısı kümesinde mu?)
-- **Burada** (aygıtları – sağlama profilinde bulunan cihaz?)
-
-Bu adımları oluşturulan veya uygulamalar ve cihazlar dahil olmak üzere geliştirme işlemi sırasında kullanılan her şeyi geri bir Apple Geliştirici hesabını izlenebilir olduğundan emin olun.
-
-<a name="Provisioning_Profile" />
+Bu adımları oluşturulan veya kullanılan cihazlar ve uygulamalar dahil geliştirme sürecinde her şeyi geri Apple Developer hesabınız izlenebilir emin olun.
 
 ## <a name="provisioning-your-device"></a>Cihazınızı sağlama
 
 İOS Cihazınızı sağlamak için iki yolu vardır:
 
-* **Otomatik olarak (önerilen)** – Select **otomatik sağlamayı** projeniz Visual Studio otomatik olarak oluşturup imzalama kimlikleri, uygulama kimlikleri ve sağlama profillerini yönetmek için düzeni. Otomatik sağlama yönetme hakkında daha fazla bilgi için bkz: [otomatik sağlamayı](automatic-provisioning.md) Kılavuzu. Bu, bir iOS aygıtı sağlama önerilen yoludur.
+* **Otomatik olarak (önerilen)** – Select **otomatik sağlama** Visual Studio otomatik olarak oluşturup, imzalama kimlikleri, uygulama kimlikleri ve sağlama profillerini yönetmek için projenizdeki düzeni. Otomatik sağlamayı yönetme hakkında daha fazla bilgi için bkz: [otomatik sağlama](automatic-provisioning.md) Kılavuzu. Bir iOS cihazı sağlama, önerilen yöntem budur.
 
-* **El ile** – imzalama kimlikleri, uygulama kimlikleri ve sağlama profilleri oluşturulabilir ve Apple Geliştirici Portalı açıklandığı gibi yönetilen [el ile sağlama](manual-provisioning.md) Kılavuzu. Bu yapıtların sonra açıklandığı gibi yönetilebilir [Apple hesap yönetimi](~/cross-platform/macios/apple-account-management.md) Kılavuzu.
+* **El ile** – imzalama kimlikleri, uygulama kimlikleri ve sağlama profilleri oluşturulabilir ve açıklandığı gibi Apple Geliştirici Portalı yönetilen [el ile sağlama](manual-provisioning.md) Kılavuzu. Bu yapılar, daha sonra açıklandığı gibi yönetilebilir [Apple hesap yönetimi](~/cross-platform/macios/apple-account-management.md) Kılavuzu.
 
+## <a name="provisioning-for-application-services"></a>Uygulama hizmetleri için hazırlama
 
-<a name="appservices" />
+Apple, özel uygulama hizmetleri için bir Xamarin.iOS uygulaması etkinleştirilebilen özellikleri olarak da bilinir, seçimi sağlar. Bu uygulama hizmetleri, hem iOS sağlama portalı yapılandırılmalıdır olduğunda **uygulama kimliği** oluşturulur ve **Entitlements.plist** dosya Xamarin.iOS uygulama projesinin bir parçası. Uygulama Hizmetleri uygulamanıza ekleme hakkında daha fazla bilgi için bkz [özellikleri giriş](~/ios/deploy-test/provisioning/capabilities/index.md) Kılavuzu ve [Yetkilendirmelerle çalışma](~/ios/deploy-test/provisioning/entitlements.md) Kılavuzu.
 
-## <a name="provisioning-for-application-services"></a>Uygulama hizmetleri için sağlama
-
-Apple özel uygulama hizmetleri, bir Xamarin.iOS uygulaması için etkin hale getirilebilir özellikleri, olarak da bilinir seçimi sağlar. Bu uygulama hizmetleri hem iOS sağlama portalı yapılandırılmalıdır zaman **uygulama kimliği** oluşturulur ve **Entitlements.plist** dosya Xamarin.iOS uygulamanın projesinin bir parçası. Uygulama Hizmetleri uygulamanıza ekleme hakkında daha fazla bilgi için bkz [yetenekleri giriş](~/ios/deploy-test/provisioning/capabilities/index.md) Kılavuzu ve [yetkilendirmeler ile çalışma](~/ios/deploy-test/provisioning/entitlements.md) Kılavuzu.
-
-* Bir uygulama kimliği ile gerekli uygulama hizmetleri oluşturun.
-* Yeni bir [sağlama profili](#Provisioning_Profile) , bu uygulama kimliğini içerir.
-* Xamarin.iOS projesinde yetkilendirmeler ayarlayın
+* Gerekli uygulama hizmetleri ile bir uygulama kimliği oluşturun.
+* Yeni bir [sağlama profili](#provisioning-your-device) , bu uygulama kimliğini içerir.
+* Yetkilendirmeler Xamarin.iOS projesi Ayarla
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

@@ -1,73 +1,74 @@
 ---
-title: I dosyalarını ekleyebilir veya Visual Studio'da oluşturduktan sonra bir IPA dosyasından dosyaları kaldırmak?
+title: Ben dosyalarını ekleyebilir veya Visual Studio'da derledikten sonra bir IPA dosyasındaki dosyaları kaldırma?
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 6C3082FB-C3F1-4661-BE45-64570E56DE7C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.openlocfilehash: b8b61ba38491b2085233dd1b30a82bc57d2baaed
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 04/03/2018
+ms.openlocfilehash: 366308774a7302e54b0d47753256638e89d97b82
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30777937"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350988"
 ---
-# <a name="can-i-add-files-to-or-remove-files-from-an-ipa-file-after-building-it-in-visual-studio"></a>I dosyalarını ekleyebilir veya Visual Studio'da oluşturduktan sonra bir IPA dosyasından dosyaları kaldırmak?
+# <a name="can-i-add-files-to-or-remove-files-from-an-ipa-file-after-building-it-in-visual-studio"></a>Ben dosyalarını ekleyebilir veya Visual Studio'da derledikten sonra bir IPA dosyasındaki dosyaları kaldırma?
 
-Evet, mümkündür, ancak genellikle yeniden imzalamak gerekir `.app` değişikliği yaptıktan sonra paketi.
+Evet, mümkündür, ancak genellikle yeniden imzalama gerektirecek `.app` değişiklik yaptıktan sonra paketi.
 
-Bu değiştirme Not `.ipa` dosya normal kullanımda gerekli değildir. Bu makale yalnızca bilgilendirme amacıyla sağlanmıştır.
+Not Bu değiştirme `.ipa` dosya normal kullanımda gerekli değildir. Bu makalede, yalnızca bilgilendirici amaçlarla sağlanmıştır.
 
-## <a name="example-removing-a-file-from-a-ipa-archive"></a>Örnek: bir dosyadan kaldırma bir `.ipa` arşiv
+## <a name="example-removing-a-file-from-a-ipa-archive"></a>Örnek: bir dosyadan kaldırarak bir `.ipa` arşiv
 
-Bu örnek için Xamarin.iOS projesinin adı olduğunu varsayalım `iPhoneApp1` ve `generated session id` olduğu `cc530d20d6b19da63f6f1c6f67a0a254`
+Bu örnek için bir Xamarin.iOS projesi adı olduğunu varsayalım `iPhoneApp1` ve `generated session id` olduğu `cc530d20d6b19da63f6f1c6f67a0a254`
 
-1.  Yapı `.ipa` Visual Studio'dan normal olarak dosya.
+1.  Derleme `.ipa` Visual Studio'dan normal olarak dosya.
 
-2.  Mac yapı konağı geçebilir.
+2.  Mac derleme konağı geçebilir.
 
-3.  Derleme Bul `~/Library/Caches/Xamarin/mtbs/builds` klasör. Bu yolun içine yapıştırabilirsiniz **Bulucu > Git > klasörüne gidin** Bulucu klasöre gidin. Proje adı ile eşleşen klasörü arayın. Bu klasör içinde eşleşen klasörü arayın `generated session id` yapı. Bu, büyük olasılıkla en son değiştirilme saati sahip alt klasör olacaktır.
+3.  Derleme Bul `~/Library/Caches/Xamarin/mtbs/builds` klasör. Bu yolun içine yapıştırabilirsiniz **Bulucu > gidin > klasörüne gidin** Bulucu klasöre gidin. Proje adı ile eşleşen klasörünü arayın. Bu klasörde eşleşen klasörü arayın `generated session id` derleme. Bu, büyük olasılıkla en son değiştirilme zamanına sahip alt klasör olacaktır.
 
 4.  Yeni bir `Terminal.app` penceresi.
 
-5.  Tür `cd ` Terminal.app penceresinde ve ardından sürükleyin & bırakma içine `generated session id` klasörüne `Terminal.app` penceresi:
+5.  Tür `cd ` Terminal.app penceresini ve ardından sürükle ve bırak içine `generated session id` klasörüne `Terminal.app` penceresi:
 
-    ![](modify-ipa-images/session-id-folder.png "Oluşturulan oturum kimliği klasörü Finder bulma")
+    ![](modify-ipa-images/session-id-folder.png "Oluşturulan oturum kimliği klasörü Finder'da bulma")
 
-6.  Dizine değiştirmek için return tuşuna yazın `generated session id` klasör.
+6.  Dizine değiştirmek için dönüş anahtar türü `generated session id` klasör.
 
-7.  Unzip `.ipa` geçici bir dosyaya `old/` klasörü aşağıdaki komutu kullanarak. Ayarlama `Ad-Hoc` ve `iPhoneApp1` adları belirli projeniz için gerektiği gibi.
+7.  Unzip `.ipa` geçici bir dosyaya `old/` aşağıdaki komutu kullanarak klasör. Ayarlama `Ad-Hoc` ve `iPhoneApp1` belirli projeniz için gerektiği şekilde adlandırır.
 
     > -xk bin/iPhone/Ad-Hoc/iPhoneApp1-1.0.ipa eski Denden /
 
-8.  Tutmak `Terminal.app` penceresini açın.
+8.  Tutun `Terminal.app` penceresini açın.
 
-9.  İstenen dosyalarını silin `.ipa`. Bulucu kullanarak çöp taşımak veya komut satırını kullanarak silme `Terminal.app`. İçeriğini görüntülemek için `Payload/iPhone` Bulucu, Denetim tıklatma dosyası ve seçin **paket içeriğini göster**.
+9.  İstenen dosyaları Sil `.ipa`. Bunları kullanarak Bulucu çöp kutusuna taşınacak veya kullanarak komut satırı Sil `Terminal.app`. İçeriğini görüntülemek için `Payload/iPhone` seçin ve dosyayı Finder'da Control tuşuna tıklama dosya **paket içeriğini göster**.
 
-10.  Adım 3, olduğu gibi aynı genel yaklaşım kullanarak günlük dosyasını bulun `~/Library/Logs/Xamarin/MonoTouchVS/` her iki proje adı olan ve `generated session id` adında: ![ ] (modify-ipa-images/build-log.png "Finder proje derleme günlüğünde bulun")
+10.  Adım 3, olduğu gibi aynı genel yaklaşım kullanarak Bul günlük dosyasını altında `~/Library/Logs/Xamarin/MonoTouchVS/` proje adı olan ve `generated session id` adında: ![ ] (modify-ipa-images/build-log.png "Finder'da projesi oluşturma günlüğünü bulun")
 
-11.  Derleme günlüğünde, 10, adımından örneğin çift tıklatarak açın.
+11.  Yapı günlüğüne, adımda 10, örneğin çift tıklayarak açın.
 
-12.  İçeren satırı bulun `tool /usr/bin/codesign execution started with arguments: -v --force --sign`.
+12.  İçeren satırı Bul `tool /usr/bin/codesign execution started with arguments: -v --force --sign`.
 
-13.  Tür `/usr/bin/codesign ` adım 8'deki Terminal.app penceresine.
+13.  Tür `/usr/bin/codesign ` 8. adımdaki Terminal.app penceresine.
 
-14.  Tüm ile başlayan bağımsız değişkenler kopyalayın `-v` satırında 12 adım ve Terminal.app penceresine yapıştırın.
+14.  Tüm bağımsız değişkenler ile başlayan kopyalayın `-v` satırında 12 adım ve bunları Terminal.app penceresine yapıştırın.
 
-15.  Son bağımsız değişken olarak değiştirmek `.app` paket içinde bulunan `old/Payload/` klasörü ve komutu çalıştırın.
+15.  Olmasını son bağımsız değişkenin `.app` paket içinde bulunan `old/Payload/` klasörünü açın ve ardından komutu çalıştırın.
 
 ```bash
 /usr/bin/codesign -v --force --sign SOME_LONG_STRING in/iPhone/Ad-Hoc/iPhoneApp1.app/ResourceRules.plist --entitlements obj/iPhone/Ad-Hoc/Entitlements.xcent old/Payload/iPhoneApp1.app
 ```
 
-16.  Dönüştürme `old/` Terminal dizin:
+16.  Dönüştürme `old/` terminalde dizin:
 
 ```bash
 cd old
 ```
 
-17.  Yeni bir dizine içeriğini zip `.ipa` kullanarak dosya `zip` komutu. Değiştirebileceğiniz `"$HOME/Desktop/iPhoneApp1-1.0.ipa"` çıktısını almak için bağımsız değişken `.ipa` istediğiniz yere dosya:
+17.  Yeni bir dizine içeriğini zip `.ipa` kullanarak dosya `zip` komutu. Değiştirebileceğiniz `"$HOME/Desktop/iPhoneApp1-1.0.ipa"` çıktısını almak için bağımsız değişken `.ipa` istediğiniz yerde dosya:
 
 ```bash
 zip -yr "$HOME/Desktop/iPhoneApp1-1.0.ipa" *
@@ -75,9 +76,9 @@ zip -yr "$HOME/Desktop/iPhoneApp1-1.0.ipa" *
 
 ## <a name="common-error-messages"></a>Genel hata iletileri
 
-Görürseniz `Invalid Signature. A sealed resource is missing or invalid.`, genellikle anlamına bir şey içinde değiştirildi `.app` paket ve `.app` paket doğru yeniden imzalanmamış daha sonra. Oluşturmak isterseniz, ayrıca bir `.ipa` bir dağıtım profiliyle, _gerekir_ özgün yapı `.ipa` dağıtım profiline sahip. Aksi takdirde `Entitlements.xcent` yanlış olur.
+Görürseniz `Invalid Signature. A sealed resource is missing or invalid.`, genellikle anlamına bir şey içinde değiştirildiğini `.app` paket ve `.app` paket doğru şekilde yeniden imzalanmamış daha sonra. Oluşturmak istediğiniz da unutmayın bir `.ipa` dağıtım profiliyle, _gerekir_ orijinal derleme `.ipa` dağıtım profili ile. Aksi takdirde `Entitlements.xcent` yanlış olur.
 
-Aşağıdaki çalıştırırsanız nasıl bu hata oluşabilir, somut bir örnek vermek için `codesign --verify` komutu 9. adım sonra Terminal penceresinde hatanın tam nedenini yanı sıra hatayı görürsünüz:
+Aşağıdaki çalıştırırsanız nasıl bu hata ortaya çıkabilecek, somut bir örnek vermek `codesign --verify` komut sonra 9. adım Terminal penceresinde, hatanın tam nedenini birlikte hatayı görürsünüz:
 
 ```bash
 $ codesign -dvvv --no-strict --verify old/Payload/iPhoneApp1.app
@@ -85,6 +86,6 @@ old/Payload/iPhoneApp1.app: a sealed resource is missing or invalid
 file missing: /Users/macuser/Library/Caches/Xamarin/mtbs/builds/iPhoneApp1/cc530d20d6b19da63f6f1c6f67a0a254/old/Payload/iPhoneApp1.app/MyFile.png
 ```
 
-Ve App Store doğrulama işlemi benzer bir hata iletisi rapor eder:
+Ve App Store doğrulama işlemi, benzer bir hata iletisi rapor eder:
 
-> HATA ITMS-90035: "imzası geçersiz. Korumalı bir kaynağı eksik veya geçersiz olur. İkili [iPhoneApp1.app/iPhoneApp1] yolundaki geçersiz bir imza içeriyor. Uygulama dağıtım sertifikası veya değil, geçici bir sertifika geliştirme sertifikası ile imzalanmış emin olun. Xcode kod imzalama ayarlarında (Proje düzeyindeki tüm değerleri geçersiz kılmak) hedef düzeyinde doğru olduğundan emin olun. Ayrıca, bir yayın hedef Xcode'da Simulator hedef kullanılarak karşıya yüklemekte olduğunuz paket oluşturuldu emin olun. Kod imzalama ayarlarınızın doğru olduğundan eminseniz, Xcode'da "Temiz tümünü"'i seçin, Bulucu "yapı" dizininde silin ve yayın hedef yeniden oluşturun. Daha fazla bilgi için lütfen bakın [ https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html ](https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html)"
+> HATA ITMS-90035: "geçersiz imza. Korumalı bir kaynağı eksik veya geçersiz. İkili dosya yolunda [iPhoneApp1.app/iPhoneApp1], geçersiz bir imza içeriyor. Uygulamanızın dağıtım sertifikası, değil geçici bir sertifika veya bir geliştirme sertifikası ile imzalanmış olduğundan emin olun. Xcode kod imzalama ayarlarında hedef düzeyinde (Bu proje düzeyindeki tüm değerleri geçersiz kılmak) doğru olduğundan emin olun. Ayrıca, Xcode, simülatör hedef yayın hedef kullanarak karşıya yüklemekte olduğunuz paket oluşturulmuş emin olun. Kod imzalama ayarlarınızın doğru olduğundan eminseniz, Xcode'da "Temiz tümünü"'i seçin, Finder'da "derleme" dizinini Sil ve yayın hedef yeniden oluşturun. Daha fazla bilgi için lütfen başvurun [ https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html ](https://developer.apple.com/library/ios/documentation/Security/Conceptual/CodeSigningGuide/Introduction/Introduction.html)"

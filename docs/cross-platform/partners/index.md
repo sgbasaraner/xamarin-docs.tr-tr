@@ -8,12 +8,12 @@ ms.author: crdun
 ms.date: 07/16/2018
 hide_comments: true
 hideEdit: true
-ms.openlocfilehash: fc4f851d25837690cd3412ca142a52b1312a08b3
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
+ms.openlocfilehash: d78c0e52b96403ad27a7c5ac69a367746781b589
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39270208"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351749"
 ---
 # <a name="certified-consulting-partners-to-deliver-mobile-solutions"></a>Danışmanlık ortakları mobil çözümler sunmak için sertifikalı
 
@@ -112,6 +112,7 @@ _Birincil konuma göre listelenen, iş ortaklarının çoğu, sınırların öte
 |[Interknowlogy](http://www.interknowlogy.com/)|San Diego, CA, ABD|Dünya çapında bir özel uygulama geliştirme lideri, dokunma, hareket ve ses aracılığıyla bağlanan deneyimleri sağlamak için mevcut ve Gelişmekte olan teknolojileri Interknowlogy yararlanır.|
 |[Intouch çözümleri](http://www.intouchsol.com )|Overland Park, görevleri, ABD; Londra, İngiltere; Chicago, IL, ABD; New York, NY, ABD|Önde gelen bir dijital Ajans Pharma ve sağlık alanı içinde duyuyoruz|
 |[iTexico](http://www.itexico.com)|Austin, Texas, ABD|iTexico odaklanan bir proje boyunca mobil uygulama geliştirmede yardımcı üzerinde bir genel yazılım teknoloji şirketi olan ' nearshore dış kaynak kullanımı aracılığıyla Äôs yaşam döngüsü.|
+|[JBS](https://www.jbssolutions.com)|Pennsylvania, ABD|JBS özel yazılım çözümü sağlayıcısıdır.|
 |[Kaonsoft](http://www.kaonsoft.net/)|Palo Alto, CA, ABD; Chicago, IL, ABD; Toledo, OH, ABD; Seongnam si, Gyeonggi yapın, Güney Kore|Kaonsoft enterprise mobility uygulamaları için platformlar arası oluşturmak için tam uçtan uca çözümler sağlayan yenilikçi yazılım şirketidir.|
 |[Katalyst Technologies Inc. ](http://www.katalysttech.com )|Evanston, IL, ABD; Atlanta, GA, ABD; Mumbai, Maharashtra, Hindistan; Hyderabad, Telangana, Hindistan; Pune, Maharashtra, Hindistan|Katalyst teknoloji, gerçek anlamda bir Etkinleştirici olabilir inanıyoruz. Önde gelen şirketlerin bizim için yalnızca güvendiğiniz neden ürünler ve hizmetler sağlayan sahip, ancak kendi temel faaliyet aracılığıyla Kurumsal span özelleştirilmiş, etkili çözümler çalışma yöntemlerini de değiştirebilirsiniz.|
 |[Kleio teknoloji LLC](http://kleiotechnology.com)|Kraliyet Palm Beach, FL|Geleneksel olarak bir eğitim, marka ve kimlikler hakkında çalıştık. Biz bir istemcinin problemini incelemek tasarım, UX ve içerik stratejisi adres. İstemci ihtiyaçları ulaşmak ve karlı kolaylaştırmak için bussiness yardımcı olabiliriz|

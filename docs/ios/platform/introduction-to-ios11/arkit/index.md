@@ -1,41 +1,41 @@
 ---
-title: Xamarin.iOS ARKit giriş
-description: Bu belgede iOS 11 ARKit ile genişletilmiş gerçekte açıklanmaktadır. Bir uygulama 3B model ekleme, görüntüleme yapılandırma, bir oturum temsilci uygulamak, dünyada 3D modeli getirin ve genişletilmiş gerçekte oturum duraklatmak nasıl açıklanır.
+title: Xamarin.iOS, ARKit giriş
+description: Bu belgede, iOS 11 ARKit genişletilmiş gerçeklikte açıklanmaktadır. Bu, bir uygulamaya bir 3B model eklemek, görünümü yapılandırma, oturum temsilci uygulamak, dünyada 3B modeli konumlandırmak ve genişletilmiş gerçeklik oturumunu Duraklat nasıl ele alınmaktadır.
 ms.prod: xamarin
 ms.assetid: 70291430-BCC1-445F-9D41-6FBABE87078E
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 08/30/2016
-ms.openlocfilehash: 55ef2004f66cb808f878b2215dfdd59a45015877
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 08/30/2017
+ms.openlocfilehash: 14bbb35477c098738e9cd7e2cb92154422d394ee
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787181"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350621"
 ---
-# <a name="introduction-to-arkit-in-xamarinios"></a>Xamarin.iOS ARKit giriş
+# <a name="introduction-to-arkit-in-xamarinios"></a>Xamarin.iOS, ARKit giriş
 
-_Genişletilmiş gerçekte iOS 11_
+_İOS 11 için genişletilmiş gerçeklik_
 
-ARKit çok çeşitli genişletilmiş gerçekte uygulamaları ve oyunları sağlar. Bu bölüm aşağıdaki konuları içerir:
+ARKit genişletilmiş gerçeklik uygulamaları ve oyunları çok çeşitli sağlar. Bu bölümde aşağıdaki konuları içerir:
 
 - [ARKit ile çalışmaya başlama](#gettingstarted)
-- [ARKit UrhoSharp ile kullanma](urhosharp.md)
+- [ARKit ile UrhoSharp kullanma](urhosharp.md)
 
 <a name="gettingstarted" />
 
 ## <a name="getting-started-with-arkit"></a>ARKit ile çalışmaya başlama
 
-Genişletilmiş gerçekte ile çalışmaya başlamak için aşağıdaki yönergeleri basit bir uygulama yol: bir 3B modeli konumlandırma ve model izleme işlevselliği ile bir yerde tutun ARKit izin vererek.
+Aşağıdaki yönergeleri ile genişletilmiş gerçeklik kullanmaya başlamak için bir basit uygulamasında izlenecek yol: 3B model konumlandırma ve modeli, izleme işlevselliğini korumak ARKit sağlar.
 
-![Görüntü kameranın kayan jet 3D modeli](images/jet-sml.png)
+![Görüntü kameranın kayan jet 3B modeli](images/jet-sml.png)
 
 ### <a name="1-add-a-3d-model"></a>1. 3B model ekleme
 
-Varlıklar ile projeye eklenmesi **SceneKitAsset** derleme eylemi.
+Varlıklar ile projeye eklenmelidir **SceneKitAsset** derleme eylemi.
 
-![Bir projedeki SceneKit varlıklar](images/scene-assets.png)
+![SceneKit varlıklarını bir proje](images/scene-assets.png)
 
 
 ### <a name="2-configure-the-view"></a>2. Görünümü yapılandırma
@@ -52,9 +52,9 @@ var scene = SCNScene.FromFile("art.scnassets/ship");
 SceneView.Scene = scene;
 ```
 
-### <a name="3-optionally-implement-a-session-delegate"></a>3. İsteğe bağlı olarak bir oturum temsilci uygulama
+### <a name="3-optionally-implement-a-session-delegate"></a>3. İsteğe bağlı olarak bir oturum temsilci uygulamak
 
-Basit durumlar için gerekli değildir, ancak bir oturum temsilci uygulama durumu ARKit oturumunun (ve kullanıcıya geri bildirim sağlayan gerçek uygulamalar) hata ayıklama için yararlı olabilir. Aşağıdaki kodu kullanarak basit bir temsilci oluşturun:
+Basit durumlar için gerekli değildir, ancak bir oturum temsilci uygulama durumu ARKit oturumun (ve kullanıcıya geri bildirim sağlayan gerçek uygulamalar) hata ayıklama için yararlı olabilir. Aşağıdaki kodu kullanarak basit temsilci oluşturun:
 
 ```csharp
 public class SessionDelegate : ARSessionDelegate
@@ -67,16 +67,16 @@ public class SessionDelegate : ARSessionDelegate
 }
 ```
 
-Temsilci atamak içinde `ViewDidLoad` yöntemi:
+Temsilci atama içinde `ViewDidLoad` yöntemi:
 
 ```csharp
 // Track changes to the session
 SceneView.Session.Delegate = new SessionDelegate();
 ```
 
-### <a name="4-position-the-3d-model-in-the-world"></a>4. 3B modeli dünyada getirin
+### <a name="4-position-the-3d-model-in-the-world"></a>4. 3B modeli dünyanın getirin
 
-İçinde `ViewWillAppear`, aşağıdaki kod bir ARKit oturumu oluşturur ve cihazın kamera göre alanındaki 3D modeli konumunu ayarlar:
+İçinde `ViewWillAppear`, aşağıdaki kod bir ARKit oturumu oluşturur ve cihazın kamerasını göreli 3B modeli konumunu ayarlar:
 
 ```csharp
 // Create a session configuration
@@ -94,11 +94,11 @@ var ship = SceneView.Scene.RootNode.FindChildNode("ship", true);
 ship.Position = new SCNVector3(2f, -2f, -9f);
 ```
 
-Uygulamayı çalıştırın ya da sürdürüldü, her zaman 3D modeli kamera önüne yerleştirilir. Model konumlandırılmış sonra kamera taşıyın ve konumlandırılmış modeli ARKit tutar olarak izleyebilir.
+Uygulamayı çalıştırın ya da devam, her zaman 3B modeli kamera önüne yerleştirilir. Model konumlandırılmış kamerayı hareket ve ARKit konumlandırılmış modeli tutar izleyin.
 
-### <a name="5-pause-the-augmented-reality-session"></a>5. Genişletilmiş gerçekte oturum duraklatma
+### <a name="5-pause-the-augmented-reality-session"></a>5. Genişletilmiş gerçeklik oturumunu Duraklat
 
-Görünüm denetleyicisini olmadığında görünür ARKit oturum duraklatmak için iyi bir uygulamadır (içinde `ViewWillDisappear` yöntemi:
+Görünüm denetleyicisi olmadığında görünür ARKit oturumunu Duraklat iyi bir uygulamadır (içinde `ViewWillDisappear` yöntemi:
 
 ```csharp
 SceneView.Session.Pause();
@@ -106,15 +106,15 @@ SceneView.Session.Pause();
 
 ## <a name="summary"></a>Özet
 
-Yukarıdaki kod basit bir ARKit uygulama sonuçlanır. Daha karmaşık örnekler uygulamak için genişletilmiş gerçekte oturumu barındıran görünüm denetleyicisini beklediğiniz `IARSCNViewDelegate`, ek yöntemleri uygulamıştır.
+Yukarıdaki kod, bir basit ARKit uygulamasında sonuçlanır. Daha karmaşık örnekler uygulamak için genişletilmiş gerçeklik oturumu barındırma görünüm denetleyicisi beklediğiniz `IARSCNViewDelegate`, ve ek yöntemleri uygulanmasını.
 
-ARKit çok sayıda yüzey izleme ve kullanıcı etkileşimi gibi daha gelişmiş özellikleri sağlar. Bkz: [UrhoSharp demo](urhosharp.md) UrhoSharp ile izleme ARKit birleştiren bir örnek.
+ARKit birçok yüzey izleme ve kullanıcı etkileşimi gibi daha gelişmiş özellikler sunar. Bkz: [UrhoSharp tanıtım](urhosharp.md) ile UrhoSharp izleme ARKit birleştiren bir örnek.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Genişletilmiş gerçekte (Apple)](https://developer.apple.com/arkit/)
-- [ARKit UrhoSharp ile kullanma](urhosharp.md)
-- [Basit ARKit (Jet) örnek](https://developer.xamarin.com/samples/monotouch/ios11/ARKitSample/)
+- [Genişletilmiş gerçeklik (Apple)](https://developer.apple.com/arkit/)
+- [ARKit ile UrhoSharp kullanma](urhosharp.md)
+- [Basit ARKit (Jet) örneği](https://developer.xamarin.com/samples/monotouch/ios11/ARKitSample/)
 - [ARKit yerleştirme nesneleri (örnek)](https://developer.xamarin.com/samples/monotouch/ios11/ARKitPlacingObjects/)
-- [ARKit - iOS (WWDC) (video) için genişletilmiş gerçekte Tanıtımı](https://developer.apple.com/videos/play/wwdc2017/602/)
+- [ARKit - iOS (WWDC) (video) için genişletilmiş gerçeklik Tanıtımı](https://developer.apple.com/videos/play/wwdc2017/602/)

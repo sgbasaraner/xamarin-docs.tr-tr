@@ -6,27 +6,49 @@ ms.assetid: B5571660-1E82-4379-95C3-0725288CF5D9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/08/2016
-ms.openlocfilehash: 17c353844a7ddc808e5d9f0632434472913170a4
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/30/2018
+ms.openlocfilehash: 71e1655b6bc05c621ee97fcf826ce8b468f0dd48
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995212"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351502"
 ---
 # <a name="listview-data-sources"></a>ListView veri kaynakları
 
-ListView veri listesini görüntülemek için kullanılır. Bir ListView veri ve nasıl biz seçili öğeye bağlayabilirsiniz doldurma hakkında bilgi edineceksiniz.
+A [ `ListView` ](xref:Xamarin.Forms.ListView) veri listesini görüntülemek için kullanılır. Bir ListView veri ve nasıl biz seçili öğeye bağlayabilirsiniz doldurma hakkında bilgi edineceksiniz.
 
 - **[ItemsSource ayarlama](#ItemsSource)**  &ndash; basit bir liste veya dizi kullanır.
 - **[Veri bağlama](#Data_Binding)**  &ndash; ListView ve bir modeli arasında bir ilişki kurar. Bağlama MVVM desen için idealdir.
 
 ## <a name="itemssource"></a>ItemsSource
-ListView, verileriniz ile doldurulur `ItemsSource` koleksiyon uygulama kabul edebilir özelliği `IEnumerable`. Doldurmak için en kolay yolu bir `ListView` dizelerden oluşan bir dizi kullanmayı içerir:
+
+A [ `ListView` ](xref:Xamarin.Forms.ListView) kullanarak veri ile doldurulan [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource) koleksiyon uygulama kabul edebilir özelliği `IEnumerable`. Doldurmak için en kolay yolu bir `ListView` dizelerden oluşan bir dizi kullanmayı içerir:
+
+```xaml
+<ListView>
+      <ListView.ItemsSource>
+          <x:Array Type="{x:Type x:String}">
+            <x:String>mono</x:String>
+            <x:String>monodroid</x:String>
+            <x:String>monotouch</x:String>
+            <x:String>monorail</x:String>
+            <x:String>monodevelop</x:String>
+            <x:String>monotone</x:String>
+            <x:String>monopoly</x:String>
+            <x:String>monomodal</x:String>
+            <x:String>mononucleosis</x:String>
+          </x:Array>
+      </ListView.ItemsSource>
+</ListView>
+```
+
+Eşdeğer C# kodu verilmiştir:
 
 ```csharp
 var listView = new ListView();
-listView.ItemsSource = new string[]{
+listView.ItemsSource = new string[]
+{
   "mono",
   "monodroid",
   "monotouch",
@@ -145,10 +167,6 @@ Genellikle seçili öğeye bağlamak isteyeceksiniz bir `ListView`yerine yerine 
 
 Varsayılarak `listView`'s `ItemsSource` dizeleri listesi `SomeLabel` ilişkili metin özelliğini olacaktır `SelectedItem`.
 
-
-
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [İki yolla (örnek) bağlama](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/ListView/SwitchEntryTwoBinding)
-- [1.4 sürüm notları](http://forums.xamarin.com/discussion/35451/xamarin-forms-1-4-0-released/)
-- [1.3 sürüm notları](http://forums.xamarin.com/discussion/29934/xamarin-forms-1-3-0-released/)

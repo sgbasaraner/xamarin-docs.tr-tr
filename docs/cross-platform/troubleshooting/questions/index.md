@@ -5,52 +5,54 @@ ms.prod: xamarin
 ms.assetid: C7E6E54D-3957-407D-BB87-22B095148C6B
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: b81f5c09ea06acf87449448f43b6c0474a6737b0
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/08/2018
+ms.openlocfilehash: 06aa6569301d1bfdbf9f6fd1e7397a38a9beb6f6
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33917479"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350826"
 ---
 # <a name="general-frequently-asked-questions"></a>Genel sık sorulan sorular
 
 ## <a name="portable-class-libraries"></a>Taşınabilir sınıf kitaplıkları
+
 ### <a name="how-can-i-view-what-libraries-are-supported-in-a-pclpcl-support-librariesmd"></a>[Bir PCL’de hangi kitaplıkların desteklendiğini görüntüleyebilir miyim?](pcl-support-libraries.md)
-Bu kılavuz, kaynakları ve varolan kitaplığınızın çeşitli PCL Hedef platformlar tarafından desteklenen ya da bir PCL profiline dönüştürülebilir belirlemek için yöntemleri listeler.
+Bu kılavuz, kaynaklar ve mevcut kitaplığınızı çeşitli PCL Hedef platformlar tarafından desteklenen ya da PCL profil dönüştürülebilir belirlemek için yöntemleri listeler.
 
 ### <a name="pcl-reflection-apipcl-reflectionmd"></a>[PCL Yansıma API’si](pcl-reflection.md)
-Microsoft, taşınabilir sınıf kitaplıkları kullanmak için yeni bir yansıma API geliştirmiştir. Bir PCL taşımak istediğiniz bazı var olan Yansıma kodu varsa, çalışmayabilir.
+Microsoft, taşınabilir sınıf kitaplıkları kullanmak için yeni bir yansıma API'si geliştirmiştir. Bir PCL için taşımak istediğiniz mevcut yansıma kod varsa, çalışmayabilir.
 
 ### <a name="pcl-case-study-how-can-i-resolve-problems-related-to-systemdiagnosticstracing-for-the-microsoft-tpl-dataflow-nuget-packagepcl-case-studymd"></a>[PCL örnek olay incelemesi: Microsoft TPL Dataflow NuGet paketi için System.Diagnostics.Tracing ile ilgili sorunları nasıl çözebilirim?](pcl-case-study.md)
-Xamarin.iOS ve Xamarin.Android % 100'başvuru olarak izin her PCL profili kullanılmaz. Mac, Visual Studio ve NuGet Paket Yöneticisi için Visual Studio'da pratik kolaylık olması için Xamarin projeleri yalnızca tamamlanmamış uygulamaları birkaç profili kullanılmasına izin verin. Örneğin, Xamarin.iOS ne Xamarin.Android şu anda tam bir uygulama türlerini içerir `System.Diagnostics.Tracing` PCL ad alanı. Bu sorunu taşınabilir net45 olduğu win8 + wp8 + wpa81 başvurmak için uygulama projesi geçerek çözmek TPL veri akışı kitaplığı sürümü.
+Xamarin.iOS ve Xamarin.Android %100 başvuru olarak bunların sağlayan her PCL profilinin kullanılmaz. Visual Studio Mac, Visual Studio ve NuGet Paket Yöneticisi için pratik kolaylık sağlamak için Xamarin projeleri yalnızca tamamlanmamış uygulamalara sahip birkaç profil kullanımını sağlar. Örneğin, Xamarin.iOS ve Xamarin.Android ne şu anda tam bir uygulama türlerini içerir `System.Diagnostics.Tracing` PCL ad alanı. Bu sorunu portable-net45 + win8 + wp8 + wpa81 başvurmak için uygulama projesi geçerek iş TPL veri akışı kitaplığı.
 
 ## <a name="nuget-packages--xamarin-components"></a>NuGet paketlerini & Xamarin bileşenleri
 ### <a name="how-can-i-update-nugetnuget-updatemd"></a>[NuGet’i nasıl güncelleştirebilirim?](nuget-update.md)
-Altında NuGet güncelleştirmeler, uzantıları ve eklentiler bulunabilir **güncelleştirmeleri** sekmesinde **NuGet Paket Yöneticisi**. Mac ve Visual Studio için Visual Studio'da güncelleştirmelerini bulmak için ayrıntılı gezinti bu Kılavuzu'nda bulunur.
+NuGet güncelleştirmeleri, uzantıları ve eklentiler bulunabilir **güncelleştirmeleri** sekmesinde **NuGet Paket Yöneticisi**. Mac ve Visual Studio için Visual Studio güncelleştirmeleri bulmak için ayrıntılı gezinti bu Kılavuzu'nda bulunur.
 
 ### <a name="how-do-i-downgrade-a-nuget-packagenuget-package-downgrademd"></a>[Bir NuGet paketinin eski sürümünü nasıl yükleyebilirim?](nuget-package-downgrade.md)
-Mac için Visual Studio & Visual Studio'nun eski sürümlerinin seçme ve bunları otomatik olarak yükleme özellikleri vardır; nasıl çalışır güncelleştirme paketleri benzer.
+Mac için Visual Studio ve Visual Studio, paketlerin daha eski sürümlerini seçme ve bunları otomatik olarak yükleme özellikleri sahiptir; nasıl çalıştığını güncelleştirme paketleri benzer.
 
 ### <a name="missing-packages-error-after-updating-nuget-packagesnuget-packages-missingmd"></a>[Nuget paketleri güncelleştirildikten sonra paket eksik hatası](nuget-packages-missing.md)
-Bu sorunu çoğunlukla Xamarin.Forms örnek uygulama çözümlerini bildirildi, ancak bu sorunun olası NuGet paketlerini kullanan herhangi bir projede oluşabilir.
+Bu sorunu Xamarin.Forms örnek uygulama çözümleri temel olarak bildirildi, ancak bu sorunun olası NuGet paketlerini kullanan hiçbir projede oluşabilir.
 
 ### <a name="unifying-google-play-services-components-and-nugetgps-components-nugetmd"></a>[Google Play Services Bileşenleri ile NuGet’i birleştirme](gps-components-nuget.md)
-Var. birkaç Google Play Hizmetleri bileşenleri ve NuGet paketleri olabilir ancak geliştiriciler için işleri kolaylaştırmak için kullanılan, biz şimdi bizim bileşenleri ve NuGet birleşik iki paketlere. Neredeyse her durumda, Google Play Hizmetleri'nin kullanılmalıdır. (Froyo) paketini kullanmak için yalnızca, etkin olarak Froyo hedeflediğiniz varsa nedenidir.
+Birden çok Google Play Services bileşenleri ve NuGet paketleri olarak, ancak geliştiriciler için işleri kolaylaştırmak için kullanılabilir, biz artık bizim bileşenleri ile Nuget'i birleşik iki paketlere. Neredeyse her durumda, Google Play Hizmetleri kullanılmalıdır. (Froyo) paketini kullanmak üzere yalnızca etkin bir şekilde Froyo hedeflediğiniz varsa nedenidir.
 
 ### <a name="where-are-the-components-stored-on-my-machinecomponent-storagemd"></a>[Bileşenler makinemizin neresinde depolanır?](component-storage.md)
-Bir uygulama projesine bir Xamarin bileşeni'ni yüklediğinizde bu kılavuzda listelenen iki konumda yer.
+Bir uygulama projesine Xamarin bileşeni'ni yüklediğinizde bu kılavuzda listelenen iki konum arasında yer.
 
 
 ## <a name="troubleshooting"></a>Sorun giderme
 ### <a name="where-can-i-find-my-version-information-and-logsversion-logsmd"></a>[Sürüm bilgilerimi ve günlüklerimi nereden bulabilirim?](version-logs.md)
-Bu kılavuzda, Xamarin sorununu gidermek için kullanılan çoğu tanılama bilgilerinin nereden ayrıntıları verilmektedir.
+Bu kılavuzda, Xamarin sorunları gidermek için kullanılan çoğu tanılama bilgilerinin nerede bulunacağı ayrıntıları verilmektedir.
 
 ### <a name="when-and-how-should-i-file-a-bug-reporthowto-file-bugmd"></a>[Ne zaman ve nasıl bir hata raporu bildirmeliyim?](howto-file-bug.md)
-Bizim mühendisleri neden (ve tüm olası düzeltmeleri) bir soruna yönelik daha verimli bir şekilde belirlemek mümkün; böylece bu kılavuzda yüksek kaliteli hata raporları dosyalama için ipuçları verilmektedir.
+Mühendislerimiz nedeni (ve tüm olası düzeltmeleri) için bir sorun daha verimli bir şekilde belirlemek mümkün olacak şekilde bu kılavuz yüksek kaliteli hata raporları dosyalama için ipuçları sağlar.
 
 ### <a name="why-isnt-jenkins-supported-by-xamarinxamarin-jenkinsmd"></a>[Jenkins neden Xamarin tarafından desteklenmiyor?](xamarin-jenkins.md)
-Jenkins bir açık kaynak CI paketidir; Jenkins tarafından doğrudan neden bu kadar çok sorunları nedeniyle *kendisini* sorunları kodu nereye aldığınız karşı; gibi dosyalama gerekir [ana Jenkins depodaki](https://github.com/jenkinsci/jenkins), ya da depoyu için [ Jenkins.App](https://github.com/stisti/jenkins-app).
+Jenkins CI açık kaynaklı bir pakettir; Jenkins tarafından doğrudan neden bu kadar çok sorunları nedeniyle *kendisini* sorunları kod burada aldığınız karşı; gibi Dosyalanan gerekecektir [Jenkins ana depodaki](https://github.com/jenkinsci/jenkins), veya depoda [ Jenkins.App](https://github.com/stisti/jenkins-app).
 
 ### <a name="what-project-settings-are-required-for-the-debuggerdebugger-settingsmd"></a>[Hata ayıklayıcı için hangi proje ayarları gereklidir?](debugger-settings.md)
-(İsabet kesme noktaları, görüntü hata ayıklama günlükleri, vb.) beklendiği şekilde çalışması hata ayıklayıcı için sırayla geliştirici araçları ve hata ayıklama bilgileri görünen her ikisi de etkinleştirilmesi gerekir. Bu kılavuzda nasıl bulacağınızı ve bu ayarları etkinleştirin ayrıntıları verilmektedir.
+Hata ayıklayıcının (isabet kesme noktaları, görüntü hata ayıklama günlükleri, vb.) beklendiği şekilde çalışması sırayla geliştirici araçları ve hata ayıklama bilgileri görüntüleme her ikisi de etkinleştirilmelidir. Bu kılavuz, bulun ve bu ayarları etkinleştirme işlemi açıklanmaktadır.
 

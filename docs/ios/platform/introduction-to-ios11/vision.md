@@ -1,47 +1,47 @@
 ---
-title: Xamarin.iOS Framework'te görme
-description: Bu belgede iOS 11 kullanmayı açıklar Xamarin.iOS görme Framework. Özellikle, dikdörtgen algılama açıklanır ve yüz algılama.
+title: Xamarin.iOS, Vision çerçevesi
+description: Bu belge, iOS 11 kullanmayı açıklar Xamarin.iOS içinde Vision çerçevesi. Özellikle, dikdörtgen algılama ele alınmaktadır ve yüz algılama.
 ms.prod: xamarin
 ms.assetid: 7273ED68-7B7D-4252-B3A0-02DB2E357A8C
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 08/31/2016
-ms.openlocfilehash: c44c4b3ab12c1ba448f1befb6f831f5ad9119f18
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 08/31/2017
+ms.openlocfilehash: 4746de2f351e866fd72946b204f97e997c3e88c4
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34787425"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39350670"
 ---
-# <a name="vision-framework-in-xamarinios"></a>Xamarin.iOS Framework'te görme
+# <a name="vision-framework-in-xamarinios"></a>Xamarin.iOS, Vision çerçevesi
 
-Görme framework işleme özelliklerini 11 dahil olmak üzere, iOS için yeni görüntünün bir numara ekler:
+Yeni görüntü işleme özelliklerini iOS 11'de dahil olmak üzere, bir dizi Vision çerçevesi ekler:
 
 - [Dikdörtgen algılama](#rectangles)
 - [Yüz algılama](#faces)
-- Machine Learning görüntü analiz (ele [CoreML](~/ios/platform/introduction-to-ios11/coreml.md))
+- Machine Learning görüntü analizi (ele [CoreML](~/ios/platform/introduction-to-ios11/coreml.md))
 - Barkod algılama
-- Görüntü hizalama çözümleme
+- Görüntü hizalama analizi
 - Metin algılama
-- Yatay algılama
-- Nesne algılama & izleme
+- Ufuk algılama
+- Nesne algılama ve izleme
 
-![Algılanan üç dikdörtgenler ile fotoğraf](vision-images/found-rectangles-tiny.png) ![Algılanan iki yüz ile fotoğraf](vision-images/xamarin-home-faces-tiny.png)
+![Fotoğraf sahip üç dikdörtgenler algılandı](vision-images/found-rectangles-tiny.png) ![Fotoğraf iki yüz algılandı](vision-images/xamarin-home-faces-tiny.png)
 
-Dikdörtgen algılama ve yüz algılama aşağıdaki daha ayrıntılı olarak ele alınmıştır.
+Dikdörtgen algılama ve yüz algılama, aşağıda daha ayrıntılı olarak ele alınmıştır.
 
 <a name="rectangles" />
 
 ## <a name="rectangle-detection"></a>Dikdörtgen algılama
 
-[VisionRects örnek](https://developer.xamarin.com/samples/monotouch/ios11/VisionRectangles/) bir görüntüyü işlemek ve üzerinde algılanan dikdörtgenler çizme gösterilmektedir.
+[VisionRects örnek](https://developer.xamarin.com/samples/monotouch/ios11/VisionRectangles/) görüntü işleme ve algılanan dikdörtgenler çizim gösterilmektedir.
 
-### <a name="1-initialize-the-vision-request"></a>1. Görme isteği başlatma
+### <a name="1-initialize-the-vision-request"></a>1. İşleme istek başlatılamıyor
 
-İçinde `ViewDidLoad`, oluşturma bir `VNDetectRectanglesRequest` başvuran `HandleRectangles` her istek sonunda çağrılacak yöntem:
+İçinde `ViewDidLoad`, oluşturun bir `VNDetectRectanglesRequest` başvuran `HandleRectangles` her istek sonunda çağrılacak yöntemi:
 
-`MaximumObservations` Özelliği de ayarlanması gerekir, aksi takdirde 1 varsayılan olur ve yalnızca tek bir sonuç döndürdü.
+`MaximumObservations` Özelliği ayarlanmalıdır, aksi takdirde 1 varsayılan olur ve yalnızca tek bir sonuç döndürdü.
 
 ```csharp
 RectangleRequest = new VNDetectRectanglesRequest(HandleRectangles);
@@ -50,7 +50,7 @@ RectangleRequest.MaximumObservations = 10;
 
 ### <a name="2-start-the-vision-processing"></a>2. Görme işlemini Başlat
 
-Aşağıdaki kod, isteği işlemeye başlar. İçinde **VisionRects** örnek, kullanıcının bir resim seçtiği sonra bu kodu çalıştırır:
+Aşağıdaki kod, isteği işlemeye başlar. İçinde **VisionRects** örnek, bu kod, görüntü kullanıcının seçtiği sonra çalıştırılır:
 
 ```csharp
 // Run the rectangle detector
@@ -60,11 +60,11 @@ DispatchQueue.DefaultGlobalQueue.DispatchAsync(()=>{
 });
 ```
 
-Bu işleyici geçirir `ciImage` görme Framework `VNDetectRectanglesRequest` 1. adımda oluşturuldu.
+Bu işleyici geçirir `ciImage` Vision çerçevesi için `VNDetectRectanglesRequest` 1. adımda oluşturulmuş.
 
 ### <a name="3-handle-the-results-of-vision-processing"></a>3. Görüntü işleme sonuçlarını işleme
 
-Dikdörtgen Algılama tamamlandıktan sonra çerçeve yürütür `HandleRectangles` yöntemi, bir özeti aşağıda gösterilmektedir:
+Dikdörtgen Algılama tamamlandıktan sonra framework yürütür `HandleRectangles` yöntemi, bir özeti aşağıda gösterilmektedir:
 
 ```csharp
 private void HandleRectangles(VNRequest request, NSError error){
@@ -88,30 +88,30 @@ private void HandleRectangles(VNRequest request, NSError error){
 
 ### <a name="4-display-the-results"></a>4. Sonuçları Görüntüle
 
-`OverlayRectangles` Yönteminde **VisionRectangles** örnek üç işlevi vardır:
+`OverlayRectangles` Yönteminde **VisionRectangles** örnek üç işlev vardır:
 
 - Kaynak görüntü işleme
-- Burada her biri algılandı, belirtmek için bir dikdörtgen çizme ve
-- Her dikdörtgen CoreGraphics kullanarak metin etiketi ekleniyor.
+- Her biri burada algılandı, belirtmek için bir dikdörtgen çizme ve
+- Bir metin etiketi CoreGraphics kullanarak her bir dikdörtgen ekleniyor.
 
 Görünüm [örnek'ın kaynak](https://developer.xamarin.com/samples/monotouch/ios11/VisionRectangles/) tam CoreGraphics yöntemi.
 
-![Algılanan üç dikdörtgenler ile fotoğraf](vision-images/found-rectangles-phone-sml.png)
+![Fotoğraf sahip üç dikdörtgenler algılandı](vision-images/found-rectangles-phone-sml.png)
 
-### <a name="5-further-processing"></a>5. Başka bir işleme
+### <a name="5-further-processing"></a>5. Daha fazla işleme
 
-Dikdörtgen algılama durumdayken genellikle yalnızca ilk adımı, işlemlerinin zincirindeki gibi [bu CoreMLVision örnek](~/ios/platform/introduction-to-ios11/coreml.md#coremlvision)dikdörtgenler el yazısı basamak ayrıştırmak için bir CoreML modeli burada geçirilir.
+Dikdörtgen algılamadır genellikle yalnızca ilk adımı, işlemlerinin zincirindeki gibi ile [bu CoreMLVision örnek](~/ios/platform/introduction-to-ios11/coreml.md#coremlvision)burada dikdörtgenler el yazısı basamak ayrıştırılacak CoreML modeline geçirilir.
 
 
 <a name="faces" />
 
 ## <a name="face-detection"></a>Yüz algılama
 
-[VisionFaces örnek](https://developer.xamarin.com/samples/monotouch/ios11/VisionFaces/) benzer bir şekilde çalışır **VisionRectangles** örnek, farklı bir Vizyon isteği sınıfını kullanma.
+[VisionFaces örnek](https://developer.xamarin.com/samples/monotouch/ios11/VisionFaces/) benzer bir biçimde çalışır **VisionRectangles** örnek, farklı bir işleme isteği sınıf kullanarak.
 
-### <a name="1-initialize-the-vision-request"></a>1. Görme isteği başlatma
+### <a name="1-initialize-the-vision-request"></a>1. İşleme istek başlatılamıyor
 
-İçinde `ViewDidLoad`, oluşturma bir `VNDetectFaceRectanglesRequest` başvuran `HandleRectangles` her istek sonunda çağrılacak yöntem.
+İçinde `ViewDidLoad`, oluşturun bir `VNDetectFaceRectanglesRequest` başvuran `HandleRectangles` her istek sonunda çağrılacak yöntem.
 
 ```csharp
 FaceRectangleRequest = new VNDetectFaceRectanglesRequest(HandleRectangles);
@@ -119,7 +119,7 @@ FaceRectangleRequest = new VNDetectFaceRectanglesRequest(HandleRectangles);
 
 ### <a name="2-start-the-vision-processing"></a>2. Görme işlemini Başlat
 
-Aşağıdaki kod, isteği işlemeye başlar. İçinde **VisionFaces** örnek kullanıcının bir resim seçtiği sonra bu kodu çalıştırır:
+Aşağıdaki kod, isteği işlemeye başlar. İçinde **VisionFaces** örnek bu kod, görüntü kullanıcının seçtiği sonra çalıştırılır:
 
 ```csharp
 // Run the face detector
@@ -129,11 +129,11 @@ DispatchQueue.DefaultGlobalQueue.DispatchAsync(()=>{
 });
 ```
 
-Bu işleyici geçirir `ciImage` görme Framework `VNDetectFaceRectanglesRequest` 1. adımda oluşturuldu.
+Bu işleyici geçirir `ciImage` Vision çerçevesi için `VNDetectFaceRectanglesRequest` 1. adımda oluşturulmuş.
 
 ### <a name="3-handle-the-results-of-vision-processing"></a>3. Görüntü işleme sonuçlarını işleme
 
-Yüz Algılama tamamlandıktan sonra işleyici yürütür `HandleRectangles` hata işleme gerçekleştirir ve algılanan yüzeyleri ve çağrıları sınırlarına görüntüler yöntemi `OverlayRectangles` özgün resmi sınırlayıcı dikdörtgen çizmek için:
+Yüz Algılama tamamlandıktan sonra işleyici yürütür `HandleRectangles` hata işlemeyi gerçekleştirir ve algılanan yüzeylere ve iletileriniz sınırları görüntüler yöntemi `OverlayRectangles` özgün resmi sınırlayıcı bir dikdörtgen çizmek için:
 
 ```csharp
 private void HandleRectangles(VNRequest request, NSError error){
@@ -162,23 +162,23 @@ private void HandleRectangles(VNRequest request, NSError error){
 
 ### <a name="4-display-the-results"></a>4. Sonuçları Görüntüle
 
-`OverlayRectangles` Yönteminde **VisionFaces** örnek üç işlevi vardır:
+`OverlayRectangles` Yönteminde **VisionFaces** örnek üç işlev vardır:
 
 - Kaynak görüntü işleme
-- Algılandı, her yüz için dikdörtgen çizme ve
-- CoreGraphics kullanarak her yüz için bir metin etiketi ekleniyor.
+- Algılanan her yüz için bir dikdörtgen çizme ve
+- Bir metin etiketi CoreGraphics kullanarak her yüz için ekleniyor.
 
 Görünüm [örnek'ın kaynak](https://developer.xamarin.com/samples/monotouch/ios11/VisionFaces/) tam CoreGraphics yöntemi.
 
-![Algılanan iki yüz ile fotoğraf](vision-images/found-faces-phone-sml.png)
+![Fotoğraf iki yüz algılandı](vision-images/found-faces-phone-sml.png)
 
-### <a name="5-further-processing"></a>5. Başka bir işleme
+### <a name="5-further-processing"></a>5. Daha fazla işleme
 
-Görme framework gözler ve ağzınıza gibi yüz özellikleri algılamak için ek özellikler içerir. Kullanım `VNDetectFaceLandmarksRequest` döndürülecek türü `VNFaceObservation` sonuçları adım 3 yukarıdaki olduğu gibi ancak ek `VNFaceLandmark` veri.
+Vision çerçevesi algılamak gözler ve ağız gibi yüz özellikleri için ek özellikler içerir. Kullanım `VNDetectFaceLandmarksRequest` döndüreceği türü `VNFaceObservation` sonuçları Yukarıdaki 3. adım, ancak ek `VNFaceLandmark` veri.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Görme dikdörtgenler (örnek)](https://developer.xamarin.com/samples/monotouch/ios11/VisionRectangles/)
-- [Görme yüzeyleri (örnek)](https://developer.xamarin.com/samples/monotouch/ios11/VisionFaces/)
-- [Gelişmeleri çekirdek Image - filtreleri, Kurtarma, görme ve daha (WWDC) (video)](https://developer.apple.com/videos/play/wwdc2017/510/)
+- [İşleme dikdörtgenler (örnek)](https://developer.xamarin.com/samples/monotouch/ios11/VisionRectangles/)
+- [İşleme yüzleri (örnek)](https://developer.xamarin.com/samples/monotouch/ios11/VisionFaces/)
+- [Gelişmeler çekirdek Image - filtreleri, tam, işleme ve daha (WWDC) (video)](https://developer.apple.com/videos/play/wwdc2017/510/)

@@ -1,63 +1,64 @@
 ---
-title: Google Play birleştirin bileşenleri ve NuGet Hizmetleri
+title: Birleştirme Google Play Services bileşenleri ile Nuget'i
 ms.topic: troubleshooting
 ms.prod: xamarin
 ms.assetid: 5D962EB4-2CB3-4B7D-9D77-889DEACDAE02
 author: asb3993
 ms.author: amburns
-ms.openlocfilehash: cfd417f4fc01b07b4334259c45472eb24b73abd8
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.date: 05/08/2018
+ms.openlocfilehash: 3f5c5f75ae1c7a44537afa59ff4a15d54b1df50b
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
-ms.locfileid: "33919878"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351489"
 ---
-# <a name="unifying-google-play-services-components-and-nuget"></a>Google Play birleştirin bileşenleri ve NuGet Hizmetleri
+# <a name="unifying-google-play-services-components-and-nuget"></a>Birleştirme Google Play Services bileşenleri ile Nuget'i
 
-### <a name="history"></a>Geçmiş
+## <a name="history"></a>Geçmiş
 
-Var. birkaç Google Play Hizmetleri bileşenleri ve NuGet paketleri olması için kullanılır:
+Orada kullanılan birkaç Google Play Services bileşenleri ve NuGet paketleri olarak:
 
--   Google Play hizmetlerini (Froyo)
--   Google Play hizmetlerini (Zencefilli kurabiye)
--   Google Play (ICS) Hizmetleri
--   Google Play hizmetlerini (JellyBean)
--   Google Play hizmetlerini (KitKat)
+-   Google Play Hizmetleri (Froyo)
+-   Google Play Hizmetleri (Gingerbread)
+-   Google Play Hizmetleri (ICS)
+-   Google Play Hizmetleri (JellyBean)
+-   Google Play Hizmetleri (KitKat)
 
-Google gerçekte yalnızca gelir iki .jar dosyaları Google Play Hizmetleri için:
+Google aslında yalnızca iki gemileri .jar dosyalarını Google Play Hizmetleri için:
 
 -   `google-play-services-froyo.jar`
 -   `google-play-services.jar`
 
-Bizim araçları düzgün söyleyin oldu çünkü tutarsızlık var `aapt.exe` maksimum kaynak API düzeyini belirli bir uygulamanın için kullanılacak oluştu. Bu anlamına gelir, Google Play Hizmetleri'nin (KitKat) bağlama Zencefilli kurabiye gibi daha düşük bir API düzeyine kullanarak denedik, derleme hataları aldık.
+Sunduğumuz araç düzgün bir şekilde anlatın olmadı çünkü tutarsızlık varolan `aapt.exe` API düzeyi en fazla kaynak için belirli bir uygulamanın kullanılacak olan. Bu geliyordu, Google Play Hizmetleri (KitKat) bağlama Gingerbread gibi daha düşük bir API düzeyi kullanarak çalıştık, derleme hataları aldık.
 
-### <a name="unifying-google-play-services"></a>Google Play hizmetlerini birleştirin
+## <a name="unifying-google-play-services"></a>Google Play Hizmetleri altyapınızı kurun
 
-Şimdi biz Xamarin.Android daha yeni sürümlerinde söyleyin `aapt.exe` bu sorunu bize kaybolduktan şekilde kullanmak için hangi en fazla kaynak sürümü.
+Xamarin.Android daha yeni sürümlerinde, biz artık söyleyin `aapt.exe` Bu sorun bizim için kaybolduktan şekilde kullanmak için hangi en fazla kaynak sürümü.
 
-Yani, Zencefilli kurabiye/ICS/JellyBean / (farklı .jar dosyasına tamamen olduğundan ancak hala ayrı bir bağlama için Froyo ihtiyacımız) KitKat için ayrı paketler için gerçek bir neden yoktur.
+Diğer bir deyişle, Zencefilli kurabiye/ICS/JellyBean / (farklı .jar dosyasını tamamen olduğundan ancak yine de ayrı bir bağlama için Froyo ihtiyacımız) KitKat için ayrı paketler olması için gerçek bir neden yoktur.
 
-Geliştiriciler için işleri kolaylaştırmak için biz şimdi bizim bileşenleri ve NuGet birleşik iki paketlere:
+Geliştiriciler için işleri kolaylaştırmak için size şimdi bizim bileşenleri ile Nuget'i birleşik iki paketlere:
 
 -   Google Play Hizmetleri (Froyo) (bağlar `google-play-services-froyo.jar`)
 -   Google Play Hizmetleri (bağlar `google-play-services.jar`)
 
-### <a name="which-one-should-be-used"></a>Hangisinin kullanılsın mı?
+### <a name="which-one-should-be-used"></a>Hangisinin kullanılmalıdır?
 
-Neredeyse her durumda, Google Play Hizmetleri'nin kullanılmalıdır. (Froyo) paketini kullanmak için yalnızca, etkin olarak Froyo hedeflediğiniz varsa nedenidir. Froyo gibi küçük bir yüzdesi aygıtlar üzerinde olduğundan bu ayrı .jar dosya Google var tek nedeni, kendilerini bunlar bu .jar dosyasına Google Play Hizmetleri'nin dondurulmuş, desteklenmeyen bir anlık görüntüdür şekilde, destekleme durdurmaya karar verdiniz.
+Neredeyse her durumda, Google Play Hizmetleri kullanılmalıdır. (Froyo) paketini kullanmak üzere yalnızca etkin bir şekilde Froyo hedeflediğiniz varsa nedenidir. Froyo gibi küçük bir yüzdesine cihazlar üzerinde olduğundan bu ayrı .jar dosyasını Google'dan var. tek nedeni, kendilerine bu .jar dosyasını dondurulmuş, desteklenmeyen anlık görüntüsünü Google Play Hizmetleri, bu nedenle, desteğini durduracak karar verdiniz.
 
-### <a name="note-about-gingerbread"></a>Not Zencefilli kurabiye hakkında
+### <a name="note-about-gingerbread"></a>Not Gingerbread hakkında
 
-Zencefilli kurabiye varsayılan olarak destek parça yok ve bu nedenle, bazı bağlama sınıflarda Zencefilli kurabiye aygıtta çalışma zamanında bir uygulamada kullanılabilir olmaz. Benzer sınıflar `MapFragment` Zencefilli kurabiye üzerinde çalışmaz ve bunların destek değişken yerine kullanılmalıdır `SupportMapFragment`. Bunu kullanılacak öğrenmek için geliştirici için hazır. Bu uyumsuzluk Google Play Hizmetleri belgelerinde Google tarafından belirtilir.
+Gingerbread varsayılan olarak destek parça yok ve bu nedenle, bazı bağlama sınıflarda Gingerbread cihazda çalışma zamanında bir uygulamada kullanılamaz. Sınıfların `MapFragment` Zencefilli kurabiye üzerinde çalışmaz ve kendi destek değişken bunun yerine kullanılması gereken `SupportMapFragment`. Bunu kullanmak için bilmeniz gereken geliştiriciler için hazır. Bu uyumsuzluk, Google Play Hizmetleri belgelerinde Google tarafından belirtilir.
 
-### <a name="what-happens-to-the-old-componentsnugets"></a>Eski bileşenleri/NuGet için ne olur?
+### <a name="what-happens-to-the-old-componentsnugets"></a>Eski bileşenleri/NuGet için ne olacak?
 
-Artık gerekli olmadığından, aşağıdaki bileşenleri/NuGets devre dışı bırakılmış/Delisted sahibiz:
+Artık gerekli olmadığından, aşağıdaki bileşenleri/Nuget'i devre dışı bırakılmış/Delisted sunuyoruz:
 
--   Google Play hizmetlerini (Zencefilli kurabiye)
--   Google Play hizmetlerini (JellyBean)
--   Google Play hizmetlerini (KitKat)
+-   Google Play Hizmetleri (Gingerbread)
+-   Google Play Hizmetleri (JellyBean)
+-   Google Play Hizmetleri (KitKat)
 
-Varolan _Google Play Hizmetleri'nı (ICS)_ bileşen/Nuget adlandırılmıştır _Google Play Hizmetleri_ ve ileride güncel tutulacak. Devre dışı bırakılmış/Delisted paketlerden birini başvuran tüm projeleri bunu kullanacak şekilde güncelleştirilmesi.
+Varolan _Google Play Hizmetleri (ICS)_ bileşeni/Nuget adlandırıldı _Google Play Hizmetleri_ ve ileride güncel tutulur. Devre dışı bırakılmış/Delisted paketlerden birini başvuran tüm projeler bunu kullanmak için güncelleştirilmesi gerekir.
 
-Devre dışı bileşenler hala var ve bunlar yine de, bunları yeni önlemek için başvurulan projeleri için geri yüklenebilen olmalıdır. Benzer şekilde delisted NuGet paketlerini hala var ve geri yüklenebilir. Bunlar ileride güncelleştirilmez.
+Devre dışı bileşenlerin hala var ve bunlar yine de, bunları bozmayı önlemek için başvurulan projeler için geri yüklenebilen olmalıdır. Benzer şekilde delisted NuGet paketlerini hala mevcut ve geri yüklenebilir. Kullanıcılar bundan sonra güncelleştirilmez.

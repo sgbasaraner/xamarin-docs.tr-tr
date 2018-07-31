@@ -1,33 +1,33 @@
 ---
 title: Xamarin.Forms içinde bağımlılık çözümlemesi
-description: Bu makalede, bir uygulamanın bağımlılık ekleme kapsayıcısını özel oluşturucular, efektleri ve DependencyService uygulamaları ömrünü ve yapı üzerinde denetime sahip olacak şekilde bir bağımlılık çözümleme yöntemi Xamarin.Forms ekleme açıklanmaktadır.
+description: Bu makalede, bir uygulamanın bağımlılık ekleme kapsayıcısını oluşturulmasını ve yaşam süresini özel oluşturucular, efektleri ve DependencyService uygulamalarında üzerinde denetime sahip olacak şekilde bir bağımlılık çözümleme yöntemi Xamarin.Forms ekleme açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 491B87DC-14CB-4ADC-AC6C-40A7627B2524
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/23/2018
-ms.openlocfilehash: 2379c8ddc4bea6dd97bc4febd055dd8dfef39beb
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
+ms.date: 07/27/2018
+ms.openlocfilehash: 8952f98045d9830e9b8f25a7d4b93a5e4310cb32
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39270494"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351595"
 ---
 # <a name="dependency-resolution-in-xamarinforms"></a>Xamarin.Forms içinde bağımlılık çözümlemesi
 
-_Bu makalede, bir uygulamanın bağımlılık ekleme kapsayıcısını özel oluşturucular, efektleri ve DependencyService uygulamaları ömrünü ve yapı üzerinde denetime sahip olacak şekilde bir bağımlılık çözümleme yöntemi Xamarin.Forms ekleme açıklanmaktadır. Kod örnekleri alınmıştır [bağımlılık çözümlemesi](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/) örnek._
+_Bu makalede, bir uygulamanın bağımlılık ekleme kapsayıcısını oluşturulmasını ve yaşam süresini özel oluşturucular, efektleri ve DependencyService uygulamalarında üzerinde denetime sahip olacak şekilde bir bağımlılık çözümleme yöntemi Xamarin.Forms ekleme açıklanmaktadır. Bu makaledeki kod örnekleri alınmıştır [kapsayıcıları kullanarak bağımlılık çözümlemesi](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/DIContainerDemo/) örnek._
 
 Model-View-ViewModel (MVVM) desenini kullanan Xamarin.Forms uygulaması bağlamında bir bağımlılık ekleme kapsayıcısını ve Hizmetleri kaydetme ve bunları görünümü modellerini ekleme kaydetme ve çözümleme görünüm modelleri için kullanılabilir. Görünüm modeli oluşturma sırasında gerekli olan herhangi bir bağımlılığın kapsayıcıya ekler. Bu bağımlılıkların oluşturulmadı, kapsayıcı oluşturur ve ilk bağımlılıklarını çözümler. Görünüm modellerini bağımlılıkları ekleme örnekleri dahil olmak üzere, bağımlılık ekleme hakkında daha fazla bilgi için bkz. [bağımlılık ekleme](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md).
 
-Oluşturma üzerinde denetim ve platformu projelerinde türlerinde ömrünü kullanan Xamarin.Forms tarafından geleneksel olarak gerçekleştirilen `Activator.CreateInstance` özel oluşturucular, efektler örneklerini oluşturmak için gereken yöntemini ve [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) uygulamaları. Ne yazık ki bu oluşturulmasını ve yaşam süresini bu türleri ve bunları bağımlılıkları ekleme yeteneği üzerinde Geliştirici kontrolünü sınırlar. Ancak, bu davranış, bir bağımlılık çözümleme yöntemi Xamarin.Forms nasıl türleri oluşturulur: denetleyen uygulamanın bağımlılık ekleme kapsayıcısını veya Xamarin.Forms ekleyerek değiştirilebilir.
+Oluşturma üzerinde denetim ve platformu projelerinde türlerinde ömrünü kullanan Xamarin.Forms tarafından geleneksel olarak gerçekleştirilen `Activator.CreateInstance` özel oluşturucular, efektler örneklerini oluşturmak için gereken yöntemini ve [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) uygulamaları. Ne yazık ki bu oluşturulmasını ve yaşam süresini bu türleri ve bunları bağımlılıkları ekleme yeteneği üzerinde Geliştirici kontrolünü sınırlar. Bu davranış, bir bağımlılık çözümleme yöntemi Xamarin.Forms nasıl türleri oluşturulur: denetleyen uygulamanın bağımlılık ekleme kapsayıcısını veya Xamarin.Forms ekleyerek değiştirilebilir. Ancak, bir bağımlılık çözümleme yöntemi Xamarin.Forms eklenmek üzere bir gereksinim olduğunu unutmayın. Xamarin.Forms oluşturmak ve bir bağımlılık çözümleme yöntemi eklenen değil, platform proje türlerinde ömrünü yönetmek devam eder.
 
 > [!NOTE]
-> Xamarin.Forms içinde bir bağımlılık çözümleme yöntemi eklemesine gereksinimi yoktur. Xamarin.Forms oluşturmak ve bir bağımlılık çözümleme yöntemi eklenen değil, platform proje türlerinde ömrünü yönetmek devam eder.
+> Bu makalede bir bağımlılık çözümleme yöntemi bir bağımlılık ekleme kapsayıcısını kullanarak kayıtlı türleri çözümleme Xamarin.Forms ekleme üzerinde kapsarken da çözümlemek için Fabrika yöntemleri kullanan bir bağımlılık çözümleme yöntemi eklemesine mümkündür kayıtlı türleri. Daha fazla bilgi için [bağımlılık Fabrika yöntemleri kullanılarak çözümlemesi](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/FactoriesDemo/) örnek.
 
 ## <a name="injecting-a-dependency-resolution-method"></a>Bağımlılık çözümlemesi yöntemi ekleme
 
-[ `DependencyResolver` ](xref:Xamarin.Forms.Internals.DependencyResolver) Sınıfı kullanarak Xamarin.Forms, bir bağımlılık çözümleme yöntemi ekleme olanağı sağlar [ `ResolveUsing` ](Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*) yöntemleri. Ardından, Xamarin.Forms belirli bir türün bir örneği gerektiğinde, bağımlılık çözümleme yöntemi örneği sunma fırsatı verilir. Bağımlılık çözümlemesi yöntemi döndürürse `null` istenen bir tür için tür oluşturulmaya çalışılırken için geri döner Xamarin.Forms örnek kendisi `Activator.CreateInstance` yöntemi.
+[ `DependencyResolver` ](xref:Xamarin.Forms.Internals.DependencyResolver) Sınıfı Xamarin.Forms, bir bağımlılık çözümleme yöntemi ekleme olanağı sağlar kullanarak [ `ResolveUsing` ](Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*) yöntemi. Ardından, Xamarin.Forms belirli bir türün bir örneği gerektiğinde, bağımlılık çözümleme yöntemi örneği sunma fırsatı verilir. Bağımlılık çözümlemesi yöntemi döndürürse `null` istenen bir tür için tür oluşturulmaya çalışılırken için geri döner Xamarin.Forms örnek kendisi `Activator.CreateInstance` yöntemi.
 
 Aşağıdaki örnek bağımlılık çözümlemesi yöntemle gösterilmiştir [ `ResolveUsing` ](Xamarin.Forms.Internals.DependencyResolver.ResolveUsing*) yöntemi:
 
@@ -97,6 +97,18 @@ public partial class App : Application
                 (pi, ctx) => pi.ParameterType == param2Type && pi.Name == param2Name,
                 (pi, ctx) => ctx.Resolve(param2Type))
         });
+    }
+
+    public static void RegisterTypeWithParameters<TInterface, T>(Type param1Type, object param1Value, Type param2Type, string param2Name) where TInterface : class where T : class, TInterface
+    {
+        builder.RegisterType<T>()
+               .WithParameters(new List<Parameter>()
+        {
+            new TypedParameter(param1Type, param1Value),
+            new ResolvedParameter(
+                (pi, ctx) => pi.ParameterType == param2Type && pi.Name == param2Name,
+                (pi, ctx) => ctx.Resolve(param2Type))
+        }).As<TInterface>();
     }
 
     public static void BuildContainer()
@@ -219,7 +231,7 @@ public interface IPhotoPicker
 
 Her platform projesinde `PhotoPicker` sınıfının Implements `IPhotoPicker` platform API'leri kullanarak arabirimi. Bu bağımlılık hizmetleri hakkında daha fazla bilgi için bkz. [Resim Kitaplığı'ndan bir fotoğraf çekme](~/xamarin-forms/app-fundamentals/dependency-service/photo-picker.md).
 
-Tüm platformlarda üç `PhotoPicker` sınıfında aşağıdaki oluşturucuyu gerektiren bir `ILogger` bağımsız değişkeni:
+İOS ve UWP, `PhotoPicker` sınıfları gerektiren aşağıdaki oluşturucuya sahip bir `ILogger` bağımsız değişkeni:
 
 ```csharp
 public PhotoPicker(ILogger logger)
@@ -239,7 +251,32 @@ void RegisterTypes()
 }
 ```
 
-Bu örnekte, `Logger` somut bir türde da arabirimi türünün karşı bir eşleme aracılığıyla kaydedilir ve `PhotoPicker` türü bir arabirim eşlemesi aracılığıyla da kayıtlı. Kullanıcı fotoğraf çekme sayfasına gider ve bir fotoğraf seçmek seçtiği `OnSelectPhotoButtonClicked` işleyicisi yürütülür:
+Bu örnekte, `Logger` somut bir türde da arabirimi türünün karşı bir eşleme aracılığıyla kaydedilir ve `PhotoPicker` türü bir arabirim eşlemesi aracılığıyla da kayıtlı.
+
+`PhotoPicker` Android platformunda Oluşturucusu gerektiriyor biraz daha karmaşık bir `Context` ek bağımsız değişken `ILogger` bağımsız değişkeni:
+
+```csharp
+public PhotoPicker(Context context, ILogger logger)
+{
+    _context = context ?? throw new ArgumentNullException(nameof(context));
+    _logger = logger ?? throw new ArgumentNullException(nameof(logger));
+}
+```
+
+Aşağıdaki örnekte gösterildiği `RegisterTypes` Android platformunda yöntemi:
+
+```csharp
+void RegisterTypes()
+{
+    App.RegisterType<ILogger, Logger>();
+    App.RegisterTypeWithParameters<IPhotoPicker, Services.Droid.PhotoPicker>(typeof(Android.Content.Context), this, typeof(ILogger), "logger");
+    App.BuildContainer();
+}
+```
+
+Bu örnekte, `App.RegisterTypeWithParameters` yöntemi kayıtları `PhotoPicker` bağımlılık ekleme kapsayıcısına sahip. Kayıt yöntemi, sağlar `MainActivity` örneği eklenmiş olarak `Context` bağımsız değişkeni ve `Logger` türü eklenmiş olarak `ILogger` bağımsız değişken.
+
+Kullanıcı fotoğraf çekme sayfasına gider ve bir fotoğraf seçmek seçtiği `OnSelectPhotoButtonClicked` işleyicisi yürütülür:
 
 ```csharp
 async void OnSelectPhotoButtonClicked(object sender, EventArgs e)
@@ -262,7 +299,7 @@ Zaman [ `DependencyService.Resolve<T>` ](xref:Xamarin.Forms.DependencyService.Re
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Bağımlılık çözümlemesi (örnek)](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/)
+- [Kapsayıcılar (örnek) kullanarak bağımlılık çözümlemesi](https://developer.xamarin.com/samples/xamarin-forms/Advanced/DependencyResolution/DIContainerDemo/)
 - [Bağımlılık ekleme](~/xamarin-forms/enterprise-application-patterns/dependency-injection.md)
 - [Bir video oynatıcıyı uygulama](~/xamarin-forms/app-fundamentals/custom-renderer/video-player/index.md)
 - [Etkileri olayları çağırma](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)

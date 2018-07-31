@@ -5,18 +5,18 @@ ms.assetid: 3ADC440C-B000-4708-A2CC-296F5160AF90
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: 063adba82d96e7fcc64d7ec49a0c0133e1cef8ef
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: a4d6e4d9b32e665893d82693a3c858630b63d372
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38831454"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353681"
 ---
 # <a name="xamarinessentials-geocoding"></a>Xamarin.Essentials: coğrafi kodlama
 
 ![NuGet yayın öncesi](~/media/shared/pre-release.png)
 
-**Coğrafi kodlama** sınıfı bir placemark konumsal koordinatlara geocode için API'ler sağlar ve bir placemark için geocode coordincates ters.
+**Coğrafi kodlama** sınıfı bir placemark konumsal koordinatlara geocode için API'ler sağlar ve bir placemark için coğrafi koordinatları ters.
 
 ## <a name="getting-started"></a>Başlarken
 
@@ -32,7 +32,7 @@ Ek kurulum gerekli.
 
 # <a name="uwptabuwp"></a>[UWP](#tab/uwp)
 
-Bing Haritalar API'si anahtarı, coğrafi kodlama funcationality kullanmak için gereklidir. Kaydolmak için ücretsiz [Bing Haritalar](https://www.bingmapsportal.com/) hesabı. Altında **Hesabımı > anahtarlarımı** yeni bir anahtar oluşturun ve uygulama türüne göre bilgileri doldurun (olacağı **genel Windows uygulama (UWP, 8.x ve önceki sürümler)** UWP uygulamaları için).
+Bing Haritalar API'si anahtarı, coğrafi kodlama işlevleri kullanmak için gereklidir. Kaydolmak için ücretsiz [Bing Haritalar](https://www.bingmapsportal.com/) hesabı. Altında **Hesabımı > anahtarlarımı** yeni bir anahtar oluşturun ve uygulama türüne göre bilgileri doldurun (olacağı **genel Windows uygulama (UWP, 8.x ve önceki sürümler)** UWP uygulamaları için).
 
 İçinde erkenden herhangi çağırmadan önce uygulamanızın yaşam **coğrafi kodlama** yöntemleri API anahtarını ayarlayın:
 
@@ -70,11 +70,11 @@ catch (FeatureNotSupportedException fnsEx)
 }
 catch (Exception ex)
 {
-    // Handle exception that may have occured in geocoding
+    // Handle exception that may have occurred in geocoding
 }
 ```
 
-Yükseklik her zaman büyük/küçük harf kullanılamaz. Kullanılabilir değilse, `Altitude` özelliği olabilir `null` veya değerin sıfır olması. Yükseklik varsa, metre Deniz olarak değerdir. 
+Yükseklik her zaman büyük/küçük harf kullanılamaz. Kullanılabilir değilse, `Altitude` özelliği olabilir `null` veya değerin sıfır olması. Yükseklik varsa, metre Deniz olarak değerdir.
 
 Başlama [placemarks](xref:Xamarin.Essentials.Placemark) koordinatları var olan bir dizi için:
 

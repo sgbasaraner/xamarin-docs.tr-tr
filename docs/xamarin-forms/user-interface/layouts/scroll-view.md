@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 07/10/2018
-ms.openlocfilehash: f2bccc9140c4c1c9d5d543a4240178f9301852bb
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 54fdec74a6e1d0aee71ec0ca6809a5b40680de9f
+ms.sourcegitcommit: 0a1c392829454468dbe92f81d975e124a22b7014
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38997367"
+ms.lasthandoff: 07/31/2018
+ms.locfileid: "39360818"
 ---
 # <a name="xamarinforms-scrollview"></a>Xamarin.Forms ScrollView
 
@@ -22,11 +22,11 @@ ms.locfileid: "38997367"
 
 Bu makalede ele alınmıştır:
 
-- **[Amaç](#Purpose)**  &ndash; amaçla `ScrollView` ve bunu ne zaman kullanılır.
-- **[Kullanım](#Usage)**  &ndash; nasıl kullanılacağını `ScrollView` uygulamada.
-- **[Özellikleri](#Properties)**  &ndash; okuyup değiştiren ortak özellikleri.
-- **[Yöntemleri](#Methods)**  &ndash; görünümü kaydırma için çağrılabilen genel yöntemleri.
-- **[Olayları](#Events)**  &ndash; görünümün durumları değişiklikleri dinlemek için kullanılan olayları.
+- **[Amaç](#purpose)**  &ndash; amaçla `ScrollView` ve bunu ne zaman kullanılır.
+- **[Kullanım](#usage)**  &ndash; nasıl kullanılacağını `ScrollView` uygulamada.
+- **[Özellikleri](#properties)**  &ndash; okuyup değiştiren ortak özellikleri.
+- **[Yöntemleri](#methods)**  &ndash; görünümü kaydırma için çağrılabilen genel yöntemleri.
+- **[Olayları](#events)**  &ndash; görünümün durumları değişiklikleri dinlemek için kullanılan olayları.
 
 ## <a name="purpose"></a>Amaç
 
