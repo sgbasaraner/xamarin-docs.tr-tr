@@ -1,55 +1,53 @@
 ---
-title: Açılır menüsü
+title: Açılır menü
+description: Sabitlenmiş bir açılan menü için belirli bir görünüm ekleme.
 ms.prod: xamarin
 ms.assetid: 1C58E12B-4634-4691-BF59-D5A3F6B0E6F7
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 08/18/2017
-ms.openlocfilehash: e7fad84133ca712c531ab0d12a67db78103c7cdd
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 07/31/2018
+ms.openlocfilehash: d7cadde88e9ae7ee30815ee9323785038dbb1a39
+ms.sourcegitcommit: ecdc031e9e26bbbf9572885531ee1f2e623203f5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30763156"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39393665"
 ---
-# <a name="popup-menu"></a>Açılır menüsü
+# <a name="popup-menu"></a>Açılır menü
 
-`PopupMenu` Sınıfı, belirli bir görünüme bağlı açılır menüler görüntüleme desteği ekler. Aşağıdaki çizimde bir düğmesinden yalnızca seçili vurgulu ikinci öğe ile sunulan bir açılır menü gösterir:
+[PopupMenu](https://developer.xamarin.com/api/type/Android.Widget.PopupMenu/) (olarak da adlandırılan bir _kısayol menüsünü_) için belirli bir görünüm bağlantılı bir menü. Aşağıdaki örnekte, bir düğme tek bir etkinlik içerir. Kullanıcı düğmeye bastığında üç öğe açılan menü görüntülenir:
 
- [![Üç adet PopopMenu örneği üç öğeleri](popup-menu-images/20-popupmenu.png)](popup-menu-images/20-popupmenu.png#lightbox)
-
-Android 4 eklenen yeni özellikler için birkaç `PopupMenu` kolaylaştırmak biraz, yani çalışmak:
-
--   **Inflate** &ndash; Şişir yöntemi artık doğrudan PopupMenu sınıfı üzerinde kullanılabilir durumdadır.
--   **DismissEvent** &ndash; PopupMenu sınıfı şimdi bir DismissEvent sahiptir.
-
-Bu geliştirmeler bir göz atalım. Bu örnekte, bir düğmeyi içeren tek bir etkinlik vardır. Kullanıcı düğmesine tıkladığında, aşağıda gösterildiği gibi açılır menüsü görüntülenir:
-
- [![Bir öykünücü düğmesi ve 3-item açılır menü ile çalışan uygulama örneği](popup-menu-images/06-popupmenu.png)](popup-menu-images/06-popupmenu.png#lightbox)
+[![Bir düğme ve üç öğe açılır menü içeren bir uygulama örneği](popup-menu-images/01-app-example-sml.png)](popup-menu-images/01-app-example.png#lightbox)
 
 
-## <a name="creating-a-popup-menu"></a>Açılan menü oluşturma
+## <a name="creating-a-popup-menu"></a>Bir açılan menü oluşturma
 
-Bir örneğini oluştururken biz `PopupMenu`, başvuru kurucusu geçirmek ihtiyacımız `Context`, menü bağlı görüntülemenin yanı sıra. Bu durumda, oluşturduğumuz `PopupMenu` bizim düğmesi için click olay işleyicisi olarak adlandırılmış `showPopupMenu`.
-Bu düğme ayrıca biz ekleme görünümdür `PopupMenu`aşağıdaki kodda gösterildiği gibi:
+İlk adım menüsü için menü kaynak dosyası oluşturma ve yerleştirebilir olarak **kaynakları/menüsü**. Örneğin, aşağıdaki XML önceki ekran görüntüsünde görüntülenen üç öğesi menüsü kodudur **Resources/menu/popup_menu.xml**:
 
-```csharp
-showPopupMenu.Click += (s, arg) => {
-    PopupMenu menu = new PopupMenu (this, showPopupMenu);
-}
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/item1"
+          android:title="item 1" />
+    <item android:id="@+id/item1"
+          android:title="item 2" />
+    <item android:id="@+id/item1"
+          android:title="item 3" />
+</menu>
 ```
 
-İlk olarak bir başvuru almak Android 3'te, bir XML kaynak menüsünden Şişir için kodu gerekli bir `MenuInflator`ve ardından arama kendi `Inflate` yöntemi menü ve menü örneğe içine Şişir bulunan XML kaynak kimliği. Bu tür bir yaklaşım hala Android 4 ve daha sonra aşağıdaki kodu gösterir olarak çalışır:
+Ardından, bir örneğini oluşturmak `PopupMenu` ve kendi görünüm bağlantı. Bir örneğini oluştururken `PopupMenu`, başvuru oluşturucusuna geçirmeniz `Context` , menü bağlı görüntülemenin yanı sıra. Sonuç olarak, açılan menü, yapım sırasında bu görünüme sabitlenmiştir.
+
+Aşağıdaki örnekte, `PopupMenu` düğme için tıklama olay işleyicisine oluşturulur (olarak adlandırılmış `showPopupMenu`). Bu düğme Ayrıca hangi görünümdür `PopupMenu` aşağıdaki kod örneğinde gösterildiği gibi bağlanmıştır:
 
 ```csharp
 showPopupMenu.Click += (s, arg) => {
     PopupMenu menu = new PopupMenu (this, showPopupMenu);
-    menu.MenuInflater.Inflate (Resource.Menu.popup_menu, menu.Menu);
 };
 ```
 
-İtibariyle Android 4 ancak şimdi çağırabilirsiniz `Inflate` örneği üzerinde doğrudan `PopupMenu`. Bu kod aşağıda gösterildiği gibi daha kısa yapar:
+Son olarak, açılan menü olmalıdır *inflated* daha önce oluşturulan menü kaynağı ile. Aşağıdaki örnekte, menünün çağrısı [Inflate](https://developer.xamarin.com/api/member/Android.Views.LayoutInflater.Inflate/p/System.Int32/Android.Views.ViewGroup/) yöntemi eklenir ve kendi [Göster](https://developer.xamarin.com/api/member/Android.Widget.PopupMenu.Show%28%29/) yöntemi çağrıldığında görüntülemek için:
 
 ```csharp
 showPopupMenu.Click += (s, arg) => {
@@ -59,12 +57,10 @@ showPopupMenu.Click += (s, arg) => {
 };
 ```
 
-Yukarıdaki kod menü inflating sonra yalnızca diyoruz `menu.Show` ekranda görüntülemek için.
-
 
 ## <a name="handling-menu-events"></a>Menü olaylarını işleme
 
-Kullanıcı bir menü öğesi seçtiğinde `MenuItemClick` olay harekete geçirilen ve menü kapatılır. Menü dışında herhangi bir yere dokunarak, yalnızca kapatmak. Android menü kapatıldığında, 4'ten itibaren her iki durumda da, `DismissEvent` gerçekleştirilecektir. Aşağıdaki kod olay işleyicileri için her ikisini de ekler `MenuItemClick` ve `DismissEvent` olayları:
+Kullanıcı bir menü öğesi seçtiğinde [MenuItemClick](https://developer.xamarin.com/api/event/Android.Widget.PopupMenu.MenuItemClick/) tıklayın olay yükseltilir ve menü kapatıldı. Menü dışında herhangi bir yere dokunarak onu yalnızca kapat. Menü kapatıldı, her iki durumda da, [DismissEvent](https://developer.xamarin.com/api/member/Android.Widget.PopupMenu.Dismiss%28%29/) gerçekleştirilecektir. Aşağıdaki kod her ikisi için olay işleyicileri ekler `MenuItemClick` ve `DismissEvent` olayları:
 
 ```csharp
 showPopupMenu.Click += (s, arg) => {
@@ -78,7 +74,7 @@ showPopupMenu.Click += (s, arg) => {
     menu.DismissEvent += (s2, arg2) => {
         Console.WriteLine ("menu dismissed");
     };
-            menu.Show ();
+    menu.Show ();
 };
 ```
 
@@ -87,5 +83,3 @@ showPopupMenu.Click += (s, arg) => {
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [PopupMenuDemo (örnek)](https://developer.xamarin.com/samples/monodroid/PopupMenuDemo/)
-- [Dondurma Sandwich Tanıtımı](http://www.android.com/about/ice-cream-sandwich/)
-- [Android 4.0 platformu](http://developer.android.com/sdk/android-4.0.html)

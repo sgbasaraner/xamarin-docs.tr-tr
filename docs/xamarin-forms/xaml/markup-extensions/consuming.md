@@ -7,12 +7,12 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 01/05/2018
-ms.openlocfilehash: 6f0c15976871129362fb3d6d3287215d1fba2cb9
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: a630d7c2acb95b7551c9f5f870078a0efcfc075c
+ms.sourcegitcommit: ecdc031e9e26bbbf9572885531ee1f2e623203f5
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
-ms.locfileid: "38995988"
+ms.lasthandoff: 08/01/2018
+ms.locfileid: "39393678"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>XAML biçimlendirme uzantılarını kullanma
 
@@ -24,12 +24,12 @@ XAML biçimlendirme uzantıları, özel olarak çeşitli kaynaklardan ayarlanaca
 - [`x:Array`](#array) &ndash; belirli bir türün nesnelerinin bir dizisini oluşturur.
 - [`x:Null`](#null) &ndash; bir öznitelik ayarlanmış bir `null` değeri.
 
-Diğer XAML biçimlendirme uzantıları üç geçmişe yönelik olarak diğer XAML uygulamaları tarafından desteklenen ve Xamarin.Forms tarafından da desteklenir. Bu, diğer makalelerden daha ayrıntılı açıklanmıştır:
+Ek XAML biçimlendirme uzantıları geçmişe yönelik olarak diğer XAML uygulamaları tarafından desteklenen ve Xamarin.Forms tarafından da desteklenir. Bu, diğer makalelerden daha ayrıntılı açıklanmıştır:
 
 - `StaticResource` &ndash; makalesinde açıklandığı gibi nesneleri bir kaynak sözlüğünden başvuru [ **kaynak sözlükleri**](~/xamarin-forms/xaml/resource-dictionaries.md).
 - `DynamicResource` &ndash; makalesinde açıklandığı gibi nesneleri bir kaynak sözlüğünde değişikliklere yanıt [ **dinamik stiller**](~/xamarin-forms/user-interface/styles/dynamic.md).
 - `Binding` &ndash; makalesinde açıklandığı gibi iki nesnelerin özelliklerini arasında bir bağlantı kurmak [ **veri bağlama**](~/xamarin-forms/app-fundamentals/data-binding/index.md).
-- `TemplateBinding` &ndash; veri bağlama denetimi şablondan makalesinde açıklandığı gibi gerçekleştirir [**denetim şablondan bağlama**] / kılavuzları/xamarin-forms/uygulama-temelleri/şablonları/denetimi-şablonlar/şablon bağlamayı /)
+- `TemplateBinding` &ndash; veri bağlama denetimi şablondan makalesinde açıklandığı gibi gerçekleştirir [ **denetim şablondan bağlama**](/guides/xamarin-forms/application-fundamentals/templates/control-templates/template-binding/).
 
 [ `RelativeLayout` ](xref:Xamarin.Forms.RelativeLayout) Düzeni kullanır özel biçimlendirme uzantısı [ `ConstraintExpression` ](xref:Xamarin.Forms.ConstraintExpression). Bu işaretleme uzantısı makalesinde açıklanan [ **RelativeLayout**](~/xamarin-forms/user-interface/layouts/relative-layout.md).
 
