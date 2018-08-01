@@ -1,67 +1,67 @@
 ---
-title: Sürükleme ve bırakma Xamarin.iOS içinde
-description: Bu belge, sürükle uygulamak ve Xamarin.iOS uygulamaları iOS 11 sunulan API'lerini kullanarak bırakma açıklar. Özellikle, etkinleştirme anlatılmaktadır UITableView içinde sürükleyip.
+title: Sürükle ve bırak Xamarin.ios'ta
+description: Bu belge, sürükle uygulamak ve iOS 11 ' sunulan API'ler kullanarak Xamarin.iOS uygulamalarında açılan açıklar. Özellikle, etkinleştirme anlatılmaktadır sürükle ve bırak UITableView içinde.
 ms.prod: xamarin
 ms.assetid: 0D39C4C3-D169-42F8-B3FA-7F98CF0B6F1F
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
-ms.date: 09/05/2016
-ms.openlocfilehash: 7c41f96dae88047e64ec1e74838e3efab55958cc
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 09/05/2017
+ms.openlocfilehash: bc58c866a4a754bccea8d851f79e73fe5a415eed
+ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786970"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39351141"
 ---
-# <a name="drag-and-drop-in-xamarinios"></a>Sürükleme ve bırakma Xamarin.iOS içinde
+# <a name="drag-and-drop-in-xamarinios"></a>Sürükle ve bırak Xamarin.ios'ta
 
-_Sürükle ve bırak 11 iOS için uygulama_
+_Sürükle ve bırak iOS 11 uygulama_
 
-iOS 11 içerir sürükle ve bırak iPad uygulamalar arasında veri kopyalamak için destek. Kullanıcıları seçin ve tüm içerik türlerini konumlandırılmış uygulamalar yan yana veya açmak ve veri kesilmesine olanak tanımak için uygulama tetikleyecek bir uygulama simgesi sürükleyerek sürükleyin:
+iOS 11 içerir sürükle ve bırak iPad uygulamaları arasında veri kopyalamak için destek. Kullanıcılar, seçin ve tüm içerik türlerini konumlandırılmış uygulamalar yan yana veya uygulamayı açın ve verilerinin kesilmesini izin tetikleyecek bir uygulama simgesi üzerinde sürükleyerek sürükleyin:
 
-![Özel uygulama notları uygulamada sürükle ve bırak örnekten](drag-and-drop-images/drag-drop-sml.png)
+![Sürükle ve bırak örnek notları uygulamasına özel bir uygulamadan](drag-and-drop-images/drag-drop-sml.png)
 
 > [!NOTE]
-> Sürükle ve bırak yalnızca mevcut değil aynı uygulama iPhone içinde.
+> Sürükle ve bırak, yalnızca kullanılabilir iPhone aynı uygulama içinde.
 
-Sürükleme destekleme göz önünde bulundurun ve bırakma işlemleri herhangi bir yerden içerik oluşturduğunuz veya düzenlediğiniz:
+Sürükleme desteklemeyi düşünün ve bırakma işlemleri herhangi bir içerik oluşturuldu veya düzenlendi:
 
-- Metin denetimleri, iOS 11, herhangi bir ek iş olmadan karşı oluşturulan tüm uygulamaların için sürükle ve bırak desteği.
-- Tablo görünümleri ve koleksiyon görünümlerini ekleme Sürükle basitleştirmek ve bırak davranışı iOS 11 geliştirmeler içerir.
-- Diğer bir görünümü ile ek özelleştirme bırakma ve sürükleme desteklemek için yapılabilir.
+- Metin denetimlerine sürükle ve bırak iOS 11, herhangi bir ek çalışma yapmadan karşı oluşturulan tüm uygulamaları destekler.
+- Tablo görünümleri ve koleksiyon görünümlerini ekleme Sürükle kolaylaştıran ve bırak davranışı iOS 11'geliştirmeler içerir.
+- Herhangi bir görünüm Sürükle destekler ve ek özelleştirme ile yapılabilir.
 
-Uygulamalarınıza ekleme sürükle ve bırak desteği, içerik uygunluğunu farklı düzeylerde sağlayabilir; Örneğin, alıcı uygulamanın hangi Sürükle hedef en iyi uyan seçebilmeniz biçimlendirilmiş metin ve verileri düz metin sürümü sağlayabilir. Ayrıca Sürükle görselleştirme özelleştirmek için ve ayrıca aynı anda birden çok öğe Sürüklemeyi etkinleştirmek için mümkündür.
+Uygulamalarınıza ekleme sürükle ve bırak desteği, içerik uygunluk farklı düzeylerde sağlayabilir; Örneğin, alıcı uygulamanın sürüklemenin hedefi olan en iyi uyan seçebilmeniz biçimlendirilmiş metin ve verilerin düz metin sürümünü sağlayabilir. Ayrıca Sürükle görselleştirmeyi özelleştirmek için ve aynı anda birden çok öğe sürükleyerek sağlamak mümkündür.
 
-## <a name="drag-and-drop-with-text-controls"></a>Sürükle ve bırak metin denetimleri ile
+## <a name="drag-and-drop-with-text-controls"></a>Sürükle ve bırak metin denetimleri
 
-`UITextView` ve `UITextField` seçili metnin, sürükleyip metin içeriği otomatik olarak destekler.
+`UITextView` ve `UITextField` seçili metni, sürükleyip metin içeriği otomatik olarak destekler.
 
 <a name="uitableview" />
 
-## <a name="drag-and-drop-with-uitableview"></a>Sürükle ve bırak UITableView ile
+## <a name="drag-and-drop-with-uitableview"></a>Sürükle ve bırak ile UITableView
 
-`UITableView` varsayılan davranışı etkinleştirmek için yalnızca birkaç yöntem gerektiren tablo satırları ile etkileşim sürükleyip yerleşik olarak sahiptir.
+`UITableView` Sürükle ve bırak tablo satırları, varsayılan davranışı etkinleştirmek için yalnızca birkaç yöntem gerektiren etkileşim yerleşik olarak sahiptir.
 
-Söz konusu iki arabirimi vardır:
+Kullanılan iki arabirim vardır:
 
-- `IUITableViewDragDelegate` – Tablo görünümünde bir Sürükle başlatıldığında paketleri bilgileri.
-- `IUITableViewDropDelegate` – Bir açılan yüklenirken bilgileri işler çalıştı ve tamamlandı.
+- `IUITableViewDragDelegate` – Bir Sürükle Tablo görünümünde başlatıldığında paketleri bilgileri.
+- `IUITableViewDropDelegate` – Bir bırakma edilirken bilgileri işler çalıştı ve tamamlandı.
 
-İçinde [DragAndDropTableView örnek](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropTableView/) bu iki arabirim hem üzerinde uygulanan `UITableViewController` temsilci ve veri kaynağının birlikte sınıfı. İçinde atanmış oldukları `ViewDidLoad` yöntemi:
+İçinde [DragAndDropTableView örnek](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropTableView/) bu iki arabirim hem de şirket uygulanan `UITableViewController` temsilci ve veri kaynağı ile birlikte bir sınıf. İçinde atanmış oldukları `ViewDidLoad` yöntemi:
 
 ```csharp
 this.TableView.DragDelegate = this;
 this.TableView.DropDelegate = this;
 ```
 
-Bu iki arabirimleri için en az gerekli kod aşağıda açıklanmıştır.
+Bu iki arabirim için en düşük gerekli kod, aşağıda açıklanmıştır.
 
 ### <a name="table-view-drag-delegate"></a>Tablo görünümü Sürükle temsilci
 
-Tek yöntem _gerekli_ Tablo görünümünden bir satır sürükleyerek desteklemektir `GetItemsForBeginningDragSession`. Kullanıcı bir satır sürükleyin başlarsa, bu yöntem çağrılır.
+Tek yöntem _gerekli_ Tablo görünümünden bir satır sürükleyerek desteklemektir `GetItemsForBeginningDragSession`. Kullanıcı bir satıra sürükleyin başlarsa, bu yöntem çağrılır.
 
-Bir uygulama, aşağıda gösterilmiştir. Sürüklenen satırla ilişkili verileri alır, bu kodlar ve yapılandırır bir `NSItemProvider` uygulamaları işlemi "açılan" parçası nasıl işleyeceğini belirler (örneğin, olup bunların veri türü işleyebilir `PlainText`, örnekteki):
+Bir uygulama, aşağıda gösterilmiştir. Sürüklenen satırla ilişkili verileri alır, bu kodlar ve yapılandırır bir `NSItemProvider` uygulamaları işlemi "bırakma" bölümünü nasıl işleyeceğini belirler (örneğin, yoksa bunlar veri türü işleyebilir `PlainText`, örnekte):
 
 ```csharp
 public UIDragItem[] GetItemsForBeginningDragSession (UITableView tableView,
@@ -85,19 +85,19 @@ public UIDragItem[] GetItemsForBeginningDragSession (UITableView tableView,
 }
 ```
 
-Hedef uygulamalarında avantajlarından alınabilir birden çok veri Beyanları sağlama gibi Sürükle davranışını özelleştirmek için uygulanabilir Sürükle temsilci üzerinde birçok isteğe bağlı yöntemler vardır (düz metin yanı ya da bir vektör olarak biçimlendirilmiş metin gibi ve bit eşlem sürümleri çizim). Ayrıca aynı uygulama içinde sürükleyip yapılırken kullanılacak özel veri Beyanları sağlayabilir.
+Hedef uygulamalarında avantajlarından alınabilir birden çok veri gösterimlerini sağlamak gibi Sürükle davranışını özelleştirmek için uygulanabilir Sürükle temsilci üzerinde birçok isteğe bağlı yöntemler vardır (düz metin kutusu veya bir vektörü olarak biçimlendirilmiş metin gibi ve bit eşlem sürümleri çizim). Sürükleme ve bırakma aynı uygulama içinde kullanılacak özel veri ifadeleri de sağlayabilirsiniz.
 
-### <a name="table-view-drop-delegate"></a>Tablo görünümü açılan temsilci
+### <a name="table-view-drop-delegate"></a>Tablo görünümü bırakma temsilci
 
-Sürükleme işlemi bir tablo görünümü oluşur ya da tamamlanmadan açılan temsilci yöntemlerde denir. Gerekli yöntemleri veri bırakılmasına izin verilip verilmeyeceğini ve açılan tamamlanırsa hangi gerçekleştirilecek eylemleri belirler:
+Bir sürükleme işlemi tablo görünüm üzerinden gerçekleşir ya da tamamlanmadan bırakma temsilci yöntemleri çağrılır. Gerekli yöntemleri, verileri bırakılmasına izin verilip ve açılan tamamlanırsa hangi eylemler gerçekleştirildikçe belirler:
 
-- `CanHandleDropSession` – İlerleme ve potansiyel olarak uygulamanın bırakılmakta Sürükle olmakla birlikte, bu yöntem sürüklenen veri bırakılmasına izin verilip verilmediğini belirler.
-- `DropSessionDidUpdate` – Sürükleme işlemi sürerken ne yöneliktir belirlemek için bu yöntem çağrılır. Üzerinden sürüklenmekte olan tablo görünümü, sürükle oturum ve olası bir dizin yolu bilgilerinden tüm davranışını ve kullanıcı tarafından sağlanan görsel geribildirim belirlemek için kullanılabilir.
-- `PerformDrop` – Kullanıcının açılan (kendi parmak kaldırma tarafından) tamamlandığında, bu yöntem sürüklenen verileri ayıklar ve yeni bir satır (veya satır) veri eklemek için Tablo görünümü değiştirir.
+- `CanHandleDropSession` – Bir sürükleme ilerleme ve potansiyel olarak uygulamayı bırakılmakta olsa da, bu yöntem sürüklenen veri bırakılmasına izin verilip verilmediğini belirler.
+- `DropSessionDidUpdate` – Sürükleme işlemi devam ederken, hangi eylemin hedeflenen belirlemek için bu yöntem çağrılır. Bilgiler üzerinden sürüklenen Tablo görünümü, sürükle oturumu ve olası dizin yolu tüm görsel geri bildirim kullanıcı tarafından sağlanan ve davranışını belirlemek için kullanılabilir.
+- `PerformDrop` – Kullanıcının açılan (kendi parmak kaldırarak tarafından) tamamlandığında, bu yöntem sürüklenen verileri ayıklayan ve yeni satır (veya satır) veri eklemek için Tablo görünümü değiştirir.
 
 #### <a name="canhandledropsession"></a>CanHandleDropSession
 
-`CanHandleDropSession` Tablo görünümünde sürüklenen verileri kabul etmek olup olmadığını gösterir. Bu kod parçacığında bulunan `CanLoadObjects` Bu tablo görünüm dize verilerini kabul ettiğini onaylamak için kullanılır.
+`CanHandleDropSession` Tablo görünümü sürüklenen veri kabul edip edemeyeceğini gösterir. Bu kod parçacığında `CanLoadObjects` Bu tablo görünümü dize verileri kabul ettiğini doğrulamak için kullanılır.
 
 ```csharp
 public bool CanHandleDropSession(UITableView tableView, IUIDropSession session)
@@ -108,10 +108,10 @@ public bool CanHandleDropSession(UITableView tableView, IUIDropSession session)
 
 #### <a name="dropsessiondidupdate"></a>DropSessionDidUpdate
 
-`DropSessionDidUpdate` Yöntemi sürükleme işlemi sürüyor, kullanıcıya görsel Yardım sağlamak için durumdayken sürekli olarak çağrılır.
+`DropSessionDidUpdate` Yöntemi sürükleme işlemi sürüyor kullanıcıya görsel ipuçlarını sağlama ederken art arda çağrılır.
 
-Aşağıdaki kodda `HasActiveDrag` işlemi geçerli Tablo görünümünde kaynaklanan olup olmadığını belirlemek için kullanılır. Bu durumda, yalnızca tek satırları taşınmasına izin verilmez.
-Sürükle başka bir kaynaktan ise, bir kopyalama işlemi gösterilir:
+Aşağıdaki kodda `HasActiveDrag` işlemi geçerli bir Tablo görünümünde kaynağı olup olmadığını belirlemek için kullanılır. Bu durumda, yalnızca tek satır taşınmasına izin verilir.
+Sürükleme başka bir kaynaktan ise, bir kopyalama işlemi gösterilir:
 
 ```csharp
 public UITableViewDropProposal DropSessionDidUpdate(UITableView tableView, IUIDropSession session, NSIndexPath destinationIndexPath)
@@ -131,13 +131,13 @@ public UITableViewDropProposal DropSessionDidUpdate(UITableView tableView, IUIDr
 }
 ```
 
-Bırakma işlemi şunlardan biri olabilir `Cancel`, `Move`, veya `Copy`.
+Bırakma işlemi olabilir `Cancel`, `Move`, veya `Copy`.
 
-Bırakma hedefi, yeni bir satır eklemek veya var olan bir satır veri ekleyin/eklemek için olabilir.
+Bırakma hedefi yeni bir satır ekleyin veya mevcut bir satırı olan verilere ekleme/eklemeyi olabilir.
 
 #### <a name="performdrop"></a>PerformDrop
 
-`PerformDrop` Kullanıcı işlemi tamamlandığında ve devre dışı bırakılan veri yansıtacak şekilde tablo görüntüle ve veri kaynağı değiştirir yöntemi çağrılır.
+`PerformDrop` Yöntemi çağrıldığında kullanıcı işlemi tamamlandığında ve devre dışı bırakılan verileri yansıtacak şekilde tablo görünümü ve veri kaynağı değiştirir.
 
 ```csharp
 public void PerformDrop(UITableView tableView, IUITableViewDropCoordinator coordinator)
@@ -176,14 +176,14 @@ public void PerformDrop(UITableView tableView, IUITableViewDropCoordinator coord
 }
 ```
 
-Büyük veri nesneleri zaman uyumsuz olarak yüklemek için ek kod eklenebilir.
+Büyük veri nesnelerini zaman uyumsuz olarak yüklemek için ek kod eklenebilir.
 
-### <a name="testing-drag-and-drop"></a>Sınama sürükleme ve bırakma
+### <a name="testing-drag-and-drop"></a>Test sürükle ve bırak
 
-Test etmek için iPad kullanmalısınız [örnek](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropTableView/).
-Başka bir uygulama (örneğin, Notlar) yanında örnek açın ve satır ve metin arasında sürükleyin:
+Test etmek için bir iPad kullanmalısınız [örnek](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropTableView/).
+Başka bir uygulama (örneğin, Notlar) yanı sıra örnek açın ve satır ve metin bunlar arasında sürükleyin:
 
-![ekran görüntüsü sürükleme işlemi devam ediyor](drag-and-drop-images/01-sml.png)
+![ekran görüntüsü sürükleme işlemi sürüyor](drag-and-drop-images/01-sml.png)
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
@@ -191,5 +191,5 @@ Başka bir uygulama (örneğin, Notlar) yanında örnek açın ve satır ve meti
 - [Sürükle ve bırak İnsan Arabirimi yönergelerine (Apple)](https://developer.apple.com/ios/human-interface-guidelines/interaction/drag-and-drop/)
 - [Sürükle ve bırak Tablo görünümü örneği](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropTableView/)
 - [Sürükleme ve bırakma koleksiyon görünümü örneği](https://developer.xamarin.com/samples/monotouch/ios11/DragAndDropCollectionView)
-- [Sürükleme ve bırakma (WWDC) (video) Tanıtımı](https://developer.apple.com/videos/play/wwdc2017/203/)
-- [Sürükleme ve bırakma koleksiyon ve Tablo görünümü (WWDC) (video)](https://developer.apple.com/videos/play/wwdc2017/223/)
+- [Sürükle ve bırak (WWDC) (video) ile tanışın](https://developer.apple.com/videos/play/wwdc2017/203/)
+- [Koleksiyon ve Tablo görünümü (WWDC) (video) ile sürükleyip bırakın](https://developer.apple.com/videos/play/wwdc2017/223/)

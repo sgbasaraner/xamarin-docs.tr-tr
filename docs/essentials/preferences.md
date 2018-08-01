@@ -5,12 +5,12 @@ ms.assetid: AA81BCBD-79BA-448F-942B-BA4415CA50FF
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 05/04/2018
-ms.openlocfilehash: ca6d4f1ec60a80b483c79dd75267144e67d80c0b
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: 4a45587c79cfbbcd1198f100915e698289f74950
+ms.sourcegitcommit: 51c274f37369d8965b68ff587e1c2d9865f85da7
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38831770"
+ms.lasthandoff: 07/30/2018
+ms.locfileid: "39353756"
 ---
 # <a name="xamarinessentials-preferences"></a>Xamarin.Essentials: tercihleri
 
@@ -83,6 +83,10 @@ Değerleri `DateTime` tarafından tanımlanan iki yöntemi kullanarak (büyük t
 [ApplicationDataContainer](https://docs.microsoft.com/en-us/uwp/api/windows.storage.applicationdatacontainer) cihazda değerleri depolamak için kullanılır. Hayır ise `sharedName` belirtilen `LocalSettings` olan kullanıldığında, başka ad içinde yeni bir kapsayıcı oluşturmak için kullanılan `LocalSettings`.
 
 --------------
+
+## <a name="persistence"></a>Kalıcılığı
+
+Uygulama kaldırma neden olacak tüm _tercihleri_ kaldırılacak. Bir özel durum, hedef ve (API düzeyi 23) Android 6.0 veya üzeri çalıştıran uygulamalarda, kullanıyorsanız bu, [ __otomatik yedekleme__](https://developer.android.com/guide/topics/data/autobackup). Bu özellik varsayılan olarak açıktır ve uygulama verileri dahil olmak üzere korur __paylaşılan tercihleri__, ne olduğu **tercihleri** API kullanır. Bu aşağıdaki Google tarafından devre dışı bırakabilirsiniz [belgeleri](https://developer.android.com/guide/topics/data/autobackup).
 
 ## <a name="limitations"></a>Sınırlamalar
 
