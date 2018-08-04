@@ -1,31 +1,31 @@
 ---
 title: Xamarin.iOS performans
-description: Bu belge, performans ve bellek kullanımında Xamarin.iOS uygulamaları geliştirmek için kullanılan teknikleri açıklar.
+description: Bu belge, performans ve bellek kullanımı Xamarin.iOS uygulamaları geliştirmek için kullanılan teknikleri açıklar.
 ms.prod: xamarin
 ms.assetid: 02b1f628-52d9-49de-8479-f2696546ca3f
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 01/29/2016
-ms.openlocfilehash: afff9d3924c673edc363292efa1a9b7df43a9218
-ms.sourcegitcommit: e16517edcf471b53b4e347cd3fd82e485923d482
+ms.openlocfilehash: 40a2acf28819279b2a0d5c1d50c651a79b455465
+ms.sourcegitcommit: bf05041cc74fb05fd906746b8ca4d1403fc5cc7a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/07/2018
-ms.locfileid: "33798596"
+ms.lasthandoff: 08/04/2018
+ms.locfileid: "39514469"
 ---
 # <a name="xamarinios-performance"></a>Xamarin.iOS performans
 
-Zayıf uygulama performans kendisini birçok yolla gösterir. Bir uygulama yapabilirsiniz yanıt vermeyen gibi görünebilir, yavaş kaydırma neden olabilir ve pil ömrünün azaltabilir. Ancak, performansı en iyi duruma getirme daha fazlasını verimli kod uygulama içerir. Uygulama performansı kullanıcı deneyimi de dikkate alınmalıdır. Örneğin, diğer etkinlikler gerçekleştirmeyi kullanıcı engellenmeden işlemlerini yürütmek sağlayarak kullanıcı deneyimini geliştirmek için yardımcı olabilir. 
+Kötü uygulama performansı kendisini birçok şekilde gösterir. Bir uygulamayı yapabilirsiniz yanıt vermiyor, yavaş kaydırma neden olabilir ve pil ömrü azaltabilir. Ancak, performansı en iyi duruma getirme verimli kod daha fazlasını uygulama içerir. Uygulama performansı kullanıcı deneyimi de dikkate alınmalıdır. Örneğin, kullanıcının diğer etkinliklerini gerçekleştirmesi engellemeden işlemleri yürütmek sağlayarak kullanıcı deneyimini geliştirmek için yardımcı olabilir. 
 
-Bu belge, performans ve bellek kullanımında Xamarin.iOS uygulamaları geliştirmek için kullanılan teknikleri açıklar.
+Bu belge, performans ve bellek kullanımı Xamarin.iOS uygulamaları geliştirmek için kullanılan teknikleri açıklar.
 
 > [!NOTE]
-> Bu makalede okumadan önce ilk okumalısınız [platformlar arası performans](~/cross-platform/deploy-test/memory-perf-best-practices.md), bellek kullanımı ve Xamarin platformu kullanılarak oluşturulan uygulamaların performansını artırmak için platform olmayan belirli teknikler açıklanır.
+> Bu makalede okumadan önce okumalısınız [platformlar arası performans](~/cross-platform/deploy-test/memory-perf-best-practices.md), bellek kullanımı ve Xamarin platformu kullanılarak oluşturulan uygulamaların performansını artırmak için platform olmayan belirli teknikler açıklanır.
 
-## <a name="avoid-strong-circular-references"></a>Güçlü döngüsel başvurulara kaçının
+## <a name="avoid-strong-circular-references"></a>Güçlü döngüsel başvurulardan kaçının
 
-Bazı durumlarda nesneleri çöp toplayıcı tarafından iadesi kendi bellek kalmaktan önleyebilir güçlü başvuru döngüleri oluşturmak mümkündür. Örneğin, bir durum düşünün burada bir [ `NSObject` ](https://developer.xamarin.com/api/type/Foundation.NSObject/)-öğesinden devralınan bir sınıf gibi bir alt türetilmiş [ `UIView` ](https://developer.xamarin.com/api/type/UIKit.UIView/), eklenen bir `NSObject`-kapsayıcı türetilmiş ve güçlü olan Objective-C, aşağıdaki kod örneğinde gösterildiği gibi başvurulan:
+Bazı durumlarda çöp toplayıcı tarafından elde edilen kendi bellek kalmamasını nesneleri engelleyebilir güçlü başvuru döngülerini oluşturmak mümkündür. Örneğin, bir durum düşünün burada bir [ `NSObject` ](https://developer.xamarin.com/api/type/Foundation.NSObject/)-öğesinden devralınan bir sınıf gibi bir alt sınıfı türetilmiş [ `UIView` ](https://developer.xamarin.com/api/type/UIKit.UIView/), eklenen bir `NSObject`-kapsayıcı türetilmiş ve kesin olan Objective-C, aşağıdaki kod örneğinde gösterildiği gibi başvurulan:
 
 ```csharp
 class Container : UIView
@@ -54,22 +54,22 @@ var container = new Container ();
 container.AddSubview (new MyView (container));
 ```
 
-Bu kodu oluşturduğunda `Container` örneği, C# nesne Objective-C nesneye güçlü bir başvuru olacaktır. Benzer şekilde, `MyView` örneği de güçlü bir başvuru Objective-C nesneye sahip.
+Bu kodu oluşturduğunda `Container` örnek, C# nesne Objective-C nesnesi için güçlü bir başvuru olacaktır. Benzer şekilde, `MyView` örneği de Objective-C nesnesi güçlü başvuruya sahip.
 
-Ayrıca, çağrısı `container.AddSubview` yönetilmeyen başvuru sayısı artacaktır `MyView` örneği. Bu gerçekleştiğinde, Xamarin.iOS çalışma zamanı oluşturur bir `GCHandle` tutmak için örnek `MyView` yönetilen kod olduğu için yönetilen nesnelerle herhangi bir garanti Canlı nesnesinde bir başvuru olmanızı. Yönetilen kod açısından `MyView` nesne iadesi sonra [ `AddSubview` ](https://developer.xamarin.com/api/member/UIKit.UIView.AddSubview/p/UIKit.UIView/) çağrısı değil için olan `GCHandle`.
+Ayrıca, çağrı `container.AddSubview` yönetilmeyen başvuru sayısını artırır `MyView` örneği. Bu durumda, Xamarin.iOS çalışma zamanı oluşturur bir `GCHandle` tutmak örneği `MyView` yönetilen kod yönetilen nesnelere herhangi bir garanti olduğundan Canlı nesneye bir başvuru olmanızı. Yönetilen kod perspektifinden `MyView` nesne iadesi sonra [ `AddSubview` ](https://developer.xamarin.com/api/member/UIKit.UIView.AddSubview/p/UIKit.UIView/) değil için olan çağrı `GCHandle`.
 
-Yönetilmeyen `MyView` nesne sahip olacak bir `GCHandle` olarak yönetilen nesneye işaret eden, bilinen bir *güçlü bağlantı*. Yönetilen Nesne başvuru içerecek `Container` örneği. Sırayla `Container` örneği yönetilen başvuru olacaktır `MyView` nesnesi.
+Yönetilmeyen `MyView` olmak bir `GCHandle` olarak yönetilen bir nesneye işaret eden, bilinen bir *güçlü bağlantı*. Yönetilen nesneye bir başvuru içerir `Container` örneği. Sırayla `Container` örneği yönetilen başvuruya sahip `MyView` nesne.
 
-Burada bir kapsanan nesne kapsayıcısı için bir bağlantı tutar durumlarda, döngüsel başvuru ile mücadele etmek kullanılabilir birkaç seçenek vardır:
+Burada bir kapsanan nesne kapsayıcısı için bir bağlantı tutar durumlarda, döngüsel başvuru ile uğraşmak için kullanılabilecek birkaç seçenek vardır:
 
--  El ile bağlantıyı kapsayıcıya ayarlanarak döngüsü sonu `null`.
+-  El ile bağlantı kapsayıcıya ayarlayarak döngüden çıkmak `null`.
 -  El ile kapsanan nesne kapsayıcıdan kaldırın.
 -  Çağrı `Dispose` nesneler üzerinde.
--  Kapsayıcı zayıf başvuru tutma döngüsel başvuru kaçının. Zayıf başvurular hakkında daha fazla bilgi için.
+-  Kapsayıcıya zayıf bir başvuru tutma döngüsel başvuru kaçının. Zayıf başvurular hakkında daha fazla bilgi için.
 
 ### <a name="using-weakreferences"></a>WeakReferences kullanma
 
-Bir döngü önlemek için bir yol zayıf başvurusundan alt üst kullanmaktır. Örneğin, yukarıdaki kod şu şekilde yazılabilir:
+Bir döngü önlemenin bir yolu, üst alt zayıf bir başvuru kullanmaktır. Örneğin, yukarıdaki kod şuna yazılabilir:
 
 ```csharp
 class Container : UIView
@@ -99,15 +99,15 @@ var container = new Container ();
 container.AddSubview (new MyView (container));
 ```
 
-Burada, kapsanan nesne üst Canlı tutmayacaktır. Üst alt yapılan çağrı aracılığıyla etkin tutar ancak `container.AddSubView`.
+Burada, kapsanan nesne üst canlı tutar değil. Üst alt öğe üzerinden yapılan bir çağrı etkin tutar ancak `container.AddSubView`.
 
-Bu, iOS, uygulama bir eş sınıf içerdiği temsilci ya da veri kaynağı desenini kullanan API'ler de gerçekleşir; Örneğin, ayarlarken [ `Delegate` ](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.Delegate/) özelliği veya [ `DataSource` ](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.DataSource/) içinde [ `UITableView` ](https://developer.xamarin.com/api/type/UIKit.UITableView/) sınıfı.
+Bu, iOS burada bir eş sınıf ise uygulamayı içerir temsilci veya veri kaynağı desen kullanan API'ler de gerçekleşir; Örneğin, ayarlarken [ `Delegate` ](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.Delegate/) özelliği veya [ `DataSource` ](https://developer.xamarin.com/api/property/MonoTouch.UIKit.UITableView.DataSource/) içinde [ `UITableView` ](https://developer.xamarin.com/api/type/UIKit.UITableView/) sınıfı.
 
-Tamamen protokolü, örneğin uygulamak amacıyla oluşturulan sınıflar durumunda [ `IUITableViewDataSource` ](https://developer.xamarin.com/api/type/MonoTouch.UIKit.IUITableViewDataSource/)neler yapabileceğiniz bir alt sınıfı oluşturmak yerine, yalnızca sınıfında arabirimini uygulayan ve geçersiz kılma yöntem ve Ata `DataSource` özelliğine `this`.
+Yalnızca bir protokol, örnek uygulama için oluşturulan sınıflar söz konusu olduğunda [ `IUITableViewDataSource` ](https://developer.xamarin.com/api/type/MonoTouch.UIKit.IUITableViewDataSource/)yapabilecekleriniz öğesinin alt sınıfı oluşturmak yerine, yalnızca sınıf içinde arabirim uygular ve geçersiz kılma yöntem ve Ata `DataSource` özelliğini `this`.
 
 #### <a name="weak-attribute"></a>Zayıf özniteliği
 
-[Xamarin.iOS 11.10](https://developer.xamarin.com/releases/ios/xamarin.ios_11/xamarin.ios_11.10/#WeakAttribute) sunulan `[Weak]` özniteliği. Gibi `WeakReference <T>`, `[Weak]` bölmek için kullanılan [güçlü döngüsel başvurulara](https://docs.microsoft.com/en-us/xamarin/ios/deploy-test/performance#avoid-strong-circular-references), ancak daha az kod ile.
+[Xamarin.iOS 11.10](https://developer.xamarin.com/releases/ios/xamarin.ios_11/xamarin.ios_11.10/#WeakAttribute) sunulan `[Weak]` özniteliği. Gibi `WeakReference <T>`, `[Weak]` ayırmak için kullanılan [güçlü döngüsel başvurular](https://docs.microsoft.com/en-us/xamarin/ios/deploy-test/performance#avoid-strong-circular-references), ancak bile daha az kod.
 
 Kullanan aşağıdaki kodu düşünün `WeakReference <T>`:
 
@@ -125,7 +125,7 @@ public class MyFooDelegate : FooDelegate {
 }
 ```
 
-Eşdeğer kod kullanarak `[Weak]` daha kısa olduğundan:
+Kullanan eşdeğer kod `[Weak]` çok daha kısa olabilir:
 
 ```csharp
 public class MyFooDelegate : FooDelegate {
@@ -135,7 +135,7 @@ public class MyFooDelegate : FooDelegate {
 }
 ```
 
-Kullanmanın başka bir örnek verilmiştir `[Weak]` bağlamında [temsilci](https://developer.apple.com/library/content/documentation/General/Conceptual/DevPedia-CocoaCore/Delegation.html) Desen:
+Kullanmanın başka bir örneği verilmiştir `[Weak]` bağlamında [temsilci](https://developer.apple.com/library/content/documentation/General/Conceptual/DevPedia-CocoaCore/Delegation.html) Desen:
 
 ```csharp
 public class MyViewController : UIViewController 
@@ -170,11 +170,11 @@ public class UIDelegate : WKUIDelegate
 }
 ```
 
-### <a name="disposing-of-objects-with-strong-references"></a>Güçlü başvurularıyla nesnelerin atma
+### <a name="disposing-of-objects-with-strong-references"></a>Güçlü atıflar nesneleriyle atma
 
-Güçlü bir başvuru varsa ve bağımlılığı kaldırmak zordur olun bir `Dispose` yöntemi üst işaretçi temizleyin.
+Güçlü bir başvuru var ve bağımlılığı kaldırmak zordur olun bir `Dispose` yöntemi üst işaretçi temizleyin.
 
-Kapsayıcıları için geçersiz kılma `Dispose` yöntemi aşağıdaki kod örneğinde gösterildiği gibi kapsanan nesneleri kaldırmak için:
+Kapsayıcılar için geçersiz kılma `Dispose` yöntemini aşağıdaki kod örneğinde gösterildiği gibi kapsanan nesneleri Kaldır:
 
 ```csharp
 class MyContainer : UIView
@@ -191,7 +191,7 @@ class MyContainer : UIView
 }
 ```
 
-Üst güçlü başvuru tutan bir alt nesne için üst referansı temizleyin `Dispose` uygulama:
+Üst güçlü başvuru tutan bir alt nesne için üst başvuru Temizle `Dispose` uygulama:
 
 ```csharp
 class MyChild : UIView 
@@ -208,31 +208,31 @@ class MyChild : UIView
 }
 ```
 
-Güçlü başvurularını serbest bırakma hakkında daha fazla bilgi için bkz: [yayın IDisposable kaynakları](~/cross-platform/deploy-test/memory-perf-best-practices.md#idisposable).
-Ayrıca bu blog gönderisine iyi bir tartışmada vardır: [Xamarin.iOS, atık toplayıcı ve bana](http://krumelur.me/2015/04/27/xamarin-ios-the-garbage-collector-and-me/).
+Tanımlayıcı başvurularını serbest bırakma hakkında daha fazla bilgi için bkz. [yayın IDisposable kaynakları](~/cross-platform/deploy-test/memory-perf-best-practices.md#idisposable).
+Bu Web günlüğü gönderisinde iyi bir tartışma de mevcuttur: [Xamarin.iOS, atık toplayıcı ve bana](http://krumelur.me/2015/04/27/xamarin-ios-the-garbage-collector-and-me/).
 
 ### <a name="more-information"></a>Daha fazla bilgi
 
-Daha fazla bilgi için bkz: [korumak döngüleri önlemek için kuralları](http://www.cocoawithlove.com/2009/07/rules-to-avoid-retain-cycles.html) Cocoa ile Love üzerinde [bu MonoTouch GC hatasıdır](http://stackoverflow.com/questions/13058521/is-this-a-bug-in-monotouch-gc) StackOverflow üzerinde ve [MonoTouch GC yönetilen KILL refcount nesneleriyle'neden olamaz > 1? ](http://stackoverflow.com/questions/13064669/why-cant-monotouch-gc-kill-managed-objects-with-refcount-1) StackOverflow üzerinde.
+Daha fazla bilgi için bkz. [korumak döngüleri önlemek için kurallar](http://www.cocoawithlove.com/2009/07/rules-to-avoid-retain-cycles.html) Cocoa ile Love üzerinde [bu bir hatadır MonoTouch gc'de](http://stackoverflow.com/questions/13058521/is-this-a-bug-in-monotouch-gc) na StackOverflow, ve [MonoTouch GC yönetilen KILL refcount nesneleriyle'neden olamaz > 1? ](http://stackoverflow.com/questions/13064669/why-cant-monotouch-gc-kill-managed-objects-with-refcount-1) StackOverflow üzerinde.
 
 ## <a name="optimize-table-views"></a>Tablo görünümleri en iyi duruma getirme
 
-Kullanıcıların beklediğiniz yumuşak kaydırma ve hızlı yükleme süreleri için [ `UITableView` ](https://developer.xamarin.com/api/type/UIKit.UITableView/) örnekleri. Ancak, performans kaydırma hücreleri iç içe görünüm hiyerarşileri içerdiğinde veya hücre karmaşık düzenleri içerdiğinde olumsuz etkilenebilir. Ancak, düşük önlemek için kullanılan teknikleri vardır `UITableView` performans:
+Kullanıcıların, yumuşak kaydırma ve hızlı yükleme süreleri için beklediğiniz [ `UITableView` ](https://developer.xamarin.com/api/type/UIKit.UITableView/) örnekleri. Ancak, performans kaydırma hücre derin şekilde iç içe görünüm Hiyerarşiler içeriyor veya hücre karmaşık düzenler içerdiğinde olumsuz etkilenebilir. Ancak, düşük önlemek için kullanılır teknikler vardır `UITableView` performans:
 
-- Hücreleri yeniden kullanabilirsiniz. Daha fazla bilgi için bkz: [hücreleri yeniden](#reusecells).
+- Hücreleri yeniden kullanın. Daha fazla bilgi için [hücreleri yeniden](#reusecells).
 - Subviews sayısını azaltın.
 - Bir web hizmetinden alınan önbellek hücre içeriği.
-- Aynı değilse herhangi bir satır yüksekliğini önbelleğe alır.
-- Hücre ve diğer görünümlere donuk olun.
-- Resim ölçekleme ve gradyan kaçının.
+- Aynı değilse tüm satırların yüksekliğini önbelleğe alın.
+- Hücre ve diğer görünümleri donuk olun.
+- Resim ölçeklendirmeyi ve gradyanlar kaçının.
 
-Bu teknikler kalmasına topluca yardımcı olur [ `UITableView` ](https://developer.xamarin.com/api/type/UIKit.UITableView/) sorunsuz kaydırma örnekleri.
+Bu teknikler tutmak topluca yardımcı olabilecek [ `UITableView` ](https://developer.xamarin.com/api/type/UIKit.UITableView/) yumuşak kaydırma örnekleri.
 
-### <a name="reuse-cells"></a>Hücreleri yeniden
+### <a name="reuse-cells"></a>Hücreleri yeniden kullanma
 
-Satırlarda yüzlerce görüntülerken bir [ `UITableView` ](https://developer.xamarin.com/api/type/UIKit.UITableView/), yüzlerce oluşturmak için bellek kaybı olacaktır [ `UITableViewCell` ](https://developer.xamarin.com/api/type/UIKit.UITableViewCell/) nesneleri yalnızca az sayıda bunları ekranda aynı anda görüntülendiğinde. Bunun yerine, yalnızca ekranda görünür hücreleri belleğe yüklenebileceği **içerik** hücreleri yeniden bunları yükleniyor. Örnekleme süresi ve bellek kaydetme ek nesneler yüzlerce engeller.
+Satırlarda yüzlerce görüntülerken bir [ `UITableView` ](https://developer.xamarin.com/api/type/UIKit.UITableView/), bellek yüzlerce oluşturmak için boşa harcanmasına olacaktır [ `UITableViewCell` ](https://developer.xamarin.com/api/type/UIKit.UITableViewCell/) nesneleri yalnızca az sayıda bunları ekranda aynı anda görüntülendiğinde. Bunun yerine, yalnızca ekranda görünen hücreleri belleğe yüklenebileceği **içeriği** hücreleri yeniden bunları yükleniyor. Bu ek nesneleri, süresi ve bellek kaydetme yüzlerce örneğinin engeller.
 
-Bir hücrenin ekranından kaybolduğunda bu nedenle, kendi görünüm yeniden kullanmak üzere, bir kuyruktaki aşağıdaki kod örneğinde gösterildiği gibi yerleştirilebilir:
+Bir hücreyi ekranından kaybolduğunda bu nedenle, onun görünümünü yeniden kullanmak, bir kuyruktaki aşağıdaki kod örneğinde gösterildiği gibi yerleştirilebilir:
 
 ```csharp
 class MyTableSource : UITableViewSource
@@ -248,48 +248,48 @@ class MyTableSource : UITableViewSource
 }
 ```
 
-Kullanıcı kayarken [ `UITableView` ](https://developer.xamarin.com/api/type/UIKit.UITableView/) çağrıları `GetCell` görüntülemek için yeni görünümler isteği için geçersiz kılın. Bu geçersiz sonra çağrıları [ `DequeueReusableCell` ](https://developer.xamarin.com/api/member/UIKit.UITableView.DequeueReusableCell/p/Foundation.NSString/) yöntemi ve bir hücre, döndürülecek kullanılabilmeleri için ise.
+Kullanıcı kaydırma yaparken [ `UITableView` ](https://developer.xamarin.com/api/type/UIKit.UITableView/) çağrıları `GetCell` görüntülemek için yeni görünümler isteği için geçersiz kılın. Ardından çağrıları bunu geçersiz kılmak [ `DequeueReusableCell` ](https://developer.xamarin.com/api/member/UIKit.UITableView.DequeueReusableCell/p/Foundation.NSString/) yöntemi ve bir hücre, döndürüleceği yeniden kullanmak üzere kullanılabilir olup olmadığını.
 
-Daha fazla bilgi için bkz: [hücre yeniden](~/ios/user-interface/controls/tables/populating-a-table-with-data.md) içinde [verilerinin bulunduğu bir tablo doldurma](~/ios/user-interface/controls/tables/populating-a-table-with-data.md).
+Daha fazla bilgi için [hücre yeniden](~/ios/user-interface/controls/tables/populating-a-table-with-data.md) içinde [bir tabloyu verilerle doldurma](~/ios/user-interface/controls/tables/populating-a-table-with-data.md).
 
-## <a name="use-opaque-views"></a>Donuk görünümleri kullanma
+## <a name="use-opaque-views"></a>Donuk görünümlerini kullanma
 
-Tanımlı hiçbir saydamlığı olan görünümleri sahip olduğundan emin olun, [ `Opaque` ](https://developer.xamarin.com/api/property/UIKit.UIView.Opaque/) özellik kümesi. Bu, görünümleri en iyi şekilde çizim sistem tarafından işlenen güvence altına alır. Bir görünüm içindeki yerleşik olduğunda, bu özellikle önemlidir bir [ `UIScrollView` ](https://developer.xamarin.com/api/type/UIKit.UIScrollView/), veya karmaşık bir animasyon bir parçasıdır. Aksi takdirde çizim sistem olacak bileşik görünümleri diğer içerikle performansı önemli ölçüde etkileyebilir.
+Tanımlı hiçbir saydamlık sahip tüm görünümleri olduğundan emin olun, [ `Opaque` ](https://developer.xamarin.com/api/property/UIKit.UIView.Opaque/) özellik kümesi. Bu görünüm en uygun şekilde çizim sistem tarafından işlenen garanti eder. İçinde bir görünüm eklendiğinde, bu özellikle önemli bir [ `UIScrollView` ](https://developer.xamarin.com/api/type/UIKit.UIScrollView/), veya karmaşık bir animasyon bir parçasıdır. Aksi takdirde çizim sistem olacak bileşik görünümleri diğer içerikle performansı fark edilir derecede etkileyebilir.
 
 ## <a name="avoid-fat-xibs"></a>FAT XIBs kaçının
 
-XIBs büyük ölçüde film şeritleri tarafından değiştirilmiştir, vardır, ancak bazı durumlarda nerede XIBs hala kullanılıyor olabilir. Bir XIB belleğe yüklendiğinde, tüm içeriğini tüm görüntüleri dahil olmak üzere belleğe yüklenir. XIB hemen kullanılmakta olan bir görünümü içeriyorsa, ardından bellek boşa harcanmış olur. Bu nedenle, XIBs kullanırken görünüm denetleyici başına yalnızca bir XIB olduğundan emin olun ve mümkünse, görünüm denetleyicinin görünüm hiyerarşi ayrı XIBs ayırın.
+XIBs büyük ölçüde görsel Taslaklar ile değiştirilmiş olsa da, vardır bazı durumlarda burada XIBs hala kullanılabilir. Bir XIB belleğe yüklendiğinde tüm içeriğini tüm görüntüleri dahil olmak üzere belleğe yüklenir. XIB hemen kullanılmakta olan bir görünümü içeriyorsa, ardından bellek boşa harcanmış olur. Bu nedenle, XIBs kullanarak görünüm denetleyicisi başına yalnızca bir XIB olduğundan emin olun ve mümkün olduğunda, görünüm denetleyicinin hiyerarşisini görüntüle ayrı XIBs ayırın.
 
-## <a name="optimize-image-resources"></a>Görüntü kaynakları en iyi duruma getirme
+## <a name="optimize-image-resources"></a>Resim kaynakları en iyi duruma getirme
 
-Görüntüleri uygulamaları kullanan, en pahalı kaynakları bazıları verilmiştir ve genellikle yüksek çözünürlüklerde yakalanır. Bu nedenle, uygulamanın pakette görüntüden görüntülenirken bir [ `UIImageView` ](https://developer.xamarin.com/api/type/UIKit.UIImageView/), görüntü emin olun ve `UIImageView` aynı boyutta. Çalışma zamanında görüntüleri ölçekleme olabilir, pahalı bir işlem, özellikle `UIImageView` içinde katıştırılmış bir [ `UIScrollView` ](https://developer.xamarin.com/api/type/UIKit.UIScrollView/).
+Görüntüleri olan bazı uygulamaları kullanan en pahalı kaynaklara ve genellikle yüksek çözünürlüklerde yakalanır. Bu nedenle, uygulamanın pakette bir görüntüden görüntülerken bir [ `UIImageView` ](https://developer.xamarin.com/api/type/UIKit.UIImageView/), görüntü olduğundan emin olun ve `UIImageView` aynı boyutta. Çalışma zamanında görüntüleri ölçekleme olabilir, pahalı bir işlem varsa, özellikle `UIImageView` katıştırılmış bir [ `UIScrollView` ](https://developer.xamarin.com/api/type/UIKit.UIScrollView/).
 
-Daha fazla bilgi için bkz: [görüntü kaynakları en iyi duruma getirme](~/cross-platform/deploy-test/memory-perf-best-practices.md#optimizeimages) içinde [platformlar arası performans](~/cross-platform/deploy-test/memory-perf-best-practices.md) Kılavuzu.
+Daha fazla bilgi için [resim kaynakları en iyi duruma getirme](~/cross-platform/deploy-test/memory-perf-best-practices.md#optimizeimages) içinde [platformlar arası performans](~/cross-platform/deploy-test/memory-perf-best-practices.md) Kılavuzu.
 
-## <a name="test-on-devices"></a>Aygıtlarda test
+## <a name="test-on-devices"></a>Cihazlarda test edin
 
-Dağıtma ve bir fiziksel aygıt olabildiğince erken test başlayın. Davranışları ve aygıtları sınırlamaları benzeticileri mükemmel eşleşmiyor ve bu nedenle olabildiğince erken gerçek cihaz senaryosunda test etmek önemlidir.
+Dağıtma ve mümkün olduğunca erken bir uygulamayı fiziksel bir cihaz üzerinde test başlayın. Cihaz kısıtlamaları ve davranışları simülatörleri mükemmel eşleşmiyor ve bu nedenle mümkün olduğunca erken gerçek cihaz senaryosunda test etmek önemlidir.
 
-Özellikle simulator herhangi bir yolla değil bellek veya CPU kısıtlamaları bir fiziksel cihazın benzetimini.
+Özellikle simülatör herhangi bir şekilde bellek veya CPU kısıtlamaları fiziksel bir cihazın benzetimini.
 
-## <a name="synchronize-animations-with-the-display-refresh"></a>Görüntü yenilemeye animasyonları Eşitle
+## <a name="synchronize-animations-with-the-display-refresh"></a>Animasyonları görüntü yenileme ile Eşitle
 
-Oyunlar oyun mantığı çalıştırın ve ekrandaki güncelleştirmek için sıkı döngüler sahip olma eğilimi gösterir. Tipik çerçeve oranları aralığından otuz saniye başına altmış çerçeveleri. Bazı geliştiriciler düşünüyor: ekran kendi oyun benzetimi ekranına güncelleştirmeleriyle birleştirme saniyede mümkün olduğunca çok kez olarak güncelleştirmeniz gerekir ve Saniyedeki çerçeve sayısı altmış sunmamızı gerekebilir.
+Oyun, oyun mantığı çalıştırın ve ekrandaki güncelleştirmek için sıkı döngüler sahip eğilimindedir. Tipik bir çerçeve oranları aralığından otuz saniye başına altmış çerçeveleri. Bazı geliştiriciler, ekran ekranına güncelleştirmeleri, oyun benzetimi birleştirme saniyede mümkün olduğunca fazla kez olarak güncelleştirmeniz gerekir ve altmış Saniyedeki ötesine geçip fikri size cazip olabilir düşünüyor.
 
-Ancak, görüntü sunucusu saniyede altmış kez üst sınır ekran güncelleştirmeleri gerçekleştirir. Bu nedenle, bu sınır daha hızlı ekran güncelleştirilmeye çalışılırken ekran hattının kaldırılması ve mikro takılmasını neden olabilir. Ekran güncelleştirmelerini görünen güncelleştirme ile eşitlenmesi için yapısı kodu en iyisidir. Bu kullanarak elde [ `CoreAnimation.CADisplayLink` ](https://developer.xamarin.com/api/type/CoreAnimation.CADisplayLink/) altmış görselleştirme için uygun bir süre ölçer sınıfı ve başından çalışan oyunlar Saniyedeki çerçeve.
+Ancak, görüntü sunucunun saniyede altmış sayısı üst sınırını ekran güncelleştirmeleri gerçekleştirir. Bu nedenle, bu sınırı daha hızlı güncelleştirme ekranı çalışılıyor bozmadan ve mikro Takılmayı ekran açabilir. Ekran güncelleştirmeleri görüntüleme güncelleştirmesiyle eşitlenebilmesi amacıyla kod için idealdir. Bu kullanarak gerçekleştirilebilir [ `CoreAnimation.CADisplayLink` ](https://developer.xamarin.com/api/type/CoreAnimation.CADisplayLink/) altmış görselleştirme için uygun bir süre ölçer sınıfını ve, çalışan oyunlar saniye başına çerçeve.
 
-## <a name="avoid-core-animation-transparency"></a>Çekirdek animasyon saydamlık kaçının
+## <a name="avoid-core-animation-transparency"></a>Temel animasyon saydamlık kaçının
 
-Çekirdek animasyon saydamlık önleme, bit eşlem birleştirme performansı artırır. Genel olarak, saydam katmanları ve bulanık Kenarlıklar mümkünse kaçının.
+Temel animasyon saydamlık önleme, bit eşlem birleştirme performansı artırır. Genel olarak, saydam katmanları ve bulanık Kenarlıklar mümkün olduğunda kaçının.
 
 ## <a name="avoid-code-generation"></a>Kod oluşturma kaçının
 
-Dinamik olarak ile kod oluşturma `System.Reflection.Emit` veya *dinamik dil çalışma zamanı* iOS çekirdek dinamik kodu yürütme engellediğinden kaçınılması gerekir.
+Dinamik olarak kod oluşturma `System.Reflection.Emit` veya *dinamik dil çalışma zamanı* iOS çekirdek dinamik kod yürütme engellediğinden kaçınılmalıdır.
 
 ## <a name="summary"></a>Özet
 
-Bu makalede açıklanan ve Xamarin.iOS ile oluşturulan uygulamaların performansını artırmak için teknikleri ele alınan. Topluca bu teknikler bir CPU ve bir uygulama tarafından kullanılan bellek miktarına tarafından gerçekleştirilen çalışma miktarını önemli ölçüde azaltabilir.
+Bu makalede açıklanan ve Xamarin.iOS ile oluşturulan uygulamaların performansını artırmaya yönelik teknikleri ele alınan. Topluca bu tekniklerin bir CPU ve bir uygulama tarafından kullanılan bellek miktarı tarafından gerçekleştirilen iş miktarını önemli ölçüde azaltabilir.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Platformlar arası performansı](~/cross-platform/deploy-test/memory-perf-best-practices.md)
+- [Platformlar arası performans](~/cross-platform/deploy-test/memory-perf-best-practices.md)
