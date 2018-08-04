@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 02/16/2018
-ms.openlocfilehash: 6c8abbdb18bcaee405f8fe7fe8c22a930435c7e5
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 221fa9b70eeba2c4ca08433c627e5648470a7fac
+ms.sourcegitcommit: bf05041cc74fb05fd906746b8ca4d1403fc5cc7a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242452"
+ms.lasthandoff: 08/04/2018
+ms.locfileid: "39514537"
 ---
 # <a name="local-notifications"></a>Yerel bildirimler
 
@@ -366,8 +366,8 @@ Bu bir alınan ileti, "Greetings gelen MainActivity!," görüntülenir `SecondAc
 Intents oluşturma hakkında daha fazla bilgi için bkz. [Pendingıntent](https://developer.xamarin.com/api/type/Android.App.PendingIntent/).
 
 
-<a name="notif-chan" />
-
+<a name="notif-chan"></a>
+<a name="notification-channels"></a>
 ## <a name="notification-channels"></a>Bildirim kanalları
 
 Kullanabileceğiniz Android 8.0 (Oreo) ile başlayarak, *bildirim kanallarını* görüntülemek istediğiniz bildirim her türü için kullanıcı tarafından özelleştirilebilir bir kanal oluşturmak için özellik. Böylece tüm bildirimler aynı davranışı için bir kanal ek gönderilen bildirim kanallarını grubu bildirimleri sizin için sağlar. Örneğin, bir bildirim kanalı hemen ilgilenilmesi gereken bildirimleri için tasarlanmıştır ve bilgilendirici iletileri için kullanılan ayrı bir "sakin" kanal sahip olabilir.
