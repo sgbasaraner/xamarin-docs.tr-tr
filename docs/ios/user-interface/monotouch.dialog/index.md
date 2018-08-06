@@ -113,7 +113,7 @@ En az bir RootElement MonoTouch.Dialog işlemini başlatmak için gereklidir.
 
 Bir RootElement bölüm/öğe değeri ile başlatılmış olursa bu değer, ekranın sağ tarafında işlenen yapılandırma özetini sağlayan öğesi bir alt bulmak için kullanılır. Örneğin, aşağıdaki ekran görüntüsünde sağdaki "Tatlı" Seçili desert değerini birlikte ayrıntı ekran başlığını içeren bir hücrenin ile sol tarafta bir tablo gösterir.
 
- [![](images/image4.png "Bu ekran görüntüsünde sağdaki tatlı, seçili desert değerini birlikte ayrıntı ekran başlığını içeren bir hücrenin soldaki bölmede bir tablo gösterir") ](images/image4.png#lightbox) [ ![ ] (images/image5.png "bu Aşağıdaki ekran görüntüsünde sağdaki tatlı, seçili desert değerini birlikte ayrıntı ekran başlığını içeren bir hücrenin soldaki bölmede bir tablo gösterir")](images/image5.png#lightbox)
+ [![](images/image4.png "Bu ekran görüntüsünde sağdaki tatlı, seçili desert değerini birlikte ayrıntı ekran başlığını içeren bir hücrenin soldaki bölmede bir tablo gösterir")](images/image4.png#lightbox) [![](images/image5.png "bu Aşağıdaki ekran görüntüsünde sağdaki tatlı, seçili desert değerini birlikte ayrıntı ekran başlığını içeren bir hücrenin soldaki bölmede bir tablo gösterir")](images/image5.png#lightbox)
 
 Kök öğeleri de bölümleri içinde yeni bir iç içe geçmiş yapılandırma sayfası yükleniyor tetiklemek için yukarıda da gösterildiği gibi kullanılabilir. Bu modda kullanıldığında sağlanan açıklamalı alt yazı bölümünün içinde oluşturulması sırasında kullanılır ve alt sayfa için başlığı olarak da kullanılır. Örneğin:
 

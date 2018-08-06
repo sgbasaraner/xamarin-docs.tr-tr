@@ -63,7 +63,7 @@ var userName = shared.StringForKey ("name_preference");
 
 Kullanıcılar yeni aracılığıyla ayarlarıyla etkileşim **Apple Watch** kendi iPhone uygulama. Bu uygulama uygulamalar izleme ve ayrıca ayarları kullanıma sunulan kullanarak düzenleme Göster/Gizle olanak tanır. **ayarları Watch.bundle**.
 
-![](settings-images/applewatch-1.png "Örnek uygulama ayarları") ![ ] (settings-images/applewatch-2.png "örnek uygulama ayarları")
+![](settings-images/applewatch-1.png "Örnek uygulama ayarları") ![](settings-images/applewatch-2.png "örnek uygulama ayarları")
 
 
 

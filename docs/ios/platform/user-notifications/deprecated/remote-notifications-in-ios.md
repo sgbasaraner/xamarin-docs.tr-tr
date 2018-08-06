@@ -22,7 +22,7 @@ ms.locfileid: "34788673"
 Anında iletme bildirimleri kısa tutulması ve yalnızca mobil uygulama, sunucu uygulaması için bir güncelleştirme başvurmalıdır bildirmek için yeterli veri içerir. Örneğin, sunucu uygulaması yalnızca yeni e-posta geldiğinde yeni e-posta gelmiş mobil uygulama bildirmek. Bildirim yeni eposta içermemesi. Uygun olduğunda mobil uygulama sonra yeni e-postaları sunucudan almak
 
 İOS bildirimleri gönderme merkezinde olan *Apple anında iletme bildirimi Ağ Geçidi Hizmeti (APNS)*. Bu, bir uygulama sunucusu yönlendirme bildirimler iOS cihazlarına sorumludur Apple tarafından sağlanan bir hizmettir.
-Aşağıdaki resimde iOS anında iletme bildirimi topolojisini gösterir: ![ ] (remote-notifications-in-ios-images/image4.png "bu görüntüyü iOS anında iletme bildirimi topolojisini gösterir")
+Aşağıdaki resimde iOS anında iletme bildirimi topolojisini gösterir: ![](remote-notifications-in-ios-images/image4.png "bu görüntüyü iOS anında iletme bildirimi topolojisini gösterir")
 
 Uzak bildirimler kendilerini: JSON biçimine uyması dizeleri biçimlendirilmiş ve protokolleri belirtilen [bildirim yükü](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/CreatingtheNotificationPayload.html#//apple_ref/doc/uid/TP40008194-CH10-SW1) bölümünü [yerel ve anında iletilen bildirim Programlama Kılavuzu](https://developer.apple.com/library/prerelease/content/documentation/NetworkingInternet/Conceptual/RemoteNotificationsPG/)içinde [iOS Geliştirici belgeleri](https://developer.apple.com/devcenter/ios/index.action).
 

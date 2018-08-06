@@ -62,11 +62,11 @@ Aşağıdaki örnekler `DynamicResource` çalışmak için projenin kaynak sözl
 
 **Android**
 
-![](controls-images/heroimage-light-android.png "Android'de HeroImage denetimi") ![ ] (controls-images/heroimage-dark-android.png "Android HeroImage denetimi")
+![](controls-images/heroimage-light-android.png "Android'de HeroImage denetimi") ![](controls-images/heroimage-dark-android.png "Android HeroImage denetimi")
 
 **iOS**
 
-![](controls-images/heroimage-light-ios.png "İos'ta HeroImage denetimi") ![ ] (controls-images/heroimage-dark-ios.png "ios'ta HeroImage denetimi")
+![](controls-images/heroimage-light-ios.png "İos'ta HeroImage denetimi") ![](controls-images/heroimage-dark-ios.png "ios'ta HeroImage denetimi")
 
 
 <a name="listitem" />
@@ -97,11 +97,11 @@ Bu ekran görüntüleri Göster `ListItem` iOS ve Android platformlarında açı
 
 **Android**
 
-![](controls-images/listitem-light-android.png "Android'de ListItem denetimi") ![ ] (controls-images/listitem-dark-android.png "Android ListItem denetimi")
+![](controls-images/listitem-light-android.png "Android'de ListItem denetimi") ![](controls-images/listitem-dark-android.png "Android ListItem denetimi")
 
 **iOS**
 
-![](controls-images/listitem-light-ios.png "İos'ta ListItem denetimi") ![ ] (controls-images/listitem-dark-ios.png "ios'ta ListItem denetimi")
+![](controls-images/listitem-light-ios.png "İos'ta ListItem denetimi") ![](controls-images/listitem-dark-ios.png "ios'ta ListItem denetimi")
 
 
 ## <a name="custom-control-example"></a>Özel denetim örneği
@@ -128,11 +128,11 @@ Ekran görüntüleri, karşılık gelen yerleşik açık ve koyu Tema renkleri k
 
 **Android**
 
-![](controls-images/cardview-light-android.png "Android'de CardView özel denetim") ![ ] (controls-images/cardview-dark-android.png "Android CardView özel denetim")
+![](controls-images/cardview-light-android.png "Android'de CardView özel denetim") ![](controls-images/cardview-dark-android.png "Android CardView özel denetim")
 
 **iOS**
 
-![](controls-images/cardview-light-ios.png "İOS özel denetimde CardView") ![ ] (controls-images/cardview-dark-ios.png "ios'ta CardView özel denetim")
+![](controls-images/cardview-light-ios.png "İOS özel denetimde CardView") ![](controls-images/cardview-dark-ios.png "ios'ta CardView özel denetim")
 
 <a name="custom" />
 

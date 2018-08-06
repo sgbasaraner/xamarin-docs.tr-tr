@@ -479,7 +479,7 @@ Sonuçta elde edilen uygulamalar her platformda şöyle:
 
 'Add' düğmesi gibi iOS standart kullanıcı arabirimi tasarımı uygulamanın kullandığı gezinti çubuğunda konumlandırılmış ve yerleşik kullanarak **artı (+)** simgesi. Ayrıca varsayılan kullanır `UINavigationController` 'geri' düğmesini davranışı ve tabloda 'manyetik-Sil' destekler.
 
- [![](case-study-tasky-images/ios-taskylist.png "Ayrıca varsayılan UINavigationController geri düğmesini davranışı kullanır ve tabloda manyetik delete destekler") ](case-study-tasky-images/ios-taskylist.png#lightbox) [ ![ ] (case-study-tasky-images/ios-taskylist.png "UINavigationController varsayılan de kullanır Düğme davranışı yedekleyin ve tabloda manyetik delete destekler")](case-study-tasky-images/ios-taskylist.png#lightbox)
+ [![](case-study-tasky-images/ios-taskylist.png "Ayrıca varsayılan UINavigationController geri düğmesini davranışı kullanır ve tabloda manyetik delete destekler")](case-study-tasky-images/ios-taskylist.png#lightbox) [![](case-study-tasky-images/ios-taskylist.png "UINavigationController varsayılan de kullanır Düğme davranışı yedekleyin ve tabloda manyetik delete destekler")](case-study-tasky-images/ios-taskylist.png#lightbox)
 
  <a name="Android" />
 
@@ -495,7 +495,7 @@ Android uygulaması yerleşik düzeni 'görüntülenen bir onay işareti' gerekt
 
 Windows Phone Uygulama gezinme çubuğu üstünde yerine ekranın altındaki uygulama çubuğunda doldurma standart bir düzen kullanır.
 
- [![](case-study-tasky-images/wp-taskylist.png "Gezinme çubuğu üstünde yerine ekranın altındaki uygulama çubuğunda doldurma standart düzeni, Windows Phone Uygulama kullanan") ](case-study-tasky-images/wp-taskylist.png#lightbox) [ ![ ] (case-study-tasky-images/wp-taskylist.png "Windows Phone uygulaması standart kullanır Gezinme çubuğu üstünde yerine ekranın altındaki uygulama çubuğunda doldurma düzeni")](case-study-tasky-images/wp-taskylist.png#lightbox)
+ [![](case-study-tasky-images/wp-taskylist.png "Gezinme çubuğu üstünde yerine ekranın altındaki uygulama çubuğunda doldurma standart düzeni, Windows Phone Uygulama kullanan")](case-study-tasky-images/wp-taskylist.png#lightbox) [![](case-study-tasky-images/wp-taskylist.png "Windows Phone uygulaması standart kullanır Gezinme çubuğu üstünde yerine ekranın altındaki uygulama çubuğunda doldurma düzeni")](case-study-tasky-images/wp-taskylist.png#lightbox)
 
  <a name="Summary" />
 

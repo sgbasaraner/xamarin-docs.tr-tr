@@ -49,7 +49,7 @@ Kalıcı ekranlar tek Sahne ya da kullanım sayfa tabanlı yerleşim olabilir.
 
 Planda üzerinden geri gittiğinizde, benzer bir biçimde olabilir bir yığın gibi sunar `UINavigationController` iOS üzerinde çalışır. Planda Gezinti yığına gönderilir ve (programlı olarak veya kullanıcı seçime göre) Sil'i devre dışı.
 
-![](navigation-images/hierarchy-1.png "Planda Gezinti yığına gönderilen") ![ ] (navigation-images/hierarchy-2.png "planda dışına Gezinti yığını Sil'i")
+![](navigation-images/hierarchy-1.png "Planda Gezinti yığına gönderilen") ![](navigation-images/hierarchy-2.png "planda dışına Gezinti yığını Sil'i")
 
 İOS gibi sol-edge-manyetik geri hiyerarşik Gezinti yığınında üst denetleyici gider.
 
@@ -94,7 +94,7 @@ public override NSObject GetContextForSegue (string segueIdentifier)
 
 Sayfa tabanlı arabirimler, soldan sağa, benzer şekilde içeri doğru çekin `UIPageViewController` iOS üzerinde çalışır. Gösterge nokta hangi sayfa şu anda görüntülenen göstermek için ekranın altındaki görüntülenir.
 
-![](navigation-images/paged-1.png "Örnek ilk sayfasına") ![ ] (navigation-images/paged-2.png "örnek ikinci sayfasında") ![ ] (navigation-images/paged-5.png "örnek beşinci sayfası")
+![](navigation-images/paged-1.png "Örnek ilk sayfasına") ![](navigation-images/paged-2.png "örnek ikinci sayfasında") ![](navigation-images/paged-5.png "örnek beşinci sayfası")
 
 
 Gözcü uygulamanız için ana UI sayfasında tabanlı bir arabirim sağlamak için kullanın `ReloadRootControllers` bir dizi arabirim denetleyicilerini ve bağlamları ile:

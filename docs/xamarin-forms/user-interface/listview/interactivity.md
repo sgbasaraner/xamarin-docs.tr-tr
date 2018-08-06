@@ -157,7 +157,7 @@ listView.IsPullToRefreshEnabled = true;
 
 ![](interactivity-images/refresh-start.png "ListView çekerek yenileme devam ediyor")
 
-Çekme yenileme kullanıcı çekme kullanıma sundu. Liste güncelleştiriliyor sırada hangi kullanıcının gördüğü budur: ![ ] (interactivity-images/refresh-in-progress.png "ListView çekme tam Yenile")
+Çekme yenileme kullanıcı çekme kullanıma sundu. Liste güncelleştiriliyor sırada hangi kullanıcının gördüğü budur: ![](interactivity-images/refresh-in-progress.png "ListView çekme tam Yenile")
 
 ListView çekme yenileme olaylara yanıt olanak tanıyan birkaç olayları gösterir.
 

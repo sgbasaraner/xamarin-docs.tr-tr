@@ -121,7 +121,7 @@ Platforma özgü uygulama projeleri paylaşılan kod yanı sıra, hedef platform
 
 Uygulama projeleri her paylaşılan proje başvurusu ve bu ekran görüntülerinde gösterildiği gibi kullanıcının mevcut işlevselliği için gerekli kullanıcı arabirimi kodu içerir:
 
-![](setting-up-a-xamarin-cross-platform-solution-images/solution-android.png "Her başvuru paylaşılan Proje uygulama projeleri") ![ ] (setting-up-a-xamarin-cross-platform-solution-images/solution-ios.png "her başvuru paylaşılan Proje uygulama projeleri")
+![](setting-up-a-xamarin-cross-platform-solution-images/solution-android.png "Her başvuru paylaşılan Proje uygulama projeleri") ![](setting-up-a-xamarin-cross-platform-solution-images/solution-ios.png "her başvuru paylaşılan Proje uygulama projeleri")
 
 
 Projeleri nasıl yapılandırılmış belirli örnekleri örnek olay incelemeleri verilir.

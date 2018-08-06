@@ -116,7 +116,7 @@ Yerel bildirimler uygulamada gösteren basit bir uygulama oluşturmasına izin v
 
 1. Son olarak, uygulamayı çalıştırın. İOS 8, bildirimleri izin istenir. Tıklayın **Tamam** ve ardından **bildirimi ekleme** düğmesi. Kısa bir duraklamadan sonra uyarı iletişim kutusunda, aşağıdaki ekran görüntülerinde gösterildiği gibi görmeniz gerekir:
 
-    ![](local-notifications-in-ios-walkthrough-images/image0.png "Bildirimler gönderme olanağı onaylayan") ![ ] (local-notifications-in-ios-walkthrough-images/image1.png "bildirim Ekle düğmesi") ![ ] (local-notifications-in-ios-walkthrough-images/image2.png "bildirim uyarı iletişim kutusu")
+    ![](local-notifications-in-ios-walkthrough-images/image0.png "Bildirimler gönderme olanağı onaylayan") ![](local-notifications-in-ios-walkthrough-images/image1.png "bildirim Ekle düğmesi") ![](local-notifications-in-ios-walkthrough-images/image2.png "bildirim uyarı iletişim kutusu")
 
 ## <a name="summary"></a>Özet
 

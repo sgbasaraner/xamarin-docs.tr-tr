@@ -19,7 +19,7 @@ ms.locfileid: "34787961"
 
 _iOS 9 aynı zamanda, slayt kullanılarak üzerinden veya bölme görünüm çalıştıran iki uygulamaları destekler. Ayrıca, resim, resim çalma video destekler._
 
-![](multitasking-images/about02-sml.png "Ekran örnek bölme") ![ ] (multitasking-images/about03-sml.png "resim içinde resim örneği")
+![](multitasking-images/about02-sml.png "Ekran örnek bölme") ![](multitasking-images/about03-sml.png "resim içinde resim örneği")
 
 iOS 9 iPad belirli donanım üzerinde aynı anda çalışan iki uygulamalar için çoklu desteği ekler. İPad için çoklu aşağıdaki özellikler desteklenmez:
 

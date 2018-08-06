@@ -29,7 +29,7 @@ Bu konular hakkında öğreneceksiniz bu makalede, sağlam bir temel Xamarin.iOS
 
 Protokoller ve temsilciler göstermek için biz aşağıda gösterildiği gibi ek açıklamanın Haritası ekler bir basit harita uygulaması derlemeyi:
 
- [![](delegates-protocols-and-events-images/01-map.png "Ek açıklamanın Haritası ekler basit harita uygulaması örneği") ](delegates-protocols-and-events-images/01-map.png#lightbox) [ ![ ] (delegates-protocols-and-events-images/04-annotation-with-callout.png "bir eşlemesine eklenen bir örnek ek açıklaması")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
+ [![](delegates-protocols-and-events-images/01-map.png "Ek açıklamanın Haritası ekler basit harita uygulaması örneği")](delegates-protocols-and-events-images/01-map.png#lightbox) [![](delegates-protocols-and-events-images/04-annotation-with-callout.png "bir eşlemesine eklenen bir örnek ek açıklaması")](delegates-protocols-and-events-images/04-annotation-with-callout.png#lightbox)
 
 Bu uygulama tackling önce .NET olayları Uıkit altında bakarak başlayalım.
 

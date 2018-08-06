@@ -109,8 +109,8 @@ Tıklatın **uygulama içi satın almalara** oluşturmak veya ürünlerinizin sa
 
 Yeni ürün ekleme işlemi iki adımı vardır:
 
-1.   Ürün türünü seçin: [ ![ ] (in-app-purchase-basics-and-configuration-images/image8.png "ürün türünü seçin")](in-app-purchase-basics-and-configuration-images/image8.png#lightbox) 
-2.   Ürün Kimliği de dahil olmak üzere, fiyatlandırma katmanı ve yerelleştirilmiş açıklamaları ürünün öznitelikleri girin: [ ![ ] (in-app-purchase-basics-and-configuration-images/image9.png "ürünleri öznitelikleri girme")](in-app-purchase-basics-and-configuration-images/image9.png#lightbox)
+1.   Ürün türünü seçin: [![](in-app-purchase-basics-and-configuration-images/image8.png "ürün türünü seçin")](in-app-purchase-basics-and-configuration-images/image8.png#lightbox) 
+2.   Ürün Kimliği de dahil olmak üzere, fiyatlandırma katmanı ve yerelleştirilmiş açıklamaları ürünün öznitelikleri girin: [![](in-app-purchase-basics-and-configuration-images/image9.png "ürünleri öznitelikleri girme")](in-app-purchase-basics-and-configuration-images/image9.png#lightbox)
 
 Her uygulama içi satın alma ürün için gerekli alanlar, aşağıda açıklanmıştır:
 

@@ -21,7 +21,7 @@ MT'NİN D JSON'da bildirilen oluşturma kullanıcı arabirimlerini destekler. JS
 
 MT'NİN D JSON kullanırken öğeleri API'SİNDE kullanılabilir olan özelliklerin tam aralığını destekler. Örneğin, aşağıdaki ekran görüntüsünde uygulama tamamen JSON kullanarak bildirilmiştir:
 
-[![](json-element-walkthrough-images/01-load-from-file.png "Örneğin, bu ekran görüntüsünde uygulama tamamen JSON kullanarak bildirilen") ](json-element-walkthrough-images/01-load-from-file.png#lightbox) [ ![ ] (json-element-walkthrough-images/01-load-from-file.png "Örneğin bu ekran görüntüsünde uygulama tamamen kullanarak bildirildi JSON")](json-element-walkthrough-images/01-load-from-file.png#lightbox)
+[![](json-element-walkthrough-images/01-load-from-file.png "Örneğin, bu ekran görüntüsünde uygulama tamamen JSON kullanarak bildirilen")](json-element-walkthrough-images/01-load-from-file.png#lightbox) [![](json-element-walkthrough-images/01-load-from-file.png "Örneğin bu ekran görüntüsünde uygulama tamamen kullanarak bildirildi JSON")](json-element-walkthrough-images/01-load-from-file.png#lightbox)
 
 Şimdi örnekten yeniden ziyaret [öğeleri API Kılavuzu](~/ios/user-interface/monotouch.dialog/elements-api-walkthrough.md) JSON'ı kullanarak bir görev ayrıntı ekranı ekleme gösteren öğretici.
 
