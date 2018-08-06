@@ -409,8 +409,8 @@ Zaman içeren sayfa `WrapLayout` görünür örnek uygulama, zaman uyumsuz olara
 Aşağıdaki ekran görüntüleri Göster `WrapLayout` yatay için bunu unutmayınız sonra:
 
 ![](custom-images/landscape-ios.png "İOS uygulama yatay ekran örnek")
-![](custom-images/landscape-android.png "örnek Android uygulama yatay ekran") 
- ![ ] (custom-images/landscape-uwp.png " UWP uygulaması için örnek yatay ekran görüntüsü")
+![](custom-images/landscape-android.png "örnek Android uygulama yatay ekran")
+![](custom-images/landscape-uwp.png " UWP uygulaması için örnek yatay ekran görüntüsü")
 
 Fotoğraf boyutu, ekran genişliği ve CİHAZDAN bağımsız birim başına piksel sayısı her bir satırdaki sütun sayısını bağlıdır. [ `Image` ](xref:Xamarin.Forms.Image) Öğeleri fotoğrafları, zaman uyumsuz olarak yükleyin ve bu nedenle `WrapLayout` sınıfı sık çağrı alırsınız, [ `LayoutChildren` ](xref:Xamarin.Forms.Layout.LayoutChildren(System.Double,System.Double,System.Double,System.Double)) yöntemi her olarak `Image` öğe yeni bir boyutu üzerinde yüklü fotoğraf göre alır.
 
