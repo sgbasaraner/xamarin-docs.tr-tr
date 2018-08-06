@@ -329,6 +329,7 @@
 ### [Xamarin.iOS Analiz Kuralları](troubleshooting/xamarin-ios-analysis.md)
 ### [Hata iletileri (mtouch)](troubleshooting/mtouch-errors.md)
 ### [Sık Sorulan Sorular](troubleshooting/questions/index.md)
+#### [Xcode ile hata ayıklama](troubleshooting/questions/debugging-with-xcode.md)
 #### [Bir Mac Sanal Makinesini Xamarin ile kullanabilir miyim?](troubleshooting/questions/mac-vm.md)
 #### [Xcode’un önceki bir sürümünü indirme](troubleshooting/questions/previous-xcode.md)
 #### [iOS SDK Konumlarımı nereden ayarlayabilirim?](troubleshooting/questions/ios-sdk.md)
