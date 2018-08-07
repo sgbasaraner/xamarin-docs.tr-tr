@@ -7,12 +7,12 @@ ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
 ms.date: 06/22/2018
-ms.openlocfilehash: 776e2b52d6b8860c5fb5fa16253c2e1d42aa962a
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: fcc2ce5e45cd9094a9987ce12267850e19da9d75
+ms.sourcegitcommit: bf51592be39b2ae3d63d029be1d7745ee63b0ce1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39241421"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39573522"
 ---
 # <a name="setup-and-installation"></a>Kurulum ve yükleme
 
@@ -39,6 +39,6 @@ Bu makaleler, test ve Xamarin.Android uygulamalarında hata ayıklama için Andr
 
 Bu makalede, fiziksel bir Android cihaz kurulumu ve böylece cihaz çalıştırın ve Xamarin.Android uygulamalarında hata ayıklamak için kullanılabilir bir geliştirme bilgisayara bağlamak açıklanmaktadır.
 
-## <a name="microsoft-openjdk-previewandroidget-startedinstallationopenjdkmd"></a>[Microsoft OpenJDK Önizleme](~/android/get-started/installation/openjdk.md)
+## <a name="microsoft-mobile-openjdk-previewandroidget-startedinstallationopenjdkmd"></a>[Microsoft Mobil OpenJDK Önizleme](~/android/get-started/installation/openjdk.md)
 
-Bu kılavuzda Microsoft'un OpenJDK dağıtımını Önizleme sürümüne geçiş adımlarını açıklar.
+Bu kılavuzda Microsoft'un OpenJDK dağıtımını Önizleme sürümüne geçiş adımlarını açıklar. Bu dağıtımı OpenJDK Mobil Geliştirme için tasarlanmıştır.

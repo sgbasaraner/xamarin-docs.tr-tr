@@ -1,28 +1,28 @@
 ---
-title: Microsoft'un OpenJDK dağıtım Önizleme
-description: Microsoft'un OpenJDK dağıtımını yapılandırmak için adım adım bir kılavuz.
+title: Microsoft'un mobil OpenJDK dağıtım Önizleme
+description: Mobil Geliştirme için Microsoft'un OpenJDK dağıtımını yapılandırmak için adım adım bir kılavuz.
 ms.prod: xamarin
 ms.assetid: B5F8503D-F4D1-44CB-8B29-187D1E20C979
 ms.technology: xamarin-android
 author: vyedin
 ms.author: vyedin
 ms.date: 07/22/2018
-ms.openlocfilehash: 6c1346918ca6881e551f6c5b89ab16ad13d3f804
-ms.sourcegitcommit: b56b3f906d2c05a3f1be219ef41be8b79e519b8e
+ms.openlocfilehash: 2022337ebd65997c7b2492137193586278f2dffd
+ms.sourcegitcommit: bf51592be39b2ae3d63d029be1d7745ee63b0ce1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/25/2018
-ms.locfileid: "39242552"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39573600"
 ---
-# <a name="microsofts-openjdk-distribution-preview"></a>Microsoft'un OpenJDK dağıtım Önizleme
+# <a name="microsofts-mobile-openjdk-distribution-preview"></a>Microsoft'un mobil OpenJDK dağıtım Önizleme
 
-_Bu kılavuzda Microsoft'un OpenJDK dağıtımını Önizleme sürümüne geçiş adımlarını açıklar._
+_Bu kılavuzda Microsoft'un OpenJDK dağıtımını Önizleme sürümüne geçiş adımlarını açıklar. Bu dağıtım, Mobil Geliştirme için tasarlanmıştır._
 
 ![Önizleme özelliği](~/media/shared/preview.png)
 
 ## <a name="overview"></a>Genel Bakış
 
-Mac 7.7 için Visual Studio 15.9 ve Visual Studio ile başlayarak, Xamarin için Visual Studio Araçları Oracle'dan 's taşınır JDK yalnızca Android geliştirme için hedeflenen OpenJDK basit bir sürümü için:
+Mac 7.7 için Visual Studio 15.9 ve Visual Studio ile başlayarak, Xamarin için Visual Studio Araçları Oracle'dan 's taşınır JDK için bir **basit sürümü yalnızca Android geliştirme için hedeflenen OpenJDK**:
 
 ![OpenJDK VS 15,8 Preview 5'teki web önizlemesini sunan yeni bir iş akışı](openjdk-images/openjdk.png)
 
@@ -36,7 +36,7 @@ Bu taşıma avantajları şunlardır:
 
 - 3. taraf sunucuları ve yükleyicileri ile daha fazla sorun yok.
 
-Geliştirilmiş bir deneyim için daha kısa süre içinde taşımak istiyorsanız, Microsoft OpenJDK dağılımının yapılar, hem Windows hem de Mac üzerinde test etmek için kullanılabilir Kurulum işlemi, aşağıda açıklanan ve geri Oracle JDK için dilediğiniz zaman geri dönebilirsiniz.
+Geliştirilmiş bir deneyim için daha kısa süre içinde taşımak istiyorsanız, Microsoft Mobil OpenJDK dağılımının yapılar, hem Windows hem de Mac üzerinde test etmek için kullanılabilir Kurulum işlemi, aşağıda açıklanan ve geri Oracle JDK için dilediğiniz zaman geri dönebilirsiniz.
 
 ## <a name="download"></a>İndir
 
@@ -60,17 +60,17 @@ IDE için yeni JDK noktası:
 
 - **Mac** &ndash; tıklayın **Araçlar > SDK Yöneticisi > konumları** değiştirip **Java SDK (JDK) konumu** OpenJDK yüklemesinin tam yolu. Aşağıdaki örnekte, bu yolunu ayarlamak **$HOME/Library/Developer/Xamarin/jdk/microsoft_dist_openjdk_1.8.0.9**.
 
-![Mac üzerinde Microsoft OpenJDK dağıtım için JDK yolu ayarlama](openjdk-images/vsm.png)
+![Mac üzerinde Microsoft Mobil OpenJDK dağıtım için JDK yolu ayarlama](openjdk-images/vsm.png)
 
 - **Windows** &ndash; tıklayın **Araçlar > Seçenekler > Xamarin > Android ayarları** değiştirip **Java Development Kit konumunu** OpenJDK yüklemesinin tam yolu. Aşağıdaki örnekte, bu yolunu ayarlamak **C:\\Program dosyaları\\Android\\jdk\\microsoft_dist_openjdk_1.8.0.9**:
 
-![Windows üzerinde Microsoft OpenJDK dağıtım için JDK yolu ayarlama](openjdk-images/vs.png)
+![Windows üzerinde Microsoft Mobil OpenJDK dağıtım için JDK yolu ayarlama](openjdk-images/vs.png)
 
 ## <a name="revert"></a>Geri Al
 
 Oracle JDK için geri almak için daha önce kullanılan Oracle JDK yolu Java SDK'sı konumu değiştirin ve çözümü yeniden oluşturun. Mac üzerinde Oracle JDK yolu tıklayarak döndürebilirsiniz **varsayılan ayarlarına geri döndürmeyi**.
 
-Microsoft OpenJDK dağıtım herhangi bir sorun varsa, lütfen geri bildirim aracı, IDE içinde böylece izlenen edilebilmeleri ve hızlı bir şekilde düzeltildi kullanarak sorunları bildirin.
+Microsoft Mobil OpenJDK dağıtım herhangi bir sorun varsa, lütfen böylece izlenen edilebilmeleri ve hızlı bir şekilde düzeltildi, IDE içinde geri bildirim aracını kullanarak sorunları bildirin.
 
 ## <a name="known-issues--planned-fix-dates"></a>Bilinen sorunlar ve planlı düzeltme tarihleri
 
@@ -78,4 +78,4 @@ Microsoft OpenJDK dağıtım herhangi bir sorun varsa, lütfen geri bildirim ara
 
 ## <a name="summary"></a>Özet
 
-Bu makalede, 2018'de daha sonra kararlı bir sürüm için planlanmıştır Microsoft'un OpenJDK dağıtımı önizleme sürümünü kullanmak için IDE'yi yapılandırma öğrendiniz.
+Bu makalede, 2018'de daha sonra kararlı bir sürüm için planlanmıştır Microsoft'un mobil OpenJDK dağıtımı önizleme sürümünü kullanmak için IDE'yi yapılandırma öğrendiniz.

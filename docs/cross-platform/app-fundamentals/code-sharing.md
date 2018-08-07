@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: B73675D2-09A3-14C1-E41E-20352B819B53
 author: conceptdev
 ms.author: crdun
-ms.date: 07/18/2018
-ms.openlocfilehash: 82a73619e4c0507e8857cc91d88ababa870013de
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
+ms.date: 08/06/2018
+ms.openlocfilehash: 98b5786ae4f071b4d8e8f854561db97aee037fdc
+ms.sourcegitcommit: aa7b0182d117e2af66ffaa4fa29b8c214ceecae1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/26/2018
-ms.locfileid: "39270478"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39520291"
 ---
 # <a name="sharing-code-overview"></a>Paylaşım kod genel bakış
 
@@ -19,7 +19,7 @@ _Bu belge, platformlar arası projeler arasında kod paylaşımı için farklı 
 
 Platformlar arası uygulamalar arasında kod paylaşımı için üç yöntem vardır:
 
-- [**.NET standart kitaplıkları** ](#Net_Standard) – .NET Standard projeleri birden çok platform genelinde paylaşılan kod uygulayabilir ve çok sayıda .NET API'leri (sürüm) bağlı olarak erişebilir. .NET Standard 2.0 en iyi kapsamını sağlarken API'leri, .NET standart 1.0 1.6 uygulamak giderek büyüyen ayarlar.
+- [**.NET standart kitaplıkları** ](#Net_Standard) – .NET Standard projeleri birden çok platform genelinde paylaşılan kod uygulayabilir ve çok sayıda .NET API'leri (sürüm) bağlı olarak erişebilir. .NET standard 1.0 1.6 aşamalı olarak daha büyük kümeleri API'leri, .NET Standard 2.0 .NET (Xamarin uygulamaları mevcut .NET API'lerini dahil) BCL en iyi kapsamını sağlarken uygulayın.
 - [**Paylaşılan projeleri** ](#Shared_Projects) – kaynak kodunuzu düzenleme şeklinizdir ve paylaşılan varlık proje türü kullanmak `#if` platforma özgü gereksinimleri yönetmek için gerekli olarak derleyici yönergeleri.
 - [**Taşınabilir sınıf kitaplıkları** ](#Portable_Class_Libraries) (kullanım dışı) – taşınabilir sınıf kitaplıkları (PCLs) ortak bir API yüzeyi ile birden fazla platformu hedefleyin ve platforma özel işlevsellik sağlamak için arabirimleri kullanır. Visual Studio'nun en son sürümlerde PCLs kullanım dışı &ndash; bunun yerine .NET Standard kullanın.
 

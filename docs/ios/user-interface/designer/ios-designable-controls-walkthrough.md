@@ -1,42 +1,42 @@
 ---
-title: Özel denetimler iOS Tasarımcısı ile kullanma
-description: Bu belge, özel bir denetim oluşturmak ve iOS için Xamarin Tasarımcısı ile kullanmak üzere açıklar. Denetim iOS tasarımcının araç kullanılabilmesini, böylece düzgün işler denetimi uygulamak ve tasarım zamanı ve daha fazla bilgi nasıl gösterir.
+title: İOS Designer ile özel denetimleri kullanma
+description: Bu belge, özel bir denetim oluşturmak ve iOS için Xamarin tasarımcı ile kullanmak açıklar. Bu denetimin iOS Tasarımcısı araç çubuğunda kullanılabilir hale getirmek, böylece doğru şekilde işlediğinden denetimi uygulamak ve tasarım zamanı ve daha fazla bilgi nasıl gösterir.
 ms.prod: xamarin
 ms.assetid: 9032B32E-97BD-4DA6-9955-811B84682578
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: dae675d65cb2be93ac828a1aebe560354630ab54
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 0097cdf006944a51d938ea91d3ea0b0c2aee08cf
+ms.sourcegitcommit: bf51592be39b2ae3d63d029be1d7745ee63b0ce1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34790171"
+ms.lasthandoff: 08/06/2018
+ms.locfileid: "39573587"
 ---
-# <a name="using-custom-controls-with-the-ios-designer"></a>Özel denetimler iOS Tasarımcısı ile kullanma
+# <a name="using-custom-controls-with-the-ios-designer"></a>İOS Designer ile özel denetimleri kullanma
 
 ## <a name="requirements"></a>Gereksinimler
 
-İOS için Xamarin Tasarımcısı Mac ve Visual Studio 2015 ve 2017 için Visual Studio Windows üzerinde kullanılabilir.
+İOS için Xamarin Tasarımcısı, Windows üzerinde Visual Studio Mac, Visual Studio 2015 ve 2017 için de kullanılabilir.
 
 Bu kılavuzda ele içeriği bilindiğini varsayar [Başlarken kılavuzları](~/ios/get-started/index.md).
 
 ## <a name="walkthrough"></a>İzlenecek yol
 
 > [!IMPORTANT]
-> Xamarin.Studio 5.5 başlayarak, özel denetimler oluşturulduğu şekilde önceki sürümlerine biraz farklıdır. Özel bir denetim ya da oluşturmak için `IComponent` arabirimi (ilişkili uygulama yöntemleriyle) gereklidir veya sınıf olabilir açıklama `[DesignTimeVisible(true)]`. İkinci yöntemi aşağıdaki izlenecek yol örnekte kullanılıyor.
+> İçinde Xamarin.Studio 5.5 başlayarak, özel denetimler oluşturulduğu şekilde önceki sürümleri için biraz farklı olacaktır. Özel bir denetim ya da oluşturmak için `IComponent` arabirimi (ile ilişkili uygulama yöntemlerinin) gerekli olduğunu veya bir sınıf olabilir ek açıklama ile `[DesignTimeVisible(true)]`. İkinci yöntem aşağıdaki izlenecek yol örnekte kullanılır.
 
 
-1. Yeni bir çözüm oluşturmak **iOS > Uygulama > tek görünüm uygulaması > C#** şablon adlandırın `ScratchTicket`ve yeni proje sihirbaza devam edin:
+1. Yeni bir çözüm oluşturma **iOS > Uygulama > tek görünüm uygulaması > C#** şablon adlandırın `ScratchTicket`ve yeni proje sihirbaza devam edin:
 
-    [![](ios-designable-controls-walkthrough-images/01new.png "Yeni bir çözümü oluşturun")](ios-designable-controls-walkthrough-images/01new.png#lightbox)
+    [![](ios-designable-controls-walkthrough-images/01new.png "Yeni çözüm oluşturma")](ios-designable-controls-walkthrough-images/01new.png#lightbox)
 
-1. Adlı yeni bir boş sınıfı dosya oluşturma `ScratchTicketView`:
+1. Adlı yeni bir boş sınıf dosyası oluşturma `ScratchTicketView`:
 
-    [![](ios-designable-controls-walkthrough-images/02new.png "Yeni ScratchTicketView sınıf oluşturma")](ios-designable-controls-walkthrough-images/02new.png#lightbox)
+    [![](ios-designable-controls-walkthrough-images/02new.png "Yeni bir ScratchTicketView sınıf oluşturma")](ios-designable-controls-walkthrough-images/02new.png#lightbox)
 
-1. İçin aşağıdaki kodu ekleyip `ScratchTicketView` sınıfı:
+1. İçin aşağıdaki kodu ekleyin `ScratchTicketView` sınıfı:
 
     ```csharp
     using System;
@@ -160,58 +160,58 @@ Bu kılavuzda ele içeriği bilindiğini varsayar [Başlarken kılavuzları](~/i
 
 1. Ekleme `FillTexture.png`, `FillTexture2.png` ve `Monkey.png` dosyaları (kullanılabilir [github'dan](https://github.com/xamarin/ios-samples/blob/master/ScratchTicket/Resources/images.zip?raw=true)) için **kaynakları** klasör.
     
-1. Çift `Main.storyboard` dosyayı tasarımcısında açın:
+1. Çift `Main.storyboard` tasarımcıda açmak için dosya:
 
     [![](ios-designable-controls-walkthrough-images/03new.png "İOS Tasarımcısı")](ios-designable-controls-walkthrough-images/03new.png#lightbox)
 
 
-1. Sürükle ve bırak bir **resim görünümü** gelen **araç** film şeridi görünümünde üzerine.
+1. Sürükle ve bırak bir **resim görünümü** gelen **araç kutusu** üzerine görsel taslak görünüm.
 
     [![](ios-designable-controls-walkthrough-images/04new.png "Düzenine eklenen bir resim görünümü")](ios-designable-controls-walkthrough-images/04new.png#lightbox)
 
 
-1. Seçin **resim görünümü** değiştirip kendi **görüntü** özelliğine `Monkey.png`.
+1. Seçin **resim görünümü** değiştirip kendi **görüntü** özelliğini `Monkey.png`.
 
-    [! [] (ios-designable-denetimleri-izlenecek-görüntüleri/05new.png "ayarı görüntü görünüm görüntü özelliği Monkey.png)](ios-designable-controls-walkthrough-images/05new.png#lightbox)
+    [![](ios-designable-controls-walkthrough-images/05new.png "Monkey.png için görüntü görünüm görüntü özelliğini ayarlama")](ios-designable-controls-walkthrough-images/05new.png#lightbox)
 
     
-1. Boyutu sınıfları kullanıyoruz gibi Biz bu görüntü görünüm sınırlamak gerekir. Görüntünün iki kez kısıtlaması moduna almak için tıklayın. Şimdi sınırlamak onu merkezine merkezi sabitleme tanıtıcı tıklayarak ve dikey ve yatay olarak hizala:
+1. Boyut sınıflarını kullanıyoruz gibi bu görüntü görünüm sınırlamak gerekir. İki kez, kısıtlama moduna görüntüye tıklayın. Şimdi kısıtlamak, merkezine merkezi sabitleme tanıtıcı tıklayarak ve dikey ve yatay Hizala:
 
     [![](ios-designable-controls-walkthrough-images/06new.png "Görüntü ortalama")](ios-designable-controls-walkthrough-images/06new.png#lightbox)
 
-1. Yüksekliğini ve genişliğini sınırlamak için boyutu sabitleme işleyicilerinin ('şeklinde kemik' tanıtıcı) tıklayın ve genişlik ve yükseklik sırasıyla seçin:
+1. Yüksekliğini ve genişliğini sınırlamak için ('şeklinde bone' tutamaçlar) boyutu sabitleme tutamaçları tıklayın ve sırasıyla genişlik ve yükseklik seçin:
 
     [![](ios-designable-controls-walkthrough-images/07new.png "Kısıtlamaları ekleme")](ios-designable-controls-walkthrough-images/07new.png#lightbox)
 
 
-1. Araç çubuğu Güncelleştir düğmesini tıklatarak kısıtlamalarına göre çerçeve güncelleştirin:
+1. Araç çubuğunda güncelleştir düğmesine tıklayarak kısıtlamalarına göre çerçeveyi güncelleştirin:
 
-    [![](ios-designable-controls-walkthrough-images/08new.png "Kısıtlamaları araç çubuğu")](ios-designable-controls-walkthrough-images/08new.png#lightbox)
-
-
-1. Ardından, projeyi derlemek böylece **karalama bilet Görünüm** altında görünür **özel bileşenleri** araç kutusunda:
-
-    [![](ios-designable-controls-walkthrough-images/09new.png "Özel bileşenler araç kutusu")](ios-designable-controls-walkthrough-images/09new.png#lightbox)
+    [![](ios-designable-controls-walkthrough-images/08new.png "Kısıtlamalar araç çubuğu")](ios-designable-controls-walkthrough-images/08new.png#lightbox)
 
 
-1. Sürükleme ve bırakma bir **karalama bilet Görünüm** böylece monkey görüntünün üzerinde görünür. Karalama bilet görünüm monkey tamamen, aşağıda gösterildiği gibi kapsayan şekilde Sürükle tanıtıcıları ayarla:
+1. Ardından, projeyi derleyin. böylece **karalama bilet görünümü** altında görünür **özel bileşenlerin** araç kutusunda:
 
-    [![](ios-designable-controls-walkthrough-images/10new.png "Görüntü görünüm üzerinden karalama bilet Görünüm")](ios-designable-controls-walkthrough-images/10new.png#lightbox)
+    [![](ios-designable-controls-walkthrough-images/09new.png "Özel bileşenlerin araç kutusu")](ios-designable-controls-walkthrough-images/09new.png#lightbox)
 
-1. Her iki görünümde seçmek için bir sınırlayıcı dikdörtgenini çizerek resim görünümü karalama bilet görünümüne kısıtlar. Sınırlamak için kısıtlamalarını temel alarak genişlik, yükseklik, merkezi ve orta ve güncelleştirme çerçeveleri aşağıda gösterildiği gibi seçenekleri seçin:
+
+1. Sürükle ve bırak bir **karalama bilet görünümü** böylece monkey resminin görünür. Karalama bilet görünümü monkey tamamen, aşağıda gösterildiği gibi kapsar şekilde tutamaçlarını sürükleyin ayarla:
+
+    [![](ios-designable-controls-walkthrough-images/10new.png "Bir karalama bilet görünüm üzerinden resim görünümü")](ios-designable-controls-walkthrough-images/10new.png#lightbox)
+
+1. Karalama bilet görünümün görüntü, her iki görünümde seçmek için sınırlayıcı bir dikdörtgen çizerek kısıtlar. Sınırlamak için kısıtlamalarına göre genişlik, yükseklik, Center ve orta ve güncelleştirme çerçeveleri aşağıda gösterildiği gibi seçenekleri seçin:
 
     [![](ios-designable-controls-walkthrough-images/11new.png "Ortalama ve kısıtlamaları ekleme")](ios-designable-controls-walkthrough-images/11new.png#lightbox)
 
 
-1. Uygulamayı çalıştırın ve "devre dışı monkey gösterilmesi için görüntüyü karalama".
+1. Uygulamayı çalıştırın ve "kapalı monkey gösterilmesi için görüntüyü karalama".
 
-    [![](ios-designable-controls-walkthrough-images/10-app.png "Çalıştıran bir örnek uygulama")](ios-designable-controls-walkthrough-images/10-app.png#lightbox)
+    [![](ios-designable-controls-walkthrough-images/10-app.png "Bir örnek uygulama çalıştırma")](ios-designable-controls-walkthrough-images/10-app.png#lightbox)
 
 ## <a name="adding-design-time-properties"></a>Tasarım zamanı özellikleri ekleme
 
-Tasarımcı özellik türü sayısal, numaralandırma, string, bool, CGSize, UIColor ve UIImage özel denetimler için tasarım zamanı destek de içerir. Göstermek üzere bir özelliğe ekleyelim `ScratchTicketView` "kapalı disk bozulmuş." resmi ayarlamak için
+Tasarımcı, özellik türü sayısal, numaralandırma, string, bool, CGSize, UIColor ve UIImage özel denetimler için tasarım zamanı desteği de vardır. Göstermek için şimdi bir özellik ekleyin `ScratchTicketView` "kapalı çizik." görüntü ayarlamak için
 
-Aşağıdaki kodu ekleyin `ScratchTicketView` sınıfı bir özellik için:
+Aşağıdaki kodu ekleyin `ScratchTicketView` sınıf özelliği için:
 
 ```csharp
 [Export("Image"), Browsable(true)]
@@ -225,7 +225,7 @@ public UIImage Image
 }
 ```
 
-Biz de bir null denetimi eklemek isteyebilirsiniz `Draw` yöntemi, şu şekilde:
+Biz de için bir null kontrolü eklemek isteyebilirsiniz `Draw` yöntemi şu şekilde:
 
 ```csharp
 public override void Draw(CGRect rect)
@@ -265,13 +265,13 @@ public override void Draw(CGRect rect)
 }
 ```
 
-Dahil olmak üzere bir `ExportAttribute` ve `BrowsableAttribute` kümesine bağımsız değişkeniyle `true` Tasarımcısı'nda 's görüntülenmesini özelliği sonuçlanıyor **özelliği** paneli. Proje ile gibi dahil başka bir görüntü özelliği değiştirmeyi `FillTexture2.png`, sonuçları güncelleştirilirken Denetim tasarım zamanında aşağıda gösterildiği gibi:
+Dahil olmak üzere bir `ExportAttribute` ve `BrowsableAttribute` kümesine bağımsız değişkeniyle `true` sonuçları Tasarımcısı'nda kişinin görüntülenmesini özelliğinde **özelliği** paneli. Projeyle yer alan şunun gibi başka bir görüntüye özelliği değiştirmeyi `FillTexture2.png`, sonuçları güncelleştirme denetimi tasarım zamanında, aşağıda gösterildiği gibi:
 
  [![](ios-designable-controls-walkthrough-images/11-customproperty.png "Tasarım zamanı özelliklerini düzenleme")](ios-designable-controls-walkthrough-images/10-app.png#lightbox)
 
 ## <a name="summary"></a>Özet
 
-Bu makalede biz yanı sıra özel bir denetim oluşturmak iOS Tasarımcısı'nı kullanarak iOS uygulamada kullanmak nasıl gitti. Ve tasarımcıda ait bir uygulama kullanılabilir hale getirmek için denetimi oluşturmak nasıl gördüğümüz **araç**. Ayrıca, özel denetim özellikleri Tasarımcısı'nda kullanıma sunmak nasıl yanı sıra sağlayacak şekilde tasarım zamanı ve çalışma zamanı sırasında doğru işler denetimi nasıl inceledik.
+Bu makalede, biz yanı sıra özel bir denetim oluşturmak, iOS Tasarımcısı'nı kullanarak bir iOS uygulaması kullanma konusunda öğrendiniz. Oluşturma ve Denetim Tasarımcısı'nda kişinin bir uygulama tarafından kullanılabilir hale getirmek için yapı gördüğümüz **araç kutusu**. Ayrıca, tasarımcısında özel denetim özelliklerini nasıl sunacağınızı öğrenin yanı sıra, hem tasarım zamanı ve çalışma zamanının düzgün bir şekilde işler, denetimi uygulamak nasıl inceledik.
 
 
 
