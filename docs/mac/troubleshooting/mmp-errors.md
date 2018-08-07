@@ -266,7 +266,7 @@ Son straw çözüm Xamarin.Mac daha eski bir sürümü kullanmak olabilir, proje
 
 <a name="MM2012" />
 
-#### <a name="mm2012-only-first-0-of-1-referenced-by-warnings-shown--this-message-related-to-2009-"></a>MM2012: Yalnızca ilk {0} , {1} "gösterilen uyarıları başvurduğu". ** Bu iletiyi ilgili 2009 olarak **
+#### <a name="mm2012-only-first-0-of-1-referenced-by-warnings-shown--this-message-related-to-2009-"></a>MM2012: Yalnızca ilk {0} , {1} "gösterilen uyarıları başvurduğu". ** Bu iletiyi ilgili 2009 olarak \*\*
 
 <a name="MM2013" />
 
@@ -274,7 +274,7 @@ Son straw çözüm Xamarin.Mac daha eski bir sürümü kullanmak olabilir, proje
 
 <a name="MM2014" />
 
-#### <a name="mm2014-xamarinmac-extensions-do-not-support-linking-request-for-linking-will-be-ignored--this-message-is-obsolete-in-xm-36-"></a>MM2014: Xamarin.Mac uzantıları bağlamayı desteklemez. Bağlama yoksayılacak isteği. ** Bu iletiyi XM içinde 3.6 + kullanılmıyor **
+#### <a name="mm2014-xamarinmac-extensions-do-not-support-linking-request-for-linking-will-be-ignored--this-message-is-obsolete-in-xm-36-"></a>MM2014: Xamarin.Mac uzantıları bağlamayı desteklemez. Bağlama yoksayılacak isteği. ** Bu iletiyi XM içinde 3.6 + kullanılmıyor \*\*
 
 <!-- 2015 used by mtouch -->
 

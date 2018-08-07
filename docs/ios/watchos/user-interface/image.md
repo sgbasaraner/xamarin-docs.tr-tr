@@ -18,7 +18,7 @@ ms.locfileid: "34791257"
 
 watchOS sağlayan bir [ `WKInterfaceImage` ](https://developer.xamarin.com/api/type/WatchKit.WKInterfaceImage/) görüntüler ve basit animasyonları görüntülemek için denetimi. Bazı denetimler de (örneğin, düğmeleri, grupları ve arabirim denetleyicilerini) arka plan resmi sağlayabilirsiniz.
 
-![](image-images/image-walkway.png "Apple Watch gösteren resim") ![ ] (image-images/image-animation.png "Apple Watch basit animasyon ile")
+![](image-images/image-walkway.png "Apple Watch gösteren resim") ![](image-images/image-animation.png "Apple Watch basit animasyon ile")
 <!-- watch image courtesy of http://infinitapps.com/bezel/ -->
 
 Varlık Kataloğu resimleri görüntüleri izleme Seti uygulamalara eklemek için kullanın.
