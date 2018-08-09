@@ -1,23 +1,24 @@
 ---
-title: SkiaSharp platforma özgü notları
-description: Bu belgede SkiaSharp için ilgili platforma özgü ayrıntılar açıklanmaktadır. İOS, Android, macOS, Windows ve Xamarin.Forms için örnek kod sağlar.
+title: SkiaSharp platforma özgü Notlar
+description: Bu belgede, platforma özgü ayrıntıları SkiaSharp için ilgili açıklanmaktadır. İOS, Android, macOS, Windows ve Xamarin.Forms için örnek kodu sağlıyor.
 ms.prod: xamarin
+ms.techonology: xamarin-skiasharp
 ms.assetid: 1D90E0B3-A3A8-4286-BC54-9D67188A1C6C
 author: charlespetzold
 ms.author: chape
 ms.date: 03/24/2017
-ms.openlocfilehash: bcec8f2c850396f45cba795555b924d3cbc4ef22
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 05c6ae6553a2e869b9eb7e038abd7b1c34350551
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783535"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615814"
 ---
-# <a name="skiasharp-platform-specific-notes"></a>SkiaSharp platforma özgü notları
+# <a name="skiasharp-platform-specific-notes"></a>SkiaSharp platforma özgü Notlar
 
-Aşağıdaki örneklerde görüntü arabellekleri elle ayırın, bu platform tarafından sağlanan mevcut bir RBGA arabellek çizmek için olan ortak bir platform düzeni göstermek için yapılır.
+Aşağıdaki örneklerde görüntü önbelleğini el ile yerleştirmek, bu işlem platform tarafından sağlanan mevcut bir RBGA arabellekte çizmek için olan ortak bir platform deseni göstermek için gerçekleştirilir.
 
-Bu deyim için istemiyorsanız kullanmanız gerekmez.  Oluşturur ve görüntünüzü yedekleme depolama yönettiğiniz bir aşırı yoktur.
+Bu deyim için istemiyorsanız kullanın gerekmez.  Oluşturma ve yedekleme depolama alanı için görüntünüzü yönettiğiniz bir aşırı yükleme yoktur.
 
 ## <a name="ios"></a>iOS
 
@@ -118,7 +119,7 @@ using (var bitmap = new Bitmap(width, height, PixelFormat.Format32bppPArgb)) {
 
 ## <a name="xamarinforms"></a>Xamarin.Forms
 
-Uygulamalar, Xamarin.Forms SkiaSharp eklenecek Kılavuzu'na bakın [kullanarak SkiaSharp Xamarin.Forms içinde](~/xamarin-forms/user-interface/graphics/skiasharp/index.md).
+Uygulamaları Kılavuzu'na bakın, Xamarin.Forms içinde SkiaSharp içerecek şekilde [Xamarin.Forms içinde SkiaSharp kullanma](~/xamarin-forms/user-interface/graphics/skiasharp/index.md).
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

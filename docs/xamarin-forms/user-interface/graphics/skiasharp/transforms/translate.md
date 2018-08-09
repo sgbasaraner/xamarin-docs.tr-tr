@@ -1,42 +1,42 @@
 ---
-title: Çevir Dönüştür
-description: Bu examiens Çevir Dönüştür SkiaSharp grafik Xamarin.Forms uygulamalarında kaydırma için nasıl kullanılacağını makalesi ve bu örnek kodu ile gösterir.
+title: Çeviri dönüşümü
+description: Bu çeviri dönüşümü Xamarin.Forms uygulamaları SkiaSharp grafiklerde kaydırma için nasıl kullanılacağını examiens makalesi ve bu örnek kod ile gösterir.
 ms.prod: xamarin
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 ms.assetid: BD28ADA1-49F9-44E2-A548-46024A29882F
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: dbc7ffe5c3828876579ba72a387c86d8221c1641
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 02361b5b2d00015ce168c075dc19522b6c04e446
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244828"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615453"
 ---
-# <a name="the-translate-transform"></a>Çevir Dönüştür
+# <a name="the-translate-transform"></a>Çeviri dönüşümü
 
-_SkiaSharp grafik kaydırılacak Çevir Dönüştür kullanmayı öğrenin_
+_Çeviri dönüşümü SkiaSharp grafik kaydırmak için kullanmayı öğrenin_
 
-En basit SkiaSharp dönüştürme türüdür *çevir* veya *çeviri* dönüştürün. Bu dönüştürme yatay ve dikey yönde grafik nesneleri geçirir. Çizim işlevinde kullanmakta olduğunuz koordinatları değiştirerek genellikle aynı etkiyi gerçekleştirebilirsiniz bir anlamda çeviri en gereksiz dönüştürme olmasıdır. Ancak, tüm yol kaydırılacak Çevir dönüşümü uygulanarak çok daha kolay olacak şekilde bir yolu işlenirken, tüm koordinatların yolunda kapsüllenir.
+SkiaSharp dönüşüm basit türü *çevir* veya *çeviri* dönüştürün. Bu dönüşüm, yatay ve dikey yönde grafik nesneleri geçirir. Genellikle, çizme işlevde kullanmakta olduğunuz koordinatları değiştirerek aynı etkiyi gerçekleştirebilirsiniz bir anlamda, çeviri en gereksiz dönüştürme olmasıdır. Ancak, yolun tamamını kaydırmak için çeviri dönüşümü uygulanarak çok daha kolay olacak şekilde bir yol işlenirken, tüm koordinatların yolunda kapsüllenir.
 
-Çeviri basit metin efektleri ve animasyon için de yararlıdır:
+Çeviri, ayrıca basit metin efektler ve animasyon için kullanışlıdır:
 
 ![](translate-images/translateexample.png "Metin gölgesinin engraving ve çevirisi kabartma")
 
-[ `Translate` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Translate/p/System.Single/System.Single/) Yönteminde `SKCanvas` sonradan çizilmiş grafik yatay ve dikey olarak gölgeye nesnelere neden iki parametreye sahiptir:
+[ `Translate` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Translate/p/System.Single/System.Single/) Yönteminde `SKCanvas` sonradan çizilen grafik nesneleri Yatayda ve Dikeyde kaydırılmasına neden iki parametreye sahiptir:
 
 ```csharp
 public void Translate (Single dx, Single dy)
 ```
 
-Bu bağımsız değişken negatif olabilir. İkinci bir [ `Translate` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Translate/p/SkiaSharp.SKPoint/) yöntemi tek bir iki çeviri değerleri birleştirir `SKPoint` değeri:
+Bu bağımsız değişken negatif olabilir. İkinci [ `Translate` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Translate/p/SkiaSharp.SKPoint/) yöntemi tek bir iki çeviri değerleri birleştirir `SKPoint` değeri:
 
 ```csharp
 public void Translate (SKPoint point)
 ```
 
-**Birikmiş çevir** sayfasında [ **SkiaSharpForms** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) örnek program gösterir, birden çok çağıran `Translate` yöntemi toplu. [ `AccumulatedTranslate` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AccumulatedTranslatePage.cs) Çapraz uzatmak için her biri önceki dikdörtgenin yetecek kadar uzaklığı, sınıfı aynı dikdörtgen 20 sürümlerini görüntüler. Burada `PaintSurface` olay işleyicisi:
+**Birikmiş çevir** sayfasının [ **SkiaSharpForms** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) örnek program gösterir, birden çok çağıran `Translate` toplu yöntemi. [ `AccumulatedTranslate` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AccumulatedTranslatePage.cs) Sınıfı aynı dikdörtgen 20 sürümlerini görüntüler, bunlar köşegen esnetme için her bir önceki dikdörtgenden yetecek kadar uzaklık. İşte `PaintSurface` olay işleyicisi:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -71,15 +71,15 @@ Art arda dikdörtgenler page down trickle:
 
 [![](translate-images/accumulatedtranslate-small.png "Üçlü sayfasının ekran görüntüsü birikmiş çevir")](translate-images/accumulatedtranslate-large.png#lightbox "Üçlü sayfasının ekran görüntüsü birikmiş Çevir")
 
-Birikmiş çeviri Etkenler varsa `dx` ve `dy`, çizim işlevinde belirtin noktası (`x`, `y`), grafik nesnesi bir noktada işlenmeden sonra (`x'`, `y'`), burada:
+Birikmiş çeviri Etkenler yoksa `dx` ve `dy`, ve bir çizme işlevde belirttiğiniz noktası (`x`, `y`), grafik nesnesini noktada işlenen sonra (`x'`, `y'`), burada:
 
 x' = x + dx
 
-y' y + GN =
+y' = y + GN
 
-Bunlar olarak bilinir *dönüştürme formüller* çeviri için. Varsayılan değerleri `dx` ve `dy` için yeni bir `SKCanvas` 0.
+Bunlar olarak bilinen *dönüştürme formülleri* çeviri için. Varsayılan değerleri `dx` ve `dy` için yeni bir `SKCanvas` 0.
 
-Çeviri dönüştürme olarak gölge etkiler ve benzer teknikleri kullanmak için ortak olan **Çevir metin efektleri** sayfası gösterilmektedir. İlgili bölümü işte `PaintSurface` işleyicisinde [ `TranslateTextEffectsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TranslateTextEffectsPage.cs) sınıfı:
+Çeviri dönüşümü olarak gölge efektleri ve benzer teknikler için kullanımı yaygındır **Çevir Yazı efektleri** sayfasını gösterir. İlgili bölümü işte `PaintSurface` işleyicisinde [ `TranslateTextEffectsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TranslateTextEffectsPage.cs) sınıfı:
 
 ```csharp
 float textSize = 150;
@@ -124,21 +124,21 @@ using (SKPaint textPaint = new SKPaint())
 }
 ```
 
-Her üç örneklerin `Translate` tarafından verilen konumdan uzaklığı için metin görüntüleme için adlı `x` ve `y` değişkenleri. Ardından metin yeniden çeviri etkisiz başka bir renkle görüntülenir:
+Her üç örnek `Translate` tarafından verilen konumda uzaklığı için metin görüntülemek için çağrılır `x` ve `y` değişkenleri. Sonra metni yeniden çeviri etkisi ile başka bir renkte görüntülenir:
 
-[![](translate-images/translatetexteffects-small.png "Üçlü sayfasının ekran görüntüsü Çevir metin efektleri")](translate-images/translatetexteffects-large.png#lightbox "Üçlü sayfasının ekran görüntüsü metin efektleri Çevir")
+[![](translate-images/translatetexteffects-small.png "Üçlü sayfasının ekran görüntüsü Çevir Yazı efektleri")](translate-images/translatetexteffects-large.png#lightbox "Üçlü sayfasının ekran görüntüsü Yazı efektleri Çevir")
 
-Her üç örneklerin negating farklı bir şekilde gösterilir `Translate` çağırın:
+Her üç örnek gösterir negating farklı bir yol `Translate` çağırın:
 
-Yalnızca ilk örneği çağırır `Translate` yeniden ancak negatif değerler. Çünkü `Translate` çağrıları toplu, çağrısı bu sırası, toplam çeviri yalnızca sıfır varsayılan değerlere geri yükler.
+Yalnızca ilk örneği çağrıları `Translate` yeniden ancak negatif değerlere sahip. Çünkü `Translate` çağrılarıdır toplu, bu sırasını çağrılarını, toplam çeviri yalnızca sıfır varsayılan değerlere geri yükler.
 
-İkinci örnek çağrıları [ `ResetMatrix` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.ResetMatrix()/). Bu, varsayılan durumlarına döndürmek tüm dönüşümler neden olur.
+İkinci örnek çağrıları [ `ResetMatrix` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.ResetMatrix()/). Bu, varsayılan durumlarına geri döndürülecek tüm dönüşümler neden olur.
 
-Üçüncü örnek durumunu kaydeder, `SKCanvas` çağrısıyla nesne [ `Save` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Save()/) ve çağrısıyla durumuna geri yükler [ `Restore` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Restore/). Bu, bir dizi işlemleri çizim için dönüşümler işlemek için en çok yönlü yoludur. Bunlar `Save` ve `Restore` çağıran işlevi bir yığın gibi: çağırabilirsiniz `Save` birden çok zaman ve ardından arama `Restore` içinde ters önceki durumlarına geri dönmek için dizisi. `Save` Yöntemi bir tamsayı döndürür ve bu tamsayıya geçirebilirsiniz [ `RestoreToCount` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RestoreToCount/) etkili bir şekilde çağrılacak `Restore` birden çok kez. [ `SaveCount` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCanvas.SaveCount/) Özelliği şu anda yığında kaydedilmiş durumların sayısını döndürür.
+Üçüncü örnek durumunu kaydeder, `SKCanvas` nesne çağrısıyla [ `Save` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Save()/) çağrısıyla durumunu geri yüklemek [ `Restore` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Restore/). Bu dönüştürmeler için bir dizi işlem çizim işlemek için en verimli yoludur. Bunlar `Save` ve `Restore` çağıran işlevi bir yığın gibi: çağırabilirsiniz `Save` birden çok zaman ve sonra çağrı `Restore` içinde ters önceki duruma geri dönmek için dizisi. `Save` Yöntemi, bir tamsayı döndürür ve bu tamsayı geçirerek [ `RestoreToCount` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RestoreToCount/) etkili bir şekilde çağırmak için `Restore` birden çok kez. [ `SaveCount` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCanvas.SaveCount/) Özelliği şu anda yığında kaydedilmiş durumların sayısını döndürür.
 
-Ancak bir çağrısından taşıyan dönüşümler hakkında endişelenmenize gerek yoktur `PaintSurface` sonraki işleyici. Her yeni çağrı `PaintSurface` baştan sunar `SKCanvas` varsayılan dönüşümler nesnesiyle.
+Ancak, bir çağrıdan taşıyan dönüşümleri hakkında endişelenmeniz gerekmez `PaintSurface` sonraki işleyici. Her yeni çağrı `PaintSurface` yeni teslim `SKCanvas` varsayılan dönüşümlerle nesne.
 
-Başka bir yaygın kullanımı `Translate` dönüştürme olduğu için görsel bir nesne oluşturma başlangıçta çizim için uygun koordinatları kullanılarak oluşturuldu. Örneğin, merkezi bir noktada (0, 0) ile bir analog saat koordinatlarını belirtmek isteyebilirsiniz. Dönüşümler görüntülemek için istediğiniz yere sonra kullanabilirsiniz. Bu, gösterilmiştir [**Hendecagram dizi**] sayfası. [ `HendecagramArrayPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramPage.cs) Sınıfı başlar oluşturarak bir `SKPath` 11 işaret yıldız nesnesi. `HendecagramPath` Nesne tanımlanmış olarak ortak statik ve salt okunur böylece diğer sunum programlarından erişilebilir. Statik bir oluşturucu oluşturulur:
+Başka bir yaygın kullanımı `Translate` dönüşüm olduğu için bir görsel nesneyi işleme ilk çizim için kullanışlı olan koordinatları kullanılarak oluşturuldu. Örneğin, bir merkezi bir noktada (0, 0) ile bir analog saat koordinatlarını belirtmek isteyebilirsiniz. Dönüşümler görüntülemek için istediğiniz yerde sonra kullanabilirsiniz. Bu gösterilmiştir [**Hendecagram dizi**] sayfa. [ `HendecagramArrayPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramPage.cs) Sınıfı başlar oluşturarak bir `SKPath` 11 işaret eden bir yıldız nesnesi. `HendecagramPath` Nesne tanımlanmış olarak genel, statik ve salt okunur böylece başka tanıtım programlar tarafından erişilebilir. Statik Oluşturucu oluşturuldu:
 
 ```csharp
 public class HendecagramArrayPage : ContentPage
@@ -169,9 +169,9 @@ public class HendecagramArrayPage : ContentPage
 }
 ```
 
-Yıldızın Merkezi (0, 0) noktası ise, tüm yıldızın o noktadan çevreleyen bir daireye noktalarıdır. Her noktası 360 derece 5/11ths tarafından artırır bir açının sinüsünü ve kosinüsünü değerleri birleşimidir. (2 açıyla artırarak 11 işaret yıldız oluşturmak mümkündür/11, 3/11ths ya da 4/dairenin 11.) Bu daire RADIUS 100 olarak ayarlanır.
+Yıldız merkezini noktası (0, 0) ise, tüm yıldızın o noktadan çevresindeki bir daireye noktalarıdır. Her bir birleşimi 360 derece 5/11ths tarafından sunan açı Sinüs ve Kosinüs değerlerini noktasıdır. (2 açıyı artırarak 11 işaret eden bir yıldız oluşturmak da mümkündür/11, 3/11ths ya da 4/dairenin 11.) RADIUS, dairenin 100 ayarlanır.
 
-Bu yol dönüşümleri işlenir, sol üst köşesinde merkezi yerleştirileceğini `SKCanvas`ve bunu bir Çeyreğin görünür olacaktır. `PaintSurface` İşleyicisine `HendecagramPage` yerine kullanır `Translate` tuvale yıldız birden çok kopyası ile döşeme için her birini rastgele renkli:
+Bu yolu dönüşümleri işlenen, sol üst köşesinde merkezi yerleştirileceğini `SKCanvas`ve bunu bir Çeyreğin görünür olur. `PaintSurface` İşleyicisi `HendecagramPage` bunun yerine kullanır `Translate` tuval birden çok kopyasını yıldız ile döşeme için her birine rastgele renkli:
 
 ```csharp
 public class HendecagramArrayPage : ContentPage
@@ -208,11 +208,11 @@ public class HendecagramArrayPage : ContentPage
 
 ```
 
-Sonuç şöyledir:
+Sonuç şu şekildedir:
 
-[![](translate-images/hendecagramarray-small.png "Üçlü sayfasının ekran görüntüsü Hendecagram dizi")](translate-images/hendecagramarray-large.png#lightbox "Üçlü sayfasının ekran görüntüsü Hendecagram dizisi")
+[![](translate-images/hendecagramarray-small.png "Üçlü sayfasının ekran görüntüsü Hendecagram dizi")](translate-images/hendecagramarray-large.png#lightbox "Üçlü sayfasının ekran görüntüsü Hendecagram dizi")
 
-Animasyon genellikle dönüşümler içerir. **Hendecagram animasyon** sayfa 11 işaret yıldız bir daire içinde taşır. [ `HendecagramAnimationPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramAnimationPage.cs) Sınıfı bazı alanlar ile başlar ve, geçersiz kılmalar `OnAppearing` ve `OnDisappearing` yöntemleri Xamarin.Forms süreölçer durdurmak ve başlatmak için:
+Animasyonları genellikle dönüşümler içerir. **Hendecagram animasyon** sayfa 11 işaret yıldız bir daire taşır. [ `HendecagramAnimationPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/HendecagramAnimationPage.cs) Sınıfı bazı alanları ile başlar ve, geçersiz kılmalar `OnAppearing` ve `OnDisappearing` Xamarin.Forms Zamanlayıcıyı durdurmak ve başlatmak yöntemleri:
 
 ```csharp
 public class HendecagramAnimationPage : ContentPage
@@ -263,7 +263,7 @@ public class HendecagramAnimationPage : ContentPage
 }
 ```
 
-`angle` Alan animasyonlu 0-360 derece 5 saniyede. `PaintSurface` İşleyici kullanır `angle` özelliği iki yolla: renginin belirtmek için `SKColor.FromHsl` yöntemi ve bağımsız değişken olarak `Math.Sin` ve `Math.Cos` yöntemleri yıldız konumunu yönetmek için:
+`angle` Alan animasyon 0-360 derece 5 saniyede. `PaintSurface` İşleyicisi kullanır `angle` iki yolla özelliği: ton rengi belirtmek için `SKColor.FromHsl` yöntemi ve bağımsız değişken olarak `Math.Sin` ve `Math.Cos` yöntemleri yıldız konumunu yönetmek için:
 
 ```csharp
 public class HendecagramAnimationPage : ContentPage
@@ -293,11 +293,11 @@ public class HendecagramAnimationPage : ContentPage
 }
 ```
 
-`PaintSurface` İşleyicisi çağrılarını `Translate` ilk Kanvasın ortasına çevirmek için iki kez, yöntemi ve ardından kalmaz dairenin çevresi çevir (0, 0). RADIUS dairenin hala sayfasının sınırlar içinde yıldız tutarken mümkün olduğunca büyük olacak şekilde ayarlanmıştır:
+`PaintSurface` İşleyicisi çağrılarını `Translate` ilk tuval merkezine çevirmek için iki kez yöntemi ve ardından geçici Orta dairenin çevresi çevrilecek (0, 0). Hala sayfanın sınırlar içinde yıldız mümkün olduğunca büyük olmasına olanak tanırken dairenin RADIUS ayarlayın:
 
 [![](translate-images/hendecagramanimation-small.png "Üçlü sayfasının ekran görüntüsü Hendecagram animasyon")](translate-images/hendecagramanimation-large.png#lightbox "Üçlü sayfasının ekran görüntüsü Hendecagram animasyon")
 
-Sayfa merkezi etrafında döner olarak yıldız aynı yönü tutar dikkat edin. Hiç döndürme değil. Bir işi döndürme dönüşümü için olmasıdır.
+Sayfanın merkezi etrafında döner olarak yıldız aynı yönünü korur dikkat edin. Hiç döndürme değil. Bir işi döndürme dönüşümü için olmasıdır.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

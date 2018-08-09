@@ -1,29 +1,30 @@
 ---
 title: SkiaSharp giriş
-description: Bu belge temel SkiaSharp kavramlar kısa bir giriş sağlar. Özellikle, alma ve üzerinde bir SKCanvas çizim açıklanır.
+description: Bu belge, temel SkiaSharp kavramları hakkında temel bilgiler sağlar. Özellikle, alma ve bir SKCanvas üzerinde çizim ele alır.
 ms.prod: xamarin
+ms.techonology: xamarin-skiasharp
 ms.assetid: 19506F08-2603-465E-A806-6BD01638DE90
 author: charlespetzold
 ms.author: chape
 ms.date: 09/14/2017
-ms.openlocfilehash: a42836a49560a73b9e35ef97bfb2ba83d15812e3
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: eb4a391c52c598c6d276b75028337bf54455e7b4
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34783067"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615502"
 ---
 # <a name="an-introduction-to-skiasharp"></a>SkiaSharp giriş
 
-_Bu SkiaSharp kavramları kısa bir giriş sağlar_
+_Bu SkiaSharp kavramları hakkında temel bilgiler sağlar_
 
-SkiaSharp zengin ve güçlü 2B grafik 2B arabellekleri işlemek için kullanılan bir API sağlar.  Özel kullanıcı arabirimi öğeleri ve uygulamanıza birleştirilebilir 2B grafik uygulamak için bunları kullanabilirsiniz.  SkiaSharp olan bir .NET bağlama [Skia](https://skia.org) kitaplığı ve özellikleri ve bu kitaplığa gücünü devralır.
+SkiaSharp zengin ve güçlü 2B grafik 2B arabellekler işlemek için kullanılan bir API sağlar.  Bu, özel kullanıcı arabirimi öğeleri ve uygulamanıza eklenebilir 2B grafikler uygulamak için kullanabilirsiniz.  SkiaSharp olan bir .NET bağlama [Skia](https://skia.org) kitaplığı ve bu kitaplık gücünü ve özellikleri devralır.
 
-Kitaplık şu anda çapraz platform kullanılabilir [NuGet paketi](https://www.nuget.org/packages/SkiaSharp), NuGet başvuru ekleyerek bunu projenize ekleyebilirsiniz.
+Platformlar arası şu anda kullanılabilir kitaplık [NuGet paketini](https://www.nuget.org/packages/SkiaSharp), NuGet başvuru ekleyerek bunu projenize ekleyebilirsiniz.
 
-Çizmek için kodunuzu oluşturacak bir `SkCanvas` burada çizim işlemleri gerçekleşecek yüzeyini açıklar.
+Çizmek için kodunuzu oluşturacak bir `SkCanvas` burada çizim işlemlerini gerçekleşecek surface açıklar.
 
-## <a name="obtaining-an-skcanvas"></a>Bir SKCanvas alma
+## <a name="obtaining-an-skcanvas"></a>Bir SKCanvas edinme
 
 ```csharp
 using (var surface = SKSurface.Create (width: 640, height: 480, SKImageInfo.PlatformColorType, SKAlphaType.Premul)) {
@@ -33,15 +34,15 @@ using (var surface = SKSurface.Create (width: 640, height: 480, SKImageInfo.Plat
 }
 ```
 
-## <a name="drawing-on-skcanvas"></a>Üzerinde SKCanvas çizme
+## <a name="drawing-on-skcanvas"></a>SKCanvas üzerinde çizim
 
-`SKCanvas` Kullanan başka bir çizim Ruhu benzer bir çizim modeli modeller aşina olabileceği gibi bir isteğe bağlı saydamlık kanalıyla renk kullanır ve satırlar, yaylar, metin ve görüntüler çizebilirsiniz.
+`SKCanvas` Kullanan başka bir çizim için Ruhu benzer bir çizim modeli modeller tanıyor olabileceği gibi bir isteğe bağlı şeffaflık kanalıyla renk kullanır ve çizgiler, yaylar, metin ve görüntüleri çizebilirsiniz.
 
-Aşağıda SkiaSharp ile yapılabilir birçok farklı işlemler birkaçı verilmiştir.  Değişkeni aşağıdaki örneklerde `canvas` SKCanvas türüdür.
+SkiaSharp ile yapılabilir birçok farklı şey birkaçı aşağıda verilmiştir.  Değişkeni aşağıdaki örneklerde `canvas` SKCanvas türüdür.
 
 ### <a name="drawing-xamagon"></a>Xamagon çizme
 
-Bu örnekte, Xamarin'ın logosu Xamagon çizilmiştir:
+Bu örnekte Xamarin'in logosu Xamagon çizer:
 
 ```csharp
 // clear the canvas / fill with white
@@ -134,7 +135,7 @@ using (var paint = new SKPaint()) {
 
 ## <a name="more-information"></a>Daha fazla bilgi
 
-SkiaSharp kullanma hakkında daha fazla bilgi bulunabilir [çevrimiçi API belgeleri](https://developer.xamarin.com/api/namespace/SkiaSharp/)
+SkiaSharp kullanma hakkında daha fazla bilgi bulunabilir [API belgelerini çevrimiçi](https://developer.xamarin.com/api/namespace/SkiaSharp/)
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

@@ -1,36 +1,36 @@
 ---
-title: Nokta ve tire SkiaSharp içinde
-description: Bu makalede, ayrıntılı olarak incelenmektedir SkiaSharp içinde noktalı ve kesikli çizgi çizme, ana nasıl inceler ve bu örnek kodu ile gösterir.
+title: Noktalar ve tireler içinde SkiaSharp
+description: Bu makalede ayrıntılı olarak incelenmektedir içinde SkiaSharp noktalı ve kesikli çizgi çizme, ana nasıl keşfediyor ve bu örnek kod ile gösterir.
 ms.prod: xamarin
 ms.assetid: 8E9BCC13-830C-458C-9FC8-ECB4EAE66078
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 5571f2d1824cef72e192a19d15f9af03276f7523
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 7c336e6b5224f61ff84eb39652788b23f52b806e
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243879"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615424"
 ---
-# <a name="dots-and-dashes-in-skiasharp"></a>Nokta ve tire SkiaSharp içinde
+# <a name="dots-and-dashes-in-skiasharp"></a>Noktalar ve tireler içinde SkiaSharp
 
-_İçinde SkiaSharp noktalı ve kesikli çizgi çizme, ayrıntılı olarak incelenmektedir Yöneticisi_
+_Ana içinde SkiaSharp noktalı ve kesikli çizgi çizme, ayrıntılı olarak incelenmektedir_
 
-SkiaSharp sağlam değildir ancak bunun yerine nokta ve tire oluşurlar çizgiler çizme olanak sağlar:
+SkiaSharp sağlam değildir ancak bunun yerine nokta ve tire oluşan çizgileri çizmek sağlar:
 
 ![](dots-images/dottedlinesample.png "Noktalı çizgi")
 
-Bunu yapmak bir *yolu etkisi*, örneği olduğu [ `SKPathEffect` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathEffect/) ayarlamak için sınıf [ `PathEffect` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.PathEffect/) özelliği `SKPaint`. Bir yol oluşturabilirsiniz statik kullanarak etkin (veya birleştirme yolu etkileri) `Create` tarafından tanımlanan yöntemler `SKPathEffect`.
+Bunu bir *yolu efektini*, bir örneği olduğu [ `SKPathEffect` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathEffect/) ayarlamak için sınıf [ `PathEffect` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.PathEffect/) özelliği `SKPaint`. Bir yol oluşturabileceğiniz statik kullanarak etkin (veya birleştirme yol etkileri) `Create` tarafından tanımlanan yöntemleri `SKPathEffect`.
 
-Noktalı veya kesik çizgi çizmek için kullandığınız [ `SKPathEffect.CreateDash` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateDash/p/System.Single[]/System.Single/) statik yöntemi. İki bağımsız değişkeni vardır: ilk önce bir dizi budur `float` uzunlukları nokta ve kısa çizgi ve boşluk aralarında uzunluğu gösteren değerler. Bu dizi öğeleri çift sayıda olmalıdır ve en az iki öğe olmalıdır. (Olabilir dizideki sıfır öğelerin ancak bu Kesiksiz bir çizgi sonuçlanır.) İki öğe varsa, ilk uzunluğunda bir nokta veya çizgi ve boşluk uzunluğu sonraki nokta veya çizgi önce saniyedir. İkiden fazla öğe varsa bu sırada oldukları: tire uzunluğu, aralık uzunluğu, tire uzunluğu, aralık uzunluğu ve benzeri.
+Noktalı veya kesik çizgi çizmek için kullandığınız [ `SKPathEffect.CreateDash` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateDash/p/System.Single[]/System.Single/) statik yöntem. İki bağımsız değişkeni vardır: önce bir dizi budur `float` noktalar ve tireler uzunluklarının ve aralarında boşluk uzunluğunu gösteren değerleri. Bu dizinin öğeleri çift sayıda olmalıdır ve en az iki öğe olmalıdır. (Bulunabilir sıfır dizideki öğelerin ancak bu sonuçları Kesiksiz bir çizgi.) İki öğe varsa, ilk nokta veya tire uzunluğu ise ve aralık uzunluğu sonraki nokta veya tire önce saniyedir. İkiden fazla öğe varsa bu sırada oldukları: çizgi uzunluğu, aralık uzunluğu, dash uzunluğu, aralık uzunluğu ve benzeri.
 
-Genellikle, tire ve boşluk uzunluklarını vuruşun genişliğini birden fazla olmak istersiniz. Vuruşun genişliğini 10 piksel ise, örneğin, ardından array {10, 10} noktalı çizgi nokta ve boşluk vuruş kalınlığı aynı uzunlukta nerede çizer.
+Genellikle, tire ve boşluk uzunlukları darbe genişliği katları yapmak isteyebilirsiniz. Darbe genişliği 10 piksel ise, örneğin, ardından dizi {10, 10} noktalı çizgi nokta ve boşluk vuruş kalınlığı aynı uzunlukta nerede çizer.
 
-Ancak, `StrokeCap` ayarıyla `SKPaint` nesne de etkiler bu nokta ve tire. Kısa süre içinde anlatıldığı gibi bu dizi öğeleri üzerinde bir etkisi yoktur.
+Ancak, `StrokeCap` ayarıyla `SKPaint` nesne bu noktalar ve tireler de etkiler. Kısa bir süre içinde anlatıldığı gibi bu dizinin öğeleri üzerinde bir etkisi yoktur.
 
-Noktalı ve kesikli satır gösterilen üzerinde **nokta ve kısa çizgilerden** sayfası. [ **DotsAndDashesPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml) dosya başlatır iki `Picker` görünümleri, vuruş cap ve bir tire dizi seçmek için ikinci seçmenize izin vermek için bir tane:
+Noktalı ve kesikli satır üzerinde gösterilen **nokta ve çizgi** sayfası. [ **DotsAndDashesPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml) dosya iki başlatır `Picker` görünümleri, bir fırça darbesi ucu ve bir tire dizi seçmek için ikinci seçmenize izin vermek için:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -91,9 +91,9 @@ Noktalı ve kesikli satır gösterilen üzerinde **nokta ve kısa çizgilerden**
 </ContentPage>
 ```
 
-İlk üç öğe `dashArrayPicker` vuruşun genişliğini 10 piksel olduğunu varsayın. {10, 10} dizidir noktalı çizgi için {30, 10} olan kesikli bir çizgi ve {10, 10, 30, 10 için} için nokta ve tire satırıdır. (Diğer üç kısa süre içinde incelenecektir.)
+İlk üç öğe `dashArrayPicker` darbe genişliği 10 piksel olduğunu varsayın. {10, 10} dizidir bir noktalı çizgi için {30, 10} bir kesikli çizgiye ve {10, 10, 30 ve 10 için} için bir nokta ve tire satırıdır. (Diğer üç kısa bir süre içinde açıklanmıştır.)
 
-[ `DotsAndDashesPage` Arka plan kod dosyasına](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml.cs) içeren `PaintSurface` olay işleyicisi ve birkaç erişmek için yardımcı yordamları `Picker` görünümleri:
+[ `DotsAndDashesPage` Arka plan kod dosyası](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/DotsAndDashesPage.xaml.cs) içeren `PaintSurface` olay işleyicisi ve birkaç erişmek için yardımcı yordamları `Picker` görünümler:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -153,23 +153,23 @@ float[] GetPickerArray(Picker picker)
 }
 ```
 
-Aşağıdaki ekran görüntülerinde en solundaki iOS ekranda noktalı çizgi gösterir:
+Aşağıdaki ekran görüntülerinde, iOS ekranındaki en sol tarafındaki bir noktalı çizgi gösterir:
 
-[![](dots-images/dotsanddashes-small.png "Üçlü sayfasının ekran görüntüsü nokta ve tire")](dots-images/dotsanddashes-large.png#lightbox "Üçlü sayfasının ekran görüntüsü nokta ve tire")
+[![](dots-images/dotsanddashes-small.png "Üç noktalar ve tireler sayfasının ekran")](dots-images/dotsanddashes-large.png#lightbox "Üçlü sayfasının ekran görüntüsü noktalar ve tireler")
 
-Ancak, Android ekran ayrıca {10, 10} dizisi kullanılarak noktalı çizgi göstermek için beklenen ancak bunun yerine satır doludur. Ne oldu? Android ekran de vuruş caps ayarı varsa sorunudur `Square`. Bu, bunları doldurmak neden yarım vuruşun genişliğini tüm çizgilerle genişletir.
+Bununla birlikte, Android ekran ayrıca {10, 10} dizisi kullanarak bir noktalı çizgi göstermek için beklenen ancak bunun yerine satır doludur. Ne oldu? Android ekran vuruş caps ayarı olduğunu sorunudur `Square`. Bu, onları boşlukları neden yarı darbe genişliği, tüm çizgilerle genişletir.
 
-Bu sorunu gidermek, vuruş cap kullanırken almak için `Square` veya `Round`, dizideki tire uzunlukları (bazen bir tire uzunluğu 0 kaynaklanan) Vuruş uzunluğuna göre azaltın ve boşluk uzunlukları vuruş uzunluğuna göre artırın. Son üç dizilerde nasıl tire budur `Picker` XAML dosyasında hesaplanmıştır:
+Bu sorunu geçici olarak, bir fırça darbesi ucu kullanırken almak için `Square` veya `Round`, dizideki dash uzunlukları (bazen bir tire uzunluğu 0 sonuç) Vuruş uzunluğuna göre azaltmak ve boşluk uzunlukları vuruş uzunluğuna göre artırın. Son üç dizilerde nasıl tire budur `Picker` XAML dosyasında hesaplanmıştır:
 
-- {10, 10} hale {0, 20} noktalı çizgi için
-- {30, 10} hale {20, 20} kesikli çizgi için
+- {10, 10} olur {0, 20} için bir noktalı çizgi
+- {30, 10} olur {20, 20} kesik çizgi için
 - {10, 10, 30, 10} {0, 20, 20, 20} için bir noktalı ve kesikli satır haline gelir.
 
-Noktalı ve kesikli satır vuruş için UWP ekran gösterir cap `Round`. `Round` Vuruş cap kalın satırlarında genellikle nokta ve tire en iyi görünümünü verir.
+Cap noktalı ve kesikli satır için bir vuruş UWP ekran gösterir `Round`. `Round` Fırça darbesi ucu kalın satırları genellikle en iyi noktalar ve tireler görünümünü sağlar.
 
-Şu ana kadar hiç ikinci parametrenin yapılmadığını `SKPathEffect.CreateDash` yöntemi. Bu parametre adlı `phase` satırının başına, nokta ve tire desen içindeki uzaklığı ifade eder. Örneğin, tire diziyse, {10, 10} ve `phase` 10'dur ve satır bir nokta yerine boşluk ile başlar.
+Şu ana kadar hiç ikinci parametrenin yapılmış `SKPathEffect.CreateDash` yöntemi. Bu parametre adlı `phase` ve bir uzaklık içindeki satırın başına nokta ve tire desenini gösterir. Örneğin dash dizi ise, {10, 10} ve `phase` 10'dur ve satırın nokta yerine bir boşluk ile başlar.
 
-Bir ilginç uygulaması `phase` animasyonda parametresidir. **Animasyonlu Spiral** sayfa benzer **Archimedean Spiral** , dışında sayfasında [ `AnimatedSpiralPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/AnimatedSpiralPage.cs) sınıfı canlandırır `phase` parametresi. Sayfa ayrıca animasyon için başka bir yaklaşım gösterir. Önceki örneği [ `PulsatingEllipsePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml.cs) kullanılan `Task.Delay` animasyon denetlemek için yöntem. Bu örnekte bunun yerine Xamarin.Forms kullanan `Device.Timer` yöntemi:
+İlginizi `phase` animasyonda bir parametredir. **Animasyonlu Gönderilerinizi** sayfasına benzer **Archimedean Gönderilerinizi** sayfasında, hariç [ `AnimatedSpiralPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/AnimatedSpiralPage.cs) sınıfı canlandırır `phase` parametresi. Sayfa animasyon başka bir yaklaşım da gösterilmektedir. Önceki örneği [ `PulsatingEllipsePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Basics/PulsatingEllipsePage.xaml.cs) kullanılan `Task.Delay` animasyon denetlemek için yöntemi. Bu örnekte bunun yerine Xamarin.Forms kullanan `Device.Timer` yöntemi:
 
 
 ```csharp
@@ -211,11 +211,11 @@ protected override void OnAppearing()
 }
 ```
 
-Elbette, animasyonun görmek için programı çalıştırdığı gerekir:
+Elbette, animasyon görmek için programı çalıştırdığı gerekir:
 
-[![](dots-images/animatedspiral-small.png "Üçlü sayfasının ekran görüntüsü animasyonlu Spiral")](dots-images/animatedspiral-large.png#lightbox "Üçlü sayfasının ekran görüntüsü animasyonlu Spiral")
+[![](dots-images/animatedspiral-small.png "Üçlü sayfasının ekran görüntüsü animasyonlu Gönderilerinizi")](dots-images/animatedspiral-large.png#lightbox "animasyonlu Gönderilerinizi sayfanın üç ekran görüntüsü")
 
-Şimdi nasıl çizgiler çizme ve parametrik denklemini kullanarak Eğriler tanımlamak için gördünüz. Daha sonra yayımlanmış bir bölümde Eğriler çeşitli türlerde ele alınacaktır, `SKPath` destekler.
+Şimdi çizgi çizmek için ve parametreli denklemler kullanarak eğrileri tanımla gördünüz. Daha sonra yayınlanacak bir bölümü eğrileri çeşitli türlerde ele alınacaktır, `SKPath` destekler.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

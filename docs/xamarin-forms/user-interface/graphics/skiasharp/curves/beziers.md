@@ -1,36 +1,36 @@
 ---
-title: Üç tür Bézier eğrileri
-description: Bu makalede SkiaSharp Xamarin.Forms uygulamalarında küp, ikinci derece ve conic Bézier eğrileri işlemek için nasıl kullanılacağını açıklar ve bu örnek kodu ile gösterir.
+title: Üç tür Bézier Eğriler
+description: Bu makalede SkiaSharp küp, ikinci dereceden ve conic Bézier Eğriler Xamarin.Forms uygulamaları oluşturmak için nasıl kullanılacağını açıklar ve bu örnek kod ile gösterir.
 ms.prod: xamarin
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
 author: charlespetzold
 ms.author: chape
 ms.date: 05/25/2017
-ms.openlocfilehash: 4a1b86035f9ce31b6e9fafac06cd0090a516b542
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 0ad722f22cf5ed8dc06fdf0d1e063d285e2ddb2f
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244012"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615346"
 ---
-# <a name="three-types-of-bzier-curves"></a>Üç tür Bézier eğrileri
+# <a name="three-types-of-bzier-curves"></a>Üç tür Bézier Eğriler
 
-_Küp, ikinci derece ve conic Bézier eğrileri işlemek için SkiaSharp kullanmayı keşfedin_
+_SkiaSharp küp, ikinci dereceden ve conic Bézier eğrileri işlemek için nasıl kullanılacağını keşfedin_
 
-Bézier eğrisi Pierre Bézier (1910 – 1999) öğesini şirket eğri araba gövdeleri bilgisayar destekli tasarım için kullanılan Renault, Fransızca mühendislik adlandırılır.
+Bézier eğrisi Pierre Bézier (1910 – 1999), Fransız bir mühendislik eğri araba gövdeleri bilgisayar destekli tasarım için kullanılan Renault, otomotiv şirket adlandırılır.
 
-Bézier eğrileri etkileşimli tasarım için oldukça uygun olması için bilinir: iyi çalışan &mdash; diğer bir deyişle, eğriyi sonsuz veya yönetilmeleri hale gelmesine neden singularities yok &mdash; ve genellikle aesthetically güzel . Yazı tipleri bilgisayar tabanlı karakter ana hatlarını genellikle Bézier eğrileri tanımlanmıştır:
+Bézier eğrileri etkileşimli bir tasarımı için uygun olan bilinir: iyi çalışan oldukları &mdash; başka bir deyişle, sonsuz veya zahmetli hale eğrinin neden singularities yok &mdash; ve genellikle aesthetically güzel . Bilgisayar tabanlı yazı tiplerinin karakter anahatlarını genellikle Bézier Eğriler tanımlanır:
 
 ![](beziers-images/beziersample.png "Bir örnek Bezier eğrisi")
 
-Wikipedia makaleyi [Bézier eğrisi](https://en.wikipedia.org/wiki/B%C3%A9zier_curve) bazı yararlı bilgiler içerir. Terim *Bézier eğrisi* gerçekten benzer Eğriler ailesine başvuruyor. SkiaSharp adlı Bézier eğrileri üç tür destekler *küp*, *ikinci derece*ve *conic*. Conic olarak da bilinir *rasyonel ikinci derece*.
+Wikipedia makaleyi [Bézier eğrisi](https://en.wikipedia.org/wiki/B%C3%A9zier_curve) bazı yararlı bilgiler içerir. Terim *Bézier eğrisi* gerçekten benzer eğrileri ailesi için ifade eder. SkiaSharp destekleyen üç tür olarak adlandırılan Bézier eğrilerinin *üçüncü dereceden*, *ikinci dereceden*ve *conic*. Conic olarak da bilinir *rasyonel dereceden*.
 
-## <a name="the-cubic-bzier-curve"></a>Küp Bézier eğrisi
+## <a name="the-cubic-bzier-curve"></a>Üçüncü dereceden Bézier eğrisi
 
-Cubic Bézier eğrileri konu geldiğinde, çoğu Geliştirici düşünmek Bézier eğrisi türüdür.
+Cubic Bézier eğrileri konusunu ortaya çıktığında, çoğu geliştirici, düşündüğünüz Bézier eğrisi türüdür.
 
-Küp bir Bézier eğrisi ekleyebilirsiniz bir `SKPath` kullanarak nesne [ `CubicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.CubicTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/SkiaSharp.SKPoint/) üç yöntemiyle `SKPoint` parametreleri veya [ `CubicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.CubicTo/p/System.Single/System.Single/System.Single/System.Single/System.Single/System.Single/) ayrı ileaşırıyüklemesi`x` ve `y` Parametreler:
+Bir küp Bézier eğriye ekleyebileceğiniz bir `SKPath` kullanarak nesne [ `CubicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.CubicTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/SkiaSharp.SKPoint/) üç yöntemi `SKPoint` parametreleri veya [ `CubicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.CubicTo/p/System.Single/System.Single/System.Single/System.Single/System.Single/System.Single/) ayrı aşırıyüklemesi`x` ve `y` parametreleri:
 
 ```csharp
 public void CubicTo (SKPoint point1, SKPoint point2, SKPoint point3)
@@ -38,16 +38,16 @@ public void CubicTo (SKPoint point1, SKPoint point2, SKPoint point3)
 public void CubicTo (Single x1, Single y1, Single x2, Single y2, Single x3, Single y3)
 ```
 
-Eğriyi dağılımı anki noktada başlar. Tam küp Bezier eğrisini dört noktaları tarafından tanımlanır:
+Eğriyi dağılımı geçerli noktada başlar. Tam üçüncü dereceden Bezier eğrisi dört noktaları tarafından tanımlanır:
 
-- başlangıç noktası: geçerli, dağılım veya (0, 0), noktası `MoveTo` çağrılmadıysa
-- İlk denetim noktası: `point1` içinde `CubicTo` çağırın
-- ikinci denetim noktası: `point2` içinde `CubicTo` çağırın
+- başlangıç noktası: geçerli, dağılımı veya (0, 0), işaret `MoveTo` çağrılmadıysa
+- ilk noktası'nı denetleyen: `point1` içinde `CubicTo` çağırın
+- İkinci noktası'nı denetleyen: `point2` içinde `CubicTo` çağırın
 - uç noktası: `point3` içinde `CubicTo` çağırın
 
-Sonuç eğri başlangıç noktadan başlar ve bir uç noktada sona erer. Eğriyi iki denetim noktaları aracılığıyla genellikle iletmez; Bunun yerine bunları doğru eğri çekmesini kadar LIKE mıknatıs işlev.
+Sonuç eğri başlangıç noktadan başlar ve bitiş noktasında sona erer. Eğriyi iki denetim noktaları aracılığıyla genellikle geçirmez; Bunun yerine bunları doğru eğri çekmek için çok benzer mıknatıs işlev.
 
-Deneme tarafından için küp Bézier eğrisi bir fikir almak için en iyi yoludur. Bu amacı **Bezier eğrisi** türetilen sayfa `InteractivePage`. [ **BezierCurvePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml) dosya başlatır `SKCanvasView` ve `TouchEffect`. [ **BezierCurvePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml.cs) arka plan kod dosyası oluşturur dört `TouchPoint` kurucusu nesneleri. `PaintSurface` Olay işleyicisi oluşturur bir `SKPath` sekmesindeki dört temel bir Bézier eğrisi işlemek için `TouchPoint` nesneleri ve ayrıca noktalı tanjant çizgileri denetim noktalarından Uç noktalara çizer:
+Deneme tarafından bir küp Bézier eğrisini almak için en iyi yoludur. Amacı budur **Bezier eğrisi** türetilen sayfa `InteractivePage`. [ **BezierCurvePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml) dosya başlatır `SKCanvasView` ve `TouchEffect`. [ **BezierCurvePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml.cs) arka plan kod dosyası oluşturur dört `TouchPoint` oluşturucusuna nesneleri. `PaintSurface` Olay işleyicisi oluşturur bir `SKPath` dört temel Bézier eğri işlenecek `TouchPoint` nesneleri ve ayrıca noktalı Eğim satırları Uç noktalara denetim noktalarını çizer:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -87,49 +87,49 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Burada, tüm üç platformlarda çalışıyor:
+Burada üç tüm platformlarda çalıştığı:
 
 [![](beziers-images/beziercurve-small.png "Üçlü sayfasının ekran görüntüsü Bezier eğrisi")](beziers-images/beziercurve-large.png#lightbox "Üçlü sayfasının ekran görüntüsü Bezier eğrisi")
 
-Matematiksel, eğri küp Polinomun ' dir. Eğriyi en çok üç noktalarda bir çizgide kesiştiğinden. Başlangıç noktasına eğri her zaman olduğu için ve aynı yönde tanjant, bir çizgide başlangıç noktası ilk denetim noktası. Uç noktada eğri her zaman olduğu için ve aynı yönde tanjant, ikinci denetiminden bir çizgide noktası bitiş noktası.
+Matematiksel olarak, bir küp Polinomun eğri olur. Eğriyi en fazla üç noktalarda düz bir çizgi keser. Başlangıç noktasına eğri her zaman olduğu için ve aynı yönde tanjant, düz bir çizgi başlangıç noktası için ilk denetim noktası. Bitiş noktasında eğri her zaman olduğu için ve aynı yönde tanjant, düz bir çizgi ikinci denetim noktası uç noktasına.
 
-Küp Bézier eğrisi her zaman dört noktası bağlanma dışbükey quadrilateral ile sınırlıdır. Bu adlı bir *dışbükey hull*. Başlangıç ve bitiş noktası arasındaki çizgide üzerinde denetim noktaları kalan, Bézier eğrisi düz bir çizgi işler. Ancak üçüncü ekran gösterdiği gibi Eğri ayrıca kendisini arası.
+Üçüncü dereceden Bézier eğrisi her zaman dört noktası bağlanan bir dışbükey quadrilateral ile sınırlıdır. Bu adlı bir *dışbükey Kabuk*. Başlangıç ve bitiş noktasına arasında düz bir çizgi üzerindeki denetim noktaları yer alan, Bézier eğri düz bir çizgi işler. Ancak üçüncü ekran görüntüsünde gösterildiği gibi eğriyi ayrıca kendisi arası.
 
-Bir yol dağılımı birden çok bağlı küp Bézier eğrileri içerebilir, ancak iki küp Bézier eğrileri arasındaki bağlantıyı yalnızca aşağıdaki üç nokta colinear ise kesintisiz (diğer bir deyişle, bir çizgide bulunan):
+Yol dağılımı birden çok bağlı üçüncü dereceden Bézier eğrileri içerebilir, ancak iki küp Bézier eğrileri arasındaki bağlantı yalnızca, aşağıdaki üç nokta colinear kesintisiz (diğer bir deyişle, düz bir satırda bulunan):
 
-- İkinci ilk eğrisi denetim noktası
-- Ayrıca ikinci eğrinin başlangıç noktası olan ilk eğri bitiş noktası
-- ikinci eğri ilk denetim noktası
+- İkinci ilk eğri denetim noktası
+- Ayrıca ikinci eğrinin başlangıç noktası olan ilk eğrisinin uç noktası
+- ilk ikinci eğrisi denetim noktası
 
-Sonraki makalede [ **SVG yol verileri** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md) kesintisiz bağlı Bézier eğrileri tanımını kolaylaştırmak için bir tesis öğreneceksiniz.
+Sonraki makalede [ **SVG yol verileri** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md) kesintisiz bağlı Bézier eğrileri tanımını kolaylaştırmak için bir özellik keşfedeceksiniz.
 
-Bazen, bir küp Bézier eğrisi işlemek temel parametrik denklemini bilmek yararlıdır. İçin *t* 0 ile 1 arasında parametrik denklemini aşağıdaki gibidir:
+Bazı durumlarda, üçüncü dereceden Bézier eğrisi işleme temel alınan parametreli denklemler bilmek de yararlı olabilir. İçin *t* 0 ile 1 arasında parametreli denklemler aşağıdaki gibidir:
 
 x(t) = (1 – t)³x₀ + 3t(1 – t)²x₁ + 3t²(1 – t)x₂ + t³x₃
 
 y(t) = (1-t) ³y₀ + 3t (1-t) ²y₁ + 3t² (1-t) y₂ + t³y₃
 
-3'ün en yüksek üs küp polynomials bunlar onaylar. Gerektiğini doğrulamak kolayca `t` 0'a eşit, nokta (x₀, y₀), başlangıç noktası olduğu ve ne zaman `t` eşittir 1, (x₃, y₃), uç noktası olduğu noktasıdır. Başlangıç noktasını yakınında (düşük değerler için `t`), ilk denetim noktası (x₁, y₁) güçlü bir efekt ve yakınında uç noktasına sahip ('T yüksek değerler ') ikinci denetim noktası (x₂, y₂) güçlü bir etkisi olmaz.
+En yüksek üs 3 bunların üçüncü dereceden polynomials olduğunu onaylar. Gerektiğini doğrulamak kolayca `t` 0 değerine eşittir; noktası (x₀ y₀), başlangıç noktası olduğu ve ne zaman `t` eşittir 1, (x₃ y₃), bitiş noktası olduğu noktasıdır. Neredeyse başlangıç noktası (düşük değerler için `t`), ilk denetim noktası (x₁, y₁) güçlü efekt ve neredeyse uç noktası olan (yüksek değerler 'T ') ikinci denetim noktası (x₂, y₂) güçlü bir etkisi.
 
 ## <a name="bzier-curve-approximation-to-circular-arcs"></a>Dairesel yaylara için Bézier eğrisi yaklaşık
 
-Bazen, bir Bézier eğrisi dairesel yay işlemek için kullanılacak uygundur. Dört bağlı Bézier eğrileri tam bir daire tanımlayabilirsiniz şekilde küp Bézier eğrisi dairesel yay çok iyi bir Çeyreğin daire kadar yaklaşık. Bu yaklaşık 25 yıldan önce yayımlanan iki makalelerinde ele alınmıştır:
+Bazen, Bézier eğriyi dairesel bir yay işlemek için kullanmak kullanışlıdır. Dört bağlı Bézier eğrileri tam bir daire bu sayede üçüncü dereceden Bézier eğrisi dairesel bir yay çok iyi çeyrek daire kadar yaklaşık. Bu yaklaşık 25 yılı önce yayımlanan iki makalelerde ele alınmıştır:
 
-> Tor Dokken, et al "Yaklaşık olarak eğimi sürekli Bézier eğrileri tarafından daire" *bilgisayar destekli geometrik tasarım 7* 33 41 (1990).
+> Tor Dokken, tarayıcılarınızda, "Daireler eğrilik sürekli Bézier eğrileri tarafından iyi yaklaşığını" *bilgisayar destekli geometrik tasarım 7* 33 41 (1990).
 
-> Michael Goldapp, "Küp Polynomials tarafından dairesel yaylara yaklaşık" *bilgisayar destekli geometrik tasarım 8* 227 238 (1991).
+> Michael Goldapp, "Küp Polynomials tarafından dairesel yaylara yaklaşığını" *bilgisayar destekli geometrik tasarım 8* 227 238 (1991).
 
-Aşağıdaki diyagramda etiketli dört noktalarını gösterir `pto`, `pt1`, `pt2`, ve `pt3` dairesel yay yakın Bézier eğrisi (kırmızı olarak gösterilir) tanımlama:
+Aşağıdaki diyagramda dört noktası etiketli gösterilmektedir `pto`, `pt1`, `pt2`, ve `pt3` tanımlama dairesel bir yay yakın Bézier eğrisi (kırmızı renkte gösterilir):
 
-![](beziers-images/bezierarc45.png "Dairesel yay Bézier eğrisi ile yaklaşık")
+![](beziers-images/bezierarc45.png "Yaklaşık olarak ile Bézier eğriyi dairesel bir yay")
 
-Başlangıç ve bitiş noktalarını satırlarından denetim noktalarına tanjantını daire ve Bézier eğrisi ve bunlar uzunluğu *L*. En iyi Bézier eğrisi dairesel yay yakın yukarıda Alıntı yapılan ilk makale gösterir, bu uzunluğu *L* aşağıdaki gibi hesaplanır:
+Tanjantı daire ve Bézier eğri için başlangıç ve bitiş noktalarını satırlarından denetim noktalarına olan ve uzunluğuna sahip oldukları *L*. En iyi Bézier eğriyi dairesel bir yay oluşturma, yukarıda bahsedilen ilk makale belirten olduğunda bu uzunluğu *L* şöyle hesaplanır:
 
 M = 4 × tan(α / 4) / 3
 
-Dolayısıyla L 0.265 eşittir 45 derece açı çizimde gösterilmektedir. Kod içinde bu değeri dairenin istenen yarıçap çarpılan.
+M 0.265 eşittir bir açısını 45 derecenin çizimde gösterilmektedir. Kod içinde bu değer dairenin istenen yarıçap çarpılmasına.
 
-**Bezier dairesel yay** sayfası bir Bézier eğrisi en fazla 180 derece arasında değişen açı dairesel yay yaklaşık tanımlamayla denemeler sağlar. [ **BezierCircularArcPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml) dosya başlatır `SKCanvasView` ve `Slider` açı seçme. `PaintSurface` Olay işleyicisini [ **BezierCircularArgPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml.cs) arka plan kod dosyasına (0, 0) noktası Kanvasın ortasına ayarlamak için bir dönüşüm kullanır. Karşılaştırma için bu noktasında ortalanmış bir daire çizer ve Bézier eğrisi için iki denetim noktaları hesaplar:
+**Dairesel Yayı Bezier** sayfası dairesel bir yay en fazla 180 derece arasında değişen açı yaklaşık olarak belirlemenizi sağlayan Bézier eğri tanımlamayla denemenizi sağlar. [ **BezierCircularArcPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml) dosya başlatır `SKCanvasView` ve `Slider` açı seçme. `PaintSurface` Olay işleyicisinde [ **BezierCircularArgPage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCircularArcPage.xaml.cs) arka plan kod dosyası dönüşüm tuval merkezine noktası (0, 0) ayarlamak için kullanır. Karşılaştırma için o noktasında ortalanmış bir daire çizen ve ardından iki denetim noktaları Bézier eğri için hesaplar:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -203,21 +203,21 @@ float Magnitude(SKPoint v)
 
 ```
 
-Başlangıç ve bitiş noktaları (`point0` ve `point3`) normal parametrik denklemini daire için temel alınarak hesaplanır. Daireye adresindeki ortalanır olduğundan (0, 0), aşağıdaki noktaları da radyal vektörleri olarak daireye Merkezi'nden çevresini işlenebilir. Daireye tanjantını dik bu Radyal vektörüne altındadır şekilde olan satırları denetim noktaları açıktır. Vektör sağ açıyla yalnızca özgün vektör takas X ve Y koordinatları ve bunlardan birini negatif yapılan türüdür.
+Başlangıç ve bitiş noktalarını (`point0` ve `point3`) normal parametreli denklemler daire için temel alınarak hesaplanır. Daire adresindeki ortalanır olduğundan (0, 0), bu noktaları ayrıca Radyal vektör olarak dairenin Merkezi'nden çevresi için işlenebilir. Dik Açılı Radyal bu vektörler için olur böylece daireye tanjantı satırları denetim noktaları açıktır. Dik açılı bir vektörünü yalnızca özgün takas X ve Y koordinatları ve bunlardan birinin negatif yapılan vektördür.
 
-Üç farklı açıları ile üç platformlarda çalışan program şöyledir:
+Üç farklı açıları ile üç platformları üzerinde çalışan bir program şöyledir:
 
-[![](beziers-images/beziercirculararc-small.png "Üçlü sayfasının ekran görüntüsü Bezier dairesel yay")](beziers-images/beziercirculararc-large.png#lightbox "Üçlü sayfasının ekran görüntüsü Bezier dairesel yay")
+[![](beziers-images/beziercirculararc-small.png "Üçlü sayfasının ekran görüntüsü dairesel Yayı Bezier")](beziers-images/beziercirculararc-large.png#lightbox "Üçlü sayfasının ekran görüntüsü dairesel Yayı Bezier")
 
-Üçüncü ekran yakından bakın ve Bézier eğrisi özellikle Yarım Daireli 180 derece açıdır, ancak 90 derece açıdır görüntülendiğinde çeyrek daire yalnızca daha iyi uyacak şekilde göründüğü iOS ekran gösterir farklılık göstermesi gerektiğini görürsünüz.
+Üçüncü ekran yakından bakın ve Bézier eğrisi özellikle bir Yarım Daireli 180 derece açı, ancak 90 derece açıdır görüntülendiğinde çeyrek-daire düzgün uyacak şekilde görünüyor iOS ekranındaki gösterir farklılık göstermesi gerektiğini görürsünüz.
 
 Çeyrek daire şöyle yönlendirilmiş olduğunda, iki denetim noktası koordinatları hesaplama oldukça kolaydır:
 
-![](beziers-images/bezierarc90.png "Yaklaşık bir Bézier eğrisi çeyrek daire olarak")
+![](beziers-images/bezierarc90.png "Çeyrek daire Bézier eğrisi yaklaşığını")
 
-RADIUS dairenin 100, ardından olup olmadığını *L* 55 ve anımsaması kolay bir sayı ise.
+RADIUS dairenin 100, ardından olup olmadığını *L* 55 olduğu ve bir kolayca numarası unutmayın olmasıdır.
 
-**Daireye karesini** sayfa canlandırır şekil bir daire ve kare arasında. Daireye olan koordinatları bu dizi tanımında ilk sütununda gösterilen dört Bézier eğrileri tarafından benzetilir [ `SquaringTheCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/SquaringTheCirclePage.cs) sınıfı:
+**Daire karesini** sayfası bir daire ve bir kare arasında bir rakam canlandırın. Daire koordinatlarının bu dizi tanımında ilk sütununda gösterilen dört Bézier eğrileri tarafından benzetilir [ `SquaringTheCirclePage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/SquaringTheCirclePage.cs) sınıfı:
 
 ```csharp
 public class SquaringTheCirclePage : ContentPage
@@ -242,9 +242,9 @@ public class SquaringTheCirclePage : ContentPage
 }
 ```
 
-İkinci sütun, yaklaşık dairenin alanı ile aynı alanıdır karesini tanımlayan dört Bézier eğrileri koordinatlarını içerir. (Köşeli ile çizim *tam* alanıdır verilmiş bir daire olarak Klasik çözümlenemeyen geometrik sorun [daireye karesini](https://en.wikipedia.org/wiki/Squaring_the_circle).) Kare Bézier eğrileri ile işlemeye, her eğri için iki denetim noktaları aynıdır ve Bézier eğrisi düz bir çizgi işlenen için başlangıç ve bitiş noktalarını colinear oldukları.
+İkinci sütunda, alanı yaklaşık dairenin alanının aynı olan bir kare tanımlayan dört Bézier eğrileri içerir. (Çizim ile bir kare *tam* alanıdır verilmiş bir daire olarak Klasik çözümlenemeyen geometrik sorununu [daire karesini](https://en.wikipedia.org/wiki/Squaring_the_circle).) Bir kare Bézier eğrileri ile işleme için her eğri için iki denetim noktaları aynıdır ve Bézier eğri düz bir çizgi işlenebilmesi başlangıç ve bitiş noktalarını ile colinear oldukları.
 
-Ara değerli değerleri animasyon dizisinin üçüncü sütun içindir. Sayfa bir süreölçer 16 milisaniye cinsinden için ayarlar ve `PaintSurface` işleyicisi o oranda çağrılır:
+Üçüncü sütunda dizinin bir animasyonun ilişkilendirilmiş değerleri içindir. Sayfanın bir zamanlayıcı 16 milisaniye cinsinden ayarlar ve `PaintSurface` işleyicisi hızı çağrılır:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -287,13 +287,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Puanları bir sinusoidally salınım yapan değerine göre ilişkilendirileceğini `t`. Ara değerli noktaları ardından dört bağlı Bézier eğrileri bir dizi oluşturmak için kullanılır. Bir daire ilerlemesini kare gösteren üç platformlarda çalışan animasyon şöyledir:
+Sinusoidally salınım yapan bir değeri temel alınarak noktaları ilişkilendirilmiş `t`. İlişkilendirilmiş noktaları, ardından dört bağlı Bézier eğrileri bir dizi oluşturmak için kullanılır. Bir daire kare ilerlemesini gösteren üç platformlarda çalışan animasyonu şu şekildedir:
 
-[![](beziers-images/squaringthecircle-small.png "Üçlü ekran görüntüsü Squaring daire sayfa")](beziers-images/squaringthecircle-large.png#lightbox "Üçlü ekran görüntüsü Squaring daire sayfası")
+[![](beziers-images/squaringthecircle-small.png "Üç ekran görüntüsü Squaring daire sayfanın")](beziers-images/squaringthecircle-large.png#lightbox "üç ekran görüntüsü Squaring daire sayfası")
 
-Bu tür bir animasyon dairesel yaylara ve düz çizgiler işlenmek üzere algorithmically yeterince esnektir Eğriler olmadan olanaksız olacaktır.
+Böyle bir animasyonu dairesel yaylara ve düz çizgiler işlenecek algorithmically esnektir eğrileri olmadan mümkün olacaktır.
 
-**Bezier sonsuz** sayfası aynı zamanda bir Bézier eğrisi dairesel yay yaklaşık yeteneğini avantajlarından yararlanır. Burada `PaintSurface` işleyicisinden [ `BezierInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierInfinityPage.cs) sınıfı:
+**Bezier sonsuz** sayfa da yararlanır Bézier eğriyi dairesel bir yay yaklaşık olanağı. İşte `PaintSurface` işleyicisinden [ `BezierInfinityPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierInfinityPage.cs) sınıfı:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -334,23 +334,23 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Bunun nasıl ilişkili olduğunu görmek için bu koordinatları grafik kağıda çizmek için iyi bir alıştırma olabilir. Sonsuz oturum (0, 0) nokta etrafında ortalanır ve iki döngüler merkezlerinin sahip (–150, 0) ve (150, 0) ve 100 yarıçaplarını. Dizi `CubicTo` komutları, gördüğünüz –95 ve –205 değerlerine alma denetim noktaları koordinatlarını X (Bu değerler –150 artı ve eksi 55), 205 ve 95 (150 artı ve eksi 55) yanı sıra 250 ve sağ ve sol kenarı –250. Tek özel durum, sonsuzluk oturum kendisini Merkezi'nde kestiği durumdur. Bu durumda, kontrol noktası koordinatları ile 50 ve – 50 eğrinin merkezini yakın çıkışı düzeltmek için birlikte bulunur.
+Bu koordinatları birbirleriyle nasıl ilişkili olduğunu görmek için graf kağıda çizmek için iyi bir alıştırma olabilir. Sonsuz oturum (0, 0) nokta çevresinde ortalanır ve iki döngüler merkezlerinin sahip (–150, 0) ve (150, 0) ve 100 yarıçaplarını. Dizi `CubicTo` komutları, gördüğünüz –95 ve –205 değerleri üzerinde alma denetim noktalarının koordinatları X (Bu değerler –150 artı ve eksi 55), 205 ve 95 (150 artı ve eksi 55) yanı sıra 250 ve –250 sağ ve sol kenarı için. Tek özel durum, sonsuzluk oturum kendisini Merkezi'nde aştığında andır. Bu durumda, kontrol noktası koordinatları 50 ve – 50 eğrinin ortasında kullanıma düzeltmek için birlikte bulunur.
 
-Tüm üç platformlarda sonsuz oturum şöyledir:
+Üç tüm platformlarda sonsuz oturum şöyledir:
 
-[![](beziers-images/bezierinfinity-small.png "Üçlü sayfasının ekran görüntüsü Bézier sonsuz")](beziers-images/bezierinfinity-large.png#lightbox "Üçlü sayfasının ekran görüntüsü Bézier sonsuz")
+[![](beziers-images/bezierinfinity-small.png "Üçlü sayfasının ekran görüntüsü Bézier sonsuz")](beziers-images/bezierinfinity-large.png#lightbox "Bézier sonsuz sayfanın üç ekran görüntüsü")
 
-Tarafından işlenen sonsuz oturum daha doğru merkezi biraz daha yumuşak **yay sonsuz** gelen sayfa [ **yay çizmek için üç yol** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md) makalesi.
+Tarafından işlenen sonsuzluk işareti merkezi biraz daha yumuşak **yay sonsuz** gelen sayfasında [ **yay çizmenin üç yolu** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md) makalesi.
 
 ## <a name="the-quadratic-bzier-curve"></a>İkinci dereceden Bézier eğrisi
 
-İkinci dereceden Bézier eğrisi yalnızca bir denetim noktası varsa ve eğri yalnızca üç noktaları tarafından tanımlanır: başlangıç noktasını, denetim noktası ve bitiş noktası. İkinci derece Polinomun eğri olacak şekilde, 2, en yüksek üs olması dışında parametrik denklemini küp Bézier eğrisi çok benzer:
+İkinci dereceden Bézier eğri yalnızca bir denetim noktası vardır ve yalnızca üç noktayla eğri tanımlanır: başlangıç noktasını, denetim noktası ve bitiş noktası. İkinci dereceden bir polinom eğri, bu nedenle, 2, en yüksek üs olması dışında parametreli denklemler üçüncü dereceden Bézier eğriye oldukça benzerdir:
 
 x(t) = (1-t) ²x₀ + 2t (1-t) x₁ + t²x₂
 
 y(t) = (1-t) ²y₀ + 2t (1-t) y₁ + t²y₂
 
-İkinci dereceden Bézier eğrisi yolunu eklemek için kullanın [ `QuadTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.QuadTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/) yöntemi veya [ `QuadTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.QuadTo/p/System.Single/System.Single/System.Single/System.Single/) ayrı ile aşırı `x` ve `y` koordinatları:
+Bir yol Bézier ikinci dereceden bir eğri eklemek için [ `QuadTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.QuadTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/) yöntemi veya [ `QuadTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.QuadTo/p/System.Single/System.Single/System.Single/System.Single/) aşırı yüklemesi olan ayrı `x` ve `y` koordinatları:
 
 ```csharp
 public void QuadTo (SKPoint point1, SKPoint point2)
@@ -358,9 +358,9 @@ public void QuadTo (SKPoint point1, SKPoint point2)
 public void QuadTo (Single x1, Single y1, Single x2, Single y2)
 ```
 
-İçin geçerli konumundan eğri yöntemleri eklemek `point2` ile `point1` denetim noktası olarak.
+Yöntemleri için geçerli konumdan bir eğri eklemek `point2` ile `point1` denetim noktası olarak.
 
-İkinci derece Bézier eğrileri deneyimleyebilirsiniz **ikinci dereceden eğrisi** çok benzer sayfa **Bezier eğrisi** yalnızca üç dokunma noktaları sahip dışında sayfa. Burada `PaintSurface` işleyicisinde [ **QuadraticCurve.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/QuadraticCurvePage.xaml.cs) arka plan kod dosyası:
+İkinci dereceden Bézier Eğriler deneyimleyebilirsiniz **ikinci dereceden bir eğri** çok benzer sayfasında **Bezier eğrisi** yalnızca üç dokunma sahip dışında sayfa. İşte `PaintSurface` işleyicisinde [ **QuadraticCurve.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/QuadraticCurvePage.xaml.cs) arka plan kod dosyası:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -399,35 +399,35 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Ve burada tüm üç platformlarda çalışan:
+Ve burada üç tüm platformlarda çalışıyor:
 
-[![](beziers-images/quadraticcurve-small.png "Üçlü sayfasının ekran görüntüsü ikinci dereceden eğrisi")](beziers-images/quadraticcurve-large.png#lightbox "Üçlü sayfasının ekran görüntüsü ikinci dereceden eğrisi")
+[![](beziers-images/quadraticcurve-small.png "Üçlü sayfasının ekran görüntüsü ikinci dereceden bir eğri")](beziers-images/quadraticcurve-large.png#lightbox "ikinci dereceden bir eğri sayfanın üç ekran görüntüsü")
 
-Noktalı çizgiler başlangıç noktasını ve bitiş noktası eğri teğet ve denetim noktasına karşıladığından.
+Noktalı çizgilerin tanjantı eğrinin başlangıç noktası ve bitiş noktası için olan ve denetim noktasına karşılamak.
 
-İkinci derece Bézier eğrisi genel şeklin gerekiyorsa, ancak yalnızca bir denetim noktası yerine iki kolaylık tercih iyi olur. İkinci derece Bézier, dahili Skia elips yaylar işlemek için kullanılan neden olan tüm diğer eğri den daha verimli bir şekilde işler.
+İkinci dereceden Bézier genel bir şeklin eğri gerekir, ancak yalnızca bir denetim noktası yerine iki kolaylık tercih uygundur. İkinci dereceden Bézier, dahili Skia elips yaylar işlemek için kullanılan neden olan tüm diğer eğrisi değerinden daha verimli bir şekilde işler.
 
-Ancak, ikinci dereceden Bézier eğrisi şeklini birden çok ikinci derece Béziers elips yay yaklaşık için gereken neden olduğu elips, değil. İkinci derece Bézier bunun yerine bir parabol parçasıdır.
+Ancak, ikinci dereceden Bézier eğrinin şeklini birden çok ikinci dereceden Béziers elips yay yaklaşık olarak belirlemenizi sağlayan gerekli olmasının nedeni de budur elips, değildir. İkinci dereceden Bézier bir parabol bir parçası olur.
 
 ## <a name="the-conic-bzier-curve"></a>Conic Bézier eğrisi
 
-Conic Bézier eğrisi &mdash; olarak da bilinen rasyonel ikinci dereceden Bézier eğrisi &mdash; Bézier eğrileri ailesine görece son ektir. İkinci dereceden Bézier eğrisi gibi bir başlangıç noktası, bir uç noktası ve bir denetim noktası rasyonel ikinci dereceden Bézier eğrisi içerir. Ancak rasyonel ikinci dereceden Bézier eğrisi de gerektirir bir *ağırlık* değeri. Bu adlı bir *rasyonel* parametrik formüller oranları içerdiğinden ikinci derece.
+Conic Bézier eğrisi &mdash; olarak da bilinen rasyonel ikinci dereceden Bézier eğrisi &mdash; Bézier eğrileri ailesinin görece son ektir. İkinci dereceden Bézier eğri gibi bir başlangıç noktası, bir uç noktası ve bir denetim noktası rasyonel ikinci dereceden Bézier eğrisi gerektirir. Ayrıca rasyonel ikinci dereceden Bézier eğrisi gerektirir, ancak bir *ağırlık* değeri. Çağrıldığı bir *rasyonel* parametrik formülleri oranları hatalarıyla ilgili olduğundan ikinci dereceden.
 
-Parametrik denklemini X ve Y aynı payda paylaşmak oranları için. Paydası denklemi işte *t* 0'dan arasında değişen 1 ve bir ağırlık değeri *w*:
+Parametreli denklemler X ve Y aynı paydası paylaşan oranları için. İşte paydası denklemi *t* 0 ile arasında değişen 1 ve bir ağırlık değeri *w*:
 
 d(t) = (1 – t)² + 2wt(1 – t) + t²
 
-Teorik, rasyonel ikinci derece, her üç koşullarını üç ayrı ağırlık değerleri içerebilir ancak bu yalnızca bir ağırlık değeri orta terimini için basit hale getirilebilir.
+Teoride, üç ayrı ağırlık değerleri her üç terimlerin bir rasyonel dereceden içerebilir ancak bu yalnızca bir ağırlık değeri orta terimi için basitleştirilebilir.
 
-Orta terim de ağırlık değeri içerir ve ifade paydası tarafından bölünür dışında X ve Y koordinatları için parametrik denklemini parametrik denklemini ikinci derece Bézier için benzerdir:
+Orta terimi ağırlık değeri de içerir ve ifade bölündüğünde dışında X ve Y koordinatları için parametreli denklemler ikinci dereceden Bézier için parametreli denklemler benzerdir:
 
-x(t) = ((1 – t) ²x₀ + 2wt (1-t) x₁ + t²x₂)) ÷ d(t)
+x(t) = ((1 – t) ²x₀ + 2wt (1-t) x₁ + t²x₂)) bölü; d(t)
 
-y(t) = ((1 – t) ²y₀ + 2wt (1-t) y₁ + t²y₂)) ÷ d(t)
+y(t) = ((1 – t) ²y₀ + 2wt (1-t) y₁ + t²y₂)) bölü; d(t)
 
-Rasyonel ikinci derece Bézier eğrileri de denir *conics* tam olarak herhangi bir conic bölümü parçalarını gösterebilir çünkü &mdash; hiperboller, paraboller, üç nokta ve daireler.
+İkinci dereceden rasyonel Bézier eğrileri da verilir *conics* herhangi bir conic bölümü parçalarını tam olarak temsil edebilir çünkü &mdash; hiperboller, paraboller, elips ve daireler.
 
-Rasyonel ikinci dereceden Bézier eğrisi yolunu eklemek için kullanın [ `ConicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ConicTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/System.Single/) yöntemi veya [ `ConicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ConicTo/p/System.Single/System.Single/System.Single/System.Single/System.Single/) ayrı ile aşırı `x` ve `y` koordinatları:
+İkinci dereceden bir rasyonel Bézier eğri için bir yol eklemek için [ `ConicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ConicTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/System.Single/) yöntemi veya [ `ConicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ConicTo/p/System.Single/System.Single/System.Single/System.Single/System.Single/) aşırı yüklemesi olan ayrı `x` ve `y` koordinatları:
 
 ```csharp
 public void ConicTo (SKPoint point1, SKPoint point2, Single weight)
@@ -437,7 +437,7 @@ public void ConicTo (Single x1, Single y1, Single x2, Single y2, Single weight)
 
 En son fark `weight` parametresi.
 
-**Conic eğri** sayfası bu Eğriler denemeler sağlar. `ConicCurvePage` Sınıfı türer `InteractivePage`. [ **ConicCurvePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml) dosya başlatır bir `Slider` ağırlık değeri 2 ile –2 arasındaki seçin. [ **ConicCurvePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml.cs) arka plan kod dosyası oluşturur üç `TouchPoint` nesneleri ve `PaintSurface` işleyici yalnızca denetime teğet çizgili sonuç eğri işler noktalar:
+**Conic eğri** sayfası bu Eğriler denemenizi sağlar. `ConicCurvePage` Sınıf türetilir `InteractivePage`. [ **ConicCurvePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml) dosya örnekleyen bir `Slider` – 2. ve 2 arasındaki bir ağırlık değeri seçin. [ **ConicCurvePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCurvePage.xaml.cs) arka plan kod dosyası oluşturur üç `TouchPoint` nesneleri ve `PaintSurface` işleyici yalnızca sonuç eğri denetim Eğim satırlarla işler noktaları:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -477,21 +477,21 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Burada, tüm üç platformlarda çalışıyor:
+Burada üç tüm platformlarda çalıştığı:
 
-[![](beziers-images/coniccurve-small.png "Üçlü sayfasının ekran görüntüsü Conic eğri")](beziers-images/coniccurve-large.png#lightbox "Üçlü sayfasının ekran görüntüsü Conic eğri")
+[![](beziers-images/coniccurve-small.png "Üçlü sayfasının ekran görüntüsü Conic eğri")](beziers-images/coniccurve-large.png#lightbox "Conic eğri sayfanın üç ekran görüntüsü")
 
-Gördüğünüz gibi denetim noktası ağırlık daha yüksek olduğunda daha doğru eğri çekme görünüyor. Ağırlık sıfır eğri başlangıç noktasından bir çizgide uç noktasına olur.
+Gördüğünüz gibi denetim noktası daha doğru eğri ağırlığını daha yüksek olduğunda çekme gibi görünüyor. Ağırlık sıfır eğri uç noktasına düz bir çizgi başlangıç noktasından olur.
 
-Teorik, negatif ağırlıkları izin verilir ve Eğ eğriye neden *hemen* denetim noktasından. Ancak, belirli değerleri için negatif olmasını parametrik denklemini paydanın – 1 veya nedeni aşağıda ağırlık verir *t*. Büyük olasılıkla bu nedenle, negatif ağırlıkları içinde göz ardı edilir `ConicTo` yöntemleri. **Conic eğri** program negatif ağırlıkları ayarlamanıza olanak tanır ancak deneyerek görebileceğiniz gibi negatif ağırlıkları sıfır ağırlığını aynı etkiye sahip ve işlenmek üzere bir çizgide neden.
+Teoride, negatif ağırlık verilir ve Eğ eğrinin neden *hemen* denetim noktasından. Ancak, belirli değerleri için negatif olmasını parametreli denklemler içinde paydası getirilen-1 veya nedeni aşağıda ağırlık verme *t*. Büyük olasılıkla bu nedenle negatif ağırlıkları göz ardı edilmektedirler `ConicTo` yöntemleri. **Conic eğri** program negatif ağırlıkları ayarlamanızı sağlar, ancak oynamalar yaparak görebileceğiniz gibi negatif ağırlıkları ağırlık sıfır ile aynı etkiye sahip ve işlenecek düz bir çizgi neden.
 
-Denetim noktası ve ağırlığını kullanmayı türetilen çok kolaydır `ConicTo` dairesel yay kadar çizmek için yöntemi (ancak değil de dahil olmak üzere) bir Yarım Daireli. Aşağıdaki şemada denetim noktasından başlangıç ve bitiş noktalarını Eğim satırlarından karşılar.
+Denetim noktası ve kullanılacak ağırlık türetmek çok kolaydır `ConicTo` dairesel bir yay kadar çizmek için yöntemi (ancak değil de dahil olmak üzere) bir Yarım Daireli. Aşağıdaki diyagramda, başlangıç ve bitiş noktalarını Eğim satırlarından denetim noktasına karşılayın.
 
 ![](beziers-images/conicarc.png "Dairesel yay conic yay işlenmesi")
 
-Trigonometri dairenin merkezi denetim noktasından uzaklığını belirlemek için kullanabilirsiniz: Açının kosinüsü yarım α tarafından bölünmüş daire RADIUS değil. Başlangıç ve bitiş noktaları arasında dairesel yay çizmek için aynı bu yarım açının kosinüsünü için ağırlığını ayarlayın. Açı 180 derece ise, ardından tanjant çizgileri hiçbir zaman karşılamak ve Ağırlık sıfırdır dikkat edin. Ancak açıları küçük için 180 derece, matematik düzgün çalışır.
+Trigonometri dairenin merkezi denetim noktasından uzaklığı belirlemek için kullanabilirsiniz: Açının kosinüsü yarım α tarafından ayrılmış halka yarıçapı öyledir. Başlangıç ve bitiş noktaları arasında dairesel bir yay çizmek için bu aynı yarı açının kosinüsünü için ağırlık ayarlayın. 180 derece açı, ardından hiçbir zaman Eğim satırları karşılamak ve Ağırlık sıfır olduğuna dikkat edin. Ancak açıları değerinden için 180 derece, matematik düzgün çalışır.
 
-**Conic dairesel yay** sayfa bu gösterir. [ **ConicCircularArc.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml) dosya başlatır bir `Slider` açı seçme. `PaintSurface` İşleyicisinde [ **ConicCircularArc.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml.cs) arka plan kod dosyasına hesaplar denetim noktası ve Ağırlık:
+**Conic dairesel yay** sayfası bu gösterir. [ **ConicCircularArc.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml) dosya örnekleyen bir `Slider` açı seçme. `PaintSurface` İşleyicisinde [ **ConicCircularArc.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/ConicCircularArcPage.xaml.cs) arka plan kod dosyası hesaplar denetim noktası ve ağırlığı:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -541,13 +541,13 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Gördüğünüz gibi arasında visual fark yoktur `ConicTo` yolu kırmızı olarak gösterilir ve başvuru için görüntülenen temel daire:
+Gördüğünüz gibi görsel arasında fark yoktur `ConicTo` kırmızıyla gösterilen yolu ve görüntülenen başvurusu için temel alınan daire:
 
 [![](beziers-images/coniccirculararc-small.png "Üçlü sayfasının ekran görüntüsü Conic dairesel yay")](beziers-images/coniccirculararc-large.png#lightbox "Üçlü sayfasının ekran görüntüsü Conic dairesel yay")
 
 Ancak, açı 180 derece ve matematik başarısız olarak ayarlayın.
 
-Bu durumda talihsiz, `ConicTo` negatif ağırlıkları desteklemez (üzerinde parametrik denklemini göre) teorik olarak, başka bir çağrıyı ile daire tamamlanabilir çünkü `ConicTo` aynı noktaları ancak ağırlık negatif bir değer. Bu tam bir daire yalnızca iki oluşturma olanak tanır `ConicTo` Eğriler bağlı herhangi bir açıda arasında (ancak dahil değil) olarak sıfır derece ve 180 derece.
+Bu durumda talihsiz, `ConicTo` negatif ağırlıkları desteklemez (üzerinde parametreli denklemler göre) teorik olarak, başka bir çağrı ile daire tamamlanabilir çünkü `ConicTo` aynı noktalarını ancak ağırlığı negatif bir değer. Bu tam bir daire ile iki oluşturmaya izin `ConicTo` eğrileri, her açı arasında (ancak dahil değil) temelinde derece ve 180 derece sıfır.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 07/08/2018
-ms.openlocfilehash: 865a06e9fa430e195ce4ea3c6088785d9513dbf6
-ms.sourcegitcommit: cfb72be633e335147d156af3ef9527151b9e31d9
+ms.openlocfilehash: 4e1249b7a9c1e9797cbc758c3bd1b83f87d47431
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39030710"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615154"
 ---
 # <a name="introduction-to-ios-12"></a>İOS 12 giriş
 
@@ -21,11 +21,12 @@ ms.locfileid: "39030710"
 > [!WARNING]
 > Xamarin'in iOS 12 desteği, hatalar, içerdiği anlamına gelen değil özelliği tamamlamak, şu anda Önizleme aşamasında olan ve değişebilir. Yalnızca deneme kullanın.
 
-> [!NOTE]
-> - Gözden geçirme [Başlarken](get-started.md) Xamarin ile iOS 12 uygulama oluşturmaya başlama hakkında yönergeler için kılavuz.
-> - Daha fazla bilgi için Xamarin Önizleme okuma [sürüm blog gönderisini](https://releases.xamarin.com/preview-release-xcode-10-beta-3/).
-
 Bu belge üst düzey hangi Xamarin'in preview için sürüm C# bağlamaları sağlar. bazı iOS 12 API açıklamasını sağlar.
+
+Xamarin ile iOS 12 uygulamalar oluşturmaya başlamak için göz atın:
+
+- [Başlangıç Kılavuzu](get-started.md)
+- Xamarin Önizleme [sürüm blog gönderisi](https://releases.xamarin.com/preview-release-xcode-10-beta-5/)
 
 ## <a name="arkit-2"></a>ARKit 2
 
@@ -69,8 +70,12 @@ tanıtılan iOS 11.3 [sağlık kayıtlarına](https://www.apple.com/healthcare/h
 
 İOS 12'de, normal iMessage uygulama olarak veya bir fotoğraf veya video efekti bağlamında çalıştırmak uygulamalara izin ver sunu bağlamı, iMessage uygulamaları destekler.
 
+## <a name="vision-framework"></a>Vision çerçevesi
+
+Vision çerçevesi, yüzleri çeşitli yönleriyle algılayabilir bir geliştirilmiş yüz algılayıcısı içerir. Ayrıca, belirli bir işleme çerçevesi algoritması düzeltmesini seçmek için istek düzeltmeler artık kullanılabilir.
+
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [İOS (Apple) 12 Get hazır](https://developer.apple.com/ios/)
 - [iOS 12 Önizleme (Apple)](https://www.apple.com/ios/ios-12-preview/)
-- Xamarin Önizleme [sürüm blog gönderisi](https://releases.xamarin.com/preview-release-xcode-10-beta-3/)
+- Xamarin Önizleme [sürüm blog gönderisi](https://releases.xamarin.com/preview-release-xcode-10-beta-5/)

@@ -2,17 +2,17 @@
 title: Oluşturma ve SkiaSharp bit eşlemler üzerinde çizim
 description: SkiaSharp bit eşlemleri oluşturmanıza ve bunları temel alan tuval oluşturarak bu bit eşlemler üzerinde çizin öğrenin.
 ms.prod: xamarin
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 ms.assetid: 79BD3266-D457-4E50-BDDF-33450035FA0F
 author: charlespetzold
 ms.author: chape
 ms.date: 07/17/2018
-ms.openlocfilehash: fa32b2bdb95044c8171542ff4156ec3c15747372
-ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
+ms.openlocfilehash: c8ddf8c0829cea319dd93dd9c3686b94ed8eb89e
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39131094"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615596"
 ---
 # <a name="creating-and-drawing-on-skiasharp-bitmaps"></a>Oluşturma ve SkiaSharp bit eşlemler üzerinde çizim
 

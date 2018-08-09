@@ -1,46 +1,46 @@
 ---
-title: Eğme dönüştürmesi
-description: Bu makalede eğme dönüştürmesi Eğimli grafik nesneleri SkiaSharp içinde nasıl oluşturabileceğiniz açıklanmaktadır ve bu örnek kodu ile gösterir.
+title: Eğme dönüşümü
+description: Bu makalede, eğme dönüşümü içinde SkiaSharp Eğimli grafik nesneleri nasıl oluşturacağınızı açıklar ve bu örnek kod ile gösterir.
 ms.prod: xamarin
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 ms.assetid: FDD16186-E3B7-4FF6-9BC2-8A2974BFF616
 author: charlespetzold
 ms.author: chape
 ms.date: 03/20/2017
-ms.openlocfilehash: 8a0d17f5cdc790aed2bd8fd671563378d5d523b1
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 951fc02dfff1721c1391c5d0c8a21452a156cfdb
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35244087"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615359"
 ---
-# <a name="the-skew-transform"></a>Eğme dönüştürmesi
+# <a name="the-skew-transform"></a>Eğme dönüşümü
 
-_Eğme dönüştürmesi Eğimli grafik nesneleri SkiaSharp içinde nasıl oluşturabileceğinizi bakın_
+_Eğme dönüşümü içinde SkiaSharp Eğimli grafik nesneleri nasıl oluşturabileceğiniz konusuna bakın._
 
-SkiaSharp içinde bu görüntüdeki gölge gibi grafik nesneleri eğme dönüştürmesi Eğimli:
+SkiaSharp gölge bu görüntüdeki gibi grafik nesneleri eğme dönüşümü Eğimli:
 
-![](skew-images/skewexample.png "Gölge metin eğme programdan eğriltme örneği")
+![](skew-images/skewexample.png "Eğriltme gölge metin programından eğriltme örneği")
 
-Eğme dikdörtgenler parallelograms dönüştürür, ancak çarpık elips hala elips olur.
+Eğriltme dikdörtgenler parallelograms dönüştürür ancak dengesiz bir elips elips olmaya devam eder.
 
-Xamarin.Forms çevirisi, ölçeklendirme ve döndürme özelliklerini tanımlamasına rağmen eğme için Xamarin.Forms içinde karşılık gelen bir özellik yok.
+Xamarin.Forms, çeviri, ölçeklendirme ve döndürme için özellikleri tanımlar. ancak, eğme için Xamarin.Forms içinde karşılık gelen bir özellik yok.
 
-[ `Skew` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Skew/p/System.Single/System.Single/) Yöntemi `SKCanvas` yatay eğme ve dikey için iki bağımsız değişken eğme kabul eder:
+[ `Skew` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Skew/p/System.Single/System.Single/) Yöntemi `SKCanvas` eğriltmek için eğriltme yatay ve dikey iki bağımsız değişkeni kabul eder:
 
 ```csharp
 public void Skew (Single xSkew, Single ySkew)
 ```
 
-İkinci bir [ `Skew` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Skew/p/SkiaSharp.SKPoint/) yöntemi bu bağımsız değişkenlerden tek bir araya getiren `SKPoint` değeri:
+İkinci [ `Skew` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Skew/p/SkiaSharp.SKPoint/) yöntemi tek bir bağımsız değişkenleri birleştiren `SKPoint` değeri:
 
 ```csharp
 public void Skew (SKPoint skew)
 ```
 
-Ancak, bu iki yöntemden birini yalıtım modunda kullanıyor olmanız, olası değil.
+Ancak, bu iki yöntemden birini yalıtım modunda kullanacaksınız, düşüktür.
 
-**Eğme denemeler** eğme ile denemeler sayfa sağlar –10 ile 10 arasında bu aralık değerleri. Bir metin dizesi iki elde eğme değerlerle sayfanın sol üst köşesinde konumlandırılır `Slider` öğeleri. Burada `PaintSurface` işleyicisinde [ `SkewExperimentPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SkewExperimentPage.xaml.cs) sınıfı:
+**Eğme deneme** değerleri –10 ve 10 arasındaki eğriltme ile denemeler sayfa sağlar. Bir metin dizesi sayfanın sol üst köşesinde bulunan iki elde eğriltme değerlerle konumlandırılmış `Slider` öğeleri. İşte `PaintSurface` işleyicisinde [ `SkewExperimentPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SkewExperimentPage.xaml.cs) sınıfı:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -68,27 +68,27 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Değerleri `xSkew` bağımsız değişkeni kaydırma metni sağa pozitif değerler veya negatif değerler için sol alt. Değerleri `ySkew` aşağı metnin sağına pozitif değerler veya negatif değerler için kaydır:
+Değerleri `xSkew` bağımsız değişken pozitif değerler için hemen metin veya negatif değerler için sol alt kısmındaki kaydır. Değerleri `ySkew` metnin sağına pozitif değerler için veya negatif değerler için shift:
 
-[![](skew-images/skewexperiment-small.png "Üçlü sayfasının ekran görüntüsü eğme deneme")](skew-images/skewexperiment-large.png#lightbox "Üçlü sayfasının ekran görüntüsü eğme deneme")
+[![](skew-images/skewexperiment-small.png "Üçlü sayfasının ekran görüntüsü eğme deneme")](skew-images/skewexperiment-large.png#lightbox "Üçlü sayfasının ekran görüntüsü deneme eğme")
 
-Varsa `xSkew` , negatif olduğundan `ySkew`, döndürme, sonucu olan ancak biraz UWP görüntü gösterir ayrıca ölçeklendirilmiş.
+Varsa `xSkew` 'in negatifi olduğu `ySkew`, döndürme, sonuç, ancak biraz UWP görünen gösterir ayrıca Ölçeklendirildi.
 
-Dönüştürme formüller aşağıdaki gibidir:
+Dönüştürme formülleri aşağıdaki gibidir:
 
 x' = x + xSkew · y
 
-y' = ySkew · x + y
+y' ySkew · = x + y
 
-Örneğin, bir pozitif `xSkew` değeri, dönüştürülmüş `x'` değeri artırır olarak `y` artırır. Ne Eğim neden olur.
+Örneğin, bir pozitif `xSkew` değeri, dönüştürülen `x'` değeri artırır olarak `y` artırır. Eğim ne neden olur.
 
-Üçgen 200 piksel genişliğinde ve 100 piksel yüksek bir noktada (0, 0), sol üst köşesindeki ile konumlandırılmış ve ile işlenen bir `xSkew` 1.5, aşağıdaki paralel kenarı sonuçları değeri:
+Bir üçgen 200 piksel genişliğinde ve 100 piksel yüksekliğinde bir noktada (0, 0), sol üst köşesinin ile konumlandırılır ve ile işlenen bir `xSkew` 1.5, aşağıdaki eğdiğinizde Paralel Kenar sonuçları değeri:
 
-![](skew-images/skeweffect.png "Dikdörtgene eğme dönüştürmesi etkisi")
+![](skew-images/skeweffect.png "Bir dikdörtgen eğme dönüşümü etkisi")
 
-Kenar koordinatlara sahip `y` dolayısıyla 100 değerini gölgeye 150 piksel sağa.
+Alt kenarı koordinatlarını sahip `y` değerleri, bu nedenle 100 150 piksel sağa kaydırılacak.
 
-Sıfır olmayan değerler için `xSkew` veya `ySkew`, sadece (0, 0) noktasına aynı kalır. Bu noktadan eğriltme veya merkezi kabul edilebilir. Başka bir konuda olmasını eğriltme veya Merkezi (genellikle söz konusu olduğu) gerekiyorsa, var olan hiçbir `Skew` sağlayan yöntemi. Açıkça birleştirmek gerekir `Translate` ile çağırır `Skew` çağırın. Konumundaki eğriltme orta `px` ve `py`, aşağıdaki çağrıları olun:
+Sıfır olmayan değerler için `xSkew` veya `ySkew`yalnızca noktası (0, 0) aynı kalır. O noktadan eğriltme merkezi kabul edilebilir. Başka bir olacak şekilde eğriltme Merkezi (genellikle söz konusu olduğu) gerekiyorsa, var olan hiçbir `Skew` sağlayan yöntemi. Açıkça birleştirmek ihtiyacınız olacak `Translate` ile çağırır `Skew` çağırın. Eğriltme sırasında orta `px` ve `py`, aşağıdaki çağrıları yapın:
 
 ```csharp
 canvas.Translate(px, py);
@@ -96,21 +96,21 @@ canvas.Skew(xSkew, ySkew);
 canvas.Translate(-px, -py);
 ```
 
-Bileşik dönüştürme formüller şunlardır:
+Bileşik dönüştürme formülleri şunlardır:
 
-x' = x + xSkew · (y-py)
+x' = x + xSkew · (y – Kopyala)
 
-y' = ySkew · (x – piksel) + y
+y' ySkew · = (x-px) + y
 
-Varsa `ySkew` sıfırsa ve yalnızca, sıfır olmayan bir değer belirlediniz `xSkew`, ardından `px` değeri kullanılmaz. İlgisiz, bir değerdir ve benzer şekilde `ySkew` ve `py`.
+Varsa `ySkew` sıfır ve sıfır dışında değeri yalnızca belirlediniz `xSkew`, ardından `px` değeri kullanılmaz. Değer ilgisizdir ve benzer şekilde `ySkew` ve `py`.
 
-Bu diyagramda α açı gibi Eğim açısı olarak eğme belirterek daha rahat düşündüğünüz:
+Bu diyagramda α açı gibi bir eğme açısı olarak eğriltme belirterek daha iyi ilerlediğini düşünebilirsiniz:
 
-![](skew-images/skewangleeffect.png "Belirtilen bir eğme açısı olan bir dikdörtgen eğme dönüştürmesi etkisi")
+![](skew-images/skewangleeffect.png "Belirtilen bir dikdörtgen bir eğme açısı eğme dönüşümü etkisi")
 
-100 piksel dikey 150 piksel kaydırma oranını bu örnekte, açının tanjantını 56.3 derece döndürülür.
+150 piksel 100 piksel dikey kaydırma Bu örnekte, bir açının tanjantını 56.3 derece oranıdır.
 
-XAML dosyası **eğme açı deneme** sayfa benzer **eğme açı** dışında sayfasında `Slider` öğeleri 90 derece – 90 ' aralığı. [ `SkewAngleExperiment` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SkewAngleExperimentPage.xaml.cs) Arka plan kodu dosya sayfasında metni merkezleri ve kullandığı `Translate` sayfa merkezine eğriltme, bir merkezi ayarlamak için. Kısa bir `SkewDegrees` yöntemi kodu altındaki değerler eğme açıları dönüştürür:
+XAML dosyası **eğme açısı deneme** sayfasına benzer **eğme açısı** sayfasında hariç `Slider` öğeleri – 90 ' 90 derece aralığında. [ `SkewAngleExperiment` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/SkewAngleExperimentPage.xaml.cs) Arka plan kod dosyası merkezi metin sayfasında ve kullandığı `Translate` sayfanın merkezine eğriltme, bir merkezi ayarlamak için. Kısa `SkewDegrees` yöntemi kodu alt kısmındaki değerleri eğriltmek için açıları dönüştürür:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -151,11 +151,11 @@ void SkewDegrees(SKCanvas canvas, double xDegrees, double yDegrees)
 }
 ```
 
-Bir açının olumlu veya olumsuz 90 derece yaklaştığında tanjantını sonsuz yaklaşıyor, ancak yaklaşık 80 derece veya bunu kadar açıları kullanılabilir:
+Açı pozitif veya negatif 90 derece yaklaştığında, sonsuzluk tanjantını yaklaştığında, ancak yaklaşık 80 derece veya bunu açıları kullanılabilir:
 
-[![](skew-images/skewangleexperiment-small.png "Üçlü sayfasının ekran görüntüsü eğme açı deneme")](skew-images/skewangleexperiment-large.png#lightbox "Üçlü sayfasının ekran görüntüsü eğme açı deneme")
+[![](skew-images/skewangleexperiment-small.png "Üçlü sayfasının ekran görüntüsü eğme açısı deneme")](skew-images/skewangleexperiment-large.png#lightbox "Üçlü sayfasının ekran görüntüsü eğme açısı deneme")
 
-Küçük negatif yatay eğme olarak eğik veya italik metin taklit **eğik metin** sayfası gösterilmektedir. [ `ObliqueTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ObliqueTextPage.cs) Sınıfı gösterir nasıl yapılır:
+Küçük negatif yatay eğme olarak eğik veya italik metin taklit **eğik metin** sayfasını gösterir. [ `ObliqueTextPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/ObliqueTextPage.cs) Sınıfı nasıl yapıldığını gösterir:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -187,11 +187,11 @@ void SkewDegrees(SKCanvas canvas, double xDegrees, double yDegrees)
 }
 ```
 
-`TextAlign` Özelliği `SKPaint` ayarlanır `Center`. Dönüşüm olmadan `DrawText` çağrısı ile koordinatları (0, 0) ve yatay ortada temelinin metinle sol üst köşede getirin. `SkewDegrees` Metnin yatay olarak 20 derece taban göre Eğer. `Translate` Çağrısı ve yatay ortada metnin temelinin Kanvasın ortasına taşır:
+`TextAlign` Özelliği `SKPaint` ayarlanır `Center`. Dönüşüm olmadan `DrawText` koordinatları ile çağırın (0, 0) yatay merkezine göre temel metinle sol üst köşedeki konumlandırma. `SkewDegrees` Metnin yatay olarak 20 derece taban çizgisine göre eğriltir. `Translate` Çağrı tuval merkezine yatay merkezi metin temelinin taşır:
 
 [![](skew-images/obliquetext-small.png "Üçlü sayfasının ekran görüntüsü eğik metin")](skew-images/obliquetext-large.png#lightbox "Üçlü sayfasının ekran görüntüsü eğik metin")
 
-**Eğme gölge metin** sayfa 45 derecelik eğme ve dikey ölçek bileşimi çıktığınızda metin eğimli bir metin gölgesinin yapmak için nasıl kullanılacağını gösterir. İlgili bölümü işte `PaintSurface` işleyici:
+**Eğme gölge metin** sayfa 45 derece eğriltme ve dikey ölçek bileşimi uzağa metin eğimli bir metin gölgesinin yapma işlemini gösterir. İlgili bölümü işte `PaintSurface` işleyicisi:
 
 ```csharp
 using (SKPaint textPaint = new SKPaint())
@@ -222,20 +222,20 @@ using (SKPaint textPaint = new SKPaint())
 
 Gölge görüntülenen ilk ve metin şöyledir:
 
-[![](skew-images/skewshadowtext1-small.png "Üçlü sayfasının ekran görüntüsü eğme gölge metin")](skew-images/skewshadowtext1-large.png#lightbox "Üçlü sayfasının ekran görüntüsü eğme gölge metin")
+[![](skew-images/skewshadowtext1-small.png "Üçlü sayfasının ekran görüntüsü eğme gölge metin")](skew-images/skewshadowtext1-large.png#lightbox "Üçlü sayfasının ekran görüntüsü gölge metin eğme")
 
-Dikey koordinat geçirilen `DrawText` yöntemi metnin taban çizgisine göre konumunu belirtir. Eğriltme center için kullanılan aynı dikey koordinat olmasıdır. Metin dizesini harfin alt içeriyorsa bu yöntem çalışmaz. Örneğin, "" Gölge"ve burada geliştirilmesindeki" word DEVICEHIGH sonucu kullanıcının:
+Dikey koordinat geçirilen `DrawText` yöntemi taban çizgisine göre metnin konumunu gösterir. Eğriltme center için kullanılan aynı dikey koordinat olmasıdır. Metin dizesi çıkıntılarını içeriyorsa bu yöntem çalışmaz. Örneğin, "" Gölge"ve burada geliştirilmesindeki" sözcüğü DEVICEHIGH sonucu kullanıcının:
 
-[![](skew-images/skewshadowtext2-small.png "Üçlü sayfasının ekran görüntüsü eğme gölge metin alternatif bir sözcükle harfin alt ile")](skew-images/skewshadowtext2-large.png#lightbox "Üçlü sayfasının ekran görüntüsü eğme gölge metin alternatif bir sözcükle harfin alt ile")
+[![](skew-images/skewshadowtext2-small.png "Üçlü sayfasının ekran görüntüsü eğme gölge metin çıkıntılarını alternatif bir sözcükle")](skew-images/skewshadowtext2-large.png#lightbox "Üçlü sayfasının ekran görüntüsü eğme gölge metin çıkıntılarını alternatif bir sözcükle")
 
-Temel metin ve gölge hala hizalanır ancak etkisi yalnızca yanlış görünüyor. Sorunu gidermek için Metin sınırları almanız gerekir:
+Metin ve gölge temel hala hizalanır ancak etkisi yalnızca yanlış görünüyor. Sorunu gidermek için Metin sınırları almanız gerekir:
 
 ```csharp
 SKRect textBounds = new SKRect();
 textPaint.MeasureText(text, ref textBounds);
 ```
 
-`Translate` Çağrıları uzanır yükseklik olarak ayarlanması gerekir:
+`Translate` Çağrıları çıkıntılarını yüksekliğini tarafından ayarlanması gerekir:
 
 ```csharp
 canvas.Translate(xText, yText + textBounds.Bottom);
@@ -244,9 +244,9 @@ canvas.Scale(1, 3);
 canvas.Translate(-xText, -yText - textBounds.Bottom);
 ```
 
-Şimdi gölge bu harfin alt alt kısmından genişletir:
+Şimdi gölge bu çıkıntılarını aşağıdan genişletir:
 
-[![](skew-images/skewshadowtext3-small.png "Üçlü sayfasının ekran görüntüsü eğme gölge metin harfin alt ayarlamalar ile")](skew-images/skewshadowtext3-large.png#lightbox "Üçlü sayfasının ekran görüntüsü eğme gölge metin harfin alt ayarlamalar ile")
+[![](skew-images/skewshadowtext3-small.png "Üçlü sayfasının ekran görüntüsü eğme gölge metin çıkıntılarını ayarlamalarını")](skew-images/skewshadowtext3-large.png#lightbox "Üçlü sayfasının ekran görüntüsü eğme gölge metin düzeltmeleri çıkıntılarını için")
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

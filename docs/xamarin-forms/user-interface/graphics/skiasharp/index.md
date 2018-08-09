@@ -3,16 +3,15 @@ title: Xamarin.Forms içinde SkiaSharp kullanma
 description: SkiaSharp, .NET ve C# Google ürünler, yaygın kullanılan açık kaynaklı Skia grafik altyapısı tarafından desteklenen bir 2B grafik sistemidir. Bu kılavuz, 2B grafikler kullanarak Xamarin.Forms uygulamalarında SkiaSharp kullanmayı açıklar.
 ms.prod: xamarin
 ms.assetid: 2C348BEA-81DF-4794-8857-EB1DFF5E11DB
-ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 09/11/2017
-ms.openlocfilehash: bdc0603c6ae406adac42533e251106ccccf2cb7c
-ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
+ms.openlocfilehash: f7d97b798bf2a5a75af0731a665fe212491a6516
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39130952"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615879"
 ---
 # <a name="using-skiasharp-in-xamarinforms"></a>Xamarin.Forms içinde SkiaSharp kullanma
 
@@ -53,7 +52,7 @@ Dönüşümler birörnek çevrilmiş, ölçeği, döndürülen dengesiz veya gra
 
 Yolları incelenmesi için bir yol nesneleri eğrileri ekleme ve diğer güçlü bir yol özellikleri kötüye devam eder. Nasıl kısa metin dizesindeki tüm bir yol belirtebilirsiniz, yol etkileri kullanma ve yol iç işlevler araştırma yapmak nasıl görürsünüz.
 
-## <a name="skiasharp-bitmapsbitmapsindexmd"></a>[SkiaSharp bit eşlemler](bitmaps/index.md)
+## <a name="skiasharp-bitmapsbitmapsindexmd"></a>[SkiaSharp Bit Eşlemleri](bitmaps/index.md)
 
 Bit eşlemler, bir görüntü cihazı piksele karşılık gelen bit dikdörtgen dizilerdir. Bu makale serisi, yükleme, kaydetme görüntülemek oluşturma Çiz animasyon ekleme ve SkiaSharp bit eşlem bitleri erişim gösterilmektedir.
 

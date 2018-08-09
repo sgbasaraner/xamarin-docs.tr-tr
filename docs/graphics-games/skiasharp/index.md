@@ -2,16 +2,17 @@
 title: SkiaSharp ile 2B çizim
 description: Bu belge ile SkiaSharp çizimi platformlar arası 2B genel bir bakış sağlar. Bu, SkiaSharp tanımlayan çeşitli kılavuzları ve çeşitli API'lerini için bağlar.
 ms.prod: xamarin
+ms.techonology: xamarin-skiasharp
 ms.assetid: A8A61421-4544-422A-A7E0-9355C67DF21E
 author: charlespetzold
 ms.author: chape
 ms.date: 07/17/2018
-ms.openlocfilehash: 0c8cbc14308c8c4131e5aaa2bcc0ddfa798af610
-ms.sourcegitcommit: 7f2e44e6f628753e06a5fe2a3076fc2ec5baa081
+ms.openlocfilehash: 7207f33e56f566a5528d93f9957e2ff780a22a65
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/18/2018
-ms.locfileid: "39130926"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615528"
 ---
 # <a name="2d-drawing-with-skiasharp"></a>SkiaSharp ile 2B çizim
 
@@ -61,13 +62,13 @@ Xamarin.Forms içinde işleme platformu grafik çapraz ile çalışmayı öğren
   * [Yollar ve Metin](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md)
   * [Yol Bilgileri ve Numaralandırması](~/xamarin-forms/user-interface/graphics/skiasharp/curves/information.md)
 - [Bit eşlemler](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/index.md)
-  * [Bit eşlemler görüntüleme](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/displaying.md)
-  * [Bit eşlemler üzerinde çizim ve oluşturma](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/drawing.md)
-  * [Bit eşlemler kırpma](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/cropping.md)
-  * [Bit eşlem segmentli görüntüleme](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/segmented.md)
-  * [Bit eşlemleri dosyaları kaydetme](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/saving.md)
-  * [Bit eşlem piksel BITS erişme](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/pixel-bits.md)
-  * [Bit eşlemler animasyon ekleme](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/animating.md)
+  * [Bit Eşlemleri Görüntüleme](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/displaying.md)
+  * [Bit Eşlemler Üzerinde Oluşturma ve Çizme](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/drawing.md)
+  * [Bit Eşlemleri Kırpma](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/cropping.md)
+  * [Bit Eşlemlerin Kesimli Görünümü](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/segmented.md)
+  * [Bit Eşlemleri Dosyalara Kaydetme](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/saving.md)
+  * [Bit Eşlem Piksel Bitlerine Erişme](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/pixel-bits.md)
+  * [Bit Eşlemlere Animasyon Ekleme](~/xamarin-forms/user-interface/graphics/skiasharp/bitmaps/animating.md)
 
 ## <a name="platform-specific-notesgraphics-gamesskiasharpplatformmd"></a>[Platforma Özgü Notlar](~/graphics-games/skiasharp/platform.md)
 

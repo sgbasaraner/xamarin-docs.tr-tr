@@ -1,39 +1,39 @@
 ---
-title: Yolun dolgu türleri
-description: Bu makalede olası farklı efektler SkiaSharp yolu dolgu türleriyle inceler ve bu örnek kodu ile gösterir.
+title: Yol dolgusu türleri
+description: Bu makalede, farklı etkileri olası SkiaSharp yol dolgusu türleri ile inceler ve bu örnek kod ile gösterir.
 ms.prod: xamarin
 ms.assetid: 57103A7A-49A2-46AE-894C-7C2664682644
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: d54ebd157fcc76b0fcc15bf89c72edbcd88b42f2
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 17043054c920a69570f38b227d05980494e29139
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35243713"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615476"
 ---
-# <a name="the-path-fill-types"></a>Yolun dolgu türleri
+# <a name="the-path-fill-types"></a>Yol dolgusu türleri
 
-_SkiaSharp yolu dolgu türleriyle olası farklı efektler Bul_
+_SkiaSharp yol dolgusu türleri ile olası farklı etkileri keşfedin_
 
-Bir yolunda iki dağılımlarını çakışma ve tek bir dağılım satırlarını binebilir. Herhangi bir kapalı alan olası doldurulabilir, ancak tüm kapalı alanları doldurmak istemeyebilirsiniz. Örnek buradadır:
+Bir yolda iki dağılımlarını binebilir ve tek bir dağılımı satırlarını üstüne binebilir. Herhangi bir kapalı alan büyük olasılıkla doldurulabilir ancak iliştirilmiş tüm alanları doldurmak istemeyebilirsiniz. Örnek buradadır:
 
 ![](fill-types-images/filltypeexample.png "Beş işaret kısmen filles yıldız")
 
-Bu küçük bir denetime sahip. Doldurma algoritması tabidir [ `SKFillType` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPath.FillType/) özelliği `SKPath`, üyesi için ayarlanan [ `SKPathFillType` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathFillType/) numaralandırma:
+Bu üzerinde biraz denetim var. Doldurma algoritması tabidir [ `SKFillType` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPath.FillType/) özelliği `SKPath`, üyesi için ayarlanan [ `SKPathFillType` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathFillType/) sabit listesi:
 
 - [`Winding`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathFillType.Winding/), varsayılan
 - [`EvenOdd`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathFillType.EvenOdd/)
 - [`InverseWinding`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathFillType.InverseWinding/)
 - [`InverseEvenOdd`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathFillType.InverseEvenOdd/)
 
-Sarma ve çift-tek algoritmaları herhangi bir kapalı alan doldurulmuş veya bu alandan sonsuza kadar kuramsal çizgi dayanan doldurulmamış olmadığını belirleyin. Bu satırı yolu bir veya daha fazla sınır satırlarını kestiği. Başka bir yöne, sonra alanı çizilmiş satır sayısı, tek yönlü dengeyi çizilmiş sınır satır sayısı değilse sarma modu ile doldurulur. Aksi takdirde alan doldurulur. Sınır satır sayısı, tek ise çift-tek algoritması alanını doldurur.
+Herhangi bir kapalı alan dolu veya bu alandan sonsuza kuramsal çizgi temel alınarak doldurulmamış varsa sargı ve çift-tek algoritmaları belirleyin. Bu satırı yolu bir veya daha fazla sınır satırlarını çizer. Tek yönlü Bakiye çizgileri ve diğer yöndeki ve ardından alanı sayısı kullanıma sınır çizgileri sayısı değilse sargı moduyla doldurulur. Aksi takdirde alan doldurulur. Sınır satır sayısı çift ise, çift-tek algoritması bir alan doldurur.
 
-Birçok rutin yollarını ile sarma algoritması genellikle kapalı bir yol alanlarının tüm doldurur. Çift-tek algoritması genellikle daha ilginç sonuçlar üretir.
+Birçok rutin yollarıyla sargı algoritması genellikle kapalı bir yol alanlarının tüm doldurur. Çift-tek algoritması, genellikle daha ilginç sonuçlar üretir.
 
-Klasik beş işaret yıldız, örnekte gösterildiği şekilde örnektir **Five-Pointed yıldız** sayfası. [FivePointedStarPage.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FivePointedStarPage.xaml) dosya başlatır iki `Picker` yolu seçmek için görünümleri Dolgu türü ve yol vuruş veya dolu ya da her ikisini ve hangi sırayla:
+Klasik örnek gösterildiği şekilde beş işaret eden bir yıldız olan **Five-Pointed yıldız** sayfası. [FivePointedStarPage.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FivePointedStarPage.xaml) dosya iki başlatır `Picker` görünümleri yolu seçmek için Dolgu türü ve yol konturlanan veya doldurulmuş veya her ikisi de ve hangi sırayla:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -95,7 +95,7 @@ Klasik beş işaret yıldız, örnekte gösterildiği şekilde örnektir **Five-
 </ContentPage>
 ```
 
-Arka plan kod dosyası her ikisi de kullanır `Picker` beş işaret Yıldızı çizmek için değerler:
+Arka plan kod dosyasında hem de kullandığı `Picker` beş işaret eden bir yıldız çizmek için değerler:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -162,20 +162,20 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Normalde, yolun Dolgu türü dolgular ve vuruşları değil, ancak iki etkiler, `Inverse` modları dolgular ve vuruşları etkiler. İki dolgular için `Inverse` yıldız dışında alan doldurulur böylece türleri alanları oppositely doldurun. Vuruşları, iki için `Inverse` türleri vuruşun dışında her şeyi rengi. Bu ters dolgu türlerini kullanarak, iOS ekran görüntüsü gösterilmektedir gibi bazı tek efektler üretmek:
+Yolun Dolgu türü doldurur ve vuruş değil, ancak iki normalde etkiler `Inverse` modları doldurur ve vuruş etkiler. Dolgular, iki için `Inverse` yıldız dışında alan doldurulur böylece türleri alanları oppositely doldurun. Strokes, ikisi için `Inverse` türlerini stroke dışında her şeyi rengi. İOS ekran görüntüsünde gösterildiği gibi bu ters dolgu türleri kullanarak tek bazı etkilere neden olabilir:
 
 [![](fill-types-images/fivepointedstar-small.png "Üçlü sayfasının ekran görüntüsü Five-Pointed yıldız")](fill-types-images/fivepointedstar-large.png#lightbox "Üçlü sayfasının ekran görüntüsü Five-Pointed yıldız")
 
-Android ve UWP ekran görüntüleri tipik çift-tek ve sarma etkileri gösterir ancak vuruş ve dolgu sırasını sonuçları de etkiler.
+Android ve UWP ekran görüntüleri tipik çift-tek ve sargı etkilerini gösterir, ancak vuruş ve dolgu sırasını de sonuçları etkiler.
 
-Sarma algoritması çizgileri çizilir yönü bağlıdır. Satırları bir noktadan diğerine çizildiğini belirtebilir genellikle ne zaman bir yolu oluşturmakta olduğunuz, bu yön denetleyebilirsiniz. Ancak, `SKPath` sınıfı ayrıca yöntemler gibi tanımlayan `AddRect` ve `AddCircle` tüm dağılımlarını çizin. Bu nesnelerin nasıl çizilir denetlemek için bir parametre türü yöntemleri dahil [ `SKPathDirection` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathDirection/), iki üye vardır:
+Sarım algoritma çizgileri çizilir yönü bağlıdır. Satırları bir noktasından diğerine çizildiğini belirttiğiniz genellikle bir yolu, oluşturmakta olduğunuz, bu yöndeki denetleyebilirsiniz. Ancak, `SKPath` sınıfı da tanımlar gibi yöntemleri `AddRect` ve `AddCircle` tüm dağılımlarını çizin. Bu nesnelerin nasıl çizildiğini kontrol etmek için yöntemleri türünde bir parametre içeren [ `SKPathDirection` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathDirection/), iki üyesi vardır:
 
 - [`Clockwise`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathDirection.Clockwise/)
 - [`CounterClockwise`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathDirection.CounterClockwise/)
 
-Yöntemlere `SKPath` içeren bir `SKPathDirection` parametresi verin, varsayılan değer olan `Clockwise`.
+Yöntemlere `SKPath` içeren bir `SKPathDirection` parametresi verin, varsayılan değeri `Clockwise`.
 
-**Çakışan daireler** sayfa dört çakışan daire çift-tek yolu Dolgu türü ile birlikte bir yol oluşturur:
+**Çakışan daireler** sayfası, bir çift-tek yolu Dolgu türü ile dört çakışan daire ile yol oluşturur:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -215,9 +215,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Kod en az ile oluşturulan bir ilginç görüntüsü verilmiştir:
+Bu, oluşturulan kod en düşük ile ilgi çekici bir görüntü değil:
 
-[![](fill-types-images/overlappingcircles-small.png "Üçlü sayfasının ekran görüntüsü çakışan daireler")](fill-types-images/overlappingcircles-large.png#lightbox "Üçlü sayfasının ekran görüntüsü çakışan daireler")
+[![](fill-types-images/overlappingcircles-small.png "Üçlü sayfasının ekran görüntüsü çakışan daireler")](fill-types-images/overlappingcircles-large.png#lightbox "Üçlü sayfasının ekran görüntüsü çakışan daire")
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

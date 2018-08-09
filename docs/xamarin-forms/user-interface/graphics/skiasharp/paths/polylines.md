@@ -1,40 +1,40 @@
 ---
-title: Kullansa ve parametrik denklemini
-description: Bu makalede nasıl satırıyla işlemek için kullanım SkiaSharp ile parametrik denklemini tanımlayabileceğiniz açıklar ve bu örnek kodu ile gösterir.
+title: Çoklu çizgiler ve parametreli denklemler
+description: Bu makalede nasıl herhangi bir satır işlemek için kullanım SkiaSharp ile parametreli denklemler tanımlayabileceğiniz açıklar ve bu örnek kod ile gösterir.
 ms.prod: xamarin
 ms.assetid: 85AEBB33-E954-4364-A6E1-808FAB197BEE
-ms.technology: xamarin-forms
+ms.technology: xamarin-skiasharp
 author: charlespetzold
 ms.author: chape
 ms.date: 03/10/2017
-ms.openlocfilehash: 9539a21b7dbc91da63795639610886233ed705be
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: 9118ca8e23e4c4a9023a1add89e26c4484979c8f
+ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "35245315"
+ms.lasthandoff: 08/07/2018
+ms.locfileid: "39615801"
 ---
-# <a name="polylines-and-parametric-equations"></a>Kullansa ve parametrik denklemini
+# <a name="polylines-and-parametric-equations"></a>Çoklu çizgiler ve parametreli denklemler
 
-_İle parametrik denklemini tanımlayabilirsiniz çizgiyi işlemek için SkiaSharp kullanın_
+_Herhangi bir satır ile parametreli denklemler tanımlayabilirsiniz işlenecek SkiaSharp kullanma_
 
-Bu kılavuzda daha sonra bir parçası, çeşitli yöntemleri görürsünüz, `SKPath` belirli türde bir Eğriler işlemek için tanımlar. Ancak, bazen bir tür tarafından doğrudan desteklenmeyen eğri çizmek ise gerekli `SKPath`. Böyle bir durumda, matematiksel olarak tanımlayabilirsiniz eğrisi çizmek için çoklu çizgi (bağlantılı çizgilerin koleksiyonunu) kullanabilirsiniz. Varsa satırları küçük duruma ve çok sayıda yeterli, sonuç bir eğri gibi görünür. Bu spiral gerçekte 3.600 küçük satırları şöyledir:
+Bu kılavuz bir sonraki bölümünde, çeşitli yöntemler görürsünüz, `SKPath` eğrileri belirli türlerdeki işlemek için tanımlar. Ancak, bazen bir tür tarafından doğrudan desteklenmeyen eğrisinin çizmek gereklidir `SKPath`. Böyle bir durumda, matematiksel olarak tanımlayan bir eğri çizme için çoklu (bağlı satır koleksiyonu) kullanabilirsiniz. Varsa satırları yeterince duruma ve çok sayıda yeterli, sonuç bir eğri gibi görünür. Bu gönderilerinizi gerçekten 3.600 küçük satırları görürsünüz:
 
-![](polylines-images/spiralexample.png "Spiralin")
+![](polylines-images/spiralexample.png "Bir gönderilerinizi")
 
-Genellikle bir eğri parametrik denklemini çifti açısından tanımlamak en iyisidir. X ve Y koordinatları için denklemini bunlar olarak da adlandırılan bir üçüncü değişkenine, bağlı `t` süre. Örneğin, aşağıdaki parametrik denklemini RADIUS (0, 0) noktada ortalanmış 1 ile bir daire tanımlamanız *t* 0 ile 1 arasında:
+Genellikle bir eğri parametreli denklemler çifti açısından tanımlamak idealdir. X ve Y, koordinatları için bunlar denklemler adlandırılan üçüncü değişkenine bağlı `t` kez. Örneğin, aşağıdaki parametreli denklemler 1 (0, 0) noktasında ortalanmış bir RADIUS daire tanımladığınız *t* 0-1:
 
  x cos(2πt) y = sin(2πt) =
 
- Bir RADIUS 1'den büyük istediğiniz yaparsanız, yalnızca o yarıçap Sinüs ve Kosinüs değerleri Çarp ve merkezi başka bir konuma taşımanız gerekirse, bu değerleri ekleyin:
+ Bir RADIUS 1'den daha büyük istiyorsanız, yalnızca Sinüs ve Kosinüs değerlerini, yarıçap çarpın ve merkezi başka bir konuma taşımanız gerekiyorsa bu değerleri ekleyin:
 
  x = xCenter + radius·cos(2πt) y = yCenter + radius·sin(2πt)
 
-Yatay ve dikey eksen paralel ile elips için iki yarıçaplarını oynayan:
+İki yarıçaplarını için üç noktanın yatay ve dikey eksen paralel ile ilgilidir:
 
 x = xCenter + xRadius·cos(2πt) y = yCenter + yRadius·sin(2πt)
 
-Ardından, çeşitli noktaları hesaplar ve bu bir yola ekler döngü eşdeğer SkiaSharp kodu koyabilirsiniz. Aşağıdaki SkiaSharp kod oluşturur bir `SKPath` görüntü yüzeyini doldurur elips nesnesi. Döngü üzerinden 360 derece doğrudan geçiş yapar. Yarı genişlik ve yükseklik görüntü yüzeyinin merkezi olduğunu ve dolayısıyla iki yarıçaplarını:
+Ardından, çeşitli noktaları hesaplar ve bu yola ekler döngü içinde eşdeğer SkiaSharp kod koyabilirsiniz. Aşağıdaki SkiaSharp kod oluşturur bir `SKPath` uzaklaştırabilir dolduran bir elips nesnesi. Döngü 360 derece doğrudan geçiş yapar. Merkezi yarım genişlik ve yükseklik uzaklaştırabilir, ve bu nedenle iki yarıçaplarını:
 
 ```csharp
 SKPath path = new SKPath();
@@ -57,11 +57,11 @@ for (float angle = 0; angle < 360; angle += 1)
 path.Close();
 ```
 
-Bu, 360 küçük satırları tarafından tanımlanan bir elips sonuçlanır. İşlendiğinde, kesintisiz görüntülenir.
+360 küçük satırları tarafından tanımlanan bir elips sonuçlanır. İşlendiğinde, kesintisiz olarak görünür.
 
-Elbette, bir çoklu çizgi kullanarak bir elips oluşturmanız gerekmez `SKPath` içeren bir `AddOval` sizin için yapar yöntemi. Ancak tarafından sağlanmayan görsel bir nesne çizmek isteyebilirsiniz `SKPath`.
+Elbette, bir elips çoklu kullanarak oluşturmanız gerekmez `SKPath` içeren bir `AddOval` bunu sizin için halleder yöntemi. Ancak tarafından sağlanmayan bir görsel nesneyi çizin isteyebileceğiniz `SKPath`.
 
-**Archimedean Spiral** sayfasına sahip code benzer elips kod, ancak çok önemli bir fark. Bu 360 derece dairenin 10 kez sürekli olarak RADIUS ayarlama döngü:
+**Archimedean Gönderilerinizi** sayfası olan benzer kodu elips koda ancak önemli bir fark dışında. Bu 360 derece dairenin 10 kez RADIUS sürekli olarak ayarlama döngüsü:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -107,11 +107,11 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Sonuç olarak da adlandırılan bir *aritmetik spiral* her döngü arasındaki uzaklığı sabit olduğundan:
+Sonuç olarak da adlandırılan bir *aritmetik gönderilerinizi* her döngü arasındaki uzaklığı sabit olduğu için:
 
-[![](polylines-images/archimedeanspiral-small.png "Üçlü sayfasının ekran görüntüsü Archimedean Spiral")](polylines-images/archimedeanspiral-large.png#lightbox "Üçlü sayfasının ekran görüntüsü Archimedean Sarmal")
+[![](polylines-images/archimedeanspiral-small.png "Üçlü sayfasının ekran görüntüsü Archimedean Gönderilerinizi")](polylines-images/archimedeanspiral-large.png#lightbox "Archimedean Gönderilerinizi sayfanın üç ekran görüntüsü")
 
-Dikkat `SKPath` oluşturulan bir `using` bloğu. Bu `SKPath` daha fazla bellek tüketir `SKPath` öneren önceki programları nesneleri bir `using` blok yönetilmeyen tüm kaynaklarını silmek daha uygun.
+Dikkat `SKPath` oluşturulan bir `using` blok. Bu `SKPath` daha fazla bellek tüketir `SKPath` öneren önceki programlarda nesneleri bir `using` yönetilmeyen tüm kaynaklarını silmek daha uygun blok.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
