@@ -46,7 +46,7 @@ Bu örnek için bir Xamarin.iOS projesi adı olduğunu varsayalım `iPhoneApp1` 
 
 9.  İstenen dosyaları Sil `.ipa`. Bunları kullanarak Bulucu çöp kutusuna taşınacak veya kullanarak komut satırı Sil `Terminal.app`. İçeriğini görüntülemek için `Payload/iPhone` seçin ve dosyayı Finder'da Control tuşuna tıklama dosya **paket içeriğini göster**.
 
-10.  Adım 3, olduğu gibi aynı genel yaklaşım kullanarak Bul günlük dosyasını altında `~/Library/Logs/Xamarin/MonoTouchVS/` proje adı olan ve `generated session id` adında: ![ ] (modify-ipa-images/build-log.png "Finder'da projesi oluşturma günlüğünü bulun")
+10.  Adım 3, olduğu gibi aynı genel yaklaşım kullanarak Bul günlük dosyasını altında `~/Library/Logs/Xamarin/MonoTouchVS/` proje adı olan ve `generated session id` adında: ![](modify-ipa-images/build-log.png "Finder'da projesi oluşturma günlüğünü bulun")
 
 11.  Yapı günlüğüne, adımda 10, örneğin çift tıklayarak açın.
 
