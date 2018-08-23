@@ -25,7 +25,7 @@ Ortak Beyanları yanı sıra, SDK tümleştirmesi aracısındaki özel Beyanlar�
 
 ## <a name="external-representations"></a>Dış temsili
 
-[`Xamarin.Interactive.IAgent.RepresentationManager`][repman] kaydetme yeteneği sağlar bir [ `RepresentationProvider` ] [ repp], hangi rasgele bir nesneden işlemek için belirsiz bir forma dönüştürmek için bir tümleştirme uygulamalıdır. Bu belirsiz formlar uygulamalıdır [ `ISerializableObject` ] [ serobj] arabirimi.
+[`Xamarin.Interactive.IAgent.RepresentationManager`][repman] kaydetme yeteneği sağlar bir [`RepresentationProvider`][repp], hangi rasgele bir nesneden işlemek için belirsiz bir forma dönüştürmek için bir tümleştirme uygulamalıdır. Bu belirsiz formlar uygulamalıdır [ `ISerializableObject` ] [ serobj] arabirimi.
 
 Uygulama `ISerializableObject` arabirimi tam olarak nasıl nesneleri serileştirilir denetleyen serileştirme yöntemi ekler. `Serialize` Yönteminin beklediği bir geliştirici tam olarak hangi özelliklerdir serileştirilmesi için ve son adı ne olacağını belirteceksiniz. Bakarak `Person` nesnesinde bizim [`KitchenSink` örnek] [örnek], biz nasıl işlediğine görebilirsiniz:
 
@@ -71,7 +71,7 @@ public sealed class Person : ISerializableObject
 
 Oluşturucu JavaScript'te uygulanır ve aracılığıyla temsil edilen nesne JavaScript sürümü erişebilir `ISerializableObject`. JavaScript kopya da sahip bir `$type` dize .NET türü adı gösteren özellik.
 
-Elbette vanilla JavaScript derler istemci tümleştirme kodu için TypeScript kullanmanızı öneririz. Her iki durumda da SDK sağlar [typings] [ typings] hangi bulunabilir doğrudan TypeScript tarafından başvurulan veya yalnızca el ile JavaScript, tercih edilen vanilla yazarken göstermektedir.
+Elbette vanilla JavaScript derler istemci tümleştirme kodu için TypeScript kullanmanızı öneririz. Her iki durumda da SDK sağlar [typings][typings] hangi bulunabilir doğrudan TypeScript tarafından başvurulan veya yalnızca el ile JavaScript, tercih edilen vanilla yazarken göstermektedir.
 
 İşleme için ana tümleştirme noktasıdır `xamarin.interactive.RendererRegistry`:
 

@@ -76,7 +76,7 @@ try {
 
 Objective-C yığın unwinder yönetilen hakkında bilmez olmasıdır `catch` yan tümcesi ve hiçbiri `finally` yan tümcesi yürütülebilir.
 
-Zaman Yukarıdaki kod örneği _olan_ Objective-C işlenmemiş Objective-C özel durumları, bildirilmesini yöntemi olduğundan, bu etkilidir [ `NSSetUncaughtExceptionHandler` ] [ 2], hangi Xamarin.iOS ve Xamarin.Mac kullanın ve bu noktada Objective-C özel durumlar için yönetilen özel durumlar dönüştürmek için çalışır.
+Zaman Yukarıdaki kod örneği _olan_ Objective-C işlenmemiş Objective-C özel durumları, bildirilmesini yöntemi olduğundan, bu etkilidir [`NSSetUncaughtExceptionHandler`][2], hangi Xamarin.iOS ve Xamarin.Mac kullanın ve bu noktada Objective-C özel durumlar için yönetilen özel durumlar dönüştürmek için çalışır.
 
 ## <a name="scenarios"></a>Senaryolar
 
