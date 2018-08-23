@@ -112,7 +112,7 @@ UISwitch.Appearance.OnTintColor = UIColor.FromRGB(0x91, 0xCA, 0x47); // green
 
 Bu iki ekran görüntüsü almayı varsayılan Göster `UISwitch` sola ve özelleştirilmiş sürümü üzerinde denetim (ayar `Appearance`) sağdaki [Yapılacaklar örneği](https://developer.xamarin.com/samples/xamarin-forms/Todo/):
 
-![](theme-images/switch-default.png "Varsayılan UISwitch rengi") ![ ] (theme-images/switch-custom.png "özelleştirilmiş UISwitch rengi")
+![](theme-images/switch-default.png "Varsayılan UISwitch rengi") ![](theme-images/switch-custom.png "özelleştirilmiş UISwitch rengi")
 
 ### <a name="other-controls"></a>Diğer denetimleri
 

@@ -111,7 +111,7 @@ public partial class HelloBitmapPage : ContentPage
 
 `PaintSurface` İşleyici içinde birden çok kez satırları ve sütunları görüntü bit eşlem işler. Dikkat `Clear` yönteminde `PaintSurface` işleyici olan bağımsız değişkeninin `SKColors.Aqua`, uzaklaştırabilir, arka plan renkleri:
 
-[![Bit eşlem Merhaba! ] (drawing-images/HelloBitmap.png "Merhaba, bit eşlem!")](drawing-images/HelloBitmap-Large.png#lightbox)
+[![Bit eşlem Merhaba! ](drawing-images/HelloBitmap.png "Merhaba, bit eşlem!")](drawing-images/HelloBitmap-Large.png#lightbox)
 
 Bit eşlem dışında metin saydamdır Deniz Mavisi arka plan görünümünü gösterir.
 
