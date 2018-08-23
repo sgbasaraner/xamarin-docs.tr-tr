@@ -67,9 +67,9 @@ Sonraki bölümde dağıtım sertifikası ve sağlama dağıtım profili nasıl 
 
 Alternatif olarak, xcode'da Tercihler iletişim kutusu üzerinden sertifika istemek mümkündür. Bunu yapmak için aşağıdaki adımları izleyin:
 
-1.   Ekibinizin seçin ve tıklayın **sertifikaları Yönet...** : [ ![ ] (ad-hoc-distribution-images/selectteam.png "Takım seçme")](ad-hoc-distribution-images/selectteam.png#lightbox)
+1.   Ekibinizin seçin ve tıklayın **sertifikaları Yönet...** : [![](ad-hoc-distribution-images/selectteam.png "Takım seçme")](ad-hoc-distribution-images/selectteam.png#lightbox)
 
-2.   Bundan sonra öğesini **artı (+)** düğmesine tıklayın ve ardından **iOS App Store'da**: [ ![ ] (ad-hoc-distribution-images/selectcert.png "iOS App Store'da seçme")](ad-hoc-distribution-images/selectcert.png#lightbox)
+2.   Bundan sonra öğesini **artı (+)** düğmesine tıklayın ve ardından **iOS App Store'da**: [![](ad-hoc-distribution-images/selectcert.png "iOS App Store'da seçme")](ad-hoc-distribution-images/selectcert.png#lightbox)
 
 <a name="createprofile" />
 
@@ -91,7 +91,7 @@ Olarak herhangi diğer sağlama oluşturduğunuz profil ile bir uygulama kimliğ
 
 Dağıtım profili oluşturmak için gerekli gerekli bileşenleri olduktan sonra onu oluşturmak için aşağıdaki adımları izleyin:
 
-1. Apple sağlama Portalı'na dönün ve seçin **sağlama > Dağıtım**: [ ![ ] (ad-hoc-distribution-images/distribute01.png "seçin sağlama > Dağıtım")](ad-hoc-distribution-images/distribute01.png#lightbox)
+1. Apple sağlama Portalı'na dönün ve seçin **sağlama > Dağıtım**: [![](ad-hoc-distribution-images/distribute01.png "seçin sağlama > Dağıtım")](ad-hoc-distribution-images/distribute01.png#lightbox)
 
 2. Tıklatın **+** düğmesini tıklatın ve olarak oluşturmak istediğiniz dağıtım profili türünü seçin **geçici**:
 
