@@ -85,7 +85,7 @@ xamarin.interactive.RendererRegistry.registerRenderer(
 );
 ```
 
-Burada, `PersonRenderer` uygulayan `Renderer` arabirimi. Bkz: [typings] [ typings] daha fazla ayrıntı için.
+Burada, `PersonRenderer` uygulayan `Renderer` arabirimi. Bkz: [typings][typings] daha fazla ayrıntı için.
 
 [typings]: https://github.com/xamarin/Workbooks/blob/master/SDK/typings/xamarin-interactive.d.ts
 [xir-color]: https://developer.xamarin.com/api/type/Xamarin.Interactive.Representations.Color/
