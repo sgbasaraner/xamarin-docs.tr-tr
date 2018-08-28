@@ -25,7 +25,7 @@ Ortak Beyanları yanı sıra, SDK tümleştirmesi aracısındaki özel Beyanlar�
 
 ## <a name="external-representations"></a>Dış temsili
 
-[`Xamarin.Interactive.IAgent.RepresentationManager`][repman] kaydetme yeteneği sağlar bir [`RepresentationProvider`][repp], hangi rasgele bir nesneden işlemek için belirsiz bir forma dönüştürmek için bir tümleştirme uygulamalıdır. Bu belirsiz formlar uygulamalıdır [ `ISerializableObject` ] [ serobj] arabirimi.
+[`Xamarin.Interactive.IAgent.RepresentationManager`][repman] kaydetme yeteneği sağlar bir [`RepresentationProvider`][repp], hangi rasgele bir nesneden işlemek için belirsiz bir forma dönüştürmek için bir tümleştirme uygulamalıdır. Bu belirsiz formlar uygulamalıdır [`ISerializableObject`][serobj] arabirimi.
 
 Uygulama `ISerializableObject` arabirimi tam olarak nasıl nesneleri serileştirilir denetleyen serileştirme yöntemi ekler. `Serialize` Yönteminin beklediği bir geliştirici tam olarak hangi özelliklerdir serileştirilmesi için ve son adı ne olacağını belirteceksiniz. Bakarak `Person` nesnesinde bizim [`KitchenSink` örnek] [örnek], biz nasıl işlediğine görebilirsiniz:
 
