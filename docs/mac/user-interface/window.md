@@ -9,7 +9,7 @@ ms.author: brumbaug
 ms.date: 03/14/2017
 ms.openlocfilehash: 39efcf3554469219cc29d70ee059fe645c41280d
 ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
-ms.translationtype: MT
+ms.translationtype: HT
 ms.contentlocale: tr-TR
 ms.lasthandoff: 06/05/2018
 ms.locfileid: "34794078"
@@ -762,7 +762,7 @@ Yeni bir Panel eklemek için aşağıdakileri yapın:
 5. Varolan pencere silin ve bir panelinden sürükleyin **kitaplığı denetçisi** içinde **arabirimi Düzenleyicisi**: 
 
     [![](window-images/panels01.png "Varolan pencere silme")](window-images/panels01.png#lightbox)
-6. Bölmenin en fazla kanca **dosyanın sahibi*-**penceresi*- **çıkışı**: 
+6. Bölmenin en fazla kanca **dosyanın sahibi*- **penceresi*- **çıkışı**: 
 
     [![](window-images/panels02.png "Kablo paneli sürükleme")](window-images/panels02.png#lightbox)
 7. Geçiş **kimlik denetçisi** ve bölmenin sınıfı kümesine `DocumentPanel`: 
