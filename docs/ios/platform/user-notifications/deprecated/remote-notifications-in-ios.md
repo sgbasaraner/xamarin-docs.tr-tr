@@ -8,10 +8,10 @@ author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
 ms.openlocfilehash: f11f5d1cbde0f5eae27215af8eb6544be46c0206
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.sourcegitcommit: 7ffbecf4a44c204a3fce2a7fb6a3f815ac6ffa21
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/13/2018
+ms.lasthandoff: 08/28/2018
 ms.locfileid: "39654821"
 ---
 # <a name="push-notifications-in-ios"></a>İOS anında iletme bildirimleri
@@ -81,12 +81,10 @@ Anında iletme bildirimi, APNS bir mimari tarafından dikte aşağıdaki kuralla
 
 8.  Bir geliştirme sağlama profili oluşturmak için gidin **sağlama profilleri** bölümünde ve biraz önce oluşturduğumuz uygulama kimliğini kullanarak oluşturmak için adımları izleyin.
 
-9.  Sağlama profili oluşturduktan sonra açık **Xcode Düzenleyicisi** ve yenileyin. Sağlama profili oluşturduysanız bu profili iOS sağlama portalı indirip el ile içeri aktarmak gerekli olabilir görünmüyor. Aşağıdaki ekran görüntüsünde sağlama profili ile eklenen Düzenleyici örneği gösterilmektedir:
-
+9.  Sağlama profili oluşturduktan sonra açık **Xcode Düzenleyicisi** ve yenileyin. Sağlama profili oluşturduysanız bu profili iOS sağlama portalı indirip el ile içeri aktarmak gerekli olabilir görünmüyor. Aşağıdaki ekran görüntüsünde sağlama profili ile eklenen Düzenleyici örneği gösterilmektedir:  
     [![](remote-notifications-in-ios-images/image13new.png "Bu ekran görüntüsü Düzenleyici örneği eklenen sağlama profili ile gösterilmektedir.")](remote-notifications-in-ios-images/image13new.png#lightbox)
 
-10.  Bu noktada biz bunu yeni sağlama profili oluşturulmuş kullanmak için bir Xamarin.iOS projesi yapılandırmanız gerekir. Bu yapılır **proje seçenekleri** iletişim altında **iOS paket grubu imzalama** sekmesinde, aşağıdaki ekran görüntüsünde gösterildiği gibi:
-
+10.  Bu noktada biz bunu yeni sağlama profili oluşturulmuş kullanmak için bir Xamarin.iOS projesi yapılandırmanız gerekir. Bu yapılır **proje seçenekleri** iletişim altında **iOS paket grubu imzalama** sekmesinde, aşağıdaki ekran görüntüsünde gösterildiği gibi:  
     [![](remote-notifications-in-ios-images/image11.png "Bu yeni sağlama profili oluşturulmuş kullanmak için bir Xamarin.iOS projesi yapılandırma")](remote-notifications-in-ios-images/image11.png#lightbox)
 
 Bu noktada uygulama, anında iletme bildirimleri ile çalışacak şekilde yapılandırılmıştır. Ancak hala var. sertifikayla gereken birkaç adım daha. Bu sertifikanın bir kişisel bilgi değişimi (PKCS12) sertifika gerektiren PushSharp ile uyumlu olmayan DER biçiminde olduğundan. Sertifika PushSharp tarafından kullanılabilir şekilde dönüştürmek için son aşağıdaki adımları gerçekleştirin:

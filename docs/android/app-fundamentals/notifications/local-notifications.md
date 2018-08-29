@@ -6,21 +6,21 @@ ms.assetid: 03E19D14-7C81-4D5C-88FC-C3A3A927DB46
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/16/2018
+ms.date: 08/16/2018
 ms.openlocfilehash: 221fa9b70eeba2c4ca08433c627e5648470a7fac
-ms.sourcegitcommit: bf05041cc74fb05fd906746b8ca4d1403fc5cc7a
+ms.sourcegitcommit: 7ffbecf4a44c204a3fce2a7fb6a3f815ac6ffa21
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/04/2018
+ms.lasthandoff: 08/28/2018
 ms.locfileid: "39514537"
 ---
+<a name="compatibility"></a>
+
 # <a name="local-notifications"></a>Yerel bildirimler
 
 _Bu bölümde Xamarin.Android yerel bildirimlerinin nasıl gösterir. Bir Android bildirimi çeşitli kullanıcı Arabirimi öğelerini açıklar ve API anlatılmaktadır oluşturma ve bir bildirim görüntüleme ile söz konusu._
 
 ## <a name="local-notifications-overview"></a>Yerel bildirimler genel bakış
-
-Bu konu, bir Xamarin.Android uygulamasına yerel bildirimlerinin nasıl açıklar. Bir Android bildirimi çeşitli bölümlerini açıklar, uygulama geliştiricilerinin kullanabileceği farklı bildirim stilleri açıklar ve bazı oluşturmak ve bildirimleri yayımlamak için kullanılan API'leri sunar.
 
 Android, kullanıcı için bildirim simgelerini ve bildirim bilgileri görüntülemek için iki sistem tarafından denetlenen alanı sağlar. Bir bildirim ilk kez yayımlandığında simgesi görüntülenen *bildirim alanında*aşağıdaki ekran görüntüsünde gösterildiği gibi:
 
@@ -37,6 +37,9 @@ Android bildirimlerini düzenleri iki tür kullanın:
 -   ***Genişletilmiş Düzen*** &ndash; daha fazla bilgi almak için büyük bir boyut için genişletebileceğiniz bir sunu biçimi.
 
 Bu düzen türlerinin her biri (ve bunların nasıl oluşturulacağı) aşağıdaki bölümlerde açıklanmıştır.
+
+> [!NOTE]
+> Bu kılavuzda odaklanır [NotificationCompat API'leri](https://developer.android.com/reference/android/support/v4/app/NotificationCompat.html) gelen [Android desteği Kitaplığı](https://www.nuget.org/packages/Xamarin.Android.Support.v4/). Bu API'ler maksimum geriye dönük uyumluluk için Android 4.0 (API düzeyi 14) sağlayacaktır.
 
 
 ### <a name="base-layout"></a>Taban düzeni
@@ -104,17 +107,50 @@ Android için tek olay bildirimleri üç genişletilmiş Düzen stillerini deste
 
 [Temel bildirim ötesinde](#beyond-the-basic-notification) (Bu makalenin ilerleyen bölümlerinde) nasıl oluşturulacağını açıklar *büyük metin*, *gelen*, ve *görüntü* bildirimleri.
 
+<a name="notif-chan"></a>
+<a name="notification-channels"></a>
+## <a name="notification-channels"></a>Bildirim kanalları
+
+Kullanabileceğiniz Android 8.0 (Oreo) ile başlayarak, *bildirim kanallarını* görüntülemek istediğiniz bildirim her türü için kullanıcı tarafından özelleştirilebilir bir kanal oluşturmak için özellik. Böylece tüm bildirimler aynı davranışı için bir kanal ek gönderilen bildirim kanallarını grubu bildirimleri sizin için sağlar. Örneğin, bir bildirim kanalı hemen ilgilenilmesi gereken bildirimleri için tasarlanmıştır ve bilgilendirici iletileri için kullanılan ayrı bir "sakin" kanal sahip olabilir.
+
+**YouTube** ile Android Oreo yüklü uygulama iki bildirim kategorileri listeler: **indirme bildirimleri** ve **genel bildirimleri**:
+
+[![Android Oreo, YouTube için bildirim ekranları](local-notifications-images/27-youtube-sml.png)](local-notifications-images/27-youtube.png#lightbox)
+
+Bu kategorilerden her biri için bir bildirim kanalı karşılık gelir. YouTube uygulama uygulayan bir **indirme bildirimleri** kanal ve **genel bildirimleri** kanal. Kullanıcı dokunabilir **indirme bildirimleri**, uygulamanın bildirim kanalı indirmek için ayarları ekranı görüntüler:
+
+[![YouTube uygulamanın bildirimler ekranında indir](local-notifications-images/28-yt-download-sml.png)](local-notifications-images/28-yt-download.png#lightbox)
+
+Bu ekranda, kullanıcı davranışını değiştirebilirsiniz **indirme** bildirimleri kanal aşağıdakileri yaparak:
+
+-   Önem düzeyini ayarlamak **Acil**, **yüksek**, **orta**, veya **düşük**, ses ve görsel kesinti düzeyini yapılandırır.
+
+-   Bildirim nokta Aç veya kapat.
+
+-   Yanıp sönen ışık Aç veya kapat.
+
+-   Gösterin veya gizleyin kilit ekranında bildirimleri.
+
+-   Geçersiz kılma **Rahatsız Etmeyin durumunu** ayarı.
+
+**Genel bildirimleri** kanal benzer ayarlara sahiptir:
+
+[![YouTube uygulamasının için genel bildirimleri ekranı](local-notifications-images/29-yt-general-sml.png)](local-notifications-images/29-yt-general.png#lightbox)
+
+Uyarı, bildirim kanalları ile kullanıcı etkileşimini üzerinde mutlak denetim sahibi olmadığınız &ndash; yukarıdaki ekran görüntülerinde görüldüğü gibi kullanıcı cihazda herhangi bir bildirim kanalı ayarlarını değiştirebilirsiniz. Ancak, (aşağıda açıklanacaktır gibi), varsayılan değerleri yapılandırabilirsiniz. Bu örnekte gösterildiği gibi yeni bildirim kanalları özelliği kullanıcılara bildirim farklı türlerini üzerinde ayrıntılı denetim vermek mümkün kolaylaştırır.
+
 
 ## <a name="notification-creation"></a>Bildirim oluşturma
 
-Android'de bir bildirim oluşturmak için kullandığınız [Notification.Builder](https://developer.xamarin.com/api/type/Android.App.Notification+Builder/) sınıfı. `Notification.Builder` Android bildirimi nesneleri oluşturmayı basitleştirmek için 3. 0'kullanıma sunulmuştur. Android eski sürümleriyle uyumlu bildirimleri oluşturmak için kullanabileceğiniz [NotificationCompat.Builder](https://developer.android.com/reference/android/support/v4/app/NotificationCompat.Builder.html) sınıfı yerine `Notification.Builder` (bkz [Uyumluluk](#compatibility) için bu konunun devamındaki kullanma hakkında daha fazla bilgi `NotificationCompat.Builder`).
-`Notification.Builder` bir bildirimde, gibi çeşitli seçenekleri ayarlamak için yöntemler sağlar:
+Android'de bir bildirim oluşturmak için kullandığınız [NotificationCompat.Builder](https://developer.android.com/reference/android/support/v4/app/NotificationCompat.Builder) gelen sınıfı [Xamarin.Android.Support.v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) NuGet paketi. Bu sınıf, oluşturma ve yayımlama bildirimleri Android eski sürümlerinde mümkün kılar. Kullanma hakkında daha fazla bilgi için `NotificationCompat.Builder`, bkz: [Uyumluluk](#compatibility) bu konuda.
+
+`NotificationCompat.Builder` bir bildirimde, gibi çeşitli seçenekleri ayarlamak için yöntemler sağlar:
 
 -   Başlık, ileti metni ve bildirim simgesine dahil olmak üzere içerik.
 
 -   Bildirim stili gibi *büyük metin*, *gelen*, veya *görüntü* stili.
 
--   Bildirim önceliğini: en düşük, düşük, varsayılan olarak yüksek veya en fazla.
+-   Bildirim önceliğini: en düşük, düşük, varsayılan olarak yüksek veya en fazla. Android 8.0 ve üzeri, öncelik aracılığıyla ayarlanır bir [ _bildirim kanalı_](#notification-channels).
 
 -   Kilit ekranı bildirim görünürlüğünü: Genel, özel veya gizli anahtarı.
 
@@ -122,18 +158,56 @@ Android'de bir bildirim oluşturmak için kullandığınız [Notification.Builde
 
 -   Bildirime dokunulduğunda başlatmak için bir Etkinliği gösterdiğine isteğe bağlı bir hedefi.
 
+-   Bildirim (Android 8.0 ve üzeri) yayımlanacak bildirim kanalı kimliği.
+
 Bu seçenekler Oluşturucusu'nda ayarladıktan sonra ayarlarını içeren bir bildirim nesnesi oluşturur. Bu bildirim nesnesine geçirdiğiniz bildirim yayımlamayı *bildirim Yöneticisi*. Android tarafından sağlanan [NotificationManager](https://developer.xamarin.com/api/type/Android.App.NotificationManager/) bildirimleri yayımlama ve bunları kullanıcıya görüntülemek için sorumlu sınıfı. Bu sınıf bir başvuru bir etkinlik veya hizmeti gibi tüm bağlamından alınamıyor.
 
 
-### <a name="how-to-generate-a-notification"></a>Bildirim oluşturma
+### <a name="creating-a-notification-channel"></a>Bir bildirim kanalı oluşturma
+
+Android 8.0 üzerinde çalışan uygulamaların, bunların bildirimleri için bildirim kanalı oluşturmanız gerekir. Bir bildirim kanalı, aşağıdaki üç parça bilgi gerekir:
+
+* Kanal tanımlayacak paketi benzersiz bir kimlik dizesi.
+* Kullanıcıya görüntülenecek kanalın adı.  Ad bir ile 40 arasında olmalıdır. karakter.
+* Kanal önemi.
+
+Uygulamalar, çalıştırıldıkları Android sürümünü denetlemek gerekir.
+Android 8.0 eski sürümlerini çalıştıran cihazlar, bildirim kanalı oluşturmamalısınız. Aşağıdaki yöntemi bir etkinlik bir bildirim kanalı oluşturmak nasıl bir örnek verilmiştir:
+
+```csharp
+void CreateNotificationChannel()
+{
+    if (Build.VERSION.SdkInt < BuildVersionCodes.O)
+    {
+        // Notification channels are new in API 26 (and not a part of the
+        // support library). There is no need to create a notification
+        // channel on older versions of Android.
+        return;
+    }
+
+    var channelName = Resources.GetString(Resource.String.channel_name);
+    var channelDescription = GetString(Resource.String.channel_description);
+    var channel = new NotificationChannel(CHANNEL_ID, channelName, NotificationImportance.Default)
+                  {
+                      Description = channelDescription
+                  };
+
+    var notificationManager = (NotificationManager) GetSystemService(NotificationService);
+    notificationManager.CreateNotificationChannel(channel);
+}
+```
+
+Her bir etkinlik oluşturulduğunda bildirim kanalının oluşturulması gerekir. İçin `CreateNotificationChannel` yöntemi, çağrılabilir `OnCreate` etkinliğin yöntemi.
+
+### <a name="creating-and-publishing-a-notification"></a>Oluşturma ve bir bildirim yayımlama
 
 Android'de bir bildirim oluşturmak için şu adımları izleyin:
 
-1.  Örneği bir `Notification.Builder` nesne.
+1.  Örneği bir `NotificationCompat.Builder` nesne.
 
-2.  Çeşitli yöntemleri çağırmak `Notification.Builder` nesne bildirim seçeneklerini ayarlayın.
+2.  Çeşitli yöntemleri çağırmak `NotificationCompat.Builder` nesne bildirim seçeneklerini ayarlayın.
 
-3.  Çağrı [derleme](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.Build/) yöntemi `Notification.Builder` bildirim nesnesi örneklemek için nesne.
+3.  Çağrı [derleme](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.Build/) yöntemi `NotificationCompat.Builder` bildirim nesnesi örneklemek için nesne.
 
 4.  Çağrı [bildirim](https://developer.xamarin.com/api/member/Android.App.NotificationManager.Notify/(System.Int32%2cAndroid.App.Notification)) bildirimi yayımlamak için bildirim Yöneticisi yöntemi.
 
@@ -145,11 +219,11 @@ En az her bildirim için aşağıdaki bilgileri sağlamanız gerekir:
 
 -   Bildirimin metni
 
-Aşağıdaki kod örneğinde nasıl kullanılacağı gösterilmektedir `Notification.Builder` basit bir bildirim oluşturmak için. Dikkat `Notification.Builder` yöntemleri destekler [yöntem zincirlemesinde](http://en.wikipedia.org/wiki/Method_chaining); diğer bir deyişle, sonraki yöntem çağrısının çağırmak için son yöntem çağrısının sonucunu kullanabilmeniz için her yöntemi Oluşturucu nesnesini döndürür:
+Aşağıdaki kod örneğinde nasıl kullanılacağı gösterilmektedir `NotificationCompat.Builder` basit bir bildirim oluşturmak için. Dikkat `NotificationCompat.Builder` yöntemleri destekler [yöntem zincirlemesinde](http://en.wikipedia.org/wiki/Method_chaining); diğer bir deyişle, sonraki yöntem çağrısının çağırmak için son yöntem çağrısının sonucunu kullanabilmeniz için her yöntemi Oluşturucu nesnesini döndürür:
 
 ```csharp
 // Instantiate the builder and set notification elements:
-Notification.Builder builder = new Notification.Builder (this)
+NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
     .SetContentTitle ("Sample Notification")
     .SetContentText ("Hello World! This is my first notification!")
     .SetSmallIcon (Resource.Drawable.ic_notification);
@@ -166,7 +240,7 @@ const int notificationId = 0;
 notificationManager.Notify (notificationId, notification);
 ```
 
-Bu örnekte, yeni bir `Notification.Builder` çağrılan nesne `builder` olan örneği, başlık ve metin bildirimi ayarlanır ve bildirim simgesine gelen yüklenen **Resources/drawable/ic_notification.png**. Bildirim oluşturucunun çağrısı `Build` yöntemi, bu ayarlarla bir bildirim nesnesi oluşturur. Sonraki adım çağırmaktır `Notify` bildirim Yöneticisi yöntemi. Bildirim Yöneticisi'ni bulmak için arama `GetSystemService`, yukarıda gösterildiği gibi.
+Bu örnekte, yeni bir `NotificationCompat.Builder` çağrılan nesne `builder` kullanılacak bildirim kanalını Kimliğini birlikte oluşturulur. Başlık ve metin bildirimi ayarlanır ve bildirim simgesine gelen yüklenen **Resources/drawable/ic_notification.png**. Bildirim oluşturucunun çağrısı `Build` yöntemi, bu ayarlarla bir bildirim nesnesi oluşturur. Sonraki adım çağırmaktır `Notify` bildirim Yöneticisi yöntemi. Bildirim Yöneticisi'ni bulmak için arama `GetSystemService`, yukarıda gösterildiği gibi.
 
 `Notify` Yöntemi, iki parametre kabul eder: bildirim tanımlayıcısı ve bildirim nesnesi. Bildirim tanımlayıcısı uygulamanıza bildirim tanımlayan benzersiz bir tamsayıdır. Bu örnekte, sıfır (0); bildirim tanımlayıcısı ayarlanır Ancak, bir üretim uygulamasında benzersiz bir tanımlayıcı her bildirim vermek istersiniz. Önceki bir çağrı tanımlayıcı değeri yeniden `Notify` son bildirim üzerine yazılmasına neden olur.
 
@@ -188,7 +262,7 @@ Ayrıca ses çalınması için bildirim istiyorsanız, bildirim oluşturucunun �
 
 ```csharp
 // Instantiate the notification builder and enable sound:
-Notification.Builder builder = new Notification.Builder (this)
+NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
     .SetContentTitle ("Sample Notification")
     .SetContentText ("Hello World! This is my first notification!")
     .SetDefaults (NotificationDefaults.Sound)
@@ -213,7 +287,7 @@ Alternatif olarak, sistem varsayılan zil ses için BİLDİRİMİNİZE kullanabi
 builder.SetSound (RingtoneManager.GetDefaultUri(RingtoneType.Ringtone));
 ```
 
-Bir bildirim nesnesini oluşturduktan sonra bildirim nesnede bildirim özelliklerini ayarlamak mümkündür (bunları önceden ile yapılandırmak yerine `Notification.Builder` yöntemleri). Örneğin, çağırmak yerine `SetDefaults` etkinleştirme Titreşim bir bildirim yöntemi kullanılan bit bayrağı bildirimin, doğrudan değiştirebilirsiniz [varsayılanları](https://developer.xamarin.com/api/property/Android.App.Notification.Defaults/) özelliği:
+Bir bildirim nesnesini oluşturduktan sonra bildirim nesnede bildirim özelliklerini ayarlamak mümkündür (bunları önceden ile yapılandırmak yerine `NotificationCompat.Builder` yöntemleri). Örneğin, çağırmak yerine `SetDefaults` etkinleştirme Titreşim bir bildirim yöntemi kullanılan bit bayrağı bildirimin, doğrudan değiştirebilirsiniz [varsayılanları](https://developer.xamarin.com/api/property/Android.App.Notification.Defaults/) özelliği:
 
 ```csharp
 // Build the notification:
@@ -229,7 +303,7 @@ Bu örnek bildirim yayımlandığında vibrate edilmesine neden olur.
 
 ### <a name="updating-a-notification"></a>Bildirim güncelleştiriliyor
 
-Yayımlandıktan sonra bildirim içeriğini güncelleştirmek istiyorsanız, var olan kullanabilirsiniz `Notification.Builder` yeni bir bildirim oluşturur ve bu bildirim tanımlayıcısı ile son bildirimin yayımlamak için nesne. Örneğin:
+Yayımlandıktan sonra bildirim içeriğini güncelleştirmek istiyorsanız, var olan kullanabilirsiniz `NotificationCompat.Builder` yeni bir bildirim oluşturur ve bu bildirim tanımlayıcısı ile son bildirimin yayımlamak için nesne. Örneğin:
 
 ```csharp
 // Update the existing notification builder content:
@@ -243,7 +317,7 @@ notification = builder.Build();
 notificationManager.Notify (notificationId, notification);
 ```
 
-Bu örnekte, mevcut `Notification.Builder` nesnesi, farklı bir başlık ve ileti ile yeni bir bildirim nesnesi oluşturmak için kullanılır.
+Bu örnekte, mevcut `NotificationCompat.Builder` nesnesi, farklı bir başlık ve ileti ile yeni bir bildirim nesnesi oluşturmak için kullanılır.
 Önceki bildirim tanımlayıcısını kullanarak yeni bir bildirim nesne yayımlanır ve bu daha önce yayımlanmış bildirim içeriğini güncelleştirir:
 
 ![Güncelleştirilmiş uyarı](local-notifications-images/12-updated-notification.png)
@@ -277,7 +351,7 @@ PendingIntent pendingIntent =
     PendingIntent.GetActivity (this, pendingIntentId, intent, PendingIntentFlags.OneShot);
 
 // Instantiate the builder and set notification elements, including pending intent:
-Notification.Builder builder = new Notification.Builder(this)
+NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
     .SetContentIntent (pendingIntent)
     .SetContentTitle ("Sample Notification")
     .SetContentText ("Hello World! This is my first action notification!")
@@ -332,7 +406,7 @@ PendingIntent pendingIntent =
 
 // Instantiate the builder and set notification elements, including
 // the pending intent:
-Notification.Builder builder = new Notification.Builder (this)
+NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
     .SetContentIntent (pendingIntent)
     .SetContentTitle ("Sample Notification")
     .SetContentText ("Hello World! This is my second action notification!")
@@ -366,113 +440,11 @@ Bu bir alınan ileti, "Greetings gelen MainActivity!," görüntülenir `SecondAc
 Intents oluşturma hakkında daha fazla bilgi için bkz. [Pendingıntent](https://developer.xamarin.com/api/type/Android.App.PendingIntent/).
 
 
-<a name="notif-chan"></a>
-<a name="notification-channels"></a>
-## <a name="notification-channels"></a>Bildirim kanalları
-
-Kullanabileceğiniz Android 8.0 (Oreo) ile başlayarak, *bildirim kanallarını* görüntülemek istediğiniz bildirim her türü için kullanıcı tarafından özelleştirilebilir bir kanal oluşturmak için özellik. Böylece tüm bildirimler aynı davranışı için bir kanal ek gönderilen bildirim kanallarını grubu bildirimleri sizin için sağlar. Örneğin, bir bildirim kanalı hemen ilgilenilmesi gereken bildirimleri için tasarlanmıştır ve bilgilendirici iletileri için kullanılan ayrı bir "sakin" kanal sahip olabilir.
-
-**YouTube** ile Android Oreo yüklü uygulama iki bildirim kategorileri listeler: **indirme bildirimleri** ve **genel bildirimleri**:
-
-[![Android Oreo, YouTube için bildirim ekranları](local-notifications-images/27-youtube-sml.png)](local-notifications-images/27-youtube.png#lightbox)
-
-Bu kategorilerden her biri için bir bildirim kanalı karşılık gelir. YouTube uygulama uygulayan bir **indirme bildirimleri** kanal ve **genel bildirimleri** kanal. Kullanıcı dokunabilir **indirme bildirimleri**, uygulamanın bildirim kanalı indirmek için ayarları ekranı görüntüler:
-
-[![YouTube uygulamanın bildirimler ekranında indir](local-notifications-images/28-yt-download-sml.png)](local-notifications-images/28-yt-download.png#lightbox)
-
-Bu ekranda, kullanıcı davranışını değiştirebilirsiniz **indirme** bildirimleri kanal aşağıdakileri yaparak:
-
--   Önem düzeyini ayarlamak **Acil**, **yüksek**, **orta**, veya **düşük**, ses ve görsel kesinti düzeyini yapılandırır.
-
--   Bildirim nokta Aç veya kapat.
-
--   Yanıp sönen ışık Aç veya kapat.
-
--   Gösterin veya gizleyin kilit ekranında bildirimleri.
-
--   Geçersiz kılma **Rahatsız Etmeyin durumunu** ayarı.
-
-**Genel bildirimleri** kanal benzer ayarlara sahiptir:
-
-[![YouTube uygulamasının için genel bildirimleri ekranı](local-notifications-images/29-yt-general-sml.png)](local-notifications-images/29-yt-general.png#lightbox)
-
-Uyarı, bildirim kanalları ile kullanıcı etkileşimini üzerinde mutlak denetim sahibi olmadığınız &ndash; yukarıdaki ekran görüntülerinde görüldüğü gibi kullanıcı cihazda herhangi bir bildirim kanalı ayarlarını değiştirebilirsiniz. Ancak, (aşağıda açıklanacaktır gibi), varsayılan değerleri yapılandırabilirsiniz. Bu örnekte gösterildiği gibi yeni bildirim kanalları özelliği kullanıcılara bildirim farklı türlerini üzerinde ayrıntılı denetim vermek mümkün kolaylaştırır.
-
-Uygulamanıza bildirim kanallarını için destek eklemeniz gerekir? Android 8.0, uygulamanızı hedefliyorsanız *gerekir* bildirim kanallarını uygulayın.
-Oreo cihazlarında bildirimi görüntülemek bir bildirim kanalı kullanmadan kullanıcıya bir yerel Bildirim göndermeye çalıştığında Oreo için hedeflenen bir uygulama başarısız olur. Android 8.0 hedefliyorsanız yoktur, Android 7.1 veya önceki çalıştırırken göstermesi gibi uygulamanızın Android 8.0, ancak aynı bildirim davranışı ile çalışmaya devam edecektir.
-
-
-### <a name="creating-a-notification-channel"></a>Bir bildirim kanalı oluşturma
-
-Bir bildirim kanalı oluşturmak için aşağıdakileri yapın:
-
-1. Oluşturmak bir [NotificationChannel](https://developer.android.com/reference/android/app/NotificationChannel.html) aşağıdaki nesnesi:
-
-    - Bir paket içinde benzersiz olan bir kimliği dizesi. Aşağıdaki örnekte, dize `com.xamarin.myapp.urgent` kullanılır.
-
-    - Kanal (değerinden 40 karakter) kullanıcıya görünen adı. Aşağıdaki örnekte, adı **Acil** kullanılır.
-
-    - Nasıl interruptive bildirimlerini denetler kanal önemini nakledilir `NotificationChannel`. Önem derecesi olabilir `Default`, `High`, `Low`, `Max`, `Min`, `None`, veya `Unspecified`.
-
-    Bu değerleri geçirmek [Oluşturucusu](https://developer.android.com/reference/android/app/NotificationChannel.html#NotificationChannel%28java.lang.String,%20java.lang.CharSequence,%20int%29) (Bu örnekte, `Resource.String.noti_chan_urgent` ayarlanır **Acil**):
-
-    ```csharp
-    public const string URGENT_CHANNEL = "com.xamarin.myapp.urgent";
-    . . .
-    string chanName = GetString (Resource.String.noti_chan_urgent);
-    var importance = NotificationImportance.High;
-    NotificationChannel chan =
-       new NotificationChannel (URGENT_CHANNEL, chanName, importance);
-    ```
-
-2.  Yapılandırma `NotificationChannel` ilk ayarları içeren nesne.
-    Örneğin, aşağıdaki kod yapılandırır `NotificationChannel` bu kanalına gönderilen bildirimleri cihaz vibrate ve kilit ekranında varsayılan olarak görünür nesne:
-
-    ```csharp
-    chan.EnableVibration (true);
-    chan.LockscreenVisibility = NotificationVisibility.Public;
-    ```
-
-3.  Bildirim Yöneticisi bildirim kanalı nesnesine gönderme:
-
-    ```csharp
-    NotificationManager notificationManager =
-        (NotificationManager) GetSystemService (NotificationService);
-    notificationManager.CreateNotificationChannel (chan);
-    ```
-
-
-### <a name="posting-to-a-notifications-channel"></a>Bir bildirim kanalı için gönderme
-
-Bir bildirim kanalı için bir bildirim göndermek için aşağıdakileri yapın:
-
-1.  Bildirim kullanarak yapılandırma `Notification.Builder`, kanal kimliği için geçen `SetChannelId` yöntemi. Örneğin:
-
-    ```csharp
-    Notification.Builder builder = new Notification.Builder (this)
-        .SetContentTitle ("Attention!")
-        .SetContentText ("This is an urgent notification message!")
-        .SetChannelId (URGENT_CHANNEL);
-    ```
-
-2.  Derleme ve bildirim yöneticisinin kullanarak bildirim vermek [bildirim](https://developer.xamarin.com/api/member/Android.App.NotificationManager.Notify/p/System.Int32/Android.App.Notification/) yöntemi:
-
-    ```csharp
-    const int notificationId = 0;
-    notificationManager.Notify (notificationId, builder.Build());
-    ```
-
-Bilgilendirme iletileri için başka bir bildirim kanalı oluşturmak için yukarıdaki adımları tekrarlayabilirsiniz. Bu ikinci kanal varsayılan olarak, Titreşim devre dışı, varsayılan kilit ekranı görünürlük kümesine `Private`, bildirim önem ayarlanmış ve `Default`.
-
-Bir tam kod örneği Android Oreo bildirim kanallarını için eylemde görmek [NotificationChannels](https://developer.xamarin.com/samples/monodroid/android-o/NotificationChannels) örnek; bu örnek uygulama iki kanallar yönetir ve ek bildirim seçeneklerini ayarlar.
-
-
-
 <a name="beyond-the-basic-notification" />
 
 ## <a name="beyond-the-basic-notification"></a>Temel bildirim
 
-Bildirimleri varsayılan olarak Android no-frills temel düzeni biçimine ancak ek yaparak bu temel biçimi iyileştirebilecek `Notification.Builder` yöntemi çağırır. Bu bölümde, bir büyük fotoğrafı simge için bildirim eklemek öğreneceksiniz ve genişletilmiş Düzen bildirimleri oluşturma örnekleri göreceksiniz.
+Bildirimleri varsayılan olarak Android basit temel düzen biçimine ancak ek yaparak bu temel biçimi iyileştirebilecek `NotificationCompat.Builder` yöntemi çağırır. Bu bölümde, bir büyük fotoğrafı simge için bildirim eklemek öğreneceksiniz ve genişletilmiş Düzen bildirimleri oluşturma örnekleri göreceksiniz.
 
 <a name="large-icon-format" />
 
@@ -496,8 +468,7 @@ Bir bildirim büyük bir simge görüntü kullanmak için bildirim oluşturucunu
 builder.SetLargeIcon (BitmapFactory.DecodeResource (Resources, Resource.Drawable.monkey_icon));
 ```
 
-Bu kod örneği, görüntü dosyası açılır **Resources/drawable/monkey_icon.png**bit eşleme dönüştürür ve sonuçta elde edilen bit eşleme geçirir `Notification.Builder`. Genellikle, kaynak görüntü çözünürlüğünü küçük simge büyük &ndash; ancak daha büyük. Çok büyük bir görüntü bildirim geciktirmeye gereksiz yeniden boyutlandırma işlemlerini neden olabilir.
-Android bildirim simgesi boyutları hakkında daha fazla bilgi için bkz. [bildirim simgeleri](http://developer.android.com/design/style/iconography.html#notification).
+Bu kod örneği, görüntü dosyası açılır **Resources/drawable/monkey_icon.png**bit eşleme dönüştürür ve sonuçta elde edilen bit eşleme geçirir `NotificationCompat.Builder`. Genellikle, kaynak görüntü çözünürlüğünü küçük simge büyük &ndash; ancak daha büyük. Çok büyük bir görüntü bildirim geciktirmeye gereksiz yeniden boyutlandırma işlemlerini neden olabilir.
 
 
 ### <a name="big-text-style"></a>Büyük metin stili
@@ -512,7 +483,7 @@ Bu biçimde iki noktayla sonlandırıldı iletisi yalnızca bir alıntı göster
 
 Bu Genişletilmiş düzeni biçimi de bildirim alt kısmındaki Özet metni içerir. Maksimum yüksekliğini *büyük metin* bildirimidir 256 dp.
 
-Oluşturmak için bir *büyük metin* bildirim, örneği bir `Notification.Builder` önce olduğu gibi nesne örneği oluşturun ve Ekle bir [BigTextStyle](https://developer.xamarin.com/api/type/Android.App.Notification+BigTextStyle/) nesnesini `Notification.Builder` nesnesi. Örneğin:
+Oluşturmak için bir *büyük metin* bildirim, örneği bir `NotificationCompat.Builder` önce olduğu gibi nesne örneği oluşturun ve Ekle bir [BigTextStyle](https://developer.xamarin.com/api/type/Android.App.Notification+BigTextStyle/) nesnesini `NotificationCompat.Builder` nesnesi. Aşağıda bir örnek verilmiştir:
 
 ```csharp
 // Instantiate the Big Text style:
@@ -533,7 +504,7 @@ builder.SetStyle (textStyle);
 // Create the notification and publish it ...
 ```
 
-Bu örnekte, ileti metni ve Özet metni depolanır `BigTextStyle` nesne (`textStyle`) için geçirilmeden önce `Notification.Builder.`
+Bu örnekte, ileti metni ve Özet metni depolanır `BigTextStyle` nesne (`textStyle`) için geçirilmeden önce `NotificationCompat.Builder.`
 
 
 ### <a name="image-style"></a>Görüntü stili
@@ -550,7 +521,7 @@ Kullanıcı sürüklediğinde *görüntü* bildirimi genişlediğinden genişler
 
 Bildirim compact biçiminde gösterildiğinde, bildirim metni görüntülediğinden emin Uyarısı (bildirim oluşturucunun için geçirilen metin `SetContentText` yöntemi, daha önce gösterildiği gibi). Ancak, bildirim görüntü açığa çıkarmak için genişletildiğinde, resmin üzerine Özet metni görüntüler.
 
-Oluşturmak için bir *görüntü* bildirim, örneği bir `Notification.Builder` önceden olduğu gibi nesne oluşturma ve ekleme bir [BigPictureStyle](https://developer.xamarin.com/api/type/Android.App.Notification+BigPictureStyle/) içine nesne `Notification.Builder` nesne. Örneğin:
+Oluşturmak için bir *görüntü* bildirim, örneği bir `NotificationCompat.Builder` önceden olduğu gibi nesne oluşturma ve ekleme bir [BigPictureStyle](https://developer.xamarin.com/api/type/Android.App.Notification+BigPictureStyle/) içine nesne `NotificationCompat.Builder` nesne. Örneğin:
 
 ```csharp
 // Instantiate the Image (Big Picture) style:
@@ -568,7 +539,7 @@ builder.SetStyle (picStyle);
 // Create the notification and publish it ...
 ```
 
-Gibi `SetLargeIcon` yöntemi `Notification.Builder`, [BigPicture](https://developer.xamarin.com/api/member/Android.App.Notification+BigPictureStyle.BigPicture/) yöntemi `BigPictureStyle` bildirimi gövdesinde görüntülemek istediğiniz görüntünün bir bit eşlem gerektirir. Bu örnekte, [DecodeResource](https://developer.xamarin.com/api/member/Android.Graphics.BitmapFactory.DecodeResource/(Android.Content.Res.Resources%2cSystem.Int32)) yöntemi `BitmapFactory` görüntü dosyasının konumu okuma **Resources/drawable/x_bldg.png** ve bir bit eşleme dönüştürür.
+Gibi `SetLargeIcon` yöntemi `NotificationCompat.Builder`, [BigPicture](https://developer.xamarin.com/api/member/Android.App.Notification+BigPictureStyle.BigPicture/) yöntemi `BigPictureStyle` bildirimi gövdesinde görüntülemek istediğiniz görüntünün bir bit eşlem gerektirir. Bu örnekte, [DecodeResource](https://developer.xamarin.com/api/member/Android.Graphics.BitmapFactory.DecodeResource/(Android.Content.Res.Resources%2cSystem.Int32)) yöntemi `BitmapFactory` görüntü dosyasının konumu okuma **Resources/drawable/x_bldg.png** ve bir bit eşleme dönüştürür.
 
 Bir kaynak olarak değil paketlenmiş görüntüleri de görüntüleyebilirsiniz. Örneğin, aşağıdaki örnek kod yerel SD karttan görüntüyü yükler ve görüntüler bir *görüntü* bildirim:
 
@@ -610,7 +581,7 @@ Kullanıcı bildirime sürüklediğinde, aşağıdaki ekran görüntüsünde gö
 
 ![Genişletilmiş örnek gelen bildirim](local-notifications-images/21-inbox-expanded.png)
 
-Oluşturmak için bir *gelen* bildirim, örneği bir `Notification.Builder` ekleyin ve nesne, önceden olduğu gibi bir [InboxStyle](https://developer.xamarin.com/api/type/Android.App.Notification+InboxStyle/) nesnesini `Notification.Builder`. Örneğin:
+Oluşturmak için bir *gelen* bildirim, örneği bir `NotificationCompat.Builder` ekleyin ve nesne, önceden olduğu gibi bir [InboxStyle](https://developer.xamarin.com/api/type/Android.App.Notification+InboxStyle/) nesnesini `NotificationCompat.Builder`. Aşağıda bir örnek verilmiştir:
 
 ```csharp
 // Instantiate the Inbox style:
@@ -632,17 +603,17 @@ builder.SetStyle (inboxStyle);
 
 Bildirimi gövdesi için yeni satırlık metin eklemek, arama [Addline](https://developer.xamarin.com/api/member/Android.App.Notification+InboxStyle.AddLine/p/System.String/) yöntemi `InboxStyle` nesne (maksimum yüksekliğini *gelen* bildirimidir 256 dp). Aksine, Not *büyük metin* stili *gelen* stilini tek satırlık metin bildirimi gövdesinde destekler.
 
-Ayrıca *gelen* metin satırlarını tek tek bir genişletilmiş biçimde görüntülemek için gereken her türlü bildirim için stili. Örneğin, *gelen* bildirim stili, birden fazla bekleyen bildirimler Özet bildirim halinde birleştirmek için kullanılabilir &ndash; tek bir güncelleştirebileceğiniz *gelen* yeni bildirim stili bildirim içeriği satırlarını (bkz [bildirim güncelleştiriliyor](#updating-a-notification) yukarıda), bunun yerine daha yeni ve çoğunlukla benzer bildirimler sürekli bir akış oluşturun. Bu yaklaşımı hakkında daha fazla bilgi için bkz: [bildirimlerinizi özetlemek](http://developer.android.com/design/patterns/notifications.html#summarize_your_notifications).
+Ayrıca *gelen* metin satırlarını tek tek bir genişletilmiş biçimde görüntülemek için gereken her türlü bildirim için stili. Örneğin, *gelen* bildirim stili, birden fazla bekleyen bildirimler Özet bildirim halinde birleştirmek için kullanılabilir &ndash; tek bir güncelleştirebileceğiniz *gelen* yeni bildirim stili bildirim içeriği satırlarını (bkz [bildirim güncelleştiriliyor](#updating-a-notification) yukarıda), bunun yerine daha yeni ve çoğunlukla benzer bildirimler sürekli bir akış oluşturun.
 
 
 ## <a name="configuring-metadata"></a>Yapılandırma meta verileri
 
-`Notification.Builder` Öncelik, görünürlük ve kategorisi gibi bildirim hakkındaki meta verileri ayarlama için çağırabileceğiniz yöntemler içerir. Android, bu bilgileri kullanır &mdash; kullanıcı tercihi ayarlarıyla birlikte &mdash; nasıl ve ne zaman belirlemek için bildirimleri görüntüleyin.
+`NotificationCompat.Builder` Öncelik, görünürlük ve kategorisi gibi bildirim hakkındaki meta verileri ayarlama için çağırabileceğiniz yöntemler içerir. Android, bu bilgileri kullanır &mdash; kullanıcı tercihi ayarlarıyla birlikte &mdash; nasıl ve ne zaman belirlemek için bildirimleri görüntüleyin.
 
 
 ### <a name="priority-settings"></a>Öncelik ayarları
 
-Bildirim yayımlandığında öncelik ayarı bir bildirim iki sonuçlarını belirler:
+Android 7.1 ve daha düşük çalışan uygulamaları, bildirime kendisini doğrudan önceliğini ayarlamak gerekir. Bildirim yayımlandığında öncelik ayarı bir bildirim iki sonuçlarını belirler:
 
 -   Burada diğer bildirimler ile ilgili bildirim görüntülenir.
     Her bildirim yayımlandığında Örneğin, yüksek öncelikli bildirimler bildirimleri çekmecesinde daha düşük öncelikli bildirimleri yukarıda açmamasından sunulur.
@@ -661,7 +632,7 @@ Xamarin.Android bildirim öncelikli ayarlamak için aşağıdaki sabit listeleri
 
 -   `NotificationPriority.Min` &ndash; Arka plan bilgileri için kullanıcı yalnızca bildirimleri (örneğin, konum veya hava durumu bilgileri) bildirimleri görüntüleme.
 
-Bir bildirim önceliğini ayarlamak için çağrı [SetPriority](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.SetPriority/) yöntemi `Notification.Builder` nesnesinin içindeki öncelik düzeyi. Örneğin:
+Bir bildirim önceliğini ayarlamak için çağrı [SetPriority](https://developer.xamarin.com/api/member/Android.App.Notification+Builder.SetPriority/) yöntemi `NotificationCompat.Builder` nesnesinin içindeki öncelik düzeyi. Örneğin:
 
 ```csharp
 builder.SetPriority (NotificationPriority.High);
@@ -681,6 +652,8 @@ Sonraki örnekte, "güne ait düşündüğünüz" düşük öncelikli bildirim d
 
 Düşük öncelikli bildirim "Düşünce gün için" bildirim olduğu için Android bu Heads-up biçiminde görüntülenmez.
 
+> [!NOTE]
+> Android 8.0 ve üzeri, bildirim kanalı ve kullanıcı ayarlarını önceliğini bildirim önceliğini belirler.
 
 ### <a name="visibility-settings"></a>Görünürlüğü ayarları
 
@@ -693,7 +666,7 @@ Xamarin.Android bildirim görünürlük ayarlamak için aşağıdaki sabit liste
 
 -   `NotificationVisibility.Secret` &ndash; Hiçbir şey güvenli kilit ekranında, bile bildirim simgesi görüntülenir. Bildirim içeriği, yalnızca kullanıcının cihaz kilidini açarak sonra kullanılabilir.
 
-Bir bildirim uygulamaları çağrı görünürlüğünü ayarlanacak `SetVisibility` yöntemi `Notification.Builder` nesnesinin görünürlüğünü ayarı. Örneğin, bu çağrı `SetVisibility` bildirim yapar `Private`:
+Bir bildirim uygulamaları çağrı görünürlüğünü ayarlanacak `SetVisibility` yöntemi `NotificationCompat.Builder` nesnesinin görünürlüğünü ayarı. Örneğin, bu çağrı `SetVisibility` bildirim yapar `Private`:
 
 ```csharp
 builder.SetVisibility (NotificationVisibility.Private);
@@ -738,7 +711,7 @@ Android 5.0 ile başlayarak, önceden tanımlanmış kategoriler sıralama ve fi
 
 -   `Notification.CategoryStatus` &ndash; Cihaz hakkındaki bilgileri.
 
-Bildirimleri sıralandığında, bildirimin öncelik, kategori ayarına göre önceliklidir. Ait olsa bile, yüksek öncelikli bildirim uyarı görüntülenecek `Promo` kategorisi. Bildirim kategorisi ayarlamak için çağrı `SetCategory` yöntemi `Notification.Builder` nesnesinin kategori ayarı. Örneğin:
+Bildirimleri sıralandığında, bildirimin öncelik, kategori ayarına göre önceliklidir. Ait olsa bile, yüksek öncelikli bildirim uyarı görüntülenecek `Promo` kategorisi. Bildirim kategorisi ayarlamak için çağrı `SetCategory` yöntemi `NotificationCompat.Builder` nesnesinin kategori ayarı. Örneğin:
 
 ```csharp
 builder.SetCategory (Notification.CategoryCall);
@@ -749,30 +722,6 @@ builder.SetCategory (Notification.CategoryCall);
 ![Ekran anahtarları rahatsız etmeyin](local-notifications-images/26-do-not-disturb.png)
 
 Kullanıcı ne zaman yapılandırır *Rahatsız Etmeyin* (yukarıdaki ekran görüntüsünde gösterildiği gibi) aramaları hariç tüm kesintileri önlemek için bir kategori ayarı ile bildirimleri Android sağlayan `Notification.CategoryCall` cihazı sunulacak içinde *Rahatsız Etmeyin* modu. Unutmayın `Notification.CategoryAlarm` bildirimleri hiçbir zaman engellendiğini *Rahatsız Etmeyin* modu.
-
-
-<a name="compatibility" />
-
-## <a name="compatibility"></a>Uyumluluk
-
-Bir uygulama oluşturuyorsanız, Android (kısa sürede API düzey 4), önceki sürümlerinde de çalıştırmak kullanacağınız [NotificationCompat.Builder](https://developer.android.com/reference/android/support/v4/app/NotificationCompat.Builder.html) sınıfı yerine `Notification.Builder`. Bildirimlerle oluşturduğunuzda `NotificationCompat.Builder`, Android temel bildirim içerik eski cihazlarda doğru görüntülendiğini sağlar. Ancak, bazı gelişmiş bildirimi özellikleri eski Android sürümlerinde kullanılabilir olmadığından, kodunuzu genişletilmiş bildirim stilleri, kategoriler ve görünürlük düzeyleri aşağıda açıklandığı gibi uyumluluk sorunlarını açıkça işlemelidir.
-
-Kullanılacak `NotificationCompat.Builder` uygulamanızda eklemelisiniz [Android desteği kitaplığı v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) projenizdeki NuGet.
-
-Aşağıdaki kod örneği kullanarak temel bir bildirimi nasıl oluşturulacağı `NotificationCompat.Builder`:
-
-```csharp
-// Instantiate the builder and set notification elements:
-NotificationCompat.Builder builder = new NotificationCompat.Builder (this)
-    .SetContentTitle ("Sample Notification")
-    .SetContentText ("Hello World! This is my first notification!")
-    .SetSmallIcon (Resource.Drawable.ic_notification);
-
-// Build the notification:
-Notification notification = builder.Build();
-```
-
-Bu örnekte gösterildiği gibi önemli bildirim seçeneklerini yöntem çağrılarında gereksinimlerine aynı `Notification.Builder`. Ancak, daha karmaşık bildirimleri (sonraki bölümde açıklanmıştır) için aşağı uyumluluk sorunlarını işlemek kodunuzu vardır.
 
 [LocalNotifications](https://developer.xamarin.com/samples/monodroid/LocalNotifications) örnek nasıl kullanılacağını gösterir `NotificationCompat.Builder` bildirim alanından ikinci bir etkinlik başlatmak için. Bu örnek kod bölümünde açıklanan [Xamarin.Android kullanarak yerel bildirimleri](~/android/app-fundamentals/notifications/local-notifications-walkthrough.md) gözden geçirme.
 
@@ -798,13 +747,12 @@ Benzer şekilde, uygulamanız kullanabilir `NotificationCompat.InboxStyle` ve `N
 Android, burada daha eski sürümlerini desteklemek üzere `SetCategory` olduğundan kullanılamıyor, kodunuzu API düzeyi koşullu olarak çağırmak için çalışma zamanında da denetleyebilirsiniz `SetCategory` zaman API düzeyi Android 5.0 (API düzey 21) değerinden büyük veya eşit:
 
 ```csharp
-if ((int) Android.OS.Build.Version.SdkInt >= 21) {
+if ((int) Android.OS.Build.Version.SdkInt >= BuildVersionCodes.Lollipop) {
     builder.SetCategory (Notification.CategoryEmail);
 }
 ```
 
-Bu örnekte, uygulama kullanıcının **hedef Framework'ü** Android 5.0 ayarlanır ve **en düşük Android sürümü** ayarlanır **Android 4.1 (API düzeyi 16)**. Çünkü `SetCategory` olan API düzey 21 ve sonraki sürümleri kullanılabilir, bu kod örneği çağıracak `SetCategory` yalnızca kullanılabilir olduğunda &ndash; değil çağıracak `SetCategory` API düzeyi olduğunda küçüktür
-21.
+Bu örnekte, uygulama kullanıcının **hedef Framework'ü** Android 5.0 ayarlanır ve **en düşük Android sürümü** ayarlanır **Android 4.1 (API düzeyi 16)**. Çünkü `SetCategory` olan API düzey 21 ve sonraki sürümleri kullanılabilir, bu kod örneği çağıracak `SetCategory` yalnızca kullanılabilir olduğunda &ndash; değil çağıracak `SetCategory` API düzey 21'den az olduğunda.
 
 
 ### <a name="lockscreen-visibility"></a>Kilit ekranı görünürlük
@@ -820,9 +768,9 @@ if ((int) Android.OS.Build.Version.SdkInt >= 21) {
 
 ## <a name="summary"></a>Özet
 
-Bu makalede, Android yerel bildirimleri oluşturma açıklanmıştır. Bir bildirim anatomisi açıklanan, nasıl kullanılacağı açıklanıyor `Notification.Builder` bildirimleri oluşturmak için nasıl büyük simge stil Bildirimlerde *büyük metin*, *görüntü* ve *gelen kutusu*  biçimleri, öncelik, görünürlük ve kategorisi gibi meta veri ayarları bildirim ayarlama ve nasıl bildirim etkinliği başlatın. Bu bildirim ayarlarının yeni uyarı, kilit ekranı, nasıl çalıştığını da bu makalede açıklanan ve *Rahatsız Etmeyin* Android 5.0 ile sunulan özellikler. Son olarak, size nasıl kullanacağınızı öğrendiniz `NotificationCompat.Builder` önceki sürümleriyle Android bildirim uyumluluğu korumak için.
+Bu makalede, Android yerel bildirimleri oluşturma açıklanmıştır. Bir bildirim anatomisi açıklanan, nasıl kullanılacağı açıklanıyor `NotificationCompat.Builder` bildirimleri oluşturmak için nasıl büyük simge stil Bildirimlerde *büyük metin*, *görüntü* ve *gelen kutusu*  biçimleri, öncelik, görünürlük ve kategorisi gibi meta veri ayarları bildirim ayarlama ve nasıl bildirim etkinliği başlatın. Bu bildirim ayarlarının yeni uyarı, kilit ekranı, nasıl çalıştığını da bu makalede açıklanan ve *Rahatsız Etmeyin* Android 5.0 ile sunulan özellikler. Son olarak, size nasıl kullanacağınızı öğrendiniz `NotificationCompat.Builder` önceki sürümleriyle Android bildirim uyumluluğu korumak için.
 
-Android için tasarlama bildirimleri hakkında yönergeler için bkz: [bildirimleri](http://developer.android.com/preview/notifications.html).
+Android için tasarlama bildirimleri hakkında yönergeler için bkz: [bildirimleri](http://developer.android.com/guide/topics/ui/notifiers/notifications.html).
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
@@ -830,7 +778,6 @@ Android için tasarlama bildirimleri hakkında yönergeler için bkz: [bildiriml
 - [NotificationsLab (örnek)](https://developer.xamarin.com/samples/monodroid/android5.0/NotificationsLab/)
 - [LocalNotifications (örnek)](https://developer.xamarin.com/samples/monodroid/LocalNotifications/)
 - [Android kılavuzda yerel bildirimler](~/android/app-fundamentals/notifications/local-notifications-walkthrough.md)
-- [Bildirimler](http://developer.android.com/design/patterns/notifications.html)
 - [Kullanıcıya bildirme](http://developer.android.com/training/notify-user/index.html)
 - [Bildirim](https://developer.xamarin.com/api/type/Android.App.Notification/)
 - [NotificationManager](https://developer.xamarin.com/api/type/Android.App.NotificationManager/)
