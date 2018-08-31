@@ -8,10 +8,10 @@ author: davidbritch
 ms.author: dabritch
 ms.date: 11/29/2017
 ms.openlocfilehash: 2369b249681b926476cf3938c51c99745eba9098
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.sourcegitcommit: 8888cb7d75f4469f2a1195b9a426a2e1fbf46bd8
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 08/31/2018
 ms.locfileid: "38995748"
 ---
 # <a name="customizing-a-contentpage"></a>Bir Contentpage'i özelleştirme
@@ -197,7 +197,7 @@ namespace CustomRenderer.Droid
 
 Temel sınıfın çağrısı `OnElementChanged` yöntemi örnekleyen bir Android `ViewGroup` form veya denetim görünümleri grubudur. Canlı Kamera akışını yalnızca Oluşturucu zaten var olan bir Xamarin.Forms öğesine ekli değildir ve sayfa örneği var olması koşuluyla, özel Oluşturucu tarafından işlenen koşuluyla işlenir.
 
-Bir dizi kullanan yöntemleri çağırarak sayfa özelleştirildikten `Camera` Canlı akıştan kamera ve fotoğraf önce yakalama olanağı sağlamak için API `AddView` metodunu çağırmak Canlı Kamera eklemek için kullanıcı Arabirimi için akış `ViewGroup`.
+Bir dizi kullanan yöntemleri çağırarak sayfa özelleştirildikten `Camera` Canlı akıştan kamera ve fotoğraf önce yakalama olanağı sağlamak için API `AddView` metodunu çağırmak Canlı Kamera eklemek için kullanıcı Arabirimi için akış `ViewGroup`. Android'de, ayrıca geçersiz kılmak gerekli olduğunu unutmayın `OnLayout` ölçü ve düzenini görünüm işlemleri için yöntemi. Daha fazla bilgi için [ContentPage oluşturucuyu örnek](https://developer.xamarin.com/samples/xamarin-forms/customrenderers/contentpage/).
 
 ### <a name="creating-the-page-renderer-on-uwp"></a>UWP üzerinde sayfa Oluşturucu Oluşturma
 
