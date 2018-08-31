@@ -1,6 +1,6 @@
 ---
 title: iOS Xamarin.iOS uzantıları
-description: Bu belgede iOS gibi standart bağlamı içinde bildirim Merkezi tarafından sunulan pencere öğeleri olan uzantıları açıklanmaktadır. Uzantı oluşturmak ve üst uygulamadan ile iletişim nasıl açıklanır.
+description: Bu belge, pencere öğeleri gibi standart bağlamı bildirim Merkezi içinde iOS tarafından sunulan uzantıları açıklar. Bu, bir uzantı oluşturma ve üst uygulama ile iletişim nasıl ele alınmaktadır.
 ms.prod: xamarin
 ms.assetid: 3DEB3D43-3E4A-4099-8331-93C1E7A77095
 ms.technology: xamarin-ios
@@ -8,207 +8,170 @@ ms.custom: xamu-video
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/22/2017
-ms.openlocfilehash: c26f951ddaff34cf23662f701395e636e1258b7d
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
-ms.translationtype: HT
+ms.openlocfilehash: 831625c88bb3c0f8403d3b330054050488956cb6
+ms.sourcegitcommit: f9fb316344fc4dce2fdce0dde3c5f4c2e4a42d08
+ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34786736"
+ms.lasthandoff: 08/30/2018
+ms.locfileid: "43257902"
 ---
-# <a name="ios-extensions-in-xamarinios"></a>iOS Xamarin.iOS uzantıları
+# <a name="ios-extensions-in-xamarinios"></a>Xamarin.iOS iOS uzantıları
 
 > [!VIDEO https://youtube.com/embed/Sd0-ch9Udmk]
 
-**Uzantıları, iOS göre oluşturma [Xamarin Üniversitesi](https://university.xamarin.com/)**
+**İOS, uzantıları kriterlere göre [Xamarin University](https://university.xamarin.com/)**
 
 Uzantılar, iOS 8 ' tanıtılan özelleştirilmiş `UIViewControllers` , sunulur standart bağlamları içinde iOS tarafından gibi olarak içinde **bildirim Merkezi**gerçekleştirmek için kullanıcı tarafından istenen özel klavye türleri özelleştirilmiş gibi Giriş veya diğer bağlamlarda uzantısı özel efekt filtreleri burada sağlayabilir bir fotoğraf düzenleme gibi.
 
-Tüm uzantıları (64-bit birleşik API'leri kullanılarak yazılmış hem öğeleriyle) bir kapsayıcı uygulama ile birlikte yüklenir ve bir ana bilgisayar uygulamasında belirli bir uzantı noktasından etkinleştirilir. Ve eklerin varolan sistem işlevlere olarak kullanılacak olduğundan, yüksek performans, yalın ve sağlam olması gerekir. 
-
-Bu makalede aşağıdaki konuları içerir:
-
-- [Uzantı noktaları](#Extension-Points) -uzantı noktaları kullanılabilir türünü ve her noktası için oluşturulan uzantısı türünü listeler.
-- [Sınırlamalar](#Limitations) -uzantılı bir dizi sınırlama, bazıları olan tüm türleri için evrensel diğer türleri uzantısı'nın kullanımı hakkında belirli sınırlamalar olabilir, ancak.
-- [Dağıtma, yükleme ve çalışan Extensions](#Distributing-Installing-and-Running-Extensions) -uzantıları üzerinden dağıtılan hangi sırayla gönderilen ve uygulama mağazası dağıtılmış bir kapsayıcı uygulama içinde. Uygulamayla dağıtılmış uzantılarını bu noktada yüklenir, ancak kullanıcının her bir uzantı açıkça etkinleştirmelisiniz. Uzantı farklı türlerini farklı şekillerde etkinleştirilir.
-- [Uzantı yaşam döngüsü](#Extension-Lifecycle) - uzantının bir `UIViewController` örneğinin oluşturulması ve normal View Controller yaşam döngüsü başlayın. Ancak, bir normal uygulama, uzantıları yüklenen, yürütülen ve art arda sonlandırıldı.
-- [Bir uzantısı oluşturma](#Creating-an-Extension) -uzantı geliştirirken çözümlerinizi en az iki proje içerir: kapsayıcı uygulama bir proje ve her bir uzantı kapsayıcı sağlar.
-- [İzlenecek yol](#Walkthrough) - basit bir oluşturma kapsar **Bugün** pencere öğesi film şeridi kullanarak kendi kullanıcı arabirimi sağlayan uzantısı veya uzantısı kodda, yükleme ve iOS Simulator'da test etme.
-- [Ana bilgisayar uygulamayla iletişim](#Communicating-with-the-Host-App) -kısaca uzantı konak uygulamadan kurduğu açıklanır.
-- [Üst uygulamayla iletişim](#Communicating-with-the-Parent-App) -kısaca uzantı üst uygulamadan kurduğu açıklanır.
-- [Güvenlik önlemleri ve konuları](#Precautions-and-Considerations) -bazı bilmeniz önlemleri ve tasarlarken ve uzantı uygulama dikkate alınması gereken konuları listesi.
- 
-
-<a name="Extension-Points" />
+Tüm uzantıları (64-bit birleşik API'ları kullanılarak yazılan her iki öğe ile) bir kapsayıcı uygulaması ile birlikte yüklenir ve bir konak uygulamasında belirli bir uzantı noktasından etkinleştirilir. Ve mevcut sistem işlevleri için eklerin olarak kullanılacak olduğundan, yüksek performanslı, basit ve güçlü olması gerekir. 
 
 ## <a name="extension-points"></a>Uzantı noktaları
 
-|Tür|Açıklama|Uzantı noktası|Ana bilgisayar uygulaması|
+|Tür|Açıklama|Uzantı noktası|Konak uygulama|
 |--- |--- |--- |--- |
-|Eylem|Özel düzenleyici veya belirli bir medya türünün Görüntüleyicisi|`com.apple.ui-services`|tüm|
-|Belge sağlayıcısı|Bir uzak belge deposu kullanmak uygulamanın verir|`com.apple.fileprovider-ui`|Kullanarak uygulamaları bir [UIDocumentPickerViewController](https://developer.xamarin.com/api/type/UIKit.UIDocumentPickerViewController/)|
-|Klavye|Alternatif klavyeler|`com.apple.keyboard-service`|tüm|
+|Eylem|Özelleştirilmiş bir düzenleyici veya belirli bir medya türünün için Görüntüleyicisi|`com.apple.ui-services`|Tüm|
+|Belge sağlayıcısı|Uygulamasının uzak belge deposu kullanmasına izin verir|`com.apple.fileprovider-ui`|Kullanarak uygulamaları bir [UIDocumentPickerViewController](https://developer.xamarin.com/api/type/UIKit.UIDocumentPickerViewController/)|
+|Klavye|Alternatif klavyeler|`com.apple.keyboard-service`|Tüm|
 |Fotoğraf düzenleme|Fotoğraf düzenleme ve düzenleme|`com.apple.photo-editing`|Photos.App Düzenleyicisi|
-|Paylaş|Veri Hizmetleri, vb. Mesajlaşma sosyal ağlarla paylaşır.|`com.apple.share-services`|tüm|
-|Bugün|Bugün ekranı ya da bildirim merkezi görünen "Pencere öğeleri"|`com.apple.widget-extensions`|Bugün ve bildirim Merkezi|
+|Paylaş|Veri Hizmetleri, vb. Mesajlaşma sosyal ağlarla paylaşır.|`com.apple.share-services`|Tüm|
+|Bugün|Bugün ekran veya bildirim merkezi görünen "Pencere öğeleri"|`com.apple.widget-extensions`|Bugün ve bildirim Merkezi|
 
 [Ek uzantı noktaları](~/ios/platform/introduction-to-ios10/index.md#app-extensions) iOS 10 eklendi.
 
-<a name="Limitations" />
-
 ## <a name="limitations"></a>Sınırlamalar
 
-Uzantılara sahip bir dizi sınırlama bazıları olan tüm türleri için evrensel (örneği, uzantının tür kameralar veya mikrofonlar erişebilir için), diğer tür uzantılarla kendi kullanımı (örneğin, özel klavyeler belirli sınırlamaları olabilir, ancak parolalar gibi güvenli veri girişi alanları için kullanılamaz). 
+Uzantılara sahip bir dizi sınırlandırması bazıları olan tüm türleri için evrensel (örneği, uzantı hiçbir tür kamera ve mikrofon erişmek için), diğer tür uzantılarla belirli sınırlamalar bunların kullanımını (örneğin, özel klavye olabilir, ancak parolalar gibi güvenli veri girişi alanları için kullanılamaz). 
 
 Evrensel sınırlamalar vardır:
 
-- [Sistem durumu Seti](~/ios/platform/healthkit.md) ve [olay Seti UI](~/ios/platform/eventkit.md) çerçeveleri kullanılamaz
-- Uzantıları kullanamaz [arka plan modları genişletilmiş](http://developer.xamarin.com/guides/cross-platform/application_fundamentals/backgrounding/part_3_ios_backgrounding_techniques/registering_applications_to_run_in_background/)
-- (Var olan medya dosyalarını eriştiklerinde ancak) uzantıları cihazın kameralar veya mikrofonlar erişemiyor
-- (Bunların veri hava bırakma aracılığıyla iletebilir rağmen) uzantıları hava bırakma verileri alamıyor
+- [Sistem durumu Seti](~/ios/platform/healthkit.md) ve [olay paketi UI](~/ios/platform/eventkit.md) çerçeveleri kullanılabilir değil
+- Uzantıları kullanamaz [genişletilmiş arka plan modları](http://developer.xamarin.com/guides/cross-platform/application_fundamentals/backgrounding/part_3_ios_backgrounding_techniques/registering_applications_to_run_in_background/)
+- (Bunlar var olan medya dosyalarını erişebilir ancak) uzantıları cihazın kameralar veya mikrofon erişemiyor
+- (Bunlar hava bırak aracılığıyla veri iletebilir rağmen) uzantıları hava bırak veri alınamıyor
 - [UIActionSheet](https://developer.xamarin.com/api/type/UIKit.UIActionSheet/) ve [UIAlertView](https://developer.xamarin.com/api/type/UIKit.UIAlertView/) kullanılabilir uzantıları kullanmalıdır değil; [UIAlertController](https://developer.xamarin.com/api/type/UIKit.UIAlertController/)
-- Birkaç üyeleri [Uıapplication](https://developer.xamarin.com/api/type/UIKit.UIApplication/) kullanılamaz: [UIApplication.SharedApplication](https://developer.xamarin.com/api/property/UIKit.UIApplication.SharedApplication/), `UIApplication.OpenURL`, `UIApplication.BeginIgnoringInteractionEvents` ve `UIApplication.EndIgnoringInteractionEvents`
-- iOS 16 MB bellek kullanım sınırına bugünün uzantıları hakkında zorlar.
-- Varsayılan olarak, ağ erişimi klavye uzantınız yok. Bu aygıtta (kısıtlama benzeticisinde değil de zorlanır) hata ayıklama etkiler Xamarin.iOS çalışmak için hata ayıklama için ağ erişim gerektirdiğinden. Ağ erişim isteğinde bulunmak için olası ayarlayarak `Requests Open Access` projenin Info.plist değerinde `Yes`. Lütfen bkz. Apple'nın [özel klavye Kılavuzu](https://developer.apple.com/library/content/documentation/General/Conceptual/ExtensibilityPG/CustomKeyboard.html) klavye uzantısı sınırlamalar hakkında daha fazla bilgi.
+- Çeşitli üyelerinin [Uıapplication](https://developer.xamarin.com/api/type/UIKit.UIApplication/) kullanılamaz: [UIApplication.SharedApplication](https://developer.xamarin.com/api/property/UIKit.UIApplication.SharedApplication/), `UIApplication.OpenURL`, `UIApplication.BeginIgnoringInteractionEvents` ve `UIApplication.EndIgnoringInteractionEvents`
+- iOS 16 MB bellek kullanım sınırı günümüzün uzantılarına zorlar.
+- Varsayılan klavye uzantıları ağa erişiminiz yok. Bu (kısıtlama zorlanmaz simülatörde) cihazda hata ayıklama etkiler Xamarin.iOS çalışmak için hata ayıklama için ağ erişim gerektirdiğinden. Ağ erişimi isteği olası ayarlayarak `Requests Open Access` değeri için projenin Info.plist dosyasında `Yes`. Lütfen Apple'nın bakın [özel klavye Kılavuzu](https://developer.apple.com/library/content/documentation/General/Conceptual/ExtensibilityPG/CustomKeyboard.html) klavye uzantısı sınırlamaları hakkında daha fazla bilgi.
 
-Apple'nın tek tek kısıtlamaları için lütfen bkz [uygulama uzantısı Programlama Kılavuzu](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/).
+Apple'nın tek sınırlamalar için bkz [uygulama uzantısı Programlama Kılavuzu](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/).
 
-<a name="Distributing-Installing-and-Running-Extensions" />
+## <a name="distributing-installing-and-running-extensions"></a>Uzantıları'nı çalıştırarak dağıtma ve yükleme
 
-## <a name="distributing-installing-and-running-extensions"></a>Dağıtma, yükleme ve Uzantıları'nı çalıştırarak
+Uzantılar, hangi sırayla gönderildi ve App Store dağıtılmış bir kapsayıcı uygulama içinde üzerinden dağıtılır. Bu noktada uygulama ile birlikte dağıtılan uzantısı yüklü ancak kullanıcının her uzantı açıkça etkinleştirmeniz gerekir. Farklı uzantı türleri farklı şekilde etkinleştirilir; birkaç gitmek gerektirmek **ayarları** uygulama ve bunları burada etkinleştirin. Olsa da başkalarının kullanımı bir fotoğraf gönderirken bir paylaşım uzantısı etkinleştirme gibi bir noktada etkinleştirilir. 
 
-Uzantılar, hangi sırayla gönderilen ve uygulama mağazası dağıtılmış bir kapsayıcı uygulama içinde üzerinden dağıtılır. Uygulamayla dağıtılmış uzantılarını bu noktada yüklenir, ancak kullanıcının her bir uzantı açıkça etkinleştirmelisiniz. Uzantı farklı türlerini farklı şekillerde etkinleştirilir; birkaç gitmek kullanıcının gerektiren **ayarları** uygulama ve buradan etkinleştirin. Başkalarının kullanımı bir fotoğraf gönderirken bir paylaşımı uzantı etkinleştiriliyor gibi noktada etkin durumda değilken. 
+İçinde uzantı kullanılır (burada genişletme noktası kullanıcı karşılaştığında) uygulama olarak adlandırılır **konak uygulama**, uzantıyı yürütüldüğünde barındıran uygulama olduğundan. Uzantıyı yükler uygulama **kapsayıcı uygulaması**yüklendiğinde uzantıyı içeren uygulamanın olduğundan.  
 
-İçinde uzantısı kullanılan (burada kullanıcı uzantı noktası karşılaştığında) uygulama olarak adlandırılır **ana uygulama**, uzantı yürütüldüğünde barındıran uygulama olduğundan. Uzantı yüklemelerinden uygulaması **kapsayıcı uygulama**, uzantı yüklendiğinde içeren bir uygulama olduğundan.  
-
-Genellikle, kapsayıcı uygulama uzantısı açıklar ve kullanıcı bunu etkinleştirme işlemiyle anlatılmaktadır.
-
-<a name="Extension-Lifecycle" />
+Genellikle, kapsayıcı uygulamasını uzantısı açıklanır ve kullanıcı, etkinleştirme işleminde size yol gösterir.
 
 ## <a name="extension-lifecycle"></a>Uzantı yaşam döngüsü
 
-Bir uzantısı tek bir basit olabilir [UIViewController](https://developer.xamarin.com/api/type/UIKit.UIViewController/) veya birden çok ekran UI sunmak daha karmaşık uzantıları. Kullanıcı karşılaştığında bir _uzantı noktaları_ (ne zaman gibi bir görüntü paylaşımı), o uzantı noktası için kaydedilen uzantılar aralarından seçim yapabileceğiniz olanağına sahip olacaksınız. 
+Bir uzantı tek bir basit [Uıviewcontroller](https://developer.xamarin.com/api/type/UIKit.UIViewController/) veya kullanıcı arabiriminin birden fazla ekrana sunmak daha karmaşık uzantıları. Kullanıcı karşılaştığında bir _uzantı noktaları_ (ne zaman gibi bir görüntü paylaşımına), bunlar bu uzantı noktası için kayıtlı uzantıları aralarından seçim yapabileceğiniz olanağına sahip olacaksınız. 
 
-Uygulamanızı birini seçerseniz uzantılar, kullanıcının kendi `UIViewController` örneğinin oluşturulması ve normal View Controller yaşam döngüsü başlayın. Ancak, farklı olarak, askıya alındı ancak kullanıcı bunları ile etkileşim tamamlandığında değil genellikle sonlandırıldı, normal bir uygulaması, uzantıları yüklenen, yürütülen ve art arda sonlandırıldı.
+Uygulamanızı birini seçerseniz, uzantılar, kullanıcının kendi `UIViewController` örneği oluşturulur ve normal görünüm denetleyicisi yaşam döngüsü başlayın. Ancak, olan askıya alındı, ancak kullanıcı normalde tamamlandığında değil genellikle sonlandırıldı, normal bir uygulama uzantıları yüklenen yürütülen ve art arda sonlandırıldı.
 
-Uzantıları yoluyla kendi ana bilgisayar uygulamaları ile iletişim kurabilir bir [NSExtensionContext](https://developer.xamarin.com/api/type/Foundation.NSExtensionContext/) nesnesi. Bazı uzantılar sonuçları ile zaman uyumsuz geri aramalar alma işlemleri vardır. Bu geri aramalar arka plan iş parçacığı üzerinde yürütülür ve uzantı bunu göz önünde bulundurmalıdır; kullanarak örneği için [NSObject.InvokeOnMainThread](https://developer.xamarin.com/api/member/Foundation.NSObject.InvokeOnMainThread/) kullanıcı arabirimini güncelleştirme yapmak istiyorsanız. Bkz: [konak uygulamayla iletişim](#Communicating-with-the-Host-App) daha fazla ayrıntı için bölüm aşağıda.
+Uzantıları ana bilgisayar uygulamalarını ile iletişim kurabilir bir [NSExtensionContext](https://developer.xamarin.com/api/type/Foundation.NSExtensionContext/) nesne. Bazı uzantılar, zaman uyumsuz geri çağırmalar sonuçlarla alma işlemlerini sahip. Arka plan iş parçacıklarında bu geri aramaların yürütüleceği ve uzantısı bu dikkate almanız gerekir. kullanarak örneği için [NSObject.InvokeOnMainThread](https://developer.xamarin.com/api/member/Foundation.NSObject.InvokeOnMainThread/) kullanıcı arabirimini güncelleştirmek istiyorsanız. Bkz: [ana bilgisayar uygulamasıyla iletişim kuran](#Communicating-with-the-Host-App) bölümünde daha fazla ayrıntı için.
 
-Varsayılan olarak, uzantıları ve kapsayıcı uygulamalarını, birlikte yüklenen rağmen iletişim kurabilir değil. Bazı durumlarda, kapsayıcı uygulama uzantısı yüklendikten sonra amacı sunulan aslında bir boş "Sevkiyat" kapsayıcıdır. Ancak, koşullar söylüyorsa, kapsayıcı uygulama ve uzantı ortak alanından kaynakları paylaşabilir. Ayrıca, bir **bugün uzantısı** bir URL açmak için kapsayıcı uygulama isteyebilir. Bu davranış gösterilen [gelişmesi geri sayım pencere öğesi](http://github.com/xamarin/monotouch-samples/tree/master/ExtensionsDemo).
+Varsayılan olarak, uzantıları ve kapsayıcı uygulamalarını, birlikte yüklenen rağmen iletişim. Bazı durumlarda, kapsayıcı uygulamasını amacı uzantısı yüklendikten sonra sunulan aslında bir boş "dağıtımı" kapsayıcıdır. Ancak, koşulların gerektirdiği, kapsayıcı uygulamasını ve uzantısını ortak kaynaklardan paylaşabiliriz. Ayrıca, bir **bugün uzantısı** bir URL açmak için kapsayıcı uygulaması isteyebilir. Bu davranış gösterilen [evrim Geçiren geri sayım pencere öğesi](http://github.com/xamarin/monotouch-samples/tree/master/ExtensionsDemo).
 
-<a name="Creating-an-Extension" />
+## <a name="creating-an-extension"></a>Bir uzantı oluşturma
 
-## <a name="creating-an-extension"></a>Bir uzantısı oluşturma
-
-Uzantıları (ve kapsayıcı uygulamalarını) 64 bit ikili dosyaları olmalı ve Xamarin.iOS kullanılarak oluşturulan [Unified API](http://developer.xamarin.com/guides/cross-platform/macios/unified). Uzantı geliştirirken çözümlerinizi en az iki proje içerir: kapsayıcı uygulama bir proje ve her bir uzantı kapsayıcı sağlar. 
-
-<a name="Container-App-Project-Requirements" />
+Uzantılar (ve kapsayıcı uygulamalarını) 64 bit ikili dosyaları olmalıdır ve Xamarin.iOS kullanılarak oluşturulan [birleşik API](http://developer.xamarin.com/guides/cross-platform/macios/unified). Bir uzantı geliştirirken, çözümlerinizi en az iki proje içerir: kapsayıcı uygulamasını ve bir proje her uzantı kapsayıcı sağlar. 
 
 ### <a name="container-app-project-requirements"></a>Kapsayıcı uygulama projesi gereksinimleri
 
-Uzantıyı yüklemek için kullanılan kapsayıcı uygulama aşağıdaki gereksinimlere sahiptir:
+Uzantıyı yüklemek için kullanılan kapsayıcı uygulamasını aşağıdaki gereksinimlere sahiptir:
 
-- Uzantı projesi başvuru bakımını yapmanız gerekir.   
-- (Sağlayabilmelidir başlatın ve başarılı bir şekilde çalıştırılması) tam bir uygulama olmalıdır, hiçbir şey yapmaz birden fazla olsa bile bir uzantı yüklemeniz için bir yol sağlar. 
-- Paket tanımlayıcısı uzantısı için temel bir paket tanımlayıcı olması gerekir (daha fazla ayrıntı için aşağıdaki bölüme bakın) proje.
-
-<a name="Extension-Project-Requirements" />
+- Bu uzantı projesine bir başvuru sürdürmeniz gerekir.   
+- Bütün bir uygulama (sağlayabilmelidir başlatın ve başarılı bir şekilde çalıştırılması) olması gerektiğini, hiçbir şey yapmaz birden fazla olsa bile bir uzantı yüklemek için bir yol sağlar. 
+- Paket grubu tanımlayıcısı uzantısı'nın temelini bir paket grubu tanımlayıcısı olmalıdır (daha fazla ayrıntı için aşağıdaki bölüme bakın) projesi.
 
 ### <a name="extension-project-requirements"></a>Uzantı projesi gereksinimleri
 
-Ayrıca, uzantının proje aşağıdaki gereksinimlere sahiptir:
+Ayrıca, uzantı projesi aşağıdaki gereksinimlere sahiptir:
 
-- Kendi kapsayıcı uygulamanın paket tanımlayıcısı ile başlayan bir paket tanımlayıcısı olmalıdır. Örneğin, kapsayıcı uygulamanın paket tanıtıcısı varsa `com.myCompany.ContainerApp`, uzantının tanımlayıcısı olmayabilir `com.myCompany.ContainerApp.MyExtension`: 
+- Kendi kapsayıcı uygulamanın paket tanımlayıcısı ile başlayan bir paket grubu tanımlayıcısı olmalıdır. Örneğin, kapsayıcı uygulamanın bir paket grubu tanımlayıcısı varsa `com.myCompany.ContainerApp`, uzantının tanımlayıcısı olabilir `com.myCompany.ContainerApp.MyExtension`: 
 
     ![](extensions-images/bundleidentifiers.png) 
-- Anahtar tanımlamalısınız `NSExtensionPointIdentifier`, uygun bir değerle (gibi `com.apple.widget-extension` için bir **Bugün** bildirim merkezi pencere öğesi), kendi `Info.plist` dosya.
-- Ayrıca tanımlamalıdır *ya da* `NSExtensionMainStoryboard` anahtar veya `NSPrincipalClass` anahtarını kendi `Info.plist` dosyasını uygun bir değere sahip:
-    - Kullanım `NSExtensionMainStoryboard` anahtar uzantısı için ana UI gösterir film şeridi adını belirtin (eksi `.storyboard`). Örneğin, `Main` için `Main.storyboard` dosya.
-    - Kullanım `NSPrincipalClass` anahtar uzantısı başlatıldığında başlatılacak sınıf belirtin. Değerle eşleşmelidir **kaydetmek** değeri, `UIViewController`: 
+- Anahtar tanımlamanız gerekir `NSExtensionPointIdentifier`, uygun bir değerle (gibi `com.apple.widget-extension` için bir **Bugün** bildirim merkezi pencere öğesi), kendi `Info.plist` dosya.
+- Ayrıca tanımlamanız gerekir *ya da* `NSExtensionMainStoryboard` anahtarı veya `NSExtensionPrincipalClass` anahtarını kendi `Info.plist` dosyasını uygun bir değere sahip:
+    - Kullanım `NSExtensionMainStoryboard` anahtar uzantısı için ana kullanıcı Arabirimi sunan görsel taslağın adını belirtmek için (eksi `.storyboard`). Örneğin, `Main` için `Main.storyboard` dosya.
+    - Kullanım `NSExtensionPrincipalClass` uzantı başlatıldığında başlatılacak sınıf belirtmek için anahtar. Değer eşleşmelidir **kaydetme** değerini, `UIViewController`: 
 
     ![](extensions-images/registerandprincipalclass.png)
 
-Belirli türlerdeki uzantıları ek gereksinimleri olabilir. Örneğin, bir **Bugün** veya **bildirim Merkezi** uzantının asıl sınıfı uygulanmalı [INCWidgetProviding](https://developer.xamarin.com/api/type/NotificationCenter.INCWidgetProviding/).
+Belirli türde uzantısı ek gereksinimleri olabilir. Örneğin, bir **Bugün** veya **bildirim Merkezi** uzantının asıl sınıf uygulanmalı [INCWidgetProviding](https://developer.xamarin.com/api/type/NotificationCenter.INCWidgetProviding/).
 
 > [!IMPORTANT]
-> Mac için Visual Studio tarafından sağlanan uzantıları şablonları kullanarak projenize başlatırsanız (tüm varsa) çoğu bu gereksinimleri sağlanan ve sizin için otomatik olarak şablon tarafından karşılanır.
-
-<a name="Walkthrough" />
+> Mac için Visual Studio tarafından sağlanan uzantıları şablonları kullanarak projenize başlayın, bu gereksinimlerin çoğu (tüm varsa) sağlanan ve sizin için otomatik olarak şablon tarafından karşılanması.
 
 ## <a name="walkthrough"></a>İzlenecek yol 
 
-Aşağıdaki örnekte, bir örnek oluşturur **Bugün** gün ve yıl içinde kalan gün sayısını hesaplar pencere öğesi:
+Aşağıdaki kılavuzda bir örnek oluşturur **Bugün** gün ve yıl içinde kalan gün sayısı hesaplar pencere öğesi:
 
-[![](extensions-images/carpediemscreenshot-sm.png "Gün ve yıl içinde kalan gün sayısını hesaplar bir örnek bugün pencere öğesi")](extensions-images/carpediemscreenshot.png#lightbox)
-
-<a name="Creating-the-Solution" />
+[![](extensions-images/carpediemscreenshot-sm.png "Gün ve yıl içinde kalan gün sayısını hesaplayan bir örnek bugün pencere öğesi")](extensions-images/carpediemscreenshot.png#lightbox)
 
 ### <a name="creating-the-solution"></a>Çözüm oluşturma
 
 Gerekli çözüm oluşturmak için aşağıdakileri yapın:
 
-1. İlk olarak, yeni bir iOS oluşturma **Single View uygulaması** proje ve tıklatın **sonraki** düğmesi: 
+1. İlk olarak, yeni bir iOS oluşturma **tek görünüm uygulaması** projesine **sonraki** düğmesi: 
 
-    [![](extensions-images/today01.png "İlk olarak, yeni iOS, tek görünüm uygulaması projesi oluşturun ve İleri düğmesine tıklayın")](extensions-images/today01.png#lightbox)
-2. Proje çağrısı `TodayContainer` tıklatıp **sonraki** düğmesi: 
+    [![](extensions-images/today01.png "İlk olarak, yeni iOS, tek görünüm uygulama projesi oluşturma ve İleri düğmesine tıklayın")](extensions-images/today01.png#lightbox)
+2. Projenin `TodayContainer` tıklatıp **sonraki** düğmesi: 
 
-    [![](extensions-images/today02.png "Proje TodayContainer çağırın ve İleri düğmesine tıklayın")](extensions-images/today02.png#lightbox)
-3. Doğrulayın **proje adı** ve **SolutionName** tıklatıp **Oluştur** düğmesi çözümü oluşturun: 
+    [![](extensions-images/today02.png "' % S'proje TodayContainer çağırın ve İleri düğmesine tıklayın")](extensions-images/today02.png#lightbox)
+3. Doğrulama **proje adı** ve **SolutionName** tıklatıp **Oluştur** çözümü oluşturmak için: 
 
-    [![](extensions-images/today03.png "Proje adı ve SolutionName doğrulayın ve çözüm oluşturmak için Oluştur düğmesine tıklayın")](extensions-images/today03.png#lightbox)
-4. İleri ' **Çözüm Gezgini**, çözüm üzerinde sağ tıklayın ve yeni bir ekleme **iOS uzantısı** gelen proje **bugün uzantısı** şablonu: 
+    [![](extensions-images/today03.png "SolutionName ve proje adını doğrulayın ve çözüm oluşturmak için Oluştur düğmesine tıklayın")](extensions-images/today03.png#lightbox)
+4. Ardından **Çözüm Gezgini**, çözüme sağ tıklayın ve yeni bir **iOS uzantısı** gelen proje **bugün uzantısı** şablonu: 
 
-    [![](extensions-images/today04.png "Ardından, Çözüm Gezgini'nde, çözüm üzerinde sağ tıklatın ve bugün uzantısı şablondan yeni bir iOS uzantı projesi ekleme")](extensions-images/today04.png#lightbox)
-5. Proje çağrısı `DaysRemaining` tıklatıp **sonraki** düğmesi: 
+    [![](extensions-images/today04.png "Ardından, Çözüm Gezgini'nde çözüme sağ tıklayın ve bugün uzantısı şablondan yeni bir iOS uzantı projesi ekleme")](extensions-images/today04.png#lightbox)
+5. Projenin `DaysRemaining` tıklatıp **sonraki** düğmesi: 
 
-    [![](extensions-images/today05.png "Proje DaysRemaining çağırın ve İleri düğmesine tıklayın")](extensions-images/today05.png#lightbox)
-6. Projeyi gözden geçirin ve tıklatın **oluşturma** düğmesi oluşturmak için: 
+    [![](extensions-images/today05.png "' % S'proje DaysRemaining çağırın ve İleri düğmesine tıklayın")](extensions-images/today05.png#lightbox)
+6. Projeyi gözden geçirin ve tıklayın **Oluştur** düğme oluşturmak için: 
 
-    [![](extensions-images/today06.png "Projeyi gözden geçirmek ve oluşturmak için Oluştur düğmesine tıklayın")](extensions-images/today06.png#lightbox)
+    [![](extensions-images/today06.png "Projeyi gözden geçirin ve oluşturmak için Oluştur düğmesine tıklayın")](extensions-images/today06.png#lightbox)
 
-Sonuçta elde edilen çözüm şimdi aşağıda gösterildiği gibi iki proje sahip olmalıdır:
+Ortaya çıkan çözüm artık burada gösterildiği gibi iki proje sahip olmalıdır:
 
-[![](extensions-images/today07.png "Aşağıda gösterildiği gibi sonuçta elde edilen çözüm şimdi iki proje olmalıdır")](extensions-images/today07.png#lightbox)
+[![](extensions-images/today07.png "Burada gösterildiği gibi sonuçta ortaya çıkan çözüm şu anda iki proje olmalıdır")](extensions-images/today07.png#lightbox)
 
-<a name="Creating-the-Extension-User-Interface" />
+### <a name="creating-the-extension-user-interface"></a>Uzantı kullanıcı arabirimi oluşturma
 
-### <a name="creating-the-extension-user-interface"></a>Uzantısı kullanıcı arabirimi oluşturma
+Ardından, arabirimin tasarlamak gerekir, **Bugün** pencere öğesi. Bu, yapılabilir bir görsel taslak kullanarak ya da kod oluşturma kullanıcı Arabirimi ile. Her iki yöntem aşağıda ayrıntılı olarak ele alınacaktır.
 
-Ardından, arabirim için tasarlamak gerekir, **Bugün** pencere öğesi. Bu da yapılabilir bir film şeridi kullanarak veya kod oluşturma UI göre. Her iki yöntem aşağıda ayrıntılı olarak ele alınacaktır.
+#### <a name="using-storyboards"></a>Görsel Taslaklar kullanarak
 
-<a name="Using-Storyboards" />
-
-#### <a name="using-storyboards"></a>Film şeritleri kullanma
-
-Film şeridi ile kullanıcı arabirimini oluşturmak için aşağıdakileri yapın:
+Görsel taslak ile kullanıcı arabirimini derlemek için aşağıdakileri yapın:
 
 1. İçinde **Çözüm Gezgini**, uzantı projenin çift `Main.storyboard` dosyayı düzenlemek için açın: 
 
-    [![](extensions-images/today08.png "Düzenlemek üzere açmak için uzantı projeleri Main.storyboard dosyasını çift tıklatın")](extensions-images/today08.png#lightbox)
-2. UI için şablon tarafından otomatik olarak eklenen etiketi seçin ve bu verin **adı** `TodayMessage` içinde **pencere öğesi** sekmesinde **özellikleri Explorer**: 
+    [![](extensions-images/today08.png "Düzenlemek üzere açmak için uzantı projeleri Main.storyboard dosyasına çift tıklayın")](extensions-images/today08.png#lightbox)
+2. Kullanıcı Arabirimi için şablon tarafından otomatik olarak eklenmiş olan etiketi seçin ve verin **adı** `TodayMessage` içinde **pencere öğesi** sekmesinde **özellikleri Gezgini**: 
 
-    [![](extensions-images/today09.png "UI için şablon tarafından otomatik olarak eklenen etiketi seçin ve Özellikler Explorer pencere öğesi sekmesinde adı TodayMessage verin")](extensions-images/today09.png#lightbox)
-3. Film şeridi için değişiklikleri kaydedin.
-
-<a name="Using-Code" />
+    [![](extensions-images/today09.png "Kullanıcı Arabirimi için şablon tarafından otomatik olarak eklenmiş olan etiketi seçin ve Özellikler Gezgini pencere öğesi sekmede adı TodayMessage verin")](extensions-images/today09.png#lightbox)
+3. Görsel taslak için değişiklikleri kaydedin.
 
 #### <a name="using-code"></a>Kod kullanarak
 
-Kullanıcı Arabiriminde kodu oluşturmak için aşağıdakileri yapın: 
+Kullanıcı arabirimini kodundaki derlemek için aşağıdakileri yapın: 
 
-1. İçinde **Çözüm Gezgini**seçin **DaysRemaining** proje, yeni bir sınıf ekleyin ve onu çağrısı `CodeBasedViewController`: 
+1. İçinde **Çözüm Gezgini**seçin **DaysRemaining** proje, yeni bir sınıf ekleyin ve onu çağırmak `CodeBasedViewController`: 
 
     [![](extensions-images/code01.png "Aelect DaysRemaining proje yeni bir sınıf ekleyin ve CodeBasedViewController çağırın")](extensions-images/code01.png#lightbox)
-2. Yeniden, **Çözüm Gezgini**, uzantının çift `Info.plist` dosyayı düzenlemek için açın: 
+2. Yeniden **Çözüm Gezgini**, uzantının çift `Info.plist` dosyayı düzenlemek için açın: 
 
-    [![](extensions-images/code02.png "Uzantıları Info.plist dosyasını düzenlemek üzere açmak için çift tıklayın")](extensions-images/code02.png#lightbox)
-3. Seçin **kaynağı görünümü** (ekran Alttan) ve açık `NSExtension` düğümü: 
+    [![](extensions-images/code02.png "Düzenlemek üzere açmak için uzantıları Info.plist dosyasına çift tıklayın")](extensions-images/code02.png#lightbox)
+3. Seçin **kaynağı görünümü** (Alttan ekranın) ve açık `NSExtension` düğüm: 
 
-    [![](extensions-images/code03.png "Ekranın alt kısmından kaynağı görünümünü seçin ve NSExtension düğümünü açın")](extensions-images/code03.png#lightbox)
-4. Kaldırma `NSExtensionMainStoryboard` anahtarı ve ekleme bir `NSPrincipalClass` değerle `CodeBasedViewController`: 
+    [![](extensions-images/code03.png "NSExtension düğümünü açın ve ekranın alt kaynak görünümü seçin")](extensions-images/code03.png#lightbox)
+4. Kaldırma `NSExtensionMainStoryboard` ekleyin ve anahtar bir `NSExtensionPrincipalClass` değerle `CodeBasedViewController`: 
 
-    [![](extensions-images/code04.png "NSExtensionMainStoryboard anahtarı kaldırın ve NSPrincipalClass CodeBasedViewController değeriyle ekleyin")](extensions-images/code04.png#lightbox)
+    [![](extensions-images/code04.png "NSExtensionMainStoryboard anahtarını kaldırın ve bir NSExtensionPrincipalClass CodeBasedViewController değeriyle ekleyin")](extensions-images/code04.png#lightbox)
 5. Değişikliklerinizi kaydedin.
 
-Ardından, düzenleme `CodeBasedViewController.cs` dosya ve şu şekilde görünür yapın:
+Ardından, Düzenle `CodeBasedViewController.cs` dosyasını açıp aşağıdaki gibi görünmesi:
 
 ```csharp
 using System;
@@ -219,7 +182,7 @@ using CoreGraphics;
 
 namespace DaysRemaining
 {
-    [Register("CodeBasedViewContoller")]
+    [Register("CodeBasedViewController")]
     public class CodeBasedViewController : UIViewController, INCWidgetProviding
     {
         public CodeBasedViewController ()
@@ -244,13 +207,11 @@ namespace DaysRemaining
 }
 ```
 
-Unutmayın `[Register("CodeBasedViewContoller")]` için belirtilen değerle eşleşen `NSPrincipalClass` üstünde.
-
-<a name="Coding-the-Extension" />
+Unutmayın `[Register("CodeBasedViewController")]` için belirtilen değerle eşleşen `NSExtensionPrincipalClass` yukarıda.
 
 ### <a name="coding-the-extension"></a>Uzantı kodlama
 
-Oluşturulan kullanıcı arabirimi ile ya da açmak `TodayViewController.cs` veya `CodeBasedViewController.cs` (yukarıdaki kullanıcı arabirimi oluşturmak için kullanılan yöntemi tabanlı), dosya değişikliği **ViewDidLoad** yöntemi ve aşağıdaki gibi görünmesi:
+Oluşturulan kullanıcı arabirimi ile açık `TodayViewController.cs` veya `CodeBasedViewController.cs` (yukarıdaki kullanıcı arabirimi oluşturmak için kullanılan yöntemine göre), dosya değişikliği **ViewDidLoad** yöntemi ve aşağıdaki gibi görünmesi:
 
 ```csharp
 public override void ViewDidLoad ()
@@ -271,71 +232,61 @@ public override void ViewDidLoad ()
 }
 ```
 
-Kod kullanan kullanıcı arabirimi yöntemine temel değiştirirseniz `// Insert code to power extension here...` üstten yeni kod açıklaması. Temel uygulama çağırmak (ve sonra temel kod sürümü için bir etiket ekleme), bu kod yıl ve kaç gün kalan gün almak için basit bir hesaplama gerçekleştirir. İleti etiketinde görüntüler (`TodayMessage`) UI tasarımında oluşturduğunuz.
+Kod kullanarak kullanıcı arabirimi yöntemi tabanlıysa değiştirin `// Insert code to power extension here...` yukarıdaki Yeni kod ile açıklama. Sonra taban uygulamasını çağırma (ve kod tabanlı sürümü için bir etiket ekleme), bu kod, yıl ve kaç gün kaldığını da almak için basit bir hesaplama gerçekleştirir. Etikette iletisini görüntüler (`TodayMessage`), kullanıcı Arabirimi tasarımı, oluşturduğunuz.
 
-Bu işlem bir uygulama yazma normal işlem nasıl benzer olduğunu unutmayın. Bir uzantının `UIViewController` uzantıları arka plan modları yoksa ve kullanıcı tamamlandığında askıya değil dışında bir uygulamada bir görünüm denetleyicisi aynı yaşam döngüsü sahip bunları kullanarak. Bunun yerine, uzantıları sürekli olarak başlatıldı ve gerektiği gibi XML'deki ayrılmış.
-
-<a name="Creating-the-Container-App-User-Interface" />
+Bu işlem uygulama yazma normal işleme nasıl benzer olduğuna dikkat edin. Bir uzantının `UIViewController` uzantıları arka plan modları yoktur ve kullanıcı tamamlandığında askıya alınmaz dışındaki bir uygulamada bir görünüm denetleyicisi ile aynı yaşam döngüsünü sahip bunları kullanarak. Bunun yerine, uzantıları sürekli olarak başlatılır ve gerektiğinde edilemez.
 
 ### <a name="creating-the-container-app-user-interface"></a>Kapsayıcı uygulama kullanıcı arabirimi oluşturma
 
-Bu kılavuz kapsayıcı uygulama yalnızca sevk ve uzantıyı yüklemek için bir yöntem olarak kullanılır ve kendi hiçbir işlevsellik sağlar. TodayContainer's Düzenle `Main.storyboard` dosya ve uzantının işlevi ve nasıl yükleneceği tanımlama biraz metin ekleyin:
+Bu kılavuz, kapsayıcı uygulamasını yalnızca bir yöntem olarak gönderin ve uzantıyı yüklemek için kullanılır ve kendi hiçbir işlevsellik sağlar. TodayContainer'ın Düzenle `Main.storyboard` dosya ve uzantının işlevi ve nasıl yükleneceği tanımlama metin ekleyin:
 
-[![](extensions-images/today10.png "TodayContainers Main.storyboard dosyasını düzenleyin ve uzantıları işlevi ve nasıl yükleneceği tanımlama bazı metin ekleme")](extensions-images/today10.png#lightbox)
+[![](extensions-images/today10.png "TodayContainers Main.storyboard dosyasını düzenleyin ve uzantıları işlevi ve nasıl yükleneceği tanımlama metin ekleyin")](extensions-images/today10.png#lightbox)
 
-Film şeridi için değişiklikleri kaydedin.
+Görsel taslak için değişiklikleri kaydedin.
 
-<a name="Testing-the-Extension" />
+### <a name="testing-the-extension"></a>Uzantıyı test etme
 
-### <a name="testing-the-extension"></a>Testi uzantısı
+İOS simülatörü uzantınızı test etmek için çalıştırma **TodayContainer** uygulama. Kapsayıcının ana görünüm görüntülenir:
 
-İOS Simulator'da uzantınızı test etmek için çalıştırın **TodayContainer** uygulama. Kapsayıcının ana görünüm görüntülenir:
+[![](extensions-images/run01.png "Kapsayıcılar ana görünüm görüntülenir")](extensions-images/run01.png#lightbox)
 
-[![](extensions-images/run01.png "Ana görünüm görüntülenir kapsayıcıları")](extensions-images/run01.png#lightbox)
+Ardından, isabet **giriş** düğmesi simulator'da, açmak için ekranın üstünden aşağı kaydırma **bildirim Merkezi**seçin **Bugün** sekmesine ve tıklayın**Düzenle** düğmesi:
 
-Ardından, isabet **giriş** açmak için ekranın üstünde aşağı sağdan Simulator düğmesini **bildirim Merkezi**seçin **Bugün** sekmesine ve tıklayın**Düzenle** düğmesi:
-
-[![](extensions-images/run02.png "Ekranın üst kısmındaki bildirim merkezi açın, bugün sekmesini seçin ve Düzenle düğmesini tıklatın aşağı sağdan Simulator giriş düğmesini tıklatın")](extensions-images/run02.png#lightbox)
+[![](extensions-images/run02.png "Simulator'da, bildirim merkezini açın, bugün sekmesini seçin ve Düzenle düğmesini tıklatın, ekranın üst kısmında aşağı çekin giriş düğmesine basın")](extensions-images/run02.png#lightbox)
 
 Ekleme **DaysRemaining** uzantısı **Bugün** görüntülemek ve **Bitti** düğmesi:
 
-[![](extensions-images/run03.png "Bugün görünümüne DaysRemaining uzantısı ekleyin ve Bitti düğmesini tıklatın")](extensions-images/run03.png#lightbox)
+[![](extensions-images/run03.png "Bugün görünümüne DaysRemaining uzantısını ekleyin ve bitti düğmesine tıklayın")](extensions-images/run03.png#lightbox)
 
-Yeni pencere öğesi eklenecek **Bugün** Görünüm ve sonuçları görüntülenir:
+Yeni pencere öğesi eklenecek **Bugün** görüntüleyin ve sonuçları görüntülenir:
 
 [![](extensions-images/run04.png "Yeni pencere öğesi Bugün görünümüne eklenir ve sonuçları görüntülenir")](extensions-images/run04.png#lightbox)
 
-<a name="Communicating-with-the-Host-App" />
+## <a name="communicating-with-the-host-app"></a>Ana bilgisayar uygulamasıyla iletişim kurma
 
-## <a name="communicating-with-the-host-app"></a>Ana bilgisayar uygulamayla iletişim kurma
+Bugün uzantısı yukarıda oluşturduğunuz örnek kendi ana bilgisayar uygulamasıyla iletişim kurmaz ( **Bugün** ekran). Olsaydı, kullanacağınız [ExtensionContext](https://developer.xamarin.com/api/type/Foundation.NSExtensionContext/) özelliği `TodayViewController` veya `CodeBasedViewController` sınıfları. 
 
-Bugün yukarıda oluşturduğunuz uzantısı örnek kendi ana bilgisayar uygulamasıyla iletişim değil ( **Bugün** ekran). Kaldırdıysanız, kullanacağınız [ExtensionContext](https://developer.xamarin.com/api/type/Foundation.NSExtensionContext/) özelliği `TodayViewController` veya `CodeBasedViewController` sınıfları. 
+Konak uygulamalarından veri alacak uzantıları için bir dizi biçiminde veridir [NSExtensionItem](https://developer.xamarin.com/api/type/Foundation.NSExtensionItem/) içinde depolanan nesneleri [InputItems](https://developer.xamarin.com/api/property/Foundation.NSExtensionContext.InputItems/) özelliği [ExtensionContext ](https://developer.xamarin.com/api/type/Foundation.NSExtensionContext/) , uzantının `UIViewController`.
 
-Kendi ana bilgisayar uygulamalardan veri almasına uzantıları için verileri bir dizi biçimindedir [NSExtensionItem](https://developer.xamarin.com/api/type/Foundation.NSExtensionItem/) içinde depolanan nesneleri [InputItems](https://developer.xamarin.com/api/property/Foundation.NSExtensionContext.InputItems/) özelliği [ExtensionContext ](https://developer.xamarin.com/api/type/Foundation.NSExtensionContext/) , uzantının `UIViewController`.
+Fotoğraf düzenleme uzantıları gibi başka bir uzantı tamamlama veya iptal ediliyor kullanım kullanıcı arasında ayrım. Bu ana bilgisayar uygulaması aracılığıyla dön sinyal [CompleteRequest](https://developer.xamarin.com/api/member/Foundation.NSExtensionContext.CompleteRequest/) ve [CancelRequest](https://developer.xamarin.com/api/member/Foundation.NSExtensionContext.CancelRequest/) yöntemlerinin [ExtensionContext](https://developer.xamarin.com/api/type/Foundation.NSExtensionContext/) özelliği.
 
-Uzantılar, fotoğraf düzenleme gibi başka bir uzantı tamamlayarak veya kullanım iptal kullanıcı arasında ayrım. Bu ana bilgisayar uygulaması aracılığıyla dön işaret [CompleteRequest](https://developer.xamarin.com/api/member/Foundation.NSExtensionContext.CompleteRequest/) ve [CancelRequest](https://developer.xamarin.com/api/member/Foundation.NSExtensionContext.CancelRequest/) yöntemlerinin [ExtensionContext](https://developer.xamarin.com/api/type/Foundation.NSExtensionContext/) özelliği.
+Daha fazla bilgi için lütfen Apple'nın bakın [uygulama uzantısı Programlama Kılavuzu](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214-CH20-SW1).
 
-Daha fazla bilgi için lütfen Apple'nın bkz [uygulama uzantısı Programlama Kılavuzu](https://developer.apple.com/library/ios/documentation/General/Conceptual/ExtensibilityPG/index.html#//apple_ref/doc/uid/TP40014214-CH20-SW1).
+## <a name="communicating-with-the-parent-app"></a>Üst uygulama ile iletişim kurma
 
-<a name="Communicating-with-the-Parent-App" />
-
-## <a name="communicating-with-the-parent-app"></a>Üst uygulamayla iletişim kurma
-
-Bir uygulama grubu farklı uygulamaları (veya bir uygulama ve uzantılarını) paylaşılan dosya depolama konumuna erişim sağlar. Uygulama grupları gibi verileri için kullanılabilir:
+Bir uygulama grubu farklı uygulamalar (veya bir uygulama ve uzantılarını) paylaşılan dosya depolama konumuna erişim sağlar. Uygulama grupları gibi veriler için kullanılabilir:
 
 - [Apple Watch ayarları](~/ios/watchos/app-fundamentals/settings.md).
 - [NSUserDefaults paylaşılan](~/ios/app-fundamentals/user-defaults.md).
-- [Paylaşılan dosyalara](~/ios/watchos/app-fundamentals/parent-app.md#files).
+- [Paylaşılan dosyalar](~/ios/watchos/app-fundamentals/parent-app.md#files).
 
 Daha fazla bilgi için lütfen bkz [uygulama grupları](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md) bölümünü bizim **özellikleriyle çalışma** belgeleri.
 
-<a name="MobileCoreServices" />
-
 ## <a name="mobilecoreservices"></a>MobileCoreServices
 
-Uzantıları ile çalışırken, oluşturma ve uygulama, diğer uygulamalar ve/veya hizmetleri arasında alınıp verileri işlemek için Tekdüzen türü tanımlayıcısı (UTI) kullanın.
+Uzantıları ile çalışırken, oluşturma ve uygulama, diğer uygulamalar ve/veya hizmetler arasında alınıp verilen verileri işlemek için Tekdüzen bir tür tanımlayıcı (UTI) kullanın.
 
-`MobileCoreServices.UTType` Statik sınıf tanımlar, Apple için ilgili aşağıdaki yardımcı Özellikler `kUTType...` tanımları:
+`MobileCoreServices.UTType` Statik sınıf tanımlar Apple ile ilgili aşağıdaki yardımcı özellikleri `kUTType...` tanımları:
 
 - `kUTTypeAlembic` - `Alembic`
 - `kUTTypeAliasFile` - `AliasFile`
@@ -499,23 +450,17 @@ results.ObjectForKey("NSExtensionJavaScriptPreprocessingResultsKey");
 
 Daha fazla bilgi için lütfen bkz [uygulama grupları](~/ios/deploy-test/provisioning/capabilities/app-groups-capabilities.md) bölümünü bizim **özellikleriyle çalışma** belgeleri.
 
-
-<a name="Precautions-and-Considerations" />
-
 ## <a name="precautions-and-considerations"></a>Güvenlik önlemleri ve dikkat edilmesi gerekenler
 
-Uzantıları uygulamaları göründüklerinden kullanabilecekleri önemli ölçüde daha az bellek yok. Hızlı bir şekilde ve kullanıcı ve içinde barındırılan uygulama için en az yetkisiz erişim ile gerçekleştirmek beklenir. Ancak, bir uzantı uzantının Geliştirici tanımlamak kullanıcı izin markalı bir kullanıcı Arabirimi ile kullanıcı uygulaması veya ait kapsayıcı uygulama ayırt edici, yararlı işleve sağlamalıdır.
+Uygulamaları daha kullanabilecekleri önemli ölçüde daha az bellek uzantılarına sahiptir. Hızlı bir şekilde ve en düşük yetkisiz erişim için kullanıcı ve uygulama içinde barındırılan gerçekleştirmek beklenir. Ancak, bir uzantı uzantının Geliştirici tanımlamak kullanıcının olanak tanıyan markalı bir kullanıcı Arabirimi ile kullanan uygulama veya kapsayıcı uygulamasına ait oldukları ayırıcı, kullanışlı bir işlev de sağlamalıdır.
 
-Bu sıkı gereksinim verildiğinde, baştan sona test ve performans ve bellek tüketimi için en iyi duruma getirilmiş uzantıları yalnızca dağıtmanız gerekir. 
-
-<a name="Summary" />
+Sıkı bu gereksinimi göz önünde bulundurulduğunda, baştan sona test ve performans ve bellek tüketimi için en iyi duruma getirilmiş uzantıları yalnızca dağıtmanız gerekir. 
 
 ## <a name="summary"></a>Özet
 
-Bu belgenin ne olduğu, uzantı noktaları ve bir uzantısı'iOS tarafından dayatılan bilinen sınırlamalar tür uzantılar, kapsamdaki. Oluşturma, dağıtma, yükleme ve uzantılar ve uzantı yaşam döngüsü çalıştıran açıklanır. Basit bir oluşturma bir kılavuz sağlanan **Bugün** film şeritleri ya da kod kullanarak pencere öğesi'nin UI oluşturmanın iki yolu gösteren pencere öğesi. Uzantı iOS Simulator'da test etme gösterdi. Son olarak, bu kısaca konak uygulama ve birkaç önlemleri ve uzantı geliştirirken alınması gereken noktalar ile iletişim açıklanmıştır. 
-
+Uzantılar nedir, türü uzantı noktaları ve uzantı üzerinde iOS tarafından dayatılan bilinen sınırlamalar, bu belgede ele. Bu, oluşturma, dağıtma, yükleme ve uzantılarını ve uzantı yaşam döngüsü çalıştıran açıklanmıştır. Basit bir oluşturmayla ilgili bir kılavuz sağlanan **Bugün** film şeritleri veya kod kullanarak bir pencere öğesinin kullanıcı Arabirimi oluşturmak için iki yol gösteren bir pencere öğesi. Bu, iOS Simulator uzantı test nasıl oluşturulacağını gösterir. Son olarak, bu kısa bir süreliğine konak uygulama ve bazı önlemler ve uzantı geliştirirken alınması gereken önemli noktalar ile iletişim kurulurken açıklanmıştır. 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [ContainerApp (örnek)](https://developer.xamarin.com/samples/monotouch/intro-to-extensions)
-- [Xamarin.iOS içinde Uzantıları (video) oluşturma](https://university.xamarin.com/lightninglectures/creating-extensions-in-ios)
+- [Uzantıları Xamarin.ios'ta (video) oluşturma](https://university.xamarin.com/lightninglectures/creating-extensions-in-ios)

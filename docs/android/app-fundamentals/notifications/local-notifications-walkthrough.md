@@ -1,121 +1,183 @@
 ---
-title: İzlenecek yol - yerel bildirimler Xamarin.Android içinde kullanma
-description: Bu kılavuzda yerel bildirimlerinin Xamarin.Android uygulamaları nasıl kullanılacağını gösterir. Oluşturma ve yerel bir bildirim yayımlama temellerini gösterir. Kullanıcı bildirim alanında bildirim tıkladığında, ikinci bir faaliyeti başlatır.
+title: İzlenecek yol - Xamarin.Android içinde yerel bildirimleri kullanma
+description: Bu yönerge, Xamarin.Android uygulamalarında yerel bildirimleri kullanma işlemini gösterir. Bu, oluşturma ve yerel bir bildirim yayımlama temellerini gösterir. Kullanıcı bildirim alanında bildirim tıkladığında, ikinci bir etkinliği başlatır.
 ms.prod: xamarin
 ms.assetid: D8C6C9E2-3282-49D1-A2F6-78A4F3306E29
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 01/30/2018
+ms.date: 08/16/2018
 ms.openlocfilehash: a2ca3755e3201263584447ba47ec36d2096386da
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.sourcegitcommit: f9fb316344fc4dce2fdce0dde3c5f4c2e4a42d08
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 08/30/2018
 ms.locfileid: "30766588"
 ---
-# <a name="walkthrough---using-local-notifications-in-xamarinandroid"></a>İzlenecek yol - yerel bildirimler Xamarin.Android içinde kullanma
+# <a name="walkthrough---using-local-notifications-in-xamarinandroid"></a>İzlenecek yol - Xamarin.Android içinde yerel bildirimleri kullanma
 
-_Bu kılavuzda yerel bildirimlerinin Xamarin.Android uygulamaları nasıl kullanılacağını gösterir. Oluşturma ve yerel bir bildirim yayımlama temellerini gösterir. Kullanıcı bildirim alanında bildirim tıkladığında, ikinci bir faaliyeti başlatır._
+_Bu yönerge, Xamarin.Android uygulamalarında yerel bildirimleri kullanma işlemini gösterir. Bu, oluşturma ve yerel bir bildirim yayımlama temellerini gösterir. Kullanıcı bildirim alanında bildirim tıkladığında, ikinci bir etkinliği başlatır._
 
 
 ## <a name="overview"></a>Genel Bakış
 
-Bu kılavuzda, kullanıcı bir etkinlikte düğmesine tıkladığında, bir bildirim oluşturan bir Android uygulaması oluşturacağız. Kullanıcı bildirimi tıkladığında, kullanıcı ilk etkinliğini düğmesini tıklattıktan sayısını görüntüler ikinci bir etkinlik başlatır.
+Bu kılavuzda, kullanıcı bir etkinlik içinde bir düğmeyi tıkladığında bir uyarı oluşturan bir Android uygulaması oluşturacağız. Kullanıcı bildirimi tıkladığında, kullanıcı ilk etkinliğini düğmeye tıklamış sayısını görüntüler, ikinci bir etkinliği başlatır.
 
 Aşağıdaki ekran görüntüleri, bu uygulamanın bazı örnekler göstermektedir:
 
-[![Bildirim örnek ekran görüntüleri](local-notifications-walkthrough-images/1-overview-sml.png)](local-notifications-walkthrough-images/1-overview.png#lightbox)
+[![Örnek ekran görüntüleri ile bildirim](local-notifications-walkthrough-images/1-overview-sml.png)](local-notifications-walkthrough-images/1-overview.png#lightbox)
+
+> [!NOTE]
+> Bu kılavuzda odaklanır [NotificationCompat API'leri](https://developer.android.com/reference/android/support/v4/app/NotificationCompat.html) gelen [Android desteği Kitaplığı](https://www.nuget.org/packages/Xamarin.Android.Support.v4/). Bu API'ler maksimum geriye dönük uyumluluk için Android 4.0 (API düzeyi 14) sağlayacaktır.
+
+## <a name="creating-the-project"></a>Projeyi oluşturma
+
+Başlamak için şimdi kullanarak yeni bir Android projesi oluşturma **Android uygulaması** şablonu. Bu proje adlandıralım **LocalNotifications**. (Xamarin.Android projeleri oluşturma ile ilgili bilgi sahibi değilseniz bkz [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md).)
+
+Kaynak dosyayı düzenlemek **values/Strings.xml** bildirim kanalı oluşturmak için zaman olduğunda, kullanılacak olan iki ek dize kaynaklarını içeren:
 
 
+```xml
+<?xml version="1.0" encoding="utf-8"?>
 
-## <a name="walkthrough"></a>İzlenecek yol
+<resources>
+  <string name="Hello">Hello World, Click Me!</string>
+  <string name="ApplicationName">Notifications</string>
 
-Başlamak için kullanarak yeni bir Android projesi oluşturalım **Android uygulaması** şablonu. Şimdi bu projenin adı **LocalNotifications**. (Xamarin.Android projeleri oluşturma ile bilmiyorsanız bkz [Hello, Android](~/android/get-started/hello-android/hello-android-quickstart.md).)
+  <string name="channel_name">Local Notifications</string>
+  <string name="channel_description">The count from MainActivity.</string>
+</resources>
+```
 
+### <a name="add-the-androidsupportv4-nuget-package"></a>Android.Support.V4 NuGet paketi ekleme
 
-### <a name="add-the-androidsupportv4app-component"></a>Android.Support.V4.App Bileşen Ekle
+Bu kılavuzda, kullanıyoruz `NotificationCompat.Builder` bizim yerel bir bildirim oluşturmak için. İçinde anlatıldığı gibi [yerel bildirimleri](~/android/app-fundamentals/notifications/local-notifications.md), içermesi gerekir [Android desteği kitaplığı v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) kullanılacak Projemizin Nuget'te `NotificationCompat.Builder`.
 
-Bu kılavuzda kullanıyoruz `NotificationCompat.Builder` bizim yerel bildirim oluşturmak için. Açıklandığı gibi [yerel bildirimler](~/android/app-fundamentals/notifications/local-notifications.md), biz içermelidir [Android destek kitaplığı v4](https://www.nuget.org/packages/Xamarin.Android.Support.v4/) kullanmak için NuGet Projemizin içinde `NotificationCompat.Builder`.
-
-Ardından, düzenleyelim **MainActivity.cs** ve aşağıdakileri ekleyin `using` deyimi böylece türler `Android.Support.V4.App` bizim kod için kullanılabilir:
+Ardından, düzenleyelim **MainActivity.cs** ve aşağıdakileri ekleyin `using` deyimi böylece türlerinde `Android.Support.V4.App` kodumuz için kullanılabilir:
 
 ```csharp
 using Android.Support.V4.App;
 ```
 
-Ayrıca, bu kullanıyoruz derleyici temizleyin vermiyoruz gerekir `Android.Support.V4.App` sürümü `TaskStackBuilder` yerine `Android.App` sürümü. Aşağıdakileri ekleyin `using` deyimi herhangi karışıklığı çözmek için:
+Ayrıca, biz bunu kullanıyoruz derleyici Temizle yapmalısınız `Android.Support.V4.App` sürümünü `TaskStackBuilder` yerine `Android.App` sürümü. Aşağıdaki `using` deyimi herhangi belirsizliği çözmek için:
 
 ```csharp
 using TaskStackBuilder = Android.Support.V4.App.TaskStackBuilder;
 ```
 
+### <a name="create-the-notification-channel"></a>Bildirim kanalı oluşturmak
 
-### <a name="define-the-notification-id"></a>Bildirim kimliği tanımlayın
-
-Biz bizim bildirim için benzersiz bir kimliği gerekir. Düzenleyelim **MainActivity.cs** ve aşağıdaki statik örnek değişkeni ekleyin `MainActivity` sınıfı:
+Ardından, bir yöntem ekleyin `MainActivity` , oluşturur bir bildirim kanalı (gerekirse):
 
 ```csharp
-private static readonly int ButtonClickNotificationId = 1000;
+void CreateNotificationChannel()
+{
+    if (Build.VERSION.SdkInt < BuildVersionCodes.O)
+    {
+        // Notification channels are new in API 26 (and not a part of the
+        // support library). There is no need to create a notification
+        // channel on older versions of Android.
+        return;
+    }
+
+    var name = Resources.GetString(Resource.String.channel_name);
+    var description = GetString(Resource.String.channel_description);
+    var channel = new NotificationChannel(CHANNEL_ID, name, NotificationImportance.Default)
+                  {
+                      Description = description
+                  };
+
+    var notificationManager = (NotificationManager) GetSystemService(NotificationService);
+    notificationManager.CreateNotificationChannel(channel);
+}
+```
+
+Güncelleştirme `OnCreate` bu yeni bir yöntem çağırmak için yöntem:
+
+```csharp
+protected override void OnCreate(Bundle bundle)
+{
+    base.OnCreate(bundle);
+    SetContentView(Resource.Layout.Main);
+
+    CreateNotificationChannel();
+}
 ```
 
 
-### <a name="add-code-to-generate-the-notification"></a>Bildirim oluşturmak için kodu ekleyin
+### <a name="define-the-notification-id"></a>Bildirim kimliği tanımlayın
+
+Benzersiz bir kimliği bizim bildirim ve bildirim kanalı için gerekir. Düzenleyelim **MainActivity.cs** ve aşağıdaki statik bir örnek değişkeni ekleyin `MainActivity` sınıfı:
+
+```csharp
+static readonly int NOTIFICATION_ID = 1000;
+static readonly string CHANNEL_ID = "location_notification";
+internal static readonly string COUNT_KEY = "count";
+```
+
+### <a name="add-code-to-generate-the-notification"></a>Bildirim oluşturmak için kod ekleyin
 
 Ardından, düğme için yeni bir olay işleyicisi oluşturmak ihtiyacımız `Click` olay. Aşağıdaki yöntemi ekleyin `MainActivity`:
 
 ```csharp
-private void ButtonOnClick (object sender, EventArgs eventArgs)
+void ButtonOnClick(object sender, EventArgs eventArgs)
 {
     // Pass the current button press count value to the next activity:
-    Bundle valuesForActivity = new Bundle();
-    valuesForActivity.PutInt ("count", count);
+    var valuesForActivity = new Bundle();
+    valuesForActivity.PutInt(COUNT_KEY, count);
 
     // When the user clicks the notification, SecondActivity will start up.
-    Intent resultIntent = new Intent(this, typeof (SecondActivity));
+    var resultIntent = new Intent(this, typeof(SecondActivity));
 
     // Pass some values to SecondActivity:
-    resultIntent.PutExtras (valuesForActivity);
+    resultIntent.PutExtras(valuesForActivity);
 
     // Construct a back stack for cross-task navigation:
-    TaskStackBuilder stackBuilder = TaskStackBuilder.Create (this);
-    stackBuilder.AddParentStack (Java.Lang.Class.FromType(typeof(SecondActivity)));
-    stackBuilder.AddNextIntent (resultIntent);
+    var stackBuilder = TaskStackBuilder.Create(this);
+    stackBuilder.AddParentStack(Class.FromType(typeof(SecondActivity)));
+    stackBuilder.AddNextIntent(resultIntent);
 
-    // Create the PendingIntent with the back stack:            
-    PendingIntent resultPendingIntent =
-        stackBuilder.GetPendingIntent (0, (int)PendingIntentFlags.UpdateCurrent);
+    // Create the PendingIntent with the back stack:
+    var resultPendingIntent = stackBuilder.GetPendingIntent(0, (int) PendingIntentFlags.UpdateCurrent);
 
     // Build the notification:
-    NotificationCompat.Builder builder = new NotificationCompat.Builder (this)
-        .SetAutoCancel (true)                    // Dismiss from the notif. area when clicked
-        .SetContentIntent (resultPendingIntent)  // Start 2nd activity when the intent is clicked.
-        .SetContentTitle ("Button Clicked")      // Set its title
-        .SetNumber (count)                       // Display the count in the Content Info
-        .SetSmallIcon(Resource.Drawable.ic_stat_button_click)  // Display this icon
-        .SetContentText (String.Format(
-            "The button has been clicked {0} times.", count)); // The message to display.
+    var builder = new NotificationCompat.Builder(this, CHANNEL_ID)
+                  .SetAutoCancel(true) // Dismiss the notification from the notification area when the user clicks on it
+                  .SetContentIntent(resultPendingIntent) // Start up this activity when the user clicks the intent.
+                  .SetContentTitle("Button Clicked") // Set the title
+                  .SetNumber(count) // Display the count in the Content Info
+                  .SetSmallIcon(Resource.Drawable.ic_stat_button_click) // This is the icon to display
+                  .SetContentText($"The button has been clicked {count} times."); // the message to display.
 
     // Finally, publish the notification:
-    NotificationManager notificationManager =
-        (NotificationManager)GetSystemService(Context.NotificationService);
-    notificationManager.Notify(ButtonClickNotificationId, builder.Build());
+    var notificationManager = NotificationManagerCompat.From(this);
+    notificationManager.Notify(NOTIFICATION_ID, builder.Build());
 
     // Increment the button press count:
     count++;
 }
 ```
 
-İçinde `OnCreate` yöntemi, bu Ata `ButtonOnClick` yönteme `Click` düğmesi (şablon tarafından sağlanan temsilci olay işleyicisi değiştirin) olay:
+`OnCreate` MainActivity yöntemi bildirim kanalı oluşturmak ve atamak için bir çağrı yapmak gerekir `ButtonOnClick` yönteme `Click` olay düğmesi (şablon tarafından sağlanan temsilci olay işleyicisi değiştirin):
 
 ```csharp
-button.Click += ButtonOnClick;
+protected override void OnCreate(Bundle bundle)
+{
+    base.OnCreate(bundle);
+    SetContentView(Resource.Layout.Main);
+
+    CreateNotificationChannel();
+
+    // Display the "Hello World, Click Me!" button and register its event handler:
+    var button = FindViewById<Button>(Resource.Id.MyButton);
+    button.Click += ButtonOnClick;
+}
 ```
 
 
-### <a name="create-a-second-activity"></a>İkinci bir etkinlik oluşturmak
+### <a name="create-a-second-activity"></a>İkinci bir etkinlik oluşturma
 
-Şimdi biz kullanıcı bizim bildirim tıkladığında, Android görüntüler başka bir etkinliğin oluşturmanız gerekir. Adlı projenize başka bir Android etkinlik eklemek **SecondActivity**. Açık **SecondActivity.cs** ve içeriğini bu kod ile değiştirin:
+Artık kullanıcı bizim bildirim tıkladığında Android görüntüler başka bir etkinlik oluşturmak ihtiyacımız var. Adlı projenize başka bir Android etkinliği eklemek **SecondActivity**. Açık **SecondActivity.cs** ve içerikleri şu kodla değiştirin:
 
 ```csharp
 using System;
@@ -128,28 +190,29 @@ namespace LocalNotifications
     [Activity(Label = "Second Activity")]
     public class SecondActivity : Activity
     {
-        protected override void OnCreate (Bundle bundle)
+        protected override void OnCreate(Bundle bundle)
         {
-            base.OnCreate (bundle);
+            base.OnCreate(bundle);
 
             // Get the count value passed to us from MainActivity:
-            int count = Intent.Extras.GetInt ("count", -1);
+            var count = Intent.Extras.GetInt(MainActivity.COUNT_KEY, -1);
 
             // No count was passed? Then just return.
             if (count <= 0)
+            {
                 return;
+            }
 
             // Display the count sent from the first activity:
-            SetContentView (Resource.Layout.Second);
-            TextView textView = FindViewById<TextView>(Resource.Id.textView);
-            textView.Text = String.Format (
-                "You clicked the button {0} times in the previous activity.", count);
+            SetContentView(Resource.Layout.Second);
+            var txtView = FindViewById<TextView>(Resource.Id.textView1);
+            txtView.Text = $"You clicked the button {count} times in the previous activity.";
         }
     }
 }
 ```
 
-Biz de kaynak düzeni oluşturmalısınız **SecondActivity**. Yeni bir ekleme **Android düzeni** dosya adlı projenize **Second.axml**. Düzen **Second.axml** ve aşağıdaki düzen kodu yapıştırın:
+Biz de kaynak düzeni oluşturmalısınız **SecondActivity**. Yeni bir **Android düzeni** dosya adlı projenize **Second.axml**. Düzen **Second.axml** düzeni aşağıdaki kodu yapıştırın:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -164,48 +227,47 @@ Biz de kaynak düzeni oluşturmalısınız **SecondActivity**. Yeni bir ekleme *
         android:textAppearance="?android:attr/textAppearanceLarge"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView" />
+        android:id="@+id/textView1" />
 </LinearLayout>
 ```
 
 
-### <a name="add-a-notification-icon"></a>Bir bildirim simgesi ekleme
+### <a name="add-a-notification-icon"></a>Bir bildirim simgesi Ekle
 
-Son olarak, bildirim alanında bizim bildirim başlatıldığında görünecek küçük bir simge ekleyelim. Kopyalayabilirsiniz [bu simgeyi](local-notifications-walkthrough-images/ic-stat-button-click.png) projenize veya kendi özel simge oluşturun. Simge dosyası adı **ŞA\_stat\_düğmesini\_click.png** ve kopyalayın **kaynakları/drawable** klasör. Kullanmayı unutmayın **Ekle > varolan öğeyi...**  bu simge dosyası projenize eklemek için.
+Son olarak, bildirim alanında bildirim başlatıldığında görünecek küçük bir simge ekleyin. Kopyalayabilirsiniz [bu simgeyi](local-notifications-walkthrough-images/ic-stat-button-click.png) projenize veya kendi özel bir simge oluşturun. Simge dosyası adı **IC\_stat\_düğmesi\_click.png** ve kopyalayıp **kaynakları/drawable** klasör. Kullanmayı unutmayın **Ekle > mevcut öğe...**  bu simge dosyası projenize eklenecek.
 
 
 ### <a name="run-the-application"></a>Uygulamayı çalıştırın
 
-Şimdi oluşturun ve uygulamayı çalıştırın. Aşağıdaki ekran görüntüsüne benzer ilk etkinliği ile sunulan:
+Derleme ve uygulamayı çalıştırın. Aşağıdaki ekran görüntüsüne benzer ilk etkinliğin erişemediklerinde sunulması gereken:
 
 [![İlk etkinlik ekran görüntüsü](local-notifications-walkthrough-images/2-start-screen-sml.png)](local-notifications-walkthrough-images/2-start-screen.png#lightbox)
 
-Düğmesini gibi bildirim alanında görüntülenen bildirim küçük simgesi dikkat edin:
+Düğmeye tıkladığınızda, küçük simge bildirimi için bildirim alanında görüntülendiğini fark:
 
-[![Bildirim simgesi görüntülenir](local-notifications-walkthrough-images/3-notification-icon-sml.png)](local-notifications-walkthrough-images/3-notification-icon.png#lightbox)
+[![Uyarı simgesi görüntülenir](local-notifications-walkthrough-images/3-notification-icon-sml.png)](local-notifications-walkthrough-images/3-notification-icon.png#lightbox)
 
-Aşağıya doğru çekin ve bildirim çekmecesini kullanıma, bildirim görmeniz gerekir:
+Aşağı doğru çekin ve bildirim çekmecesini kullanıma sunma, şu bildirimi görmelisiniz:
 
 [![Bildirim iletisi](local-notifications-walkthrough-images/4-notifications-sml.png)](local-notifications-walkthrough-images/4-notifications.png#lightbox)
 
-Bildirime tıklayın, onu kaybolur ve bizim diğer etkinliklerin başlatılması gerekir &ndash; aşağıdaki ekran görüntüsüne benzer bir şey aranıyor:
+Bildirime tıklayın, ortadan kalkması gerekir ve başka bir etkinliği bizim başlatılan &ndash; bakıma aşağıdaki ekran görüntüsünde aranıyor:
 
 [![İkinci etkinlik ekran görüntüsü](local-notifications-walkthrough-images/5-second-activity-sml.png)](local-notifications-walkthrough-images/5-second-activity.png#lightbox)
 
-Tebrikler! Bu noktada, Android yerel bildirim Kılavuzu tamamladıktan ve başvurabilirsiniz bir çalışma örneği vardır. Bildirimleri daha fazla biz burada gösterilenden bu nedenle daha fazla bilgi istiyorsanız ele göz atın çok [Google belgelerine bildirimleri](http://developer.android.com/guide/topics/ui/notifiers/notifications.html) ve Android [bildirimleri](http://developer.android.com/design/patterns/notifications.html) Tasarım Kılavuzu.
-
+Tebrikler! Bu noktada Android yerel bildirim izlenecek yolu tamamladınız ve başvurabilirsiniz bir çalışma örneği vardır. Bildirimleri için daha fazla biz burada gösterilen daha bu nedenle daha fazla bilgi edinmek istiyorsanız göz atın birçok [Google'nın belgeleri bildirimleri](http://developer.android.com/guide/topics/ui/notifiers/notifications.html).
 
 
 ## <a name="summary"></a>Özet
 
-Bu kılavuzda kullandık `NotificationCompat.Builder` oluşturma ve bildirimleri görüntüleme. İkinci bir etkinlik bildirimi ile kullanıcı etkileşimi yanıt için bir yol olarak başlatmak nasıl basit bir örneği gördüğümüz ve biz verilerin aktarımını ilk etkinliğinden ikinci etkinlik gösterilmektedir.
+Bu kılavuzda kullanılan `NotificationCompat.Builder` oluşturma ve bildirimleri görüntüleme. Bildirim ile kullanıcı etkileşimine yanıt için bir yol olarak ikinci bir etkinlik başlatmak için basit bir örneği gösterilmiştir ve, veri aktarımını ilk etkinliğinden ikinci etkinliği gösterilmektedir.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [LocalNotifications (örnek)](https://developer.xamarin.com/samples/monodroid/LocalNotifications/)
-- [Tasarım Kılavuzu modelleri bildirimleri](http://developer.android.com/design/patterns/notifications.html)
-- [bildirim](https://developer.xamarin.com/api/type/Android.App.Notification/)
+- [Android Oreo bildirim kanalları](https://blog.xamarin.com/android-oreo-notification-channels/)
+- [Bildirim](https://developer.xamarin.com/api/type/Android.App.Notification/)
 - [NotificationManager](https://developer.xamarin.com/api/type/Android.App.NotificationManager/)
 - [NotificationCompat.Builder](https://developer.android.com/reference/android/support/v4/app/NotificationCompat.Builder.html)
 - [PendingIntent](https://developer.xamarin.com/api/type/Android.App.PendingIntent/)
