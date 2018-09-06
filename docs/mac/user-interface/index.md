@@ -1,76 +1,76 @@
 ---
-title: macOS kullanıcı arabirimi Xamarin.Mac denetimlerinde
-description: Bu belge bağlantılar çeşitli kullanıcı arabirimi denetimlerini Xamarin.Mac geliştiricilerinin kullanabileceği açıklamak kılavuzlara. Bağlantılı içeriği bir windows iletişim kutuları, uyarılar, menüler, araç çubukları, tablosu görünümleri, anahat görünümleri ve daha fazla inceler.
+title: Xamarin.Mac macOS kullanıcı arabirimi denetimleri
+description: Xamarin.Mac geliştiricilere sunulan çeşitli kullanıcı arabirimi denetimleri kılavuzları bu belge bağlar. Bağlantılı içeriği bir windows iletişim kutuları, uyarılar, menüler, araç çubukları, tablo görünümleri, anahat görünümleri ve daha fazla inceler.
 ms.prod: xamarin
 ms.assetid: 876B6EC2-E158-43F2-B9C9-03F54F3D2A49
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/27/2018
-ms.openlocfilehash: 231d3a935cf251d0b2a1a3e6947abcb1c2133b90
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: b2392f05a03015f903918f15013919be14b99292
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792960"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "43780592"
 ---
-# <a name="macos-user-interface-controls-in-xamarinmac"></a>macOS kullanıcı arabirimi Xamarin.Mac denetimlerinde
+# <a name="macos-user-interface-controls-in-xamarinmac"></a>Xamarin.Mac macOS kullanıcı arabirimi denetimleri
 
-_Bu makale bağlantılar çeşitli macOS açıklamak kılavuzlara UI denetler._
+_Çeşitli macOS kullanıcı Arabirimi denetimleri kılavuzları bu makalede bağlar._
 
-Erişimi Xamarin.Mac uygulamada C# ve .NET ile çalışırken, aynı kullanıcı arabirimi, çalışan bir geliştirici denetimleri *Objective-C* ve *Xcode* yapar. Xamarin.Mac Xcode ile doğrudan tümleşir nedeniyle, Xcode'nın kullanabilirsiniz _arabirimi Oluşturucu_ ve kullanıcı arabirimleri korumak (veya isteğe bağlı olarak bunları doğrudan C# kodunda oluşturmak için).
+Erişimi bir Xamarin.Mac uygulamasında çalışırken, C# ve .NET sayesinde aynı kullanıcı için çalışan bir geliştirici denetleyen arabirim *Objective-C* ve *Xcode* yapar. Xamarin.Mac Xcode ile doğrudan tümleşir çünkü Xcode'un kullanabileceğiniz _arabirim Oluşturucu_ oluşturmak ve korumak, kullanıcı arabirimleri (veya isteğe bağlı olarak bunları doğrudan C# kodu oluşturmak için).
 
-Aşağıda listelenen kılavuzları Xamarin.Mac uygulamasında macOS kullanıcı Arabirimi öğeleri ile çalışma hakkında ayrıntılı bilgi verin. Aracılığıyla iş önerilen [Hello, Mac](~/mac/get-started/hello-mac.md) makalesi önce özellikle [Xcode ve arabirim Oluşturucu giriş](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) ve [çıkışlar ve eylemleri](~/mac/get-started/hello-mac.md#Outlets_and_Actions) onu farklı bölümler temel kavramları ve biz her makalede kullanmaya başlayacağınız teknikleri ele alınmaktadır.
+Aşağıda listelenen kılavuzları bir Xamarin.Mac uygulamasını macOS UI öğeleri ile çalışma hakkında ayrıntılı bilgi sağlar. Aracılığıyla iş önerilen [Merhaba, Mac](~/mac/get-started/hello-mac.md) makale önce özellikle [Xcode ve arabirim Oluşturucu giriş](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) ve [çıkışlar ve eylemleri](~/mac/get-started/hello-mac.md#outlets-and-actions) olarak bölümlerde temel kavramları ve her makalede kullanacağız tekniklerini ele alınmaktadır.
 
-Bir göz atalım isteyebilirsiniz [gösterme C# sınıfları / Objective-C yöntemlere](~/mac/internals/how-it-works.md#exposing-c-classes--methods-to-objective-c) bölümünü [Xamarin.Mac iç](~/mac/internals/how-it-works.md) açıklar olarak da, belge `Register` ve `Export` kablo, C# sınıflarının Objective-C nesneleri ve kullanıcı Arabirimi öğeleri yukarı için kullanılan öznitelikler.
+Bir göz atın isteyebilirsiniz [gösterme C# sınıfları / Objective-C yöntemlere](~/mac/internals/how-it-works.md#exposing-c-classes--methods-to-objective-c) bölümünü [Xamarin.Mac iç işlevleri](~/mac/internals/how-it-works.md) açıklar olarak da belge `Register` ve `Export` Objective-C nesneleri ve kullanıcı Arabirimi öğeleri için C# sınıfları kablo-yedekleme kullanılan öznitelikler.
 
 ## <a name="windowsmacuser-interfacewindowmd"></a>[Windows](~/mac/user-interface/window.md)
 
-Bu makalede windows ve paneller Xamarin.Mac uygulamada çalışmaya kapsar. Oluşturma ve windows ve Xcode ve windows yükleme arabirimi Oluşturucusu paneller ve paneller .storyboard veya .xib dosyalarından koruma, windows kullanarak ve C# kodunda windows yanıtlama kapsar.
+Bu makale, windows ve bir Xamarin.Mac uygulamasını panellerinde çalışmayı kapsar. Oluşturma ve windows ve Xcode ve arabirim Oluşturucu windows yükleniyor, paneller ve .storyboard veya .xib dosyaları panellerinden koruma, windows kullanarak ve C# kodunda windows yanıtlama ele alınmaktadır.
 
 ## <a name="dialogsmacuser-interfacedialogmd"></a>[İletişim Kutuları](~/mac/user-interface/dialog.md)
 
-Bu makalede iletişim kutuları ve Xamarin.Mac uygulamada kalıcı windows ile çalışma kapsar. Oluşturma ve Xcode ve arabirim standart iletişim kutuları ile çalışma ve görüntüleme ve C# kodunda windows yanıtlama Oluşturucusu kalıcı windows koruma kapsar.
+Bu makale, iletişim kutuları ve kalıcı bir Xamarin.Mac uygulamasını Windows'ta çalışmayı kapsar. Oluşturulması ve bakımının yapılması Xcode ve arabirim Oluşturucu standart iletişim kutuları ile çalışma ve görüntüleme ve C# kodunda windows yanıtlama, kalıcı windows ele alınmaktadır.
 
 ## <a name="alertsmacuser-interfacealertmd"></a>[Uyarılar](~/mac/user-interface/alert.md)
 
-Bu makalede Xamarin.Mac uygulamasında uyarılarla çalışma kapsar. Oluşturma ve C# kodundan uyarıları görüntüleme ve uyarılara yanıt verme kapsar.
+Bu makale, bir Xamarin.Mac uygulamasındaki uyarılarla kapsar. Oluşturma ve C# kod uyarıları görüntüleme ve uyarılara yanıt verme ele alınmaktadır.
 
 ## <a name="menusmacuser-interfacemenumd"></a>[Menüler](~/mac/user-interface/menu.md)
 
-Menüleri Mac uygulamanın kullanıcı arabiriminde çeşitli kısımlarını kullanılır; açılır menüler ve bağlamsal menüleri ekranın üstünde uygulamanın ana menüden, bir penceresinde herhangi bir yerde görünebilir. Menüleri, bir Mac uygulamasının kullanıcı deneyiminin ayrılmaz bir parçasıdır. Bu makalede, Xamarin.Mac uygulamasında Cocoa Menülerle çalışma yer almaktadır.
+Menüleri, bir Mac uygulamanın kullanıcı arabirimini çeşitli bölümlerini kullanılır; açılır menüler ve bağlam menüleri için ekranın üst uygulamanın ana menüden, herhangi bir pencere içinde görünebilir. Menüler Mac uygulamanın kullanıcı deneyimini ayrılmaz bir parçasıdır. Bu makale, bir Xamarin.Mac uygulamasını Cocoa Menülerle çalışma kapsar.
 
 ## <a name="standard-controlsmacuser-interfacestandard-controlsmd"></a>[Standart denetimler](~/mac/user-interface/standard-controls.md)
 
-Düğmeleri, etiketler, metin alanları, onay kutularını ve Xamarin.Mac uygulama bölümlenmiş denetimlerinde gibi standart AppKit denetimleri ile çalışıyor. Bu kılavuz, bir kullanıcı arabirimi tasarımı Xcode'nın arabirimi Oluşturucu ekleme, bunları çıkışlar ve eylemleri aracılığıyla koda gösterme ve C# kodunda AppKit denetimleriyle çalışma kapsar.
+Düğmeler, etiketler, metin alanları, onay kutularını ve bölümlenmiş denetimler Xamarin.Mac uygulamasında gibi standart olan tüm AppKit denetimleri ile çalışma. Bu kılavuz, bir kullanıcı arabirimi tasarımı Xcode'un arabirimi Oluşturucu ekleme, bunları çıkışlar ve eylemleri aracılığıyla koda gösterme ve C# kodunda olan tüm AppKit denetimleri ile çalışma kapsar.
 
 ## <a name="toolbarsmacuser-interfacetoolbarmd"></a>[Araç Çubukları](~/mac/user-interface/toolbar.md)
 
-Bu makalede araç çubukları Xamarin.Mac uygulamada çalışmaya kapsar. Oluşturma ve araç çubuklarını Xcode ve arabirim Oluşturucu koruma kapsayan çıkışlar ve eylemleri kullanarak, etkinleştirme ve araç öğelerini devre dışı bırakma ve son olarak C# kodunda araç çubuğu öğeleri için yanıt kodunu araç öğelerine kullanıma sunmak nasıl.
+Bu makale, bir Xamarin.Mac uygulamasını araç çubuklarında ile çalışmayı kapsar. Oluşturulması ve bakımının yapılması Xcode ve arabirim Oluşturucu, araç çubuklarını kapsayan çıkışlar ve eylemleri kullanarak, etkinleştirme ve araç çubuğu öğelerini devre dışı bırakma ve son olarak, C# kodunda araç çubuğu öğeleri için yanıt kodu için araç çubuğu öğelerini nasıl sunacağınızı öğrenin.
 
 ## <a name="table-viewsmacuser-interfacetable-viewmd"></a>[Tablo görünümleri](~/mac/user-interface/table-view.md)
 
-Bu makalede Xamarin.Mac uygulamasında tablo görünümlerle çalışma kapsar. Oluşturma ve Xcode ve arabirim Oluşturucu tablo görünümleri koruma kapsayan Tablo görünümünde kullanıma sunmak için çıkışlar ve eylemleri kullanarak kod öğeleri nasıl tablosu görünümleri doldurma ve C# kodunda Tablo görünümü öğelerine yanıt.
+Bu makale, bir Xamarin.Mac uygulamasını tablo görünümlerde çalışmak kapsar. Oluşturulması ve bakımının yapılması tablo görünümleri Xcode ve arabirim Oluşturucu kapsayan Tablo görünümü kullanıma sunmak için çıkışlar ve eylemleri kullanarak kod öğelerini nasıl tablo görünümleri doldurma ve tablo C# kod öğelerini görüntüle yanıtlama.
 
 ## <a name="outline-viewsmacuser-interfaceoutline-viewmd"></a>[Anahat görünümleri](~/mac/user-interface/outline-view.md)
 
-Bu makalede Xamarin.Mac uygulamasında anahat görünümlerle çalışma kapsar. Oluşturma ve Xcode ve arabirim Oluşturucu anahat görünümleri koruma kapsayan anahat görünümü kullanıma sunmak için çıkışlar ve eylemleri kullanarak kod öğeleri nasıl anahat görünümleri doldurma ve C# kodunda öğeleri görüntüle ana hatlarını belirlemek için yanıt.
+Bu makale, bir Xamarin.Mac uygulamasını anahat görünümleri ile çalışmayı kapsar. Oluşturulması ve bakımının yapılması Xcode ve arabirim Oluşturucu anahat görünümleri kapsayan anahat görünümü kullanıma sunmak için çıkışlar ve eylemleri kullanarak kod öğelerini nasıl anahat görünümleri doldurma ve C# kod öğelerini görüntüle anahat yanıtlama.
 
 ## <a name="source-listsmacuser-interfacesource-listmd"></a>[Kaynak listeleri](~/mac/user-interface/source-list.md)
 
-Bu makalede Xamarin.Mac uygulamasında kaynak listeleriyle çalışma kapsar. Oluşturma ve kaynak listelerinde Xcode arabirimi Oluşturucu koruma kapsayan çıkışlar ve eylemleri kullanarak, kaynak listeleri doldurma ve C# kodunda kaynak liste öğelerine yanıt kodu Kaynak liste öğelerine kullanıma sunmak nasıl.
+Bu makale, bir Xamarin.Mac uygulamasını kaynak listeleriyle çalışma kapsar. Oluşturulması ve bakımının yapılması kaynak listelerinde Xcode ve arabirim Oluşturucu kapsayan çıkışlar ve eylemleri kullanarak, kaynak listelerini doldurmak ve C# kodunda kaynak liste öğelerine yanıt kodu Kaynak liste öğelerine nasıl sunacağınızı öğrenin.
 
 ## <a name="collection-viewsmacuser-interfacecollection-viewmd"></a>[Koleksiyon görünümleri](~/mac/user-interface/collection-view.md)
 
-Bu makalede, koleksiyon görünümlerini Xamarin.Mac uygulamada çalışmaya kapsar. Oluşturma ve koleksiyon görünümlerini Xcode ve arabirim Oluşturucu koruma kapsayan koleksiyon görünümü kullanıma sunmak için çıkışlar ve eylemleri kullanarak kod öğeleri nasıl koleksiyon görünümlerini doldurma ve koleksiyon görünümlerini C# kodunda yanıtlama.
+Bu makale koleksiyonu görünümlerde bir Xamarin.Mac uygulamasını çalışmak kapsar. Oluşturma ve koleksiyon görünümlerini Xcode ve arabirim Oluşturucu koruma kapsayan koleksiyon görünümü kullanıma sunmak için çıkışlar ve eylemleri kullanarak kod öğelerini nasıl koleksiyon görünümlerini doldurma ve koleksiyon görünümlerini C# kodunda yanıtlama.
 
 ## <a name="creating-custom-controlsmacuser-interfacecustom-controlsmd"></a>[Özel denetimler oluşturma](~/mac/user-interface/custom-controls.md)
 
-Bu makalede ele alınmaktadır özel kullanıcı arabirimi denetimlerini oluşturma (içinden devralma tarafından `NSControl`), özel bir arabirim denetimi için çizim ve Xcode'nın arabirimi Oluşturucu ile kullanılan özel eylemler oluşturma.
+Bu makalede, özel kullanıcı arabirimi denetimleri oluşturma yer almaktadır (dan devralan tarafından `NSControl`), özel bir arabirim denetimi çizme ve Xcode'un arabirimi Oluşturucusu ile kullanılabilecek özel eylemler oluşturma.
 
 ## <a name="mac-samples-gallery"></a>Mac Örnekler Galerisi
 
-Ayrıca göz atın alma öneririz [Mac Örnekler Galerisi](https://developer.xamarin.com/samples/mac/all/). Bol Xamarin.Mac proje zemin hızlı bir şekilde elde etmenize yardımcı olabilir kullanıma hazır kod içerir.
+Ayrıca göz alma öneririz [Mac Örnekler Galerisi](https://developer.xamarin.com/samples/mac/all/). Daha zengin bir Xamarin.Mac Proje hızlı bir şekilde buluta taşıyın yardımcı olabilecek kullanıma hazır kod içerir.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

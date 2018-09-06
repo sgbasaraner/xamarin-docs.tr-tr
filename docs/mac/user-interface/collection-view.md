@@ -1,50 +1,50 @@
 ---
-title: Xamarin.Mac koleksiyonu görünümleri
-description: Bu makalede Xamarin.Mac uygulamasında koleksiyon görünümleri ile çalışmayı açıklar. Oluşturma ve koleksiyon görünümlerini Xcode ve arabirim Oluşturucu koruma ve bunlarla program aracılığıyla çalışma kapsar.
+title: Xamarin.Mac koleksiyon görünümleri
+description: Bu makalede bir Xamarin.Mac uygulamasını koleksiyon görünümleri ile çalışma. Oluşturma ve koleksiyon görünümlerini Xcode ve arabirim Oluşturucu bakımını yapma ve program aracılığıyla çalışma ele alınmaktadır.
 ms.prod: xamarin
 ms.assetid: 6EE32256-5948-4AE4-8133-6D0B3F4173E8
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/24/2017
-ms.openlocfilehash: 8e354b1ce273b10758a7d8c1361055b972839943
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: c8b4b5ff8bebf5fbbded410ae84d1aefcca2d6cc
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792563"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "43780606"
 ---
-# <a name="collection-views-in-xamarinmac"></a>Xamarin.Mac koleksiyonu görünümleri
+# <a name="collection-views-in-xamarinmac"></a>Xamarin.Mac koleksiyon görünümleri
 
-_Bu makalede Xamarin.Mac uygulamasında koleksiyon görünümleri ile çalışmayı açıklar. Oluşturma ve koleksiyon görünümlerini Xcode ve arabirim Oluşturucu koruma ve bunlarla program aracılığıyla çalışma kapsar._
+_Bu makalede bir Xamarin.Mac uygulamasını koleksiyon görünümleri ile çalışma. Oluşturma ve koleksiyon görünümlerini Xcode ve arabirim Oluşturucu bakımını yapma ve program aracılığıyla çalışma ele alınmaktadır._
 
-AppKit koleksiyon görünümü Xamarin.Mac uygulama, geliştiriciler C# ve .NET ile çalışma erişimi aynı olduğunda, çalışan bir geliştirici denetleyen *Objective-C* ve *Xcode* yapar. Geliştirici, Xcode'nın kullanır, Xamarin.Mac Xcode ile doğrudan tümleşir çünkü _arabirimi Oluşturucu_ oluşturmak ve koleksiyon görünümlerini güncelleştirmek için.
+AppKit koleksiyon görünümü bir Xamarin.Mac uygulamasını, geliştirici çalışma C# ve .NET ile aynı erişimi olduğunda, çalışan bir geliştirici denetleyen *Objective-C* ve *Xcode* yapar. Xamarin.Mac Xcode ile doğrudan tümleşir çünkü Geliştirici Xcode'un kullanan _arabirim Oluşturucu_ oluşturmak ve koleksiyon görünümlerini korumak için.
 
-A `NSCollectionView` kullanılarak organize subviews oluşan bir kılavuz görüntüler bir `NSCollectionViewLayout`. Her alt görünüm kılavuzunda tarafından temsil edilen bir `NSCollectionViewItem` görünümün içerikten yüklenmesini yöneten bir `.xib` dosyası.
+A `NSCollectionView` kullanarak düzenli subviews kılavuzunun görüntüler bir `NSCollectionViewLayout`. Her alt görünüm kılavuzunda tarafından temsil edilen bir `NSCollectionViewItem` görünümün içeriğini yüklenmesini yöneten bir `.xib` dosya.
 
-[![Bir örnek uygulamayı çalıştırma](collection-view-images/intro01.png)](collection-view-images/intro01.png#lightbox)
+[![Bir örnek uygulama çalıştırma](collection-view-images/intro01.png)](collection-view-images/intro01.png#lightbox)
 
-Bu makalede, bir Xamarin.Mac uygulamasında koleksiyon görünümleri ile çalışmanın temelleri kapsar. Aracılığıyla iş önerilen [Hello, Mac](~/mac/get-started/hello-mac.md) makalesi önce özellikle [Xcode ve arabirim Oluşturucu giriş](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) ve [çıkışlar ve eylemleri](~/mac/get-started/hello-mac.md#Outlets_and_Actions) onu farklı bölümler temel kavramları ve bu makale kullanılan teknikleri ele alınmaktadır.
+Bu makalede bir Xamarin.Mac uygulamasını ile koleksiyon görünümlerini çalışmanın temelleri ele alınmaktadır. Aracılığıyla iş önerilen [Merhaba, Mac](~/mac/get-started/hello-mac.md) makale önce özellikle [Xcode ve arabirim Oluşturucu giriş](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) ve [çıkışlar ve eylemleri](~/mac/get-started/hello-mac.md#outlets-and-actions) olarak bölümlerde temel kavramları ve bu makale boyunca kullanılır teknikler kapsar.
 
-Bir göz atalım isteyebilirsiniz [gösterme C# sınıfları / Objective-C yöntemlere](~/mac/internals/how-it-works.md) bölümünü [Xamarin.Mac iç](~/mac/internals/how-it-works.md) de açıklar belge `Register` ve `Export` komutları kablo, C# sınıflarının Objective-C nesneleri ve kullanıcı Arabirimi öğeleri yukarı için kullanılır.
+Bir göz atın isteyebilirsiniz [gösterme C# sınıfları / Objective-C yöntemlere](~/mac/internals/how-it-works.md) bölümünü [Xamarin.Mac iç işlevleri](~/mac/internals/how-it-works.md) de açıklar belge `Register` ve `Export` komutları Objective-C nesneleri ve kullanıcı Arabirimi öğeleri için C# sınıfları kablo-yedekleme kullanılır.
 
 <a name="About_Collection_Views"/>
 
 ## <a name="about-collection-views"></a>Koleksiyon görünümleri hakkında
 
-Asıl amacı, bir koleksiyon görünümü (`NSCollectionView`) bir koleksiyon görünümü düzen kullanarak düzenli bir şekilde bir grup görsel olarak ayarlamaktır (`NSCollectionViewLayout`), tek tek her nesnesiyle (`NSCollectionViewItem`) daha büyük koleksiyonunda kendi görünüm alınıyor. Koleksiyon görünümlerini çalışma ile verileri bağlama ve anahtar-değer kodlama teknikleri ve bu nedenle, okumanız gereken [verileri bağlama ve anahtar-değer kodlama](~/mac/app-fundamentals/databinding.md) Bu makale ile devam etmeden önce belgeleri.
+Asıl amacı, bir koleksiyon görünümü (`NSCollectionView`) bir grup nesne bir koleksiyon görünümü düzen kullanılarak düzenli bir şekilde görsel olarak ayarlamaktır (`NSCollectionViewLayout`), her ayrı nesneyi ile (`NSCollectionViewItem`) daha büyük koleksiyonda kendi görünüm alınıyor. Koleksiyon görünümlerini çalışma veri bağlama ve anahtar-değer kodlaması teknikleri ve bu nedenle, okumanız gereken [veri bağlama ve anahtar-değer kodlaması](~/mac/app-fundamentals/databinding.md) bu makalede ile devam etmeden önce belgeleri.
 
-Geliştirici tasarlama ve uygulama sorumludur koleksiyon görünümü standart, yerleşik koleksiyon görünümü (anahat veya Tablo görünümü yaptığı gibi) öğe, sahiptir, bu nedenle bir _prototip Görünüm_ görüntü alanları gibi diğer AppKit denetimlerini kullanma , Metin alanları, etiketler, vs. Bu prototip görünüm depolanır ve görüntülemek ve koleksiyon görünümü tarafından yönetilen her bir öğe ile çalışmak için kullanılacak bir `.xib` dosyası.
+Geliştirici tasarlama ve uygulama için sorumlu standart, yerleşik koleksiyon görünümü (anahat veya Tablo görünümü yaptığı gibi) öğe yok, koleksiyon görünümü bulunduğundan bir _prototip görünümü_ görüntü alanları gibi diğer AppKit denetimleri kullanma , Metin alanları, etiketler, vs. Bu prototip görünüm depolanır ve görüntülemek ve koleksiyon görünümü tarafından yönetilen her bir öğesi ile çalışmak için kullanılacak bir `.xib` dosya.
 
-Geliştirici görünüm için bir koleksiyon görünümü öğesinin sorumlu olduğu için koleksiyon görünümü kılavuz içinde seçilen bir öğeyi vurgulama hiçbir yerleşik desteğe sahiptir. Bu özellik uygulama bu makalede ele alınacaktır.
+Geliştirici görünümü için bir koleksiyon görünümü öğesinin sorumlu olduğu için koleksiyon görünümü kılavuz seçili bir öğe vurgulama için hiçbir yerleşik destek sunmaktadır. Uygulama bu özellik bu makalede ele alınmaktadır.
 
 <a name="Defining_your_Data_Model"/>
 
-## <a name="defining-the-data-model"></a>Veri modeli tanımlama
+## <a name="defining-the-data-model"></a>Veri modelini tanımlama
 
-Veri Arabirimi Oluşturucu'da, bir anahtar-değer kodlama (KVC) bir koleksiyon görünümü bağlama önce / anahtar-değer Gözlemleme (KVO) uyumlu sınıfı tanımlanmış, olarak davranacak şekilde Xamarin.Mac uygulama _veri modeli_ bağlama için. Veri modeli tüm koleksiyonunda görüntülenir ve kullanıcı Arabiriminde uygulaması çalıştırılırken yapar verilere herhangi bir değişiklik alan verileri sağlar.
+Önce veri bir koleksiyon görünümü arabirim Oluşturucu, bir anahtar-değer kodlaması (KVC) bağlama / anahtar-değer gözleme (KVO) uyumlu sınıflar olarak davranmak için Xamarin.Mac uygulamaya tanımlanmalıdır _veri modeli_ bağlama için. Veri modeli, tüm koleksiyonunda görüntülenir ve herhangi bir değişiklik uygulama çalışırken kullanıcı Arabiriminde kullanıcının yaptığı veri alan verileri sağlar.
 
-Bir çalışan grubu yöneten bir uygulama örneği alın, aşağıdaki sınıf veri modeli tanımlamak için kullanılabilir:
+Bir çalışan grubunu yöneten bir uygulama örneği almak, veri modeli tanımlamak için aşağıdaki sınıf kullanılabilir:
 
 ```csharp
 using System;
@@ -183,48 +183,48 @@ namespace MacDatabinding
 }
 ```
 
-`PersonModel` Veri modeli bu makalenin geri kalanında kullanılır.
+`PersonModel` Bu makalenin geri kalan aşamalarında veri modeli kullanılır.
 
 <a name="Working_with_a_Collection_View"/>
 
-## <a name="working-with-a-collection-view"></a>Bir koleksiyon görünümü ile çalışma
+## <a name="working-with-a-collection-view"></a>Koleksiyon görünümü ile çalışırken
 
-Bir koleksiyon görünümü ile veri bağlaması olarak bir tablo görünümü gibi çok bağlamayla olan `NSCollectionViewDataSource` için koleksiyon veri sağlamak için kullanılır. Koleksiyon görünümü hazır görüntü biçimi sahip olmadığından, daha fazla iş kullanıcı etkileşimi geribildirim sağlamak ve kullanıcının seçimi izlemek için gereklidir.
+Koleksiyon görünümü ile veri bağlaması olan bir tablo görünümü gibi çok bağlamayla olarak `NSCollectionViewDataSource` koleksiyon için veri sağlamak için kullanılır. Koleksiyon görünümü önceden oluşturulmuş görüntü biçimi sahip olmadığından, daha fazla iş kullanıcı etkileşimi geri bildirim sağlamak ve kullanıcı seçimine izlemek için gereklidir.
 
 <a name="Creating-the-Cell-Prototype"/>
 
 ### <a name="creating-the-cell-prototype"></a>Hücre prototip oluşturma
 
-Koleksiyon görünümü varsayılan hücre prototip içermediğinden geliştirici bir veya daha fazla eklemeniz gerekir `.xib` düzenini ve tek tek hücrelere içeriğini tanımlamak için Xamarin.Mac uygulama dosyaları.
+Koleksiyon görünümü varsayılan hücre prototip içermediğinden, geliştirici bir veya daha fazla eklemeniz gerekir `.xib` tek tek hücrelere içeriğini ve düzenini tanımlamak için Xamarin.Mac uygulamasını dosyaları.
 
 Aşağıdakileri yapın:
 
-1. İçinde **Çözüm Gezgini**, proje adına sağ tıklayın ve seçin **Ekle** > **yeni dosya...**
-2. Seçin **Mac** > **View Controller**, bir ad verin (gibi `EmployeeItem` Bu örnekte) tıklatıp **yeni** düğmesi oluşturmak için: 
+1. İçinde **Çözüm Gezgini**, proje adını sağ tıklatın ve seçin **Ekle** > **yeni dosya...**
+2. Seçin **Mac** > **görünüm denetleyicisi**, bir ad verin (gibi `EmployeeItem` Bu örnekte) tıklayıp **yeni** oluşturmak için: 
 
     ![Yeni bir görünüm denetleyicisi ekleme](collection-view-images/proto01.png)
 
-    Bu ekler bir `EmployeeItem.cs`, `EmployeeItemController.cs` ve `EmployeeItemController.xib` projenin çözüm dosyasına.
-3. Çift `EmployeeItemController.xib` dosyayı Xcode'nın arabirimi Oluşturucusu'nda düzenlemek için açın.
-4. Ekleme bir `NSBox`, `NSImageView` ve iki `NSLabel` görünümüne denetimler ve aşağıdaki gibi düzenlenmesine:
+    Bu bir `EmployeeItem.cs`, `EmployeeItemController.cs` ve `EmployeeItemController.xib` projenin çözüm dosyası.
+3. Çift `EmployeeItemController.xib` dosyayı Xcode'un arabirimi Oluşturucusu'nda düzenleme için açın.
+4. Ekleme bir `NSBox`, `NSImageView` ve iki `NSLabel` denetimleri görüntülemek ve şu şekilde düzenlemeniz:
 
-    ![Hücre prototip düzeni tasarlama](collection-view-images/proto02.png)
-5. Açık **Yardımcısı Düzenleyicisi** ve oluşturma bir **çıkışı** için `NSBox` böylece bir hücre seçimi durumunu göstermek için kullanılabilir:
+    ![Hücre prototip düzenini tasarlama](collection-view-images/proto02.png)
+5. Açık **Yardımcısı Düzenleyicisi** oluşturup bir **çıkışı** için `NSBox` böylece bir hücre seçimi durumunu göstermek için kullanılabilir:
 
     ![Bir çıkış olarak NSBox gösterme](collection-view-images/proto03.png)
 6. Geri dönüp **Standart Düzenleyici** ve görüntü görünümü seçin.
-7. İçinde **bağlama denetçisi**seçin **bağlamak için** > **dosyanın sahibi** ve girin bir **modeli anahtar yolu** , `self.Person.Icon`:
+7. İçinde **bağlama denetçisi**seçin **bağlamak için** > **dosya sahibi** girin bir **modeli anahtar yolunu** , `self.Person.Icon`:
 
     ![Simge bağlama](collection-view-images/proto04.png)
-8. İlk etiketi seçin ve **bağlama denetçisi**seçin **bağlamak için** > **dosyanın sahibi** ve girin bir **Model anahtar yolu**, `self.Person.Name`:
+8. İlk etiketi seçin ve **bağlama denetçisi**seçin **bağlamak için** > **dosya sahibi** girin bir **modeli anahtar yolunu**, `self.Person.Name`:
 
     ![Bağlama adı](collection-view-images/proto05.png)
-9. İkinci etiketi seçin ve **bağlama denetçisi**seçin **bağlamak için** > **dosyanın sahibi** ve girin bir **Model anahtar yolu**, `self.Person.Occupation`:
+9. İkinci etiketi seçin ve **bağlama denetçisi**seçin **bağlamak için** > **dosya sahibi** girin bir **modeli anahtar yolunu**, `self.Person.Occupation`:
 
-    ![Mesleği bağlama](collection-view-images/proto06.png)
+    ![Meslek bağlama](collection-view-images/proto06.png)
 10. Değişiklikleri kaydetmek `.xib` dosya ve değişiklikleri eşitlemek için Visual Studio'ya geri dönün.
 
-Düzen `EmployeeItemController.cs` dosya ve şu şekilde görünür yapın:
+Düzen `EmployeeItemController.cs` dosyasını açıp aşağıdaki gibi görünmesi:
 
 ```csharp
 using System;
@@ -344,9 +344,9 @@ namespace MacCollectionNew
 }
 ```
 
-Bu kod ayrıntılı bakarak, sınıfının devraldığı yer `NSCollectionViewItem` koleksiyon görünümü hücre için prototip olarak hareket etmesini sağlamak. `Person` Özelliği veri bağlamak xcode'da etiketleri ve resim görünümü için kullanılan sınıfı gösterir. Bu örneği olan `PersonModel` yukarıda oluşturduğunuz.
+Devraldığı sınıfı bu ayrıntısı koddaki bakarak, `NSCollectionViewItem` için bir koleksiyon görünümü hücresi için bir prototip olarak görev yapabilir. `Person` Xcode'da etiketleri ve görüntü görünüm veri bağlama için kullanılan sınıf özelliğini gösterir. Bunun bir örneğidir `PersonModel` yukarıda oluşturduğunuz.
 
-`BackgroundColor` Özelliği olan bir kısayol `NSBox` denetimin `FillColor` bir hücre seçimi durumunu göstermek için kullanılır. Geçersiz kılma tarafından `Selected` özelliği `NSCollectionViewItem`, aşağıdaki kod bu seçim durumu temizler veya ayarlar:
+`BackgroundColor` Özelliği için bir kısayol `NSBox` denetimin `FillColor` hücre seçimi durumunu göstermek için kullanılır. Geçersiz kılma tarafından `Selected` özelliği `NSCollectionViewItem`, aşağıdaki kod bu seçim durumu kaldırır veya ayarlar:
 
 ```csharp
 public override bool Selected
@@ -373,9 +373,9 @@ public override bool Selected
 
 ### <a name="creating-the-collection-view-data-source"></a>Koleksiyon görünümü veri kaynağı oluşturma
 
-Bir koleksiyon görünümü veri kaynağı (`NSCollectionViewDataSource`) tüm veriler için bir koleksiyon görünümü sağlar ve oluşturur ve bir koleksiyon görünümü hücresi doldurur (kullanarak `.xib` prototip) koleksiyondaki her öğe için gereklidir.
+Koleksiyon görünümü veri kaynağı (`NSCollectionViewDataSource`) tüm veriler için bir koleksiyon görünümü sağlar ve bir koleksiyon görünümü hücresi doldurur oluşturur (kullanarak `.xib` prototip) koleksiyondaki her öğe için gerektiği şekilde.
 
-Yeni bir sınıf ekleyin proje çağrısından `CollectionViewDataSource` ve şu şekilde görünür yapın:
+Yeni bir sınıf ekleyin proje çağrısından `CollectionViewDataSource` ve aşağıdaki gibi görünmesi:
 
 ```csharp
 using System;
@@ -462,11 +462,11 @@ namespace MacCollectionNew
 }
 ```
 
-Bu kod ayrıntılı bakarak, sınıfının devraldığı yer `NSCollectionViewDataSource` ve bir listesini sunar `PersonModel` aracılığıyla örnekleri kendi `Data` özelliği.
+Devraldığı sınıfı bu ayrıntısı koddaki bakarak, `NSCollectionViewDataSource` listesini gösteren `PersonModel` aracılığıyla örnekleri kendi `Data` özelliği.
 
-Bu koleksiyon yalnızca bir bölüm olduğundan, kodu geçersiz kılmaları `GetNumberOfSections` yöntemi ve her zaman döndürür `1`. Ayrıca, `GetNumberofItems` yöntemi geçersiz kılınmıştır adresindeki öğelerin sayısını döndürür `Data` özellik listesi.
+Bu koleksiyon yalnızca bir bölüm olduğundan, kodun geçersiz kılmalar `GetNumberOfSections` yöntemi ve her zaman döndürür `1`. Ayrıca, `GetNumberofItems` yöntemi geçersiz kılınmıştır öğe sayısını döndürür, `Data` özellik listesi.
 
-`GetItem` Yöntemi çağrıldığında yeni hücreye gereklidir ve aşağıdaki gibi görünür:
+`GetItem` Yöntemi yeni bir hücre gereklidir ve aşağıdaki gibi olduğunda çağrılır:
 
 ```csharp
 public override NSCollectionViewItem GetItem(NSCollectionView collectionView, NSIndexPath indexPath)
@@ -478,23 +478,23 @@ public override NSCollectionViewItem GetItem(NSCollectionView collectionView, NS
 }
 ```
 
-`MakeItem` Oluşturmak veya yeniden kullanılabilir bir örneğini döndürmek için koleksiyon görünümünün yöntemi çağrıldığında `EmployeeItemController` ve kendi `Person` özelliği ayarlanmış istenen hücrede öğe görüntüleniyor. 
+`MakeItem` Koleksiyon görünümü yöntemi oluşturma veya yeniden kullanılabilir bir örneğini döndürmek için çağrılır `EmployeeItemController` ve kendi `Person` ayarlanırsa istenen hücresinde görüntülenmesini öğesi. 
 
-`EmployeeItemController` Koleksiyon görünümü önceden aşağıdaki kodu kullanarak denetleyiciyle kayıtlı olması gerekir:
+`EmployeeItemController` Koleksiyon görünümü denetleyicisi başlamadan önce aşağıdaki kodu kullanarak kayıtlı olması gerekir:
 
 ```csharp
 EmployeeCollection.RegisterClassForItem(typeof(EmployeeItemController), "EmployeeCell");
 ``` 
 
-**Tanımlayıcısı** (`EmployeeCell`) kullanılan `MakeItem` çağrısı _gerekir_ ile koleksiyon görünümü kaydedildi görünüm denetleyicisini adıyla aynı. Bu adım aşağıda ayrıntılı olarak ele alınacaktır.
+**Tanımlayıcı** (`EmployeeCell`) kullanılan `MakeItem` çağrı _gerekir_ eşleşen koleksiyon görünümü ile kaydedilen görünümü denetleyicinin adı. Bu adım, aşağıda ayrıntılı olarak ele alınacaktır.
 
 <a name="Handling-Item-Selection"/>
 
 ### <a name="handling-item-selection"></a>İşleme öğe seçimi
 
-Seçim ve deselection koleksiyondaki öğelerin işlemek için bir `NSCollectionViewDelegate` gerekli olacaktır. Bu örnek yerleşik olarak kullanacağınız beri `NSCollectionViewFlowLayout` Düzen türü, bir `NSCollectionViewDelegateFlowLayout` Bu temsilci belirli sürümünü gerekli olacaktır.
+Seçim ve koleksiyondaki öğelerin deselection işlemek için bir `NSCollectionViewDelegate` gerekli olacaktır. Bu örnek yerleşik olarak kullandıklarından `NSCollectionViewFlowLayout` düzen türünü bir `NSCollectionViewDelegateFlowLayout` Bu temsilci belirli bir sürümünü gerekli olacaktır.
 
-Projeye yeni bir sınıf ekleyin çağrı `CollectionViewDelegate` ve şu şekilde görünür yapın:
+Çağrı, projeye yeni bir sınıf ekleyin `CollectionViewDelegate` ve aşağıdaki gibi görünmesi:
 
 ```csharp
 using System;
@@ -565,37 +565,37 @@ namespace MacCollectionNew
 }
 ``` 
 
-`ItemsSelected` Ve `ItemsDeselected` yöntemleri geçersiz kılındı ve ayarlama veya kaldırma için kullanılan `PersonSelected` kullanıcı seçer ya da bir öğe seçimini kaldırır, koleksiyon görünümü işleyen görünüm denetleyicisini özelliği. Bu aşağıda ayrıntılı olarak gösterilir.
+`ItemsSelected` Ve `ItemsDeselected` yöntemleri geçersiz kılındı ve ayarlama veya kaldırma için kullanılan `PersonSelected` kullanıcı seçer veya öğeyi dilimleyiciye koleksiyon görünümü işleyen görünüm denetleyicisi özelliğidir. Bu, aşağıda ayrıntılı olarak gösterilir.
 
 <a name="Creating-the-Collection-View-in-Interface-Builder"/>
 
-### <a name="creating-the-collection-view-in-interface-builder"></a>Arabirim Oluşturucusu'nda koleksiyon görünümü oluşturma
+### <a name="creating-the-collection-view-in-interface-builder"></a>Arabirimi Oluşturucu'da koleksiyon görünümü oluşturma
 
-Tüm gerekli destek parçaları yerinde, ana film şeridi düzenlenemez ve bir koleksiyon görünümü eklenir.
+Tüm gerekli destekleyici parçaları yerinde, ana görsel taslak düzenlenebilir ve bir koleksiyon görünümü kendisine eklenir.
 
 Aşağıdakileri yapın:
 
-1. Çift `Main.Storyboard` dosyasını **Çözüm Gezgini** Xcode'da düzenlemek üzere açmak için kullanıcının arabirimi Oluşturucu.
-2. Bir koleksiyon görünümü ana görünüme sürükleyin ve görünüm dolduracak şekilde yeniden boyutlandırın:
+1. Çift `Main.Storyboard` dosyası **Çözüm Gezgini** Xcode'da düzenlemek üzere açmak için kullanıcının arabirim Oluşturucu.
+2. Koleksiyon görünümü ana görünüme sürükleyin ve görünüm dolduracak şekilde yeniden boyutlandırın:
 
-    ![Bir koleksiyon görünümü düzenine ekleme](collection-view-images/collection01.png)
-3. Seçili koleksiyon görünümü ile sabitlemek için Görünüm için onu yeniden boyutlandırıldığında kısıtlaması Düzenleyicisi'ni kullanın:
+    ![Koleksiyon görünümü düzenine ekleme](collection-view-images/collection01.png)
+3. Seçili koleksiyon görünümü ile sabitlemek için bu görünümü, yeniden boyutlandırıldığında kısıtlaması Düzenleyicisi'ni kullanın:
 
     ![Kısıtlamaları ekleme](collection-view-images/collection02.png)
-4. Koleksiyon görünümü içinde seçili olduğundan emin olun **tasarım yüzeyi** (ve **katýna kaydırma Görünüm** veya **küçük resim görünümü** onu içeren), geçiş  **Yardımcısı Düzenleyicisi** ve oluşturma bir **çıkışı** koleksiyon görünümü için:
+4. Koleksiyon görünümü içinde seçili olduğundan emin olun **tasarım yüzeyine** (ve **katýna kaydırma görünümü** veya **küçük resim görünümü** onu içeren), geçiş  **Yardımcısı Düzenleyicisi** oluşturup bir **çıkışı** koleksiyon görünümü için:
 
     ![Kısıtlamaları ekleme](collection-view-images/collection03.png)
-5. Değişiklikleri kaydetmek ve eşitlemeye Visual Studio'ya geri dönün.
+5. Değişiklikleri kaydetmek ve eşitlemek için Visual Studio'ya geri dönün.
 
 <a name="Bringing-it-all-Together"/>
 
-## <a name="bringing-it-all-together"></a>Tüm birlikte hale getirme
+## <a name="bringing-it-all-together"></a>Tüm birlikte getirme
 
-Tüm destekleyici parçaları artık veri modeli olarak hareket edecek bir sınıf yer içine konmuş (`PersonModel`), bir `NSCollectionViewDataSource` veri sağlamak için eklenen bir `NSCollectionViewDelegateFlowLayout` öğe seçimi işlemek için oluşturulan ve `NSCollectionView` için ana film şeridi eklendi ve prizine kullanıma (`EmployeeCollection`).
+Tüm destekleyici parçaları artık bir sınıf veri modeli olarak davranan bir yer içine koyulmuş (`PersonModel`), `NSCollectionViewDataSource` veri sağlamak için eklenen bir `NSCollectionViewDelegateFlowLayout` öğe seçimi işlemek için oluşturuldu ve `NSCollectionView` ana film şeridi eklendi ve bir çıkış kullanıma sunulan (`EmployeeCollection`).
 
-Koleksiyon görünümü içeren görünüm denetleyicisini düzenleyin ve birlikte koleksiyonu doldurmak ve öğe seçimi işlemek için şey hale getirmek için son adımdır bakın.
+Koleksiyon görünümü içeren görünüm denetleyicisi düzenleyin ve tüm parçaları birlikte koleksiyonu doldurmak ve öğe seçimi işlemek için duruma getirmek için son adımdır bakın.
 
-Düzen `ViewController.cs` dosya ve şu şekilde görünür yapın:
+Düzen `ViewController.cs` dosyasını açıp aşağıdaki gibi görünmesi:
 
 ```csharp
 using System;
@@ -736,28 +736,28 @@ namespace MacCollectionNew
 }
 ```
 
-Bu kodu göz ayrıntılı olarak ayırdığınız bir `Datasource` özelliği tanımlı bir örneğini tutmak için `CollectionViewDataSource` için koleksiyon görünümü verileri sağlayan. A `PersonSelected` özelliği tanımlı tutmak için `PersonModel` koleksiyon görünümü seçili öğenin temsil eden. Bu özellik ayrıca başlatır `SelectionChanged` seçim değiştiğinde olay.
+Bu kodu göz ayrıntılı olarak ayırdığınız bir `Datasource` özelliği tanımlı örneğini tutacak `CollectionViewDataSource` koleksiyon görünümü için veri sağlamanın. A `PersonSelected` tutacak özelliği tanımlı `PersonModel` koleksiyon görünümü seçili öğeyi temsil eden. Bu özellik ayrıca başlatır `SelectionChanged` seçim değiştiğinde olay.
 
-`ConfigureCollectionView` Sınıfı, aşağıdaki satırı kullanarak koleksiyon görünümü ile hücre prototip olarak davranan görünüm denetleyicisini kaydetmek için kullanılır:
+`ConfigureCollectionView` Sınıfı aşağıdaki satırı kullanarak koleksiyon görünümü ile hücre prototip olarak davranan bir görünüm denetleyicisi kaydetmek için kullanılır:
 
 ```csharp
 EmployeeCollection.RegisterClassForItem(typeof(EmployeeItemController), "EmployeeCell");
 ```
 
-Dikkat **tanımlayıcısı** (`EmployeeCell`) adlı bir prototip eşleşmeleri kaydetmek için kullanılan `GetItem` yöntemi `CollectionViewDataSource` yukarıda tanımlanan:
+Dikkat **tanımlayıcı** (`EmployeeCell`) adlı bir prototip eşleşmeleri kaydetmek için kullanılan `GetItem` yöntemi `CollectionViewDataSource` yukarıda tanımlanan:
 
 ```csharp
 var item = collectionView.MakeItem("EmployeeCell", indexPath) as EmployeeItemController;
 ...
 ```
 
-Ayrıca, görünüm denetleyicisi türü **gerekir** adıyla eşleşen `.xib` prototip tanımlayan dosyası **tam olarak**. Bu örnekte, söz konusu olduğunda `EmployeeItemController` ve `EmployeeItemController.xib`.
+Ayrıca, görünüm türünü **gerekir** adıyla eşleşmesi `.xib` tanımlayan prototip dosyası **tam olarak**. Bu örnekte, söz konusu olduğunda `EmployeeItemController` ve `EmployeeItemController.xib`.
 
-Koleksiyon görünümü'ndeki öğelerin kullanımını gerçek düzeni koleksiyon görünümü düzeni sınıfı tarafından denetlenir ve yeni bir örneğine atayarak çalışma zamanında dinamik olarak değiştirilebilir `CollectionViewLayout` özelliği. Bu özelliğin değiştirilmesi, koleksiyon görünümü Görünüm değişikliği animasyon olmadan güncelleştirir.
+Koleksiyon görünümü'ndeki öğelerin kullanımını gerçek düzeni koleksiyon görünümü Düzen sınıfı tarafından denetlenir ve yeni bir örneğine atayarak çalışma zamanında dinamik olarak değiştirilebilir `CollectionViewLayout` özelliği. Bu özelliği değiştirmek, değişiklik hareketlendirme olmadan koleksiyon görünümü görünümünü güncelleştirir.
 
-Apple iki yerleşik yerleşim türleri en tipik kullanır işleyecek koleksiyon görünümü ile birlikte gelir: `NSCollectionViewFlowLayout` ve `NSCollectionViewGridLayout`. Geliştirici bir daire öğelerde out yerleştirme gibi özel bir biçim gerekiyorsa özel bir örneğini oluşturabilirsiniz `NSCollectionViewLayout` ve istenilen efekti elde etmek için gereken yöntemleri geçersiz kılın.
+Apple, iki yerleşik Düzen türü en tipik kullanımları işleyecek koleksiyon görünümü ile birlikte gelir: `NSCollectionViewFlowLayout` ve `NSCollectionViewGridLayout`. Geliştirici bir daire öğelerinde out düzenleme gibi özel bir biçim gerekirse özel bir örneğini oluşturabilirsiniz `NSCollectionViewLayout` ve istenilen etkiyi elde etmek için gereken yöntemleri geçersiz kılın.
 
-Bir örneğini oluşturur Bu örnek varsayılan akış düzeni kullanır, bu nedenle `NSCollectionViewFlowLayout` sınıfı ve aşağıdaki gibi yapılandırılır:
+Bu örnek bir örneğini oluşturur, varsayılan akış düzeni kullanır `NSCollectionViewFlowLayout` sınıfı ve aşağıdaki gibi yapılandırılır:
 
 ```csharp
 var flowLayout = new NSCollectionViewFlowLayout()
@@ -769,9 +769,9 @@ var flowLayout = new NSCollectionViewFlowLayout()
 };
 ```
 
-`ItemSize` Özelliği, koleksiyondaki her hücre boyutunu tanımlar. `SectionInset` Özelliği de hücreleri düzenleneceğini koleksiyonu kenarından iç metinleri tanımlar. `MinimumInteritemSpacing` öğeleri arasında en az aralık tanımlar ve `MinimumLineSpacing` koleksiyondaki satırları arasındaki en az aralık tanımlar.
+`ItemSize` Özelliği, koleksiyondaki her hücre boyutunu tanımlar. `SectionInset` İç metinleri, hücre düzenleneceğini koleksiyonu kenarından özelliği tanımlar. `MinimumInteritemSpacing` öğeleri arasında en az aralık tanımlar ve `MinimumLineSpacing` koleksiyondaki satırlar arasında en az aralık tanımlar.
 
-Düzen koleksiyon görünümü ve bir örneğini atanan `CollectionViewDelegate` öğe seçimi işlemek için bağlı:
+Koleksiyon görünümü ve bir örneğini düzenini atanan `CollectionViewDelegate` öğe seçimi işlemek için eklenir:
 
 ```csharp
 // Setup collection view
@@ -779,7 +779,7 @@ EmployeeCollection.CollectionViewLayout = flowLayout;
 EmployeeCollection.Delegate = new CollectionViewDelegate(this);
 ```
 
-`PopulateWithData` Yöntemi, yeni bir örneğini oluşturur `CollectionViewDataSource`, verilerle doldurur, koleksiyon görünümü ve aramaları iliştirir `ReloadData` yöntemi öğeleri görüntülemek için:
+`PopulateWithData` Yöntemi yeni bir örneğini oluşturur `CollectionViewDataSource`, verilerle doldurur, koleksiyon görünümü ve aramaları ekler `ReloadData` yöntemi öğeleri görüntülemek için:
 
 ```csharp
 private void PopulateWithData()
@@ -796,7 +796,7 @@ private void PopulateWithData()
 }
 ```
 
-`ViewDidLoad` Yöntemi geçersiz kılınır ve çağırır `ConfigureCollectionView` ve `PopulateWithData` yöntemleri kullanıcıya son koleksiyon görüntülemek için:
+`ViewDidLoad` Yöntemi geçersiz kılınır ve çağıran `ConfigureCollectionView` ve `PopulateWithData` yöntemleri kullanıcıya son koleksiyonu görüntülemek için:
 
 ```csharp
 public override void ViewDidLoad()
@@ -813,7 +813,7 @@ public override void ViewDidLoad()
 
 ## <a name="summary"></a>Özet
 
-Bu makalede bir Xamarin.Mac uygulamasında koleksiyonu görünümlerle çalışma ayrıntılı bir bakış sürdü. İlk olarak, anahtar-değer kodlama (KVC) ve anahtar-değer Gözlemleme (KVO) kullanarak bir C# sınıfına Objective-C gösterme Aranan. Ardından, KVO uyumlu sınıfının nasıl kullanılacağı gösterilmiştir ve veri koleksiyonu görünümlere Xcode'nın arabirimi Oluşturucu bağlayın. Son olarak, C# kodunda koleksiyon görünümleri ile etkileşim kurmak nasıl oluşturulacağını gösterir.
+Bu makalede ayrıntılı bir Xamarin.Mac uygulamasında koleksiyon görünümlerle çalışma göz duruma getirdi. İlk olarak, anahtar-değer kodlaması (KVC) ve anahtar-değer gözleme (KVO) kullanarak bir C# sınıf Objective-c gösterme görünüyordu. Ardından, KVO uyumlu sınıfının nasıl kullanılacağını gösterdi ve veri koleksiyonu görünümle Xcode'un arabirim Oluşturucu bağlar. Son olarak, C# kodunda koleksiyon görünümleri ile etkileşim nasıl oluşturulacağını gösterir.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

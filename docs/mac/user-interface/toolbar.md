@@ -1,267 +1,267 @@
 ---
-title: Xamarin.Mac içinde araç çubukları
-description: Bu makalede araç çubukları Xamarin.Mac uygulamada çalışmaya açıklanmaktadır. Xcode ve arabirimi kodu gösterme ve bunlarla program aracılığıyla çalışma Oluşturucu Oluşturma ve bakımını yapmak araç çubukları kapsar.
+title: Xamarin.Mac, araç çubukları
+description: Bu makalede bir Xamarin.Mac uygulamasını araç çubuklarında ile çalışma. Xcode ve arabirim Oluşturucu, bunları için kodu gösterme ve program aracılığıyla çalışma araç çubukları oluşturma ve bakımını yapmak kapsar.
 ms.prod: xamarin
 ms.assetid: C8D228CE-C860-47E1-85FD-69864BF91F20
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 11c01a2b2378ddc519185996deb78ba5bcbd2d1a
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 06faaf16ffd0adc64063bfa5a264c1895b9ca9cb
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792894"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "43780569"
 ---
-# <a name="toolbars-in-xamarinmac"></a>Xamarin.Mac içinde araç çubukları
+# <a name="toolbars-in-xamarinmac"></a>Xamarin.Mac, araç çubukları
 
-_Bu makalede araç çubukları Xamarin.Mac uygulamada çalışmaya açıklanmaktadır. Xcode ve arabirimi kodu gösterme ve bunlarla program aracılığıyla çalışma Oluşturucu Oluşturma ve bakımını yapmak araç çubukları kapsar._
+_Bu makalede bir Xamarin.Mac uygulamasını araç çubuklarında ile çalışma. Xcode ve arabirim Oluşturucu, bunları için kodu gösterme ve program aracılığıyla çalışma araç çubukları oluşturma ve bakımını yapmak kapsar._
 
-Mac için Visual Studio ile çalışan Xamarin.Mac geliştiriciler araç çubuğu denetimi dahil olmak üzere Xcode ile çalışma macOS geliştiricilerin kullanımına aynı kullanıcı Arabirimi denetimlerini erişimi. Xamarin.Mac Xcode ile doğrudan tümleşir çünkü oluşturmak ve araç çubuğu öğeleri korumak için Xcode'nın arabirimi Oluşturucu kullanmak da mümkündür. Bu araç çubuğu öğeleri ayrıca C# ' ta oluşturulabilir.
+Mac için Visual Studio ile çalışan Xamarin.Mac geliştiriciler kullanılabilir araç çubuğu denetimi de dahil olmak üzere, Xcode ile çalışan macOS geliştiriciler için aynı kullanıcı Arabirimi denetimleri erişebilir. Xamarin.Mac Xcode ile doğrudan tümleştirilir, oluşturmak ve araç çubuğu öğelerini korumak için Xcode'un arabirim Oluşturucu kullanmak mümkün olmasıdır. Bu araç çubuğu öğelerini de C# ' ta oluşturulabilir.
 
-MacOS çubuklarında penceresinin üst bölümüne eklenir ve işlevselliği için ilgili komutları kolay erişim sağlar. Araç çubukları gizli, gösterilen veya bir uygulamanın kullanıcı tarafından özelleştirilmiş ve çeşitli şekillerde araç çubuğu öğeleri sunabilir.
+MacOS araç çubuklarını, pencerenin üst kısmında için eklenir ve işlevselliği için ilgili komutları kolay erişim sağlar. Araç çubukları gizli, gösterilen veya bir uygulamanın kullanıcı tarafından özelleştirilebilir ve araç çubuğu öğeleri çeşitli şekillerde sunabilir.
 
-Bu makalede, araç çubukları ve Xamarin.Mac uygulama araç çubuğu öğeleri ile çalışmanın temelleri yer almaktadır. 
+Bu makalede, araç çubukları ve araç çubuğu öğeleri bir Xamarin.Mac uygulamasını ile çalışmanın temel kavramları kapsar. 
 
-Devam etmeden önce okuyun [Hello, Mac](~/mac/get-started/hello-mac.md) makale — özellikle [Xcode ve arabirim Oluşturucu giriş](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) ve [çıkışlar ve eylemleri](~/mac/get-started/hello-mac.md#Outlets_and_Actions) bölümleri — şekliyle temel kavramları ve bu kılavuzda kullanılan teknikleri kapsar.
+Devam etmeden önce okumak [Merhaba, Mac](~/mac/get-started/hello-mac.md) makale — özellikle [Xcode ve arabirim Oluşturucu giriş](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) ve [çıkışlar ve eylemleri](~/mac/get-started/hello-mac.md#outlets-and-actions) bölümleri — haliyle temel kavramları ve bu kılavuzda kullanılır teknikler kapsar.
 
-Ayrıca bir göz atalım [gösterme C# sınıfları / Objective-C yöntemlere](~/mac/internals/how-it-works.md) bölümünü [Xamarin.Mac iç](~/mac/internals/how-it-works.md) belge. Açıklar `Register` ve `Export` Objective-C sınıfları için C# sınıfları bağlanmak için kullanılan öznitelikleri.
+Ayrıca göz atın [gösterme C# sınıfları / Objective-C yöntemlere](~/mac/internals/how-it-works.md) bölümünü [Xamarin.Mac iç işlevleri](~/mac/internals/how-it-works.md) belge. Açıklar `Register` ve `Export` Objective-C sınıflar için C# sınıfları bağlanmak için kullanılan öznitelikleri.
 
 ## <a name="introduction-to-toolbars"></a>Araç çubukları giriş
 
 MacOS uygulama herhangi bir pencerede bir araç şunları içerebilir:
 
-![Araç çubuğu örnek penceresiyle](toolbar-images/info01.png "bir araç çubuğu örnek penceresiyle")
+![Bir örnek penceresi araç çubuğu ile](toolbar-images/info01.png "bir örnek pencere bir araç çubuğu")
 
-Araç çubukları, hızlı bir şekilde önemli erişmek için uygulamanızın kullanıcıları veya yaygın olarak kullanılan özellikler için kolay bir yol sağlar. Örneğin, uygulama düzenleme belgesi metin rengini ayarlama, yazı tipini değiştirme ya da geçerli belge yazdırma için araç çubuğu öğeleri sağlayabilir.
+Araç çubukları, önemli hızlıca erişmek için uygulamanızın kullanıcıları veya sık kullanılan özellikler için kolay bir yol sağlar. Örneğin, bir belge düzenleme uygulaması metin rengini ayarlama, yazı tipini değiştirmek veya geçerli belge yazdırma için araç çubuğu öğelerini sağlayabilir.
 
-Araç çubukları öğeleri üç yolla görüntüleyebilirsiniz:
+Araç çubukları, üç yolla öğeleri görüntüleyebilir:
 
 1. **Simge ve metin** 
 
-     ![Simgeler ve metin içeren bir araç çubuğu](toolbar-images/info02.png "simgeler ve metin içeren bir araç çubuğu")
+     ![Simge ve metin ile bir araç çubuğu](toolbar-images/info02.png "simge ve metin ile bir araç çubuğu")
 
 2. **Yalnızca simgesi** 
 
-     ![Yalnızca simgesi araç](toolbar-images/info03.png "yalnızca simgesi araç çubuğu")
+     ![Bir simge yalnızca araç](toolbar-images/info03.png "simgesi yalnızca bir araç çubuğu")
 
 3. **Yalnızca metin** 
 
      ![Yalnızca metin araç](toolbar-images/info04.png "salt metin araç çubuğu")
 
-Araç çubuğunu sağ tıklatıp bir görüntü modu bağlamsal menüden seçerek Bu modlar arasında geçiş:
+Araç çubuğunun sağ tıklayıp bağlam menüsünden bir görüntü modu seçme bu modları arasında geçiş yapma:
 
-![Bir araç için bağlam menüsü](toolbar-images/info05.png "bir araç için bağlam menüsü")
+![Araç çubuğu için bağlamsal menü](toolbar-images/info05.png "bağlamsal bir araç çubuğunun menüsü")
 
-Araç çubuğu küçük bir boyutta görüntülemek için aynı menüyü kullanın:
+Aynı menüyü, küçük bir boyutta araç çubuğunu görüntülemek için kullanın:
 
-![Bir araç çubuğu küçük simgelerle](toolbar-images/info06.png "küçük simgelerle bir araç çubuğu")
+![Küçük simgeleri içeren bir araç çubuğu](toolbar-images/info06.png "küçük simgeleri içeren bir araç çubuğu")
 
-Menü Ayrıca araç çubuğunu özelleştirme sağlar:
+Araç çubuğunu özelleştirme için menü da sağlar:
 
-![Araç çubuğu özelleştirmek için kullanılan iletişim](toolbar-images/info07.png "bir araç çubuğunu özelleştirmek için kullanılan iletişim kutusu")
+![Araç çubuğu özelleştirmek için kullanılan iletişim](toolbar-images/info07.png "araç özelleştirmek için kullanılan iletişim kutusu")
 
-Bir araç çubuğu Xcode'nın arabirimi Oluşturucu kurarken bir geliştirici varsayılan yapılandırması parçası olmayan ek araç çubuğu öğeleri sağlar. Uygulama kullanıcılarının, ardından gerekli olarak önceden tanımlanmış bu öğeler ekleme ve kaldırma araç özelleştirebilirsiniz. Elbette, araç varsayılan yapılandırmasıyla sıfırlanabilir.
+Xcode'un arabirim oluşturucu araç çubuğu ayarlarken bir geliştirici varsayılan yapılandırması parçası olmayan ek araç çubuğu öğeleri sağlar. Uygulama kullanıcılarının, ardından gerekli olarak önceden tanımlanmış bu öğeleri ekleme ve kaldırma araç özelleştirebilirsiniz. Elbette, araç, varsayılan yapılandırmasında sıfırlanabilir.
 
-Araç çubuğu otomatik olarak bağlanır **Görünüm** gizleme, bunu göstermek ve özelleştirmek kullanıcılara menüsünde:
+Araç için otomatik olarak bağlanır. **görünümü** gizlemek göstermek ve özelleştirmek kullanıcılara menüsünde:
 
-![Araç çubuğu ile ilişkili öğeleri Görünüm menüsünde](toolbar-images/info08.png "Görünüm menüsünde araç ile ilişkili öğeleri")
+![Görünüm menüsü araç çubuğu ile ilgili öğeleri](toolbar-images/info08.png "Görünüm menüsü araç çubuğu ile ilgili öğeleri")
 
-Bkz: [yerleşik menü işlevi](~/mac/user-interface/menu.md) daha fazla ayrıntı için belgeleri.
+Bkz: [yerleşik bir menüsünü işlevi](~/mac/user-interface/menu.md) daha fazla ayrıntı için belgeleri.
 
-Araç çubuğu arabirimi Oluşturucusu'nda doğru yapılandırılmış olduğundan, ayrıca, uygulama otomatik olarak araç çubuğu özelleştirmeleri arasında uygulamanın birden çok başlatır korunur.
+Ayrıca, araç arabirimi Oluşturucusu'nda düzgün şekilde yapılandırılırsa, uygulama araç çubuğu özelleştirmeleri otomatik olarak genelinde birden çok uygulama başlatılan kalıcı.
 
-Bu kılavuzun sonraki bölümlerde nasıl oluşturulacağı ve araç çubuklarını Xcode'nın arabirimi Oluşturucu ile korumak ve bunlarla kodda çalışma konusunda açıklanmaktadır.
+Bu kılavuzun sonraki bölümleri oluşturmak ve arabirim Oluşturucu Xcode'un çubuklarıyla sürdürmek nasıl ve bunlarla çalışan kodda nasıl açıklar.
 
-## <a name="setting-a-custom-main-window-controller"></a>Özel ana penceresi denetleyicisini ayarlama
+## <a name="setting-a-custom-main-window-controller"></a>Özel ana pencere denetleyicisi ayarlanıyor
 
-C# kodu çıkışlar ve Eylemler, Xamarin.Mac uygulama için kullanıcı Arabirimi öğeleri göstermek için bir özel pencere denetleyicisi kullanmanız gerekir:
+Kullanıcı Arabirimi öğeleri için C# kodu çıkışlar ve Eylemler, Xamarin.Mac uygulamasını aracılığıyla kullanıma sunmak için bir özel pencere denetleyicisi kullanmanız gerekir:
 
-1. Uygulamanın film şeridi Xcode'nın arabirimi Oluşturucu'da açın.
-2. Tasarım yüzeyine penceresi denetleyicisinde seçin.
-3. Geçiş **kimlik denetçisi** ve "WindowController" olarak girin **sınıf adı**: 
+1. Uygulamanın görsel taslak Xcode'un arabirimi Oluşturucusu'nda açın.
+2. Tasarım yüzeyinde penceresi denetleyicisi seçin.
+3. Geçiş **kimlik denetçisi** "WindowController" olarak girin **sınıf adı**: 
 
     [![Pencere denetleyicisi için özel bir sınıf adı ayarlama](toolbar-images/windowcontroller01.png "penceresi denetleyicisi için özel bir sınıf adı ayarlama")](toolbar-images/windowcontroller01-large.png#lightbox) 
 
-4. Değişikliklerinizi kaydetmek ve Visual Studio eşitlemek için Mac için geri dönün.
-5. A **WindowController.cs** dosya projenizde eklenecek **çözüm paneli** Mac için Visual Studio'da: 
+4. Değişikliklerinizi kaydetmek ve eşitlemek Mac için Visual Studio geri dönün.
+5. A **WindowController.cs** dosyası projenize eklenecek **çözüm bölmesi** Mac için Visual Studio'da: 
 
-    ![Çözüm defterinde WindowController.cs seçerek](toolbar-images/windowcontroller02.png "WindowController.cs çözüm defterinde seçme")
+    ![Çözüm panelinde WindowController.cs seçerek](toolbar-images/windowcontroller02.png "WindowController.cs seçme içinde çözüm bölmesi")
 
-6. Xcode'nın arabirimi Oluşturucu film şeridi yeniden açın.
-7. **WindowController.h** dosya kullanılabilir olacaktır: 
+6. Xcode'un arabirim oluşturucu görsel taslağı yeniden açın.
+7. **WindowController.h** dosya kullanım için kullanılabilir olacak: 
 
     [![WindowController.h dosya](toolbar-images/windowcontroller03.png "WindowController.h dosyası")](toolbar-images/windowcontroller03-large.png#lightbox)
 
-## <a name="creating-and-maintaining-toolbars-in-xcode"></a>Oluşturma ve araç çubuklarını xcode'da koruma
+## <a name="creating-and-maintaining-toolbars-in-xcode"></a>Oluşturulması ve bakımının yapılması xcode'da araç çubukları
 
-Araç çubukları oluşturulur ve Xcode'nın arabirimi Oluşturucu ile korunur. Bir araç için bir uygulama eklemek için uygulamanın birincil film şeridi Düzenle (Bu durumda **Main.storyboard**) içinde çift tıklatarak **çözüm paneli**:
+Araç çubukları oluşturulur ve Xcode'un arabirim Oluşturucu ile korunur. Bir araç bir uygulamaya eklemek için uygulamanın birincil görsel taslak Düzenle (Bu durumda **Main.storyboard**) içinde çift tıklayarak **çözüm bölmesi**:
 
-![Çözüm defterinde Main.Storyboard açma](toolbar-images/edit01.png "Main.storyboard çözüm defterinde açma")
+![Çözüm panelinde Main.Storyboard açma](toolbar-images/edit01.png "çözüm panelinde Main.storyboard açma")
 
-İçinde **kitaplığı denetçisi**, "aracı" girin **arama kutusu** tüm kullanılabilir araç çubuğu öğelerinin görmeyi kolaylaştırmak için:
+İçinde **kitaplığı denetçisi**, girin "aracı" **arama kutusuna** tüm kullanılabilir araç çubuğu öğeleri görmek daha kolay hale getirmek için:
 
-![Kitaplık denetçisi filtre araç çubuğu öğeleri göstermek için](toolbar-images/edit02.png "kitaplığı denetçisi, araç çubuğu öğeleri göstermek için filtrelenir")
+![Kitaplık denetçisi filtrelenmiş araç çubuğu öğelerini göstermek için](toolbar-images/edit02.png "araç çubuğu öğelerini gösterecek şekilde kitaplığı denetçisi")
 
-Bir araç penceresinde sürükleyin **arabirimi Düzenleyicisi**. Seçili araç ile özellikleri ayarlayarak davranışını yapılandırma **öznitelikleri denetçisi**:
+Araç penceresine sürükleyin **Arayüzü Düzenleyicisi**. Araç seçili özellikleri ayarlayarak davranışını yapılandırma **öznitelikleri denetçisi**:
 
-![Bir araç için öznitelikler denetçisine](toolbar-images/edit04.png "öznitelikleri denetçisi bir araç çubuğu")
+![Öznitelikleri denetleyici için bir araç çubuğu](toolbar-images/edit04.png "öznitelikleri Inspector'ı için bir araç çubuğu")
 
 Aşağıdaki özellikler mevcuttur:
 
-1. **Görüntü** -araç simgeler, metin ya da her ikisini de görüntüler olup olmadığını denetler
+1. **Görüntü** -araç simgeler, metin ya da her ikisini de görüntüler denetler
 2. **Başlatma sırasında görünür** -seçtiyseniz, araç varsayılan olarak görünür.
 3. **Özelleştirilebilir** -seçtiyseniz, kullanıcıların düzenleyebilir ve araç çubuğunu özelleştirme.
-4. **Ayırıcı** -ince yatay çizgi seçtiyseniz, pencerenin içeriği araç ayırır.
-5. **Boyutu** -araç boyutunu ayarlar
-6. **Otomatik kaydetme** -seçtiyseniz, uygulama kullanıcının araç yapılandırma değişiklikleri uygulama başlatır korunur.
+4. **Ayırıcı** -seçtiyseniz, ince bir yatay çizgi pencerenin içeriği araç ayırır.
+5. **Boyutu** -araç boyutunu ayarlar.
+6. **Otomatik kaydetme** -seçtiyseniz, uygulama genelinde başlatılan uygulama kullanıcının araç yapılandırma değişiklikleri açık kalır.
 
-Seçin **otomatik kaydetme** seçeneği ve diğer tüm özellikleri kendi varsayılan ayarlarında bırakın. 
+Seçin **otomatik kaydetme** seçenek ve diğer tüm özellikler, varsayılan ayarlarında bırakın. 
 
-Araç çubuğunda açma sonra **arabirimi hiyerarşi**, araç çubuğu öğesi seçerek özelleştirme iletişim kutusunu Getir:
+Araç çubuğunda açıp sonra **arabirimi hiyerarşi**, bir araç çubuğu öğesini seçerek özelleştirme iletişim kutusunu Getir:
 
 ![Araç çubuğunu özelleştirme](toolbar-images/edit05.png "araç çubuğunu özelleştirme")
 
-Zaten tasarlarken uygulama için varsayılan araç çubuğu araç parçası olan öğeleri özelliklerini ayarlamak ve araç çubuğunu özelleştirme zamanı seçmek bir kullanıcı için ek araç çubuğu öğeleri sağlamak için bu iletişim kutusunu kullanın. Araç çubuğuna öğeler eklemek için bunları sürükleyin **kitaplığı denetçisi**:
+Tasarım, uygulama için varsayılan araç çubuğu için araç çubuğunda bir parçası olan öğeleri özelliklerini ayarlamak ve araç özelleştirirken seçmek bir kullanıcı için ek araç çubuğu öğelerini sağlamak için bu iletişim kutusunu kullanın. Araç çubuğuna öğeleri eklemek için sürükleyin **kitaplığı denetçisi**:
 
 ![Kitaplık denetçisi](toolbar-images/edit06.png "kitaplığı denetçisi")
 
-Aşağıdaki araç çubuğu öğeleri eklenebilir:
+Aşağıdaki araç çubuğu öğelerini eklenebilir:
 
-- **Görüntü araç çubuğu öğesi** -simge olarak özel bir görüntü ile araç çubuğu öğesi.
-- **Esnek alanı araç çubuğu öğesi** -sonraki araç çubuğu öğeleri yaslamak için kullanılan esnek alanı. Örneğin, bir veya daha fazla araç çubuğu öğeleri esnek alanı araç çubuğu öğesi tarafından izlenen ve başka bir araç çubuğu öğesi araç çubuğunun sağ tarafında için son öğeyi sabitlemek.
-- **Araç çubuğu öğesi boşluk** -sabit alan araç çubuğundaki öğeler arasında
-- **Ayırıcı araç çubuğu öğesi** -iki veya daha fazla araç çubuğu öğeleri arasında gruplandırma için görünür bir ayırıcı
-- **Araç çubuğu öğesi özelleştirme** -kullanıcıların araç çubuğunu özelleştirme olanak tanır
-- **Araç çubuğu öğesi yazdırma** -açık belge yazdırma olanağı sağlar
-- **Renkleri araç çubuğu öğesi Göster** -standart sistem renk seçici görüntüler: 
+- **Araç çubuğu öğesi resim** -simge olarak özel bir görüntü ile bir araç çubuğu öğesi.
+- **Esnek alanı araç çubuğu öğesi** -sonraki araç çubuğu öğelerini yaslamak için kullanılan esnek alanı. Örneğin, bir veya daha fazla araç çubuğu öğelerini esnek alanı araç çubuğu öğesi tarafından izlenen ve başka bir araç çubuğu öğesi araç çubuğunun sağ tarafındaki son öğeye sabitler.
+- **Araç çubuğu öğesi alanı** -araç çubuğundaki öğeler arasındaki boşluk düzeltildi
+- **Ayırıcı araç çubuğu öğesi** -iki veya daha fazla araç çubuğu öğeleri için gruplandırma arasında görünür bir ayırıcı
+- **Özelleştirme araç çubuğu öğesi** -kullanıcılara araç çubuğunu özelleştirme
+- **Araç çubuğu öğesi yazdırma** -açık belge yazdırma olanağı sağlar.
+- **Renkleri araç çubuğu öğesi Göster** -standart sistem renk seçici görüntülenir: 
 
      ![Sistem Renk Seçici](toolbar-images/edit07.png "sistem renk seçici")
 
-- **Yazı tipi araç çubuğu öğesi Göster** -standart sistem yazı tipi iletişim kutusu görüntüler: 
+- **Yazı tipi araç çubuğu öğesi Göster** -standart sistem yazı tipi iletişim kutusu görüntülenir: 
 
      ![Yazı tipi Seçici](toolbar-images/edit08.png "yazı tipi Seçici")
 
 > [!IMPORTANT]
-> Daha sonra görülür gibi arama alanlarını, bölümlenmiş denetimleri ve yatay kaydırıcılar gibi birçok standart Cocoa UI denetimleri de bir araç çubuğuna eklenebilir.
+> Daha sonra görülür gibi bir araç çubuğuna arama alanları, bölümlenmiş denetimler ve yatay kaydırma çubuklarını gibi birçok standart Cocoa UI denetimleri de eklenebilir.
 
-### <a name="adding-an-item-to-a-toolbar"></a>Bir araç çubuğuna öğe ekleme
+### <a name="adding-an-item-to-a-toolbar"></a>Bir araç çubuğuna bir öğe ekleme
 
-Bir araç için bir öğe eklemek için araç çubuğunda seçin **arabirimi hiyerarşi** görünmesi özelleştirme iletişim neden öğelerinden birini tıklatın. Ardından, yeni bir öğeye sürükleyin **kitaplığı denetçisi** için **izin araç çubuğu öğeleri** alanı:
+Araç çubuğuna bir öğe eklemek için araç çubuğunda seçin **arabirimi hiyerarşi** ve özelleştirme iletişim kutusunun görüntülenmesine neden öğelerinden birine tıklayın. Ardından, yeni bir öğe sürüklemeden **kitaplığı denetçisi** için **izin araç çubuğu öğelerini** alan:
 
-![Araç çubuğunu özelleştirme iletişim izin araç çubuğu öğeleri](toolbar-images/add01.png "araç çubuğunu özelleştirme iletişim izin araç çubuğu öğeleri")
+![Araç çubuğu özelleştirme iletişim kutusunda izin araç çubuğu öğelerini](toolbar-images/add01.png "araç çubuğu özelleştirme iletişim kutusunda izin araç çubuğu öğeleri")
 
-Yeni bir öğe varsayılan araç çubuğu parçası olduğundan emin olmak için sürükleyin **varsayılan araç çubuğu öğeleri** alanı: 
+Yeni bir öğe varsayılan araç bir parçası olduğundan emin olmak için sürükleyin **varsayılan araç çubuğu öğelerini** alan: 
 
-![Araç çubuğu öğesi sürükleyerek yeniden sıralama](toolbar-images/add02.png "sürükleyerek araç çubuğu öğesi yeniden sıralama")
+![Araç çubuğu öğesi sürükleyerek yeniden sıralama](toolbar-images/add02.png "sürükleyerek bir araç çubuğu öğesi yeniden sıralama")
 
-Varsayılan araç çubuğu öğeleri yeniden sıralamak için bunları sola veya sağa sürükleyin.
+Varsayılan araç çubuğu öğeleri yeniden sıralamak için sola veya sağa sürükleyin.
 
-Ardından, kullanın **öznitelikleri denetçisi** öğesinin varsayılan özelliklerini ayarlamak için:
+Ardından, **öznitelikleri denetçisi** öğesi varsayılan özelliklerini ayarlamak için:
 
 ![Öznitelikleri Inspector'ı kullanarak bir araç çubuğu öğesi özelleştirme](toolbar-images/add03.png "öznitelikleri Inspector'ı kullanarak bir araç çubuğu öğesi özelleştirme")
 
 Aşağıdaki özellikler mevcuttur:
 
-- **Görüntü adı** -öğe için bir simgesi olarak kullanılacak resim
+- **Görüntü adı** -öğe için simge kullanılacak resim
 - **Etiket** -araç çubuğu öğesi için görüntülenecek metin
-- **Palet etiketi** -öğesi için görüntülenecek metin **izin araç çubuğu öğeleri** alanı
+- **Palet etiket** -öğesi için görüntülenecek metin **izin araç çubuğu öğelerini** alan
 - **Etiket** -kod öğesinde tanımlamanıza yardımcı olan isteğe bağlı, benzersiz tanımlayıcı.
-- **Tanımlayıcı** -tanımlar araç çubuğu öğesi türü. Özel bir değer, kodda bir araç çubuğu öğesini seçmek için kullanılabilir.
-- **Seçilebilir** -işaretlenmişse öğesi bir açık/kapalı düğmesine gibi hareket eder.
+- **Tanımlayıcı** -tanımlar araç çubuğu öğe türü. Özel bir değer kodda bir araç çubuğu öğesini seçmek için kullanılabilir.
+- **Seçilebilir** -işaretlediyseniz, öğeyi bir açma/kapatma düğmesi gibi davranacak.
 
 > [!IMPORTANT]
-> Öğe ekleme **izin araç çubuğu öğeleri** alan var, ancak olmayan kullanıcılar için özelleştirme seçenekleri sağlamak için varsayılan araç. 
+> Öğe ekleme **izin araç çubuğu öğelerini** alan ancak olmayan kullanıcılar için özelleştirme seçenekleri sağlamak için varsayılan araç. 
 
-### <a name="adding-other-ui-controls-to-a-toolbar"></a>Bir araç çubuğuna diğer UI denetimleri ekleme
+### <a name="adding-other-ui-controls-to-a-toolbar"></a>Diğer kullanıcı Arabirimi denetimleri için araç çubuğu ekleme
 
-Alanları gibi birkaç Cocoa kullanıcı Arabirimi öğeleri aramak ve bölümlenmiş denetimleri de bir araç çubuğuna eklenebilir.
+Arama alanları gibi çeşitli Cocoa kullanıcı Arabirimi öğeleri ve bölümlenmiş denetimler araç da eklenebilir.
 
-Bu denemek için araç çubuğunda açmak **arabirimi hiyerarşi** ve özelleştirme iletişim kutusunu açmak için bir araç çubuğu öğesini seçin. Sürükleme bir **arama alanı** gelen **kitaplığı denetçisi** için **izin araç çubuğu öğeleri** alanı:
+Bunu denemek için araç çubuğunda açın **arabirimi hiyerarşi** ve özelleştirme iletişim kutusunu açmak için bir araç çubuğu öğesi seçin. Sürükleme bir **arama alanı** gelen **kitaplığı denetçisi** için **izin araç çubuğu öğelerini** alan:
 
-![Araç çubuğunu özelleştirme iletişim kutusunu kullanarak](toolbar-images/add05.png "araç çubuğunu özelleştirme iletişim kutusunu kullanarak")
+![Araç çubuğu özelleştirme iletişim kutusunu kullanarak](toolbar-images/add05.png "araç çubuğu özelleştirme iletişim kutusunu kullanarak")
 
-Buradan, arabirimi Oluşturucu arama alanı yapılandırmak ve bir eylem veya çıkış koduyla kullanıma sunmak için kullanın.
+Buradan, arama alanına yapılandırın ve kod bir eylem veya çıkış aracılığıyla kullanıma sunmak için arabirim Oluşturucu kullanın.
 
 ## <a name="built-in-toolbar-item-support"></a>Yerleşik araç çubuğu öğesi desteği
 
-Birkaç Cocoa kullanıcı Arabirimi öğeleri varsayılan olarak standart araç çubuğu öğeleri ile etkileşim. Örneğin, sürükleyin bir **metin görünümü** uygulamanın penceresi üzerine ve içerik alanı dolduracak şekilde yerleştir:
+Birkaç Cocoa kullanıcı Arabirimi öğeleri varsayılan olarak standart araç çubuğu öğeleri ile etkileşim kurun. Örneğin, sürükleyin bir **metni görünümü** uygulama penceresinin üzerine ve içerik alanı dolduracak şekilde yerleştir:
 
-[![Metin görünümü uygulamaya ekleme](toolbar-images/edit09.png "uygulamaya metin görünümü ekleme")](toolbar-images/edit09-large.png#lightbox)
+[![Bir metin görünümünü uygulamaya ekleme](toolbar-images/edit09.png "metni görünümü uygulamaya ekleme")](toolbar-images/edit09-large.png#lightbox)
 
-Visual Studio için Xcode ile eşitleme, uygulamayı çalıştırın, bazı metinleri girin, seçin ve'Mac dönün belgeyi kaydetmek **renkleri** araç çubuğu öğesi. Metin görünümü ile Renk Seçici otomatik olarak çalışır dikkat edin:
+Xcode ile eşitleyin, uygulamayı çalıştırmak, metinleri girin, seçin ve tıklayın Mac için Visual Studio geri dönüp belgeyi kaydedin **renkleri** araç çubuğu öğesi. Metin görünümünü otomatik olarak bir renk seçici ile çalıştığını fark:
 
-![Metin görünümü ve Renk Seçici yerleşik araç işlevselliği](toolbar-images/edit10.png "metin görüntüleme ve Renk Seçici yerleşik araç işlevi")
+![Metin görünümü ve Renk Seçici ile yerleşik araç işlevselliği](toolbar-images/edit10.png "yerleşik araç işlevi bir metin görünümünü ve Renk Seçici")
 
-## <a name="using-images-with-toolbar-items"></a>Araç çubuğu öğeleri ile görüntüleri kullanma
+## <a name="using-images-with-toolbar-items"></a>Görüntüleri araç çubuğu öğeleri ile kullanma
 
-Kullanarak bir **görüntü araç çubuğu öğesi**, herhangi bir bit eşlem görüntü eklenen **kaynakları** klasörü (ve bir yapı eylemi belirtilen **paket kaynak**) araç çubuğunda simge olarak görüntülenir:
+Kullanarak bir **görüntü araç çubuğu öğesi**, herhangi bir bit eşlem görüntüsüne eklenecek **kaynakları** klasörü (ve bir yapı eylemi, belirtilen **paket kaynak**) simge olarak araç çubuğunda görüntülenen:
 
-1. Mac için Visual Studio içinde **çözüm paneli**, sağ tıklatın **kaynakları** klasörü ve seçin **Ekle** > **dosyaları Ekle** .
-2. Gelen **dosyaları Ekle** iletişim kutusunda, istenen görüntülere gidin, bunları seçin ve tıklatın **açık** düğmesi: 
+1. Mac için Visual Studio içinde **çözüm bölmesi**, sağ tıklayın **kaynakları** klasörü ve select **Ekle** > **Add Files** .
+2. Gelen **Add Files** iletişim kutusunda, istenen görüntülerin gidin, bunları seçin ve tıklayın **açık** düğmesi: 
 
     [![Eklemek için görüntüleri seçme](toolbar-images/edit11.png "eklemek için görüntüleri seçme")](toolbar-images/edit11-large.png#lightbox)
 
-3. Seçin **kopyalama**, denetleme **aynı eylem seçilen tüm dosyaları için kullanan**, tıklatıp **Tamam**:
+3. Seçin **kopyalama**, kontrol **aynı eylem seçilen tüm dosyaları için kullanan**, tıklatıp **Tamam**:
 
-    ![Eklenen görüntüleri kopyalama eylemi seçme](toolbar-images/edit12.png "eklenen görüntüleri kopyalama eylemi seçme")
+    ![Eklenen görüntüleri için kopyalama eylemini seçerek](toolbar-images/edit12.png "eklenen görüntüleri için kopyalama eylemini seçerek")
 
-4. İçinde **çözüm paneli**, çift **MainWindow.xib** Xcode'da açın.
+4. İçinde **çözüm bölmesi**, çift **MainWindow.xib** Xcode'da açın.
 
-5. Araç çubuğunda seçin **arabirimi hiyerarşi** özelleştirme iletişim kutusunu açmak için öğelerinden birini tıklatın.
+5. Araç çubuğunda seçin **arabirimi hiyerarşi** ve özelleştirme iletişim kutusunu açmak için öğelerinden birine tıklayın.
 
-6. Sürükleme bir **görüntü araç çubuğu öğesi** gelen **kitaplığı denetçisi** araç çubuğunun için **izin araç çubuğu öğeleri** alanı: 
+6. Sürükleme bir **görüntü araç çubuğu öğesi** gelen **kitaplığı denetçisi** araç çubuğunun için **izin araç çubuğu öğelerini** alan: 
 
-    ![Araç çubuğu öğeleri izin verilen alanı bir görüntü araç çubuğu öğesi eklenen](toolbar-images/edit14.png "bir görüntü araç çubuğu öğesi izin araç çubuğu öğeleri alana eklendi")
+    ![Araç çubuğu öğelerini izin alan bir görüntü araç çubuğu öğesi eklenen](toolbar-images/edit14.png "bir görüntü araç çubuğu öğesi için araç çubuğu öğelerini izin verilen alanı eklendi")
 
-7. İçinde **öznitelikleri denetçisi**, Mac için Visual Studio'da yeni eklenenler görüntüyü seçin: 
+7. İçinde **öznitelikleri denetçisi**, Mac için Visual Studio'da yeni eklenen görüntüyü seçin: 
 
     ![Araç çubuğu öğesi için özel bir görüntü ayarlama](toolbar-images/edit15.png "araç çubuğu öğesi için özel bir görüntü ayarlama")
 
-8. Ayarlama **etiket** "Çöp" için ve **Palet etiketi** "Belge silmek için": 
+8. Ayarlama **etiket** "Çöp" için ve **palet etiket** "Belge silmek için": 
 
-    ![Araç çubuğu ayarı madde etiketi ve palet etiketi](toolbar-images/edit16.png "araç ayarı madde etiketi ve palet etiketi")
+    ![Araç ayarı öğesi etiketi ve etiket palet](toolbar-images/edit16.png "araç ayarı öğesi etiketi ve etiket paleti")
 
-9. Sürükleme bir **ayırıcı araç çubuğu öğesi** gelen **kitaplığı denetçisi** araç çubuğunun için **izin araç çubuğu öğeleri** alanı: 
+9. Sürükleme bir **ayırıcı araç çubuğu öğesi** gelen **kitaplığı denetçisi** araç çubuğunun için **izin araç çubuğu öğelerini** alan: 
 
-    [![Araç çubuğu öğeleri izin alan ayırıcı araç çubuğu öğesi eklenen](toolbar-images/edit17.png "bir ayırıcı araç çubuğu öğesi izin araç çubuğu öğeleri bölgesine eklenen")](toolbar-images/edit17-large.png#lightbox)
+    [![Ayırıcı araç çubuğu öğesi izin verilen araç çubuğu öğelerini alanına eklenen](toolbar-images/edit17.png "bir ayırıcı araç çubuğu öğesi için araç çubuğu öğelerini izin verilen alanı eklendi")](toolbar-images/edit17-large.png#lightbox)
 
-10. Ayırıcı öğenin ve "Çöp" öğesine sürükleyin **varsayılan araç çubuğu öğeleri** alan ve araç sırasını öğeleri kümesi soldan sağa aşağıdaki gibi (renkleri, yazı tipi, ayırıcı, çöp, esnek boşluk, yazdırma): 
+10. Ayırıcı öğe ve "Çöp" öğesine sürükleyin **varsayılan araç çubuğu öğelerini** alan ve sırasını araç çubuğu öğelerini gelen ayarlı soldan sağa (renkleri, yazı tipleri, ayırıcı, çöp, esnek bir boşluk, yazdırma) aşağıdaki gibi: 
 
-    ![Varsayılan araç çubuğu öğeleri](toolbar-images/edit18.png "varsayılan araç çubuğu öğeleri")
+    ![Varsayılan araç çubuğu öğelerini](toolbar-images/edit18.png "varsayılan araç çubuğu öğeleri")
 
 11. Değişiklikleri kaydetmek ve Xcode ile eşitlemek Mac için Visual Studio geri dönün.
 
 Yeni araç çubuğu varsayılan olarak görüntülendiğini doğrulamak için uygulamayı çalıştırın:
 
-![Özelleştirilmiş varsayılan öğelerine sahip bir araç çubuğu](toolbar-images/edit19.png "özelleştirilmiş varsayılan öğelerine sahip bir araç çubuğu")
+![Özelleştirilmiş varsayılan öğeleri ile bir araç çubuğu](toolbar-images/edit19.png "özelleştirilmiş varsayılan öğeleri ile bir araç çubuğu")
 
-## <a name="exposing-toolbar-items-with-outlets-and-actions"></a>Araç çubuğu öğeleri çıkışlar ve Eylemler ile gösterme
+## <a name="exposing-toolbar-items-with-outlets-and-actions"></a>Çıkışlar ve Eylemler ile araç çubuğu öğeleri gösterme
 
-Bir araç veya araç çubuğu öğesi kodda erişmek için bu prizine veya bir eylem bağlı olması gerekir:
+Bir araç veya araç çubuğu öğesi kodda erişmek için bir çıkış veya bir eylem eklenmesi gerekir:
 
-1. İçinde **çözüm paneli**, çift **Main.storyboard** Xcode'da açın.
+1. İçinde **çözüm bölmesi**, çift **Main.storyboard** Xcode'da açın.
 2. "WindowController", ana pencereyi denetleyicisine atanmış özel bir sınıf emin **kimlik denetçisi**:
 
-    [![Pencere denetleyici için özel bir sınıf ayarlamak için kimlik Inspector'ı kullanarak](toolbar-images/edit20a.png "penceresi denetleyici için özel bir sınıf ayarlamak için kimlik Inspector'ı kullanarak")](toolbar-images/edit20a-large.png#lightbox)
+    [![Özel bir sınıf için pencere denetleyicisi ayarlamak için kimlik Inspector'ı kullanarak](toolbar-images/edit20a.png "özel bir sınıf için pencere denetleyicisi ayarlamak için kimlik denetçisini kullanma")](toolbar-images/edit20a-large.png#lightbox)
 
-3. Ardından, araç çubuğu öğesi seçin **arabirimi hiyerarşi**: 
+3. Ardından, araç çubuğu öğesi içindeki seçin **arabirimi hiyerarşi**: 
 
-    ![Araç çubuğu öğesi arabirimi hiyerarşisinde seçme](toolbar-images/edit20.png "arabirimi hiyerarşisinde araç çubuğu öğesi seçme")  
+    ![Arabirim hiyerarşisinde araç çubuğu öğesini seçerek](toolbar-images/edit20.png "araç çubuğu öğesi arabirim hiyerarşisinde seçme")  
 
-4. Açık **Yardımcısı Görünüm**seçin **WindowController.h** dosya ve denetim sürükleme araç çubuğu öğesi için **WindowController.h** dosya.
-5. Ayarlama **bağlantı** için yazın **eylem**, "trashDocument" girin **adı**, tıklatıp **Bağlan** düğmesi: 
+4. Açık **Yardımcısı görünümü**seçin **WindowController.h** dosya ve araç çubuğu öğesi için Denetim Sürükle **WindowController.h** dosya.
+5. Ayarlama **bağlantı** için yazın **eylem**, "trashDocument" girin **adı**, tıklatıp **Connect** düğmesi: 
 
     [![Araç çubuğu öğesi için bir eylem yapılandırma](toolbar-images/edit23.png "araç çubuğu öğesi için bir eylem yapılandırma")](toolbar-images/edit23-large.png#lightbox)
 
-6. Kullanıma **metin görünümü** "documentEditor" adlı bir çıkış olarak **ViewController.h** dosyası: 
+6. Kullanıma sunma **metni görünümü** "documentEditor" adlı bir çıkış olarak **ViewController.h** dosyası: 
 
-    [![Metin görünümü için bir çıkış yapılandırma](toolbar-images/edit24.png "prizine metin görünümü için yapılandırma")](toolbar-images/edit24-large.png#lightbox)
+    [![Metin görünümü için bir çıkış yapılandırma](toolbar-images/edit24.png "metni görünümü için bir çıkış yapılandırma")](toolbar-images/edit24-large.png#lightbox)
 
 7. Değişikliklerinizi kaydetmek ve Xcode ile eşitlemek Mac için Visual Studio geri dönün.
 
-Mac için Visual Studio'da Düzenle **ViewController.cs** dosya ve aşağıdaki kodu ekleyin:
+Mac için Visual Studio'da Düzenle **ViewController.cs** dosyasını açıp aşağıdaki kodu ekleyin:
 
 ```csharp
 public void EraseDocument() {
@@ -269,7 +269,7 @@ public void EraseDocument() {
 }
 ```
 
-Ardından, düzenleme **WindowController.cs** dosya ve altına aşağıdaki kodu ekleyin `WindowController` sınıfı:
+Ardından, Düzenle **WindowController.cs** altına aşağıdaki kodu ekleyin ve dosya `WindowController` sınıfı:
 
 ```csharp
 [Export ("trashDocument:")]
@@ -282,19 +282,19 @@ void TrashDocument (NSObject sender) {
 
 Uygulama çalışırken **çöp** araç çubuğu öğesi etkin olacaktır:
 
-![Etkin çöp öğeyi içeren bir araç çubuğu](toolbar-images/edit25.png "etkin çöp öğeyi içeren bir araç çubuğu")
+![Etkin çöp öğesi ile bir araç çubuğu](toolbar-images/edit25.png "etkin çöp öğesi ile bir araç çubuğu")
 
 Dikkat **çöp** araç çubuğu öğesi artık metni silmek için kullanılabilir.
 
-## <a name="disabling-toolbar-items"></a>Araç çubuğu öğeleri devre dışı bırakma
+## <a name="disabling-toolbar-items"></a>Araç çubuğu öğelerini devre dışı bırakma
 
-Öğenin araç çubuğundaki devre dışı bırakmak için bir özel Oluştur `NSToolbarItem` sınıfı ve geçersiz kılma `Validate` yöntemi. Ardından, arabirimi Oluşturucusu'nda, özel tür bırakmak istediğiniz öğesine atayın.
+Öğenin araç çubuğunda devre dışı bırakmak için özel bir oluşturma `NSToolbarItem` sınıf ve geçersiz kılma `Validate` yöntemi. Ardından, arabirim Oluşturucu'da özel bir tür etkinleştir/devre dışı bırakmak istediğiniz öğeye atayın.
 
-Özel bir oluşturmak için `NSToolbarItem` sınıfı, projeye sağ tıklayın ve seçin **Ekle** > **yeni dosya...** . Seçin **genel** > **boş sınıfı**, "ActivatableItem" girin **adı**, tıklatıp **yeni** düğmesi: 
+Özel bir oluşturmak için `NSToolbarItem` sınıfı, projeye sağ tıklayıp **Ekle** > **yeni dosya...** . Seçin **genel** > **boş sınıf**, "ActivatableItem" girin **adı**, tıklatıp **yeni** düğmesi: 
 
-![Mac için Visual Studio'da boş bir sınıf ekleme](toolbar-images/custom01.png "Mac için Visual Studio'da boş bir sınıf ekleme")
+![Boş bir sınıf, Mac için Visual Studio'da ekleme](toolbar-images/custom01.png "boş bir sınıf, Mac için Visual Studio'da ekleme")
 
-Ardından, düzenleme **ActivatableItem.cs** gibi görünecek şekilde dosyası:
+Ardından, Düzenle **ActivatableItem.cs** şu şekilde okunacak dosya:
 
 ```csharp
 using System;
@@ -334,11 +334,11 @@ namespace MacToolbar
 }
 ```
 
-Çift **Main.storyboard** Xcode'da açın. Seçin **çöp** araç çubuğu öğesi yukarıda oluşturduğunuz ve "ActivatableItem" değiştirmek kendi sınıfı **kimlik denetçisi**:
+Çift **Main.storyboard** Xcode'da açın. Seçin **çöp** araç çubuğu öğesi yukarıda oluşturulan ve "İçin ActivatableItem" değiştirmek sınıfıyla **kimlik denetçisi**:
 
-![Araç çubuğu öğesi için özel bir sınıf ayarı](toolbar-images/custom02.png "araç çubuğu öğesi için özel bir sınıf ayarlama")
+![Araç çubuğu öğesi için özel bir sınıf ayarlama](toolbar-images/custom02.png "araç çubuğu öğesi için özel bir sınıf ayarlama")
 
-Adlı prizine oluşturma `trashItem` için **çöp** araç çubuğu öğesi. Değişiklikleri kaydetmek ve Xcode ile eşitlemek Mac için Visual Studio geri dönün. Son olarak, açık **MainWindow.cs** ve güncelleştirme `AwakeFromNib` gibi görünecek şekilde yöntemi:
+Adlı bir çıkış oluşturma `trashItem` için **çöp** araç çubuğu öğesi. Değişiklikleri kaydetmek ve Xcode ile eşitlemek Mac için Visual Studio geri dönün. Son olarak, açık **MainWindow.cs** ve güncelleştirme `AwakeFromNib` gibi görünecek şekilde yöntemi:
 
 ```csharp
 public override void AwakeFromNib ()
@@ -350,13 +350,13 @@ public override void AwakeFromNib ()
 }
 ```
 
-Uygulamayı çalıştırın ve unutmayın **çöp** öğesi artık araç çubuğunda devre dışı:
+Uygulamayı çalıştırmak ve unutmayın **çöp** öğesi artık araç çubuğunda devre dışı:
 
-![Etkin olmayan çöp öğeyi içeren bir araç çubuğu](toolbar-images/custom03.png "etkin olmayan çöp öğeyi içeren bir araç çubuğu")
+![Etkin olmayan çöp öğesi ile bir araç çubuğu](toolbar-images/custom03.png "etkin olmayan çöp öğesi ile bir araç çubuğu")
 
 ## <a name="summary"></a>Özet
 
-Bu makalede, araç çubukları ve Xamarin.Mac uygulama araç çubuğu öğeleri ile çalışma ayrıntılı bir bakış sürdü. Oluşturmak ve araç çubuklarını Xcode'nın arabirimi Oluşturucu sürdürmek nasıl, nasıl bazı kullanıcı Arabirimi denetimlerini araç çubuğu öğeleri ile otomatik olarak çalışır, C# kodunda araç çubukları ile nasıl çalışılacağını ve etkinleştirme ve araç öğelerini devre dışı açıklanmaktadır.
+Bu makalede, araç çubukları ve araç çubuğu öğeleri bir Xamarin.Mac uygulamasını çalışma ayrıntılı bir bakış duruma getirdi. Bunu açıklanan, oluşturma ve arabirim Oluşturucu Xcode'un araç çubuklarında korumak, bazı kullanıcı Arabirimi denetimleri ile araç çubuğu öğelerini otomatik olarak nasıl çalıştığını, C# kodunda araç çubukları ile nasıl çalışılacağını ve nasıl etkinleştirileceği ve araç çubuğu öğelerini devre dışı bırakın.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

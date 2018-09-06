@@ -7,12 +7,12 @@ ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 06/25/2018
-ms.openlocfilehash: 60aa177ccb14c443f1599b4ce42c07faa695baed
-ms.sourcegitcommit: 7d766f8a080ee6999e47c873a9f2ccec8fa5dd5a
+ms.openlocfilehash: 7560f66acc3a3ea683e75be2ae85f908036e008c
+ms.sourcegitcommit: e64c3c10d6a36b3b031d6d4dbff7af74ab2b7f21
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/03/2018
-ms.locfileid: "37439180"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "43780664"
 ---
 # <a name="publishing-xamarinios-apps-to-the-app-store"></a>App Store için xamarin iOS uygulamaları yayımlama
 
@@ -121,17 +121,16 @@ Yeni Xamarin.iOS projeleri otomatik olarak ayarlamak **hata ayıklama** ve **yay
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. Gelen **Çözüm Gezgini**açın **Info.plist**. Seçin **el ile sağlama**. Dosyayı kaydedin ve kapatın.
-2. Visual Studio 2017 aktarıldığından emin emin [eşleştirilmiş bir Mac derleme konağı](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
-3. Sağ **proje adı** içinde **Çözüm Gezgini**seçin **özellikleri**gidin **iOS derleme** sekmesi.
-4. Ayarlama **yapılandırma** için **yayın** ve **Platform** için **iPhone**.
-5. Belirli bir iOS SDK'sı ile oluşturmak için seçim **SDK sürümü** listesi. Aksi takdirde bu değerde bırakın **varsayılan**.
-6. Bağlama, kullanılmayan kodu şeridi oluşturma tarafından uygulamanın toplam boyutunu azaltır. Çoğu durumda **bağlayıcı davranışı** varsayılan değerine ayarlanmalıdır **bağlantı Framework SDK'ları yalnızca**. Bazı durumlarda, bazı üçüncü taraf kitaplıklar kullanırken, bu değeri ayarlamak için gerekli olabilir gibi **bağlama** gerekli kodu değil kaldırıldığından emin olmak için. Daha fazla bilgi için [bağlama Xamarin.iOS uygulamaları](~/ios/deploy-test/linker.md) Kılavuzu.
-7. Denetleme **en iyi duruma getirme PNG görüntülerini** daha uygulamanızın boyutunu azaltmak için.
-8. Derleme gereksiz derecede büyük hale getirecek şekilde hata ayıklama, etkinleştirilmemelidir.
-9. İOS 11 destekleyen cihaz mimarileri birini **ARM64**. 64-bit iOS cihazları için oluşturma hakkında daha fazla bilgi için lütfen bkz **xamarin iOS uygulamaları, etkinleştirme 64-Bit derlemeler** bölümünü [32/64 bit platformla ilgili dikkat edilecekler](~/cross-platform/macios/32-and-64/index.md) belgeleri.
-10. Kullanmak istediğiniz **LLVM** daha küçük ve daha hızlı kod oluşturmak için derleyici. Ancak, bu seçenek, derleme sürelerini artırır.
-11. Uygulamanızın ihtiyaçlarına göre ayrıca türünü ayarlamak isteyebilirsiniz **çöp toplama** kullanılan ve için ayarlanmış **uluslararası duruma getirme**.
+1. Visual Studio 2017 aktarıldığından emin emin [eşleştirilmiş bir Mac derleme konağı](~/ios/get-started/installation/windows/connecting-to-mac/index.md).
+2. Sağ **proje adı** içinde **Çözüm Gezgini**seçin **özellikleri**.
+3. Gidin **iOS derleme** sekmesi ve ayarlayıp **yapılandırma** için **yayın** ve **Platform** için **iPhone**.
+4. Belirli bir iOS SDK'sı ile oluşturmak için seçim **SDK sürümü** listesi. Aksi takdirde bu değerde bırakın **varsayılan**.
+5. Bağlama, kullanılmayan kodu şeridi oluşturma tarafından uygulamanın toplam boyutunu azaltır. Çoğu durumda **bağlayıcı davranışı** varsayılan değerine ayarlanmalıdır **bağlantı Framework SDK'ları yalnızca**. Bazı durumlarda, bazı üçüncü taraf kitaplıklar kullanırken, bu değeri ayarlamak için gerekli olabilir gibi **bağlama** gerekli kodu değil kaldırıldığından emin olmak için. Daha fazla bilgi için [bağlama Xamarin.iOS uygulamaları](~/ios/deploy-test/linker.md) Kılavuzu.
+6. Denetleme **en iyi duruma getirme PNG görüntülerini** daha uygulamanızın boyutunu azaltmak için.
+7. Derleme gereksiz derecede büyük hale getirecek şekilde hata ayıklama, etkinleştirilmemelidir.
+8. İOS 11 destekleyen cihaz mimarileri birini **ARM64**. 64-bit iOS cihazları için oluşturma hakkında daha fazla bilgi için lütfen bkz **xamarin iOS uygulamaları, etkinleştirme 64-Bit derlemeler** bölümünü [32/64 bit platformla ilgili dikkat edilecekler](~/cross-platform/macios/32-and-64/index.md) belgeleri.
+9. Kullanmak istediğiniz **LLVM** daha küçük ve daha hızlı kod oluşturmak için derleyici. Ancak, bu seçenek, derleme sürelerini artırır.
+10. Uygulamanızın ihtiyaçlarına göre ayrıca türünü ayarlamak isteyebilirsiniz **çöp toplama** kullanılan ve için ayarlanmış **uluslararası duruma getirme**.
 
     Yukarıda açıklanan seçenekler ayarladıktan sonra yapı ayarlarınızı şuna benzer görünmelidir:
 
@@ -139,27 +138,26 @@ Yeni Xamarin.iOS projeleri otomatik olarak ayarlamak **hata ayıklama** ve **yay
 
     Ayrıca bu göz atın [iOS derleme mekaniği](~/ios/deploy-test/ios-build-mechanics.md) Kılavuzu, daha fazla derleme ayarlarını açıklar.
 
-12. Gidin **iOS paket grubu imzalama** sekmesi. Seçenekler burada düzenlenebilir değil, emin **el ile sağlama** seçili **Info.plist** dosya.
-13. Emin olun **yapılandırma** ayarlanır **yayın** ve **Platform** ayarlanır **iPhone**.
-14. Ayarlama **imzalama kimliği** için **dağıtım (otomatik)**.
-15. İçin **sağlama profili**, sağlama profili App Store seçin [yukarıda oluşturulan](#create-and-install-an-app-store-provisioning-profile).
+11. Gidin **iOS paket grubu imzalama** sekmesi. Emin olun **yapılandırma** ayarlanır **yayın**, **Platform** ayarlanır **iPhone**ve **el ile sağlama**  seçilir.
+12. Ayarlama **imzalama kimliği** için **dağıtım (otomatik)**.
+13. İçin **sağlama profili**, sağlama profili App Store seçin [yukarıda oluşturulan](#create-and-install-an-app-store-provisioning-profile).
 
     Proje paket grubu imzalama seçenekleri artık şuna benzer görünmelidir:
 
     ![iOS paket grubu imzalama ayarlarını](publishing-to-the-app-store-images/bundleSigning-w157.png "iOS paket grubu imzalama ayarlarını")
 
-16. Gidin **iOS IPA seçenekleri** sekmesi.
-17. Emin olun **yapılandırma** ayarlanır **yayın** ve **Platform** ayarlanır **iPhone**.
-18. Denetleme **iTunes paket Arşivi (IPA) Oluştur** onay kutusu. Bu ayar her neden olacak **yayın** .ipa dosyası oluşturmak için (, seçili yapılandırma olduğundan) oluşturun. Bu dosya için Apple App Store yayına yönelik gönderilebilir.
+14. Gidin **iOS IPA seçenekleri** sekmesi.
+15. Emin olun **yapılandırma** ayarlanır **yayın** ve **Platform** ayarlanır **iPhone**.
+16. Denetleme **iTunes paket Arşivi (IPA) Oluştur** onay kutusu. Bu ayar her neden olacak **yayın** .ipa dosyası oluşturmak için (, seçili yapılandırma olduğundan) oluşturun. Bu dosya için Apple App Store yayına yönelik gönderilebilir.
 
     > [!NOTE]
     > **iTunes meta verileri** ve **iTunesArtwork** App Store sürümleri için gerekli değildir. Daha fazla bilgi için göz atın [Xamarin.iOS uygulamalarında iTunesMetadata.plist dosyası](~/ios/deploy-test/app-distribution/itunesmetadata.md) ve [iTunes resmi](~/ios/app-fundamentals/images-icons/app-icons.md#itunes-artwork).
 
-19. Xamarin.iOS projesi adından farklı bir .ipa dosya adı belirtmek için bu alana giriş **paket adı** alan.
+17. Xamarin.iOS projesi adından farklı bir .ipa dosya adı belirtmek için bu alana giriş **paket adı** alan.
 
     ![iOS paket grubu imzalama ayarlarını](publishing-to-the-app-store-images/ipaOptions-w157.png "iOS paket grubu imzalama ayarlarını")
 
-20. Derleme yapılandırmasını kaydedin ve kapatın.
+18. Derleme yapılandırmasını kaydedin ve kapatın.
 
 -----
 
@@ -257,7 +255,7 @@ Derleme ayarları düzgün yapılandırıldığını ve iTunes Connect gönderim
 7. Uygulama Başlatıcısı için oturum açın (yapmanız gerektiğini Not [bir uygulamaya özgü parolası oluşturmanız](https://support.apple.com/ht204397) Apple Kimliğinizi için).
 8. Seçin **uygulamanızı teslim** tıklatıp **Seç** düğmesi:
 
-    ![Select teslim uygulamanızı ] (publishing-to-the-app-store-images/publishvs01.png "teslim uygulamanızı seçin")
+    ![Select teslim uygulamanızı ](publishing-to-the-app-store-images/publishvs01.png "teslim uygulamanızı seçin")
 
 9. Yukarıda oluşturulan .ipa dosyasını seçin ve tıklayın **Tamam**.
 10. Uygulama Yükleyicisi dosya doğrular:

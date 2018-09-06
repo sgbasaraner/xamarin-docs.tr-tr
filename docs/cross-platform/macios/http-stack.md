@@ -1,97 +1,89 @@
 ---
-title: HttpClient ve iOS/macOS için SSL/TLS uygulama Seçici
-description: SSL/TLS ve HttpClient yığın uygulama Seçici, Xamarin iOS, tvOS veya macOS uygulamanız tarafından kullanılan HttpClient ve SSL/TLS uygulaması belirler.
+title: HttpClient ve iOS/macOS için SSL/TLS uygulama Seçicisi
+description: HttpClient yığını ve SSL/TLS uygulama Seçicisi, Xamarin iOS, tvOS ve macOS uygulamanız tarafından kullanılan HttpClient ve SSL/TLS uygulaması belirler.
 ms.prod: xamarin
 ms.assetid: 12101297-BB04-4410-85F0-A0D41B7E6591
 author: asb3993
 ms.author: amburns
 ms.date: 04/20/2018
-ms.openlocfilehash: 9de2c97933bd33111a751be51e06dffe09794f15
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: fd48c7148aadd8d156544113e2d719295294bf40
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34782274"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "43780666"
 ---
-# <a name="httpclient-and-ssltls-implementation-selector-for-iosmacos"></a>HttpClient ve iOS/macOS için SSL/TLS uygulama Seçici
+# <a name="httpclient-and-ssltls-implementation-selector-for-iosmacos"></a>İOS/macOS için HttpClient ve SSL/TLS uygulama Seçicisi
 
-**HttpClient uygulama Seçici** Xamarin.iOS için Xamarin.tvOS ve Xamarin.Mac denetimleri, `HttpClient` uygulaması kullanın. İOS, tvOS veya macOS yerel taşımaları kullanan bir uygulama için geçiş yapabilirsiniz (`NSUrlSession` veya `CFNetwork`, işletim sistemine bağlı olarak). Baş TLS 1.2 desteği, daha küçük ikili olduğu ve daha hızlı indirmeler; dezavantajı yürütülecek zaman uyumsuz işlemleri için çalışıyor olması için olay döngüsünü gerektirmesidir.
+**HttpClient uygulama Seçicisi** Xamarin.iOS için Xamarin.tvOS ve Xamarin.Mac denetimleri, `HttpClient` kullanılacak uygulama. İOS, tvOS ve macOS için yerel taşımalar kullanan bir uygulamaya geçebilirsiniz (`NSUrlSession` veya `CFNetwork`işletim sistemine bağlı olarak). Baş, TLS 1.2 desteği, daha küçük ikili dosyaları olan ve daha hızlı yükler; dezavantajı olay döngüsünü yürütülecek zaman uyumsuz işlemler için çalışıyor olması gerekiyor.
 
 Projeleri başvurmalıdır **System.Net.Http** derleme.
 
 > [!WARNING]
-> **Nisan, 2018** – Artırılmış Güvenlik nedeniyle PCI uyumluluğunu içeren gereksinimlerini birincil Bulutu sağlayıcıları ve web sunucuları, TLS 1.2 eski sürümleri desteklenmesini durdurmak için beklenir.  TLS eski sürümleri kullanmak için Visual Studio varsayılan önceki sürümlerinde oluşturulan Xamarin projeleri.
+> **Nisan 2018** : Artırılmış Güvenlik nedeniyle PCI uyumluluğu dahil olmak üzere gereksinimleri, birincil bulut sağlayıcıları ve web sunucuları, TLS sürüm 1.2 eski desteğini durduracak şekilde beklenir.  Visual Studio varsayılan olarak TLS eski sürümlerini kullanan önceki sürümlerinde oluşturulan Xamarin projeleri.
 >
-> Uygulamalarınızı bu sunucuları ve Hizmetleri ile çalışmaya devam emin olmak için **Xamarin projelerinizi güncelleştirmeniz gerekir `NSUrlSession` aşağıda gösterilen, ardından yeniden derleme ayarlayıp uygulamalarınızı yeniden dağıtma** kullanıcılarınıza.
+> Uygulamalarınızı bu sunucuları ve Hizmetleri ile çalışmaya devam sağlamak amacıyla **Xamarin projeleriniz ile güncelleştirmeniz gerekir `NSUrlSession` aşağıda gösterilen, ardından yeniden oluşturun ve uygulamalarınızı yeniden dağıtmak** kullanıcılarınıza.
 
-<a name="Selecting-a-HttpClient-Stack" />
+### <a name="selecting-an-httpclient-stack"></a>HttpClient yığını seçme
 
-### <a name="selecting-a-httpclient-stack"></a>HttpClient yığın seçme
+Ayarlanacak `HttpClient` uygulamanız tarafından kullanılan:
 
-Ayarlamak için `HttpClient` uygulamanız tarafından kullanılan:
+1. Çift **proje adı** içinde **Çözüm Gezgini** proje Seçenekleri'ni açın.
+2. Geçiş **derleme** projeniz için ayarları (örneğin, **iOS derleme** bir Xamarin.iOS uygulaması için).
+3. Gelen **HttpClient uygulaması** açılır menüsünde, select `HttpClient` aşağıdakilerden birini yazın: **nsurlsession'ı** (önerilen) **CFNetwork**, veya  **Yönetilen**.
 
-1. Çift **proje adı** içinde **Çözüm Gezgini** proje Seçenekleri'ni açmak için.
-2. Geçiş **yapı** projeniz için ayarları (örneğin, **iOS yapı** bir Xamarin.iOS uygulaması için).
-3. Gelen **HttpClient uygulama** açılan listesinde, select `HttpClient` aşağıdakilerden birini yazın: **NSUrlSession** (önerilen), **CFNetwork**, veya  **Yönetilen**.
-
-[![Yönetilen, CFNetwork veya NSUrlSession HttpClient uygulama seçin](http-stack-images/http-xs-sml.png)](http-stack-images/http-xs.png#lightbox)
+[![HttpClient uygulaması yönetilen, CFNetwork veya nsurlsession'ı seçin.](http-stack-images/http-xs-sml.png)](http-stack-images/http-xs.png#lightbox)
 
 > [!TIP]
-> TLS 1.2 desteği için `NSUrlSession` seçeneği önerilir.
+> TLS 1.2 desteği `NSUrlSession` seçeneği önerilir.
 
-<a name="NSUrlSession" />
+### <a name="nsurlsession"></a>Nsurlsession'ı
 
-### <a name="nsurlsession"></a>NSUrlSession
-
-`NSURLSession`-Tabanlı işleyici üzerinde yerel temel `NSURLSession` framework bulunan iOS 7 ve daha yeni. 
+`NSURLSession`-Tabanlı işleyicisi yerel temel `NSURLSession` framework bulunan iOS 7 ve daha yeni. 
 **Önerilen ayar budur.**
 
 #### <a name="pros"></a>Uzmanları
 
-- Daha iyi performans ve daha küçük yürütülebilir boyutu için yerel API'lerini kullanır.
+- Daha iyi performans ve daha küçük yürütülebilir boyutu için yerel API kullanır.
 - TLS 1.2 gibi en son standartları desteği.
 
 #### <a name="cons"></a>Simgeler
 
-- İOS 7 veya üzeri gerekir.
+- İOS 7 veya üzerini gerektirir.
 - Bazı `HttpClient` özellikleri/seçenekleri kullanılamaz.
-
-<a name="CFNetwork" />
 
 ### <a name="cfnetwork"></a>CFNetwork
 
-`CFNetwork`-Tabanlı işleyici üzerinde yerel temel `CFNetwork` framework bulunan iOS 6 ve daha yeni.
+`CFNetwork`-Tabanlı işleyicisi yerel temel `CFNetwork` framework bulunan iOS 6 ve daha yeni.
 
 #### <a name="pros"></a>Uzmanları
 
-- Daha iyi performans ve daha küçük yürütülebilir boyutu için yerel API'lerini kullanır.
-- TLS 1.2 gibi daha yeni standartları desteği.
+- Daha iyi performans ve daha küçük yürütülebilir boyutu için yerel API kullanır.
+- TLS 1.2 gibi yeni standartları desteği.
 
 #### <a name="cons"></a>Simgeler
 
-- İOS 6 veya üstünü gerektirir.
+- İOS 6 veya sonraki sürümünü gerektirir.
 - WatchOS kullanılamaz.
-- Bazı HttpClient özellikleri/seçenekler kullanılamaz.
-
-<a name="Managed" />
+- Bazı HttpClient özellik/seçenekleri kullanılabilir değil.
 
 ### <a name="managed"></a>Yönetilen
 
-Yönetilen işleyici Xamarin önceki sürümü ile birlikte gelen tam olarak yönetilen HttpClient işleyicidir.
+Yönetilen işleyici, Xamarin önceki bir sürümü ile sunulan tam olarak yönetilen bir HttpClient işleyicisidir.
 
 #### <a name="pros"></a>Uzmanları
 
-- Microsoft .NET ve Xamarin bir eski sürümü ile uyumlu en özelliğini içeriyor.
+- Microsoft .NET ve eski Xamarin sürümleri ile en uyumlu özelliği var.
 
 #### <a name="cons"></a>Simgeler
 
-- Apple işletim sistemleri ile tamamen tümleşik değildir ve TLS 1.0 sınırlıdır. Güvenli web sunucularına veya gelecekte bulut hizmetlerine bağlanmak mümkün olmayabilir.
-- Onu yerel API'leri genellikle çok daha yavaş şifreleme gibi şeyleri adresindeki.
-- Bu nedenle daha büyük bir uygulama dağıtılabilir oluşturma daha yönetilen kodu gerektirir.
+- Bu Apple işletim sistemleri ile tamamen tümleşik değildir ve TLS 1.0 sınırlıdır. Web sunucularının güvenliğini sağlamak veya gelecekteki bulut hizmetlerine bağlanmak mümkün olmayabilir.
+- Bu yerel API genellikle daha yavaş, şifreleme gibi şeyler.
+- Bu nedenle daha büyük bir uygulamanın dağıtılabilir oluşturma daha yönetilen kod gerektirir.
 
-### <a name="programmatically-setting-the-httpmessagehandler"></a>Program aracılığıyla HttpMessageHandler ayarlama
+### <a name="programmatically-setting-the-httpmessagehandler"></a>HttpMessageHandler programlı olarak ayarlama
 
-Yukarıda gösterilen proje çapındaki yapılandırmanın yanı sıra, aynı zamanda oluşturabileceğiniz bir `HttpClient` ve istenen Ekle `HttpMessageHandler` Bu kod parçacıkları gösterildiği gibi Oluşturucusu aracılığıyla:
+Proje genelinde yapılandırmaya ek olarak, yukarıda gösterilen başlatabilir bir `HttpClient` ve istenen ekleme `HttpMessageHandler` Bu kod parçacıklarında gösterildiği gibi Oluşturucusu aracılığıyla:
 
 ```csharp
 // This will use the default message handler for the application; as
@@ -105,41 +97,39 @@ HttpClient client = new HttpClient(new CFNetworkHandler());
 HttpClient client = new HttpClient(new NSUrlSessionHandler());
 ```
 
-Bu farklı bir kullanmayı mümkün kılar `HttpMessageHandler` içinde bildirilen gelen **proje seçenekleri** iletişim.
+Bu farklı bir kullanmayı mümkün kılar `HttpMessageHandler` bölümünde bildirilen gelen **proje seçenekleri** iletişim.
 
-<a name="New-SSL-TLS-implementation-build-option" />
-<a name="Selecting-a-SSL-TLS-implementation" />
-<a name="Apple-TLS" />
+## <a name="ssltls-implementation"></a>SSL/TLS uygulaması
 
-## <a name="ssltls-implementation"></a>SSL/TLS uygulama
+SSL (Güvenli Yuva Katmanı) ve onun ardılı olan TLS (Aktarım Katmanı Güvenliği), HTTP ve diğer ağ bağlantıları üzerinden için destek sağlayan `System.Net.Security.SslStream`. Xamarin.iOS, Xamarin.tvOS veya Xamarin.Mac'ın `System.Net.Security.SslStream` uygulama Mono tarafından sağlanan yönetilen bir uygulamasını kullanmak yerine Apple'nın yerel SSL/TLS uygulaması çağıracaktır. Apple'nın yerel uygulama, TLS 1.2 destekler.
 
-SSL (Güvenli Yuva Katmanı) ve onun ardıl TLS (Aktarım Katmanı Güvenliği), HTTP ve diğer ağ bağlantıları üzerinden için destek sağlayan `System.Net.Security.SslStream`. Xamarin.iOS, Xamarin.tvOS veya Xamarin.Mac'ın `System.Net.Security.SslStream` uygulama Mono tarafından sağlanan yönetilen uygulama kullanmak yerine Apple'nın yerel SSL/TLS uygulama çağıracaktır. Apple'nın yerel uygulama, TLS 1.2 destekler.
+> [!WARNING]
+> Yaklaşan Xamarin.Mac 4.8 sürümü yalnızca macOS 10.9 veya sonraki sürümleri destekleyecektir.
+> Xamarin.Mac’in önceki sürümleri macOS 10.7 veya sonraki sürümleri destekler ancak bu eski macOS sürümleri TLS 1.2’yi destekleyecek yeterli TLS altyapısını barındırmaz. macOS 10.7 veya macOS 10.8’i hedeflemek için Xamarin.Mac 4.6 veya önceki sürümleri kullanın.
 
-<a name="App-Transport-Security" />
+## <a name="app-transport-security"></a>Uygulama aktarım güvenliği
 
-## <a name="app-transport-security"></a>Uygulama taşıma güvenliği
+Apple'nın _uygulama taşıma güvenliği_ (ATS) uygulamanız ile internet kaynakları (örneğin, uygulamanın arka uç sunucu) arasında güvenli bağlantılar zorlar. ATS böylece uygulamanız ya da onu kullanan bir kitaplık aracılığıyla doğrudan hassas bilgilerin yanlışlıkla açığa engelleyen tüm internet iletişimi güvenli bağlantı, en iyi uyan sağlar.
 
-Apple'nın _uygulama taşıma güvenliği_ (ATS) Internet kaynakların (örneğin, uygulamanızın arka uç sunucusu) ve uygulamanız arasındaki güvenli bağlantılar zorlar. ATS tüm Internet iletişimlerini güvenli bağlantı en iyi uygulamalar için uygun böylece uygulamanız veya bunu kullanan bir kitaplığı ile doğrudan hassas bilgilerin yanlışlıkla açığa önleme sağlar.
+ATS iOS 9, tvOS 9 ve OS X 10.11 (El Capitan) için oluşturulan uygulamalarda varsayılan olarak etkin olduğundan ve daha yeni sürümü, tüm bağlantıları kullanarak `NSUrlConnection`, `CFUrl` veya `NSUrlSession` ATS güvenlik gereksinimlerine tabi olacaktır. Bağlantılarınızı bu gereksinimleri karşılamıyorsa, bir özel durum ile başarısız olur.
 
-Varsayılan olarak iOS 9, tvOS 9 ve OS X 10.11 sürümünü (El Capitan) için oluşturulan uygulamaların ATS etkin olduğundan ve daha yeni kullanan tüm bağlantıların `NSUrlConnection`, `CFUrl` veya `NSUrlSession` ATS güvenlik gereksinimlerini tabi olacaktır. Bağlantılarınızı bu gereksinimlerini karşılamıyorsa, bir özel durum ile başarısız olur.
+HttpClient yığını ve SSL/TLS uygulaması seçimlerinize bağlı olarak, uygulamanızı ATS ile düzgün çalışması için değişiklik yapmanız gerekebilir.
 
-HttpClient yığını ve SSL/TLS uygulama seçimlerinize bağlı olarak, uygulamanızı ATS ile düzgün çalışması için yapılan değişiklikler yapmanız gerekebilir.
+ATS hakkında daha fazla bilgi için bkz. bizim [uygulama taşıma Güvenliği Kılavuzu](~/ios/app-fundamentals/ats.md).
 
-ATS hakkında daha fazla bilgi için lütfen bkz bizim [uygulama aktarım Güvenlik Kılavuzu](~/ios/app-fundamentals/ats.md).
+## <a name="known-issues"></a>Bilinen sorunlar
 
-## <a name="known-issues"></a>Bilinen Sorunlar
-
-Bu bölümde Xamarin.iOS TLS desteği ile ilgili bilinen sorunlar ele alınacaktır.
+Bu bölümde, Xamarin.iOS TLS desteği ile ilgili bilinen sorunlar ele alınacaktır.
 
 ### <a name="project-failed-to-load-with-error-requested-value-appletls-wasnt-found"></a>Proje yükleme "istenen değer AppleTLS bulunamadı" hatası ile başarısız oldu.
 
-Xamarin.iOS 9.8 sunulan yer alan bazı yeni ayarları **.csproj** bir Xamarin.iOS uygulaması için dosya. Bu değişiklikler, eski sürümleri Xamarin.iOS projesi açıldığında sorunlara neden olabilir. Aşağıdaki ekran görüntüsünde, bu senaryoda görüntülenen hata iletisini örneğidir:
+Xamarin.iOS 9.8 sunulan yer alan bazı yeni ayarları **.csproj** dosyası için bir Xamarin.iOS uygulaması. Bu değişiklikler, projeyi Xamarin.iOS eski sürümleriyle açıldığında sorunlara neden olabilir. Aşağıdaki ekran görüntüsünde, bu senaryoda görüntülenen hata iletisini örneğidir:
 
-![Ekran görüntüsü projesi yüklemeye çalışırken hata oluştu. İstenen değer eski bulunamadı](http-stack-images/tlserror-xs.png)
+![Ekran görüntüsü projesi yüklenmeye çalışılırken bir hatayla istenen değer eski bulunamadı](http-stack-images/tlserror-xs.png)
 
-Giriş tarafından bu hataya `MtouchTlsProvider` Xamarin.iOS 9.8 proje dosyasında ayarlama. Xamarin.iOS 9.8 güncelleştirmek olası (veya üstü) değilse, yaklaşık el ile düzenlemek için bir iştir **.csproj** dosya uygulama, kaldırma `MtouchTlsprovider` öğesi ve değiştirilen proje dosyasını kaydedin.
+Giriş bu hataya `MtouchTlsProvider` Xamarin.iOS 9.8 proje dosyasında ayarı. Xamarin.iOS 9.8 için güncelleştirilecek olası (veya üzeri) değilse, yaklaşık el ile düzenlemek için çalışmadır **.csproj** dosya uygulama, kaldırma `MtouchTlsprovider` öğesi ve değiştirilen proje dosyasını kaydedin.
 
-Aşağıdaki kod parçacığını bir örnek olduğundan `MtouchTlsProvider` ayarı konum içinde ister bir **.csproj** dosyası:
+Aşağıdaki kod parçacığını bir örnek olduğundan `MtouchTlsProvider` ayarı görünebileceğini içinde ister bir **.csproj** dosyası:
 
 ```xml
 <MtouchTlsProvider>Default</MtouchTlsProvider>

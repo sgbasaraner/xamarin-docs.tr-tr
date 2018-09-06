@@ -1,133 +1,107 @@
 ---
 redirect_url: /xamarin/tools/live-player/
 title: XAML Canlı Önizleme
-description: Bu belgede Canlı Xamarin Player Önizleme XAML sayfaları canlı, XAML değişiklikleri yapın ve anında cihazında gösterilen değişiklikleri görmek için nasıl kullanılacağını açıklar.
+description: Bu belge, Canlı Önizleme XAML sayfalarını, değişiklik yapmak için XAML ve anında cihazda görünmesi değişiklikleri görmek için Xamarin Live Player'ı kullanmak nasıl ele alınmaktadır.
 ms.prod: xamarin
 ms.assetid: 86E9A179-21F8-4F3A-A9CE-36F0FC5DB4A8
 author: topgenorth
 ms.author: toopge
-ms.date: 12/21/2017
-ms.openlocfilehash: cc68044342fca84e62e3b17770170e1d7a23f677
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 08/08/2018
+ms.openlocfilehash: 200d19aa0a13d0557e52cb90021190978838ed39
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793708"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "43780653"
 ---
 # <a name="xaml-live-previewing"></a>XAML Canlı Önizleme
 
-Xamarin Canlı Player avantajlarından biri Önizleme XAML sayfaları canlı, Visual Studio kodda değişiklik ve anında görüntülendiğini değişiklikleri görmek için yeteneğidir. Canlı Önizleme, iOS veya Android cihazında ya da bir simulator veya öykünücü yapılabilir. Bu kılavuz Canlı önizleme özelliğini tek tek XAML ekranları görüntülemek için nasıl kullanılacağını gösterir.
+Xamarin Live Player'ın avantajlarından biri, Canlı Önizleme XAML sayfalarını, Visual Studio kodda değişiklik ve Cihazınızda anında görünür değişiklikleri görmek için olanağıdır. Android cihazınıza veya öykünücü veya simülatör Canlı Önizleme yapılabilir. Bu kılavuz, XAML ekranları tek tek görüntülemek için Canlı Önizleme özelliği nasıl yapılacağı açıklanır.
 
 ## <a name="requirements"></a>Gereksinimler
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
 1. Windows 7 veya sonraki sürümlerini çalıştıran bir makine.
-2. Visual Studio 2017 sürüm 15.4 veya üstü ile **.NET ile Mobil Geliştirme** yüklü iş yükü.
+2. Visual Studio 2017 sürüm 15.4 veya üzeri ile **.NET ile Mobil Geliştirme** iş yükü yüklenmiş.
 
 # <a name="visual-studio-for-mactabmacos"></a>[Mac için Visual Studio](#tab/macos)
 
-1. Bir Mac OS X 10.11 sürümünü, macOS 10.12 ya da daha fazla ile.
-2. Visual Studio Mac 7.2 veya daha sonra. En son sürümünü öneririz.
+1. Bir Mac OS X 10.11, macOS 10.12 veya üzeri ile.
+2. Visual Studio Mac 7.2 veya üzeri. En son sürümü öneririz.
 
 -----
 
 <a name="deploydevice" />
 
-## <a name="deploying-to-device"></a>Cihaza dağıtma
+## <a name="deploying-to-device"></a>Cihaza dağıtılıyor
 
-İOS veya Android Cihazınızı ile canlı Xamarin Player kullanmadan önce Xamarin Canlı Player uygulamayı indirmek ve Visual Studio için açıklandığı gibi eşleştirin gerekir [yükleme](~/tools/live-player/install.md) Kılavuzu. Visual Studio aygıtınıza başarıyla eşleştirilmiş sonra XAML sayfanızın Canlı Önizleme başlayabilirsiniz. 
+Xamarin Live Player ile Android cihazı kullanmadan önce Xamarin Live Player uygulamasını indirin ve açıklandığı gibi Visual Studio'ya eşleştirin gerekir [yükleme](~/tools/live-player/install.md) Kılavuzu. Visual Studio, cihazınıza başarıyla eşleştirilmiş sonra XAML sayfası canlı olarak önizlenebilmesini başlayabilirsiniz. 
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 
-1. Visual Studio 2017 düzenleyicisinde Canlı Önizleme istediğiniz XAML sayfası açın:
+1. Visual Studio 2017 düzenleyicide Canlı Önizleme istediğiniz XAML sayfasını açın:
 
     ![](live-view-images/vs-image1.png)
 
-2. Cihaz yapılandırma kümesine **hata ayıklama | iPhone** iOS için veya **hata ayıklama** Android ve listeden Canlı Player cihazı seçin:
+2. Cihaz yapılandırması ayarlanmış **hata ayıklama** ve Live Player cihazı listeden seçin:
 
     ![](live-view-images/vs-image2.png)
 
-3. Bu XAML sayfası, Cihazınızda dinamik bir görünüm olarak çalıştırmak için seçin **Araçlar > Xamarin Canlı Player > Canlı geçerli görünümü çalıştırmak** menü çubuğundan:
+3. Bu XAML sayfası cihazınızdaki dinamik bir görünüm olarak çalıştırmak için seçin **Araçlar > Xamarin Live Player > geçerli görünümde Canlı Çalıştır** menü çubuğundan:
 
     ![](live-view-images/vs-image3.png)
 
 # <a name="visual-studio-for-mactabmacos"></a>[Mac için Visual Studio](#tab/macos)
 
-1. Visual Studio'da Canlı Önizleme için Mac Düzenleyicisi istediğiniz XAML sayfası açın:
+1. İçin Mac Düzenleyicisi Visual Studio Canlı Önizleme istediğiniz XAML sayfayı açın:
 
     ![](live-view-images/image1.png)
 
-2. Cihaz yapılandırma kümesine **hata ayıklama | iPhone** iOS için veya **hata ayıklama** Android ve listeden Canlı Player cihazı seçin:
+2. Cihaz yapılandırması ayarlanmış **hata ayıklama** ve Live Player cihazı listeden seçin:
 
     ![](live-view-images/image2.png)
 
-3. Bu XAML sayfası, Cihazınızda dinamik bir görünüm olarak çalıştırmak için seçin **Çalıştır > Canlı geçerli görünümü çalıştırmak** menü çubuğundan:
+3. Bu XAML sayfası cihazınızdaki dinamik bir görünüm olarak çalıştırmak için seçin **çalıştırın > geçerli görünümde Canlı Çalıştır** menü çubuğundan:
 
     ![](live-view-images/image3.png)
 
 -----
 
-## <a name="deploying-to-android-emulator"></a>Android öykünücüsünü dağıtma
+## <a name="deploying-to-android-emulator"></a>Android öykünücüsü için dağıtma
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. Visual Studio 2017 düzenleyicisinde Canlı Önizleme istediğiniz XAML sayfası açın:
+1. Visual Studio 2017 düzenleyicide Canlı Önizleme istediğiniz XAML sayfasını açın:
 
     ![](live-view-images/vs-image1.png)
 
-2. Cihaz yapılandırma kümesine **hata ayıklama** Android ve listeden Canlı Player cihazı seçin:
+2. Cihaz yapılandırması ayarlanmış **hata ayıklama** Android ve Live Player cihaz listesinden seçin:
 
     ![](live-view-images/vs-image4.png)
 
-3. Bu XAML sayfası üzerinde Android emulator dinamik bir görünüm olarak çalıştırmak için seçin **Araçlar > Xamarin Canlı Player > Canlı geçerli görünümü çalıştırmak** menü çubuğundan:
+3. Bu XAML sayfası Android emulator'da dinamik bir görünüm olarak çalıştırmak için seçin **Araçlar > Xamarin Live Player > geçerli görünümde Canlı Çalıştır** menü çubuğundan:
 
     ![](live-view-images/vs-image3.png)
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-1. Visual Studio'da Canlı Önizleme için Mac Düzenleyicisi istediğiniz XAML sayfası açın:
+1. İçin Mac Düzenleyicisi Visual Studio Canlı Önizleme istediğiniz XAML sayfayı açın:
 
     ![](live-view-images/image7.png)
 
-2. Cihaz yapılandırma kümesine **hata ayıklama** Android ve listeden Canlı Player cihazı seçin:
+2. Cihaz yapılandırması ayarlanmış **hata ayıklama** Android ve Live Player cihaz listesinden seçin:
 
     ![](live-view-images/image6.png)
 
-3. Bu XAML sayfası, Cihazınızda dinamik bir görünüm olarak çalıştırmak için Çalıştır'ı seçin > Canlı çalıştırmak geçerli görünümü menü çubuğundan:
+3. Bu XAML sayfası cihazınızdaki dinamik bir görünüm olarak çalıştırmak için Çalıştır'ı seçin > geçerli görünümde Canlı Çalıştır menü çubuğundan:
 
     ![](live-view-images/image3.png)
 
 -----
 
-## <a name="deploying-to-ios-simulator"></a>İOS simülatörü dağıtma
-
-# <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
-
-Şu anda Windows düğümlerde iOS simulator'da üzerinde dinamik XAML Önizleme kullanma desteği yoktur. Bunun yerine gereken [bir aygıta dağıtmak](#deploydevice).
-
-# <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
-
-1. Visual Studio'da Canlı Önizleme için Mac Düzenleyicisi istediğiniz XAML sayfası açın:
-
-    ![](live-view-images/image1.png)
-
-2. Cihaz yapılandırma kümesine **hata ayıklama | iPhoneSimulator** iOS ve bir iOS simülatörü listeden seçin:
-
-    ![](live-view-images/image2.png)
-
-3. Seçin **Çalıştır > Canlı geçerli görünümü çalıştırmak** simulator başlatın ve XAML sayfası görüntülemek için menü çubuğundan:
-
-    ![](live-view-images/image4.png)
-
-4. Simulator başlattı sonra XAML düzenlemeye başlamak ve canlı görünür bir önizlemesini görürsünüz:
-
-    ![](live-view-images/image5.png)  
-
------
-
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Xamarin Canlı Player genel bakış](https://xamarin.com/live)
-- [blog gönderisi](https://blog.xamarin.com/live-player/)
-- [Xamarin Canlı Player örnekleri](~/tools/live-player/samples.md)
+- [Xamarin Live Player genel bakış](https://xamarin.com/live)
+- [Blog gönderisi](https://blog.xamarin.com/live-player/)
+- [Xamarin Live Player örnekleri](~/tools/live-player/samples.md)

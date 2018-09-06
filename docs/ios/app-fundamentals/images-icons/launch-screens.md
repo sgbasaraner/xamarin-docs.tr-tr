@@ -1,234 +1,234 @@
 ---
-title: Xamarin.iOS uygulamaları için ekranlar başlatma
-description: Bu makalede, tüm iOS cihazları için uygulama başlatma ekranı herhangi çözümleme ve yönü, tek bir birleşik film şeridi kullanarak oluşturun açıklanmaktadır.
+title: Xamarin.iOS uygulamaları için başlatma ekranları
+description: Bu makalede, tüm çözüm ve yönü, tek bir birleşik görsel taslak kullanarak, tüm iOS cihazları için uygulama başlatma ekranı oluşturun açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 31A489CA-756B-4B9B-B386-4BADF18EDD33
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 05/02/2018
-ms.openlocfilehash: 0fbd38b643e7806932ba262becc72be2bae6ba4b
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 40b8c38e89e96223bbf657ff06356d9fb2e9d9b3
+ms.sourcegitcommit: e64c3c10d6a36b3b031d6d4dbff7af74ab2b7f21
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34784627"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "43780566"
 ---
-# <a name="launch-screens-for-xamarinios-apps"></a>Xamarin.iOS uygulamaları için ekranlar başlatma
+# <a name="launch-screens-for-xamarinios-apps"></a>Xamarin.iOS uygulamaları için başlatma ekranları
 
-_Bu makalede, tüm iOS cihazları için uygulama başlatma ekranı herhangi çözümleme ve yönü, tek bir birleşik film şeridi kullanarak oluşturun açıklanmaktadır._
+_Bu makalede, tüm çözüm ve yönü, tek bir birleşik görsel taslak kullanarak, tüm iOS cihazları için uygulama başlatma ekranı oluşturun açıklanmaktadır._
 
-İOS 8 önce bir iOS uygulaması için bir başlatma ekranı oluşturma geliştirici bir görüntü varlığı her çeşitli aygıt form faktörleri ve uygulama çalıştırma çözümleri sağlamak gereklidir. İOS 8 yayımlandıktan sonra ancak bu her durumda doğru görünen başlatma ekran oluşturmak için tek bir birleşik film şeridi kullanmak mümkün olmuştur.
+İOS 8 önce başlatma ekran için bir iOS uygulaması oluşturma, görüntü varlık her çeşitli cihaz büyüklükleri ve uygulamayı çalıştırarak çözümleri sağlamak Geliştirici gereklidir. İOS 8 yayımlandıktan sonra ancak bu, her durumda yanlışlık başlatma ekran oluşturmak için tek bir birleşik görsel taslak kullanmak mümkün olmamıştı.
 
-Bu kısa izlenecek başlatma ekranı el ile varolan bir projeye eklenmiş film şeridi veya varsayılan olarak yeni bir proje sağlanan ya da bir görsel taslak haline getirme ile oluşturmayı açıklar. Ardından, iOS Tasarımcısı film şeridi, bu görünümler kısıtlamalar ayarlayın ve film şeridi çeşitli cihazlar ve yönler için doğru görünüyorsa doğrulamak için bir resim görünümü ve bir etiket eklemek için nasıl kullanılacağını gösterir.
+Bu kısa kılavuzda bir başlatma ekranı varsayılan olarak yeni bir proje tarafından sağlanan herhangi bir görsel taslak veya varolan bir projeye el ile eklenen bir görsel taslak oluşturmayı açıklar. Ardından bu görünümleri kısıtlamaları ayarlamak ve görsel taslak çeşitli cihazlar ve yönlendirmelerine yanlışlık doğrulamak için görsel taslak için bir görüntü görünümü ve bir etiket eklemek için iOS Designer nasıl yapılacağı açıklanır.
 
 <a name="storyboard" />
 
-## <a name="managing-launch-screens-with-storyboards"></a>Film şeritleri ile başlatma ekranları yönetme
+## <a name="managing-launch-screens-with-storyboards"></a>Başlatma ekranları görsel Taslaklar ile yönetme
 
-İOS 8 (ve üstü), geliştirici özel birleşik bir veya daha fazla statik başlatma görüntüleri kullanmak yerine başlatma ekranı sağlamak için film şeridi oluşturabilirsiniz. Başlatma film şeridi iOS Tasarımcısı oluştururken boyutu sınıfları ve Otomatik Yerleşim farklı görüntü ortamlar için farklı düzenleri tanımlamak için kullanın. Geliştirici, boyutu sınıfları ve otomatik düzenini kullanarak, tüm cihazlarda iyi benzeyen bir tek başlatma ekranı oluşturun ve ortamlar görüntüleyin.
+İOS 8 (ve üzeri), geliştirici özel birleşik bir veya daha fazla statik başlatma görüntüleri kullanmak yerine başlatma ekranı sağlamak için film şeridi oluşturabilirsiniz. İOS Designer'daki başlatmadan görsel taslak oluşturma, boyut sınıfları ve otomatik düzen görünen farklı ortamlar için farklı düzenleri tanımlamak için kullanın. Boyut sınıflarını ve Otomatik Düzen'i kullanarak, geliştirici, tüm cihazlarda güzel görünümlü bir tek başlatma ekranı oluşturun ve ortamları görüntülemek.
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-1. Mac için Visual Studio'da seçerek yeni bir proje oluşturun **Dosya > Yeni bir çözüm** ve ardından **Single View uygulaması**: 
+1. Mac için Visual Studio'da seçerek yeni bir proje oluşturun **Dosya > Yeni Çözüm** seçip **tek görünüm uygulaması**: 
 
-    ![Yeni Proje penceresinin seçili tek görünüm uygulaması ile](launch-screens-images/launch01.png)
+    ![Yeni Proje penceresinin tek görünüm uygulama seçildi](launch-screens-images/launch01.png)
 
-    - Varsayılan olarak, yeni bir proje içeren bir **LaunchScreen.storyboard** başlatma ekranı arabirimi tanımlayan dosyası. 
-    - Bunun yerine var olan bir projeye başlatma ekranı film şeridi eklemek için proje adına sağ tıklayın **çözüm paneli** ve **Ekle > yeni dosya...**  ve ardından **başlatma ekranı**:
+    - Varsayılan olarak, yeni bir proje içeren bir **LaunchScreen.storyboard** tanımlayan başlatma ekranı arabirim dosyası. 
+    - Bunun yerine bir başlatma ekranı görsel taslak var olan bir projeye eklemek için proje adına sağ **çözüm bölmesi** ve **Ekle > yeni dosya...**  seçip **başlatma ekranı**:
 
     ![Yeni dosya penceresiyle iOS seçili ekran başlatma](launch-screens-images/launch01b.png)
 
     - Dosya adı **LaunchScreen** veya seçtiğiniz başka bir ad.
 
-2. Uygun film şeridi, başlatma ekranı olarak kullanmak için projeyi yapılandırın:
+2. Projeyi Başlat ekranı için uygun bir görsel taslak kullanacak şekilde yapılandırın:
 
-    - Çift **Info.plist** dosyasını **çözüm paneli** düzenlemek için açın.
-    - İçinde **başlatma görüntüleri** bölümünde, olduğundan emin olun **başlatma ekranı** uygun film şeridi adına ayarlayın:
+    - Çift **Info.plist** dosyası **çözüm bölmesi** düzenlemek üzere açın.
+    - İçinde **başlatma resimleri** bölümünde, emin **başlatma ekranı** uygun film şeridi adına ayarlanır:
 
-    ![Info.plist başlatma ekranı seçicide](launch-screens-images/launch02.png)
+    ![Info.plist dosyasında başlatma ekranı Seçici](launch-screens-images/launch02.png)
 
-    - Varsayılan olarak, yeni bir proje kullanacak şekilde yapılandırılmış **LaunchScreen.storyboard** başlatma, ekranı olarak.
+    - Varsayılan olarak, yeni bir proje kullanmak için yapılandırılmış **LaunchScreen.storyboard** başlatma ekranı olarak.
 
-3. Görüntüye ekleme **Assets.xcassets** varlık katalog böylece Başlat ekranında kullanmak için kullanılabilir. Daha fazla bilgi için bkz: [ekleme görüntülere bir varlık Kataloğu resmi ayarlama](~/ios/app-fundamentals/images-icons/displaying-an-image.md) bölümünü [görüntü görüntüleme](~/ios/app-fundamentals/images-icons/displaying-an-image.md) Kılavuzu.
+3. Görüntüye ekleme **Assets.xcassets** varlık kataloğunu Başlat ekranında için kullanılabilir. Daha fazla bilgi için [bir varlık Kataloğu görüntü kümesi ekleme görüntüleri](~/ios/app-fundamentals/images-icons/displaying-an-image.md) bölümünü [bir görüntüyü görüntüleme](~/ios/app-fundamentals/images-icons/displaying-an-image.md) Kılavuzu.
 
-4. Açık **LaunchScreen.storyboard** çift tıklatarak düzenlemek için **çözüm paneli**.
+4. Açık **LaunchScreen.storyboard** çift tıklayarak düzenleme için **çözüm bölmesi**.
 
-5. Bir cihaz ve başlatma ekranı film şeridi iOS Tasarımcısı Önizleme bağlanacağı yönünü seçin. Alt kısımdaki araç çubuğunda aygıt Seçim Bölmesi'ni açın ve seçin **iPhone 4S** ve **dikey**.
+5. Bir cihaz ve başlatma ekranı görsel taslak iOS Designer'daki Önizleme bağlanacağı yönünü seçin. Cihaz seçim paneli alt araç çubuğunda açın ve seçin **iPhone 4S** ve **dikey**.
 
-    ![Aygıt seçimi araç çubuğu](launch-screens-images/launch05.png)
+    ![Cihaz seçimi araç çubuğu](launch-screens-images/launch05.png)
 
-    - Bir cihaz seçip yönü yalnızca nasıl tasarım iOS Tasarımcısı Önizleme değiştiğine dikkat edin. Burada yaptığınız seçimi bağımsız olarak, kısıtlamalar uygulanır tüm cihazlar ve yönler sürece yeni eklenen **Düzenle nitelikler** düğmesi kullanıldığından aksi belirtmek için. 
+    - Bir cihaz seçip yönü yalnızca iOS Designer tasarım nasıl Önizleme değiştiğine dikkat edin. Kısıtlamalar uygulanır tüm cihazları ve yönlendirmelerine sürece burada yapılan seçim bağımsız olarak, yeni eklenen **nitelikleri Düzenle** düğmesi, aksi takdirde belirtmek için kullanılmıştı. 
 
-6. Ayarlama **arka plan** görünüm denetleyicisinin ana görünümü rengi. Görünüm denetleyicisini ortasında tıklayarak görünümünü seçin ve kullanarak arka plan rengini ayarlama **özellikleri paneli**:
+6. Ayarlama **arka plan** görünümü denetleyicinin ana görünüm rengi. Görünümün ortasında görünüm denetleyicisi tıklayarak seçin ve kullanarak arka plan rengi ayarlamak **özellikler panelinde**:
 
-    ![Tek bir görünüm mor arka plan rengiyle](launch-screens-images/launch06.png)
+    ![Mor renkli arka plan rengi ile tek bir görünüm](launch-screens-images/launch06.png)
 
-7. Ekleme bir **resim görünümü** Başlat ekranına ve kaynağı ayarla **görüntü**:
+7. Ekleme bir **resim görünümü** Başlat ekranına ve kendi kaynağı **görüntü**:
 
-    - Sürükleme bir **resim görünümü** gelen **araç paneli** görünümün Merkezi.
-    - İle **resim görünümü** , buna seçili **pencere öğesi** bölümünü **özellikleri paneli** ayarlamak **görüntü** resmi ayarlama zaten özelliğine eklenen **Assets.xcassets** varlık Kataloğu. Yeniden konumlandırma ve boyutu **resim görünümü** gerektiği gibi:
+    - Sürükleme bir **resim görünümü** gelen **araç kutusu paneli** görünümün Merkezi.
+    - İle **resim görünümü** seçiliyken **pencere öğesi** bölümünü **özellikler panelinde** ayarlamak **görüntü** görüntü kümesi zaten özelliği eklenen **Assets.xcassets** varlık Kataloğu. Yeniden konumlandırma ve boyutlandırma **resim görünümü** gerektiği gibi:
     
-    ![Kendi görüntü özellik kümesine sahip bir resim görünümü](launch-screens-images/launch07.png)
+    ![Kendi görüntü özelliği ayarlanmış bir resim görünümü](launch-screens-images/launch07.png)
 
-8. Ekleme bir **etiket** aşağıda **resim görünümü** ve **özellikleri paneli** özniteliklerini ayarlamak için: 
+8. Ekleme bir **etiket** aşağıda **resim görünümü** ve **özellikler panelinde** özniteliklerini ayarlamak için: 
 
-    ![Metin ve renk kümesi etiketle](launch-screens-images/launch08.png)
+    ![Bir etiket, metin ve rengini ayarlama](launch-screens-images/launch08.png)
 
-9. Sağ taraftaki düğmesini kullanarak kısıtlaması düzenleme moduna geç **kısıtlamaları araç**:
+9. Sağ düğmeye kullanarak kısıtlaması düzenleme moduna geçin **kısıtlamalar araç çubuğu**:
     
-    ![Kısıtlama düzenleme moduna düğmesi](launch-screens-images/launch09.png)
+    ![Kısıtlama düzenleme modu düğmesi](launch-screens-images/launch09.png)
 
-10. Kısıtlama eklemek **resim görünümü**, yüksekliğini ve genişliğini ayarlama ve yatay ve dikey olarak ortalama:
+10. İçin kısıtlama Ekle **resim görünümü**yüksekliğini ve genişliğini ayarlamak ve yatay ve dikey olarak ortalama:
 
-    ![Düzen kısıtlamaları olan bir resim görünümü](launch-screens-images/launch10.png)
+    ![Düzen kısıtlamalarıyla bir resim görünümü](launch-screens-images/launch10.png)
 
-    - Kısıtlamaları ekleme hakkında daha fazla ayrıntı için bkz: [iOS için Xamarin Tasarımcısı otomatik düzeniyle](~/ios/user-interface/designer/designer-auto-layout.md).
+    - Kısıtlamaları ekleme hakkında daha fazla ayrıntı için [iOS için Xamarin Tasarımcısı ile otomatik düzen](~/ios/user-interface/designer/designer-auto-layout.md).
 
-11. Kısıtlama eklemek **etiket**yatay ortalama, yüksekliğini ve genişliğini vermek ve bir sabit konumlandırma gelen dikey uzaklığı **resim görünümü**:
+11. İçin kısıtlama Ekle **etiket**, yatay olarak ortalama, yükseklik ve genişlik vermek ve sabit konumlandırma gelen dikey uzaklığı **resim görünümü**:
 
-    ![Düzen kısıtlamaları olan bir etiketi](launch-screens-images/launch11.png)
+    ![Düzeni kısıtlamaları içeren bir etiket](launch-screens-images/launch11.png)
 
-12. Test diğer aygıtlar ve yönler tasarım tüm senaryolarda beklendiği gibi göründüğünü doğrulayın. Burada ayarlamalar gereken belirli bir cihaza veya yönlendirme için yapılması durumlarda kullanmanızı **Düzenle nitelikler** constaints belirli boyutu sınıfları için Ekle düğmesini:
+12. Diğer cihazlar ve tasarım tüm senaryolarda beklendiği gibi göründüğünü doğrulamak için yönleri test edin. Belirli bir cihaza veya yönlendirme için yapılacak ayarlamalar gereken yere durumlarda **nitelikleri Düzenle** constaints belirli boyut sınıfları için Ekle düğmesini:
 
-    ![Yatay yönlendirme kullanarak X iPhone olarak çizilir başlatma ekranı](launch-screens-images/launch12.png)
+    ![İPhone X kullanarak yatay olarak işlenen başlatma ekranı](launch-screens-images/launch12.png)
 
-13. Film şeridi için değişiklikleri kaydedin. Bir simulator veya aygıt uygulamayı çalıştırın ve uygulama başlatma gibi başlatma ekranı görünür olur.
+13. Görsel taslak için değişiklikleri kaydedin. Bir simülatörü veya Cihazınızda uygulamayı çalıştırın ve uygulama başlatma olarak Başlat ekranı görünür.
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
-1. Yeni bir proje oluşturun. Visual Studio'da seçin **Dosya > Yeni > Proje > Visual C# > iPhone & iPad > iOS uygulaması (Xamarin)**:
+1. Yeni bir proje oluşturun. Visual Studio'da **Dosya > Yeni > Proje > Visual C# > iPhone & iPad > iOS uygulaması (Xamarin)**:
 
-    ![Seçili yeni proje penceresinin iOS uygulaması (Xamarin)](launch-screens-images/launch01.w157.png)
+    ![Seçili yeni proje penceresinin, iOS uygulaması (Xamarin)](launch-screens-images/launch01.w157.png)
 
-    Seçin **Single View uygulaması** şablonu ve ardından **Tamam**:
+    Seçin **tek görünüm uygulaması** şablonu ve ardından **Tamam**:
 
     ![Tek görünüm uygulaması şablonu](launch-screens-images/launch01-2.w157.png)
 
-2. Varsa **Kaynakları > LaunchScreen.xib** bulunmaktadır **Çözüm Gezgini**, dosya üzerinde sağ tıklayıp seçerek silme **silmek**. Bu dosya, bir sonraki adımda film şeridi ile değiştirilecek.
+2. Varsa **kaynaklar > LaunchScreen.xib** var. **Çözüm Gezgini**, dosyaya sağ tıklayıp seçerek silme **Sil**. Bu dosya, sonraki adımda bir görsel taslak ile değiştirilecek.
 
-3. Başlatma ekranı kullanmak için bir film şeridi oluşturun. İçinde **Çözüm Gezgini**, projeye sağ tıklayın ve seçin **Ekle > Yeni öğe...**  arkasından **boş film şeridi**. Bu film şeridi ad **LaunchScreen.storyboard** tıklatıp **Ekle**:
+3. Başlatma ekranı olarak kullanmak üzere bir film şeridi oluşturun. İçinde **Çözüm Gezgini**, projeye sağ tıklayın ve seçin **Ekle > Yeni öğe...**  ardından **boş görsel taslak**. Bu film şeridini ad **LaunchScreen.storyboard** tıklatıp **Ekle**:
 
-    ![Yeni Öğe Ekle penceresiyle boş seçili film şeridi](launch-screens-images/launch03.w157.png)
+    ![Seçili boş görsel taslak ile yeni öğe Ekle penceresi](launch-screens-images/launch03.w157.png)
 
-4. Kullanmak üzere proje yapılandırma **LaunchScreen.storyboard** başlatma ekranı şeridini olarak:
+4. Projeyi kullanacak şekilde yapılandırma **LaunchScreen.storyboard** kendi başlatma ekranı görsel taslak olarak:
 
-    - Çift **Info.plist** dosyasını **Çözüm Gezgini** düzenlemek için açın. 
-    - Üzerinde **görsel varlıklar** sekmesinde, ayarlamak **başlatma ekranı** için **LaunchScreen**.
+    - Çift **Info.plist** dosyası **Çözüm Gezgini** düzenlemek üzere açın. 
+    - Üzerinde **görsel varlıklar** sekmesinde, belirleyin **başlatma ekranı** için **LaunchScreen**.
 
-    ![Info.plist başlatma ekranı seçicide](launch-screens-images/launch04-vs.png)
+    ![Info.plist dosyasında başlatma ekranı Seçici](launch-screens-images/launch04-vs.png)
 
-5. Böylece Başlat ekranında kullanmak için kullanılabilir görüntü proje varlık kataloğunda ekleyin:
+5. Böylece Başlat ekranında kullanmak için kullanılabilir görüntü projedeki bir varlık Kataloğu ekleyin:
 
-    - İçinde **Çözüm Gezgini**, sağ tıklayın **varlık kataloglar** seçip **Add varlık Catalog**. Bu yeni varlık katalog adı **varlıklar**:
+    - İçinde **Çözüm Gezgini**, sağ **varlık katalogları** seçip **varlık Kataloğu ekleyin**. Bu yeni bir varlık kataloğu adı **varlıklar**:
 
-    ![Yeni Öğe Ekle penceresiyle seçili varlık Kataloğu](launch-screens-images/launch05.w157.png)
+    ![Seçilen varlık Kataloğu ile yeni öğe Ekle penceresi](launch-screens-images/launch05.w157.png)
 
-    - Yeni bir ayarlayın görüntü ekleme **varlıklar** varlık açıklandığı gibi katalog [ekleme görüntülere bir varlık Kataloğu resmi ayarlama](~/ios/app-fundamentals/images-icons/displaying-an-image.md) bölümünü [görüntü görüntüleme](~/ios/app-fundamentals/images-icons/displaying-an-image.md) Kılavuzu.
+    - Yeni bir ayarlayın görüntü ekleme **varlıklar** varlık Kataloğu açıklandığı gibi [bir varlık Kataloğu görüntü kümesi ekleme görüntüleri](~/ios/app-fundamentals/images-icons/displaying-an-image.md) bölümünü [bir görüntüyü görüntüleme](~/ios/app-fundamentals/images-icons/displaying-an-image.md) Kılavuzu.
 
-6. Açık **LaunchScreen.storyboard** çift tıklatarak düzenlemek için **Çözüm Gezgini**.
+6. Açık **LaunchScreen.storyboard** çift tıklayarak düzenleme için **Çözüm Gezgini**.
 
-    - Film şeridi dosya düzenlemek için Visual Studio Mac yapı barındırmak için etkin bir bağlantı gerekiyor. Bkz: [Mac bilgisayara bağlayarak](~/ios/get-started/installation/windows/connecting-to-mac/index.md) ayrıntılı bilgi için Kılavuzu.
+    - Bir görsel taslak dosyası düzenlemek için Visual Studio etkin bir Mac derleme konağı bağlantısı gerekir. Bkz: [Mac bilgisayara bağlayarak](~/ios/get-started/installation/windows/connecting-to-mac/index.md) ayrıntıları Kılavuzu.
 
-7. Bir cihaz ve başlatma ekranı film şeridi iOS Tasarımcısı Önizleme bağlanacağı yönünü seçin. Alt kısımdaki araç çubuğunda aygıt Seçim Bölmesi'ni açın ve seçin **iPhone 4S** ve **dikey**: 
+7. Bir cihaz ve başlatma ekranı görsel taslak iOS Designer'daki Önizleme bağlanacağı yönünü seçin. Cihaz seçim paneli alt araç çubuğunda açın ve seçin **iPhone 4S** ve **dikey**: 
  
-    ![Aygıt seçimi araç çubuğu](launch-screens-images/launch07-vs.png)
+    ![Cihaz seçimi araç çubuğu](launch-screens-images/launch07-vs.png)
 
-    - Bir cihaz seçip yönü yalnızca nasıl tasarım iOS Tasarımcısı Önizleme değiştiğine dikkat edin. Burada yaptığınız seçimi bağımsız olarak, kısıtlamalar uygulanır tüm cihazlar ve yönler sürece yeni eklenen **Düzenle nitelikler** düğmesi kullanıldığından aksi belirtmek için. 
+    - Bir cihaz seçip yönü yalnızca iOS Designer tasarım nasıl Önizleme değiştiğine dikkat edin. Kısıtlamalar uygulanır tüm cihazları ve yönlendirmelerine sürece burada yapılan seçim bağımsız olarak, yeni eklenen **nitelikleri Düzenle** düğmesi, aksi takdirde belirtmek için kullanılmıştı. 
 
-8. Ekleme bir **View Controller** birinden sürükleyerek film şeridi için **araç** tasarım yüzeyine: 
+8. Ekleme bir **görünüm denetleyicisi** diğerine sürükleyerek film şeridi için **araç kutusu** tasarım yüzeyine: 
 
-    ![Boş bir View Controller tasarım yüzeyine eklenir.](launch-screens-images/launch08-vs.png)
+    ![Boş bir görünüm denetleyicisi tasarım yüzeyine eklenir.](launch-screens-images/launch08-vs.png)
 
-9. Ayarlama **arka plan** görünüm denetleyicisinin ana görünümü rengi. Görünüm denetleyicisini ortasında tıklayarak görünümünü seçin ve kullanarak arka plan rengini ayarlama **Özellikler penceresini**:
+9. Ayarlama **arka plan** görünümü denetleyicinin ana görünüm rengi. Görünümün ortasında görünüm denetleyicisi tıklayarak seçin ve kullanarak arka plan rengi ayarlamak **Özellikler penceresi**:
     
-    ![Tek bir görünüm mor arka plan rengiyle](launch-screens-images/launch09-vs.png)
+    ![Mor renkli arka plan rengi ile tek bir görünüm](launch-screens-images/launch09-vs.png)
 
-10. Ekleme bir **resim görünümü** Başlat ekranına ve kaynağı ayarla **görüntü**:
+10. Ekleme bir **resim görünümü** Başlat ekranına ve kendi kaynağı **görüntü**:
 
-    - Sürükleme bir **resim görünümü** gelen **araç** görünümün Merkezi.
-    - İle **resim görünümü** halen seçiliyken, buna **pencere öğesi** bölümünü **Özellikler penceresini** ayarlamak **görüntü** özelliği resmi ayarlamak için zaten eklendi **varlıklar** varlık Kataloğu. Yeniden konumlandırma ve boyutu **resim görünümü** gerektiği gibi:
+    - Sürükleme bir **resim görünümü** gelen **araç kutusu** görünümün Merkezi.
+    - İle **resim görünümü** halen seçiliyken **pencere öğesi** bölümünü **Özellikler penceresi** ayarlamak **görüntü** özelliğini resmi ayarlama önceden eklenen **varlıklar** varlık Kataloğu. Yeniden konumlandırma ve boyutlandırma **resim görünümü** gerektiği gibi:
     
-    ![Kendi görüntü özellik kümesine sahip bir resim görünümü](launch-screens-images/launch10-vs.png)
+    ![Kendi görüntü özelliği ayarlanmış bir resim görünümü](launch-screens-images/launch10-vs.png)
 
 11. Ekleme bir **etiket** aşağıda **görüntü Görünüm**:
 
-    - Sürükleme bir **etiket** gelen **araç** tasarım yüzeyine aşağıdaki yerleştirme **görüntü Görünüm**.
-    - Ayarlamak için öznitelikler **etiket** kullanarak **Özellikler penceresini**:
+    - Sürükleme bir **etiket** gelen **araç kutusu** tasarım yüzeyine sürükleyin, aşağıdaki yerleştirme **resim görünümü**.
+    - Ayarlamak için öznitelikler **etiket** kullanarak **Özellikler penceresi**:
 
-    ![Metin ve renk kümesi etiketle](launch-screens-images/launch11-vs.png) 
+    ![Bir etiket, metin ve rengini ayarlama](launch-screens-images/launch11-vs.png) 
 
-12. Sağ taraftaki düğmesini kullanarak kısıtlaması düzenleme moduna geç **kısıtlamaları araç**:
+12. Sağ düğmeye kullanarak kısıtlaması düzenleme moduna geçin **kısıtlamalar araç çubuğu**:
     
-    ![Kısıtlama düzenleme moduna düğmesi](launch-screens-images/launch12-vs.png) 
+    ![Kısıtlama düzenleme modu düğmesi](launch-screens-images/launch12-vs.png) 
 
-13. Kısıtlama eklemek **resim görünümü**, yüksekliğini ve genişliğini ayarlama ve yatay ve dikey olarak ortalama:
+13. İçin kısıtlama Ekle **resim görünümü**yüksekliğini ve genişliğini ayarlamak ve yatay ve dikey olarak ortalama:
 
-    ![Düzen kısıtlamaları olan bir resim görünümü](launch-screens-images/launch13-vs.png) 
+    ![Düzen kısıtlamalarıyla bir resim görünümü](launch-screens-images/launch13-vs.png) 
 
-    - Kısıtlamaları ekleme hakkında daha fazla bilgi için bkz: [iOS için Xamarin Tasarımcısı otomatik düzeniyle](~/ios/user-interface/designer/designer-auto-layout.md).
+    - Kısıtlamaları ekleme hakkında daha fazla bilgi için bkz: [iOS için Xamarin Tasarımcısı ile otomatik düzen](~/ios/user-interface/designer/designer-auto-layout.md).
 
-14. Kısıtlama eklemek **etiket**yatay ortalama, yüksekliğini ve genişliğini vermek ve bir sabit konumlandırma gelen dikey uzaklığı **resim görünümü**:
+14. İçin kısıtlama Ekle **etiket**, yatay olarak ortalama, yükseklik ve genişlik vermek ve sabit konumlandırma gelen dikey uzaklığı **resim görünümü**:
     
-    ![Düzen kısıtlamaları olan bir etiketi](launch-screens-images/launch14-vs.png) 
+    ![Düzeni kısıtlamaları içeren bir etiket](launch-screens-images/launch14-vs.png) 
 
-15. Test diğer aygıtlar ve yönler tasarım tüm senaryolarda beklendiği gibi göründüğünü doğrulayın. Burada ayarlamalar gereken belirli bir cihaza veya yönlendirme için yapılması durumlarda kullanmanızı **Düzenle nitelikler** constaints belirli boyutu sınıfları için Ekle düğmesini:
+15. Diğer cihazlar ve tasarım tüm senaryolarda beklendiği gibi göründüğünü doğrulamak için yönleri test edin. Belirli bir cihaza veya yönlendirme için yapılacak ayarlamalar gereken yere durumlarda **nitelikleri Düzenle** constaints belirli boyut sınıfları için Ekle düğmesini:
 
-    ![Yatay yönlendirme kullanarak X iPhone olarak çizilir başlatma ekranı](launch-screens-images/launch15-vs.png) 
+    ![İPhone X kullanarak yatay olarak işlenen başlatma ekranı](launch-screens-images/launch15-vs.png) 
 
-16. Film şeridi için değişiklikleri kaydedin. Bir simulator veya aygıt uygulamayı çalıştırın ve uygulama başlatma gibi başlatma ekranı görünür olur.
+16. Görsel taslak için değişiklikleri kaydedin. Bir simülatörü veya Cihazınızda uygulamayı çalıştırın ve uygulama başlatma olarak Başlat ekranı görünür.
 
 -----
 
 > [!NOTE]
-> Başlatma ekranı kullanılan bir film şeridi _gerekir_ yalnızca basit, yerleşik kullanıcı Arabirimi öğeleri içerir ve **olamaz** tüm hesaplamalar yapabilir veya özel bir sınıftan türetilen.
+> Başlatma ekranı olarak kullanılan bir görsel taslak _gerekir_ yalnızca basit, yerleşik kullanıcı Arabirimi öğeleri ekleyin ve **olamaz** tüm hesaplamalar yapabilir veya özel bir sınıf türetin.
 
-Birleşik bir film şeridi ile başlatma ekranı oluşturma hakkında daha fazla bilgi için lütfen bkz [dinamik başlatma ekranlar](~/ios/user-interface/storyboards/unified-storyboards.md#dynamic-launch-screens) bölümünü [birleşik film şeritleri](~/ios/user-interface/storyboards/unified-storyboards.md) Kılavuzu.
+Bir başlatma ekranı ile birleştirilmiş bir görsel taslak oluşturma hakkında daha fazla bilgi için lütfen bkz [dinamik başlatma ekranları](~/ios/user-interface/storyboards/unified-storyboards.md#dynamic-launch-screens) bölümünü [birleşik görsel Taslaklar](~/ios/user-interface/storyboards/unified-storyboards.md) Kılavuzu.
 
-## <a name="migrating-to-launch-screen-storyboards"></a>Ekran film şeritleri başlatmak için geçirme
+## <a name="migrating-to-launch-screen-storyboards"></a>Başlatma ekranı görsel taslak için geçirme
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
-Film şeritleri kendi başlatma ekranları için kullanılacak var olan bir uygulama güncelleştirilirken sağ tıklayın **proje adı** içinde **Çözüm Gezgini** seçip **Ekle**  >  **Yeni dosya...** . Seçin **iOS** > **başlatma ekranı** tıklatıp **yeni** düğmesi:
+Görsel Taslaklar, başlatma ekranları için kullanılacak mevcut bir uygulamayı güncelleştirirken, sağ tıklayın **proje adı** içinde **Çözüm Gezgini** seçip **Ekle**  >  **Yeni dosya...** . Seçin **iOS** > **başlatma ekranı** tıklatıp **yeni** düğmesi:
 
-![](launch-screens-images/storyboard02.png "Başlatma ekranı iOS seçin")
+![](launch-screens-images/storyboard02.png "Bir iOS başlatma ekranı seçin")
 
-Ardından, çift `Info.plist` dosyasını **Çözüm Gezgini** düzenlemek için açın. Altında **başlatma ekranı**, yukarıda oluşturduğunuz yeni bir film şeridi dosya seçin.
+Ardından, çift `Info.plist` dosyası **Çözüm Gezgini** düzenlemek üzere açın. Altında **başlatma ekranı**, yukarıda oluşturulan yeni görsel taslak dosyası seçin.
 
-![](launch-screens-images/storyboard09.png "Yukarıda oluşturduğunuz yeni film şeridi dosyasını seçin")
+![](launch-screens-images/storyboard09.png "Yukarıda oluşturulan yeni görsel taslak dosyası seçin")
 
 
-Yeni film şeridi başlatma ekranı kullanmak için aşağıdakileri yapın:
+Yeni bir film şeridi bir başlatma ekranı kullanmak için aşağıdakileri yapın:
 
-1. Çift `Info.plist` dosyasını **Çözüm Gezgini** düzenlemek için açın.
-2. Kaydırma **Evrensel başlatma görüntüleri** açık Düzenleyicisi bölümünü **başlatma ekranı** film şeridi adını oluşturulan açılır ve select yukarıda: 
+1. Çift `Info.plist` dosyası **Çözüm Gezgini** düzenlemek üzere açın.
+2. Kaydırma **Evrensel başlatma resimleri** Düzenleyici, açık bir bölümünü **başlatma ekranı** açılır ve seçin, görsel taslağın adını oluşturulan yukarıda: 
 
-    ![](launch-screens-images/storyboard08.png "Başlatma ekranı film şeridi için ayarlama")
+    ![](launch-screens-images/storyboard08.png "Başlatma ekranı görsel taslak için ayarlama")
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 1. Proje adına sağ tıklayın **Çözüm Gezgini** seçip **Ekle** > **yeni dosya...** : 
 
-    ![](launch-screens-images/image012.png "Yeni dosya ekleme")
+    ![](launch-screens-images/image012.png "Yeni bir dosya ekleyin")
 2. Başlatma ekranı için bir ad girin ve tıklayın **Ekle** düğmesi: 
 
     ![](launch-screens-images/image013.png "Başlatma ekranı için bir ad girin")
-3. İçinde **Çözüm Gezgini**, yeni oluşturulan film şeridi dosya düzenlemek üzere açmak için çift tıklayın.
-4. Emin **boyutu sınıfı** ayarlanır **herhangi: tüm** ve **görünüm olarak** olan **genel**: 
+3. İçinde **Çözüm Gezgini**, düzenlemek üzere açmak için yeni oluşturulan görsel taslak dosyasına çift tıklayın.
+4. Emin **boyut sınıfına** ayarlanır **herhangi: tüm** ve **görünümü olarak** olduğu **genel**: 
 
-    ![](launch-screens-images/image016.png "Boyutu sınıfı için ayarlandığından emin olun: tüm ve görünüm olarak genel")
-5. Derleme başlatma ekranı boyutu sınıflardan basit kullanıcı Arabirimi öğeleri (gibi `UIImageView`) ve uygulamanın pakete eklenen görüntüler: 
+    ![](launch-screens-images/image016.png "Boyut sınıfına birine ayarlanmış olduğundan emin olun: tüm ve görünüm olarak genel")
+5. Derleme başlatma ekranı boyutu sınıflardan basit kullanıcı Arabirimi öğeleri (gibi `UIImageView`) ve uygulama paketi grubuna dahil ettiğiniz görüntüler: 
 
-    ![](launch-screens-images/image017.png "Derleme Tasarımcısı iOS başlatma ekranı")
-6. Film şeridi için değişiklikleri kaydedin.
+    ![](launch-screens-images/image017.png "Derleme iOS Designer'daki başlatma ekranı")
+6. Görsel taslak için değişiklikleri kaydedin.
 
 -----
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Dinamik başlatma ekranlar (örnek)](https://developer.xamarin.com/samples/monotouch/ios8/DynamicLaunchScreen/)
+- [Dinamik başlatma ekranları (örnek)](https://developer.xamarin.com/samples/monotouch/ios8/DynamicLaunchScreen/)
 - [Birleşik Görsel Taslaklar](~/ios/user-interface/storyboards/unified-storyboards.md)
 - [Temel iOS Designer Bilgileri](~/ios/user-interface/designer/index.md)
-- [Bir varlık Kataloğu görüntüsüne ekleme görüntüleri ayarlama](~/ios/app-fundamentals/images-icons/displaying-an-image.md#asset-catalogs)
-- [İOS için Xamarin Tasarımcısı ile otomatik Düzenle](~/ios/user-interface/designer/designer-auto-layout.md)
+- [Bir varlık Kataloğu görüntü ekleme görüntüleri ayarlama](~/ios/app-fundamentals/images-icons/displaying-an-image.md#adding-images-to-an-asset-catalog-image-set)
+- [İOS için Xamarin Tasarımcısı ile otomatik düzen](~/ios/user-interface/designer/designer-auto-layout.md)
 - [İnsan Arabirimi yönergelerine: Başlatma ekranı](https://developer.apple.com/ios/human-interface-guidelines/icons-and-images/launch-screen/)

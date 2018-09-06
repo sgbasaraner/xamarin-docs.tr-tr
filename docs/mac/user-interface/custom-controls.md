@@ -1,56 +1,56 @@
 ---
 title: Xamarin.Mac içinde özel denetimler oluşturma
-description: Bu belge, Xamarin.Mac özel denetimlerinde yapı açıklar. Özel denetim oluşturmak, durumunu izlemek, onun arabirim çizin, kullanıcı girişine yanıt verir ve bir uygulamada denetimi kullanmak nasıl gösterir.
+description: Bu belge, özel denetimlerinde Xamarin.Mac nasıl oluşturulduğu açıklanır. Bu özel denetimi oluşturun, durumunu izlemek, arayüz çizme, kullanıcı girişine yanıt vermek ve bir denetim kullanmak nasıl gösterir.
 ms.prod: xamarin
 ms.assetid: 004534B1-5AEE-452C-BBBE-8C2673FD49B7
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: e4c2b2c9ee7bae3d6489fec6b22881653ec53043
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 7180dd80c80515adc7312e2fe30d69852bf04eaa
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792684"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "43780595"
 ---
 # <a name="creating-custom-controls-in-xamarinmac"></a>Xamarin.Mac içinde özel denetimler oluşturma
 
-C# ve .NET ile Xamarin.Mac uygulamada çalışırken, aynı erişiminiz kullanıcı denetimleri, içinde çalışan bir geliştirici *Objective-C*, *Swift* ve *Xcode* yapar . Xamarin.Mac Xcode ile doğrudan tümleşir nedeniyle, Xcode'nın kullanabilirsiniz _arabirimi Oluşturucu_ ve kullanıcı denetimleri korumak (veya isteğe bağlı olarak bunları doğrudan C# kodunda oluşturmak için).
+Bir Xamarin.Mac uygulamasında çalışırken, C# ve .NET ile aynı erişiminiz kullanıcı denetimleri, içinde çalışan bir geliştirici *Objective-C*, *Swift* ve *Xcode* yok . Xamarin.Mac Xcode ile doğrudan tümleşir çünkü Xcode'un kullanabileceğiniz _arabirim Oluşturucu_ oluşturmak ve korumak, kullanıcı denetimleri (veya isteğe bağlı olarak bunları doğrudan C# kodu oluşturmak için).
 
-MacOS yerleşik kullanıcı denetimleri çeşitlilikte sağlarken işlevselliği Giden kutusu sağlanmayan sağlamak ya da özel bir kullanıcı Arabirimi tema (örneğin, bir oyun arabirimi) eşleştirmek için özel bir denetim oluşturmak gerekir zamanlar olabilir.
+MacOS çok sayıda yerleşik kullanıcı denetimleri sağlarken işlevselliğini kullanıma hazır sağlanmayan sağlamak ya da özel bir kullanıcı Arabirimi tema (örneğin, bir oyun arabirimi) eşleştirmek için özel bir denetim oluşturmak için ihtiyacınız zamanlar olabilir.
 
-[![](custom-controls-images/intro01.png "Özel bir kullanıcı Arabirimi denetim örneği")](custom-controls-images/intro01.png#lightbox)
+[![](custom-controls-images/intro01.png "Özel kullanıcı Arabirimi denetim örneği")](custom-controls-images/intro01.png#lightbox)
 
-Bu makalede, biz Xamarin.Mac uygulamasında yeniden kullanılabilir bir özel kullanıcı arabirimi denetim oluşturma temelleri ele alacağız. Aracılığıyla iş önerilen [Hello, Mac](~/mac/get-started/hello-mac.md) makalesi önce özellikle [Xcode ve arabirim Oluşturucu giriş](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) ve [çıkışlar ve eylemleri](~/mac/get-started/hello-mac.md#Outlets_and_Actions) onu farklı bölümler temel kavramları ve biz bu makalede kullanmaya başlayacağınız teknikleri ele alınmaktadır.
+Bu makalede, biz bir Xamarin.Mac uygulamada yeniden kullanılabilir bir özel kullanıcı arabirimi denetim oluşturma hakkındaki temel bilgileri ele alacağız. Aracılığıyla iş önerilen [Merhaba, Mac](~/mac/get-started/hello-mac.md) makale önce özellikle [Xcode ve arabirim Oluşturucu giriş](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) ve [çıkışlar ve eylemleri](~/mac/get-started/hello-mac.md#outlets-and-actions) olarak bölümlerde temel kavramları ve bu makalede kullanacağız tekniklerini ele alınmaktadır.
 
-Bir göz atalım isteyebilirsiniz [gösterme C# sınıfları / Objective-C yöntemlere](~/mac/internals/how-it-works.md) bölümünü [Xamarin.Mac iç](~/mac/internals/how-it-works.md) de açıklar belge `Register` ve `Export` komutları kablo, C# sınıflarının Objective-C nesneleri ve kullanıcı Arabirimi öğeleri yukarı için kullanılır.
+Bir göz atın isteyebilirsiniz [gösterme C# sınıfları / Objective-C yöntemlere](~/mac/internals/how-it-works.md) bölümünü [Xamarin.Mac iç işlevleri](~/mac/internals/how-it-works.md) de açıklar belge `Register` ve `Export` komutları Objective-C nesneleri ve kullanıcı Arabirimi öğeleri için C# sınıfları kablo-yedekleme kullanılır.
 
 <a name="Introduction-to-Outline-Views" />
 
 ## <a name="introduction-to-custom-controls"></a>Özel denetimler giriş
 
-Yukarıda belirtildiği gibi yeniden kullanılabilir, özel kullanıcı arabirimi denetim Xamarin.Mac uygulamanızın kullanıcı Arabirimi benzersiz işlevselliği sağlamak ya da özel bir kullanıcı Arabirimi tema (örneğin, bir oyun arabirimi) oluşturmak için Oluştur gerektiğinde zamanlar olabilir.
+Yukarıda belirtildiği gibi yeniden kullanılabilir, özel kullanıcı arabirimi denetimi Xamarin.Mac uygulamanızın kullanıcı Arabirimi için benzersiz işlevselliğini sunmak veya özel kullanıcı Arabirimi tema (örneğin, bir oyun arabirimi) oluşturma oluşturmanız gerektiğinde zamanlar olabilir.
 
-Bu durumlarda, kolayca gelen devralabilirsiniz `NSControl` ve uygulamanızın kullanıcı Arabirimi aracılığıyla C# kodu veya Xcode'nın arabirimi oluşturucu aracılığıyla ya da eklenebilir özel bir araç oluşturun. İçinden devralma tarafından `NSControl` özel denetim otomatik olarak yerleşik bir kullanıcı arabirimi denetim sahip tüm standart özelliklere sahip olacaktır (gibi `NSButton`).
+Bu gibi durumlarda, kolayca öğesinden devralabilir `NSControl` ve uygulamanızın kullanıcı arabirimi aracılığıyla Xcode'un arabirim oluşturucu veya C# kodu aracılığıyla eklenebilir ya da özel bir araç oluşturabilir. Öğesinden devralan tarafından `NSControl` özel denetiminizi otomatik olarak yerleşik bir kullanıcı arabirimi denetimi olan standart özelliklerin tümünü olacaktır (gibi `NSButton`).
 
-Özel kullanıcı arabirimi denetim bilgilerini (örneğin, bir özel grafik ve grafik aracı) yalnızca görüntüler, devralınan isteyebilirsiniz `NSView` yerine `NSControl`.
+Özel kullanıcı arabirimi denetim bilgileri (örneğin, bir özel grafiği ve grafik aracı) yalnızca görüntüler, devralınan isteyebilirsiniz `NSView` yerine `NSControl`.
 
-Hangi temel sınıf kullanılan olsun, özel bir denetim oluşturmak için temel adımlar aynıdır.
+Hangi temel sınıf kullanılan ne olursa olsun, özel bir denetim oluşturmak için temel adımlar aynıdır.
 
-Bu makale işlem benzersiz bir kullanıcı arabirimi temasını ve tam olarak işlevsel bir özel kullanıcı arabirimi denetim oluşturmanın bir örnek sağlar özel bir anahtar Çevir bileşen oluşturun.
+Bu makalede işlem içinde benzersiz bir kullanıcı arabirimi teması ve tam işlevsel bir özel kullanıcı arabirimi denetimi oluşturma örneği sağlar özel bir anahtara çevirme bileşen oluşturun.
 
 <a name="Building-the-Custom-Control" />
 
 ## <a name="building-the-custom-control"></a>Özel denetim oluşturma
 
-Biz oluşturmakta özel denetim (sol fare düğmesini tıklama) kullanıcı girişine yanıt vermesi olduğundan, biz devralınmalıdır olacak `NSControl`. Bu şekilde, bizim özel denetim otomatik olarak yerleşik bir kullanıcı arabirimi denetim sahip tüm standart özelliklere sahip ve standart macOS denetimi gibi yanıt.
+Biz oluşturmakta olduğunuz özel denetimin kullanıcı girişine (sol fare düğmesine tıklama) yanıt vermesi olduğundan, devralınan kullanacağız `NSControl`. Bu şekilde, özel denetimimiz otomatik olarak tüm standart özelliklerin yerleşik bir kullanıcı arabirimi denetimi vardır ve standart macOS denetimi gibi yanıt.
 
-Mac için Visual Studio'da bir özel kullanıcı arabirimi denetim için (veya yeni bir tane oluşturmak için) istediğiniz Xamarin.Mac projeyi açın. Yeni bir sınıf ekleyin ve bunu `NSFlipSwitch`:
+Mac için Visual Studio'da bir özel kullanıcı arabirimi denetimi (veya yeni bir tane oluşturun) istediğiniz Xamarin.Mac projeyi açın. Yeni bir sınıf ekleyin ve onu çağırmak `NSFlipSwitch`:
 
-[![](custom-controls-images/custom01.png "Yeni bir sınıf ekleme")](custom-controls-images/custom01.png#lightbox)
+[![](custom-controls-images/custom01.png "Yeni sınıf ekleme")](custom-controls-images/custom01.png#lightbox)
 
-Ardından, düzenleme `NSFlipSwitch.cs` sınıfı ve şu şekilde görünür yapın:
+Ardından, Düzenle `NSFlipSwitch.cs` sınıfı ve aşağıdaki gibi görünmesi:
 
 ```csharp
 using Foundation;
@@ -126,20 +126,20 @@ namespace MacCustomControl
 }
 ```
 
-Biz içinden devralma, bizim Özel sınıfı hakkında dikkat edilecek ilk şey `NSControl` ve kullanarak **kaydetmek** Objective-C ve Xcode'nın arabirimi Oluşturucu bu sınıfa kullanıma sunmak için komutu:
+Biz öğesinden devralan, bizim Özel sınıfı hakkında fark edilecek ilk şey `NSControl` ve kullanarak **kaydetme** Objective-C ve Xcode'un arabirim Oluşturucu bu sınıfa kullanıma sunmak için komut:
 
 ```csharp
 [Register("NSFlipSwitch")]
 public class NSFlipSwitch : NSControl
 ```
 
-Aşağıdaki bölümlerde, biz Yukarıdaki kod ayrıntılı rest göz atın.
+Aşağıdaki bölümlerde, size ayrıntılı Yukarıdaki kod, bekleyen göz atacağız.
 
 <a name="Tracking-the-Controls-State" />
 
 ### <a name="tracking-the-controls-state"></a>Denetimin durumunu izleme
 
-Bizim özel denetimi bir anahtar olmadığından, kimliğinizi anahtarının açık/kapalı durumunu izlemek için bir yol gerekiyor. Aşağıdaki kod ile işleme `NSFlipSwitch`:
+Özel Denetimimiz anahtar olduğundan, anahtarın açık/kapalı durumu izlemek için bir yol ihtiyacımız var. Aşağıdaki kod ile işleme `NSFlipSwitch`:
 
 ```csharp
 private bool _value = false;
@@ -155,11 +155,11 @@ public bool Value {
 }
 ```
 
-Anahtarın durumu değiştiğinde, güncelleştirilen kullanıcı arabirimini bir şekilde ihtiyacımız var. Kullanıcı Arabiriminde ile yeniden çizmek için Denetim zorlayarak bunu `NeedsDisplay = true`.
+Anahtarın durumu değiştiğinde, güncelleştirilmiş kullanıcı arabirimini bir şekilde ihtiyacımız var. Denetimin, kullanıcı Arabirimiyle yeniden çizmek için zorlayarak bunu `NeedsDisplay = true`.
 
-Bizim denetim, daha fazla tek bir açık/kapalı durumu (örneğin bir çok durumlu anahtarıyla 3 konumlar) gerekirse, biz kullanabilirdik bir **Enum** durumunu izlemek için. Bizim örneğimizde, basit bir için **bool** yapar.
+Denetimimiz daha fazlası tek bir açık/kapalı durumu (örneğin bir çok durumlu anahtar ile 3 konumlar) gerektiriyorsa, biz kullanabilirdik bir **Enum** durumunu izlemek için. Basit bir Örneğimiz için **bool** yapar.
 
-Açma ve kapatma arasında geçiş durumunu değiştirmek için yardımcı bir yöntem de eklediğimiz:
+Açma ve kapatma arasında geçiş durumunu değiştirmek için bir yardımcı yöntem de ekledik:
 
 ```csharp
 private void FlipSwitchState() {
@@ -168,13 +168,13 @@ private void FlipSwitchState() {
 }
 ```
 
-Daha sonra biz zaman anahtarları durumu değişti çağıran bildirmek için bu yardımcı sınıf genişletin.
+Daha sonra biz çağırana zaman anahtarlar durumu değiştirildiğinde bildirmek için bu yardımcı sınıf genişletin.
 
 <a name="Drawing-the-Controls-Interface" />
 
 ### <a name="drawing-the-controls-interface"></a>Denetimin arabirimi çizme
 
-Çalışma zamanında bizim özel denetimin kullanıcı arabirimi çizmek için çekirdek grafik çizim yordamları kullanma olacak. Biz bunu yapabilmeniz için önce biz bizim denetimi için katmanlardaki etkinleştirmeniz gerekir. Biz bunu, aşağıdaki özel yöntemiyle yapın:
+Çalışma zamanında kullanıcı arabirimi, özel denetimin çizmek için temel grafik çizim yordamları kullanmak için kullanacağız. Biz bunu yapmak için önce denetimimiz katmanları etkinleştirmek ihtiyacımız var. Aşağıdaki gizli yöntemi ile bunu:
 
 ```csharp
 private void Initialize() {
@@ -183,7 +183,7 @@ private void Initialize() {
 }
 ```
 
-Bu yöntem her denetim'ın düzgün yapılandırıldığından emin olmak için denetimin oluşturucular çağrılır. Örneğin:
+Bu yöntem, her denetimi düzgün yapılandırıldığından emin olmak için denetimin oluşturucular çağrılır. Örneğin:
 
 ```csharp
 public NSFlipSwitch (IntPtr handle) : base (handle)
@@ -193,7 +193,7 @@ public NSFlipSwitch (IntPtr handle) : base (handle)
 }
 ```
 
-Ardından, geçersiz kılmak ihtiyacımız `DrawRect` yöntemi ve denetimi çizmek için çekirdek grafik yordamları ekleyin:
+Ardından, geçersiz kılmak ihtiyacımız `DrawRect` yöntemi ve bir denetim çizmek için temel grafik yordamlar ekleyin:
 
 ```csharp
 public override void DrawRect (CGRect dirtyRect)
@@ -206,22 +206,22 @@ public override void DrawRect (CGRect dirtyRect)
 }
 ```
 
-Durumu değiştiğinde biz görsel denetimi için ayarlama (gelen giderek gibi **üzerinde** için **kapalı**). Herhangi bir durum değiştiğinde, biz kullanabilirsiniz `NeedsDisplay = true` denetimi için yeni durum yeniden boyutlandırmaya zorlamak için komutu.
+Durumunu değiştirdiğinde biz denetimin görsel bir temsili ayarlama (gitmek gibi **üzerinde** için **kapalı**). Durum değişiklikleri için istediğiniz zaman, kullanabiliriz `NeedsDisplay = true` yeni durumu yeniden çizmek için Denetim zorlamak için komutu.
 
 <a name="Responding-to-User-Input" />
 
 ### <a name="responding-to-user-input"></a>Kullanıcı girişine yanıt
 
-Bizim özel denetim için kullanıcı girişi ekleyebiliriz iki temel yolu vardır: **geçersiz kılma fare işleme yordamları** veya **hareketi tanıyıcıları**. Kullanıyoruz, hangi yöntemi temel alınacak bizim denetimi tarafından gerekli işlevselliği.
+Bizim özel denetimin kullanıcı girişine ekleyebiliriz iki temel yolu vardır: **geçersiz kılma fare işleme rutinleri** veya **hareket tanıyıcılar**. Kullandığımız hangi yöntemin göre oluşturulacak denetimimiz tarafından gerekli işlevselliği.
 
 > [!IMPORTANT]
-> Oluşturduğunuz tüm özel denetim için ya da kullanmalısınız **geçersiz kılma yöntemleri** _veya_ **hareketi tanıyıcıları**, ancak ikisini aynı anda zaman birbiriyle çelişen gibi.
+> Oluşturduğunuz tüm özel denetim için ya da kullanmalısınız **geçersiz kılma yöntemleri** _veya_ **hareket tanıyıcılar**, ancak ikisini birden aynı saat olarak birbiriyle çakışabilir.
 
 <a name="Summary" />
 
 #### <a name="handling-user-input-with-override-methods"></a>Geçersiz kılma yöntemleri ile kullanıcı girişini işleme
 
-Öğesinden devralan nesneler `NSControl` (veya `NSView`) birkaç işleme fare yöntemlerini geçersiz kılabilir veya klavye girişi. Bizim örnek denetimi için arasında geçiş durumu Çevir istiyoruz **üzerinde** ve **devre dışı** kullanıcı tıkladığında sol fare düğmesini denetimiyle üzerinde. Aşağıdaki yöntemleri geçersiz kılmak ekleyebiliriz `NSFliwSwitch` sınıfı bu durumu çözmek için:
+Devralınan nesnelerin `NSControl` (veya `NSView`) birkaç işleme fare yöntemleri geçersiz kılmak veya klavye girişi. Arasında geçiş durumu ters çevirmek istediğimiz örnek denetimimiz **üzerinde** ve **kapalı** kullanıcı tıkladığında farenin sol düğmesi denetimi. Aşağıdaki yöntemleri geçersiz kılmak ekleyebiliriz `NSFliwSwitch` sınıfı bu durumu çözmek için:
 
 ```csharp
 #region Mouse Handling Methods
@@ -253,13 +253,13 @@ public override void MouseMoved (NSEvent theEvent)
 ## endregion
 ```
 
-Yukarıdaki kodda diyoruz `FlipSwitchState` yöntemi (yukarıda tanımlanan) sayfasında Çevir / anahtarda durumunu Kapalı `MouseDown` yöntemi. Bu ayrıca denetimi geçerli durumunu yansıtacak şekilde yeniden başlamaya zorlayacak.
+Yukarıdaki kodda diyoruz `FlipSwitchState` yöntemi (yukarıda tanımlanan) açık çevirmek / anahtarı durumu kapalı `MouseDown` yöntemi. Bu, geçerli durumu yansıtacak şekilde çizilmesini denetimi de zorlar.
 
 <a name="Handling-User-Input-with-Gesture-Recognizers" />
 
-#### <a name="handling-user-input-with-gesture-recognizers"></a>Hareketi tanıyıcılarla kullanıcı girişini işleme
+#### <a name="handling-user-input-with-gesture-recognizers"></a>Hareket tanıyıcılar ile kullanıcı girişini işleme
 
-İsteğe bağlı olarak, denetimi ile etkileşim kullanıcı işlemek için hareketi tanıyıcıları kullanabilirsiniz. Yukarıda eklediğiniz geçersiz kılmaları kaldırmak, düzenleme `Initialize` yöntemi ve şu şekilde görünür yapın:
+İsteğe bağlı olarak, denetimle etkileşime geçen kullanıcının işlemek için hareket tanıyıcılar kullanabilirsiniz. Yukarıda eklediğiniz geçersiz kılmaları kaldırmak için Düzenle `Initialize` yöntemi ve aşağıdaki gibi görünmesi:
 
 ```csharp
 private void Initialize() {
@@ -277,17 +277,17 @@ private void Initialize() {
 }
 ```
 
-Burada, yeni bir oluşturuyoruz `NSClickGestureRecognizer` ve çağırma bizim `FlipSwitchState` kullanıcı üzerinde sol fare düğmesini tıklattığında anahtarın durumu değiştirmek için yöntem. `AddGestureRecognizer (click)` Yöntemi denetime hareketi tanıyıcı ekler.
+Burada, yeni bir oluşturuyoruz `NSClickGestureRecognizer` ve çağırma bizim `FlipSwitchState` kullanıcı üzerinde ile farenin sol düğmesine tıkladığında, anahtarın durumu değiştirmek için yöntemi. `AddGestureRecognizer (click)` Yöntemi hareket tanıyıcı denetimine ekler.
 
-Yeniden ne biz bizim sahip özel bir denetim elde etmeye çalıştığınız kullanıyoruz hangi yöntemi bağlıdır. Biz düşük düzey erişmesi gerekiyorsa geçersiz kılma yöntemleri kullanıcı etkileşimi için kullanın. Fare tıklamaları gibi önceden tanımlanmış işlevselliği ihtiyacımız hareketi tanıyıcıları kullanın.
+Yeniden kullandığımız hangi yöntemin ne özel denetimimiz gerçekleştirmek çalışıyoruz bağlıdır. Düşük düzey erişim ihtiyacımız olursa kullanıcı etkileşimi için geçersiz kılma yöntemleri kullanın. Fare tıklama gibi önceden tanımlanmış işlevselliği ihtiyacımız hareket tanıyıcılar kullanın.
 
 <a name="Responding-to-State-Change-Events" />
 
 ### <a name="responding-to-state-change-events"></a>Durum değişikliği olayları için yanıt verme
 
-Kullanıcı, özel bir denetim durumu değiştiğinde, kodda durumu değişikliği için yanıt için bir yol ihtiyacımız (bir şey yapmak gibi özel bir düğmesine tıklar). 
+Kullanıcı özel denetimimiz durumunu değiştirdiğinde, bir şekilde kod durumu değişikliği yanıt ihtiyacımız (bir şey yapmak gibi bir özel düğmesine tıklar). 
 
-Bu işlevselliği sağlayacak şekilde Düzenle `NSFlipSwitch` sınıfı ve aşağıdaki kodu ekleyin:
+Bu işlevselliği sağlayacak şekilde düzenleme `NSFlipSwitch` sınıfı ve aşağıdaki kodu ekleyin:
 
 ```csharp
 #region Events
@@ -305,7 +305,7 @@ internal void RaiseValueChanged() {
 ## endregion
 ```
 
-Ardından, düzenleme `FlipSwitchState` yöntemi ve şu şekilde görünür yapın:
+Ardından, Düzenle `FlipSwitchState` yöntemi ve aşağıdaki gibi görünmesi:
 
 ```csharp
 private void FlipSwitchState() {
@@ -315,40 +315,40 @@ private void FlipSwitchState() {
 }
 ```
 
-İlk olarak, size sağladığımız bir `ValueChanged` olay böylece kullanıcı anahtarının durumunu değiştirdiğinde bir eylemi gerçekleştirmek size bir işleyiciye C# kodunda ekleyebilirsiniz.
+İlk olarak sağladığımız bir `ValueChanged` olay kullanıcı anahtarın durumu değiştiğinde bir eylem gerçekleştirebiliriz böylece biz bir işleyici C# kodu ekleyebilirsiniz.
 
-Bizim özel denetim sınıfından devraldığı için ikinci `NSControl`, otomatik olarak sahip bir **eylem** Xcode'nın arabirimi Oluşturucusu'nda atanabilir. Bu çağrı için **eylem** durumu değiştiğinde, aşağıdaki kodu kullanın:
+İkinci özel denetimimiz öğesinden devralındığından `NSControl`, otomatik olarak sahip bir **eylem** Xcode'un arabirimi Oluşturucu'da atanabilir. Bu çağrı için **eylem** durumu değiştiğinde, biz aşağıdaki kodu kullanın:
 
 ```csharp
 if (this.Action !=null) 
     NSApplication.SharedApplication.SendAction (this.Action, this.Target, this);
 ```
 
-İlk olarak, biz olup olmadığını denetleyin bir **eylem** denetime atanmış. Ardından, diyoruz **eylem** onu tanımlanmışsa.
+İlk olarak biz olup olmadığını denetleriz bir **eylem** denetime atanmış. Ardından, diyoruz **eylem** tanımlanmadan durumunda.
 
 <a name="Using-the-Custom-Control" />
 
-## <a name="using-the-custom-control"></a>Özel denetim kullanma
+## <a name="using-the-custom-control"></a>Özel denetim kullanarak
 
-Tam olarak tanımlanan bizim sahip özel bir denetim, biz ya da bu bizim Xamarin.Mac uygulamanın kullanıcı arabirimini kullanarak C# kodu veya Xcode'nın arabirimi Oluşturucu ekleyebilirsiniz.
+Tam olarak tanımlanan özel denetimimiz ya da C# kodunu kullanarak Xamarin.Mac uygulama kullanıcı Arabirimi veya Xcode'un arabirim Oluşturucu ekleyebiliriz.
 
-Arabirimi Oluşturucusu'nu kullanarak denetim eklemek için önce Xamarin.Mac projesinin temiz bir yapı yapın ve ardından `Main.storyboard` dosyayı düzenleme için arabirimi Oluşturucusu'nda açın:
+Arabirim Oluşturucu kullanarak denetimi eklemek için ilk Xamarin.Mac proje temiz bir derlemesini, ardından çift `Main.storyboard` dosyayı düzenleme için arabirim Oluşturucu'da açın:
 
-[![](custom-controls-images/custom02.png "Xcode'da film şeridi düzenleme")](custom-controls-images/custom02.png#lightbox)
+[![](custom-controls-images/custom02.png "Xcode içinde bir film şeridini düzenleme")](custom-controls-images/custom02.png#lightbox)
 
-Ardından, sürükleyin bir `Custom View` kullanıcı arabirimi tasarımı içine:
+Sonraki adımda bir `Custom View` kullanıcı arabirimi tasarımı olarak:
 
-[![](custom-controls-images/custom03.png "Özel bir görünüm Kitaplığı'ndan seçme")](custom-controls-images/custom03.png#lightbox)
+[![](custom-controls-images/custom03.png "Kitaplığından özel bir görünüm seçme")](custom-controls-images/custom03.png#lightbox)
 
-Halen seçili olan özel görünüm ile geçiş **kimlik denetçisi** görünümün değiştirip **sınıfı** için `NSFlipSwitch`:
+Seçili durumdayken özel görünüm ile geçiş **kimlik denetçisi** görünümün değiştirip **sınıfı** için `NSFlipSwitch`:
 
 [![](custom-controls-images/custom04.png "Ayar görünümün sınıfı")](custom-controls-images/custom04.png#lightbox)
 
-Geçiş **Yardımcısı Düzenleyicisi** ve oluşturma bir **çıkışı** özel denetim için (içinde bağlamak emin `ViewControler.h` dosya ve `.m` dosya):
+Geçiş **Yardımcısı Düzenleyicisi** oluşturup bir **çıkışı** özel denetim için (içinde bağlamak emin `ViewControler.h` dosya ve `.m` dosya):
 
-[![](custom-controls-images/custom05.png "Yeni bir çıkış yapılandırma")](custom-controls-images/custom05.png#lightbox)
+[![](custom-controls-images/custom05.png "Yeni çıkış yapılandırma")](custom-controls-images/custom05.png#lightbox)
 
-Mac için Visual Studio dönün yaptığınız değişiklikleri kaydedin ve eşitlemek değişikliklere izin verecek. Düzen `ViewController.cs` dosya ve olun `ViewDidLoad` yöntemi görünüm aşağıdaki gibi:
+Mac için Visual Studio geri dönüp yaptığınız değişiklikleri kaydetmek ve değişiklikleri eşitlemeye izin verin. Düzen `ViewController.cs` dosya ve olun `ViewDidLoad` yöntemi görünüm aşağıdaki gibi:
 
 ```csharp
 public override void ViewDidLoad ()
@@ -363,13 +363,13 @@ public override void ViewDidLoad ()
 }
 ``` 
 
-Burada, biz yanıt `ValueChanged` biz yukarıda üzerinde tanımlanan olay `NSFlipSwitch` sınıfı ve geçerli yazma **değeri** kullanıcı denetimi tıklattığında.
+Burada, için yanıtlarız `ValueChanged` tanımladığımız yukarıda üzerinde olay `NSFlipSwitch` sınıfı ve geçerli yazma **değer** kullanıcı denetimi tıklattığında.
 
-İsteğe bağlı olarak, biz arabirimi oluşturucuya dönün ve tanımlayan bir **eylem** denetimi:
+İsteğe bağlı olarak, biz için arabirim Oluşturucu dönün ve tanımlayan bir **eylem** denetimi:
 
 [![](custom-controls-images/custom06.png "Yeni bir eylem yapılandırma")](custom-controls-images/custom06.png#lightbox)
 
-Yeniden düzenleme `ViewController.cs` dosya ve aşağıdaki yöntemi ekleyin:
+Yeniden düzenleme `ViewController.cs` dosyasını açıp aşağıdaki yöntemi ekleyin:
 
 ```csharp
 partial void OptionTwoFlipped (Foundation.NSObject sender) {
@@ -379,13 +379,13 @@ partial void OptionTwoFlipped (Foundation.NSObject sender) {
 ```
 
 > [!IMPORTANT]
-> Ya da kullanması gereken **olay** veya tanımlayan bir **eylem** arabirimi Oluşturucu, ancak aynı anda iki yöntem kullanmamalıdır veya birbiriyle çelişen.
+> Ya da kullanmanız gerekir **olay** veya tanımlayan bir **eylem** arabirimi Oluşturucu, ancak aynı anda iki yöntem de kullanmamalıdır veya birbiriyle çakışabilir.
 
 <a name="Summary" />
 
 ## <a name="summary"></a>Özet
 
-Bu makalede, yeniden kullanılabilir bir özel kullanıcı arabirimi denetim Xamarin.Mac uygulamasında oluşturma sırasında ayrıntılı bir bakış sürdü. Özel denetimler UI, başlıca iki yolu fare ve kullanıcı girişine yanıt çizin ve yeni denetim eylemlerine Xcode'nın arabirimi Oluşturucusu'nda kullanıma gördük.
+Bu makalede, yeniden kullanılabilir bir özel kullanıcı arabirimi denetimi bir Xamarin.Mac uygulamasında oluşturmaya ayrıntılı bakış duruma getirdi. Xcode'un arabirim Oluşturucu eylemleri yeni denetime nasıl sunacağınızı öğrenin ve fare ve kullanıcı girişi için yanıt vermek için özel denetimler kullanıcı Arabirimi, başlıca iki yolu çizmek nasıl gördük.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

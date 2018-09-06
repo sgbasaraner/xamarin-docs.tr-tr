@@ -1,58 +1,58 @@
 ---
 title: Xamarin.Mac kaynak listeleri
-description: Bu makalede Xamarin.Mac uygulamasında kaynak listeleriyle çalışma kapsar. Oluşturma ve kaynak listelerinde Xcode arabirimi Oluşturucu Bakımı ve bunlarla C# kodunda etkileşim açıklar.
+description: Bu makale, bir Xamarin.Mac uygulamasını kaynak listeleriyle çalışma kapsar. Bu, Xcode ve arabirim Oluşturucu kaynak listelerini koruma oluşturma ve C# kodunda normalde açıklar.
 ms.prod: xamarin
 ms.assetid: 651A3649-5AA8-4133-94D6-4873D99F7FCC
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: c93d4b0855fb96897da2018596766b16e5385ab4
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: de51395192ab009f5c7fa338a4414ba553610b8c
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792778"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "43780578"
 ---
 # <a name="source-lists-in-xamarinmac"></a>Xamarin.Mac kaynak listeleri
 
-_Bu makalede Xamarin.Mac uygulamasında kaynak listeleriyle çalışma kapsar. Oluşturma ve kaynak listelerinde Xcode arabirimi Oluşturucu Bakımı ve bunlarla C# kodunda etkileşim açıklar._
+_Bu makale, bir Xamarin.Mac uygulamasını kaynak listeleriyle çalışma kapsar. Bu, Xcode ve arabirim Oluşturucu kaynak listelerini koruma oluşturma ve C# kodunda normalde açıklar._
 
-C# ve .NET ile Xamarin.Mac uygulamada çalışırken, aynı erişiminiz kaynak listeler, içinde çalışan bir geliştirici *Objective-C* ve *Xcode* yapar. Xamarin.Mac Xcode ile doğrudan tümleşir nedeniyle, Xcode'nın kullanabilirsiniz _arabirimi Oluşturucu_ ve kaynak listelerinin bakımını (veya isteğe bağlı olarak bunları doğrudan C# kodunda oluşturmak için).
+Bir Xamarin.Mac uygulamasında çalışırken, C# ve .NET ile aynı erişiminiz kaynak listeler, içinde çalışan bir geliştirici *Objective-C* ve *Xcode* yapar. Xamarin.Mac Xcode ile doğrudan tümleşir çünkü Xcode'un kullanabileceğiniz _arabirim Oluşturucu_ oluşturun ve kaynak listelerinin bakımını (veya isteğe bağlı olarak bunları doğrudan C# kodu oluşturmak için).
 
-Bir kaynak listesi anahat Bulucu ya da iTunes yan çubuğunda gibi bir eylem, kaynak göstermek için kullanılan görünüm özel bir türde değil.
+Kaynak listesini anahat görünümünün kenar çubuğu Bulucu veya iTunes gibi bir eylem kaynağını göstermek için kullanılan özel bir türdür.
 
 [![](source-list-images/source05.png "Bir örnek kaynağı listesi")](source-list-images/source05.png#lightbox)
 
-Bu makalede, sizi kaynak listeleriyle Xamarin.Mac uygulamada çalışma temellerini ele alacağız. Aracılığıyla iş önerilen [Hello, Mac](~/mac/get-started/hello-mac.md) makalesi önce özellikle [Xcode ve arabirim Oluşturucu giriş](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) ve [çıkışlar ve eylemleri](~/mac/get-started/hello-mac.md#Outlets_and_Actions) onu farklı bölümler temel kavramları ve biz bu makalede kullanmaya başlayacağınız teknikleri ele alınmaktadır.
+Bu makalede, biz bir Xamarin.Mac uygulamasında kaynak listeleri ile çalışmanın temelleri ele alacağız. Aracılığıyla iş önerilen [Merhaba, Mac](~/mac/get-started/hello-mac.md) makale önce özellikle [Xcode ve arabirim Oluşturucu giriş](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) ve [çıkışlar ve eylemleri](~/mac/get-started/hello-mac.md#outlets-and-actions) olarak bölümlerde temel kavramları ve bu makalede kullanacağız tekniklerini ele alınmaktadır.
 
-Bir göz atalım isteyebilirsiniz [gösterme C# sınıfları / Objective-C yöntemlere](~/mac/internals/how-it-works.md) bölümünü [Xamarin.Mac iç](~/mac/internals/how-it-works.md) de açıklar belge `Register` ve `Export` komutları kablo, C# sınıflarının Objective-C nesneleri ve kullanıcı Arabirimi öğeleri yukarı için kullanılır.
+Bir göz atın isteyebilirsiniz [gösterme C# sınıfları / Objective-C yöntemlere](~/mac/internals/how-it-works.md) bölümünü [Xamarin.Mac iç işlevleri](~/mac/internals/how-it-works.md) de açıklar belge `Register` ve `Export` komutları Objective-C nesneleri ve kullanıcı Arabirimi öğeleri için C# sınıfları kablo-yedekleme kullanılır.
 
 <a name="Introduction_to_Outline_Views" />
 
 ## <a name="introduction-to-source-lists"></a>Kaynak listeleri giriş
 
-Yukarıda belirtildiği gibi bir kaynak listesi anahat görünümü özel bir tür Bulucu ya da iTunes yan çubuğunda gibi bir eylem, kaynak göstermek için kullanılır. Kaynak verir tablo türü genişletme veya hiyerarşik veri satırı daraltma listesidir. Bir tablo görünümü aksine bir kaynak listedeki öğeleri düz bir liste, dosyaları ve klasörleri sabit sürücü gibi bir hiyerarşide düzenlenir. Bir kaynak listesindeki bir öğeyi başka öğeler varsa, genişletilmiş veya kullanıcı tarafından daraltılmış.
+Yukarıda belirtildiği gibi özel bir ana görünüm türü Bulucu veya iTunes kenar çubuğu gibi bir eylem kaynağını göstermek için kullanılan kaynak listesi alır. Kullanıcıya izin veren bir tablo türü genişletin veya hiyerarşik veri satırlarını Daralt kaynak listesi alır. Bir tablo görünümü farklı öğeler kaynak listesinde, düz bir listede değil, bir hiyerarşideki bir sabit sürücü üzerindeki dosya ve klasörleri gibi düzenlenir. Bir kaynak listesindeki bir öğeyi diğer bir öğe içeriyorsa, genişletilmiş veya daraltılmış kullanıcı tarafından.
 
-Kaynak listesi bir özel stilde anahat görünümdür (`NSOutlineView`), kendisi bir tablo görünümü sınıfıdır (`NSTableView`) ve bu nedenle, davranışını çoğunu kendi üst sınıfından devralıyor. Sonuç olarak, anahat görünümü tarafından desteklenen birçok işlemler de desteklenir göre bir kaynak listesi. Xamarin.Mac uygulama bu özelliklerin denetleyebilir ve kaynak listenin parametreleri (ya da kod veya arabirim Oluşturucu) izin vermek veya belirli işlemlerin engellemek için yapılandırabilirsiniz.
+Kaynak listesi özel stil uygulanmış anahat görülmektedir (`NSOutlineView`), kendisi bir tablo görünümü sınıfıdır (`NSTableView`) ve bu nedenle, çok davranışını kendi üst sınıfından devralır. Sonuç olarak, bir ana görünüm tarafından desteklenen çok sayıda işlemi de desteklenir göre bir kaynak listesi. Bir Xamarin.Mac uygulamasını bu özellikleri denetime sahiptir ve izin verebilir veya yasaklayabilir belirli işlemleri kaynak listenin parametreleri (ya da kod veya arabirim Oluşturucu) yapılandırabilirsiniz.
 
-Bir kaynak listesi kendi veri depolamaz, bunun yerine bir veri kaynağında kullanır (`NSOutlineViewDataSource`) satır ve sütunları, gerektiği ölçüde temeline üzerinde gerekli sağlamak için.
+Kendi veri kaynağı listesinden depolamaz, bunun yerine, bir veri kaynağında kullanır (`NSOutlineViewDataSource`) satır ve sütunları, gerektiğinde bir temelinde gerekli sağlamak.
 
-Anahat görünümü temsilci öğesinin bir alt sağlayarak kaynak listenin davranışı özelleştirilebilir (`NSOutlineViewDelegate`) işlevselliği seçmek için anahat türünü desteklemek üzere Seçim ve düzenleme, özel izleme ve tek tek öğelerin özel görünümler öğesi.
+Bir kaynak listenin davranışı anahat görünümü temsilci öğesinin sağlayarak özelleştirilebilir (`NSOutlineViewDelegate`) işlevselliği seçmek için ana hat türü desteklemek için seçim ve düzenleme, özel izleme ve özel görünüm tek tek öğelerin öğesi.
 
-Bir tablo görünümü ve bir anahat görünümü kaynak listesini, davranış ve işlevsellik çoğunu paylaşır olduğundan, üzerinden geçmek isteyebilirsiniz bizim [tablosu görünümleri](~/mac/user-interface/table-view.md) ve [anahat görünümleri](~/mac/user-interface/outline-view.md) devam etmeden önce belgeleri Bu makale ile.
+Tablo görünümü ve bir ana hat görünümü ile kaynak listesini, davranış ve işlevsellik çoğunu paylaşır olduğundan, üzerinden geçmek üzere isteyebilirsiniz bizim [tablo görünümleri](~/mac/user-interface/table-view.md) ve [anahat görünümleri](~/mac/user-interface/outline-view.md) devam etmeden önce belgeleri Bu makalede ile.
 
 <a name="Working_with_Source_Lists" />
 
 ## <a name="working-with-source-lists"></a>Kaynak listeleri ile çalışma
 
-Bir kaynak listesi anahat Bulucu ya da iTunes yan çubuğunda gibi bir eylem, kaynak göstermek için kullanılan görünüm özel bir türde değil. Bizim kaynağı listesi arabirimi Oluşturucusu'nda tanımlarız önce Anahat görünümlerin tersine destekleyen sınıfları içinde Xamarin.Mac oluşturalım.
+Kaynak listesini anahat görünümünün kenar çubuğu Bulucu veya iTunes gibi bir eylem kaynağını göstermek için kullanılan özel bir türdür. Arabirimi Oluşturucu'da kaynak listemize tanımlarız önce ana hat görünümleri destekleyen sınıfları Xamarin.Mac'te oluşturalım.
 
-İlk olarak, yeni bir oluşturalım `SourceListItem` verileri için bizim kaynak listesini tutmak için sınıf. İçinde **Çözüm Gezgini**, projeye sağ tıklayın ve seçin **Ekle** > **yeni dosya...** Seçin **genel** > **boş sınıfı**, girin `SourceListItem` için **adı** tıklatıp **yeni** düğmesi:
+İlk olarak, yeni bir oluşturalım `SourceListItem` kaynak listemize verileri tutmak için sınıf. İçinde **Çözüm Gezgini**, projeye sağ tıklayıp seçin **Ekle** > **yeni dosya...** Seçin **genel** > **boş sınıf**, girin `SourceListItem` için **adı** tıklatıp **yeni** düğmesi:
 
 [![](source-list-images/source01.png "Boş bir sınıf ekleme")](source-list-images/source01.png#lightbox)
 
-Olun `SourceListItem.cs` aşağıdaki gibi dosya bakın: 
+Olun `SourceListItem.cs` dosya görünüm aşağıdaki gibi: 
 
 ```csharp
 using System;
@@ -270,7 +270,7 @@ namespace MacOutlines
 }
 ```
 
-İçinde **Çözüm Gezgini**, projeye sağ tıklayın ve seçin **Ekle** > **yeni dosya...** Seçin **genel** > **boş sınıfı**, girin `SourceListDataSource` için **adı** tıklatıp **yeni** düğmesi. Olun `SourceListDataSource.cs` aşağıdaki gibi dosya bakın:
+İçinde **Çözüm Gezgini**, projeye sağ tıklayıp seçin **Ekle** > **yeni dosya...** Seçin **genel** > **boş sınıf**, girin `SourceListDataSource` için **adı** tıklatıp **yeni** düğmesi. Olun `SourceListDataSource.cs` dosya görünüm aşağıdaki gibi:
 
 ```csharp
 using System;
@@ -352,9 +352,9 @@ namespace MacOutlines
 }
 ```
 
-Bu veriler için bizim kaynak listesini sağlar.
+Bu veri kaynağı listemize sağlar.
 
-İçinde **Çözüm Gezgini**, projeye sağ tıklayın ve seçin **Ekle** > **yeni dosya...** Seçin **genel** > **boş sınıfı**, girin `SourceListDelegate` için **adı** tıklatıp **yeni** düğmesi. Olun `SourceListDelegate.cs` aşağıdaki gibi dosya bakın:
+İçinde **Çözüm Gezgini**, projeye sağ tıklayıp seçin **Ekle** > **yeni dosya...** Seçin **genel** > **boş sınıf**, girin `SourceListDelegate` için **adı** tıklatıp **yeni** düğmesi. Olun `SourceListDelegate.cs` dosya görünüm aşağıdaki gibi:
 
 ```csharp
 using System;
@@ -444,9 +444,9 @@ namespace MacOutlines
 }
 ```
 
-Bu bizim kaynağı listesi davranışını sağlayacaktır.
+Bu kaynak listemize davranışını sağlar.
 
-Son olarak, içinde **Çözüm Gezgini**, projeye sağ tıklayın ve seçin **Ekle** > **yeni dosya...** Seçin **genel** > **boş sınıfı**, girin `SourceListView` için **adı** tıklatıp **yeni** düğmesi. Olun `SourceListView.cs` aşağıdaki gibi dosya bakın:
+Son olarak **Çözüm Gezgini**, projeye sağ tıklayıp seçin **Ekle** > **yeni dosya...** Seçin **genel** > **boş sınıf**, girin `SourceListView` için **adı** tıklatıp **yeni** düğmesi. Olun `SourceListView.cs` dosya görünüm aşağıdaki gibi:
 
 ```csharp
 using System;
@@ -524,35 +524,35 @@ namespace MacOutlines
 }
 ```
 
-Bu, yeniden kullanılabilir, özel bir alt oluşturur `NSOutlineView` (`SourceListView`), kaynak listesi vermiyoruz herhangi bir Xamarin.Mac uygulamada sürücü kullanırız.
+Bu özel, yeniden kullanılabilir öğesinin oluşturur `NSOutlineView` (`SourceListView`), kaynak listesi vermiyoruz herhangi bir Xamarin.Mac uygulamada sürücü için kullanabiliriz.
 
 <a name="Creating_and_Maintaining_Source_Lists_in_Xcode" />
 
-## <a name="creating-and-maintaining-source-lists-in-xcode"></a>Oluşturma ve kaynak listeleri xcode'da koruma
+## <a name="creating-and-maintaining-source-lists-in-xcode"></a>Oluşturulması ve bakımının yapılması xcode'da kaynak listeleri
 
-Şimdi, şimdi bizim arabirimi Oluşturucu kaynak listesinde tasarlayın. Çift `Main.storyboard` arabirimi Oluşturucusu'nda düzenlemek için açın ve bir bölme görünümden sürükleyin dosyaya **kitaplığı denetçisi**, görünüm denetleyiciye ekleyin ve görünümünde yeniden boyutlandırmak için ayarlanmış **Kısıtlamaları Düzenleyicisi** :
+Şimdi, şimdi kaynak listemize arabirim Oluşturucu tasarlayın. Çift `Main.storyboard` arabirimi Oluşturucusu'nda düzenlemek üzere açın ve bir bölünmüş görünümünden sürükleyin dosyaya **kitaplığı denetçisi**, görünüm denetleyiciye ekleyin ve görünüm ile yeniden boyutlandırmak için ayarlayın **Kısıtlamaları Düzenleyicisi** :
 
-[![](source-list-images/source00.png "Kısıtlamaları düzenleme")](source-list-images/source00.png#lightbox)
+[![](source-list-images/source00.png "Kısıtlama düzenleme")](source-list-images/source00.png#lightbox)
 
-Ardından, bir kaynak listesinden sürükleyin **kitaplığı denetçisi**Bölünmüş Görünüm sol tarafına ekleyin ve görünümünde yeniden boyutlandırmak için ayarlanmış **Kısıtlamaları Düzenleyicisi**:
+Ardından, bir kaynak listesinden alan sürükleyin **kitaplığı denetçisi**Bölünmüş Görünüm sol tarafına ekleyin ve görünüm ile yeniden boyutlandırmak için ayarlanmış **Kısıtlamaları Düzenleyicisi**:
 
-[![](source-list-images/source02.png "Kısıtlamaları düzenleme")](source-list-images/source02.png#lightbox)
+[![](source-list-images/source02.png "Kısıtlama düzenleme")](source-list-images/source02.png#lightbox)
 
-Ardından, geçiş **kimlik Görünüm**kaynak listesi seçin ve değiştirin 's **sınıfı** için `SourceListView`:
+Ardından, geçiş **kimlik görünümü**ve kaynak listesinden seçin ve bunu değiştirmeniz 's **sınıfı** için `SourceListView`:
 
 [![](source-list-images/source03.png "Sınıf adı ayarlama")](source-list-images/source03.png#lightbox)
 
-Son olarak, oluşturun bir **çıkışı** bizim kaynağı listesi adlı için `SourceList` içinde `ViewController.h` dosyası:
+Son olarak, oluşturun bir **çıkışı** kaynak listemize adlı için `SourceList` içinde `ViewController.h` dosyası:
 
-[![](source-list-images/source04.png "Prizine yapılandırma")](source-list-images/source04.png#lightbox)
+[![](source-list-images/source04.png "Bir çıkış yapılandırma")](source-list-images/source04.png#lightbox)
 
 Değişikliklerinizi kaydetmek ve Xcode ile eşitlemek Mac için Visual Studio geri dönün.
 
 <a name="Populating the Source List" />
 
-## <a name="populating-the-source-list"></a>Kaynak listesi doldurma
+## <a name="populating-the-source-list"></a>Kaynak listesi dolduruluyor
 
-Düzenleyelim `RotationWindow.cs` Mac için Visual Studio içindeki dosya ve hale 's `AwakeFromNib` yöntemi görünüm aşağıdaki gibi:
+Düzenleyelim `RotationWindow.cs` değerinizi ve Mac için Visual Studio'da dosya 's `AwakeFromNib` yöntemi görünüm aşağıdaki gibi:
 
 ```csharp
 public override void AwakeFromNib ()
@@ -591,7 +591,7 @@ public override void AwakeFromNib ()
 }
 ```
 
-`Initialize ()` Yöntemi bizim kaynak listenin karşı çağrılması gereken **çıkışı** _önce_ tüm öğeler için eklenir. Her grup için öğesi, bir üst öğesi oluşturun ve ardından alt öğeleri bu Grup öğesine ekleyin. Her Grup sonra kaynak listenin koleksiyonuna eklenen `SourceList.AddItem (...)`. Son iki satır için kaynak listesini verileri yüklemek ve tüm grupları genişletir:
+`Initialize ()` Yöntemi bizim kaynak listenin karşı çağrılması gereken **çıkışı** _önce_ öğeler buna eklenir. Her Grup öğeleri için bir üst öğesi oluşturun ve ardından alt öğeleri bu Grup öğesine ekleyin. Her grup, ardından kaynak listenin koleksiyona eklenir `SourceList.AddItem (...)`. Son iki satırı için kaynak listesi verileri yüklemek ve tüm gruplar genişletilir:
 
 ```csharp
 // Display side list
@@ -599,7 +599,7 @@ SourceList.ReloadData ();
 SourceList.ExpandItem (null, true);
 ```
 
-Son olarak, düzenleme `AppDelegate.cs` dosya ve olun `DidFinishLaunching` yöntemi görünüm aşağıdaki gibi:
+Son olarak, Düzen `AppDelegate.cs` dosya ve olun `DidFinishLaunching` yöntemi görünüm aşağıdaki gibi:
 
 ```csharp
 public override void DidFinishLaunching (NSNotification notification)
@@ -612,15 +612,15 @@ public override void DidFinishLaunching (NSNotification notification)
 }
 ```
 
-Biz uygulamamızı çalıştırmak, aşağıdaki görüntülenir:
+Uygulamamızı çalıştırıyoruz, aşağıdaki görüntülenir:
 
-[![](source-list-images/source05.png "Bir örnek uygulamayı çalıştırma")](source-list-images/source05.png#lightbox)
+[![](source-list-images/source05.png "Bir örnek uygulama çalıştırma")](source-list-images/source05.png#lightbox)
 
 <a name="Summary" />
 
 ## <a name="summary"></a>Özet
 
-Bu makalede, kaynak listeleriyle çalışma Xamarin.Mac uygulamada ayrıntılı bir bakış sürdü. Oluşturma ve kaynak listelerinin Xcode'nın arabirimi Oluşturucu bakımını ve C# kodunda kaynak listeleri ile çalışmak nasıl gördük.
+Bu makalede ayrıntılı bir Xamarin.Mac uygulamasında kaynak listeleriyle çalışmak göz duruma getirdi. Oluşturma ve kaynak listesi Xcode'un arabirim oluşturucu içinde korumak ve C# kodunda kaynak listeleri ile çalışma konusunda gördük.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
@@ -629,7 +629,7 @@ Bu makalede, kaynak listeleriyle çalışma Xamarin.Mac uygulamada ayrıntılı 
 - [Tablo Görünümleri](~/mac/user-interface/table-view.md)
 - [Anahat Görünümleri](~/mac/user-interface/outline-view.md)
 - [OS X İnsan Arabirimi yönergelerine](https://developer.apple.com/library/mac/documentation/UserExperience/Conceptual/OSXHIGuidelines/)
-- [Anahat görünümlerinde giriş](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/OutlineView/OutlineView.html#//apple_ref/doc/uid/10000023i)
+- [Anahat görünümleri giriş](https://developer.apple.com/library/mac/documentation/Cocoa/Conceptual/OutlineView/OutlineView.html#//apple_ref/doc/uid/10000023i)
 - [NSOutlineView](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Classes/NSOutlineView_Class/index.html#//apple_ref/doc/uid/TP40004079)
 - [NSOutlineViewDataSource](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/ApplicationKit/Protocols/NSOutlineViewDataSource_Protocol/index.html#//apple_ref/doc/uid/TP40004175)
 - [NSOutlineViewDelegate](https://developer.apple.com/library/mac/documentation/Cocoa/Reference/NSOutlineViewDelegate_Protocol/index.html#//apple_ref/doc/uid/TP40008609)

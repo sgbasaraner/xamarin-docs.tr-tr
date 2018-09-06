@@ -5,36 +5,32 @@ ms.prod: xamarin
 ms.assetid: 36A1531E-630A-4B7C-A333-4E67E5DC023C
 author: topgenorth
 ms.author: toopge
-ms.date: 03/29/2018
-ms.openlocfilehash: ea71391382f9e1ecb80cbf5f2d5bf127e0d6d1be
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.date: 08/08/2018
+ms.openlocfilehash: 99ed8d06331ac7e423791309da79d72d5a10d70f
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38815288"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "43780673"
 ---
 # <a name="limitations-of-xamarin-live-player"></a>Xamarin Live Player sınırlamaları
 
 ![Önizleme özelliği](~/media/shared/preview.png)
 
 ## <a name="device-requirements"></a>Cihaz gereksinimleri
-Xamarin Live Player uygulamasını aşağıdaki cihazları destekler:
 
-# <a name="androidtabandroid"></a>[Android](#tab/android)
+Xamarin Live Player uygulamasını aşağıdaki Android cihazlarına destekler:
 
 - Android 4.2 veya üzeri.
 - ARM-v7a, v8a ARM, ARM64 v8a, x 86 veya x86_64 işlemci.
 
-# <a name="iostabios"></a>[iOS](#tab/ios)
-
-- iOS 9.0 veya üstünde.
-- ARM64 işlemci.
-
------
-
 ## <a name="limitations"></a>Sınırlamalar
 
 Aşağıdaki öğeler de dahil olmak üzere, Xamarin Live Player çalıştırabilirsiniz şeyler bazı sınırlamalar vardır:
+
+### <a name="ios"></a>iOS
+
+Live Player, iOS için kullanılamıyor.
 
 ### <a name="xamarinforms"></a>Xamarin.Forms
 
@@ -43,11 +39,10 @@ Aşağıdaki öğeler de dahil olmak üzere, Xamarin Live Player çalıştırabi
 - Özel denetimler ile özel bağlanabilir özellikler desteklenmez.
 - Gömülü kaynaklar desteklenmez (IE. görüntüleri veya başka kaynaklara bir PCL'de ekleme).
 - Üçüncü taraf MVVM çerçeveleri (örn. desteklenmez Prism, Mvvm arası, Mvvm Light, vb.).
-- Varlık katalogları ios'ta desteklenmez.
 
 ### <a name="other-project-types"></a>Diğer proje türleri
 
-- Live Player, yerel Android veya (Android XML veya film şeritleri için kullanıcı arabirimi kullanan) iOS projeleri için tasarlanmamıştır.
+- Live Player (Android XML için kullanıcı arabirimi kullanan) yerel Android projeleri için tasarlanmamıştır.
 
 ### <a name="misc"></a>Çeşitli
 
@@ -55,7 +50,7 @@ Aşağıdaki öğeler de dahil olmak üzere, Xamarin Live Player çalıştırabi
 - Bazı sistem sınıfları geçersiz kılınamaz (örneğin, bir alt uygulayamaz).
 - Sağlama gerektiren bazı platform özellikleri (ancak bu Fotoğraf Galerisi erişim gibi yaygın işlemleri için yapılandırılmış) Xamarin Live Player uygulamasında çalışmaz.
 - Özel hedefler ve derleme adımları göz ardı edilir. Örneğin, Fody, Refit AutoFac ve AutoMapper gibi araçları dahil edilemez.
-- F # projeleri, Android'de desteklenmez ve sınırlı iOS desteği
+- F # projelerinde desteklenmez.
 - Özel genel sınıfları ve arabirimleri ile Gelişmiş senaryolar desteklenmiyor olabilir.
 
 Ek sorunları raporlamak lütfen [bugzilla](https://aka.ms/live-player-report-issue).

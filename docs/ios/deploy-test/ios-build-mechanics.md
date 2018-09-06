@@ -1,61 +1,61 @@
 ---
-title: iOS derleme mekanizması
-description: Uygulamalarınızı süreyi bu kılavuzda araştırır ve tüm yapı yapılandırmalarını için daha hızlı çalıştırılacağı yöntemlerinin nasıl kullanılacağını oluşturur.
+title: iOS derleme mekaniği
+description: Bu kılavuz, uygulamalarınızı süreyi keşfediyor ve tüm derleme yapılandırmaları için için daha hızlı çalıştırılacağı yöntemlerinin nasıl kullanılacağını oluşturur.
 ms.prod: xamarin
 ms.assetid: 06FD3940-D666-4C9E-BC3E-BBE481EF8012
 ms.technology: xamarin-ios
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/18/2017
-ms.openlocfilehash: df84e78709b0ff16087c4bb9816c5d45f6ec33ed
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4145368281c2967bd1311389e5e1b1432af2c9b8
+ms.sourcegitcommit: e64c3c10d6a36b3b031d6d4dbff7af74ab2b7f21
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30772363"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "43780573"
 ---
-# <a name="ios-build-mechanics"></a>iOS derleme mekanizması
+# <a name="ios-build-mechanics"></a>iOS derleme mekaniği
 
-_Uygulamalarınızı süreyi bu kılavuzda araştırır ve tüm yapı yapılandırmalarını için daha hızlı çalıştırılacağı yöntemlerinin nasıl kullanılacağını oluşturur._
+_Bu kılavuz, uygulamalarınızı süreyi keşfediyor ve tüm derleme yapılandırmaları için için daha hızlı çalıştırılacağı yöntemlerinin nasıl kullanılacağını oluşturur._
 
-Harika uygulamaları geliştirme çalışan daha fazlasını yazma kodudur. İyi yazılmış bir uygulama, daha küçük ve daha hızlı çalışan uygulamaları ile daha hızlı yapıları gerçekleştirmek iyileştirmeler içermelidir. Bu iyileştirmeler yalnızca daha iyi bir deneyim için kullanıcı, aynı zamanda, veya proje üzerinde çalışan herhangi bir geliştirici sonuçlanır değil. Uygulamanız ile ilgilenirken her şeyi genellikle zaman aşımına emin olmak için gereklidir. 
+Harika uygulamalar geliştirmeye daha fazlasını çalışır yazma kod değil. İyi yazılmış bir uygulama, daha küçük ve daha hızlı çalışan uygulamaları ile daha hızlı yapılar gerçekleştirmek en iyi duruma getirme içermelidir. Daha iyi bir deneyim için kullanıcı, aynı zamanda veya projede çalışan herhangi bir geliştirici bu iyileştirmeler yalnızca açmayacaktır. Uygulamanız ile ilgilenirken her şeyi genellikle zaman aşımına emin olmak için gereklidir. 
 
-Varsayılan seçenekleri güvenli ve hızlı, ancak her durum için en uygun durumda olmayan unutmayın. Ayrıca, birçok seçenek yavaşlaması veya geliştirme döngüsü bireysel proje bağlı olarak hızlandırmak. Örneğin, yerel çıkarma zaman alır, ancak çok az boyutu kazanılan, ardından harcanan süre çıkarma göre daha hızlı dağıtma kurtarılacak değil. Diğer taraftan, yerel çıkarma uygulama büyük ölçüde; bu durumda, daha hızlı dağıtmak için olacaktır küçültebilirsiniz. Bu projeleri arasında değişir ve bilmenin tek yolu test etmektir.
+Varsayılan seçenekleri güvenli ve hızlı, ancak her durum için en uygun durumda olmayan unutmayın. Ayrıca, birçok seçenek yavaşlamasına veya projeyi bağlı olarak geliştirme döngüsü hızlandırın. Örneğin, yerel şeridi oluşturma zaman alır, ancak çok az boyutu kazanılan, ardından harcanan süre şeridi oluşturma tarafından daha hızlı dağıtma kurtarılmaz. Öte yandan, yerel şeridi oluşturma uygulama önemli ölçüde, bu durumda daha hızlı bir şekilde dağıtmak için de artar küçültebilirsiniz. Bu projeler arasında farklılık gösterir ve öğrenmek için tek yolu test etmektir.
 
-Xamarin derleme hızları ayrıca çeşitli kapasiteleri tarafından etkilenecek ve yetenekleri can'den bir bilgisayarın performansı etkiler: işlemci özellikleri, veri yolu hızları, fiziksel bellek, disk hızı, ağ hızını miktarı. Bu performans sınırlamaları bu belgenin kapsamı dışındadır ve geliştirici sorumluluğundadır.
+Xamarin derleme hızları da çeşitli kapasiteler tarafından etkilenmez ve can'den bir bilgisayarın özellikleri, performansı etkiler: işlemci özellikleri, veri yolu hızı, fiziksel bellek, disk hızı, ağ hızını miktarı. Bu performans sınırlamalar, bu belgenin kapsamı dışındadır ve geliştiricinin sorumluluğudur.
 
 
-## <a name="timing-apps"></a>Zamanlama uygulamalar
+## <a name="timing-apps"></a>Zamanlama uygulamaları
 
 # <a name="visual-studio-for-mactabvsmac"></a>[Mac için Visual Studio](#tab/vsmac)
 
 Mac için Visual Studio tanılama MSBuild çıktısı etkinleştirmek için:
 
-1. Tıklatın **Mac için Visual Studio > tercihleri...**
+1. Tıklayın **Mac için Visual Studio > Tercihler...**
 2. Soldaki ağaç görünümünde seçin **projeleri > derleme**
-3. Sağ taraftaki panelinde aşağı açılan günlük ayrıntı düzeyini ayarlamak **tanılama**: [ ![ ] (ios-build-mechanics-images/image2.png "günlük ayrıntı düzeyini ayarlama")](ios-build-mechanics-images/image2.png#lightbox)
+3. Sağ bölmede aşağı açılan günlük ayrıntı düzeyini ayarlayın **tanılama**: [ ![](ios-build-mechanics-images/image2.png "günlük ayrıntı düzeyini ayarlama")](ios-build-mechanics-images/image2.png#lightbox)
 4. **Tamam**’a tıklayın.
 5. Mac için Visual Studio'yu yeniden başlatın
 6. Temizleyin ve paketinizi yeniden derleyin
-7. Hataları paneli içindeki tanılama çıktıları görüntülemek (Görünüm > klavye takımı > hatalar) yapı çıktı düğmesini tıklatarak
+7. Hata paneli içinde tanılama çıkışı görüntülemek (Görüntüle > doldurmalar > hatalar) derleme çıkışı düğmesine tıklayarak
 
 
 # <a name="visual-studiotabvswin"></a>[Visual Studio](#tab/vswin)
 
 Visual Studio tanılama MSBuild çıktısı etkinleştirmek için:
 
-1. Tıklatın **Araçlar > Seçenekler...**
+1. Tıklayın **Araçlar > Seçenekler...**
 2. Soldaki ağaç görünümünde seçin **projeler ve çözümler > derleme ve çalıştırma**
-3. Sağ taraftaki panelinde ayarlayın *MSBuild derleme çıktısı ayrıntı açılır* için **tanılama**: [ ![ ] (ios-build-mechanics-images/image2-vs.png "MSBuild ayarı yapı çıktı Ayrıntı")](ios-build-mechanics-images/image2-vs.png#lightbox)
+3. Sağ bölmede ayarlamak *MSBuild derleme çıkışı ayrıntı açılan* için **tanılama**: [ ![](ios-build-mechanics-images/image2-vs.png "MSBuild yapı çıkış Ayrıntı düzeyi")](ios-build-mechanics-images/image2-vs.png#lightbox)
 4. **Tamam**’a tıklayın.
-5. Temizleyin ve paketinizi yeniden derleyin.
-6. Tanılama çıktıları Çıktı panelinde görünür olur.
+5. Temiz ve paketinizi yeniden derleyin.
+6. Tanılama çıkışı Çıkış panelinde görünür olur.
 
 -----
 
 ## <a name="timing-mtouch"></a>Zamanlama mtouch
 
-Geçişi mtouch oluşturma işlemi için belirli bilgileri görüntülemek için `--time --time` mtouch bağımsız değişkenler için **proje seçenekleri**. Sonuçları derleme çıktı için arama yaparak bulunan `MTouch` görevi:
+Mtouch yapı işlemine özgü bilgileri görüntülemek için geçirmek `--time --time` mtouch bağımsız, **proje seçenekleri**. Sonuçları derleme çıktısında arayarak bulunan `MTouch` görevi:
 
 ```csharp
 Setup: 36 ms
@@ -65,144 +65,144 @@ Extracted native link info: 987 ms
 Total time: 1554 ms
 ```
 
-## <a name="connecting-from-visual-studio-with-build-host"></a>Visual Studio'da derleme ana bilgisayarla bağlanma
+## <a name="connecting-from-visual-studio-with-build-host"></a>Visual Studio'da derleme konağı ile bağlanma
 
-Xamarin Araçları Teknik OS X 10.10 Yosemite veya daha sonra çalıştırabileceğiniz tüm Mac üzerinde çalışır. Ancak, geliştirici deneyimleri ve yapı kez Mac performans tarafından engelliyordu
+Xamarin Araçları Teknik olarak, OS X Yosemite 10.10 ya da üzerini çalıştıran bir Mac üzerinde de çalışır. Ancak, geliştirici deneyimleri ve derleme zamanlarını Mac performansını tarafından engelliyordu
 
-Bağlantısı kesik durumda Visual Studio Windows yalnızca C# derleme aşamayı gerçekleştirir ve gerçekleştirmeyi denemez bağlama veya uygulamaya paketini Uygulama Nesne AĞACI derleme bir _.app_ paket ya da oturum uygulama paketi. (C# derleme nadiren bir performans düşüklüğü aşamasıdır.) Burada ardışık düzeninde yapı Mac için doğrudan konakta Mac yapı Visual Studio'da oluşturarak yavaşlamadan sabitleme girişimi
+Bağlantısı kesik durumda Windows üzerinde Visual Studio yalnızca C# derleme aşaması gerçekleştirir ve gerçekleştirmeyi denemez bağlama veya AOT derlemesi paketini uygulamaya, bir _.app_ paket veya uygulama paket grubunu oturum. (C# derleme nadiren bir performans sorununun aşamasıdır.) Burada işlem hattı, yapı Mac için Visual Studio Mac derleme konağı üzerinde doğrudan oluşturarak yavaşlamasıdır saptamak deneyin
 
 
-Ayrıca, sluggishness daha yaygın yerlerde Windows makine Mac yapı konak arasında ağ bağlantısı biridir. Bu, kablosuz bağlantı kullanarak ya da (örneğin, bir Mac-içinde--bulut hizmeti) doymuş makine gezinir gerek kalmadan, ağdaki fiziksel impediment nedeniyle olabilir.
+Ayrıca, sluggishness için daha yaygın yerlerden biri Windows makinenin Mac derleme konağı arasında ağ bağlantısı olduğunu. Bu bir kablosuz bağlantı ya da (örneğin, bir Mac---bulutta hizmeti) doygun bir makine gezinir gerek kalmadan ağdaki fiziksel bir engel olabilir.
 
-## <a name="simulator-tricks"></a>Simulator püf noktaları
+## <a name="simulator-tricks"></a>Simülatör püf noktaları
 
  
-Mobil uygulamaları geliştirirken kodunu hızlı bir şekilde dağıtmak için gereklidir. Çeşitli nedenlerle hızı ve cihaz gereksinimleri sağlama eksikliği dahil olmak üzere için geliştiriciler genellikle önceden yüklenmiş simulator veya öykünücü dağıtmak seçin. Geliştirici Araçları üreticileri için kararı benzeticisi veya öykünücü sağlamak için bir denge hızı ve uyumluluk arasında gelir. 
+Mobil uygulama geliştirirken kod hızlı bir şekilde dağıtmak için gereklidir. Bir çeşitli nedenlerle hızı ve bir cihaz sağlama gereksinimleri dahil olmak üzere, geliştiriciler genellikle önceden yüklenmiş simülatörü veya öykünücünüze dağıtmak seçin. Geliştirici Araçları'nın üreticileri için kararı simülatörü veya öykünücü sağlamak için bir denge hızını ve uyumluluğunu arasında gelir. 
 
-Apple iOS geliştirme için bir benzetici kodu çalıştırmak için daha az kısıtlayıcı bir ortam oluşturarak uyumluluk hızı yükseltme sağlar. Bu daha az kısıtlayıcı ortam yalnızca içinde anında (JIT) derleyici simülatörü kullanmak Xamarin sağlar (tersine [Uygulama Nesne AĞACI](~/ios/internals/architecture.md) bir cihazda), yapı çalışma zamanında yerel koda derlenmiş olan anlamına gelir. Mac aygıt hızlıdır gibi bu daha iyi performans sağlar.
+Apple iOS geliştirme için bir benzetici kodu çalıştırmak için daha az kısıtlayıcı bir ortam oluşturarak uyumluluk hızını yükseltme sağlar. Xamarin için simülatör yalnızca zamanında (JIT) derleyici kullanmak bu daha az kısıtlayıcı bir ortam sağlar (başlangıcı yerine sonundan [AOT](~/ios/internals/architecture.md) bir cihazda), derleme zamanında yerel koda derlenmiş olan anlamına gelir. Mac cihaz çok daha hızlı olduğundan, bu en iyi performansı sağlar.
 
-Benzetici, cihazda gerektiği her zaman, yerleşik aksine yüklenmek üzere Başlatıcısı sağlayan bir paylaşılan uygulama Başlatıcısı kullanır.
+Simülatör, cihazda gerekli olduğundan her zaman oluşturulan aksine kullanılabilmeleri Başlatıcısı sağlayan bir paylaşılan uygulama Başlatıcısı kullanır.
 
-Yukarıdaki bilgileri göz önünde bulundurularak listesi oluşturma ve uygulamanıza simulator dağıtırken en iyi performansı sağlamak için yapılması gerekenler hakkında bazı bilgileri verir.
+Aşağıdaki liste, yukarıdaki bilgileri göz önünde bulundurularak oluştururken ve dağıtırken simülatör uygulamanızı en iyi performansı sağlamak için atılması gereken adımlar hakkında bazı bilgileri sağlar.
  
 ### <a name="tips"></a>İpuçları
 
-- Derlemeler için: 
-  - Seçimini **en iyi duruma getirme PNG görüntüleri** proje seçenekleri seçeneği. Bu iyileştirme simulator üzerinde yapılar için gerekli değildir.
-  - Bağlayıcı kümesine **olmayan bağlantı**. Yürütülmekte önemli miktarda zaman aldığından bağlayıcı devre dışı bırakılması daha hızlıdır.
-  - Paylaşılan uygulama Başlatıcısı'nı kullanarak devre dışı bırakma `--nofastsim` bayrağı çok daha yavaş olacak şekilde simulator derlemeleri neden olur. Artık gerekli olmadığında bu bayrağını kaldırın.
-  - Yerel kitaplıkları kullanarak paylaşılan simlauncher ana yürütülebilir dosya gibi durumlarda yeniden kullanılamaz ve her derleme için derlenmesi uygulamaya özgü yürütülebilir olduğundan daha yavaştır.
+- Yapılar için: 
+  - Seçimini **en iyi duruma getirme PNG görüntülerini** proje seçeneklerinde seçeneği. Bu iyileştirme, simülatör derlemelerinde için gerekli değildir.
+  - Bağlayıcı kümesine **bağlama**. Yürütme için oldukça uzun sürdüğü için bağlayıcının devre dışı bırakılması daha hızlıdır.
+  - Paylaşılan uygulama Başlatıcısı'nı kullanarak devre dışı bırakma `--nofastsim` bayrağı simülatör yapılar çok yavaş olması neden olur. Artık gerekli olmadığında bu bayrağı kaldırın.
+  - Yerel kitaplıkları kullanma gibi durumlarda paylaşılan simlauncher temel yürütülebilir dosyasını kullanılamayacak ve her derleme için derlenecek uygulamaya özgü çalıştırılabilir olduğundan daha yavaştır.
 - Dağıtım için
-  - Her zaman mümkün olduğunda çalıştıran simulator tutun. 12 saniye soğuk başlatmak için simulator devam edebilir.
+  - Her zaman mümkün olduğunda çalıştıran simülatör tutun. Uygulamanın, simülatör hazırlıksız başlatma için 12 saniyeye kadar sürebilir.
 - Ek ipuçları
-  - Yeniden yapılandırmadan önce temizler çünkü derleme yeniden tercih edilir. Kullanılabilecek başvuruları kaldırır temizleme uzun bir süre devam edebilir.
-  - Simulator korumalı alan zorlamaz olgu yararlanın. Benzetici her uygulama başlatıldığında videolar veya projenize dahil diğer varlıklar gibi büyük kaynaklarına sahip maliyetli dosya kopyalama işlemleri oluşturabilirsiniz. Bu maliyeti yüksek işlemler bu dosyaları giriş dizininde tarafından yerleştirmez ve bunları uygulamanızda tam dosya yolunu başvuru.  
-  - Şüpheli zaman kullanmak `–time –time` değişikliğinizin ölçmek için bayrağı
+  - Yeniden yapılandırmadan önce temizlediğinden, derleme yeniden tercih eder. Kullanılabilir başvurularını kaldırır gibi temizleme uzun zaman alabilir.
+  - Simülatör sanal zorlamaz olgu yararlanın. Simülatörde her uygulama başlatıldığında videoları veya projenize dahil diğer varlıklar gibi büyük kaynaklara sahip yüksek maliyetli dosya kopyalama işlemleri oluşturabilirsiniz. Bu dosyalar giriş dizininde yerleştirerek bu pahalı işlemler kaçının ve bunları uygulamanızda tam dosya yolunu başvuru.  
+  - Şüpheye düştüğünüzde kullanın `--time --time` değişikliğiniz ölçmek için bayrağı
 
-Aşağıdaki ekran görüntüsünde, iOS seçeneklerinizi simulator ilgili bu seçenekleri ayarlamak verilmektedir:
+Aşağıdaki ekran görüntüsünde, iOS seçeneklerinizi simülatör için bu seçenekleri ayarlamak verilmektedir:
 
 [![](ios-build-mechanics-images/image3.png "Ayar seçenekleri")](ios-build-mechanics-images/image3.png#lightbox)
 
 ## <a name="device-tricks"></a>Cihaz püf noktaları
 
-İOS aygıtı için kullanılan derleme, küçük bir alt simulator olduğu gibi cihaza dağıtma simulator için dağıtımına benzer. Cihaz için yapı pek çok daha fazla adım gerekiyor, ancak uygulamanızı en iyi duruma getirmek için ek fırsatlar sağlama avantajına sahiptir.
+Simülatör küçük bir kısmı iOS cihazları için kullanılan bir derleme olduğundan cihaza dağıtım için simülatör, dağıtımına benzer. Cihaz için yapı çok daha fazla adım gerektirir, ancak uygulamanızı en iyi duruma getirmek için ek fırsatları sağlayarak avantajı vardır.
 
-### <a name="build-configurations"></a>Derleme yapılandırmaları
+### <a name="build-configurations"></a>Derleme Yapılandırmaları
 
-İOS uygulamaları dağıtırken sağlanan derleme yapılandırmaları vardır. Ne zaman ve neden, iyileştirme öğrenmek için her yapılandırmasının iyi anlamış olmanız önemlidir.
+İOS uygulamaları dağıtırken sağlanan derleme yapılandırmaları vardır. Ne zaman ve neden, iyileştirme bilmeniz gereken her yapılandırmasının iyi anlamış olmanız önemlidir.
 
  - Hata ayıklama
-  - Bu, bir uygulama geliştirildiği sırada kullanılmalıdır ve yapmanız gereken, ana yapılandırma bu nedenle, olabildiğince hızlı.
+  - Bu ana yapılandırmayı bir uygulama geliştirildiği sırada kullanılmalıdır ve gerekir, bu nedenle, olabildiğince hızlı.
  - Sürüm
-  - Yayın derlemeleri, kullanıcılarınıza gönderilen ve performans odaklanmak dönüştürmektir. Yayın yapılandırma kullanılırken, LLVM en iyi duruma getirme derleyici kullanın ve PNG dosyaları en iyi duruma getirmek isteyebilirsiniz.
+  - Kullanıcılarınıza gönderilen sürüm yapıları olanlardır ve performansa odaklanan üst düzey öneme sahiptir. Sürüm yapılandırmasını kullanırken, PNG dosyaları iyileştirme ve LLVM iyileştirici derleyiciyi kullanmak isteyebilirsiniz.
 
  
-Oluşturma ve dağıtma arasındaki ilişkiyi anlamak önemlidir. Dağıtım süresini uygulama boyutta bir işlevdir. Daha büyük bir uygulama dağıtmak için çok uzun sürüyor. Uygulama boyutu en aza indirerek, dağıtım süresini azaltabilir.
+Oluşturma ve dağıtma arasındaki ilişkiyi anlamak önemlidir. Dağıtım süresi, uygulama boyutunun bir işlevdir. Daha büyük bir uygulama dağıtmak için çok uzun sürüyor. Uygulama boyutu en aza indirerek, dağıtım süresini azaltabilirsiniz.
 
-Uygulama boyutu en aza yapı süresini azaltabilir. Bu durum, kod uygulamadan kaldırma yerel olarak kullanılmayacak kod derleme daha az zaman alır çünkü. Daha küçük nesne dosyalara daha hızlı bağlama, daha küçük bir yürütülebilir dosyayı oluşturmak için daha az sembolleriyle oluşturan anlamına gelir. Alan, bu nedenle, kaydetme sahip olmasının nedeni bir çift gelir değerlerini, **bağlantı SDK** tüm cihaz için varsayılan yer almaktadır. 
+Uygulama boyutu en aza indirerek yapı süresini azaltabilir. Kod uygulamadan kaldırma yerel olarak kullanılmayacak kodu derlerken daha az zaman alacağından budur. Daha hızlı bağlama, daha küçük nesne dosyaları daha küçük bir yürütülebilir dosyayı oluşturmak için daha az sembol oluşturan anlamına gelir. Sahip olmasının nedeni bir çift gelir değerlerini, boşluk, bu nedenle, kaydetme **bağlantı SDK** tüm cihazlar için varsayılan yer almaktadır. 
 
 > [!NOTE]
-> **Bağlantı SDK** seçeneği yalnızca, bağlantı Framework SDK'ları yalnızca veya bağlantı SDK derlemeleri olarak kullanılıyor IDE bağlı olarak görünebilir.
+> **Bağlantı SDK** seçenek yalnızca bağlantı Framework SDK'ları yalnızca veya bağlantı SDK derlemeleri kullanılan IDE bağlı olarak görünebilir.
  
 
 ### <a name="tips"></a>İpuçları
 
 - Derleme: 
-  - FAT ikiliyi (örneğin ARMv7 + ARM64) hızlı tek mimarisi (örneğin ARM64) oluşturma
+  - FAT ikili (örn. ARMv7 + ARM64) hızlı tek bir mimari (örneğin, ARM64) oluşturma
   - Hata ayıklama sırasında PNG dosyaları en iyi duruma getirme kaçının
-  - Tüm derlemelerde bağlama göz önünde bulundurun. Her derlemeyi en iyi duruma getirme 
-  - Hata ayıklama simgeleri oluşturulmasını kullanarak devre dışı bırakma `--dsym=false`. Ancak, farkında bu devre dışı bırakma kilitlenme raporları uygulama yerleşik bu makinede yalnızca symbolicated, anlamına gelir ve yalnızca uygulama atılmış değildi olması gerekir.
+  - Tüm derlemelerin bağlanması göz önünde bulundurun. Her derleme en iyi duruma getirme 
+  - Hata ayıklama sembolleri oluşturmayı kullanarak devre dışı bırakma `--dsym=false`. Ancak, bu devre dışı bırakma kilitlenme raporları oluşturulup bu makinede yalnızca symbolicated, anlamına gelir, uyumlu ve yalnızca uygulama çıkartılır değildi olması gerekir.
 
  
-Kaçınılması gereken bazı noktalar açıklanmaktadır:
+Kaçınılması gereken bazı noktalar şunlardır:
 
-- FAT ikili dosyaları (hata ayıklama) 
-- Bağlayıcı devre dışı bırak `–nolink` 
-- Çıkarma devre dışı bırakma 
+- FAT ikili (debug) 
+- Bağlayıcı devre dışı bırak `--nolink` 
+- Şeridi oluşturma devre dışı bırakma 
   - Semboller `--nosymbolstrip` 
   - IL (sürüm) `--nostrip`.  
  
 Ek ipuçları 
 
 - Simulator'da yeniden derleme tercih gibi 
-  - Uygulama Nesne AĞACI misiniz derlemeler (nesne dosyaları) önbelleğe alınır 
-- Hata ayıklama sembolleri, dsymutil çalıştıran nedeniyle ve aygıtlara yüklemek için daha büyük ve ek anda yukarı bittikten sonra daha uzun süren oluşturur. 
-- Yayın derlemeleri varsayılan olarak, bir IL Şerit derlemelerin yapın. Yalnızca biraz zaman alır ve büyük olasılıkla geri daha küçük bir .app cihazına dağıtırken kazanılan.
-- Her yapı (hata ayıklama) büyük statik dosyaları dağıtmaktan kaçının 
-  - UIFileSharingEnabled (info.plist) kullanın 
-    - Varlıklar kez yüklenir 
-- Şüpheli zaman kullanmak `–time –time` değişikliğinizin ölçmek için bayrağı
+  - AOT istediğiniz derlemeleri (nesne dosyaları) önbelleğe alınır 
+- Hata ayıklama sembolleri dsymutil çalıştıran nedeniyle ve cihazlara yüklemek için daha büyük, ek süre olan yukarı bittikten sonra daha uzun sürer oluşturur. 
+- Yayın derlemeleri varsayılan olarak, bir IL Şerit derlemelerin ne yapacağını. Yalnızca biraz zaman alır ve büyük olasılıkla daha küçük bir .app cihazına dağıtırken geri kazanılan.
+- Her derlemede (hata ayıklama) büyük statik dosyaları dağıtmak gerekmez 
+  - UIFileSharingEnabled (Info.plist) kullanın 
+    - Varlıklar bir kez karşıya yüklenebilir 
+- Şüpheye düştüğünüzde kullanın `--time --time` değişikliğiniz ölçmek için bayrağı
 
-Aşağıdaki ekran görüntüsünde, iOS seçeneklerinizi simulator ilgili bu seçenekleri ayarlamak verilmektedir:
+Aşağıdaki ekran görüntüsünde, iOS seçeneklerinizi simülatör için bu seçenekleri ayarlamak verilmektedir:
 
 [![](ios-build-mechanics-images/image4.png "Ayar seçenekleri")](ios-build-mechanics-images/image4.png#lightbox)
 
 ## <a name="using-the-linker"></a>Bağlayıcı kullanma
 
-Uygulamanızı oluştururken mtouch uygulama kullanmıyorsa kod kaldıran yönetilen kod için bir bağlayıcı kullanır. Teorik olarak, bu daha küçük ve bu nedenle daha hızlı derlemeleri sağlar. Bağlayıcı hakkında daha fazla bilgi için bkz [İos'ta bağlama](~/ios/deploy-test/linker.md) Kılavuzu.
+Uygulamanızı oluştururken mtouch uygulama kullanmayan kod kaldıran yönetilen kod için bir bağlayıcı kullanır. Teorik olarak, bu daha küçük ve bu nedenle daha hızlı derlemeler sağlar. Bağlayıcı hakkında daha fazla bilgi için bkz [İos'ta bağlama](~/ios/deploy-test/linker.md) Kılavuzu.
 
-Bağlayıcı kullanırken aşağıdaki seçenekleri göz önünde bulundurun:
+Bağlayıcısı kullanırken aşağıdaki seçenekleri göz önünde bulundurun:
 
-- Seçme **olmayan bağlantı** bir aygıtı yapı büyük bir zaman miktarıdır sürer ve aynı zamanda daha büyük bir uygulama oluşturur. 
-  - Boyut sınırını olmaları durumunda Apple uygulamaları reddeder. Bağımlı `MinimumOSVersion`, bu 60 MB olarak küçük olabilir. 
+- Seçme **bağlama** bir cihaz için yapı büyük bir süre sürer ve aynı zamanda daha büyük bir uygulama oluşturur. 
+  - Boyut sınırını olmaları durumunda Apple uygulamaları reddeder. Bağımlı `MinimumOSVersion`, bu 60 MB küçük olabilir. 
   - Yerel yürütülebilir dahil edilir. 
-  - Kullanarak yok JIT derleme (aksine, bir cihazda Uygulama Nesne AĞACI) kullanıldığından simulator derlemeler için bağlantı daha hızlı değil.
+  - Kullanarak yoktur çünkü JIT derlemesi (aksine, bir cihazda AOT) kullanılıyor simülatör yapıları için bağlantı daha hızlı.
 - Bağlantı SDK varsayılan seçenektir.
-- Tüm olmayabilir kullanmak, güvenli özellikle de bu kodu kullanarak değil, kendi böyle bir NuGets bağlantı veya bileşenleri. Derlemeleri bağlamayan seçerseniz tüm hizmetlerin kodundan potansiyel olarak daha büyük uygulamaları oluşturma, uygulama ile birlikte. 
-  - Ancak, isterseniz **bağlantı tüm** dış bileşenlere özellikle kullanılıyorsa, uygulama kilitlenme. Bu belirli türlerinde yansıma kullanarak bazı bileşenleri kaynaklanır.
-  - Statik çözümleme ve yansıma birlikte çalışmaz. 
+- Tüm olabilir kullanmak üzere güvenli özellikle de diğer bir deyişle kodunu kullanarak değil, kendi böyle bir Nuget'i bağlantı veya bileşenleri. Derlemeleri bağlamayan seçerseniz tüm bu hizmetler kodundan potansiyel olarak büyük uygulamalar oluşturma uygulamanızla dahil edilir. 
+  - Ancak, isterseniz **bağlantı tüm** dış bileşenler özellikle kullanılması durumunda uygulama kilitlenme. Bu, bazı türleri üzerinde yansıma kullanarak bazı bileşenler kaynaklanır.
+  - Statik analiz ve yansıma birlikte çalışmaz. 
 
-Araçları kullanarak uygulama şeyler tutmak için sağlanabilir [ `[Preserve]` özniteliği](~/ios/deploy-test/linker.md). 
+Araçları kullanarak gözetildiği uygulama içinde sağlanabilir [ `[Preserve]` özniteliği](~/ios/deploy-test/linker.md). 
 
-Kaynak kodu erişiminiz yok veya bir aracı tarafından oluşturulan ve bunu değiştirmek istiyor musunuz, bunu hala tüm türleri ve korunması gereken üyeleri tanımlayan bir XML dosyası oluşturarak bağlanabilir. Daha sonra bayrağı ekleyebilirsiniz `--xml={file.name}.xml` proje seçeneklerinizi hangi işlenen kodu tam olarak öznitelikleri kullanmakta olduğunuz gibi sorgulamanıza.
+Kaynak koduna erişim iznine sahip değilsiniz veya bir araç tarafından oluşturulur ve değiştirmek istiyor musunuz, bunu hala tüm korunması gereken üyeleri ve türleri açıklayan bir XML dosyası oluşturarak bağlanabilir. Daha sonra bayrağı ekleyebilirsiniz `--xml={file.name}.xml` proje seçeneklerinizi işlenme kod öznitelikleri tam olarak kullandığınız artırmadığı.
 
 
 ### <a name="partially-linking-applications"></a>Kısmen uygulamaları bağlama 
 
-Uygulamanızın derleme zamanı en iyi duruma getirmek için uygulamaların, kısmen bağlamak mümkündür:
+Uygulamanızın derleme zamanını en iyi duruma getirmek için uygulamaların, kısmen bağlamak mümkündür:
 
-- Kullanım `Link All` ve bazı derlemeleri atlama 
+- Kullanım `Link All` ve bazı bütünleştirilmiş kodları atla 
   - Bazı uygulama boyut iyileştirmesi kaybolur.
   - Kaynak koduna erişim gereklidir.
   - Örneğin `--linkall --linkskip=fieldserviceiOS` .
  
-- Kullanmak `Link SDK` seçeneğini ve kullanmak `[LinkerSafe]` ihtiyacınız derlemeleri özniteliği 
+- Kullanın `Link SDK` kullanın ve seçenek `[LinkerSafe]` ihtiyacınız olan derlemeleri özniteliği 
   - Gerekli kaynak koduna erişim.
-  - Derlemenin bağlamak, güvenli olduğundan sistem bildirir ve Xamarin SDK olduğu gibi sorgulamanıza işlenir.
+  - Derleme bağlamak güvenlidir sisteme söyler ve bir Xamarin SDK'sı olduğu gibi sorgulamanıza işlenir.
  
-### <a name="objective-c-bindings"></a>Objective-C bağlamaları 
+### <a name="objective-c-bindings"></a>Objective-C bağlama 
 
-- Kullanarak `[Assembly: LinkerSafe]` zaman ve boyutu, bağlamaları öznitelikte kaydedebilir.
+- Kullanarak `[Assembly: LinkerSafe]` zaman ve boyut özniteliği bağlamalarınızı kaydedebilir.
 
 - SmartLink 
   - Yerel tarafında bitti 
   - Kullanım `[LinkWith (SmartLink=true)]` özniteliği
-  - Bu, yerel kod karşı bağlıyorsanız kitaplığından ortadan kaldırmak için yerel bağlayıcı yardımcı olur. 
-  - Not simgelerin dinamik aramanın bu ile çalışmaz. 
+  - Bu, yerel bağlayıcı karşı bağlama kitaplığından yerel kodun ortadan kaldırılmasına yardımcı olur. 
+  - Not, dinamik arama simgeleri bu ile çalışmaz. 
 
 ## <a name="summary"></a>Özet
 
-Bu kılavuz, bir iOS uygulaması ve Proje yapı yapılandırması ve seçenekleri bağımlı dikkate alınması gereken seçenekleri süreyi incelediniz. 
+Bu kılavuz, bir iOS uygulaması ve proje derleme yapılandırması ve Seçenekler bağımlı olan dikkate alınması gereken seçenekleri süreyi incelediniz. 
 
 <!-----
 # Benchmarks

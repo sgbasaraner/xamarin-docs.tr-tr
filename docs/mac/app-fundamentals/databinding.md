@@ -1,44 +1,44 @@
 ---
-title: Veri bağlama ve anahtar-değer Xamarin.Mac içinde kodlama
-description: Bu makalede, anahtar-değer kodlama ve anahtar-değer veri bağlama Xcode'nın arabirimi Oluşturucu kullanıcı Arabirimi öğelerine izin vermek üzere Gözlemleme kullanmayı ele alır.
+title: Veri bağlama ve anahtar-değer Xamarin.Mac'te kodlama
+description: Bu makale, anahtar-değer kodlaması ve anahtar-değer Xcode'un arabirim Oluşturucu UI öğelerine veri bağlama için izin vermek için gözleme kullanarak kapsar.
 ms.prod: xamarin
 ms.assetid: 72594395-0737-4894-8819-3E1802864BE7
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 88567e47f488a94fcf7334584a678c9689b83306
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: 0adb8cda71ca8803c535679da2aecf00f3fa46a5
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34792144"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "43780633"
 ---
-# <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>Veri bağlama ve anahtar-değer Xamarin.Mac içinde kodlama
+# <a name="data-binding-and-key-value-coding-in-xamarinmac"></a>Veri bağlama ve anahtar-değer Xamarin.Mac'te kodlama
 
-_Bu makalede, anahtar-değer kodlama ve anahtar-değer veri bağlama Xcode'nın arabirimi Oluşturucu kullanıcı Arabirimi öğelerine izin vermek üzere Gözlemleme kullanmayı ele alır._
+_Bu makale, anahtar-değer kodlaması ve anahtar-değer Xcode'un arabirim Oluşturucu UI öğelerine veri bağlama için izin vermek için gözleme kullanarak kapsar._
 
 ## <a name="overview"></a>Genel Bakış
 
-C# ve .NET ile Xamarin.Mac uygulamada çalışırken, aynı anahtar-değer kodlama ve veri bağlama tekniklerinin erişiminiz, çalışan bir geliştirici *Objective-C* ve *Xcode* yapar. Xamarin.Mac Xcode ile doğrudan tümleşir nedeniyle, Xcode'nın kullanabilirsiniz _arabirimi Oluşturucu_ veri bağlama ile kod yazmak yerine kullanıcı Arabirimi öğeleri için.
+C# ve .NET ile bir Xamarin.Mac uygulamasında çalışırken, aynı anahtar-değer kodlaması ve veri bağlama tekniklerinin erişiminiz, içinde çalışmakta olan bir geliştirici *Objective-C* ve *Xcode* yapar. Xamarin.Mac Xcode ile doğrudan tümleşir çünkü Xcode'un kullanabileceğiniz _arabirim Oluşturucu_ veri bağlama ile kod yazmak yerine, kullanıcı Arabirimi öğeleri için.
 
-Anahtar-değer kodlama ve veri Xamarin.Mac uygulamanızda teknikleri bağlama kullanarak, yazma ve doldurmak ve kullanıcı Arabirimi öğeleri ile çalışmak için korumanız için sahip kod miktarını önemli ölçüde düşürebilir. Ayrıca, yedekleme verilerinizi daha fazla ayırma faydası vardır (_veri modeli_) kullanıcı arabirimi, Önden bitiş (_Model-View-Controller_), başında bakımı kolay, daha esnek uygulama için Tasarım.
+Anahtar-değer kodlaması ve veri teknikleri Xamarin.Mac uygulamanızda bağlama kullanarak, yazma ve doldurmak ve kullanıcı Arabirimi öğeleri ile çalışmak için korumanız gereken kod miktarını önemli ölçüde düşürebilir. Ayrıca, yedekleme verilerinizi daha fazla ayırma avantajı vardır (_veri modeli_) kullanıcı arabirimi, Önden bitiş (_Model-View-Controller_), bakımı kolay, daha esnek bir uygulama için önde gelen Tasarım.
 
-[![Çalışan uygulama örneği](databinding-images/intro01.png "çalışan uygulama örneği")](databinding-images/intro01-large.png#lightbox)
+[![Çalışan uygulamaya örneği](databinding-images/intro01.png "çalıştıran uygulama örneği")](databinding-images/intro01-large.png#lightbox)
 
-Bu makalede, biz anahtar-değer kodlama ve Xamarin.Mac uygulamasında veri bağlama ile çalışmanın temelleri ele alacağız. Aracılığıyla iş önerilen [Hello, Mac](~/mac/get-started/hello-mac.md) makalesi önce özellikle [Xcode ve arabirim Oluşturucu giriş](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) ve [çıkışlar ve eylemleri](~/mac/get-started/hello-mac.md#Outlets_and_Actions) onu farklı bölümler temel kavramları ve biz bu makalede kullanmaya başlayacağınız teknikleri ele alınmaktadır.
+Bu makalede, şu anahtar-değer kodlaması ve bir Xamarin.Mac uygulamasını veri bağlama ile çalışmanın temel bilgileri ele alacağız. Aracılığıyla iş önerilen [Merhaba, Mac](~/mac/get-started/hello-mac.md) makale önce özellikle [Xcode ve arabirim Oluşturucu giriş](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) ve [çıkışlar ve eylemleri](~/mac/get-started/hello-mac.md#outlets-and-actions) olarak bölümlerde temel kavramları ve bu makalede kullanacağız tekniklerini ele alınmaktadır.
 
-Bir göz atalım isteyebilirsiniz [gösterme C# sınıfları / Objective-C yöntemlere](~/mac/internals/how-it-works.md) bölümünü [Xamarin.Mac iç](~/mac/internals/how-it-works.md) de açıklar belge `Register` ve `Export` öznitelikleri Objective-C nesneleri ve kullanıcı Arabirimi öğeleri, C# sınıfları wire için kullanılır.
+Bir göz atın isteyebilirsiniz [gösterme C# sınıfları / Objective-C yöntemlere](~/mac/internals/how-it-works.md) bölümünü [Xamarin.Mac iç işlevleri](~/mac/internals/how-it-works.md) de açıklar belge `Register` ve `Export` öznitelikleri Objective-C nesneleri ve UI öğeleri, C# sınıfları kablo kullanılır.
 
 <a name="What_is_Key-Value_Coding" />
 
-## <a name="what-is-key-value-coding"></a>Anahtar-değer kodlama nedir
+## <a name="what-is-key-value-coding"></a>Anahtar-değer kodlaması nedir
 
-Anahtar-değer (KVC) kodlama mekanizmasıdır dolaylı bir nesnenin özelliklerine erişme, örnek değişkenleri erişim yerine özelliklerini tanımlamak için (özel olarak biçimlendirilmiş dizeler) anahtarları veya erişimci yöntemlerini kullanarak bir (`get/set`). Anahtar-değer kodlama uyumlu erişimcilerini Xamarin.Mac uygulamanızda uygulayarak anahtar-değer gözlemci (KVO), veri bağlama, çekirdek verileri, Cocoa bağlamalar ve scriptability gibi diğer (önceki adıyla OS X olarak bilinir) macOS özelliklerine erişim sahibi olursunuz.
+Anahtar-değer kodlaması (KVC) olan bir mekanizma örnek değişkenleri erişmesini yerine özellikleri tanımlamak için anahtarları (özel olarak biçimlendirilmiş dizeler) veya erişimci yöntemlerini kullanarak, dolaylı olarak bir nesnenin özelliklerine erişme (`get/set`). Xamarin.Mac uygulamanızda anahtar-değer kodlama uyumlu erişimcilerini uygulama tarafından (KVO gözlemci anahtar-değer), veri bağlama, temel veri, Cocoa bağlamaları ve scriptability gibi diğer macOS (eski adıyla OS X da bilinir) özelliklere erişiminiz olur.
 
-Anahtar-değer kodlama ve veri Xamarin.Mac uygulamanızda teknikleri bağlama kullanarak, yazma ve doldurmak ve kullanıcı Arabirimi öğeleri ile çalışmak için korumanız için sahip kod miktarını önemli ölçüde düşürebilir. Ayrıca, yedekleme verilerinizi daha fazla ayırma faydası vardır (_veri modeli_) kullanıcı arabirimi, Önden bitiş (_Model-View-Controller_), başında bakımı kolay, daha esnek uygulama için Tasarım. 
+Anahtar-değer kodlaması ve veri teknikleri Xamarin.Mac uygulamanızda bağlama kullanarak, yazma ve doldurmak ve kullanıcı Arabirimi öğeleri ile çalışmak için korumanız gereken kod miktarını önemli ölçüde düşürebilir. Ayrıca, yedekleme verilerinizi daha fazla ayırma avantajı vardır (_veri modeli_) kullanıcı arabirimi, Önden bitiş (_Model-View-Controller_), bakımı kolay, daha esnek bir uygulama için önde gelen Tasarım. 
 
-Örneğin, aşağıdaki sınıf tanımını KVC uyumlu nesnesinin bakalım:
+Örneğin, aşağıdaki sınıf tanımını KVC uyumlu bir nesnenin bakalım:
 
 ```csharp
 using System;
@@ -68,9 +68,9 @@ namespace MacDatabinding
 }
 ```
 
-İlk olarak, `[Register("PersonModel")]` öznitelik sınıfı kaydeder ve hedefi C'ye gösterir Daha sonra devralmak sınıf gereken `NSObject` (veya devralan bir alt sınıfı `NSObject`), bu birkaç temel KVC uyumlu olması için sınıfa izin yöntemi ekler. İleri `[Export("Name")]` özniteliğini düzenlemenizi sağlayan `Name` özellik ve daha sonra KVC ve KVO teknikleri bir özelliğe erişmek için kullanılacak anahtar değeri tanımlar. 
+İlk olarak, `[Register("PersonModel")]` öznitelik sınıfı kaydeder ve Objective-c gösterir Daha sonra sınıf devralınacak gerekir `NSObject` (veya devralınan bir alt `NSObject`), bu işlem birkaç temel sınıfa KVC uyumlu olmasını sağlayan bir yöntem ekler. Ardından, `[Export("Name")]` özniteliği kullanıma sunan `Name` özellik ve daha sonra KVC ve KVO teknikleri özelliğine erişmek için kullanılacak anahtar değeri tanımlar. 
 
-Son olarak, anahtar-değer gözlenen özelliğin değerini değiştirir olması yapabilmek için erişimci değeriyle yapılan değişiklikler sarmalamanız gerekir `WillChangeValue` ve `DidChangeValue` yöntem çağrıları (aynı anahtara belirtme `Export` özniteliği).  Örneğin:
+Son olarak, anahtar-değer gözlemlenen özelliğin değerine değişir hayatımın için erişimci değeriyle değişiklikleri sarmalamanız gerekir `WillChangeValue` ve `DidChangeValue` yöntem çağrıları (aynı anahtarı olarak belirterek `Export` özniteliği).  Örneğin:
 
 ```csharp
 set {
@@ -80,17 +80,17 @@ set {
 }
 ```
 
-Bu adım _çok_ (Bu makalenin sonraki bölümlerinde göreceğiz gibi) arabirimi Oluşturucu xcode'da veri bağlama için önemlidir.
+Bu adım _çok_ (Bu makalenin sonraki bölümlerinde göreceğiz gibi) arabirim Oluşturucu Xcode veri bağlama için önemlidir.
 
-Daha fazla bilgi için lütfen Apple'nın bkz [anahtar-değer kodlama Programlama Kılavuzu](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueCoding/index.html).
+Daha fazla bilgi için lütfen Apple'nın bakın [anahtar-değer kodlaması Programming Guide](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueCoding/index.html).
 
 ### <a name="keys-and-key-paths"></a>Anahtarları ve anahtar yolları
 
-A _anahtar_ bir nesnenin belirli bir özellik tanımlayan bir dize değil. Genellikle, bir anahtar uyumlu nesne kodlama bir anahtar-değer erişimcisi yönteminde adına karşılık gelir. Anahtarları, ASCII kodlama, kullanmalıdır genellikle bir küçük harf ile başlamalı ve boşluk içermemelidir. Bu nedenle yukarıdaki örnekte verilen `Name` bir anahtar değeri olacaktır `Name` özelliği `PersonModel` sınıfı. Ancak, çoğu durumda olduklarını anahtar ve bunlar ortaya özelliğinin adı aynı olması gerekmez.
+A _anahtar_ belirli bir özelliğine bir nesne tanımlayan bir dizedir. Genellikle, bir anahtar bir erişimci metot uyumlu nesne kodlama bir anahtar-değer adına karşılık gelir. Anahtarları kullanması gerekir ASCII kodlaması, genellikle bir küçük harf ile başlamalı ve boşluk içeremez. Bu nedenle yukarıdaki örnekte, verilen `Name` anahtar değerini olacaktır `Name` özelliği `PersonModel` sınıfı. Çoğu durumda, ancak anahtar ve ortaya özelliğin adı aynı olması gerekmez.
 
-A _anahtar yolu_ olan nokta dizesi ayrılmış anahtarları gezinmesine nesne özellikleri hiyerarşisini belirtmek için kullanılır. Sıradaki ilk tuşu özelliği göre alıcıdır ve sonraki her anahtar önceki özellik değeri göre değerlendirilir. Aynı şekilde bir nesne ve C# sınıfındaki özellikleri gezinmesine noktalı gösterim kullanın.
+A _anahtar yolunu_ olduğu nokta dizisi ayrılmış anahtarları geçirmek için nesne özellikleri hiyerarşisi belirtmek için kullanılır. Dizideki ilk anahtar özelliğini göreli alıcıdır ve sonraki her anahtar, önceki özelliğinin değeri göre değerlendirilir. Aynı şekilde, bir nesne ve özelliklerini bir C# sınıf içinde gezeceği nokta gösterimi kullanırsınız.
 
-Örneğin, genişlettiyseniz `PersonModel` sınıfı ve eklenen `Child` özelliği:
+Örneğin, genişletilmiş, `PersonModel` sınıfı ve eklenen `Child` özelliği:
 
 ```csharp
 using System;
@@ -131,35 +131,35 @@ namespace MacDatabinding
 }
 ```
 
-Çocuğunuzun adına anahtar yol `self.Child.Name` ya da yalnızca `Child.Name` (anahtar değer nasıl kullanılıyordu göre).
+Çocuğunuzun adı anahtar yoluna olacaktır `self.Child.Name` ya da yalnızca `Child.Name` (anahtar değer nasıl kullanılıyordu göre).
 
-### <a name="getting-values-using-key-value-coding"></a>Anahtar-değer kodlama kullanılarak değerleri alma
+### <a name="getting-values-using-key-value-coding"></a>Anahtar-değer kodlaması kullanarak değerleri alma
 
-`ValueForKey` Yöntemi, belirtilen anahtar için değeri döndürür (olarak bir `NSString`), göreli isteği alma KVC sınıfı örneği. Örneğin, varsa `Person` örneği `PersonModel` yukarıda tanımlanan sınıfı:
+`ValueForKey` Yöntemi, belirtilen anahtar için değeri döndürür (olarak bir `NSString`), istek alma KVC sınıfının örneğini göreli yolu. Örneğin, varsa `Person` örneğidir `PersonModel` yukarıda tanımlanan sınıfı:
 
 ```csharp
 // Read value 
 var name = Person.ValueForKey (new NSString("Name"));
 ```
 
-Bu değeri döndürmesi `Name` özelliği'nın bu örneği için `PersonModel`. 
+Bu değeri döndürmesi `Name` örneğini özelliği `PersonModel`. 
 
-### <a name="setting-values-using-key-value-coding"></a>Anahtar-değer kodlama kullanarak değerleri ayarlama
+### <a name="setting-values-using-key-value-coding"></a>Anahtar-değer kodlaması kullanarak değerlerini ayarlama
 
-Benzer şekilde, `SetValueForKey` belirtilen anahtar için değer ayarlayın (olarak bir `NSString`), göreli isteği alma KVC sınıfı örneği. Bu nedenle bir örneği kullanılarak `PersonModel` aşağıda gösterildiği gibi sınıfı:
+Benzer şekilde, `SetValueForKey` belirtilen anahtar için değeri ayarlayın (olarak bir `NSString`), istek alma KVC sınıfının örneğini göreli yolu. Bu nedenle bir örneğini kullanarak `PersonModel` aşağıda gösterildiği gibi sınıfı:
 
 ```csharp
 // Write value
 Person.SetValueForKey(new NSString("Jane Doe"), new NSString("Name"));
 ```
 
-Değerini değişeceğinden `Name` özelliğine `Jane Doe`.
+Değerini değiştirmeniz gerekir `Name` özelliğini `Jane Doe`.
 
 <a name="Observing_Value_Changes" />
 
-### <a name="observing-value-changes"></a>Gözlemci değer değişiklikleri
+### <a name="observing-value-changes"></a>Gözlemci değeri değiştiğinde
 
-Bir gözlemci KVC uyumlu sınıfın belirli bir anahtarın ekleyebilirsiniz (KVO) anahtar-değer Gözlemleme kullanarak ve bu anahtar değeri (KVC teknikleri veya özelliğe C# kodunda doğrudan erişimini) değiştiren dilediğiniz zaman bildirim. Örneğin:
+Gözlemci KVC uyumlu sınıfın belirli bir anahtarın ekleyebilirsiniz (KVO) anahtar-değer gözleme kullanarak ve bu anahtarın değeri (KVC teknikleri veya C# kodunda özelliğe doğrudan erişmek) değiştiren dilediğiniz zaman bildirim. Örneğin:
 
 ```csharp
 // Watch for the name value changing
@@ -169,21 +169,21 @@ Person.AddObserver ("Name", NSKeyValueObservingOptions.New, (sender) => {
 });
 ```
 
-Şimdi, dilediğiniz zaman `Name` özelliği `Person` örneğini `PersonModel` sınıfı değişiklik, yeni değer konsoluna yazılır. 
+Şimdi, dilediğiniz zaman `Name` özelliği `Person` örneğini `PersonModel` sınıfı değiştirilmişse, yeni değer konsoluna yazılır. 
 
-Daha fazla bilgi için lütfen Apple'nın bkz [anahtar-değer Gözlemleme programlama kılavuzu giriş](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueObserving/KeyValueObserving.html#//apple_ref/doc/uid/10000177i).
+Daha fazla bilgi için lütfen Apple'nın bakın [anahtar-değer gözleme programlama kılavuzu için giriş](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueObserving/KeyValueObserving.html#//apple_ref/doc/uid/10000177i).
 
 ## <a name="data-binding"></a>Veri bağlama
 
-Aşağıdaki bölümlerde, kullanıcı Arabirimi öğeleri okuma ve yazma C# kodu kullanarak değerleri yerine Xcode'nın arabirimi Oluşturucu veri bağlamak için bir anahtar-değer kodlama ve anahtar-değer uyumlu sınıfı Gözlemleme nasıl kullanabileceğinizi gösterir. Bu şekilde, ayrı, _veri modeli_ bunları görüntülemek için kullanılan görünümlerinden Xamarin.Mac uygulama daha esnek ve bakımını yapma. Ayrıca önemli ölçüde yazılması gereken kod miktarını azaltın.
+Aşağıdaki bölümlerde veri okuma ve yazma C# kodunu kullanarak değerleri yerine Xcode'un arabirimi Oluşturucusu'nda kullanıcı Arabirimi öğeleri bağlamak için bir anahtar-değer kodlaması ve anahtar-değer uyumlu sınıfı gözleme nasıl kullanabileceğinizi gösterir. Bu şekilde, ayrı, _veri modeli_ bunları görüntülemek için kullanılan görünümlerinden Xamarin.Mac uygulama daha esnek ve bakımını yapma. Büyük ölçüde yazılması gereken kod miktarını azaltır.
 
 <a name="Defining_your_Data_Model" />
 
 ### <a name="defining-your-data-model"></a>Veri modelinizi tanımlama
 
-Bir kullanıcı Arabirimi öğesi arabirimi Oluşturucu veri bağlamak için önce olarak davranacak şekilde Xamarin.Mac uygulamanızda tanımlanmış bir KVC/KVO uyumlu bir sınıf olmalıdır _veri modeli_ bağlama için. Veri modeli, tüm kullanıcı arabiriminde görüntülenir ve kullanıcı Arabiriminde uygulaması çalıştırılırken yapar verilere herhangi bir değişiklik alan verileri sağlar.
+Bir arabirim Oluşturucu kullanıcı Arabirimi öğesinde veri bağlamak için önce KVC/KVO uyumlu sınıflar olarak davranmak üzere Xamarin.Mac uygulamanızda tanımlanmış olmalıdır _veri modeli_ bağlama için. Veri modeli, tüm kullanıcı arabiriminde görüntülenir ve herhangi bir değişiklik uygulama çalışırken kullanıcı Arabiriminde kullanıcının yaptığı veri alan verileri sağlar.
 
-Örneğin, bir çalışan grubu yönetilen bir uygulama yazıyorsanız, veri modeli tanımlamak için aşağıdaki sınıf kullanabilirsiniz:
+Örneğin, çalışan bir grup olarak yönetilen bir uygulama yazıyorsanız, veri modeli tanımlamak için aşağıdaki sınıf kullanabilirsiniz:
 
 ```csharp
 using System;
@@ -317,9 +317,9 @@ namespace MacDatabinding
 }
 ```
 
-Bu sınıfın özelliklerinin çoğu kapsanan [anahtar-değer kodlama nedir](#What_is_Key-Value_Coding) yukarıdaki bölümde. Ancak, bazı belirli öğeleri ve bu sınıf için bir veri modeli olarak davranmasına izin vermek için yapılan bazı ilaveler bakalım **dizi denetleyicileri** ve **ağaç denetleyicileri** (hangi biz daha sonra verileri kullanmaya başlayacağınız Bağlama **ağaç görünümleri**, **anahat görünümleri** ve **koleksiyon görünümlerini**).
+Bu sınıfın özelliklerinin birçoğunu ele alınmıştır [anahtar-değer kodlaması nedir](#What_is_Key-Value_Coding) yukarıdaki bölümde. Ancak, birkaç belirli öğeleri ve bu sınıf için bir veri modeli olarak davranmasına izin vermek için yapılan bazı eklemeler göz atalım **dizisi denetleyicinin** ve **ağaç denetleyicileri** (Bu, daha sonra verileri kullanacağız Bağlama **ağaç görünümlerini**, **anahat görünümleri** ve **koleksiyon görünümlerini**).
 
-İlk olarak, bir çalışan bir yöneticisi olabileceğinden, kullandığımız bir `NSArray` (özellikle bir `NSMutableArray` değerler değiştirilebilir şekilde) kendisine bağlı yönetilen çalışanların izin vermek için:
+İlk olarak, bir çalışan bir yönetici olabileceği için kullandığımız bir `NSArray` (özellikle bir `NSMutableArray` değerler değiştirilebilir şekilde) kendilerine iliştirilmiş yönetilen çalışanların izin vermek için:
 
 ```csharp
 private NSMutableArray _people = new NSMutableArray();
@@ -331,12 +331,12 @@ public NSArray People {
 }
 ```
 
-Burada dikkat edilecek noktalar iki:
+Burada dikkat edilecek iki noktalar:
 
-1. Kullandık bir `NSMutableArray` standart bir C# dizisi ya da bu AppKit denetimlere veri bağlama için bir gereksinim gibi olduğundan koleksiyonu yerine **tablosu görünümleri**, **anahat görünümleri** ve **koleksiyonları** .
-2. Biz dizi çalışanların atama tarafından kullanıma sunulan bir `NSArray` adı, bağlama amacıyla ve kendi C# değiştirilen verileri biçimlendirilmiş için `People`, veri bağlama bekler, bir `personModelArray` biçiminde **{class_name} dizi** (Not ilk karakteri küçük yapılmadığını).
+1. Kullandık bir `NSMutableArray` standart bir dizi C# ya da bu veri bağlama için bir gereksinim için olan tüm AppKit denetimleri gibi olduğundan koleksiyonu yerine **tablo görünümleri**, **anahat görünümleri** ve **koleksiyonları** .
+2. Biz çalışanlar dizisi atama tarafından kullanıma sunulan bir `NSArray` adı değiştirildi, C# ve bağlama amacıyla veri biçimlendirilmiş `People`, veri bağlama bekliyor, bir `personModelArray` biçiminde **{$class_name} dizi** (Not ilk karakterin küçük harf yapılmadığını).
 
-Ardından, desteklemek için bazı özel ad ortak yöntemleri eklemek ihtiyacımız **dizi denetleyicileri** ve **ağaç denetleyicileri**:
+Ardından, desteklemek için bazı özel ad genel yöntemler eklemek ihtiyacımız **dizisi denetleyicinin** ve **ağaç denetleyicileri**:
 
 ```csharp
 [Export("addObject:")]
@@ -369,16 +369,16 @@ public void SetPeople(NSMutableArray array) {
 }
 ```
 
-Bunlar, istek ve görüntüledikleri verileri değiştirmek denetleyicileri izin verir. Gösterilen gibi `NSArray` yukarıdaki bu (Bu, tipik C# adlandırma kurallarından farklı) belirli bir adlandırma kuralı vardır:
+Bunlar, istek ve görüntüledikleri verileri değiştirmek denetleyicileri izin verir. İfşa edilen gibi `NSArray` yukarıda bu (Bu, tipik C# adlandırma kurallarından farklı) belirli bir adlandırma kuralı vardır:
 
 - `addObject:` -Bir nesne dizisine ekler.
-- `insertObject:in{class_name}ArrayAtIndex:` -Burada `{class_name}` sınıfınız adıdır. Bu yöntem bir nesne belirli bir dizine dizisi ekler.
-- `removeObjectFrom{class_name}ArrayAtIndex:` -Burada `{class_name}` sınıfınız adıdır. Bu yöntem, belirli bir dizine dizide nesneyi kaldırır.
-- `set{class_name}Array:` -Burada `{class_name}` sınıfınız adıdır. Bu yöntem ile yeni bir tane var olan taşıyan değiştirmenizi sağlar.
+- `insertObject:in{class_name}ArrayAtIndex:` -Burada `{class_name}` sınıfınıza adıdır. Bu yöntem dizi verilen dizindeki bir nesne ekler.
+- `removeObjectFrom{class_name}ArrayAtIndex:` -Burada `{class_name}` sınıfınıza adıdır. Bu yöntem, belirtilen dizindeki dizideki nesnesini kaldırır.
+- `set{class_name}Array:` -Burada `{class_name}` sınıfınıza adıdır. Bu yöntem ile yeni bir tane mevcut carry çoğaltmanıza imkan tanır.
 
-Bu yöntemler içinde biz dizide değişiklikler Sarmalanan `WillChangeValue` ve `DidChangeValue` KVO uyumluluk iletileri.
+Bu yöntemlerin içinde biz dizide değişiklikleri sarmalanmış `WillChangeValue` ve `DidChangeValue` KVO uyumluluk iletileri.
 
-Son olarak, bu yana `Icon` özellik değerine göre dayanır `isManager` özelliği, değişiklikleri `isManager` özellik değil yansıtılır `Icon` veri ilişkili kullanıcı Arabirimi öğeleri (sırasında KVO) için:
+Son olarak, bu yana `Icon` özellik değerini kullanır `isManager` özellik değişiklikleri `isManager` özelliği değil yansıtılır `Icon` veri bağlı kullanıcı Arabirimi öğeleri (sırasında KVO) için:
 
 ```csharp
 [Export("Icon")]
@@ -393,7 +393,7 @@ public NSImage Icon {
 }
 ``` 
 
-Düzeltmek için aşağıdaki kodu kullanırız:
+Bu düzeltmek için aşağıdaki kodu kullanırız:
 
 ```csharp
 [Export("isManager")]
@@ -409,21 +409,21 @@ public bool isManager {
 }
 ```
 
-Kendi anahtarını yanı sıra unutmayın `isManager` erişen ayrıca gönderen `WillChangeValue` ve `DidChangeValue` için iletileri `Icon` değişiklik de görürsünüz şekilde anahtar.
+Ek olarak kendi anahtarı unutmayın `isManager` erişimci de gönderme `WillChangeValue` ve `DidChangeValue` için iletileri `Icon` değişikliği de görürsünüz için anahtar.
 
-Biz kullanmaya başlayacağınız `PersonModel` bu makalenin kalanında veri modeli.
+Kullanacağız `PersonModel` bu makalenin geri kalanında veri modeli.
 
 <a name="Simple_Data_Binding" />
 
 ### <a name="simple-data-binding"></a>Basit veri bağlama
 
-Veri tanımlanan Modelimizi ile basit bir örnek veri bağlamanın Xcode'nın arabirimi Oluşturucu bakalım. Örneğin, bir form Xamarin.Mac uygulamamız düzenlemek için kullanılan ekleyelim `PersonModel` biz yukarıda tanımlanan. Birkaç metin alanları ve onay kutusu görüntülemek ve modelimizi özelliklerini düzenlemek için ekleyeceğiz.
+Veri tanımlanan bizim modeliyle Xcode'un arabirim oluşturucu içinde veri bağlamayı basit bir örneği göz atalım. Örneğin, bir form Xamarin.Mac uygulamamız düzenlemek için kullanılan ekleyelim `PersonModel` , yukarıda tanımladık. Birkaç metin alanları ve onay kutusu görüntülemek ve modelimizi özelliklerini düzenlemek için ekleyeceğiz.
 
-İlk olarak, yeni bir ekleyelim **View Controller** için bizim **Main.storyboard** arabirimi Oluşturucusu'nda dosya ve alt sınıf adını `SimpleViewController`: 
+İlk olarak, yeni bir ekleyelim **görünüm denetleyicisi** için sunduğumuz **Main.storyboard** dosya arabirimi Oluşturucu'da ve kendi sınıf adını `SimpleViewController`: 
 
 [![Yeni bir görünüm denetleyicisi ekleme](databinding-images/simple01.png "yeni bir görünüm denetleyicisi ekleme")](databinding-images/simple01-large.png#lightbox)
 
-Ardından, Mac için Visual Studio'ya geri dönün, düzenleme **SimpleViewController.cs** (otomatik olarak bizim projesine eklendi) dosyası ve bir örneğini kullanıma `PersonModel` veri formumuzun bağlama olacaktır. Aşağıdaki kodu ekleyin:
+Ardından, Mac için Visual Studio'ya dönün, düzenleme **SimpleViewController.cs** (otomatik olarak bizim projeye eklendi) dosyası ve bir örneği üzerinden kullanıma sunacaksınız `PersonModel` veri formumuzun bağlama olacaktır. Aşağıdaki kodu ekleyin:
 
 ```csharp
 private PersonModel _person = new PersonModel();
@@ -440,7 +440,7 @@ public PersonModel Person {
 }
 ```
 
-Görünüm yüklendiğinde, sonraki örneği oluşturalım bizim `PersonModel` ve bu kodu ile doldurun:
+Sonraki görünüm yüklendiğinde, şimdi bir örneğini oluşturmak bizim `PersonModel` ve bu kod ile doldurun:
 
 ```csharp
 public override void ViewDidLoad ()
@@ -459,55 +459,55 @@ public override void ViewDidLoad ()
 }
 ```
 
-Bizim form oluşturmak ihtiyacımız artık çift **Main.storyboard** dosyayı arabirimi Oluşturucusu'nda düzenlemek için açın. Düzen formun aşağıdakine benzer aramak için:
+Formumuzu oluşturmak ihtiyacımız şimdi çift **Main.storyboard** dosyayı arabirimi Oluşturucusu'nda düzenleme için açın. Aşağıdaki gibi aranacak form düzeni:
 
-[![Xcode'da film şeridi düzenleme](databinding-images/simple02.png "xcode'da film şeridi düzenleme")](databinding-images/simple02-large.png#lightbox)
+[![Xcode içinde bir film şeridini düzenleme](databinding-images/simple02.png "Xcode içinde bir film şeridini düzenleme")](databinding-images/simple02-large.png#lightbox)
 
-Forma verilere bağlama `PersonModel` biz aracılığıyla sunulan `Person` anahtarı, aşağıdakileri yapın:
+Forma veri bağlamasına `PersonModel` biz aracılığıyla sunulan `Person` anahtarı, aşağıdakileri yapın:
 
-1. Seçin **çalışan adı** metin alanı ve anahtara **bağlamaları denetçisi**.
-2. Denetleme **bağlamak** kutusunda ve seçin **basit View Controller** gelen açılır. Sonraki girin `self.Person.Name` için **anahtar yolu**: 
+1. Seçin **çalışan adı** metni alanına ve anahtara **bağlamaları denetçisi**.
+2. Denetleme **bağlamak** kutusunda ve seçin **Basit Görünüm denetleyicisi** açılır listeden. Ardından girin `self.Person.Name` için **anahtar yolunu**: 
 
     [![Anahtar yoluna girdiğinden](databinding-images/simple03.png "anahtar yoluna girme")](databinding-images/simple03-large.png#lightbox)
-3. Seçin **Mesleği** metin alanı ve onay **bağlamak** kutusunda ve seçin **basit View Controller** gelen açılır. Sonraki girin `self.Person.Occupation` için **anahtar yolu**:  
+3. Seçin **meslek** metni alanına ve onay **bağlamak** kutusunda ve seçin **Basit Görünüm denetleyicisi** açılır listeden. Ardından girin `self.Person.Occupation` için **anahtar yolunu**:  
 
     [![Anahtar yoluna girdiğinden](databinding-images/simple04.png "anahtar yoluna girme")](databinding-images/simple04-large.png#lightbox)
-4. Seçin **çalışan bir yöneticisi olan** onay kutusunu ve denetleyin **bağlamak** kutusunda ve seçin **basit View Controller** gelen açılır. Sonraki girin `self.Person.isManager` için **anahtar yolu**:  
+4. Seçin **çalışan bir yönetici mi** onay kutusunu işaretleyin **bağlamak** kutusunda ve seçin **Basit Görünüm denetleyicisi** açılır listeden. Ardından girin `self.Person.isManager` için **anahtar yolunu**:  
 
     [![Anahtar yoluna girdiğinden](databinding-images/simple05.png "anahtar yoluna girme")](databinding-images/simple05-large.png#lightbox)
-5. Seçin **numarası, çalışanların yönetilen** metin alanı ve onay **bağlamak** kutusunda ve seçin **basit View Controller** gelen açılır. Sonraki girin `self.Person.NumberOfEmployees` için **anahtar yolu**:  
+5. Seçin **çalışanlar, sayı yönetilen** metni alanına ve onay **bağlamak** kutusunda ve seçin **Basit Görünüm denetleyicisi** açılır listeden. Ardından girin `self.Person.NumberOfEmployees` için **anahtar yolunu**:  
 
     [![Anahtar yoluna girdiğinden](databinding-images/simple06.png "anahtar yoluna girme")](databinding-images/simple06-large.png#lightbox)
-6. Çalışan bir yönetici değilse, sayı, çalışanların yönetilen etiket ve metin alanı gizleyin istiyoruz.
-7. Seçin **numarası, çalışanların yönetilen** etiketi genişletin **gizli** turndown ve onay **bağlamak** kutusunda ve seçin **basit View Controller** gelen açılır. Sonraki girin `self.Person.isManager` için **anahtar yolu**:  
+6. Çalışan bir yönetici değil ise, sayı, çalışanların yönetilen etiket ve metin alanı gizlemek istiyoruz.
+7. Seçin **çalışanlar, sayı yönetilen** etiketini genişletin **gizli** turndown ve onay **bağlamak** kutusunda ve seçin **Basit Görünüm denetleyicisi** açılır listeden. Ardından girin `self.Person.isManager` için **anahtar yolunu**:  
 
     [![Anahtar yoluna girdiğinden](databinding-images/simple07.png "anahtar yoluna girme")](databinding-images/simple07-large.png#lightbox)
-8. Seçin `NSNegateBoolean` gelen **değeri Transformer** açılır:  
+8. Seçin `NSNegateBoolean` gelen **değer dönüştürücü** açılır:  
 
-    ![NSNegateBoolean anahtar dönüşümü seçme](databinding-images/simple08.png "NSNegateBoolean anahtar dönüşümü seçme")
-9. Etiket, gizlenmiş olabilir, bu veri bağlama söyler değerini `isManager` özelliği `false`.
-10. Adım 7 ve 8 için yineleyin **numarası, çalışanların yönetilen** metin alanı.
+    ![NSNegateBoolean anahtar dönüşümü seçerek](databinding-images/simple08.png "NSNegateBoolean anahtar dönüşümü seçme")
+9. Bu etiket, gizlenecek veri bağlama bildirir değerini `isManager` özelliği `false`.
+10. Adım 7 ve 8 için yineleyin **çalışanlar, sayı yönetilen** metin alanı.
 11. Değişikliklerinizi kaydetmek ve Xcode ile eşitlemek Mac için Visual Studio geri dönün.
 
-Uygulama, değerleri çalıştırırsanız `Person` özelliği otomatik olarak bizim formu doldurun:
+Uygulama, değerleri çalıştırırsanız `Person` özelliği otomatik olarak formumuzu doldurur:
 
-[![Bir otomatik olarak doldurulmuş formu gösteren](databinding-images/simple09.png "otomatik olarak doldurulan bir form gösterme")](databinding-images/simple09-large.png#lightbox)
+[![Otomatik olarak doldurulan bir form gösteren](databinding-images/simple09.png "otomatik olarak doldurulan bir form gösteriliyor")](databinding-images/simple09-large.png#lightbox)
 
-Kullanıcıların forma yaptığı tüm değişiklikler geri yazılır `Person` görünüm denetleyicisini özelliği. Örneğin, unselecting **çalışan bir yöneticisi olan** güncelleştirmeleri `Person` örneğini bizim `PersonModel` ve **numarası, çalışanların yönetilen** etiket ve metin alanı aracılığıyla otomatik olarak (gizlidir veri bağlama):
+Kullanıcıların forma yaptığı tüm değişiklikler geri yazılır `Person` görünüm denetleyicisi özelliği. Örneğin, seçimini **çalışan bir yönetici olan** güncelleştirmeleri `Person` örneğini bizim `PersonModel` ve **çalışanlar, sayı yönetilen** etiket ve metin alanı otomatik olarak (aracılığıyla gizlidir veri bağlama):
 
-[![Yöneticileri olmayan çalışanların sayısını gizleme](databinding-images/simple10.png "Yöneticileri olmayan çalışanların sayısını gizleme")](databinding-images/simple10-large.png#lightbox)
+[![Yönetici olmayan çalışanların sayısını gizleme](databinding-images/simple10.png "yönetici olmayan çalışanların sayısını gizleme")](databinding-images/simple10-large.png#lightbox)
 
 <a name="Table_View_Data_Binding" />
 
-### <a name="table-view-data-binding"></a>Tablo görünüm veri bağlama
+### <a name="table-view-data-binding"></a>Tablo görünümü veri bağlama
 
-Biz göz önünden veri bağlamanın temelleri sahip olduğunuza göre daha karmaşık veri bağlama görev kullanarak bakalım bir _dizi denetleyicisi_ ve bir tablo görünümü veri bağlama. Tablo görünümler ile çalışma hakkında daha fazla bilgi için lütfen bkz bizim [tablosu görünümleri](~/mac/user-interface/table-view.md) belgeleri.
+Biz dışına veri bağlama temellerini sahip olduğunuza göre daha karmaşık veri bağlama görev kullanarak bakalım bir _dizisi denetleyici_ ve Tablo görünümüne veri bağlama. Tablo görünümleri ile çalışma hakkında daha fazla bilgi için lütfen bkz. bizim [tablo görünümleri](~/mac/user-interface/table-view.md) belgeleri.
 
-İlk olarak, yeni bir ekleyelim **View Controller** için bizim **Main.storyboard** arabirimi Oluşturucusu'nda dosya ve alt sınıf adını `TableViewController`:
+İlk olarak, yeni bir ekleyelim **görünüm denetleyicisi** için sunduğumuz **Main.storyboard** dosya arabirimi Oluşturucu'da ve kendi sınıf adını `TableViewController`:
 
 [![Yeni bir görünüm denetleyicisi ekleme](databinding-images/table01.png "yeni bir görünüm denetleyicisi ekleme")](databinding-images/table01-large.png#lightbox)
 
-Ardından, düzenleyelim **TableViewController.cs** (otomatik olarak bizim projesine eklendi) dosyası ve bir dizi sunmaya (`NSArray`), `PersonModel` sınıfları veri formumuzun bağlama olacaktır. Aşağıdaki kodu ekleyin:
+Ardından, düzenleyelim **TableViewController.cs** (otomatik olarak bizim projeye eklendi) dosyası ve bir dizi kullanıma sunar (`NSArray`), `PersonModel` sınıfları veri formumuzun bağlama olacaktır. Aşağıdaki kodu ekleyin:
 
 ```csharp
 private NSMutableArray _people = new NSMutableArray();
@@ -548,9 +548,9 @@ public void SetPeople(NSMutableArray array) {
 }
 ```
 
-Yalnızca üzerinde yaptığımız gibi `PersonModel` yukarıda sınıfını [veri modelinizi tanımlama](#Defining_your_Data_Model) bölümünde, dört özel olarak adlandırılmış genel yöntemler sunulan böylece bizim koleksiyonundan verilerini dizisi denetleyici ve okuma ve yazma `PersonModels`.
+Üzerinde yaptığımız gibi `PersonModel` yukarıda sınıfını [veri modelinizi tanımlama](#Defining_your_Data_Model) bölümünde, size özel olarak adlandırılmış dört genel yöntemleri açığa şekilde bizim koleksiyonundan dizisi denetleyici ve okuma ve yazma veri `PersonModels`.
 
-Görünüm yüklendiğinde, sonra bu kodu bizim dizisiyle doldurmak ihtiyacımız var:
+Sonraki görünümü yüklendiğinde, biz bu kodla bizim dizi doldurmanız gerekir:
 
 ```csharp
 public override void AwakeFromNib ()
@@ -570,45 +570,45 @@ public override void AwakeFromNib ()
 }
 ```
 
-Bizim Tablo görünümü oluşturmak ihtiyacımız artık çift **Main.storyboard** dosyayı arabirimi Oluşturucusu'nda düzenlemek için açın. Düzen tablonun aşağıdakine benzer aramak için:
+Bizim Tablo görünümü oluşturmak ihtiyacımız şimdi çift **Main.storyboard** dosyayı arabirimi Oluşturucusu'nda düzenleme için açın. Aşağıdaki gibi görünmesini Tablo düzeni:
 
-[![Yeni bir tablo görünümü yerleştirmede](databinding-images/table02.png "yeni bir tablo görünümü düzenleme")](databinding-images/table02-large.png#lightbox)
+[![Yeni bir tablo görünüm düzenleme](databinding-images/table02.png "yeni bir tablo görünüm düzenleme")](databinding-images/table02-large.png#lightbox)
 
-Eklemek ihtiyacımız bir **dizi denetleyicisi** bizim tabloya bağlı veri sağlamak için aşağıdakileri yapın:
+Eklememiz gerekiyor bir **dizisi denetleyici** tablomuza ilişkili verilerini sağlamak için aşağıdakileri yapın:
 
-1. Sürükleme bir **dizi denetleyicisi** gelen **kitaplığı denetçisi** üzerine **Arayüzü Düzenleyicisi**:  
+1. Sürükleme bir **dizi denetleyici** gelen **kitaplığı denetçisi** üzerine **Arayüzü Düzenleyicisi**:  
 
-    ![Kitaplıktan bir dizi denetleyicisi seçme](databinding-images/table03.png "kitaplıktan bir dizi denetleyicisi seçme")
-2. Seçin **dizi denetleyicisi** içinde **arabirimi hiyerarşi** ve geçiş **özniteliği denetçisi**:  
+    ![Bir dizi denetleyicisi Kitaplığı'ndan seçerek](databinding-images/table03.png "kitaplıktan bir dizi denetleyicisi seçme")
+2. Seçin **dizisi denetleyici** içinde **arabirimi hiyerarşi** geçin **özniteliği denetçisi**:  
 
-    [![Öznitelikleri denetçisi seçme](databinding-images/table04.png "öznitelikleri denetçisi seçme")](databinding-images/table04-large.png#lightbox)
-3. Girin `PersonModel` için **sınıf adı**, tıklatın **artı** düğmesini tıklatın ve üç anahtarları ekleyin. Bunları `Name`, `Occupation` ve `isManager`:  
+    [![Öznitelikleri Inspector'ı seçerek](databinding-images/table04.png "öznitelikleri Inspector'ı seçme")](databinding-images/table04-large.png#lightbox)
+3. Girin `PersonModel` için **sınıf adı**, tıklayın **artı** düğmesini tıklatın ve üç anahtarları ekleyin. Bunları `Name`, `Occupation` ve `isManager`:  
 
-    ![Gerekli anahtar yollar ekleme](databinding-images/table05.png "gerekli anahtar yollar ekleme")
-4. Bu ne bir dizi yönetiyor dizi denetleyicisi bildirir ve hangi özelliklerini bu ortaya (anahtarlar).
-5. Geçiş **bağlamaları denetçisi** ve altında **içerik dizi** seçin **bağlamak** ve **tablo View Controller**. Girin bir **Model anahtar yolu** , `self.personModelArray`:  
+    ![Gerekli anahtar yolu ekleme](databinding-images/table05.png "gerekli anahtar yolu ekleme")
+4. Bu dizi denetleyicisi ne bir dizi yönetiyor bildirir ve hangi özellikleri, üzerinden kullanıma sunacaksınız (anahtarlar).
+5. Geçiş **bağlamaları denetçisi** altında **içerik dizisi** seçin **bağlamak** ve **Tablo görünümü denetleyicisi**. Girin bir **Model anahtar yolu** , `self.personModelArray`:  
 
     ![Anahtar yoluna girdiğinden](databinding-images/table06.png "anahtar yolu girme")
-6. Bu dizi dizi denetleyiciye bağlar `PersonModels` biz bizim görünüm denetleyicisinde sunulan.
+6. Bu dizi dizi denetleyiciye bölümlere `PersonModels` size sunduğumuz görünüm denetleyicisi üzerinde gösterilen.
 
-Bizim Tablo görünümü dizi denetleyiciyi bağlamak için ihtiyacımız artık, aşağıdakileri yapın:
+Bizim Tablo görünümü dizi Denetleyicisi'ne bağlamak ihtiyacımız şimdi aşağıdakileri yapın:
 
 1. Tablo görünümü seçin ve **denetçisi bağlama**:  
 
-    [![Bağlama denetçisi seçme](databinding-images/table07.png "bağlama denetçisi seçme")](databinding-images/table07-large.png#lightbox)
-2. Altında **İçindekiler** turndown, select **bağlamak** ve **dizi denetleyicisi**. Girin `arrangedObjects` için **denetleyicisi anahtar** alan:  
+    [![Bağlama Inspector'ı seçerek](databinding-images/table07.png "bağlama Inspector'ı seçme")](databinding-images/table07-large.png#lightbox)
+2. Altında **İçindekiler** turndown, select **bağlamak** ve **dizisi denetleyici**. Girin `arrangedObjects` için **denetleyicisi anahtarı** alan:  
 
     ![Denetleyici anahtar tanımlama](databinding-images/table08.png "denetleyicisi anahtarını tanımlama")
-3. Seçin **Tablo görünümü hücresi** altında **çalışan** sütun. İçinde **bağlamaları denetçisi** altında **değeri** turndown, select **bağlamak** ve **tablo hücre görünümü**. Girin `objectValue.Name` için **Model anahtar yolu**:  
+3. Seçin **Tablo görünümü hücresi** altında **çalışan** sütun. İçinde **bağlamaları denetçisi** altında **değer** turndown, select **bağlamak** ve **tablo hücre görünümü**. Girin `objectValue.Name` için **Model anahtar yolu**:  
 
-    [![Model anahtar yolu ayarlanıyor](databinding-images/table09.png "modeli anahtar yolu ayarlanıyor")](databinding-images/table09-large.png#lightbox)
-4. `objectValue` Geçerli `PersonModel` dizi denetleyicisi tarafından yönetilen dizisindeki.
-5. Seçin **Tablo görünümü hücresi** altında **Mesleği** sütun. İçinde **bağlamaları denetçisi** altında **değeri** turndown, select **bağlamak** ve **tablo hücre görünümü**. Girin `objectValue.Occupation` için **Model anahtar yolu**:  
+    [![Model anahtar yolu ayarlamayı](databinding-images/table09.png "modeli anahtar yolu ayarlama")](databinding-images/table09-large.png#lightbox)
+4. `objectValue` Geçerli `PersonModel` dizi denetleyici tarafından yönetilmekte olan dizi.
+5. Seçin **Tablo görünümü hücresi** altında **meslek** sütun. İçinde **bağlamaları denetçisi** altında **değer** turndown, select **bağlamak** ve **tablo hücre görünümü**. Girin `objectValue.Occupation` için **Model anahtar yolu**:  
 
-    [![Model anahtar yolu ayarlanıyor](databinding-images/table10.png "modeli anahtar yolu ayarlanıyor")](databinding-images/table10-large.png#lightbox)
+    [![Model anahtar yolu ayarlamayı](databinding-images/table10.png "modeli anahtar yolu ayarlama")](databinding-images/table10-large.png#lightbox)
 6. Değişikliklerinizi kaydetmek ve Xcode ile eşitlemek Mac için Visual Studio geri dönün.
 
-Biz uygulama çalıştırırsanız, tablonun bizim dizisi ile doldurulur `PersonModels`:
+Uygulama çalıştırıyoruz, tablonun bizim dizisi ile doldurulur `PersonModels`:
 
 [![Uygulamayı çalıştıran](databinding-images/table11.png "uygulamayı çalıştırma")](databinding-images/table11-large.png#lightbox)
 
@@ -616,13 +616,13 @@ Biz uygulama çalıştırırsanız, tablonun bizim dizisi ile doldurulur `Person
 
 ### <a name="outline-view-data-binding"></a>Anahat görünüm veri bağlama
 
-veri bağlama anahat görünümü karşı bir tablo görünümü karşı bağlama çok benzer. Anahtar farktır biz kullanmaya başlayacağınız, bir **ağaç denetleyicisi** yerine bir **dizi denetleyicisi** anahat görünümüne bağlı veri sağlamak için. Anahat görünümler ile çalışma hakkında daha fazla bilgi için lütfen bkz bizim [anahat görünümleri](~/mac/user-interface/outline-view.md) belgeleri.
+veri bağlama anahat görünüme yönelik bağlama Tablo görünümüne karşı çok benzer. Anahtar fark kullanacağız, bir **ağaç denetleyicisi** yerine bir **dizisi denetleyici** anahat görünüme bağlı veri sağlamak için. Anahat görünümleri ile çalışma hakkında daha fazla bilgi için lütfen bkz. bizim [anahat görünümleri](~/mac/user-interface/outline-view.md) belgeleri.
 
-İlk olarak, yeni bir ekleyelim **View Controller** için bizim **Main.storyboard** arabirimi Oluşturucusu'nda dosya ve alt sınıf adını `OutlineViewController`: 
+İlk olarak, yeni bir ekleyelim **görünüm denetleyicisi** için sunduğumuz **Main.storyboard** dosya arabirimi Oluşturucu'da ve kendi sınıf adını `OutlineViewController`: 
 
 [![Yeni bir görünüm denetleyicisi ekleme](databinding-images/outline01.png "yeni bir görünüm denetleyicisi ekleme")](databinding-images/outline01-large.png#lightbox)
 
-Ardından, düzenleyelim **OutlineViewController.cs** (otomatik olarak bizim projesine eklendi) dosyası ve bir dizi sunmaya (`NSArray`), `PersonModel` sınıfları veri formumuzun bağlama olacaktır. Aşağıdaki kodu ekleyin:
+Ardından, düzenleyelim **OutlineViewController.cs** (otomatik olarak bizim projeye eklendi) dosyası ve bir dizi kullanıma sunar (`NSArray`), `PersonModel` sınıfları veri formumuzun bağlama olacaktır. Aşağıdaki kodu ekleyin:
 
 ```csharp
 private NSMutableArray _people = new NSMutableArray();
@@ -663,9 +663,9 @@ public void SetPeople(NSMutableArray array) {
 }
 ```
 
-Yalnızca üzerinde yaptığımız gibi `PersonModel` yukarıda sınıfını [veri modelinizi tanımlama](#Defining_your_Data_Model) bölümünde, dört özel olarak adlandırılmış genel yöntemler sunulan böylece bizim koleksiyonundan verilerini ağaç denetleyicisi ve okuma ve yazma `PersonModels`.
+Üzerinde yaptığımız gibi `PersonModel` yukarıda sınıfını [veri modelinizi tanımlama](#Defining_your_Data_Model) bölümünde, size özel olarak adlandırılmış dört genel yöntemleri açığa şekilde bizim koleksiyonundan ağaç denetleyici ve okuma ve yazma veri `PersonModels`.
 
-Görünüm yüklendiğinde, sonra bu kodu bizim dizisiyle doldurmak ihtiyacımız var:
+Sonraki görünümü yüklendiğinde, biz bu kodla bizim dizi doldurmanız gerekir:
 
 ```csharp
 public override void AwakeFromNib ()
@@ -688,58 +688,58 @@ public override void AwakeFromNib ()
 }
 ```
 
-Bizim anahat görünümü oluşturmak ihtiyacımız artık çift **Main.storyboard** dosyayı arabirimi Oluşturucusu'nda düzenlemek için açın. Düzen tablonun aşağıdakine benzer aramak için:
+Bizim anahat görünümü oluşturmak ihtiyacımız şimdi çift **Main.storyboard** dosyayı arabirimi Oluşturucusu'nda düzenleme için açın. Aşağıdaki gibi görünmesini Tablo düzeni:
 
-[![Anahat görünümü oluşturma](databinding-images/outline02.png "özeti görünümü oluşturma")](databinding-images/outline02-large.png#lightbox)
+[![Anahat görünümü oluşturma](databinding-images/outline02.png "anahat görünümü oluşturma")](databinding-images/outline02-large.png#lightbox)
 
-Eklemek ihtiyacımız bir **ağaç denetleyicisi** bizim anahat ilişkili veri sağlamak için şunları yapın:
+Eklememiz gerekiyor bir **ağaç denetleyicisi** ilişkili anahat bizim verilerini sağlamak için aşağıdakileri yapın:
 
 1. Sürükleme bir **ağaç denetleyicisi** gelen **kitaplığı denetçisi** üzerine **Arayüzü Düzenleyicisi**:  
 
-    ![Kitaplıktan bir ağaç denetleyicisi seçme](databinding-images/outline03.png "kitaplıktan bir ağaç denetleyicisi seçme")
-2. Seçin **ağaç denetleyicisi** içinde **arabirimi hiyerarşi** ve geçiş **özniteliği denetçisi**:  
+    ![Bir ağaç denetleyicisi Kitaplığı'ndan seçerek](databinding-images/outline03.png "kitaplıktan bir ağaç denetleyicisi seçme")
+2. Seçin **ağaç denetleyicisi** içinde **arabirimi hiyerarşi** geçin **özniteliği denetçisi**:  
 
-    [![Öznitelik denetçisi seçme](databinding-images/outline04.png "özniteliği denetçisi seçme")](databinding-images/outline04-large.png#lightbox)
-3. Girin `PersonModel` için **sınıf adı**, tıklatın **artı** düğmesini tıklatın ve üç anahtarları ekleyin. Bunları `Name`, `Occupation` ve `isManager`:  
+    [![Öznitelik Inspector'ı seçerek](databinding-images/outline04.png "özniteliği Inspector'ı seçme")](databinding-images/outline04-large.png#lightbox)
+3. Girin `PersonModel` için **sınıf adı**, tıklayın **artı** düğmesini tıklatın ve üç anahtarları ekleyin. Bunları `Name`, `Occupation` ve `isManager`:  
 
-    ![Gerekli anahtar yollar ekleme](databinding-images/outline05.png "gerekli anahtar yollar ekleme")
-4. Bu ne bir dizi yönetiyor ağaç denetleyicisi bildirir ve hangi özelliklerini bu ortaya (anahtarlar).
-5. Altında **ağaç denetleyicisi** bölümünde, girin `personModelArray` için **alt**, girin `NumberOfEmployees` altında **sayısı** ve girin `isEmployee` altında **Yaprak**:  
+    ![Gerekli anahtar yolu ekleme](databinding-images/outline05.png "gerekli anahtar yolu ekleme")
+4. Bu ağaç denetleyicisi ne bir dizi yönetiyor bildirir ve hangi özellikleri, üzerinden kullanıma sunacaksınız (anahtarlar).
+5. Altında **ağaç denetleyicisi** bölümünde, girin `personModelArray` için **alt**, girin `NumberOfEmployees` altında **sayısı** girin `isEmployee` altında **Yaprak**:  
 
     ![Ağaç denetleyicisi anahtar yollarını ayarlama](databinding-images/outline05.png "ağaç denetleyicisi anahtar yollarını ayarlama")
-6. Bu, tüm alt düğümleri, kaç tane alt düğümler ve geçerli düğüm alt düğümleri olup olmadığını bulmak nereye ağaç denetleyicisi bildirir.
-7. Geçiş **bağlamaları denetçisi** ve altında **içerik dizi** seçin **bağlamak** ve **dosyanın sahibi**. Girin bir **Model anahtar yolu** , `self.personModelArray`:  
+6. Bu, tüm alt düğümleri, kaç tane alt düğümler ve geçerli düğümünün alt düğümleri varsa nerede bulacağını ağaç denetleyicisi bildirir.
+7. Geçiş **bağlamaları denetçisi** altında **içerik dizisi** seçin **bağlamak** ve **dosya sahibi**. Girin bir **Model anahtar yolu** , `self.personModelArray`:  
 
     ![Anahtar yoluna düzenleme](databinding-images/outline06.png "anahtar yolunu düzenleme")
-8. Bu dizi ağaç denetleyiciye bağlar `PersonModels` biz bizim görünüm denetleyicisinde sunulan.
+8. Bu dizi ağaç denetleyiciye bölümlere `PersonModels` size sunduğumuz görünüm denetleyicisi üzerinde gösterilen.
 
-Bizim anahat görünümü ağaç denetleyiciyi bağlamak için ihtiyacımız artık, aşağıdakileri yapın:
+Bizim anahat görünümü ağaç Denetleyicisi'ne bağlamak ihtiyacımız şimdi aşağıdakileri yapın:
 
-1. Anahat görünümü seçin ve **bağlama denetçisi** seçin:  
+1. Anahat görünümünü seçin ve **bağlama denetçisi** seçin:  
 
-    [![Bağlama denetçisi seçme](databinding-images/outline07.png "bağlama denetçisi seçme")](databinding-images/outline07-large.png#lightbox)
-2. Altında **anahat içeriği görüntüle** turndown, select **bağlamak** ve **ağaç denetleyicisi**. Girin `arrangedObjects` için **denetleyicisi anahtar** alan:  
+    [![Bağlama Inspector'ı seçerek](databinding-images/outline07.png "bağlama Inspector'ı seçme")](databinding-images/outline07-large.png#lightbox)
+2. Altında **anahat içeriği görüntüle** turndown, select **bağlamak** ve **ağaç denetleyicisi**. Girin `arrangedObjects` için **denetleyicisi anahtarı** alan:  
 
     ![Denetleyici anahtarı ayarı](databinding-images/outline08.png "denetleyicisi tuş ayarlama")
-3. Seçin **Tablo görünümü hücresi** altında **çalışan** sütun. İçinde **bağlamaları denetçisi** altında **değeri** turndown, select **bağlamak** ve **tablo hücre görünümü**. Girin `objectValue.Name` için **Model anahtar yolu**:  
+3. Seçin **Tablo görünümü hücresi** altında **çalışan** sütun. İçinde **bağlamaları denetçisi** altında **değer** turndown, select **bağlamak** ve **tablo hücre görünümü**. Girin `objectValue.Name` için **Model anahtar yolu**:  
 
-    [![Model anahtar yoluna girdiğinden](databinding-images/outline09.png "modeli anahtar yolu girme")](databinding-images/outline09-large.png#lightbox)
-4. `objectValue` Geçerli `PersonModel` ağaç denetleyicisi tarafından yönetilen dizisindeki.
-5. Seçin **Tablo görünümü hücresi** altında **Mesleği** sütun. İçinde **bağlamaları denetçisi** altında **değeri** turndown, select **bağlamak** ve **tablo hücre görünümü**. Girin `objectValue.Occupation` için **Model anahtar yolu**:  
+    [![Model anahtar yoluna girdiğinden](databinding-images/outline09.png "modeli anahtar yoluna girme")](databinding-images/outline09-large.png#lightbox)
+4. `objectValue` Geçerli `PersonModel` ağaç denetleyicisi tarafından yönetilen dizi.
+5. Seçin **Tablo görünümü hücresi** altında **meslek** sütun. İçinde **bağlamaları denetçisi** altında **değer** turndown, select **bağlamak** ve **tablo hücre görünümü**. Girin `objectValue.Occupation` için **Model anahtar yolu**:  
 
-    [![Model anahtar yoluna girdiğinden](databinding-images/outline10.png "modeli anahtar yolu girme")](databinding-images/outline10-large.png#lightbox)
+    [![Model anahtar yoluna girdiğinden](databinding-images/outline10.png "modeli anahtar yoluna girme")](databinding-images/outline10-large.png#lightbox)
 6. Değişikliklerinizi kaydetmek ve Xcode ile eşitlemek Mac için Visual Studio geri dönün.
 
-Biz uygulama çalıştırırsanız, anahattı bizim dizisi ile doldurulur `PersonModels`:
+Ana hat uygulama çalıştırıyoruz, bizim dizisi ile doldurulur `PersonModels`:
 
 [![Uygulamayı çalıştıran](databinding-images/outline11.png "uygulamayı çalıştırma")](databinding-images/outline11-large.png#lightbox)
 
 ### <a name="collection-view-data-binding"></a>Koleksiyon görünümü veri bağlama
 
-Bir dizi denetleyicisi için koleksiyon veri sağlamak için kullanılan bir koleksiyon görünümü ile veri bağlaması olan bir tablo görünümü, bağlama gibi çok benzer. Koleksiyon görünümü hazır görüntü biçimi sahip olmadığından, daha fazla iş kullanıcı etkileşimi geribildirim sağlamak ve kullanıcının seçimi izlemek için gereklidir.
+Bir dizi denetleyicisi için koleksiyon verilerini sağlamak için kullanılan bir koleksiyon görünümü ile veri bağlaması olan bir tablo görünümü, bağlama gibi çok benzer. Koleksiyon görünümü önceden oluşturulmuş görüntü biçimi sahip olmadığından, daha fazla iş kullanıcı etkileşimi geri bildirim sağlamak ve kullanıcı seçimine izlemek için gereklidir.
 
 > [!IMPORTANT]
-> Xcode 7 ve macOS 10.11 (ve büyük) bir sorun nedeniyle, koleksiyon görünümlerini bir film şeridi (.storyboard) dosyalarını kullanılacak sorunu yaşıyor. Sonuç olarak, koleksiyon görünümlerini Xamarin.Mac uygulamalarınız için tanımlamak için .xib dosyalarını kullanmaya devam etmek gerekir. Lütfen bakın bizim [koleksiyon görünümlerini](~/mac/user-interface/collection-view.md) daha fazla bilgi için.
+> Xcode 7 ve macOS 10.11 (ve büyük) bir sorun nedeniyle, bir görsel Taslak (.storyboard) dosyalarının içinde kullanılacak koleksiyon görünümlerini belirleyemiyoruz. Sonuç olarak, Xamarin.Mac uygulamalarınız için koleksiyon görünümlerini tanımlamak için .xib dosyaları kullanmaya devam etmek gerekir. Lütfen bkz. bizim [koleksiyon görünümlerini](~/mac/user-interface/collection-view.md) daha fazla bilgi için belgelere bakın.
 
 <!--KKM 012/16/2015 - Once Apple fixes the issue with Xcode and Collection Views in Storyboards, we can uncomment this section.
 
@@ -856,38 +856,38 @@ If we run the application, the table will be populated with our array of `Person
 
 For more information on working with Collection Views, please see our [Collection Views](~/mac/user-interface/collection-view.md) documentation.-->
 
-## <a name="debugging-native-crashes"></a>Yerel çökme (Crash) hata ayıklama
+## <a name="debugging-native-crashes"></a>Yerel kilitlenme hata ayıklama
 
-Hata, veri bağlamaları yapma içinde sonuçlanabilir bir _yerel kilitlenme_ yönetilmeyen kod ve Xamarin.Mac uygulamanız ile tamamen başarısız olmasına neden bir `SIGABRT` hata:
+Veri bağlamalarınızı hata yapma sonuçlanabilir bir _yerel kilitlenme_ yönetilmeyen kod ve Xamarin.Mac uygulamanızın ile tamamen başarısız olmasına neden bir `SIGABRT` hata:
 
 [![Yerel kilitlenme iletişim kutusu örneği](databinding-images/debug01.png "yerel kilitlenme iletişim kutusu örneği")](databinding-images/debug01-large.png#lightbox)
 
-Genellikle dört ana nedeni vardır yerel çökme (Crash) veri bağlama sırasında:
+Genellikle dört ana nedeni vardır yerel kilitlenme veri bağlama sırasında:
 
-1. Veri modelinizi öğesinden devralmıyor `NSObject` veya bir alt sınıfı `NSObject`.
-2. Objective-C kullanarak özelliğinizi kullanıma değil `[Export("key-name")]` özniteliği.
-3. Erişimci'nın değeri değişiklikler kaydırılacak `WillChangeValue` ve `DidChangeValue` yöntem çağrıları (aynı anahtara belirtme `Export` özniteliği).
-4. Hatalı veya yanlış yazılan anahtar sahip **bağlama denetçisi** arabirimi Oluşturucu.
+1. Veri modelinizi öğesinden devralmayan `NSObject` veya öğesinin `NSObject`.
+2. Objective-C kullanarak, bir özelliği kullanıma sunmadı `[Export("key-name")]` özniteliği.
+3. Değişiklikleri erişimcisi'nın değeri kaydırılacak `WillChangeValue` ve `DidChangeValue` yöntem çağrıları (aynı anahtarı olarak belirterek `Export` özniteliği).
+4. Hatalı veya yanlış yazılan bir anahtarı olan **bağlama denetçisi** arabirimi Oluşturucu.
 
-### <a name="decoding-a-crash"></a>Bir kilitlenme kod çözme
+### <a name="decoding-a-crash"></a>Bir kilitlenme kodunu çözme
 
-Şimdi bulmak ve düzeltmek nasıl gösteriyoruz şekilde yerel çökmesine bizim veri bağlama neden oluyor. Arabirim Oluşturucusu'nda, koleksiyon görünümü örnekten ilk etiketi bizim bağlamasının değiştirelim `Name` için `Title`:
+Şimdi bulmak ve düzeltmek nasıl göstereceğiz için yerel bir kilitlenme bizim veri bağlama neden. Arabirimi Oluşturucu'da koleksiyon görünümü örnekte ilk etiketin bizim bağlama değiştirelim `Name` için `Title`:
 
 [![Bağlama anahtarı düzenleme](databinding-images/debug02.png "bağlama anahtarı düzenleme")](databinding-images/debug02-large.png#lightbox)
 
-Şimdi değişikliği kaydetmek, Xcode ile eşitleme ve uygulamamızı çalıştırmak Mac için Visual Studio için dönün. Koleksiyon görünümü görüntülendiğinde, uygulama ile kısa bir süre içinde kilitleniyor bir `SIGABRT` hata (gösterildiği gibi **uygulama çıktısı** Mac için Visual Studio) bu yana `PersonModel` bir özellik anahtarı ile kullanıma sunmuyor `Title`:
+Şimdi değişikliği kaydetmek, Xcode ile eşitleyin ve uygulamamızı çalıştırmak Mac için Visual Studio için dönün. Koleksiyon görünümü görüntülendiğinde, uygulamayı ile kısa bir süre içinde kilitlenir bir `SIGABRT` hata (gösterildiği gibi **uygulama çıktısı** Mac için Visual Studio'da) bu yana `PersonModel` anahtarla bir özelliği kullanıma sunmuyor `Title`:
 
-[![Bir bağlama hatası örneği](databinding-images/debug03.png "bir bağlama hatası örneği")](databinding-images/debug03-large.png#lightbox)
+[![Bağlama hatası örneği](databinding-images/debug03.png "bağlama hatası örneği")](databinding-images/debug03-large.png#lightbox)
 
-Hata çok üstüne kaydırırsanız **uygulama çıktısı** sorunu çözmek için anahtarı görebiliriz:
+Hata çok üstüne kaydırırsanız **uygulama çıktısı** sorunu çözme anahtarını görebiliriz:
 
 [![Hata günlüğünde sorunu bulma](databinding-images/debug04.png "hata günlüğünde sorunu bulma")](databinding-images/debug04-large.png#lightbox)
 
-Bu satırı bize söyleyen olan anahtar `Title` bağlama biz nesnesi mevcut değil. Biz değiştirirseniz, bağlama yeniden `Name` arabirimi Oluşturucu, kaydetme, eşitleme, yeniden oluşturun ve çalıştırın, uygulama sorun beklendiği gibi çalışır.
+Bu satırı bize, söylüyor anahtar `Title` bağlıyoruz nesne mevcut değil. Bağlama yeniden değiştirirsek `Name` arabirim Oluşturucu, kaydetme, eşitleme, yeniden derleyin ve çalıştırın, uygulama sorun beklendiği gibi çalışır.
 
 ## <a name="summary"></a>Özet
 
-Bu makalede, veri bağlama ve anahtar-değer Xamarin.Mac uygulamada kodlama ile çalışan bir ayrıntılı bakış duruma getirdi. İlk olarak, bir C# sınıfına Objective-C (KVC) anahtar-değer kodlama kullanılarak ve anahtar-değer (KVO) Gözlemleme gösterme Aranan. Ardından, KVO uyumlu sınıfının nasıl kullanılacağı gösterilmiştir ve veri Xcode'nın arabirimi Oluşturucu kullanıcı Arabirimi öğelerine bağlayın. Son olarak, karmaşık veri bağlama işlemini kullanma gösterdi **dizi denetleyicileri** ve **ağaç denetleyicileri**.
+Bu makalede ayrıntılı veri bağlama ve bir Xamarin.Mac uygulamasında anahtar-değer kodlaması ile çalışmak üzere göz duruma getirdi. İlk olarak, C# sınıfı Objective-c (KVC) anahtar-değer kodlaması kullanarak ve anahtar-değer (KVO) gözleme gösterme görünüyordu. Ardından, KVO uyumlu sınıfının nasıl kullanılacağını gösterdi ve veri Xcode'un arabirim Oluşturucu UI öğelerine bağlar. Son olarak, karmaşık veri bağlama kullanarak gösterdi **dizisi denetleyicinin** ve **ağaç denetleyicileri**.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
@@ -899,9 +899,9 @@ Bu makalede, veri bağlama ve anahtar-değer Xamarin.Mac uygulamada kodlama ile 
 - [Tablo görünümleri](~/mac/user-interface/table-view.md)
 - [Anahat görünümleri](~/mac/user-interface/outline-view.md)
 - [Koleksiyon görünümleri](~/mac/user-interface/collection-view.md)
-- [Anahtar-değer programlama kılavuzu kodlama](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueCoding/index.html)
-- [Anahtar-değer Gözlemleme Programlama Kılavuzu'na giriş](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueObserving/KeyValueObserving.html)
-- [Programlama konularına Cocoa bağlamaları giriş](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CocoaBindings/CocoaBindings.html)
-- [Giriş Cocoa bağlamaları başvurusu](https://developer.apple.com/library/content/documentation/Cocoa/Reference/CocoaBindingsRef/CocoaBindingsRef.html)
+- [Anahtar-değer kodlaması Programlama Kılavuzu](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueCoding/index.html)
+- [Anahtar-değer gözleme programlama kılavuzu için giriş](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueObserving/KeyValueObserving.html)
+- [Cocoa bağlamaları programlama konuları giriş](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CocoaBindings/CocoaBindings.html)
+- [Cocoa bağlamaları başvuru giriş](https://developer.apple.com/library/content/documentation/Cocoa/Reference/CocoaBindingsRef/CocoaBindingsRef.html)
 - [NSCollectionView](https://developer.apple.com/documentation/appkit/nscollectionview)
 - [macOS İnsan Arabirimi yönergelerine](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)

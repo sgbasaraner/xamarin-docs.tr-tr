@@ -1,63 +1,63 @@
 ---
-title: Xamarin.Mac veritabanlarında
-description: Bu makalede, anahtar-değer kodlama ve anahtar-değer SQLite veritabanları ve Xcode'nın arabirimi Oluşturucu kullanıcı Arabirimi öğeleri arasında veri bağlamayı izin vermek üzere Gözlemleme kullanmayı ele alır. Ayrıca, SQLite veri erişim sağlamak için SQLite.NET ORM kullanmayı ele alır.
+title: Xamarin.Mac veritabanları
+description: Bu makale, anahtar-değer kodlaması ve anahtar-değer arasında SQLite veritabanları ve kullanıcı Arabirimi öğeleri Xcode'un arabirim oluşturucu içinde veri bağlamayı izin vermek için gözleme kullanarak kapsar. SQLite verilerine erişim sağlaması için SQLite.NET ORM kullanma kapsar.
 ms.prod: xamarin
 ms.assetid: 44FAFDA8-612A-4E0F-8BB4-5C92A3F4D552
 ms.technology: xamarin-mac
 author: bradumbaugh
 ms.author: brumbaug
 ms.date: 03/14/2017
-ms.openlocfilehash: 3bc40824396aba78b2645bf9701e8e0e659c8b0a
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.openlocfilehash: db418df0869d73e9f04982fb508fd261304240c0
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34791998"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "43780657"
 ---
-# <a name="databases-in-xamarinmac"></a>Xamarin.Mac veritabanlarında
+# <a name="databases-in-xamarinmac"></a>Xamarin.Mac veritabanları
 
-_Bu makalede, anahtar-değer kodlama ve anahtar-değer SQLite veritabanları ve Xcode'nın arabirimi Oluşturucu kullanıcı Arabirimi öğeleri arasında veri bağlamayı izin vermek üzere Gözlemleme kullanmayı ele alır. Ayrıca, SQLite veri erişim sağlamak için SQLite.NET ORM kullanmayı ele alır._
+_Bu makale, anahtar-değer kodlaması ve anahtar-değer arasında SQLite veritabanları ve kullanıcı Arabirimi öğeleri Xcode'un arabirim oluşturucu içinde veri bağlamayı izin vermek için gözleme kullanarak kapsar. SQLite verilerine erişim sağlaması için SQLite.NET ORM kullanma kapsar._
 
 ## <a name="overview"></a>Genel Bakış
 
-C# ve .NET ile Xamarin.Mac uygulamada çalışırken, bir Xamarin.iOS veya Xamarin.Android uygulamasına erişmek için aynı SQLite veritabanlarını da erişiminiz vardır.
+C# ve .NET ile bir Xamarin.Mac uygulamasında çalışırken, bir Xamarin.iOS veya Xamarin.Android uygulamaya erişebilmesi için SQLite veritabanlarına erişebilirsiniz.
 
-Bu makalede biz SQLite verilere erişmek için iki yol kapsayan:
+Bu makalede biz SQLite veri erişmenin iki yöntemi kapsayan:
 
-1. **Doğrudan erişim** - bir SQLite veritabanına doğrudan erişerek biz verileri veritabanından anahtar-değer kodlama için kullanabilir ve kullanıcı Arabirimi öğeleri ile veri bağlaması Xcode'nın arabirimi Oluşturucusu'nda oluşturulan. Anahtar-değer kodlama ve veri Xamarin.Mac uygulamanızda teknikleri bağlama kullanarak, yazma ve doldurmak ve kullanıcı Arabirimi öğeleri ile çalışmak için korumanız için sahip kod miktarını önemli ölçüde düşürebilir. Ayrıca, yedekleme verilerinizi daha fazla ayırma faydası vardır (_veri modeli_) kullanıcı arabirimi, Önden bitiş (_Model-View-Controller_), başında bakımı kolay, daha esnek uygulama için Tasarım.
-2. **SQLite.NET ORM** - açık kaynak kullanarak [SQLite.NET](http://www.sqlite.org) biz büyük ölçüde azaltabilir okumak ve bir SQLite veritabanından veri yazmak için gereken kod miktarını nesne ilişki Yöneticisi (ORM). Bu veriler, bir kullanıcı arabirimi öğesi gibi bir tablo görünümü doldurmak için daha sonra kullanılabilir.
+1. **Doğrudan erişim** - bir SQLite veritabanından doğrudan erişerek, veritabanındaki verileri anahtar-değer kodlaması için kullanabiliriz ve veri bağlama UI öğesi Xcode'un arabirimi Oluşturucu'da oluşturuldu. Anahtar-değer kodlaması ve veri teknikleri Xamarin.Mac uygulamanızda bağlama kullanarak, yazma ve doldurmak ve kullanıcı Arabirimi öğeleri ile çalışmak için korumanız gereken kod miktarını önemli ölçüde düşürebilir. Ayrıca, yedekleme verilerinizi daha fazla ayırma avantajı vardır (_veri modeli_) kullanıcı arabirimi, Önden bitiş (_Model-View-Controller_), bakımı kolay, daha esnek bir uygulama için önde gelen Tasarım.
+2. **SQLite.NET ORM** - açık kaynak kullanarak [SQLite.NET](http://www.sqlite.org) size önemli ölçüde azaltabilirsiniz bir SQLite veritabanından veri yazma ve okuma için gereken kod miktarını nesne ilişki Yöneticisi (ORM). Bu veriler daha sonra kullanıcı arabirimi öğesi gibi bir tablo görünümü doldurmak için kullanılabilir.
 
-[![Çalışan uygulama örneği](databases-images/intro01.png "çalışan uygulama örneği")](databases-images/intro01-large.png#lightbox)
+[![Çalışan uygulamaya örneği](databases-images/intro01.png "çalıştıran uygulama örneği")](databases-images/intro01-large.png#lightbox)
 
-Bu makalede, biz anahtar-değer kodlama ve Xamarin.Mac uygulamasında SQLite veritabanlarıyla veri bağlama ile çalışmanın temelleri ele alacağız. Aracılığıyla iş önerilen [Hello, Mac](~/mac/get-started/hello-mac.md) makalesi önce özellikle [Xcode ve arabirim Oluşturucu giriş](~/mac/get-started/hello-mac.md#Introduction_to_Xcode_and_Interface_Builder) ve [çıkışlar ve eylemleri](~/mac/get-started/hello-mac.md#Outlets_and_Actions) onu farklı bölümler temel kavramları ve biz bu makalede kullanmaya başlayacağınız teknikleri ele alınmaktadır.
+Bu makalede, şu anahtar-değer kodlaması ve bir Xamarin.Mac uygulamasını SQLite veritabanlarıyla veri bağlama ile çalışmanın temel bilgileri ele alacağız. Aracılığıyla iş önerilen [Merhaba, Mac](~/mac/get-started/hello-mac.md) makale önce özellikle [Xcode ve arabirim Oluşturucu giriş](~/mac/get-started/hello-mac.md#introduction-to-xcode-and-interface-builder) ve [çıkışlar ve eylemleri](~/mac/get-started/hello-mac.md#outlets-and-actions) olarak bölümlerde temel kavramları ve bu makalede kullanacağız tekniklerini ele alınmaktadır.
 
-Biz anahtar-değer kodlama ve veri bağlama kullanacağınız, lütfen aracılığıyla çalışmaya [verileri bağlama ve anahtar-değer kodlama](~/mac/app-fundamentals/databinding.md) ilk olarak çekirdek teknikleri ve kavramlarını ele alınan kullanılacak bu belgeleri ve onun örnek uygulama.
+Biz anahtar-değer kodlaması ve veri bağlama kullandıklarından, lütfen aracılığıyla iş [veri bağlama ve anahtar-değer kodlaması](~/mac/app-fundamentals/databinding.md) ilk teknikler çekirdek ve kavramları arasında kapsamdaki kullanılacak olan bu belgeleri ve kendi örnek uygulama.
 
-Bir göz atalım isteyebilirsiniz [gösterme C# sınıfları / Objective-C yöntemlere](~/mac/internals/how-it-works.md) bölümünü [Xamarin.Mac iç](~/mac/internals/how-it-works.md) de açıklar belge `Register` ve `Export` öznitelikleri Objective-C nesneleri ve kullanıcı Arabirimi öğeleri, C# sınıfları wire için kullanılır.
+Bir göz atın isteyebilirsiniz [gösterme C# sınıfları / Objective-C yöntemlere](~/mac/internals/how-it-works.md) bölümünü [Xamarin.Mac iç işlevleri](~/mac/internals/how-it-works.md) de açıklar belge `Register` ve `Export` öznitelikleri Objective-C nesneleri ve UI öğeleri, C# sınıfları kablo kullanılır.
 
 ## <a name="direct-sqlite-access"></a>Doğrudan SQLite erişim
 
-Kullanıcı Arabirimi öğeleri Xcode'nın arabirimi Oluşturucu bağlı olmasını giderek SQLite verileri için yüksek oranda önerilir doğrudan (aksine bir ORM gibi bir yöntemle) SQLite veritabanı erişim, yol toplam denetime sahip olduğundan veri yazılmış okuyun ve  veritabanından kaldırılıyor.
+Xcode'un arabirim Oluşturucu UI öğelerine bağlanacak geçiyor SQLite veriler için yüksek oranda önerilir (değil doğrudan bir ORM gibi bir yöntem kullanarak) SQLite veritabanı erişim, yolu üzerinde tam denetime sahip olduğundan veri yazılan okuyun ve  veritabanından kaldırılıyor.
 
-İçinde anlatıldığı gibi [verileri bağlama ve anahtar-değer kodlama](~/mac/app-fundamentals/databinding.md) belgeleri, anahtar-değer kodlama ve veri Xamarin.Mac uygulamanızda teknikleri bağlama kullanarak, önemli ölçüde düşebilir yazmak zorunda kod miktarını ve doldurma ve kullanıcı Arabirimi öğeleri ile çalışmak için korur. Bir SQLite veritabanı doğrudan erişim ile birlikte kullanıldığında, okumak ve bu veritabanına veri yazmak için gereken kod miktarını büyük ölçüde azaltabilir.
+İçinde anlatıldığı gibi [veri bağlama ve anahtar-değer kodlaması](~/mac/app-fundamentals/databinding.md) belgeleri, anahtar-değer kodlaması ve veri teknikleri Xamarin.Mac uygulamanızda bağlama kullanarak, büyük ölçüde düşebilir yazmanız gereken kod miktarını ve doldurma ve kullanıcı Arabirimi öğeleri ile çalışmak için korur. Bir SQLite veritabanından doğrudan erişimle birlikte kullanıldığında, okuma ve bu veritabanına veri yazmak için gereken kod miktarını büyük ölçüde azaltabilir.
 
-Bu makalede, sizi veri bağlama ve anahtar-değer kodlama belge bir SQLite veritabanı yedekleme kaynağı olarak bağlaması için kullanılacak örnek uygulamadan değiştirme.
+Bu makalede, biz veri bağlama ve anahtar-değer kodlama belge bir SQLite veritabanı için bağlama yedekleme kaynağı olarak kullanmak için örnek uygulamayı değiştirme.
 
-### <a name="including-sqlite-database-support"></a>SQLite veritabanı desteği de dahil olmak üzere
+### <a name="including-sqlite-database-support"></a>SQLite veritabanı desteği dahil olmak üzere
 
-Devam etmeden önce biz birkaç başvuruları dahil ederek uygulamamız için SQLite veritabanı desteği eklemeniz gerekir. DLL dosyaları.
+Devam etmeden önce size birkaç başvuruları ekleyerek uygulamamız için SQLite veritabanı desteği eklemeniz gerekir. DLL dosyaları.
 
 Aşağıdakileri yapın:
 
-1. İçinde **çözüm paneli**, sağ tıklayın **başvuruları** klasörü ve Seç **Düzenle başvurular**.
+1. İçinde **çözüm bölmesi**, sağ **başvuruları** klasörü ve select **başvuruları Düzenle**.
 2. Her ikisini de seçin **Mono.Data.Sqlite** ve **System.Data** derlemeler: 
 
-    [![Gerekli başvuruları ekleme](databases-images/reference01.png "gerekli başvuruları ekleme")](databases-images/reference01-large.png#lightbox)
-3. Tıklatın **Tamam** düğmesine yaptığınız değişiklikleri kaydetmek ve başvurular ekleyin.
+    [![Gerekli başvuru ekleme](databases-images/reference01.png "gerekli başvuru ekleme")](databases-images/reference01-large.png#lightbox)
+3. Tıklayın **Tamam** düğmesine yaptığınız değişiklikleri kaydedin ve başvurular ekleyin.
 
-### <a name="modifying-the-data-model"></a>Veri modeli değiştirme
+### <a name="modifying-the-data-model"></a>Veri modelini değiştirme
 
-Doğrudan uygulamamız SQLite veritabanına erişmek için destek ekledik, biz bizim veri modeli okuyun ve veritabanından veri yazma (aynı zamanda anahtar-değer kodlama ve veri bağlama sağlar) nesnesine değiştirmeniz gerekir. Örnek uygulamamız söz konusu olduğunda, biz düzenleyeceksiniz **PersonModel.cs** sınıfı ve şu şekilde görünür yapın:
+Uygulamamız için bir SQLite veritabanından doğrudan erişmek için destek ekledik, biz bizim veri modeli okumak ve veritabanından veri yazma (aynı zamanda anahtar-değer kodlaması ve veri bağlama sağlar) nesnesine değiştirmeniz gerekir. Örnek uygulamamızla söz konusu olduğunda, biz Düzenle **PersonModel.cs** sınıfı ve aşağıdaki gibi görünmesi:
 
 ```csharp
 using System;
@@ -420,7 +420,7 @@ namespace MacDatabase
 
 Bir değişiklik aşağıda ayrıntılı olarak bakalım.
 
-Birkaç ilk olarak, ekledik SQLite kullanmak için gereken deyimleri ve son bizim bağlantı SQLite veritabanına kaydetmek için bir değişken ekledik:
+Birkaç önce ekledik SQLite kullanmak için gerekli olan deyimleri ve bizim son bağlantı SQLite veritabanına kaydetmek için bir değişken ekledik:
 
 ```csharp
 using System.Data;
@@ -431,7 +431,7 @@ using Mono.Data.Sqlite;
 private SqliteConnection _conn = null;
 ```
 
-Kullanıcı veri bağlama aracılığıyla kullanıcı arabiriminde içeriği değiştirdiğinde otomatik olarak herhangi bir değişiklik kayıt veritabanına kaydetmek için bu kaydedilmiş bir bağlantıyı kullanacağız:
+Kullanıcı veri bağlama aracılığıyla kullanıcı arabiriminde içeriği değiştirdiğinde otomatik olarak herhangi bir değişiklik kaydı veritabanına kaydetmek için kaydedilmiş bu bağlantıyı kullanacağız:
 
 ```csharp
 [Export("Name")]
@@ -476,11 +476,11 @@ public bool isManager {
 }
 ```
 
-Yapılan değişiklikler **adı**, **Mesleği** veya **isManager** özellikler veri var. önce kaydedilmişse veritabanına gönderilir (örneğin, `_conn` değişken değil `null`). Ardından, için ekledik yöntemleri bakalım **oluşturma**, **güncelleştirme**, **yük** ve **silmek** veritabanı kişilerden.
+Yapılan tüm değişiklikler **adı**, **meslek** veya **isManager** özellik verileri var. önce kaydedildiyse veritabanına gönderilir (örneğin, `_conn` değişken `null`). Ardından, ekledik yöntemleri göz atalım **Oluştur**, **güncelleştirme**, **yük** ve **Sil** veritabanından kişiler.
 
 #### <a name="create-a-new-record"></a>Yeni bir kayıt oluşturun
 
-Aşağıdaki kod, SQLite veritabanında yeni bir kayıt oluşturmak için eklendi:
+SQLite veritabanı'nda yeni bir kayıt oluşturmak için aşağıdaki kodu eklendi:
 
 ```csharp
 public void Create(SqliteConnection conn) {
@@ -526,19 +526,19 @@ public void Create(SqliteConnection conn) {
 }
 ```
 
-Kullanıyoruz bir `SQLiteCommand` veritabanında yeni kaydı oluşturun. Size yeni bir komut almak `SQLiteConnection` (biz çağırarak yönteme geçirilen conn) `CreateCommand`. Ardından, yeni bir kayıt gerçekten yazmaya SQL yönerge parametreleri için gerçek değerleri sağlayarak ayarlarız:
+Kullanmakta olduğunuz bir `SQLiteCommand` veritabanında yeni bir kayıt oluşturmak için. Yeni bir komut aldığımız `SQLiteConnection` (biz çağırarak metodun Metoda geçilen conn) `CreateCommand`. Ardından, biz aslında yeni bir kayıt yazmak için SQL yönerge parametreleri için gerçek değerleri sağlayarak ayarlayın:
 
 ```csharp
 command.CommandText = "INSERT INTO [People] (ID, Name, Occupation, isManager, ManagerID) VALUES (@COL1, @COL2, @COL3, @COL4, @COL5)";
 ```
 
-Daha sonra kullanarak parametreler için değerleri ayarlar `Parameters.AddWithValue` yöntemi `SQLiteCommand`. Parametreleri kullanarak, biz değerleri (örneğin, tek tırnak işareti) düzgün SQLite için gönderilmeden önce kodlanmış emin olun. Örnek:
+Kullanarak parametreleri için değerleri daha sonra ayarladığımız `Parameters.AddWithValue` metodunda `SQLiteCommand`. Parametreleri kullanarak (örneğin, tek tırnak işareti) düzgün için SQLite gönderilmeden önce kodlanmış emin emin oluruz. Örnek:
 
 ```csharp
 command.Parameters.AddWithValue ("@COL1", ID);
 ```
 
-Bir kişinin bir yönetici olması ve bunların altındaki çalışanlar oluşan bir koleksiyona sahip olduğundan, son olarak, yinelemeli olarak duyuyoruz çağırma `Create` veritabanına kaydetmek için bu kişilerin yöntemi:
+Son olarak, biz, yinelemeli bir kişi bir yönetici olması ve bunları altında çalışan bir koleksiyonunuz olduğundan, çağırma `Create` bunları veritabanına kaydetmek için bu kişilere yöntemi:
 
 ```csharp
 // Save children to database as well
@@ -552,9 +552,9 @@ for (nuint n = 0; n < People.Count; ++n) {
 }
 ```
 
-#### <a name="updating-a-record"></a>Kayıt güncelleştirme
+#### <a name="updating-a-record"></a>Bir kaydı güncelleştirme
 
-Aşağıdaki kod, SQLite veritabanındaki var olan bir kaydı güncelleştirmeye eklendi:
+SQLite veritabanındaki varolan bir kaydı güncelleştirmek için aşağıdaki kodu eklendi:
 
 ```csharp
 public void Update(SqliteConnection conn) {
@@ -594,13 +594,13 @@ public void Update(SqliteConnection conn) {
 }
 ```
 
-Gibi **oluşturma** yukarıdaki biz alma bir `SQLiteCommand` geçirilen gelen içinde `SQLiteConnection`ve (parametreleri sağlayarak) bizim kaydını güncelleştirmek üzere bizim SQL ayarlayın:
+Gibi **Oluştur** yukarıdaki aldığımız bir `SQLiteCommand` geçirilen gelen içinde `SQLiteConnection`, (parametreleri sağlayarak) bizim kaydı güncelleştirmek için sunduğumuz SQL ayarlayın:
 
 ```csharp
 command.CommandText = "UPDATE [People] SET Name = @COL2, Occupation = @COL3, isManager = @COL4, ManagerID = @COL5 WHERE ID = @COL1";
 ```
 
-Biz parametre değerleri doldurun (örnek: `command.Parameters.AddWithValue ("@COL1", ID);`) ve yeniden, yinelemeli olarak çağırın güncelleştirmesini tüm alt kaydeder:
+Şu parametre değerleri doldurun (örnek: `command.Parameters.AddWithValue ("@COL1", ID);`) ve yeniden yinelemeli olarak çağrı güncelleştirme tüm alt kayıtları:
 
 ```csharp
 // Save children to database as well
@@ -614,7 +614,7 @@ for (nuint n = 0; n < People.Count; ++n) {
 ```
 #### <a name="loading-a-record"></a>Bir kayıt yükleniyor
 
-Aşağıdaki kod, varolan bir kaydı SQLite veritabanından yüklemek için eklendi:
+Varolan bir kaydı SQLite veritabanından yüklemek için aşağıdaki kodu eklendi:
 
 ```csharp
 public void Load(SqliteConnection conn, string id) {
@@ -680,7 +680,7 @@ public void Load(SqliteConnection conn, string id) {
 }
 ```
 
-Yordam, yinelemeli olarak (örneğin, kendi çalışanlar nesne Yükleme Yöneticisi nesnesi) üst nesneden çağrılabilir olduğundan, özel kodu açma ve veritabanı bağlantısı kapatma işlemek için eklendi:
+Yordam (örneğin, çalışanlar nesne yüklenirken bir Yöneticisi nesnesi) üst nesneden özyinelemeli olarak çağrılabilir olduğundan, açılış ve kapanış veritabanı bağlantısını işlemek için özel kod eklendi:
 
 ```csharp
 bool shouldClose = false;
@@ -700,7 +700,7 @@ if (shouldClose) {
 
 ```
 
-Her zaman olduğu gibi kayıt almak ve parametrelerini kullanmak için bizim SQL ayarlayın:
+Her zaman olduğu gibi sunduğumuz SQL kayıt alma ve parametreleri ayarlayın:
 
 ```csharp
 // Create new command
@@ -710,7 +710,7 @@ command.CommandText = "SELECT ID FROM [People] WHERE ManagerID = @COL1";
 command.Parameters.AddWithValue ("@COL1", id);
 ```
 
-Son olarak, bir veri okuyucu sorguyu yürütmek ve kayıt alanlarını dönmek için kullanıyoruz (hangi biz örneğini kopyalamak `PersonModel` sınıfı):
+Son olarak, bir veri okuyucu sorguyu ve kaydın alanları döndürmek için kullanırız (biz örneğini kopyalayın, `PersonModel` sınıfı):
 
 ```csharp
 using (var reader = command.ExecuteReader ()) {
@@ -725,7 +725,7 @@ using (var reader = command.ExecuteReader ()) {
 }
 ```
 
-Bu kişi bir yöneticisi ise, ayrıca tüm çalışanlar yüklemek ihtiyacımız (yinelemeli arama tarafından yeniden kendi `Load` yöntemi):
+Bu kişiyi bir yönetici ise, biz de tüm çalışanlarına yüklemeniz gerekir (yeniden yinelemeli olarak çağırarak kendi `Load` yöntemi):
 
 ```csharp
 // Is this a manager?
@@ -752,7 +752,7 @@ if (isManager) {
 
 #### <a name="deleting-a-record"></a>Kayıt silme
 
-Aşağıdaki kod, varolan bir kaydı SQLite veritabanından silmek için eklendi:
+Varolan bir kaydı SQLite veritabanından silmek için aşağıdaki kodu eklendi:
 
 ```csharp
 public void Delete(SqliteConnection conn) {
@@ -787,7 +787,7 @@ public void Delete(SqliteConnection conn) {
 }
 ```
 
-Burada yöneticileri kaydı ve (parametrelerini kullanarak) bu Yöneticisi altında herhangi bir çalışan kayıtları silmek için SQL sağlar:
+Burada hem yöneticileri kaydı hem de (parametrelerini kullanarak) bu Yöneticisi altında herhangi bir çalışan kayıtlarını silmek için SQL sağlıyoruz:
 
 ```csharp
 // Create new command
@@ -797,7 +797,7 @@ command.CommandText = "DELETE FROM [People] WHERE (ID = @COL1 OR ManagerID = @CO
 command.Parameters.AddWithValue ("@COL1", ID);
 ```
 
-Kaydı kaldırıldıktan sonra şu geçerli örneği temizleyin `PersonModel` sınıfı:
+Kaydı kaldırıldıktan sonra biz'ün geçerli örneğini Temizle `PersonModel` sınıfı:
 
 ```csharp
 // Empty class
@@ -811,7 +811,7 @@ _people = new NSMutableArray();
 
 ### <a name="initializing-the-database"></a>Veritabanı başlatılıyor
 
-Yapılan değişikliklerle birlikte veri Modelimizi yerinde okuma ve veritabanına yazılması desteklemek için kimliğinizi veritabanına bir bağlantı açmak ve ilk çalıştırılmasında başlatma gerekiyor. Aşağıdaki kodu ekleyelim bizim **MainWindow.cs** dosyası:
+Veri Modelimizi yerinde okuma ve yazma veritabanına desteklemek için değişiklik yapmadan, veritabanına bir bağlantı açmak ve ilk çalıştırılmasında başlatmak ihtiyacımız var. Aşağıdaki kodu ekleyelim bizim **MainWindow.cs** dosyası:
 
 ```csharp
 using System.Data;
@@ -868,7 +868,7 @@ private SqliteConnection GetDatabaseConnection() {
 }
 ```
 
-Yukarıdaki kod daha yakın bir göz atalım. İlk olarak, yeni veritabanı (Bu örnekte, kullanıcının Masaüstü), veritabanının var olup olmadığını görmek için bakın ve seçili değilse, oluşturmak için size bir konum seçin:
+Yukarıdaki kod daha yakın bir göz atalım. İlk olarak, veritabanı bulunup bulunmadığına bakın ve bu gereksinimleri karşılamıyorsa oluşturun (Bu örnekte, kullanıcının Masaüstü), yeni veritabanı için size bir konum seçin:
 
 ```csharp
 var documents = Environment.GetFolderPath (Environment.SpecialFolder.Desktop);
@@ -880,13 +880,13 @@ if (!exists)
     SqliteConnection.CreateFile (db);
 ```
 
-Ardından, yukarıda oluşturduğumuz yolu kullanarak veritabanına bağlan kurar:
+Ardından, yukarıda oluşturduğumuz yolu kullanarak veritabanına bağlanma kurar:
 
 ```csharp
 var conn = new SqliteConnection("Data Source=" + db);
 ```
 
-Ardından tüm SQL tablolarını biz gerektiren veritabanında oluşturuyoruz:
+Ardından tüm SQL tabloları kılarız veritabanında oluştururuz:
 
 ```csharp
 var commands = new[] {
@@ -903,7 +903,7 @@ foreach (var cmd in commands) {
 conn.Close ();
 ```
 
-Son olarak, biz veri Modelimizi de kullanabilirsiniz (`PersonModel`) uygulama veritabanı ilk çalıştırıldığında veya veritabanı eksik olup olmadığını için varsayılan bir kayıt kümesi oluşturmak için:
+Son olarak, veri Modelimizi kullanırız (`PersonModel`) uygulama veritabanı ilk çalıştırıldığında veya veritabanı eksik olup olmadığını için varsayılan bir kayıt kümesi oluşturmak için:
 
 ```csharp
 // Build list of employees
@@ -920,7 +920,7 @@ Larry.AddPerson (new PersonModel ("Mike Norman", "API Documentor"));
 Larry.Create (conn);
 ``` 
 
-Uygulamayı başlatır ve ana penceresi açar, yukarıda eklediğimiz kod kullanarak veritabanına bir bağlantı vermiyoruz:
+Uygulama başlatır ve ana penceresi açılır, yukarıda ekledik kodu kullanarak veritabanına bir bağlantı vermiyoruz:
 
 ```csharp
 public override void AwakeFromNib ()
@@ -932,13 +932,13 @@ public override void AwakeFromNib ()
 }
 ```
 
-### <a name="loading-bound-data"></a>Yükleme veri bağlama
+### <a name="loading-bound-data"></a>Yükleme, veri bağlama
 
-Doğrudan bağlı yerinde SQLite veritabanındaki verilere için tüm bileşenlerle, biz uygulamamız sağlar ve otomatik olarak bizim kullanıcı Arabiriminde görüntülenecek farklı görünümleri verileri yükleyebilir.
+Doğrudan bir yerde bir SQLite veritabanından ilişkili verilerine erişmek için tüm bileşenlerle, biz uygulamamızı sağlayan ve otomatik olarak bizim kullanıcı Arabiriminde görüntülenen farklı görünümlerdeki verileri yükleyebilir.
 
-#### <a name="loading-a-single-record"></a>Tek bir kaydını yükleniyor
+#### <a name="loading-a-single-record"></a>Tek bir kaydı yükleniyor
 
-Tek bir kayıt kimliği olduğu bilmeniz yüklemek için biz aşağıdaki kodu kullanabilirsiniz:
+Tek bir kayıt kimliği olduğu bilmeniz yüklemek için aşağıdaki kod kullanabiliriz:
 
 ```csharp
 Person = new PersonModel (Conn, "0");
@@ -946,7 +946,7 @@ Person = new PersonModel (Conn, "0");
 
 #### <a name="loading-all-records"></a>Tüm kayıtları yükleniyor
 
-Bir yönetici veya yok olması durumunda tüm kişilerin, bakılmaksızın yüklemek için aşağıdaki kodu kullanın:
+Bir yönetici veya yok olması durumunda tüm kişilerin, bağımsız olarak yüklemek için aşağıdaki kodu kullanın:
 
 ```csharp
 // Load all employees
@@ -968,13 +968,13 @@ _conn.Close ();
 
 ```
 
-Burada, bir aşırı yüklemesini Oluşturucusu kullanıyoruz `PersonModel` sınıfı kişi belleğe yüklemek için:
+Burada bir aşırı yüklemesini Oluşturucusu kullanıyoruz `PersonModel` sınıfı kişi belleğe yüklemek için:
 
 ```csharp
 var person = new PersonModel (_conn, childID);
 ```
 
-Biz de kişi kişilerin bizim koleksiyona eklemek için veri bağlama sınıfı çağırma `AddPerson (person)`, bu kullanıcı arabirimimizi değişikliği algılar ve görüntüler sağlar:
+Biz de kişi kişilerin bizim koleksiyona eklemek için veri bağlama sınıfı çağırma `AddPerson (person)`, bu kullanıcı Arabirimimizi değişikliği algılar ve görüntüler sağlar:
 
 ```csharp
 [Export("addObject:")]
@@ -986,9 +986,9 @@ public void AddPerson(PersonModel person) {
 }
 ```
 
-#### <a name="loading-top-level-records-only"></a>Yalnızca üst düzey kayıtları yükleniyor
+#### <a name="loading-top-level-records-only"></a>Yalnızca üst düzey kayıtlar yükleniyor
 
-Yalnızca Yöneticiler (örneğin, bir ana hattı verileri görüntülemek için) yüklemek için aşağıdaki kodu kullanırız:
+Yalnızca Yöneticiler (örneğin, bir ana görünümünde verileri görüntülemek için) yüklemek için aşağıdaki kodu kullanırız:
 
 ```csharp
 // Load only managers employees
@@ -1009,27 +1009,27 @@ using (var command = _conn.CreateCommand ()) {
 _conn.Close ();
 ```
 
-İçinde SQL deyiminde yalnızca gerçek fark (yalnızca Yöneticiler yükler `command.CommandText = "SELECT ID FROM [People] WHERE isManager = 1"`), ancak aynı aksi yukarıdaki bölümde çalışır.
+SQL deyimi içinde yalnızca gerçek farkı (yalnızca Yöneticiler yükler `command.CommandText = "SELECT ID FROM [People] WHERE isManager = 1"`) ancak Aksi halde aynı bölümde yukarıdaki çalışır.
 
 <a name="Databases-and-ComboBoxes" />
 
 ### <a name="databases-and-comboboxes"></a>Veritabanları ve comboboxes
 
-MacOS (örneğin, birleşik giriş kutusu) kullanımına menü denetimleri listeden (arabirimi Oluşturucusu'nda önceden tanımlanamıyor veya kodu aracılığıyla doldurulmuş) bir iç ya da aşağı açılan listeyi doldurmak için ayarlayabilirsiniz veya kendi özel, dış veri kaynağı sağlayarak. Bkz: [menü denetim verileri sağlayan](~/mac/user-interface/standard-controls.md#Providing-Menu-Control-Data) daha fazla ayrıntı için.
+MacOS (örneğin, birleşik giriş kutusu) kullanılabilir menü denetimleri (, arabirim oluşturucu içinde önceden tanımlanmış veya kod doldurulur) bir iç listesinden ya da açılan listeyi doldurmak için ayarlanabilir veya kendi özel, dış veri kaynağı sağlayarak. Bkz: [menü denetimini veri sağlayan](~/mac/user-interface/standard-controls.md#Providing-Menu-Control-Data) daha fazla ayrıntı için.
 
-Örnek olarak, düzenleme basit bağlama Yukarıdaki örnek arabirimi oluşturucu ekleyin birleşik giriş kutusu ve adlı prizine kullanarak kullanıma `EmployeeSelector`:
+Örneğin, düzenleme, arabirim Oluşturucu basit bağlama örnek yukarıda bir birleşik giriş kutusu ekleyin ve adlı bir çıkış kullanarak üzerinden kullanıma sunacaksınız `EmployeeSelector`:
 
 [![Birleşik giriş kutusu çıkışı gösterme](databases-images/combo01.png "birleşik giriş kutusu çıkışı gösterme")](databases-images/combo01-large.png#lightbox)
 
-İçinde **öznitelikleri denetçisi**, denetleme **Autocompletes** ve **veri kaynağını kullanan** özellikleri:
+İçinde **öznitelikleri denetçisi**, kontrol **yanı** ve **veri kaynağını kullanan** özellikleri:
 
 ![Birleşik giriş kutusu öznitelikleri yapılandırma](databases-images/combo02.png "birleşik giriş kutusu öznitelikleri yapılandırma")
 
-Değişikliklerinizi kaydetmek ve Visual Studio eşitlemek için Mac için geri dönün.
+Değişikliklerinizi kaydetmek ve eşitlemek Mac için Visual Studio geri dönün.
 
-#### <a name="providing-combobox-data"></a>ComboBox verileri sağlayan
+#### <a name="providing-combobox-data"></a>ComboBox verileri sağlama
 
-Ardından, yeni bir sınıf adlı projeye ekleyin `ComboBoxDataSource` ve şu şekilde görünür yapın:
+Ardından, yeni bir sınıf adlı projeye ekleyin `ComboBoxDataSource` ve aşağıdaki gibi görünmesi:
 
 ```csharp
 using System;
@@ -1398,15 +1398,15 @@ namespace MacDatabase
 }
 ```
 
-Bu örnekte, yeni bir oluşturuyoruz `NSComboBoxDataSource` birleşik giriş kutusu öğeleri herhangi SQLite veri kaynağından sunabileceği. İlk olarak, aşağıdaki özellikleri tanımlayın:
+Bu örnekte, yeni bir oluşturuyoruz `NSComboBoxDataSource` birleşik giriş kutusu öğeleri herhangi bir SQLite veri kaynağından sunabileceği. İlk olarak, aşağıdaki özellikler tanımlayın:
 
 - `Conn` -Alır veya SQLite veritabanına bir bağlantı ayarlar.
 - `TableName` -Alır veya tablo adını ayarlar.
-- `IDField` -Alanını alır veya belirtilen tablo için benzersiz Kimliğini sağlayan ayarlar. Varsayılan değer `ID` şeklindedir.
-- `DisplayField` -Alanını alır veya açılır listede görüntülenen ayarlar.
-- `RecordCount` -Belirtilen tabloda kayıt sayısını alır.
+- `IDField` -Alanını alır veya verilen tablo için benzersiz Kimliğini sağlayan ayarlar. Varsayılan değer `ID` şeklindedir.
+- `DisplayField` -Alır veya ayarlar alanın açılan listede görüntülenir.
+- `RecordCount` -Belirli bir tablodaki kayıt sayısını alır.
 
-Nesne yeni bir örneğini oluşturuyoruz olduğunda, bağlantı, tablo adı, isteğe bağlı olarak ID alanı ve görüntü alanını Geçir:
+Biz nesnesinin yeni bir örneğini oluşturduğunuzda, bağlantı, tablo adı, isteğe bağlı olarak kimlik alanı ve görüntüleme alanına geçirin:
 
 ```csharp
 public ComboBoxDataSource (SqliteConnection conn, string tableName, string displayField)
@@ -1418,7 +1418,7 @@ public ComboBoxDataSource (SqliteConnection conn, string tableName, string displ
 }
 ```
 
-`GetRecordCount` Yöntemi belirtilen tabloda kayıt sayısını döndürür:
+`GetRecordCount` Yöntemi, belirtilen tablodaki kayıt sayısını döndürür:
 
 ```csharp
 private nint GetRecordCount ()
@@ -1460,9 +1460,9 @@ private nint GetRecordCount ()
 }
 ```
 
-İstediğiniz zaman adlı `TableName`, `IDField` veya `DisplayField` özellikleri değeri değiştirildi.
+Dilediğiniz zaman çağrılır `TableName`, `IDField` veya `DisplayField` özellikleri değeri değiştirilir.
 
-`IDForIndex` Yöntemi benzersiz kimliği döndürür (`IDField`) verilen açılır liste öğesi dizinindeki kaydı için: 
+`IDForIndex` Yöntem benzersiz kimliği döndürür (`IDField`) belirli bir açılır liste öğesi dizini kaydı için: 
 
 ```csharp
 public string IDForIndex (nint index)
@@ -1503,7 +1503,7 @@ public string IDForIndex (nint index)
 }
 ```
 
-`ValueForIndex` Yöntemi değeri döndürür (`DisplayField`) verilen açılır liste dizindeki öğe için:
+`ValueForIndex` Yöntemi değeri döndürür (`DisplayField`) için belirli bir açılır liste dizinindeki öğe:
 
 ```csharp
 public string ValueForIndex (nint index)
@@ -1544,7 +1544,7 @@ public string ValueForIndex (nint index)
 }
 ```
 
-`IDForValue` Yöntemi benzersiz kimliği döndürür (`IDField`) için belirtilen değer (`DisplayField`):
+`IDForValue` Yöntem benzersiz kimliği döndürür (`IDField`) için belirtilen değer (`DisplayField`):
 
 ```csharp
 public string IDForValue (string value)
@@ -1588,7 +1588,7 @@ public string IDForValue (string value)
 }
 ```
 
-`ItemCount` Ne zaman hesaplanan şekilde listedeki önceden hesaplanan öğe sayısını döndürür `TableName`, `IDField` veya `DisplayField` özellikleri değiştirilir:
+`ItemCount` Ne zaman hesaplanan şekilde listedeki filtrelerinde öğe sayısını döndürür `TableName`, `IDField` veya `DisplayField` özellikleri değiştirilir:
 
 ```csharp
 public override nint ItemCount (NSComboBox comboBox)
@@ -1597,7 +1597,7 @@ public override nint ItemCount (NSComboBox comboBox)
 }
 ```
 
-`ObjectValueForItem` Yöntemi değeri sağlar (`DisplayField`) verilen açılır liste öğesi dizini için:
+`ObjectValueForItem` Yöntemi değeri sağlar (`DisplayField`) için belirli bir açılır liste öğesi dizini:
 
 ```csharp
 public override NSObject ObjectValueForItem (NSComboBox comboBox, nint index)
@@ -1638,9 +1638,9 @@ public override NSObject ObjectValueForItem (NSComboBox comboBox, nint index)
 }
 ```
 
-Kullanıyoruz bildirimi `LIMIT` ve `OFFSET` deyimleri size gereken tek bir kayıtta sınırlamak için bizim SQLite komutu.
+Kullanıyoruz bildirimi `LIMIT` ve `OFFSET` deyimlerinde size gereken tek bir kayıtta sınırlamak için sunduğumuz SQLite komutu.
 
-`IndexOfItem` Yöntemi açılır öğe dizini değeri döndürür (`DisplayField`) verilen:
+`IndexOfItem` Yöntem açılan öğe dizini değeri döndürür (`DisplayField`) verilen:
 
 ```csharp
 public override nint IndexOfItem (NSComboBox comboBox, string value)
@@ -1690,9 +1690,9 @@ public override nint IndexOfItem (NSComboBox comboBox, string value)
 }
 ```
 
-Değeri bulunamazsa `NSRange.NotFound` değer dönüş ve tüm öğeleri açılır liste kutusunda seçili.
+Değeri bulunamazsa `NSRange.NotFound` değer dönüş ve tüm öğeleri açılan listede seçili.
 
-`CompletedString` Yöntemi ilk eşleşen değeri döndürür (`DisplayField`) kısmen yazılan girişi için:
+`CompletedString` Yöntemi ilk eşleşen değeri döndürür (`DisplayField`) kısmen yazılı girişi için:
 
 ```csharp
 public override string CompletedString (NSComboBox comboBox, string uncompletedString)
@@ -1740,9 +1740,9 @@ public override string CompletedString (NSComboBox comboBox, string uncompletedS
 }
 ```
 
-#### <a name="displaying-data-and-responding-to-events"></a>Verileri görüntüleme ve olaylara yanıt verme
+#### <a name="displaying-data-and-responding-to-events"></a>Verileri görüntüleme ve olaylarına yanıt verme
 
-Tüm parçaları bir araya getirmek için düzenleme `SubviewSimpleBindingController` ve şu şekilde görünür yapın:
+Tüm parçaları bir araya getirip Düzenle `SubviewSimpleBindingController` ve aşağıdaki gibi görünmesi:
 
 ```csharp
 using System;
@@ -1857,9 +1857,9 @@ namespace MacDatabase
 }
 ```
 
-`DataSource` Özelliği sağlar kısayol `ComboBoxDataSource` (yukarıda açılan kutu bağlı oluşturulur).
+`DataSource` Özelliği için bir kısayol sağlar `ComboBoxDataSource` (Yukarıdaki açılan kutu bağlı oluşturulur).
 
-`LoadSelectedPerson` Yöntemi veritabanından kişi verilen benzersiz kimliği yükler:
+`LoadSelectedPerson` Yöntemi için sağlanan benzersiz kimliği veritabanından kişi yükler:
 
 ```csharp
 private void LoadSelectedPerson (string id)
@@ -1873,13 +1873,13 @@ private void LoadSelectedPerson (string id)
 }
 ```
 
-İçinde `AwakeFromNib` yöntemi geçersiz kılma, ilk biz bizim Özel birleşik giriş kutusunu veri kaynağı örneği ekleyin:
+İçinde `AwakeFromNib` yöntemi geçersiz kılma, ilk biz özel birleşik giriş kutusu veri Kaynağımıza örneğini ekleyin:
 
 ```csharp
 EmployeeSelector.DataSource = new ComboBoxDataSource (Conn, "People", "Name");
 ```
 
-Ardından, açılan kutu metin değerini ilişkili benzersiz kimliği bularak düzenleme kullanıcıya yanıt vermemiz (`IDField`) sunan ve belirli kişi, yükleme verilerini bulundu:
+Ardından, açılan kutunun metin değeri ilişkili benzersiz kimliği bularak düzenleme kullanıcı için yanıtlarız (`IDField`) verileri sunmak ve belirli kişi, yükleme bulundu:
 
 ```csharp
 EmployeeSelector.Changed += (sender, e) => {
@@ -1889,7 +1889,7 @@ EmployeeSelector.Changed += (sender, e) => {
 };
 ```
 
-Kullanıcı açılır listeden yeni bir öğe seçerse biz de yeni bir kişiye yük:
+Kullanıcı açılır listeden yeni bir öğe seçtiğinde biz de yeni bir kişiye yükle:
 
 ```csharp
 EmployeeSelector.SelectionChanged += (sender, e) => {
@@ -1899,7 +1899,7 @@ EmployeeSelector.SelectionChanged += (sender, e) => {
 };
 ```
 
-Son olarak, biz otomatik-birleşik giriş kutusu ve listedeki ilk öğe ile görüntülenen kişi doldurun:
+Son olarak, biz otomatik olarak birleşik giriş kutusu ve listedeki ilk öğe ile görüntülenen kişi doldurmak:
 
 ```csharp
 // Auto select the first person
@@ -1909,27 +1909,27 @@ Person = new PersonModel (Conn, DataSource.IDForIndex(0));
 
 ## <a name="sqlitenet-orm"></a>SQLite.NET ORM
 
-Açık kaynak kullanarak, yukarıda belirtildiği gibi [SQLite.NET](http://www.sqlite.org) biz büyük ölçüde azaltabilir okumak ve bir SQLite veritabanından veri yazmak için gereken kod miktarını nesne ilişki Yöneticisi (ORM). Bu, birkaç anahtar-değer kodlama ve veri bağlama bir nesne üzerinde yerleştirmek gereksinimleri nedeniyle veri bağlama sırasında olabilmesi için en iyi yolu olmayabilir.
+Açık kaynak kullanarak, yukarıda belirtildiği gibi [SQLite.NET](http://www.sqlite.org) size önemli ölçüde azaltabilirsiniz bir SQLite veritabanından veri yazma ve okuma için gereken kod miktarını nesne ilişki Yöneticisi (ORM). Birkaç anahtar-değer kodlaması ve veri bağlama, bir nesne üzerinde yerleştirmek gereksinimleri nedeniyle, veri bağlama sırasında yapılacak en iyi yol bu olmayabilir.
 
-SQLite.Net Web sitesi göre _"SQLite olduğu müstakil sunucusuz, sıfır yapılandırmalı, işlemsel bir SQL veritabanı altyapısı uygulayan bir yazılım kitaplığı. SQLite dünyada en yaygın olarak dağıtılan veritabanı altyapısıdır. Kaynak SQLite ortak etki alanında kodudur."_
+SQLite.Net Web sitesi göre _"SQLite müstakil, sunucusuz, sıfır yapılandırmalı, işlem bir SQL veritabanı altyapısı uygulayan bir yazılım kitaplık sunulmaktadır. SQLite dünyanın en yaygın olarak dağıtılan bir veritabanı motorudur. SQLite için kaynak kodu ortak etki alanında var."_
 
 Aşağıdaki bölümlerde, SQLite.Net için bir tablo görünümü verilerini sağlamak için nasıl kullanılacağını göstereceğiz.
 
-### <a name="including-the-sqlitenet-nuget"></a>SQLite.net NuGet dahil olmak üzere
+### <a name="including-the-sqlitenet-nuget"></a>SQLite.net NuGet dahil
 
-SQLite.NET uygulamanıza dahil bir NuGet paketi olarak sunulur. Veritabanı desteği SQLite.NET kullanarak ekleyebilmeniz için önce bu pakete dahil gerekir.
+SQLite.NET uygulamanıza dahil bir NuGet paketi olarak sunulur. SQLite.NET kullanarak veritabanı desteği ekleriz önce Biz bu paket eklemeniz gerekir.
 
-Paketi eklemek için aşağıdakileri yapın:
+Paket eklemek için aşağıdakileri yapın:
 
-1. İçinde **çözüm paneli**, sağ tıklatın **paketleri** klasörü ve select **paketleri Ekle...**
-2. Girin `SQLite.net` içinde **arama kutusu** seçip **sqlite net** girişi:
+1. İçinde **çözüm bölmesi**, sağ **paketleri** klasörü ve select **paketleri Ekle...**
+2. Girin `SQLite.net` içinde **arama kutusuna** seçip **sqlite net** girişi:
 
-    [![SQLite NuGet paketi ekleme](databases-images/nuget01.png "SQLite NuGet paketi ekleme")](databases-images/nuget01-large.png#lightbox)
-3. Tıklatın **Paketi Ekle** tamamlanması düğmesi.
+    [![SQLite NuGet paketini ekleme](databases-images/nuget01.png "SQLite NuGet paketi ekleme")](databases-images/nuget01-large.png#lightbox)
+3. Tıklayın **Paketi Ekle** düğmesini tamamlayın.
 
 ### <a name="creating-the-data-model"></a>Veri modeli oluşturma
 
-Şimdi projeye yeni bir sınıf ekleyin ve arama `OccupationModel`. Ardından, düzenleyelim **OccupationModel.cs** dosya ve şu şekilde görünür yapın:
+Şimdi projeye yeni bir sınıf ekleyin ve arama `OccupationModel`. Ardından, düzenleyelim **OccupationModel.cs** dosyasını açıp aşağıdaki gibi görünmesi:
 
 ```csharp
 using System;
@@ -1965,7 +1965,7 @@ namespace MacDatabase
 }
 ```
 
-SQLite.NET ilk olarak, eklediğimiz (`using Sqlite`), ardından biz çeşitli özellikler kullanıma, her biri yazılır veritabanına bu kaydı kaydedildiğinde. İlk özelliği biz birincil anahtarı olarak yapın ve otomatik artış gibi ayarlayın:
+İlk olarak biz SQLite.NET içerir (`using Sqlite`), ardından kullanıma sunuyoruz çeşitli özellikleri, her biri yazılacak veritabanına bu kaydı kaydedildiğinde. İlk özellik biz birincil anahtar olarak yapın ve otomatik artırma için şu şekilde ayarlayın:
 
 ```csharp
 [PrimaryKey, AutoIncrement]
@@ -1973,7 +1973,7 @@ public int ID { get; set; }
 ```
 ### <a name="initializing-the-database"></a>Veritabanı başlatılıyor
 
-Yapılan değişikliklerle birlikte veri Modelimizi yerinde okuma ve veritabanına yazılması desteklemek için kimliğinizi veritabanına bir bağlantı açmak ve ilk çalıştırılmasında başlatma gerekiyor. Aşağıdaki kod ekleyelim:
+Veri Modelimizi yerinde okuma ve yazma veritabanına desteklemek için değişiklik yapmadan, veritabanına bir bağlantı açmak ve ilk çalıştırılmasında başlatmak ihtiyacımız var. Şimdi aşağıdaki kodu ekleyin:
 
 ```csharp
 using SQLite;
@@ -2019,7 +2019,7 @@ private SQLiteConnection GetDatabaseConnection() {
 }
 ```
 
-İlk olarak, size bir yol (Bu durumda kullanıcının Masaüstü) veritabanına alın ve veritabanı zaten bulunup bulunmadığına bakın:
+İlk olarak biz bir yolu ' % s'veritabanı (Bu durumda kullanıcının Masaüstü) ve veritabanı zaten var olup olmadığını:
 
 ```csharp
 var documents = Environment.GetFolderPath (Environment.SpecialFolder.Desktop);
@@ -2030,13 +2030,13 @@ OccupationModel Occupation;
 bool exists = File.Exists (db);
 ```
 
-Ardından, yukarıda oluşturduğumuz yolundaki veritabanıyla bağlantı kurun:
+Ardından, yukarıda oluşturduğumuz yolda veritabanına bir bağlantı kurar:
 
 ```csharp
 var conn = new SQLiteConnection (db);
 ```
 
-Son olarak, biz tablo oluşturun ve bazı varsayılan kayıtları ekleyin:
+Son olarak, biz tablosu oluşturun ve bazı varsayılan kayıtları ekleyin:
 
 ```csharp
 // Yes, build table
@@ -2059,17 +2059,17 @@ Occupation = new OccupationModel ("API Documenter", "Creates and maintains API d
 conn.Insert (Occupation);
 ```
 
-### <a name="adding-a-table-view"></a>Bir tablo görünümü ekleme
+### <a name="adding-a-table-view"></a>Tablo görünümü ekleme
 
-Bir örnek kullanım bizim UI Xcode'nın arabirimi Oluşturucu için bir tablo görünümü ekleyeceğiz. Bu tablo görünüm prizine aracılığıyla kullanıma (`OccupationTable`) biz C# kodu aracılığıyla erişebilmesi için:
+Örnek kullanım, kullanıcı Arabirimimizi Xcode'un arabirimi Oluşturucu için bir tablo görünümü ekleyeceğiz. Bu tablo görünümü prizine aracılığıyla kullanıma sunuyoruz (`OccupationTable`) size C# kodu aracılığıyla erişebilmesi için:
 
-[![Bir tablo görünümü çıkışı gösterme](databases-images/table01.png "bir tablo görünümü çıkışı gösterme")](databases-images/table01-large.png#lightbox)
+[![Tablo görünümü çıkışı gösterme](databases-images/table01.png "bir tablo görünümü çıkışı gösterme")](databases-images/table01-large.png#lightbox)
 
-Ardından, bu tabloyu SQLite.NET veritabanından verilerle doldurmak için özel sınıflar ekleyeceğiz.
+Ardından, bu tabloyu SQLite.NET veritabanındaki verilerle doldurmak için özel sınıflar ekleyeceğiz.
 
-### <a name="creating-the-table-data-source"></a>Tablo veri kaynağı oluşturma
+### <a name="creating-the-table-data-source"></a>Tablosu veri kaynağı oluşturma
 
-Bizim tablosu için veri sağlamak için özel bir veri kaynağını oluşturalım. İlk olarak, adlı yeni bir sınıf ekleyin `TableORMDatasource` ve şu şekilde görünür yapın:
+Tablomuza için veri sağlamak için özel bir veri kaynağı oluşturalım. İlk olarak, adlı yeni bir sınıf ekleyin `TableORMDatasource` ve aşağıdaki gibi görünmesi:
 
 ```csharp
 using System;
@@ -2123,11 +2123,11 @@ namespace MacDatabase
 }
 ```
 
-Biz daha sonra bu sınıfının bir örneği oluşturduğunuzda, biz bizim açık SQLite.NET veritabanı bağlantısı geçmesi. `LoadOccupations` Yöntemi veritabanını sorgular ve belleğe bulunan kayıtları kopyalar (kullanarak bizim `OccupationModel` veri modeli).
+Daha sonra bu sınıfın bir örneği oluşturduğumuzda, biz de Aç bizim SQLite.NET veritabanı bağlantısını ileteceksiniz. `LoadOccupations` Yöntemi veritabanını sorgular ve belleğe bulunan kayıtları kopyalar (kullanarak bizim `OccupationModel` veri modeli).
 
 ### <a name="creating-the-table-delegate"></a>Tablo temsilci oluşturma
 
-İhtiyacımız son SQLite.NET veritabanından yüklemiş olduğunuz bilgileri görüntülemek için özel bir tablo temsilci sınıftır. Yeni bir ekleyelim `TableORMDelegate` bizim projeye ve şu şekilde görünür yapın:
+İhtiyacımız son SQLite.NET veritabanından yüklendik bilgileri görüntülemek için özel bir tablo temsilci sınıftır. Yeni bir ekleyelim `TableORMDelegate` Projemizin için ve aşağıdaki gibi görünmesi:
 
 ```csharp
 using System;
@@ -2191,11 +2191,11 @@ namespace MacDatabase
 }
 ```
 
-Veri kaynağının burada kullanırız `Occupations` (biz SQLite.NET veritabanından yüklenen) koleksiyonu bizim tablosunun sütunları doldurmak için `GetViewForItem` yöntemi geçersiz kılma.
+Veri kaynağının burada kullandığımız `Occupations` (SQLite.NET veritabanından yüklendik) koleksiyonu tablomuza sütunlarının doldurmak için `GetViewForItem` yöntemi geçersiz kılma.
 
-### <a name="populating-the-table"></a>Tabloyu doldurma
+### <a name="populating-the-table"></a>Tablo doldurma
 
-.Xib dosyasından kılarak şişirileceğini zaman tüm parçaları yerinde, şimdi bizim tabloyu doldurmak `AwakeFromNib` yöntemi ve Ara kolaylaştırarak aşağıdaki gibi:
+.Xib dosyasından geçersiz kılarak şişirileceğini zaman tüm parçaları yerinde, şimdi tablomuza doldurmak `AwakeFromNib` yöntemi ve bu konum, aşağıdaki gibidir:
 
 ```csharp
 public override void AwakeFromNib ()
@@ -2214,11 +2214,11 @@ public override void AwakeFromNib ()
 }
 ```
 
-İlk olarak, biz SQLite.NET Veritabanımıza oluşturma ve zaten yoksa doldurma erişin. Ardından, yeni bir örneğini oluşturuyoruz bizim özel tablo veri kaynağının bizim veritabanı bağlantısı geçirmek ve biz tabloya ekleyin. Son olarak, biz bizim özel tablo temsilci yeni bir örneğini oluşturma bizim veri kaynağında geçirmek ve tabloya ekleyin.
+İlk olarak biz SQLite.NET veritabanımızdaki oluşturma ve önceden yoksa, doldurma erişin. Ardından, yeni bir örneğini oluşturacağız bizim Özel tablosu veri kaynağı bizim veritabanı bağlantısında geçirin ve size tablosuna ekleyin. Son olarak, biz bizim özel tablo temsilci yeni bir örneğini oluşturmak, veri Kaynağımıza geçirin ve tabloya ekleyin.
 
 ## <a name="summary"></a>Özet
 
-Bu makalede, veri bağlama ve anahtar-değer Xamarin.Mac uygulama SQLite veritabanlarında kodlama ile çalışan bir ayrıntılı bakış duruma getirdi. İlk olarak, bir C# sınıfına Objective-C (KVC) anahtar-değer kodlama kullanılarak ve anahtar-değer (KVO) Gözlemleme gösterme Aranan. Ardından, KVO uyumlu sınıfının nasıl kullanılacağı gösterilmiştir ve veri Xcode'nın arabirimi Oluşturucu kullanıcı Arabirimi öğelerine bağlayın. Makaleyi SQLite.NET ORM aracılığıyla SQLite verilerle çalışma ve bu verileri Tablo görünümünde görüntüleyerek de kapsar.
+Bu makalede, veri bağlama ve bir Xamarin.Mac uygulamasını SQLite veritabanlarında anahtar-değer kodlaması ile çalışmak üzere ayrıntılı bir bakış duruma getirdi. İlk olarak, C# sınıfı Objective-c (KVC) anahtar-değer kodlaması kullanarak ve anahtar-değer (KVO) gözleme gösterme görünüyordu. Ardından, KVO uyumlu sınıfının nasıl kullanılacağını gösterdi ve veri Xcode'un arabirim Oluşturucu UI öğelerine bağlar. Makaleyi SQLite.NET ORM aracılığıyla SQLite verilerle çalışmaya ve bu verileri Tablo görünümünde görüntüleyerek de kapsar.
 
 
 
@@ -2226,13 +2226,13 @@ Bu makalede, veri bağlama ve anahtar-değer Xamarin.Mac uygulama SQLite veritab
 
 - [MacDatabase (örnek)](https://developer.xamarin.com/samples/mac/MacDatabase/)
 - [Hello, Mac](~/mac/get-started/hello-mac.md)
-- [Veri bağlama ve anahtar-değer kodlama](~/mac/app-fundamentals/databinding.md)
+- [Veri bağlama ve anahtar-değer kodlaması](~/mac/app-fundamentals/databinding.md)
 - [Standart denetimler](~/mac/user-interface/standard-controls.md)
 - [Tablo görünümleri](~/mac/user-interface/table-view.md)
 - [Anahat görünümleri](~/mac/user-interface/outline-view.md)
 - [Koleksiyon görünümleri](~/mac/user-interface/collection-view.md)
-- [Anahtar-değer programlama kılavuzu kodlama](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueCoding/index.html)
-- [Programlama konularına Cocoa bağlamaları giriş](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CocoaBindings/CocoaBindings.html)
-- [Giriş Cocoa bağlamaları başvurusu](https://developer.apple.com/library/content/documentation/Cocoa/Reference/CocoaBindingsRef/CocoaBindingsRef.html)
+- [Anahtar-değer kodlaması Programlama Kılavuzu](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/KeyValueCoding/index.html)
+- [Cocoa bağlamaları programlama konuları giriş](https://developer.apple.com/library/content/documentation/Cocoa/Conceptual/CocoaBindings/CocoaBindings.html)
+- [Cocoa bağlamaları başvuru giriş](https://developer.apple.com/library/content/documentation/Cocoa/Reference/CocoaBindingsRef/CocoaBindingsRef.html)
 - [NSCollectionView](https://developer.apple.com/documentation/appkit/nscollectionview)
 - [macOS İnsan Arabirimi yönergelerine](https://developer.apple.com/macos/human-interface-guidelines/overview/themes/)

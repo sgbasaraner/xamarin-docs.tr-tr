@@ -5,13 +5,13 @@ ms.prod: xamarin
 ms.assetid: A7EB73C1-38D7-46C5-9AF6-4C571C168BE7
 author: topgenorth
 ms.author: toopge
-ms.date: 05/14/2017
-ms.openlocfilehash: 88f7f62650484007c221aa7baaa684f872e0a8e9
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.date: 08/08/2017
+ms.openlocfilehash: b3166aa440cbe2981d597771b360373fadc6451b
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38830419"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "43780665"
 ---
 # <a name="xamarin-live-player-app"></a>Xamarin Live Player uygulaması
 
@@ -19,17 +19,17 @@ ms.locfileid: "38830419"
 
 Uygulamasını telefonunuza yükledikten sonra takip [kurulum yönergeleri](~/tools/live-player/install.md) bilgisayarınıza bağlanmak için. Aşağıdakilerden birini deneyin [örnek uygulamalar](~/tools/live-player/samples.md) bunu çalıştırmak için.
 
-Başlangıçta, Xamarin Live Player uygulamasını aşağıdaki gibi görünür (iOS ve Android'de sırasıyla):
+Başlangıçta, Xamarin Live Player uygulamasını şu şekilde görünür:
 
-![Live Player iOS uygulama ekran görüntüsü](player-images/app-iphone-sml.png) ![Live Player Android uygulama ekran görüntüsü](player-images/app-android-sml.png)
+![Live Player Android uygulama ekran görüntüsü](player-images/app-android-sml.png)
 
 Bastığınızda **Visual Studio ile eşleştirme**, kamera, bilgisayarınızda gösteren barkodu taratmasının istendiği kullanın:
 
-![İOS barkod tarayıcı ekran görüntüsü](player-images/scan-iphone-sml.png) ![Android barkod tarayıcı ekran görüntüsü](player-images/scan-android-sml.png)
+![Android barkod tarayıcı ekran görüntüsü](player-images/scan-android-sml.png)
 
 Bağlantı başarılı olursa, cihazı hemen kodun çalışması gereken (gibi [hesaplayıcı örnek](https://developer.xamarin.com/samples/mobile/LivePlayer/BasicCalculator)):
 
-![Cihaz üzerinde çalışan örnek hesaplayıcısı uygulaması](player-images/basic-calculator-iphone-sml.png)
+![Cihaz üzerinde çalışan örnek hesaplayıcısı uygulaması](player-images/basic-calculator-sml.png)
 
 ## <a name="options"></a>Seçenekler
 
@@ -51,7 +51,7 @@ Sorunları tanılamak için günlükleri görüntüleyin.
 
 ## <a name="managing-devices"></a>Cihazları yönetme
 
-Bir cihaz ilk kez bağlanmaya'ndaki yönergeleri izleyin. [gereksinimleri ve Kurulum](~/tools/live-player/install.md). Birden fazla cihazda (örneğin, iOS ve Android) eşleştirin ve bunları IDE yönetin.
+Bir cihaz ilk kez bağlanmaya'ndaki yönergeleri izleyin. [gereksinimleri ve Kurulum](~/tools/live-player/install.md). Birden çok cihazı eşleştirin ve bunları IDE yönetin.
 
 # <a name="visual-studiotabwindows"></a>[Visual Studio](#tab/windows)
 

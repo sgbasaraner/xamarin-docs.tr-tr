@@ -1,50 +1,70 @@
 ---
-title: Metin düzenleme
+title: Metni Düzenle
+description: Kullanıcı girişi kabul edecek şekilde EDITTEXT pencere kullanma
 ms.prod: xamarin
 ms.assetid: E513BCBC-438E-15E8-B83A-4B768A8E8B32
 ms.technology: xamarin-android
 author: mgmclemore
 ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: d6be8ae1587742a8c2a37b22b2da3701187dde2a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.date: 08/09/2018
+ms.openlocfilehash: bb2cb13472e7e17eb1b0438ed67033f2b04defe2
+ms.sourcegitcommit: b6f3e55d4f3dcdc505abc8dc9241cff0bb5bd154
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
-ms.locfileid: "30774609"
+ms.lasthandoff: 08/10/2018
+ms.locfileid: "43780671"
 ---
-# <a name="edit-text"></a>Metin düzenleme
+# <a name="edit-text"></a>Metni Düzenle
 
-Bu bölümde, bir metin alanı kullanarak kullanıcı girişi için oluşturacağınız [EDITTEXT](https://developer.xamarin.com/api/type/Android.Widget.EditText/) pencere öğesi. Metin alanına girilen sonra "Enter" tuşuna metni bir bildirim iletisi görüntüler.
+Bu bölümde, kullanacağınız [EDITTEXT](https://developer.xamarin.com/api/type/Android.Widget.EditText/) pencere öğesini kullanarak kullanıcı girişi için bir metin alanı oluşturun. Metin alanına girilen sonra **Enter** anahtarı bir bildirim iletisi metni görüntülenir.
 
-Açık <code>Resources\layout\main.xml</code> dosya ve ekleme [EDITTEXT](https://developer.xamarin.com/api/type/Android.Widget.EditText/) öğesi (içinde [ `LinearLayout` ](https://developer.xamarin.com/api/type/Android.Widget.LinearLayout/)):
+Açık **Resources/layout/activity_main.axml** ve ekleme [EDITTEXT](https://developer.xamarin.com/api/type/Android.Widget.EditText/) içeren düzen öğesi. Aşağıdaki örnek **activity_main.axml** sahip bir `EditText` için eklenmiş bir `LinearLayout`:
 
 ```xml
-<pre><code class=" syntax brush-C#">&lt;EditText
-    android:id="@+id/edittext"
-    android:layout_width="fill_parent"
-    android:layout_height="wrap_content"/&gt;</code></pre>
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <EditText
+        android:id="@+id/edittext"
+        android:layout_width="match_parent"
+        android:imeOptions="actionGo"
+        android:inputType="text"
+        android:layout_height="wrap_content" />
+</LinearLayout>
 ```
 
-Kullanıcı türleri sonuna aşağıdaki kodu ekleyin metinle birlikte bir şeyler için [OnCreate](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/) yöntemi:
+Bu kod örneğinde `EditText` özniteliği `android:imeOptions` ayarlanır `actionGo`. Bu ayar varsayılan değişiklikleri [Bitti](https://developer.android.com/reference/android/view/inputmethod/EditorInfo#IME_ACTION_DONE) eyleme [Git](https://developer.android.com/reference/android/view/inputmethod/EditorInfo#IME_ACTION_GO) eylem dokunarak böylece **Enter** anahtar Tetikleyicileri `KeyPress` giriş işleyicisi.
+(Genellikle `actionGo` kullanılan böylece **Enter** anahtar alan kullanıcı tarafından yazılmış bir URL hedefi.)
+
+Kullanıcı metin girişini işlemek için sonuna aşağıdaki kodu ekleyin [OnCreate](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/) yönteminde **MainActivity.cs**:
 
 ```csharp
 EditText edittext = FindViewById<EditText>(Resource.Id.edittext);
 edittext.KeyPress += (object sender, View.KeyEventArgs e) => {
- e.Handled = false;
- if (e.Event.Action == KeyEventActions.Down && e.KeyCode == Keycode.Enter) {
-  Toast.MakeText (this, edittext.Text, ToastLength.Short).Show ();
-  e.Handled = true;
-         }
+    e.Handled = false;
+    if (e.Event.Action == KeyEventActions.Down && e.KeyCode == Keycode.Enter) 
+    {
+        Toast.MakeText(this, edittext.Text, ToastLength.Short).Show();
+        e.Handled = true;
+    }
 };
 ```
 
-Bu yakalar [ `EditText` ](https://developer.xamarin.com/api/type/Android.Widget.EditText/) kümeleri ve Düzen öğesinden bir [ `KeyPress` ](https://developer.xamarin.com/api/event/Android.Views.View.KeyPress/) pencere öğesi odağa sahipken bir tuşuna basıldığında yapılacak eylemi tanımlar işleyici. Bu durumda, yöntemi (aşağı basıldığında) Enter tuşuna dinler ve ardından açılır için tanımlanmış bir bir [ `Toast` ](https://developer.xamarin.com/api/type/Android.Widget.Toast/) girilen metin iletisi. [ `Handled` ](https://developer.xamarin.com/api/property/Android.Views.View+KeyEventArgs.Handled/) Özelliği uymanız gereken `true` değil böylece olay Kabarcık (hangi satır başı metin alanına neden olacağından) li olay, işlenene durumunda.
+Ayrıca, aşağıdaki ekleyin `using` üstüne deyimi **MainActivity.cs** zaten mevcut değilse:
 
-Uygulamayı çalıştırın.
+```csharp
+using Android.Views;
+```
 
-*Bu sayfayı bölümlerini oluşturulan çalışmaları temel değişiklikler olduğundan ve* [ *Android açık kaynak projesi tarafından paylaşılan* ](http://code.google.com/policies.html) *veaçıklananterimlerigörekullanılan* [ *2.5 creative Commons Attribution lisansı* ](http://creativecommons.org/licenses/by/2.5/) *. Bu öğretici dayanır* [ *Android Form şeyler öğretici* ](http://developer.android.com/resources/tutorials/views/hello-formstuff.html) *.*
+Bu kod örneği Şişir [EDITTEXT](https://developer.xamarin.com/api/type/Android.Widget.EditText/) öğesi düzeninden ve ekler bir [tuş basışı](https://developer.xamarin.com/api/event/Android.Views.View.KeyPress/) Pencere odağı alırken bir tuşa basıldığında yapılacak eylemi tanımlayan bir işleyici. Bu durumda, yöntem dinlemek için tanımlanan **Enter** anahtar (dokunduğunuzda) ve ardından açılır bir [bildirim](https://developer.xamarin.com/api/type/Android.Widget.Toast/) girilmiş metinle ileti. Unutmayın [işlenmiş](https://developer.xamarin.com/api/property/Android.Views.View+KeyEventArgs.Handled/) özelliği her zaman olmalıdır `true` olay işlenmişse. Bu gelen tırmanma olay önlemek gereklidir (Bu bir satır başı metin alanına neden olur) yukarı.
 
+Uygulamayı çalıştırmak ve metin alanına metin girin. Bastığınızda **Enter** anahtar, bildirim sağ tarafta gösterildiği gibi görüntülenir:
+
+[![Metin EDITTEXT girerek örnekleri](edit-text-images/edit-text-sml.png)](edit-text-images/edit-text.png#lightbox)
+
+*Bu sayfanın bölümleri üzerinde oluşturulan iş tabanlı değişiklikleri olan ve* [ *Android açık kaynak projesi tarafından paylaşılan* ](http://code.google.com/policies.html) *ve içindeşartlargörekullanılan* [ *2.5 creative Commons Attribution lisans* ](http://creativecommons.org/licenses/by/2.5/) *. Bu öğreticide dayanır* [ *Android Form öğe öğretici* ](http://developer.android.com/resources/tutorials/views/hello-formstuff.html) *.*
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

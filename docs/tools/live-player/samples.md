@@ -1,29 +1,29 @@
 ---
-title: Xamarin Canlı Player örnekleri
-description: Örnek uygulamalar Xamarin Canlı Player sınarken kullanmak için bu belge bağlantılar. Temel hesaplayıcı ve hata sweeper oyun bağlantılı örnekleri içerir.
+title: Xamarin Live Player örnekleri
+description: Xamarin Live Player ' test ederken kullanmak için örnek uygulama bu belge bağlantıları. Temel hesaplayıcı ve bir hata sweeper game bağlı örnekleri içerir.
 ms.prod: xamarin
 ms.assetid: C71D34AD-747B-4826-838D-5138F5DCD7EF
 author: topgenorth
 ms.author: toopge
-ms.date: 06/20/2017
-ms.openlocfilehash: 090b52f4ebf9ec6f46426b4364f8b57b67a79324
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 08/08/2017
+ms.openlocfilehash: 6f9f2ed97e03862fc7e77e4a7ff67f456dfde277
+ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
-ms.locfileid: "34793735"
+ms.lasthandoff: 08/13/2018
+ms.locfileid: "43780648"
 ---
-# <a name="xamarin-live-player-samples"></a>Xamarin Canlı Player örnekleri
+# <a name="xamarin-live-player-samples"></a>Xamarin Live Player örnekleri
 
 ## <a name="get-started-with-xamarinforms"></a>Xamarin.Forms ile çalışmaya başlama
 
-Ziyaret [örnek Galerisi](https://developer.xamarin.com/samples/xamarin-live-player/all/) Xamarin.Forms Xamarin Canlı Player birlikte çalışan örnekleri için.
+Ziyaret [örnek Galerisi](https://developer.xamarin.com/samples/xamarin-live-player/all/) Xamarin.Forms Xamarin Live Player ile çalışan örnekler için.
 
-## <a name="featured-samples"></a>Öne çıkan örnekleri
+## <a name="featured-samples"></a>Öne çıkan örnekler
 
 ### <a name="basic-calculatorhttpsdeveloperxamarincomsamplesmobileliveplayerbasiccalculator"></a>[Temel hesaplayıcı](https://developer.xamarin.com/samples/mobile/LivePlayer/BasicCalculator/)
 
-Bu Xamarin.Forms uygulaması, Android veya iOS Cihazınızda kullanabileceğiniz basit bir hesap makinesi sağlar.
+Bu Xamarin.Forms uygulaması, Android Cihazınızda kullanabileceğiniz basit bir hesap makinesi sağlar.
 
 ![Temel hesaplayıcı örnek ekran görüntüsü](samples-images/basic-calculator-sml.png)
 
@@ -35,4 +35,4 @@ Bu yeni bir sürpriz sunan, bilindik bir oyundur. 9x9 kutucuktan oluşan bir kı
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Xamarin.Forms Canlı Player örnekleri](https://developer.xamarin.com/samples/xamarin-live-player/all/)
+- [Live Player Xamarin.Forms örnekleri](https://developer.xamarin.com/samples/xamarin-live-player/all/)
