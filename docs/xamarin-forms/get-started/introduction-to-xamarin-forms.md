@@ -6,77 +6,67 @@ ms.assetid: f619595f-3ee7-439b-a1bc-d13e5106e6e9
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/02/2016
-ms.openlocfilehash: 95b0744cdd52ac1c3f5d7c62c18139a30400ab04
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 09/25/2018
+ms.openlocfilehash: c5d2f93c8cb97c50f9d35d9ad91adf4c6437a3db
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "38999042"
 ---
 # <a name="an-introduction-to-xamarinforms"></a>Xamarin.Forms'a giriş
 
-_Xamarin.Forms, bir çoklu platform UI araç seti, geliştiricilerin Android, iOS, Windows ve evrensel Windows Platform arasında paylaşılan kullanıcı arabirimlerini kolayca oluşturmanıza olanak tanıyan bir soyutlama yerel olarak desteklenen ' dir. Kullanıcı arabirimleri, her platform için uygun görünüm ve yapısını korumak Xamarin.Forms uygulamaları hedef platformda yerel denetimlerini kullanarak işlenir. Bu makalede Xamarin.Forms ve onunla uygulamaları yazmaya başlamak nasıl bir giriş sağlar._
+_Xamarin.Forms, Android, iOS ve Windows için platformlar arası uygulamalar oluşturmalarını sağlayan bir çerçevedir. Kod ve kullanıcı arabirimi tanımları platformlar arasında paylaşılabilir, ancak yerel denetimleriyle oluşturulur. Bu makalede Xamarin.Forms ve Visual Studio'da C# ve XAML uygulamaları yazmaya başlamak nasıl bir giriş sağlar._
 
-<a name="Overview" />
+Xamarin.Forms uygulamaları [.NET Standard](~/cross-platform/app-fundamentals/net-standard.md) projelerin paylaşılan kod ve paylaşılan kod kullanma ve her platform için gerekli çıktı oluşturmak için ayrı uygulama projeleri içerir. Yeni Xamarin.Forms uygulaması oluşturduğunuzda, çözüm (C# ve XAML dosyalarını içeren) paylaşılan kod projesine yanı sıra platforma özgü projeleri bu ekran görüntüsünde gösterildiği gibi içerir:
 
-## <a name="overview"></a>Genel Bakış
+![Visual Studio'da Xamarin.Forms şablonu çözümü](introduction-to-xamarin-forms-images/solution-both.png)
 
-Xamarin.Forms, geliştiricilerin platformlar arası kullanıcı arabirimlerini hızlıca oluşturmanıza olanak tanıyan bir çerçevedir. Bu, iOS, Android veya evrensel Windows Platformu (UWP) yerel denetimleri kullanarak işlenir kullanıcı arabirimi için kendi bir Özet sağlar. Bu, uygulama kullanıcı arabirimi kodlarını büyük bir kısmı paylaşın ve hedef platform yerel Görünüm ve yapısını hala korur anlamına gelir.
+Xamarin.Forms uygulamaları yazarken, kod ve kullanıcı arabirimi, Android, iOS ve UWP projeleri tarafından başvurulan üst, .NET Standard projesine eklenir. Derleme ve Android, iOS ve UWP projeleri test etme ve uygulamanızı dağıtmak için çalıştırın.
 
-Karmaşık uygulamalar için zamana geliştirebilirsiniz uygulamaların hızlı prototip oluşturma için Xamarin.Forms sağlar. Xamarin.Forms uygulamaları yerel uygulamalardır çünkü tarayıcı korumalı alana alma, sınırlı API'leri veya düşük performans gibi diğer araç takımları sınırlarına sahip değilsiniz. Xamarin.Forms kullanılarak yazılmış uygulamalar herhangi birini kullanmak için temel platform özellikleri ve API'nin gibi (ancak bunlarla sınırlı olmamak üzere) CoreMotion PassKit ve StoreKit iOS; NFC ve android'de Google Play Hizmetleri; ve Windows üzerinde kutucukları. Buna ek olarak, Xamarin.Forms ile yerel UI Araç Seti kullanarak diğer bölümleri oluşturulduğu sırada oluşturulan kendi kullanıcı arabirimi bölümlerini olan uygulamalar oluşturmak mümkündür.
+## <a name="examining-a-xamarinforms-application"></a>Xamarin.Forms uygulaması İnceleme
 
-Xamarin.Forms uygulamaları, geleneksel platformlar arası uygulamalar aynı şekilde tasarlanmış. En yaygın yaklaşımı [taşınabilir kitaplıklar](~/cross-platform/app-fundamentals/pcl.md) veya [paylaşılan projeler](~/cross-platform/app-fundamentals/shared-projects.md) paylaşılan kodu barındırmak ve paylaşılan kod tüketecektir platform belirli uygulamaları oluşturun.
+Visual Studio'da varsayılan Xamarin.Forms uygulaması şablonu, tek bir metin etiketi görüntüler. Uygulamayı çalıştırdığınızda, aşağıdaki ekran görüntüleri için benzer görünmelidir:
 
-Xamarin.Forms içinde kullanıcı arabirimleri oluşturmak için iki teknik vardır. İlk yöntem, tamamen C# kaynak kodu ile kullanıcı arabirimleri oluşturmaktır. İkinci yöntem kullanmaktır *Extensible Application Markup Language* kullanıcı açıklamak için kullanılan bir bildirim temelli bir biçimlendirme dili (XAML) arabirimleri. XAML hakkında daha fazla bilgi için bkz: [XAML Temelleri](~/xamarin-forms/xaml/xaml-basics/index.md).
-
-Bu makalede Xamarin.Forms framework temelleri açıklanır ve aşağıdaki konular ele alınmaktadır:
-
--  [Xamarin.Forms uygulaması İnceleme](#Examining_A_Xamarin.Forms_Application).
--  [Xamarin.Forms sayfaların ve denetimlerin nasıl kullanıldığını](#Views_and_Layouts).
--  [Görüntü kullanmayı veri listesini](#Lists_in_Xamarin.Forms).
--  [Veri bağlamasını ayarlamak nasıl](#Data_Binding).
--  [Sayfaları arasında gezinmek nasıl](#Navigation).
--  [Sonraki adımlar](#Next_Steps).
-
-<a name="Examining_A_Xamarin_Forms_Application" />
-
-### <a name="examining-a-xamarinforms-application"></a>Xamarin.Forms uygulaması İnceleme
-
-Mac ve Visual Studio için Visual Studio'da kullanıcıya metin görüntüleyen basit Xamarin.Forms çözümü mümkün varsayılan Xamarin.Forms uygulaması şablonu oluşturur. Uygulamayı çalıştırdığınızda, aşağıdaki ekran görüntüleri için benzer görünmelidir:
-
-[![](introduction-to-xamarin-forms-images/image05-sml.png "Xamarin.Forms uygulaması varsayılan")](introduction-to-xamarin-forms-images/image05.png#lightbox "varsayılan Xamarin.Forms uygulaması")
+[![](introduction-to-xamarin-forms-images/image05-sml.png "Varsayılan Xamarin.Forms uygulaması")](introduction-to-xamarin-forms-images/image05.png#lightbox)
 
 Ekran görüntüleri her ekranda karşılık gelen bir *sayfa* Xamarin.Forms içinde. A [ `Page` ](xref:Xamarin.Forms.Page) temsil eder bir *etkinlik* Android, bir *görünüm denetleyicisi* ios'ta, veya bir *sayfası* içinde Windows Evrensel Platformu (UWP). Yukarıdaki ekran görüntüleri örnek örnekleyen bir [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) nesne ve görüntülemek için kullanan bir [ `Label` ](xref:Xamarin.Forms.Label).
 
-Yeniden başlatma kodu kullanılmasını en üst düzeye çıkarmak için Xamarin.Forms uygulamaları adlı tek bir sınıf sahip `App` ilk örnekleme için sorumlu [ `Page` ](xref:Xamarin.Forms.Page) , görüntülenir. Örneği `App` sınıfı aşağıdaki kodda görülebilir:
+Yeniden başlatma kodu kullanılmasını en üst düzeye çıkarmak için Xamarin.Forms uygulamaları adlı tek bir sınıf sahip `App` ilk örnekleme için sorumlu [ `Page` ](xref:Xamarin.Forms.Page) , görüntülenir. Örneği `App` sınıfı aşağıdaki kodda görülebilir (içinde **App.xaml.cs**):
 
 ```csharp
-public class App : Application
+public partial class App : Application
 {
   public App ()
   {
-    MainPage = new ContentPage {
-      Content =  new Label
-      {
-          Text = "Hello, Forms !",
-          VerticalOptions = LayoutOptions.CenterAndExpand,
-          HorizontalOptions = LayoutOptions.CenterAndExpand,
-      }
-      };
+    InitializeComponent();
+    MainPage = new MainPage(); // sets the App.MainPage property to an instance of the MainPage class
   }
 }
 ```
 
-Bu kod yeni bir örneğini oluşturur [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) tek bir görüntülenecek nesne [ `Label` ](xref:Xamarin.Forms.Label) sayfada her ikisi de dikey ve yatay orta.
+Bu kod yeni bir örneğini oluşturur [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) çağrılan nesne `MainPage` tek bir görüntülenir [ `Label` ](xref:Xamarin.Forms.Label) sayfada her ikisi de dikey ve yatay orta. XAML içinde **MainPage.xaml** dosya şu şekilde görünür:
 
-<a name="Launching_the_Initial_Xamarin_Forms_Page_on_Each_Platform" />
+```xaml
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:local="clr-namespace:AwesomeApp" x:Class="AwesomeApp.MainPage">
+    <StackLayout>
+        <Label Text="Hello Xamarin.Forms"
+           HorizontalOptions="Center"
+           VerticalOptions="CenterAndExpand" />
+    </StackLayout>
+</ContentPage>
+```
 
 ### <a name="launching-the-initial-xamarinforms-page-on-each-platform"></a>Her platformda ilk Xamarin.Forms sayfasında başlatılıyor
 
-Bunu kullanmak için [ `Page` ](xref:Xamarin.Forms.Page) içindeki bir uygulama, her platform uygulaması gerekir Xamarin.Forms framework başlatılamıyor ve bir örneğini sağlamak [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) , başlangıç olarak. Bu başlatma adımına platformdan platforma değişir ve aşağıdaki bölümlerde ele alınmıştır.
+> [!TIP]
+> Xamarin.Forms nasıl çalıştığını anlamanıza yardımcı olması için bu bölümdeki platforma özgü bilgiler sağlanmaktadır.
+> Proje şablonları, zaten bu sınıflar içerir. kendinize kod gerekmez.
+>
+> Atlayabilirsiniz [kullanıcı arabirimi](#user-interface) bölümünde ve daha sonra bu bölümü okuyun.
 
-<a name="Launching_in_iOS" />
+Bir sayfayı kullanmak için (gibi **MainPage** Yukarıdaki örnekteki) içindeki bir uygulama, her platform uygulaması gerekir Xamarin.Forms framework başlatılamıyor ve, başlangıç sayfasının bir örneğini sağlar. Bu başlatma adımına platformdan platforma değişir ve aşağıdaki bölümlerde ele alınmıştır.
 
 #### <a name="ios"></a>iOS
 
@@ -95,9 +85,7 @@ public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsAppli
 }
 ```
 
-`FinishedLoading` Geçersiz kılma çağırarak Xamarin.Forms framework başlatır `Init` yöntemi. Bu kök görünüm denetleyicisi çağrısıyla ayarlanmadan önce uygulamanın yüklenmesi için Xamarin.Forms iOS özel uygulanışı neden `LoadApplication` yöntemi.
-
-<a name="Launching_in_Android" />
+`FinishedLaunching` Geçersiz kılma çağırarak Xamarin.Forms framework başlatır `Init` yöntemi. Bu kök görünüm denetleyicisi çağrısıyla ayarlanmadan önce uygulamanın yüklenmesi için Xamarin.Forms iOS özel uygulanışı neden `LoadApplication` yöntemi.
 
 #### <a name="android"></a>Android
 
@@ -122,7 +110,7 @@ namespace HelloXamarinFormsWorld.Android
 
 `OnCreate` Geçersiz kılma çağırarak Xamarin.Forms framework başlatır `Init` yöntemi. Bu uygulamada Xamarin.Forms uygulama yüklenmeden önce yüklenmesi için Xamarin.Forms Android özel uygulanışı neden olur.
 
-#### <a name="universal-windows-platform"></a>Evrensel Windows Platformu
+#### <a name="universal-windows-platform-uwp"></a>Evrensel Windows Platformu (UWP)
 
 Evrensel Windows Platformu (UWP) uygulamaları `Init` Xamarin.Forms framework başlatan yöntem ınvoked from `App` sınıfı:
 
@@ -148,26 +136,31 @@ public partial class MainPage
 }
 ```
 
-Xamarin.Forms uygulaması ile yüklenen `LoadApplication` yöntemi.
+Xamarin.Forms uygulaması ile yüklenen `LoadApplication` yöntemi. Yeni bir Xamarin.Forms projesi oluşturduğunuzda, visual Studio yukarıdaki tüm kodu ekler.
 
-<a name="Views_and_Layouts" />
+## <a name="user-interface"></a>Kullanıcı arabirimi
+
+Xamarin.Forms içinde kullanıcı arabirimleri oluşturmak için iki teknik vardır:
+
+- Kullanıcı arabirimi, tamamen C# kaynak kodu oluşturun.
+- *Extensible Application Markup Language* kullanıcı açıklamak için kullanılan bir bildirim temelli bir biçimlendirme dili (XAML) arabirimleri.
+
+Kullandığınız yöntemden bağımsız olarak aynı sonuçları elde edilebilecek (ve her ikisi de aşağıda açıklanmıştır). Xamarin.Forms XAML hakkında daha fazla bilgi için bkz: [XAML Temelleri](~/xamarin-forms/xaml/xaml-basics/index.md).
 
 ### <a name="views-and-layouts"></a>Görünümleri ve düzenleri
 
 Xamarin.Forms uygulaması kullanıcı arabirimi oluşturmak için kullanılan dört ana denetim Grup vardır.
 
-1. **Sayfaları** – Xamarin.Forms sayfaları, platformlar arası mobil uygulama ekranları temsil eder. Sayfaları hakkında daha fazla bilgi için bkz. [Xamarin.Forms sayfaları](~/xamarin-forms/user-interface/controls/pages.md).
-1. **Düzenleri** – Xamarin.Forms düzenleri, mantıksal yapılarda görünümleri oluşturmak için kullanılan kapsayıcılardır. Düzenleri hakkında daha fazla bilgi için bkz: [Xamarin.Forms Layouts](~/xamarin-forms/user-interface/controls/layouts.md).
-1. **Görünümleri** – Xamarin.Forms görünümleri etiketleri, düğme ve metin girişi kutusu gibi kullanıcı arabiriminde görüntülenen denetimleri vardır. Görünümler hakkında daha fazla bilgi için bkz. [Xamarin.Forms görünümleri](~/xamarin-forms/user-interface/controls/views.md).
-1. **Hücreleri** – Xamarin.Forms hücre bir listedeki öğeler için kullanılan özel öğe ve listedeki her öğeye nasıl çizileceğini açıklanmaktadır. Hücreleri hakkında daha fazla bilgi için bkz: [Xamarin.Forms hücreleri](~/xamarin-forms/user-interface/controls/cells.md).
+- **Sayfaları** – Xamarin.Forms sayfaları, platformlar arası mobil uygulama ekranları temsil eder. Sayfaları hakkında daha fazla bilgi için bkz. [Xamarin.Forms sayfaları](~/xamarin-forms/user-interface/controls/pages.md).
+- **Düzenleri** – Xamarin.Forms düzenleri, mantıksal yapılarda görünümleri oluşturmak için kullanılan kapsayıcılardır. Düzenleri hakkında daha fazla bilgi için bkz: [Xamarin.Forms Layouts](~/xamarin-forms/user-interface/controls/layouts.md).
+- **Görünümleri** – Xamarin.Forms görünümleri etiketleri, düğme ve metin girişi kutusu gibi kullanıcı arabiriminde görüntülenen denetimleri vardır. Görünümler hakkında daha fazla bilgi için bkz. [Xamarin.Forms görünümleri](~/xamarin-forms/user-interface/controls/views.md).
+- **Hücreleri** – Xamarin.Forms hücre bir listedeki öğeler için kullanılan özel öğe ve listedeki her öğeye nasıl çizileceğini açıklanmaktadır. Hücreleri hakkında daha fazla bilgi için bkz: [Xamarin.Forms hücreleri](~/xamarin-forms/user-interface/controls/cells.md).
 
-Çalışma zamanında hangi işlenmiş olan yerel eşdeğerine, her denetimi eşleştirilir.
+Çalışma zamanında, her denetimi ekranında işlenmeden yerel onun dengi eşleştirilir.
 
-Denetimleri bir düzen içinde barındırılır. [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) Yaygın olarak kullanılan bir düzen uygulayan sınıf artık incelenir.
+Denetimleri bir düzen içinde barındırılır. [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) Sınıfı &ndash; yaygın olarak kullanılan bir düzen &ndash; aşağıda açıklanmıştır.
 
-<a name="StackLayout" />
-
-#### <a name="stacklayout"></a>StackLayout
+### <a name="stacklayout"></a>StackLayout
 
 [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) Otomatik olarak ekran boyutu ne olursa olsun ekrandaki denetimleri düzenleyerek platformlar arası uygulama geliştirmeyi basitleştirir. Her alt öğenin konumlandırılmış bir birbiri ardına, ya da yatay ya da dikey olarak sırayla eklendikleri. Ne kadar alan `StackLayout` kullanım şekline bağlıdır [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) ve [ `VerticalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) özellikleri ayarlanır, ancak varsayılan olarak `StackLayout` ekranın tamamını kullanmayı dener.
 
@@ -238,7 +231,7 @@ public class StackLayoutExample: ContentPage
 {
     public StackLayoutExample()
     {
-        // Code that creates labels removed for clarity
+        // Code that creates red, yellow, green labels removed for clarity (see above)
         Content = new StackLayout
         {
             Spacing = 10,
@@ -296,11 +289,9 @@ Content = new StackLayout
 
 Aşağıdaki ekran görüntüleri, sonuçta elde edilen düzenini göster:
 
-[![](introduction-to-xamarin-forms-images/image11-sml.png "Yatay StackLayout LayoutOptions ile")](introduction-to-xamarin-forms-images/image11.png#lightbox "LayoutOptions ile yatay StackLayout")
+[![](introduction-to-xamarin-forms-images/image11-sml.png "Yatay StackLayout LayoutOptions ile")](introduction-to-xamarin-forms-images/image11.png#lightbox)
 
 Hakkında daha fazla bilgi için [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) sınıfı [StackLayout](~/xamarin-forms/user-interface/layouts/stack-layout.md).
-
-<a name="Lists_in_Xamarin_Forms" />
 
 ## <a name="lists-in-xamarinforms"></a>Xamarin.Forms içinde listeler
 
@@ -329,8 +320,6 @@ Sonuç aşağıdaki ekran görüntüsünde gösterilmektedir [ `ListView` ](xref
  ![](introduction-to-xamarin-forms-images/image13.png "ListView")
 
 Hakkında daha fazla bilgi için [ `ListView` ](xref:Xamarin.Forms.ListView) denetlemek için bkz: [ListView](~/xamarin-forms/user-interface/listview/index.md).
-
-<a name="Binding_to_a_Custom_Class" />
 
 ### <a name="binding-to-a-custom-class"></a>Özel bir sınıf bağlama
 
@@ -369,8 +358,6 @@ Bu yolu belirten bir bağlama oluşturur `TodoItem.Name` özelliği ve daha önc
 
 Özel bir sınıf bağlama hakkında daha fazla bilgi için bkz. [ListView veri kaynakları](~/xamarin-forms/user-interface/listview/data-and-databinding.md).
 
-<a name="Selecting_an_Item_in_a_ListView" />
-
 ### <a name="selecting-an-item-in-a-listview"></a>Bir ListView içinde bir öğe seçme
 
 Bir kullanıcı bir hücreye temas yanıt vermek için bir [ `ListView` ](xref:Xamarin.Forms.ListView), [ `ItemSelected` ](xref:Xamarin.Forms.ListView.ItemSelected) olay işlenecek, aşağıdaki kod örneğinde gösterildiği gibi:
@@ -394,8 +381,6 @@ listView.ItemSelected += async (sender, e) => {
 Her platform yerleşik geri gezinme, kendi şekilde uygular. Daha fazla bilgi için [Gezinti](#Navigation).
 
 Hakkında daha fazla bilgi için [ `ListView` ](xref:Xamarin.Forms.ListView) seçimi bkz [ListView etkileşim](~/xamarin-forms/user-interface/listview/interactivity.md).
-
-<a name="Customizing_the_appearance_of_a_cell" />
 
 ### <a name="customizing-the-appearance-of-a-cell"></a>Bir hücreyi görünümünü özelleştirme
 
@@ -476,8 +461,6 @@ Bu kodu sağlayacak bir `List` , `Employee` için [ `ListView` ](xref:Xamarin.Fo
 
 Hücre görünümü özelleştirme hakkında daha fazla bilgi için bkz. [hücre görünümü](~/xamarin-forms/user-interface/listview/customizing-cell-appearance.md).
 
-<a name="Using_XAML_to_Create_and_Customize_A_List" />
-
 ### <a name="using-xaml-to-create-and-customize-a-list"></a>XAML kullanarak oluşturma ve bir listesini özelleştirme
 
 XAML denk [ `ListView` ](xref:Xamarin.Forms.ListView) önceki bölümde aşağıdaki kod örneğinde gösterilmiştir:
@@ -512,9 +495,7 @@ XAML denk [ `ListView` ](xref:Xamarin.Forms.ListView) önceki bölümde aşağı
 
 Bu XAML tanımlayan bir [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) içeren bir [ `ListView` ](xref:Xamarin.Forms.ListView). Veri kaynağını `ListView` aracılığıyla ayarlanan [ `ItemsSource` ](xref:Xamarin.Forms.ItemsView`1.ItemsSource) özniteliği. Her bir satırın düzenini `ItemsSource` içinde tanımlanan [ `ListView.ItemTemplate` ](xref:Xamarin.Forms.ItemsView`1.ItemTemplate) öğesi.
 
-<a name="Data_Binding" />
-
-## <a name="data-binding"></a>Veri Bağlama
+## <a name="data-binding"></a>Veri bağlama
 
 Veri bağlama bağlayan adlı iki nesne *kaynak* ve *hedef*. *Kaynak* veri nesnesi sağlar. *Hedef* nesne kullanma (ve çoğunlukla görüntüler) kaynak nesne verilerden. Örneğin, bir [ `Label` ](xref:Xamarin.Forms.Label) (*hedef* nesnesi) yaygın olarak bağlanır, [ `Text` ](xref:Xamarin.Forms.Label.Text) genel bir özelliğini `string` bir özelliğinde*kaynak* nesne. Aşağıdaki diyagramda, bağlama ilişkiyi göstermektedir:
 
@@ -537,7 +518,7 @@ Aşağıdaki kod, XAML içinde veri bağlamayı gerçekleştiren bir örnek gös
 <Entry Text="{Binding FirstName}" ... />
 ```
 
-Arasında bir bağ [ `Entry.Text` ](xref:Xamarin.Forms.Entry.Text) özelliği ve `FirstName` özelliği *kaynak* nesne kurulur. Yapılan değişiklikler `Entry` denetimi otomatik olarak yayılır için `employeeToDisplay` nesne. Benzer şekilde, değişiklikler için yapılırsa `employeeToDisplay.FirstName` özelliği Xamarin.Forms bağlama altyapısı ayrıca güncelleştirecek içeriği `Entry` denetimi. Bu olarak bilinen bir *iki yönlü bağlama*. Model sınıfı çalışmak için iki yönlü bağlamaya sırayla uygulamalıdır `INotifyPropertyChanged` arabirimi.
+Arasında bir bağ [ `Entry.Text` ](xref:Xamarin.Forms.Entry.Text) özelliği ve `FirstName` özelliği *kaynak* nesne kurulur. Yapılan değişiklikler `Entry` denetimi otomatik olarak yayılır için `employeeToDisplay` nesne. Benzer şekilde, değişiklikler yapılırsa `employeeToDisplay.FirstName` özelliği Xamarin.Forms bağlama altyapısı ayrıca güncelleştirecek içeriği `Entry` denetimi. Bu olarak bilinen bir *iki yönlü bağlama*. Model sınıfı çalışmak için iki yönlü bağlamaya sırayla uygulamalıdır `INotifyPropertyChanged` arabirimi.
 
 Ancak [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) özelliği `EmployeeDetailPage` sınıfı XAML içinde ayarlanabilir, burada arka plan kod örneğine ayarlanır bir `Employee` nesnesi:
 
@@ -568,7 +549,7 @@ public EmployeeDetailPage(Employee employeeToDisplay)
 }
 ```
 
-[ `ContentPage` ](xref:Xamarin.Forms.ContentPage) Oluşturucu örneği geçirilen bir `Employee` nesne ve ayarlar [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) bağlamak için nesne. Bir [ `Entry` ](xref:Xamarin.Forms.Entry) denetimi oluşturulana ve bağlama arasında [ `Entry.Text` ](xref:Xamarin.Forms.Entry.Text) özelliği ve `FirstName` özelliği *kaynak* nesnesi ayarlanır. Yapılan değişiklikler `Entry` denetimi otomatik olarak yayılır için `employeeToDisplay` nesne. Benzer şekilde, değişiklikler için yapılırsa `employeeToDisplay.FirstName` özelliği Xamarin.Forms bağlama altyapısı ayrıca güncelleştirecek içeriği `Entry` denetimi. Bu olarak bilinen bir *iki yönlü bağlama*. Model sınıfı çalışmak için iki yönlü bağlamaya sırayla uygulamalıdır `INotifyPropertyChanged` arabirimi.
+[ `ContentPage` ](xref:Xamarin.Forms.ContentPage) Oluşturucu örneği geçirilen bir `Employee` nesne ve ayarlar [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) bağlamak için nesne. Bir [ `Entry` ](xref:Xamarin.Forms.Entry) denetimi oluşturulana ve bağlama arasında [ `Entry.Text` ](xref:Xamarin.Forms.Entry.Text) özelliği ve `FirstName` özelliği *kaynak* nesnesi ayarlanır. Yapılan değişiklikler `Entry` denetimi otomatik olarak yayılır için `employeeToDisplay` nesne. Benzer şekilde, değişiklikler yapılırsa `employeeToDisplay.FirstName` özelliği Xamarin.Forms bağlama altyapısı ayrıca güncelleştirecek içeriği `Entry` denetimi. Bu olarak bilinen bir *iki yönlü bağlama*. Model sınıfı çalışmak için iki yönlü bağlamaya sırayla uygulamalıdır `INotifyPropertyChanged` arabirimi.
 
 `SetBinding` Yöntem iki parametre alır. İlk parametre bağlama türü hakkındaki bilgileri belirtir. İkinci parametre ne bağlamak veya nasıl bağlanacağı hakkında bilgi sağlamak için kullanılır. İkinci parametre, çoğu durumda, özelliğin adını tutan yalnızca bir dizedir [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext). Aşağıdaki söz dizimini bağlamak için kullanılan `BindingContext` doğrudan:
 
@@ -577,8 +558,6 @@ someLabel.SetBinding(Label.TextProperty, new Binding("."));
 ```
 
 Nokta sözdizimini kullanmak için Xamarin.Forms söyler [ `BindingContext` ](xref:Xamarin.Forms.BindableObject.BindingContext) veri kaynağı yerine bir özellik olarak `BindingContext`. Bu durumlarda yararlı olur `BindingContext` basit bir tür olduğu gibi bir `string` veya `int`.
-
-<a name="INotifyPropertyChanged" />
 
 ### <a name="property-change-notification"></a>Özellik değişikliği bildirimi
 
@@ -623,8 +602,6 @@ Zaman `MyObject.FirstName` özellik değişiklikleri `OnPropertyChanged` yöntem
 
 Unutmayın, `OnPropertyChanged` yöntemi `propertyName` parametresi ile donatılmış `CallerMemberName` özniteliği. Bu durumlarda sağlar `OnPropertyChanged` ile yöntemi çağrıldığında bir `null` değeri `CallerMemberName` özniteliğini çağrılan yöntemin adını sağlayın `OnPropertyChanged`.
 
-<a name="Navigation" />
-
 ## <a name="navigation"></a>Gezinti
 
 Xamarin.Forms sağlar bağlı olarak farklı sayfa gezinti deneyimleri sayısı [ `Page` ](xref:Xamarin.Forms.Page) kullanılan yazın. İçin [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) olan iki Gezinti deneyimleri örnekleri vardır:
@@ -633,8 +610,6 @@ Xamarin.Forms sağlar bağlı olarak farklı sayfa gezinti deneyimleri sayısı 
 - [Kalıcı Gezinti](#Modal_Navigation)
 
 [ `CarouselPage` ](xref:Xamarin.Forms.CarouselPage), [ `MasterDetailPage` ](xref:Xamarin.Forms.MasterDetailPage) Ve [ `TabbedPage` ](xref:Xamarin.Forms.TabbedPage) sınıfları başka gezinme deneyimler sağlar. Daha fazla bilgi için [Gezinti](~/xamarin-forms/app-fundamentals/navigation/index.md).
-
-<a name="Hierarchical_Navigation" />
 
 ### <a name="hierarchical-navigation"></a>Hiyerarşik gezinme
 
@@ -667,8 +642,6 @@ await Navigation.PopAsync();
 
 Hiyerarşik gezinme hakkında daha fazla bilgi için bkz. [hiyerarşik gezinme](~/xamarin-forms/app-fundamentals/navigation/hierarchical.md).
 
-<a name="Modal_Navigation" />
-
 ### <a name="modal-navigation"></a>Kalıcı Gezinti
 
 Xamarin.Forms kalıcı sayfalar için destek sağlar. Kalıcı bir sayfa, görev tamamlandı veya iptal kadar UZAĞINIZDA erişilemeyeceğini kendi içinde bir görevi tamamlamak için kullanıcıların önerir.
@@ -698,9 +671,7 @@ Bu neden `LoginPage` örneği etkin sayfa olma yeni en üstte sayfa gezinti yı�
 
 Kalıcı gezintisi hakkında daha fazla bilgi için bkz. [kalıcı sayfalar](~/xamarin-forms/app-fundamentals/navigation/modal.md).
 
-<a name="Next_Steps" />
-
-## <a name="next-steps"></a>Sonraki Adımlar
+## <a name="next-steps"></a>Sonraki adımlar
 
 Giriş niteliğindeki bu makalede, Xamarin.Forms uygulamaları yazmaya başlamak etkinleştirmeniz gerekir. Önerilen sonraki adımları aşağıdaki işlevleri okumayı içerir:
 
@@ -711,12 +682,7 @@ Giriş niteliğindeki bu makalede, Xamarin.Forms uygulamaları yazmaya başlamak
 - Her sayfa, Düzen ve denetimi farklı kullanarak her platformunda işlenen bir `Renderer` sırayla yerel bir denetim oluşturan sınıf ekranda düzenler ve paylaşılan kodu belirtilen davranışı ekler. Geliştiriciler, kendi özel uygulayabilirsiniz `Renderer` sınıflar görünümünü ve davranışını özelleştirin. Daha fazla bilgi için [özel Oluşturucu](~/xamarin-forms/app-fundamentals/custom-renderer/index.md).
 - Etkileri, özelleştirilmek üzere her platformda yerel denetimler için de izin verir. Etkileri platforma özgü projelerinde sınıflara tarafından oluşturulan [ `PlatformEffect` ](xref:Xamarin.Forms.PlatformEffect`2) denetlemek ve uygun bir Xamarin.Forms denetimine ekleyerek tüketilir. Daha fazla bilgi için [etkileri](~/xamarin-forms/app-fundamentals/effects/index.md).
 
-Alternatif olarak, Xamarin.Forms, bir kitap tarafından Charles Petzold ile Mobile Apps oluşturma Xamarin.Forms hakkında daha fazla bilgi edinmek için uygun bir yerdir. Daha fazla bilgi için [Xamarin.Forms ile Mobile Apps oluşturma](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md).
-
-## <a name="summary"></a>Özet
-
-Bu makalede Xamarin.Forms ve onunla uygulamaları yazmaya başlamak nasıl bir giriş sağlanır. Xamarin.Forms, bir çoklu platform UI araç seti, geliştiricilerin Android, iOS ve evrensel Windows Platform arasında paylaşılan kullanıcı arabirimlerini kolayca oluşturmanıza olanak tanıyan bir soyutlama yerel olarak desteklenen ' dir. Kullanıcı arabirimleri, her platform için uygun görünüm ve yapısını korumak Xamarin.Forms uygulamaları hedef platformda yerel denetimlerini kullanarak işlenir.
-
+Alternatif olarak, [ _Xamarin.Forms ile Mobile Apps oluşturma_](~/xamarin-forms/creating-mobile-apps-xamarin-forms/index.md), bir kitap Charles Petzold ile Xamarin.Forms hakkında daha fazla bilgi edinmek için iyi bir yerdir. Kitap bir PDF olarak veya çeşitli e-kitap biçimlerde kullanılabilir.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
@@ -725,6 +691,5 @@ Bu makalede Xamarin.Forms ve onunla uygulamaları yazmaya başlamak nasıl bir g
 - [Kullanıcı Arabirimi](~/xamarin-forms/user-interface/index.md)
 - [Xamarin.Forms Örnekleri](https://developer.xamarin.com/samples/xamarin-forms/all/)
 - [Kullanmaya başlama örnekleri](https://developer.xamarin.com/samples/xamarin-forms/GettingStarted/)
-- [Xamarin.Forms](xref:Xamarin.Forms)
+- [Xamarin.Forms API Başvurusu](xref:Xamarin.Forms)
 - [Ücretsiz kendi öğrenme (video)](https://university.xamarin.com/self-guided)
-- [Merhaba, Xamarin.Forms iOS çalışma kitabı](https://developer.xamarin.com/workbooks/xamarin-forms/getting-started/GettingStartedWithXamarinForms-ios.workbook)

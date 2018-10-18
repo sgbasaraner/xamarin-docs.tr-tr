@@ -1,54 +1,51 @@
 ---
 title: macOS Platform özellikleri
-description: 'Bu belge önemli macOS ve Xamarin.Mac platform özellikleri açıklamak kılavuzlara bağlantılar: OpenTK, film şeritleri, uzantıları ve daha fazlası.'
+description: 'Bu belge önemli macOS ve Xamarin.Mac platform özellikleri açıklayan kılavuzlara bağlantılar: OpenTK, film şeritleri, uzantıları ve diğer.'
 ms.prod: xamarin
 ms.assetid: 37451F65-672A-4512-8DDD-06CCDE9E5A12
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
-ms.date: 10/19/2016
-ms.openlocfilehash: 539ec976e3ea28aa2e017318022bd102f2c03ae5
-ms.sourcegitcommit: 3f2737f8abf9b855edf060474aa222e973abda3f
+author: lobrien
+ms.author: laobri
+ms.date: 10/05/2018
+ms.openlocfilehash: 7e91645fb92814c88c3711645ea294ac701b67ac
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/28/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "37066890"
 ---
-# <a name="macos-platform-features"></a>macOS Platform özellikleri
+# <a name="macos-platform-features"></a>macOS platform özellikleri
 
-Bu bölümdeki belgeler Xamarin.Mac uygulamasında macOS anahtar, platforma özgü özellikleri ile çalışma kapsar.
+Bu bölümdeki belgeler bir Xamarin.Mac uygulamasını macOS, anahtar, platforma özgü özelliklerle çalışma kapsar.
 
-## <a name="introduction-to-macos-mojavemacplatformintroduction-to-macos-mojaveindexmd"></a>[MacOS Mojave giriş](~/mac/platform/introduction-to-macos-mojave/index.md)
+## <a name="introduction-to-macos-mojavemacplatformintroduction-to-macos-mojaveindexmd"></a>[macOS Mojave’ye Giriş](~/mac/platform/introduction-to-macos-mojave/index.md)
 
-> [!WARNING]
-> Xamarin'ın macOS Mojave desteği şu anda bu hatalar içerebilir, özelliği tamamlamak değil ve değişebilir anlamına gelir önizlemede değil. Yalnızca deneme için kullanın.
+Bu belge, macOS Xamarin.Mac uygulamaları oluştururken kullanılabilecek Mojave'deki yeni ve güncelleştirilmiş özellikler üst düzey bir genel bakış sağlar.
 
-Bu belge macOS Xamarin.Mac uygulamaları oluştururken kullanılabilir Mojave yeni ve güncelleştirilmiş özelliklerin üst düzey bir genel bakış sağlar.
+## <a name="introduction-to-macos-high-sierramacplatformintroduction-to-macos-high-sierraindexmd"></a>[macOS High Sierra’ya Giriş](~/mac/platform/introduction-to-macos-high-sierra/index.md)
 
-## <a name="introduction-to-macos-high-sierramacplatformintroduction-to-macos-high-sierraindexmd"></a>[MacOS yüksek Sierra giriş](~/mac/platform/introduction-to-macos-high-sierra/index.md)
-
-Bu belgede macOS yüksek Sierra'deki yeni ve gelişmiş özellikler açıklanmaktadır.
+Bu belgede, macOS High Sierra yeni ve geliştirilmiş özellikler açıklanmaktadır.
 
 ## <a name="introduction-to-macos-sierramacplatformintroduction-to-macos-sierraindexmd"></a>[macOS Sierra’ya Giriş](~/mac/platform/introduction-to-macos-sierra/index.md)
 
-Mac için Apple'nın masaüstü işletim sisteminin en son hali macOS Sierra olduğu Bu belge, Mac OS X El Capitan ve nasıl Xamarin.Mac uygulamada uygulanacağı değişiklikleri kapsar.
+Apple'nın masaüstü işletim sisteminin en son hali Mac için macOS Sierra olduğu Bu belge, Mac OS X El Capitan ve nasıl bir Xamarin.Mac uygulamasını uygulanacağı değişiklikleri kapsar.
 
-## <a name="binding-objective-c-libraries-for-macbindingmd"></a>[Mac için bağlama Objective-C kitaplıkları](binding.md)
+## <a name="binding-objective-c-libraries-for-macbindingmd"></a>[Mac için Objective-C kitaplıklarını bağlama](binding.md)
 
-Objective-C Mac kitaplıkları Xamarin.Mac projeleri kullanmak için bağ öğrenin.
-Başvurmak [sorun giderme sayfa](~/cross-platform/macios/binding/troubleshooting.md) sorunları gidermek için.
+Xamarin.Mac projeleri kullanmak için Objective-C Mac kitaplıklarını bağlama hakkında bilgi edinin.
+Başvurmak [sorun giderme sayfasını](~/cross-platform/macios/binding/troubleshooting.md) sorunları çözmek için.
 
 ## <a name="introduction-to-opentkmacplatformopentkmd"></a>[OpenTK’ya Giriş](~/mac/platform/opentk.md)
 
-OpenTK (açık araç takımı), OpenGL ve OpenCL OpenAL ile çalışmayı kolaylaştırır bir Gelişmiş, alt düzey C# kitaplıktır. OpenTK kullanılabilir oyunlar, bilimsel uygulamaları veya diğer 3B grafik gerektiren projeleri, ses veya hesaplama işlevselliği için. Bu makalede OpenTK Xamarin.Mac kullanmayla kısa bir giriş sağlar.
+OpenTK (açık araç seti), OpenGL ve OpenCL OpenAL ile çalışmayı kolaylaştırır bir Gelişmiş, alt düzey C# kitaplıktır. OpenTK kullanılabilir oyunları, Bilimsel uygulamalar veya diğer 3B grafik gerektiren projeler, ses veya hesaplama işlevselliği için. Bu makalede, OpenTK bir Xamarin.Mac uygulamasını kullanarak kısa bir giriş sağlar.
 
-## <a name="introduction-to-storyboardsmacplatformstoryboardsindexmd"></a>[Görsel Taslaklara Giriş](~/mac/platform/storyboards/index.md)
+## <a name="introduction-to-storyboardsmacplatformstoryboardsindexmd"></a>[Görsel taslaklara giriş](~/mac/platform/storyboards/index.md)
 
-Film şeritleri yalnızca penceresi tanımları ve denetimleri içerir, ancak ayrıca farklı windows arasındaki bağlantıları içerir Xamarin.Mac uygulamanız için kullanıcı arabirimi geliştirmek izin ver (aracılığıyla segues) ve durumlarını görüntüleyin. Bu makalede film şeritleri Xamarin.Mac uygulamada kullanmaya giriş bilgileri sağlar.
+Görsel Taslaklar yalnızca penceresi tanımları ve denetimler içerir, ancak ayrıca farklı windows arasındaki bağlantıları içerir Xamarin.Mac uygulamanız için bir kullanıcı arabirimi geliştirme izin ver (aracılığıyla etkinleştirilir) ve durumlarını görüntüleyin. Bu makalede bir Xamarin.Mac uygulamasını görsel Taslaklar kullanarak giriş bilgileri sağlanır.
 
-## <a name="xamarinmac-extension-supportmacplatformextensionsmd"></a>[Xamarin.Mac Uzantısı Desteği](~/mac/platform/extensions.md)
+## <a name="xamarinmac-extension-supportmacplatformextensionsmd"></a>[Xamarin.Mac uzantısı desteği](~/mac/platform/extensions.md)
 
-Xamarin.Mac 2.10 Önizleme'de birden çok macOS uzantı noktaları için destek eklendi:
+Xamarin.Mac 2.10 önizlemede birden fazla macOS uzantı noktası için destek eklendi:
 
 - Bulucu
 - Paylaş
@@ -56,4 +53,4 @@ Xamarin.Mac 2.10 Önizleme'de birden çok macOS uzantı noktaları için destek 
 
 ## <a name="target-frameworksmacplatformtarget-frameworkmd"></a>[Hedef çerçeveler](~/mac/platform/target-framework.md)
 
-Bu makalede, hedef Xamarin.Mac ve Xamarin.Mac uygulamanız için belirli bir hedef seçme etkilerini kullanılabilen çerçeveler (temel sınıf kitaplıkları) türleri yer almaktadır.
+Bu makale, hedef Xamarin.Mac ve etkilerini Xamarin.Mac uygulamanız için belirli bir hedef seçme içinde kullanılabilir olan çerçeveler (temel sınıf kitaplıkları) türlerini kapsar.

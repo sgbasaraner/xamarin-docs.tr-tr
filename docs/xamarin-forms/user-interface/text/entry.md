@@ -6,25 +6,25 @@ ms.assetid: 9923C541-3C10-4D14-BAB5-C4D6C514FB1E
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/16/2018
-ms.openlocfilehash: 5ccd2a653e5190df11a58477905e868b25878e44
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
+ms.date: 07/27/2018
+ms.openlocfilehash: 08eb77878dad9c89754585b87394d2c33900fe83
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/26/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "39270118"
 ---
 # <a name="xamarinforms-entry"></a>Xamarin.Forms giriş
 
 _Tek satırlı metin veya parola giriş_
 
-Xamarin.Forms `Entry` tek satırlı metin girişi için kullanılır. `Entry`Gibi `Editor` görüntüleme, birden fazla klavye türlerini destekler. Ayrıca, `Entry` parola alanı kullanılabilir.
+Xamarin.Forms [ `Entry` ](xref:Xamarin.Forms.Entry) tek satırlı metin girişi için kullanılır. `Entry`Gibi [ `Editor` ](xref:Xamarin.Forms.Editor) görüntüleme, birden fazla klavye türlerini destekler. Ayrıca, `Entry` parola alanı kullanılabilir.
 
 ## <a name="display-customization"></a>Görüntü özelleştirme
 
 ### <a name="setting-and-reading-text"></a>Metin okuma ve ayarlama
 
-`Entry`, Metin sunma diğer görünümleri gibi sunan `Text` özelliği. Bu özellik tarafından sunulan metni okuyun ve ayarlamak için kullanılan `Entry`. Aşağıdaki örnek ayar gösterir `Text` XAML özelliği:
+`Entry`, Metin sunma diğer görünümleri gibi sunan [ `Text` ](xref:Xamarin.Forms.Entry.Text) özelliği. Bu özellik tarafından sunulan metni okuyun ve ayarlamak için kullanılan `Entry`. Aşağıdaki örnek ayar gösterir `Text` XAML özelliği:
 
 ```xaml
 <Entry Text="I am an Entry" />
@@ -58,6 +58,32 @@ var entry = new Entry { ... MaxLength = 10 };
 ```
 
 A [ `MaxLength` ](xref:Xamarin.Forms.InputView.MaxLength) özellik değerinin 0 gösterir müdahalesi izin verilmeyeceğini, değerini `int.MaxValue`, varsayılan değeri olduğu bir [ `Entry` ](xref:Xamarin.Forms.Entry), olduğunu gösterir yok etkili girilebilir karakter sayısını sınırlama.
+
+### <a name="setting-the-cursor-position-and-text-selection-length"></a>Metin seçimi uzunluğu ve imleç konumu ayarlama
+
+[ `CursorPosition` ](xref:Xamarin.Forms.Entry.CursorPosition) Özelliği, döndürür veya başlangıçtan sonraki karakteri eklenir depolanan dizesine konumu ayarlamak için kullanılabilir [ `Text` ](xref:Xamarin.Forms.Entry.Text) özelliği:
+
+```xaml
+<Entry Text="Cursor position set" CursorPosition="5" />
+```
+
+```csharp
+var entry = new Entry { Text = "Cursor position set", CursorPosition = 5 };
+```
+
+Varsayılan değer olan [ `CursorPosition` ](xref:Xamarin.Forms.Entry.CursorPosition) özelliktir metnin başlangıcında ekleneceğini belirten, 0 `Entry`.
+
+Ayrıca, [ `SelectionLength` ](xref:Xamarin.Forms.Entry.SelectionLength) döndürmesine veya metin seçimi içinde uzunluğunu ayarlama özelliği kullanılabilir `Entry`:
+
+```xaml
+<Entry Text="Cursor position and selection length set" CursorPosition="2" SelectionLength="10" />
+```
+
+```csharp
+var entry = new Entry { Text = "Cursor position and selection length set", CursorPosition = 2, SelectionLength = 10 };
+```
+
+Varsayılan değer olan [ `SelectionLength` ](xref:Xamarin.Forms.Entry.SelectionLength) özelliği 0 olarak varsayılır; hiçbir metin seçili olduğunu gösterir.
 
 ### <a name="customizing-the-keyboard"></a>Klavye özelleştirme
 
@@ -180,21 +206,17 @@ var entry = new Entry { ... IsTextPredictionEnabled = false };
 > [!NOTE]
 > Zaman [ `IsTextPredictionEnabled` ](xref:Xamarin.Forms.Entry.IsTextPredictionEnabled) özelliği `false`, ve özel bir klavye değil kullanıldığında, metin tahmini ve otomatik metin düzeltme devre dışı bırakıldı. Ancak, bir [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) devre dışı bırakır, metin tahmini ayarlandı `IsTextPredictionEnabled` özelliği yok sayılır. Bu nedenle, özellik için metin tahmininin etkinleştirmek için kullanılamaz bir `Keyboard` , açıkça bırakır.
 
-### <a name="placeholders"></a>Yer tutucuları
+### <a name="setting-placeholder-text"></a>Yer tutucu metni ayarlama
 
-`Entry` kullanıcı girişi işlendiğinde değil yer tutucu metin göstermek için ayarlanabilir. Uygulamada, bu çok formlarında belirli bir alan için uygun olan içerik açıklamak için görülür. Yer tutucu metin rengi özelleştirilemiyor ve bakılmaksızın aynı olacak `TextColor` ayarı. Tasarımınızı için özel bir yer tutucu rengi çağırırsa, geri döner gerekecektir bir [özel Oluşturucu](). Aşağıdaki oluşturacak bir `Entry` XAML içinde yer tutucu olarak "Username" ile:
+[ `Entry` ](xref:Xamarin.Forms.Entry) Kullanıcı girişi işlendiğinde değil yer tutucu metin göstermek için ayarlanabilir. Bu ayarı gerçekleştirilir [ `Placeholder` ](xref:Xamarin.Forms.Entry.Placeholder) özelliğini bir `string`ve uygun olan içerik türünü belirtmek için kullanılan `Entry`. Ayrıca, yer tutucu metin rengi ayarlayarak denetlenebilir [ `PlaceholderColor` ](xref:Xamarin.Forms.Entry.PlaceholderColor) özelliğini bir [ `Color` ](xref:Xamarin.Forms.Color):
 
 ```xaml
-<Entry Placeholder="Username" />
+<Entry Placeholder="Username" PlaceholderColor="Olive" />
 ```
-
-C# içinde:
 
 ```csharp
-var MyEntry = new Entry { Placeholder = "Username" };
+var entry = new Entry { Placeholder = "Username", PlaceholderColor = Color.Olive };
 ```
-
-![](entry-images/placeholder.png "Yer tutucu örnek giriş")
 
 ### <a name="password-fields"></a>Parola alanı
 

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 07/10/2018
-ms.openlocfilehash: c0c433ab44c5b16fda6a01d520c41b31cb94bcc7
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 0069e59c1c09e242a74573ae66c8efade7d7f2a5
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "38998252"
 ---
 # <a name="xamarinforms-slider"></a>Xamarin.Forms kaydırıcı
@@ -44,8 +44,8 @@ Tarafından desteklenen tüm üç özellik `BindableProperty` nesneleri. `Value`
 
 - [`MinimumTrackColor`](xref:Xamarin.Forms.Slider.MinimumTrackColorProperty) çubuğu renk sol tarafında kalan kısmıdır.
 - [`MaximumTrackColor`](xref:Xamarin.Forms.Slider.MaximumTrackColorProperty) çubuğu renk sağ tarafında kalan kısmıdır.
-- [`ThumbColor`](xref:Xamarin.Forms.Slider.ThumbColorProperty) thumb renktir. Bu özellik, Evrensel Windows platformu üzerinde desteklenmiyor.
-- [`ThumbImage`](xref:Xamarin.Forms.Slider.ThumbImageProperty) görüntü türü küçük resim için kullanılacak [ `FileImageSource` ](xref:Xamarin.Forms.FileImageSource). Bu özellik, Evrensel Windows platformu üzerinde desteklenmiyor.
+- [`ThumbColor`](xref:Xamarin.Forms.Slider.ThumbColorProperty) thumb renktir.
+- [`ThumbImage`](xref:Xamarin.Forms.Slider.ThumbImageProperty) görüntü türü küçük resim için kullanılacak [ `FileImageSource` ](xref:Xamarin.Forms.FileImageSource).
 
 > [!NOTE]
 > `ThumbColor` Ve `ThumbImage` özelliklerini karşılıklı olarak birbirini dışlar. Her iki özellik ayarlandıysa `ThumbImage` özelliği öncelik alır.
@@ -109,7 +109,7 @@ Cihazlar iOS, Android ve evrensel Windows Platformu (UWP) üzerinde çalışan b
 
 [![Temel kaydırıcı kod](slider-images/BasicSliderCode.png "temel kaydırıcı kod")](slider-images/BasicSliderCode-Large.png#lightbox)
 
-İkinci `Label` kadar "(başlatılmamış)" metni görüntüler `Slider` yönetilebilir, ilk durumlarda `ValueChanged` olay başlatılmasına izin. Görüntülenecek ondalık basamak sayısı üç platformları için farklı olduğuna dikkat edin. Bu farklılıklar, platform uygulamaları için ilişkili `Slider` ve bölümünde bu makalenin sonraki bölümlerinde ele alınmıştır [Platform uygulaması farklılıklarını](#implementations).
+İkinci `Label` kadar "(başlatılmamış)" metni görüntüler `Slider` yönetilebilir, ilk neden `ValueChanged` olay başlatılmasına izin. Görüntülenecek ondalık basamak sayısı üç platformları için farklı olduğuna dikkat edin. Bu farklılıklar, platform uygulamaları için ilişkili `Slider` ve bölümünde bu makalenin sonraki bölümlerinde ele alınmıştır [Platform uygulaması farklılıklarını](#implementations).
 
 ### <a name="creating-a-slider-in-xaml"></a>Bir kaydırıcı XAML içinde oluşturma
 
@@ -228,7 +228,7 @@ Slider slider = new Slider
 };
 ```
 
-Ayarı `Maximum` varsayılandan daha büyük olduğu için 20'ye bir sorun değildir `Minimum` 0 / ayarlama. Zaman `Minimum` , değer ayarlanmış küçüktür `Maximum` değeri 20.
+Ayarı `Maximum` varsayılandan daha büyük olduğu için 20'ye bir sorun değildir `Minimum` 0 değeri. Zaman `Minimum` , değer ayarlanmış küçüktür `Maximum` değeri 20.
 
 XAML içinde aynı sorunu var. Özellikler, sağlayan bir sırayı ayarlamak `Maximum` her zaman büyük olup `Minimum`:
 
@@ -292,8 +292,6 @@ Android uygulaması `Slider` Android tabanlı [ `SeekBar` ](https://developer.xa
 UWP uygulaması `Slider` UWP tabanlı [ `Slider` ](/uwp/api/windows.ui.xaml.controls.slider) denetimi. `StepFrequency` UWP özelliği `Slider` fark için ayarlanmış `Maximum` ve `Minimum` özellikleri bölünmüş 10, ancak 1'den büyük.
 
 Örneğin, varsayılan aralık 0-1 için `StepFrequency` özelliği ayarlanmış 0,1 aralığındadır. Olarak `Slider` yönetilebilir, `Value` özelliği 0, 0.1, 0.2, 0.3, 0.4, 0,5, 0,6, 0,7, 0,8, 0.9 ve 1.0 için Yasak. (Bu son sayfasında dikkati çekiyor [ **SliderDemos** ](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/SliderDemos) örnek.) Zaman arasındaki farkı `Maximum` ve `Minimum` özellikleri 10 ya da daha sonra `StepFrequency` 1 olarak ayarlanır ve `Value` tamsayı değerlerini özelliğine sahiptir.
-
-Ayrıca, [ `ThumbColor` ](xref:Xamarin.Forms.Slider.ThumbColorProperty) ve [ `ThumbImage` ](xref:Xamarin.Forms.Slider.ThumbImageProperty) özellikler UWP üzerinde desteklenmiyor.
 
 ### <a name="the-stepslider-solution"></a>StepSlider çözümü
 

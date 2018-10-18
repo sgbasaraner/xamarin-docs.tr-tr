@@ -1,32 +1,24 @@
 ---
 title: MacOS Mojave giriş
-description: Bu belge, yüksek düzeyde birlikte macOS Mojave hangi Xamarin'in preview için sürüm şu anda C# bağlamaları sağlar. yeni ve güncelleştirilmiş Özellikler'e genel bakış sağlar.
+description: Bu belge, yüksek düzeyde birlikte macOS Mojave'deki yeni ve güncelleştirilmiş Özellikler'e genel bakış sağlar.
 ms.prod: xamarin
 ms.assetid: 4A41CD85-C807-44C9-85AB-B5441B145A73
 ms.technology: xamarin-mac
-author: bradumbaugh
-ms.author: brumbaug
-ms.date: 07/08/2018
-ms.openlocfilehash: 916a1323127ac9be387c9465fb660dd0e7569a93
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+author: lobrien
+ms.author: laobri
+ms.date: 10/05/2018
+ms.openlocfilehash: ce293a7c97a2cb4975baef807ded9a8fd0a90476
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "39615840"
 ---
 # <a name="introduction-to-macos-mojave"></a>MacOS Mojave giriş
 
-![Önizleme](~/media/shared/preview.png)
+Bu belge, yüksek düzeyde birlikte macOS Mojave'deki yeni ve güncelleştirilmiş Özellikler'e genel bakış sağlar.
 
-> [!WARNING]
-> MacOS Mojave Xcode 10 ile dağıtılmış SDK'sı Xamarin desteği anlamına hataları içerebilir, özellik tam değil, şu anda Önizleme aşamasında olan ve değişebilir. Yalnızca deneme kullanın.
-
-Bu belge, yüksek düzeyde birlikte macOS Mojave hangi Xamarin'in preview için sürüm şu anda C# bağlamaları sağlar. yeni ve güncelleştirilmiş Özellikler'e genel bakış sağlar.
-
-MacOS Xamarin ile Mojave uygulamalar oluşturmaya başlamak için göz atın:
-
-- [Başlangıç Kılavuzu](~/mac/platform/introduction-to-macos-mojave/get-started.md)
-- Xamarin Önizleme [sürüm blog gönderisi](https://releases.xamarin.com/preview-release-xcode-10-beta-5/)
+MacOS Xamarin ile Mojave uygulamalar oluşturmaya başlamak için göz atın [Başlangıç Kılavuzu](~/mac/platform/introduction-to-macos-mojave/get-started.md) için [Xamarin.Mac 5.0](https://developer.xamarin.com/releases/mac/xamarin.mac_5/xamarin.mac_5.0/).
 
 ## <a name="dark-mode"></a>Koyu modu
 
@@ -44,8 +36,16 @@ Doğal dil çerçevesi, çeşitli dil analizi gerçekleştirmek uygulamaları et
 
 Vision çerçevesi, yüzleri çeşitli yönleriyle algılayabilir bir geliştirilmiş yüz algılayıcısı içerir. Ayrıca, belirli bir işleme çerçevesi algoritması düzeltmesini seçmek için istek düzeltmeler artık kullanılabilir.
 
+## <a name="network-framework"></a>Ağ çerçevesi
+
+Ağ framework, ağ yığınını temel `URLSession` iOS uygulamalarında yaygın olarak kullanılan API'ler, artık bir tek başına çerçeve TCP, UDP, TLS, IPv4/IPv6 ve daha fazlası ile çalışmak kolaylaştırır.
+
+## <a name="deprecations"></a>Bırakılanların
+
+OpenGL ES ve OpenCL, macOS Mojave Apple kullanımdan kaldırmıştır [geliştiriciler teşvik](https://developer.apple.com/macos/whats-new/) Metal ve tam performans gölgelendiriciler benimsemek için.
+
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [Xamarin.Mac örnekleri](https://developer.xamarin.com/samples/mac/)
 - [macOS – Apple Geliştirici](https://developer.apple.com/macos/)
-- Xamarin Önizleme [sürüm blog gönderisi](https://releases.xamarin.com/preview-release-xcode-10-beta-5/)
+- [Xamarin.Mac 5.0 sürüm notları](https://developer.xamarin.com/releases/mac/xamarin.mac_5/xamarin.mac_5.0/)

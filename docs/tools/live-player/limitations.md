@@ -3,14 +3,14 @@ title: Xamarin Live Player sınırlamaları
 description: Bu belgede, Xamarin Live Player sınırlamaları açıklanmaktadır. Bu cihaz gereksinimleri açıklanır, proje türleri ve diğer çeşitli konuların ile çalışır özellikleri.
 ms.prod: xamarin
 ms.assetid: 36A1531E-630A-4B7C-A333-4E67E5DC023C
-author: topgenorth
-ms.author: toopge
+author: lobrien
+ms.author: laobri
 ms.date: 08/08/2018
-ms.openlocfilehash: 99ed8d06331ac7e423791309da79d72d5a10d70f
-ms.sourcegitcommit: 47709db4d115d221e97f18bc8111c95723f6cb9b
+ms.openlocfilehash: aff6990df1b710190f11c2d7fa09c8399e94f8af
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/13/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "43780673"
 ---
 # <a name="limitations-of-xamarin-live-player"></a>Xamarin Live Player sınırlamaları
@@ -53,7 +53,7 @@ Live Player, iOS için kullanılamıyor.
 - F # projelerinde desteklenmez.
 - Özel genel sınıfları ve arabirimleri ile Gelişmiş senaryolar desteklenmiyor olabilir.
 
-Ek sorunları raporlamak lütfen [bugzilla](https://aka.ms/live-player-report-issue).
+Kullanım **sorun bildir** içinde [Visual Studio 2017](https://docs.microsoft.com/visualstudio/ide/how-to-report-a-problem-with-visual-studio-2017) veya [Mac için Visual Studio](https://docs.microsoft.com/visualstudio/mac/report-a-problem) Xamarin Live Player ile ilgili sorunları bildirmek için.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

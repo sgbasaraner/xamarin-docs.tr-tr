@@ -4,35 +4,30 @@ description: Bu belge üst düzey hangi Xamarin'in preview için sürüm C# bağ
 ms.prod: xamarin
 ms.assetid: 775BE4E4-F408-4620-AED9-2B48C7B27F38
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.date: 07/09/2018
-ms.openlocfilehash: 4cb05b1aa81dc8f2e7a4930ce797d7fe1164aeab
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+author: lobrien
+ms.author: laobri
+ms.date: 10/05/2018
+ms.openlocfilehash: 6fbbd75c0daf960fd9fd01670bdea35126abfabe
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "39615515"
 ---
 # <a name="introduction-to-watchos-5"></a>WatchOS 5 giriş
 
- ![Önizleme](~/media/shared/preview.png)
-
-> [!WARNING]
-> Xamarin'in watchOS 5 desteği, hatalar, içerdiği anlamına gelen değil özelliği tamamlamak, şu anda Önizleme aşamasında olan ve değişebilir. Yalnızca deneme kullanın.
-
-Bu belge üst düzey hangi Xamarin'in preview için sürüm C# bağlamaları sağlar. bazı watchOS 5 API'leri açıklamasını sağlar.
+Bu belge üst düzey 5 bazı watchOS açıklamasını sağlar API'leri.
 
 Xamarin ile watchOS 5 uygulamalar oluşturmaya başlamak için göz atın:
 
 - [Başlangıç Kılavuzu](~/ios/platform/introduction-to-ios12/get-started.md)
-- Xamarin Önizleme [sürüm blog gönderisi](https://releases.xamarin.com/preview-release-xcode-10-beta-5/)
+- Xamarin Önizleme [sürüm blog gönderisi](https://releases.xamarin.com/preview-release-xcode-10-beta-6/)
 
-## <a name="updated-workout-apis"></a>Güncelleştirilen etkinlik API'leri
+## <a name="workout-improvements"></a>Etkinlik geliştirmeleri
 
-WatchOS 5 API'leri güncelleştirilmiş etkinlik, etkinlik veri toplama, bir uygulama kilitlendikten sonra otomatik olarak bir etkinlik etmeden ve ilgili bir miktar veri bir dizi çalışma HealthKit, egzersizleriniz kaydetmek için yeni özellikler sağlar.
+WatchOS 5'de API'leri etkinlik, etkinlik veri toplama, bir uygulama kilitlendikten sonra otomatik olarak bir etkinlik etmeden ve ilgili bir miktar veri bir dizi çalışma HealthKit, egzersizleriniz kaydetmek için yeni özellikler sağlar.
 
-## <a name="shortcuts-on-the-siri-watch-face"></a>Siri saat kadranındaki kısayolları
+## <a name="siri-shortcuts"></a>Siri kısayolları
 
 WatchOS 5'de, Siri saat kadranındaki kısayolları, yüzey uygulama içeriği ve işlevsellik kullanıcılara uygun zamanlarda gösterilmektedir. Siri kullanılacak büyük olasılıkla olduklarında, ilgili kısayollarını gösterebilirsiniz zamanla öğrenir.
 
@@ -53,4 +48,3 @@ Doğal dil çerçevesi, çeşitli dil analizi gerçekleştirmek uygulamaları et
 - [watchOS – Apple Developer (Apple)](https://developer.apple.com/watchOS/)
 - [WatchOS içinde (Apple) (video) yenilikler](https://developer.apple.com/videos/play/wwdc2018/206/)
 - [İzleme (Apple)](https://www.apple.com/watch/)
-- Xamarin Önizleme [sürüm blog gönderisi](https://releases.xamarin.com/preview-release-xcode-10-beta-5/)

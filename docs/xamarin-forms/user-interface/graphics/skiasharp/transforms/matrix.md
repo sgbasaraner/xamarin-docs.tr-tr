@@ -4,29 +4,29 @@ description: Bu makalede, çok yönlü bir dönüştürme matrisi ile SkiaSharp 
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 9EDED6A0-F0BF-4471-A9EF-E0D6C5954AE4
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 04/12/2017
-ms.openlocfilehash: 8d5f1a08f7e1bff5ca2f9b696463bc03340476af
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 07b6a13a8bba1e30db1d69e49aa87420bbbdf601
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "39615437"
 ---
 # <a name="matrix-transforms-in-skiasharp"></a>SkiaSharp, matris dönüşümleri
 
 _SkiaSharp dönüşümleri çok yönlü bir dönüştürme matrisi ile derinlerine_
 
-Uygulanan Dönüşümlerin `SKCanvas` nesne içinde tek bir örneği birleştirilmiş [ `SKMatrix` ](https://developer.xamarin.com/api/type/SkiaSharp.SKMatrix/) yapısı. Tüm modern 2B grafikler sistemlere benzer bir standart 3 x 3 dönüştürme matrisi budur.
+Uygulanan Dönüşümlerin `SKCanvas` nesne içinde tek bir örneği birleştirilmiş [ `SKMatrix` ](xref:SkiaSharp.SKMatrix) yapısı. Tüm modern 2B grafikler sistemlere benzer bir standart 3 x 3 dönüştürme matrisi budur.
 
 Gördüğünüz gibi dönüşümler SkiaSharp matris, ancak dönüştürme matrisi, teorik açısından önemlidir ve dönüşümler yolları değiştirmek için kullanırken önemlidir dönüştürme hakkında bilmek olmadan veya her ikisini de karmaşık dokunma girişini işleme için kullanabilirsiniz Bu makalede ve sonraki gösterilmiştir.
 
 ![](matrix-images/matrixtransformexample.png "Afin bir dönüşüm tabi bir bit eşlem")
 
-Uygulanan geçerli dönüştürme matrisi `SKCanvas` salt okunur erişerek herhangi bir zamanda kullanılabilir [ `TotalMatrix` ](https://developer.xamarin.com/api/property/SkiaSharp.SKCanvas.TotalMatrix/) özelliği. Yeni bir dönüştürme matrisi kullanarak ayarlayabilirsiniz [ `SetMatrix` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.SetMatrix/p/SkiaSharp.SKMatrix/) yöntemi ve geri yükleyebilir, bu dönüştürme matrisi varsayılan değerlere çağırarak [ `ResetMatrix` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.ResetMatrix/).
+Uygulanan geçerli dönüştürme matrisi `SKCanvas` salt okunur erişerek herhangi bir zamanda kullanılabilir [ `TotalMatrix` ](xref:SkiaSharp.SKCanvas.TotalMatrix) özelliği. Yeni bir dönüştürme matrisi kullanarak ayarlayabilirsiniz [ `SetMatrix` ](xref:SkiaSharp.SKCanvas.SetMatrix(SkiaSharp.SKMatrix)) yöntemi ve geri yükleyebilir, bu dönüştürme matrisi varsayılan değerlere çağırarak [ `ResetMatrix` ](xref:SkiaSharp.SKCanvas.ResetMatrix).
 
-Yalnızca diğer `SKCanvas` doğrudan tuval matris dönüşüm ile çalışan üye [ `Concat` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Concat/p/SkiaSharp.SKMatrix@/) hangi sıralar iki matrislerde birlikte çarpılarak.
+Yalnızca diğer `SKCanvas` doğrudan tuval matris dönüşüm ile çalışan üye [ `Concat` ](xref:SkiaSharp.SKCanvas.Concat(SkiaSharp.SKMatrix@)) hangi sıralar iki matrislerde birlikte çarpılarak.
 
 Varsayılan dönüştürme matrisi kimlik matrisi olan ve 1 çapraz hücreler ve 0 her yerde başka oluşur:
 
@@ -36,7 +36,7 @@ Varsayılan dönüştürme matrisi kimlik matrisi olan ve 1 çapraz hücreler ve
 | 0  0  1 |
 </pre>
 
-' Using static bir kimlik matrisi oluşturabilirsiniz [ `SKMatrix.MakeIdentity` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeIdentity()/) yöntemi:
+' Using static bir kimlik matrisi oluşturabilirsiniz [ `SKMatrix.MakeIdentity` ](xref:SkiaSharp.SKMatrix.MakeIdentity) yöntemi:
 
 ```csharp
 SKMatrix matrix = SKMatrix.MakeIdentity();
@@ -142,15 +142,15 @@ y' sin(α) · = x - cos(α) · y
 |  0   0   1 |
 </pre>
 
-180 derece döndürme yatay olarak bir nesneyi çevirme ve dikey olarak, ölçek faktörünü – 1 değerini ayarlayarak gerçekleştirilir eşdeğerdir.
+180 derece döndürme yatay ve dikey olarak, bir nesneyi çevirme için eşdeğeri hangi de getirilen-1 ayar ölçek faktörler tarafından gerçekleştirilir.
 
-Bu tür dönüşümleri olarak sınıflandırılan *afin* dönüştürür. Afin dönüşümler üçüncü sütunda, 0, 0 ve 1 varsayılan değerlerinde kalır matris hiçbir zaman içerir. Makaleyi [olmayan afin dönüşümler](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md) ilişkili olmayan dönüşümler açıklanır.
+Bu tür dönüşümleri olarak sınıflandırılan *afin* dönüştürür. Afin dönüşümler üçüncü sütunda, 0, 0 ve 1 varsayılan değerlerinde kalır matris hiçbir zaman içerir. Makaleyi [ **olmayan afin dönüşümler** ](non-affine.md) ilişkili olmayan dönüşümler açıklanır.
 
 ## <a name="matrix-multiplication"></a>Matris çarpım
 
-Dönüştürme matrisi kullanarak büyük avantajlarından biri bileşik dönüşümler genellikle SkiaSharp belgelerinde adlandırılan matris çarpım tarafından alınabilir *birleştirme*. Birçok dönüştürme ilgili yöntemlere `SKCanvas` "öncesi birleştirme" ya da "pre-concat." Bu matris çarpım yer değiştirebilirlik olmadığı için önemli olan çarpma sırasına başvuruyor.
+Dönüştürme matrisi kullanarak önemli avantajlarından biri bileşik dönüşümler genellikle SkiaSharp belgelerinde adlandırılan matris çarpım tarafından alınabilir *birleştirme*. Birçok dönüştürme ilgili yöntemlere `SKCanvas` "öncesi birleştirme" ya da "pre-concat." Bu matris çarpım yer değiştirebilirlik olmadığı için önemli olan çarpma sırasına başvuruyor.
 
-Örneğin, belgeler için [ `Translate` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Translate/p/System.Single/System.Single/) yöntemi yazan BT'nin "Öncesi concats belirtilen çeviri geçerli matris" sırasında belgeler için [ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/System.Single/System.Single/) yöntemi, BT "Pre-concats belirtilen ölçeği geçerli matris." diyor.
+Örneğin, belgeler için [ `Translate` ](xref:SkiaSharp.SKCanvas.Translate(System.Single,System.Single)) yöntemi yazan BT'nin "Öncesi concats belirtilen çeviri geçerli matris" sırasında belgeler için [ `Scale` ](xref:SkiaSharp.SKCanvas.Scale(System.Single,System.Single)) yöntemi, BT "Pre-concats belirtilen ölçeği geçerli matris." diyor.
 
 Bu yöntem çağrısı tarafından belirtilen dönüşüm çarpan (sol işlenen) ve geçerli bir dönüştürme matrisi çarpan (sağ taraf işleneni) anlamına gelir.
 
@@ -206,7 +206,7 @@ canvas.Translate(–px, –py);
 | –px  –py  1 |   |  0   0   1 |   | px  py  1 |   | px–px·sx  py–py·sy  1 |
 </pre>
 
-### <a name="the-skmatrix-structure"></a>SKMatrix yapısı
+## <a name="the-skmatrix-structure"></a>SKMatrix yapısı
 
 `SKMatrix` Yapısını tanımlayan dokuz okuma/yazma özellikleri türü `float` dönüştürme matrisi dokuz hücrelere karşılık gelen:
 
@@ -216,9 +216,9 @@ canvas.Translate(–px, –py);
 │ TransX  TransY  Persp2 │
 </pre>
 
-`SKMatrix` adlı bir özellik de tanımlar [ `Values` ](https://developer.xamarin.com/api/property/SkiaSharp.SKMatrix.Values/) türü `float[]`. Bu özelliği ayarlamak veya sırada tek seferde dokuz değerlerini almak için kullanılabilir `ScaleX`, `SkewX`, `TransX`, `SkewY`, `ScaleY`, `TransY`, `Persp0`, `Persp1`, ve `Persp2`.
+`SKMatrix` adlı bir özellik de tanımlar [ `Values` ](xref:SkiaSharp.SKMatrix.Values) türü `float[]`. Bu özelliği ayarlamak veya sırada tek seferde dokuz değerlerini almak için kullanılabilir `ScaleX`, `SkewX`, `TransX`, `SkewY`, `ScaleY`, `TransY`, `Persp0`, `Persp1`, ve `Persp2`.
 
-`Persp0`, `Persp1`, Ve `Persp2` hücreleri makalede ele alınan [olmayan afin dönüşümler](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md). Bu hücre varsayılan değerlerine 0, 0 ve 1 varsa, böyle bir koordinat nokta dönüştürme çarpılır:
+`Persp0`, `Persp1`, Ve `Persp2` hücreleri makalesinde açıklanan [ **olmayan afin dönüşümler**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md). Bu hücre varsayılan değerlerine 0, 0 ve 1 varsa, böyle bir koordinat nokta dönüştürme çarpılır:
 
 <pre>
               │ ScaleX  SkewY   0 │
@@ -236,16 +236,16 @@ Tam iki boyutlu afin dönüşüm budur. Afin dönüşüm paralel satırları, ya
 
 `SKMatrix` Yapısını tanımlayan oluşturmak için çeşitli statik yöntemler `SKMatrix` değerleri. Bu tüm dönüş `SKMatrix` değerleri:
 
-- [`MakeTranslation`](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeTranslation/p/System.Single/System.Single/)
-- [`MakeScale`](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeScale/p/System.Single/System.Single/)
-- [`MakeScale`](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeScale/p/System.Single/System.Single/System.Single/System.Single/) pivot noktası ile
-- [`MakeRotation`](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeRotation/p/System.Single/) için radyan cinsinden açı
-- [`MakeRotation`](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeRotation/p/System.Single/System.Single/System.Single/) pivot noktası ile radyan cinsinden açı için
-- [`MakeRotationDegrees`](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeRotationDegrees/p/System.Single/)
-- [`MakeRotationDegrees`](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeRotationDegrees/p/System.Single/System.Single/System.Single/) pivot noktası ile
-- [`MakeSkew`](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.MakeSkew/p/System.Single/System.Single/)
+- [`MakeTranslation`](xref:SkiaSharp.SKMatrix.MakeTranslation(System.Single,System.Single))
+- [`MakeScale`](xref:SkiaSharp.SKMatrix.MakeScale(System.Single,System.Single))
+- [`MakeScale`](xref:SkiaSharp.SKMatrix.MakeScale(System.Single,System.Single,System.Single,System.Single)) pivot noktası ile
+- [`MakeRotation`](xref:SkiaSharp.SKMatrix.MakeRotation(System.Single)) için radyan cinsinden açı
+- [`MakeRotation`](xref:SkiaSharp.SKMatrix.MakeRotation(System.Single,System.Single,System.Single)) pivot noktası ile radyan cinsinden açı için
+- [`MakeRotationDegrees`](xref:SkiaSharp.SKMatrix.MakeRotationDegrees(System.Single))
+- [`MakeRotationDegrees`](xref:SkiaSharp.SKMatrix.MakeRotationDegrees(System.Single,System.Single,System.Single)) pivot noktası ile
+- [`MakeSkew`](xref:SkiaSharp.SKMatrix.MakeSkew(System.Single,System.Single))
 
-`SKMatrix` Ayrıca, iki matrisler, birleştirme birkaç statik yöntemler bunları çarpılacak anlamına gelir tanımlar. Bu yöntemler adlı `Concat`, `PostConcat`, ve `PreConcat`, ve her iki sürümü vardır. Bu yöntemler, hiçbir dönüş değerlerine sahip; Bunun yerine, mevcut oldukları `SKMatrix` aracılığıyla değerleri `ref` bağımsız değişkenler. Aşağıdaki örnekte, `A`, `B`, ve `R` ("sonuç") için tüm bunlar `SKMatrix` değerleri.
+`SKMatrix` Ayrıca, iki matrisler, birleştirme birkaç statik yöntemler bunları çarpılacak anlamına gelir tanımlar. Bu yöntemler adlı [ `Concat` ](xref:SkiaSharp.SKMatrix.Concat*), [ `PostConcat` ](xref:SkiaSharp.SKMatrix.PostConcat*), ve [ `PreConcat` ](xref:SkiaSharp.SKMatrix.PreConcat*), ve her iki sürümü vardır. Bu yöntemler, hiçbir dönüş değerlerine sahip; Bunun yerine, mevcut oldukları `SKMatrix` aracılığıyla değerleri `ref` bağımsız değişkenler. Aşağıdaki örnekte, `A`, `B`, ve `R` ("sonuç") için tüm bunlar `SKMatrix` değerleri.
 
 İki `Concat` yöntemler şu şekilde adlandırılır:
 
@@ -283,7 +283,7 @@ Bu çağrılar aşağıdaki işlemi gerçekleştirin:
 
 A = B × A
 
-Bu yöntem çağrılarının tüm sürümleri `ref` bağımsız değişkenler, temel alınan uygulamaları arayan biraz daha verimli ancak birine Kodunuzu okuyan ve herhangi bir şey ile varsayarak kafa karıştırıcı bir `ref` bağımsız değişkeni yöntem tarafından değiştirildi. Ayrıca, genellikle aşağıdakilerden biri bir sonucu olan bir bağımsız değişken geçmek uygun olan `Make` yöntemleri, örneğin:
+Bu yöntemler tüm sürümleri `ref` bağımsız değişkenler, temel alınan uygulamaları arayan biraz daha verimli ancak birine Kodunuzu okuyan ve herhangi bir şey ile varsayarak kafa karıştırıcı bir `ref` bağımsız değişkeni tarafından değiştirildi yöntem. Ayrıca, genellikle aşağıdakilerden biri bir sonucu olan bir bağımsız değişken geçmek uygun olan `Make` yöntemleri, örneğin:
 
 ```csharp
 SKMatrix result;
@@ -299,7 +299,7 @@ Bu, aşağıdaki matris oluşturur:
 │ 100  100  1 │
 </pre>
 
-Çeviri dönüşümü ile çarpılmış ölçekleme dönüşümü budur. Bu özel durumda `SKMatrix` yapı adında bir yöntemi ile bir kısayol sağlar [ `SetScaleTranslate` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.SetScaleTranslate/p/System.Single/System.Single/System.Single/System.Single/):
+Çeviri dönüşümü ile çarpılmış ölçekleme dönüşümü budur. Bu özel durumda `SKMatrix` yapı adında bir yöntemi ile bir kısayol sağlar [ `SetScaleTranslate` ](xref:SkiaSharp.SKMatrix.SetScaleTranslate(System.Single,System.Single,System.Single,System.Single)):
 
 ```csharp
 SKMatrix R = new SKMatrix();
@@ -322,7 +322,7 @@ SKMatrix.RotateDegrees(ref R, degrees, px, py);
 
 Bu yöntemler yapmak *değil* döndürme dönüşümü için var olan bir dönüştürme birleştirin. Matrisin tüm hücreler yöntemleri ayarlayın. Aynı işleve sahiptir olduklarını `MakeRotation` ve `MakeRotationDegrees` yöntemleri örneği yoksa dışında `SKMatrix` değeri.
 
-Sahip olduğunuz varsayalım bir `SKPath` görüntülemek istediğiniz, ancak biraz farklı yön ayarına veya farklı bir orta nokta olduğunu tercih nesnesi. Söz konusu yoldaki tüm koordinatlarını çağırarak değiştirebilirsiniz [ `Transform` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.Transform/p/SkiaSharp.SKMatrix/) yöntemi `SKPath` ile bir `SKMatrix` bağımsız değişken. **Yolu dönüştürme** sayfasında bunun nasıl yapılacağı gösterilmektedir. [ `PathTransform` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/PathTransformPage.cs) Sınıf başvuruları `HendecagramPath` nesne alanındaki ancak kullanır, yapıcısına bu yolun bir dönüştürme uygulamak için:
+Sahip olduğunuz varsayalım bir `SKPath` görüntülemek istediğiniz, ancak biraz farklı yön ayarına veya farklı bir orta nokta olduğunu tercih nesnesi. Söz konusu yoldaki tüm koordinatlarını çağırarak değiştirebilirsiniz [ `Transform` ](xref:SkiaSharp.SKPath.Transform(SkiaSharp.SKMatrix)) yöntemi `SKPath` ile bir `SKMatrix` bağımsız değişken. **Yolu dönüştürme** sayfasında bunun nasıl yapılacağı gösterilmektedir. [ `PathTransform` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/PathTransformPage.cs) Sınıf başvuruları `HendecagramPath` nesne alanındaki ancak kullanır, yapıcısına bu yolun bir dönüştürme uygulamak için:
 
 ```csharp
 public class PathTransformPage : ContentPage
@@ -347,7 +347,7 @@ public class PathTransformPage : ContentPage
 }
 ```
 
-`HendecagramPath` Nesnesinde bir merkezinde (0, 0) ve yıldız on noktalarının her yöne 100 birimi tarafından bu Merkezi'nden dışa genişletebilirsiniz. Bu, yolun pozitif ve negatif koordinatları olduğu anlamına gelir. **Yolu dönüştürme** sayfa tercih üç kez olabildiğince büyük bir yıldız ile ve tüm pozitif koordinatları ile çalışmak. Ayrıca, bunu bir yıldız yukarı doğru yöneltin noktasını istememektedir. Bunun yerine doğrudan aşağı işaret etmek için bir yıldız noktası istiyor. (Yıldız on noktalarına sahip olduğundan, her ikisini birden olamaz.) Bu, yıldız 360 derece döndürme 22 bölünmüş gerektirir.
+`HendecagramPath` Nesnesinde bir merkezinde (0, 0) ve yıldız 11 noktalarının her yöne 100 birimi tarafından bu Merkezi'nden dışa genişletebilirsiniz. Bu, yolun pozitif ve negatif koordinatları olduğu anlamına gelir. **Yolu dönüştürme** sayfa tercih üç kez olabildiğince büyük bir yıldız ile ve tüm pozitif koordinatları ile çalışmak. Ayrıca, bunu bir yıldız yukarı doğru yöneltin noktasını istememektedir. Bunun yerine doğrudan aşağı işaret etmek için bir yıldız noktası istiyor. (11 noktaları Yıldıza sahip olduğundan, her ikisini birden olamaz.) Bu, yıldız 360 derece döndürme 22 bölünmüş gerektirir.
 
 Oluşturucu oluşturur bir `SKMatrix` kullanarak üç ayrı dönüşümler nesneden `PostConcat` A, B ve C olduğu örneklerini şu desene yöntemiyle `SKMatrix`:
 
@@ -410,7 +410,7 @@ Bu programın Oluşturucusu matris çağrısını yoluyla uygulama hedefi:
 transformedPath.Transform(matrix);
 ```
 
-Yol mu *değil* bu Matris bir özellik olarak korur. Bunun yerine, bu dönüşüm tüm yol koordinatlarını uygular. Varsa `Transform` çağrılır yeniden dönüştürme yeniden uygulanır ve dönüştürme alır başka bir matris uygulayarak geri gidebilir tek yol budur. Neyse ki, `SKMatrix` yapısını tanımlayan bir [ `TryInverse` ](https://developer.xamarin.com/api/member/SkiaSharp.SKMatrix.TryInvert/p/SkiaSharp.SKMatrix/) matrisi, alır yöntemi, belirli bir matris tersine çevirir:
+Yol mu *değil* bu Matris bir özellik olarak korur. Bunun yerine, bu dönüşüm tüm yol koordinatlarını uygular. Varsa `Transform` çağrılır yeniden dönüştürme yeniden uygulanır ve dönüştürme alır başka bir matris uygulayarak geri gidebilir tek yol budur. Neyse ki, `SKMatrix` yapısını tanımlayan bir [ `TryInvert` ](xref:SkiaSharp.SKMatrix.TryInvert*) matrisi, alır yöntemi, belirli bir matris tersine çevirir:
 
 ```csharp
 SKMatrix inverse;
@@ -435,7 +435,7 @@ SKRect transformedRect = matrix.MapRect(rect);
 
 Bu son yöntemi kullandığınızda, aklınızda `SKRect` yapısı döndürülmüş bir dikdörtgen gösterebilen değil. Yöntemi yalnızca mantıklı bir `SKMatrix` çeviri temsil eden ve ölçeklendirme değeri.
 
-### <a name="interactive-experimentation"></a>Etkileşimli deneme
+## <a name="interactive-experimentation"></a>Etkileşimli deneme
 
 Afin dönüştürme için bir genel görünüm yapmanın bir yolu, etkileşimli olarak üç köşelerini ekranın etrafında bir bit eşlem taşıma ve hangi dönüşüm sonuçları görme ' dir. Bu fikirdir arkasında **afin Matrisi Göster** sayfası. Bu sayfa ayrıca diğer tanıtımlar içinde kullanılan iki sınıf gerektirir:
 
@@ -592,9 +592,9 @@ Sayfa da ilk yüklendiğinde iki diğer ekranlar, sonra bazı işleme gösterirk
 
 Dokunma bit eşlemin köşeleri sürükleyerek gibi görünüyor olsa da, yalnızca bir görünümü olur. Köşeleri dokunma ile çakıştığı böylece dokunmatik noktalarından hesaplanan matris bit eşlem dönüştürür.
 
-Taşıma, yeniden boyutlandırma ve köşeleri sürükleyerek değil bit eşlemler döndürmek kullanıcılar için daha doğal ancak kullanarak bir veya iki parmağınızı doğrudan sürüklemek için nesne üzerinde sıkıştırma ve döndürün. Bu sonraki makalede ele [düzenleme dokunma](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/touch.md).
+Taşıma, yeniden boyutlandırma ve köşeleri sürükleyerek değil bit eşlemler döndürmek kullanıcılar için daha doğal ancak kullanarak bir veya iki parmağınızı doğrudan sürüklemek için nesne üzerinde sıkıştırma ve döndürün. Bu sonraki makalede ele [ **düzenleme dokunma**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/touch.md).
 
-### <a name="the-reason-for-the-3-by-3-matrix"></a>3-x-3 matris nedeni
+## <a name="the-reason-for-the-3-by-3-matrix"></a>3-x-3 matris nedeni
 
 İki boyutlu grafik sistemi yalnızca 2-tarafından-2 dönüştürme matrisi gerektirecek beklenebilir:
 
@@ -646,10 +646,10 @@ Nasıl üç boyutlu bir doğrusal dönüştürme iki boyutlu bir doğrusal olmay
               │ TransX  TransY  Persp2 │
 </pre>
 
-Sıfır olmayan değerleri `Persp0` ve `Persp1` neden olduğu Z eşittir 1 iki boyutlu düzlemi kapalı nesneleri taşıma içindeki dönüşümler. Bu düzlemine nesneleri geri taşındığında ne makalesinde üzerinde kapsamında [olmayan afin dönüşümler](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md).
+Sıfır olmayan değerleri `Persp0` ve `Persp1` neden olduğu Z eşittir 1 iki boyutlu düzlemi kapalı nesneleri taşıma içindeki dönüşümler. Bu düzlemine nesneleri geri taşındığında ne makalesinde üzerinde kapsamında [ **olmayan afin dönüşümler**](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/non-affine.md).
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [SkiaSharp API'leri](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp API'leri](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (örnek)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

@@ -1,24 +1,24 @@
 ---
-title: SkiaSharp giriş
+title: SkiaSharp platformdan bağımsız örnekler
 description: Bu belge, temel SkiaSharp kavramları hakkında temel bilgiler sağlar. Özellikle, alma ve bir SKCanvas üzerinde çizim ele alır.
 ms.prod: xamarin
 ms.techonology: xamarin-skiasharp
 ms.assetid: 19506F08-2603-465E-A806-6BD01638DE90
-author: charlespetzold
-ms.author: chape
-ms.date: 09/14/2017
-ms.openlocfilehash: eb4a391c52c598c6d276b75028337bf54455e7b4
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+author: davidbritch
+ms.author: dabritch
+ms.date: 10/03/2018
+ms.openlocfilehash: 4d0e57b98a479112b9fdf4f9c503418f3966cc73
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "39615502"
 ---
-# <a name="an-introduction-to-skiasharp"></a>SkiaSharp giriş
+# <a name="skiasharp-platform-independent-examples"></a>SkiaSharp platformdan bağımsız örnekler
 
-_Bu SkiaSharp kavramları hakkında temel bilgiler sağlar_
+_Bu kısa bir platformdan bağımsız giriş SkiaSharp kavramları sağlar_
 
-SkiaSharp zengin ve güçlü 2B grafik 2B arabellekler işlemek için kullanılan bir API sağlar.  Bu, özel kullanıcı arabirimi öğeleri ve uygulamanıza eklenebilir 2B grafikler uygulamak için kullanabilirsiniz.  SkiaSharp olan bir .NET bağlama [Skia](https://skia.org) kitaplığı ve bu kitaplık gücünü ve özellikleri devralır.
+SkiaSharp zengin ve güçlü 2B grafik 2B arabellekler işlemek için kullanılan bir API sağlar.  Bu, özel kullanıcı arabirimi öğeleri ve uygulamanıza eklenebilir 2B grafikler uygulamak için kullanabilirsiniz. SkiaSharp olan bir .NET bağlama [Skia](https://skia.org) kitaplığı ve bu kitaplık gücünü ve özellikleri devralır.
 
 Platformlar arası şu anda kullanılabilir kitaplık [NuGet paketini](https://www.nuget.org/packages/SkiaSharp), NuGet başvuru ekleyerek bunu projenize ekleyebilirsiniz.
 
@@ -135,9 +135,4 @@ using (var paint = new SKPaint()) {
 
 ## <a name="more-information"></a>Daha fazla bilgi
 
-SkiaSharp kullanma hakkında daha fazla bilgi bulunabilir [API belgelerini çevrimiçi](https://developer.xamarin.com/api/namespace/SkiaSharp/)
-
-
-## <a name="related-links"></a>İlgili bağlantılar
-
-- [SkiaSharp iOS çalışma kitabı](https://developer.xamarin.com/workbooks/graphics/skiasharp/logo/skialogo-ios.workbook)
+SkiaSharp kullanma hakkında daha fazla bilgi bulunabilir [API belgeleri](https://docs.microsoft.com/dotnet/api/skiasharp)

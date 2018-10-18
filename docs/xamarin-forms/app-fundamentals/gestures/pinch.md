@@ -7,18 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: 37befdcd4ccbcd49e3cebda92d55ae6f70da2ad6
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: f67cbb136c42a4bc476c1715ea6fd15255d71dc7
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "38998709"
 ---
 # <a name="adding-a-pinch-gesture-recognizer"></a>Tabletinizde hareket tanıyıcı ekleme
 
 _Tabletinizde hareket etkileşimli yakınlaştırma gerçekleştirmek için kullanılır ve PinchGestureRecognizer sınıfıyla uygulanır. Tabletinizde hareket için yaygın bir senaryo, görüntünün tabletinizde konumda etkileşimli yakınlaştırma gerçekleştirmektir. Bu görünüm penceresinin içeriğini ölçeklendirme tarafından gerçekleştirilir ve bu makalede gösterilmiştir._
-
-## <a name="overview"></a>Genel Bakış
 
 Bir kullanıcı arabirimi öğesi yakınlaştırılabilir tabletinizde hareket sahip olmak için oluşturun bir [ `PinchGestureRecognizer` ](xref:Xamarin.Forms.PinchGestureRecognizer) örneği, işlemek [ `PinchUpdated` ](xref:Xamarin.Forms.PinchGestureRecognizer.PinchUpdated) olay ve eklemek için yeni hareket tanıyıcı [ `GestureRecognizers` ](xref:Xamarin.Forms.View.GestureRecognizers) kullanıcı arabirimi öğesi koleksiyonu. Aşağıdaki kod örnekte gösterildiği bir `PinchGestureRecognizer` iliştirilmiş bir [ `Image` ](xref:Xamarin.Forms.Image) öğesi:
 
@@ -161,11 +159,6 @@ void OnPinchUpdated (object sender, PinchGestureUpdatedEventArgs e)
 ```
 
 Bu yöntem, kullanıcının üzerinde tabletinizde hareket tabanlı Sarmalanan kullanıcı arabirimi öğesi yakınlaştırma seviyesini güncelleştirir. Bu değerleri kullanılarak elde edilir [ `Scale` ](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.Scale), [ `ScaleOrigin` ](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.ScaleOrigin) ve [ `Status` ](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs.Status) özelliklerini [ `PinchGestureUpdatedEventArgs` ](xref:Xamarin.Forms.PinchGestureUpdatedEventArgs) örneği tabletinizde hareket başlangıcı sırasında uygulanması için ölçek faktörünü hesaplayabilirsiniz. Sarmalanan kullanıcı öğesi ayarlayarak tabletinizde hareket kaynağını ardından uzaklaştırılacağını kendi [ `TranslationX` ](xref:Xamarin.Forms.VisualElement.TranslationX), [ `TranslationY` ](xref:Xamarin.Forms.VisualElement.TranslationY), ve [ `Scale` ](xref:Xamarin.Forms.VisualElement.Scale) hesaplanan değerler özellikleri.
-
-## <a name="summary"></a>Özet
-
-Tabletinizde hareket ile birlikte uygulanır ve etkileşimli yakınlaştırma gerçekleştirmek için kullanılan [ `PinchGestureRecognizer` ](xref:Xamarin.Forms.PinchGestureRecognizer) sınıfı.
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

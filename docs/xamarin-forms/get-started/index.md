@@ -1,57 +1,57 @@
 ---
 title: Xamarin.Forms ile çalışmaya başlama
-description: Bu kılavuz Xamarin.Forms geliştirme temelleri tanıtır ve birden çok platform ve çok ekran uygulamaları derleme kapsar.
+description: Bu kılavuz, Xamarin.Forms geliştirme temellerini sunar ve çoklu platform ve çoklu ekran uygulamaları oluşturmak kapsar.
 ms.prod: xamarin
 ms.assetid: d87d7232-242c-4ec4-81e9-36103d7e8fcf
 ms.technology: xamarin-forms
 ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/02/2016
-ms.openlocfilehash: 6ac76f41fc0646107102e0d5e59609c0f3969511
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.date: 09/24/2018
+ms.openlocfilehash: eafdc103cfda2db94d46977df1323f88a822eb58
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/11/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "35242446"
 ---
-# <a name="getting-started-with-xamarinforms"></a>Xamarin.Forms ile çalışmaya başlama
+# <a name="get-started-with-xamarinforms"></a>Xamarin.Forms ile çalışmaya başlama
 
-_Xamarin.Forms yerel kullanıcı iOS, Android ve evrensel Windows platformu uygulamaları arasında paylaşılan arabirimi düzenleri verimli bir şekilde oluşturmak geliştiriciler sağlayan bir platformlar arası UI araç takımıdır. Bu seri Xamarin.Forms geliştirme temelleri tanıtır ve birden çok platform ve çok ekran uygulamaları derleme kapsar._
+_Xamarin.Forms, geliştiricilerin yerel kullanıcı arabirimi düzenleri, iOS, Android ve evrensel Windows platformu uygulamaları arasında paylaşılabilir verimli bir şekilde oluşturmaya olanak tanıyan bir çoklu platform UI Araç Seti olur. Bu seri, Xamarin.Forms geliştirme temellerini sunar ve çoklu platform ve çoklu ekran uygulamaları oluşturmak kapsar._
 
-Yükleme ve platformlar arası geliştirme uygulamak Kurulum yöntemler genel bakış için bkz: [Xamarin.Forms gereksinimleri](installation.md) ve [yükleme](~/cross-platform/get-started/installation/index.md).
+Yükleme ve platformlar arası geliştirme için geçerli olan kurulum uygulamalar genel bakış için bkz: [Xamarin.Forms gereksinimleri](installation.md) ve [yükleme](~/cross-platform/get-started/installation/index.md).
 
 > [!div class="nextstepaction"]
-> [Xamarin.Forms hızlı başlangıç](~/xamarin-forms/get-started/hello-xamarin-forms/quickstart.md)
-
-
+> [İlk Uygulamanızı oluşturun](~/xamarin-forms/get-started/first-app/index.md)
 
 ## <a name="requirementsinstallationmd"></a>[Gereksinimler](installation.md)
 
-Xamarin.Forms geliştirilmiş uygulamalara yönelik platform gereksinimlerini ve Mac ve Visual Studio için Visual Studio Xamarin.Forms ile geliştirmek için en düşük sistem gereksinimlerini genel bakış.
+Xamarin.Forms geliştirilen uygulamalar için platform gereksinimlerini ve Mac ve Visual Studio için Visual Studio'da Xamarin.Forms ile geliştirmek için en düşük sistem gereksinimlerini genel bakış.
 
-## <a name="hello-xamarinformsxamarin-formsget-startedhello-xamarin-formsindexmd"></a>[Hello, Xamarin.Forms](~/xamarin-forms/get-started/hello-xamarin-forms/index.md)
+## <a name="build-your-first-appfirst-appindexmd"></a>[İlk Uygulamanızı oluşturun](first-app/index.md)
 
-Bu kılavuz, Mac veya Visual Studio için Visual Studio kullanarak bir Xamarin.Forms uygulaması geliştirme için bir giriş sağlar. Kapsanan konular araçları, kavramlar ve oluşturmak ve bir Xamarin.Forms uygulaması dağıtmak için gerekli adımları içerir.
+Bir video izleyin ve oluşturun ve ilk Xamarin.Forms uygulamanızı test etmek için birlikte adım adım yönergeleri izleyin.
 
-## <a name="hello-xamarinforms-multiscreenxamarin-formsget-startedhello-xamarin-forms-multiscreenindexmd"></a>[Hello, Xamarin.Forms Multiscreen](~/xamarin-forms/get-started/hello-xamarin-forms-multiscreen/index.md)
+## <a name="hello-xamarinformshello-xamarin-formsindexmd"></a>[Hello, Xamarin.Forms](hello-xamarin-forms/index.md)
 
-Bu kılavuz, ikinci bir sayfa için Gezinti sunarak önceden oluşturulmuş uygulama genişletir. Kapsanan konular bağlama ve gezinti performans verileri içerir.
+Bu kılavuzda Visual Studio veya Mac için Visual Studio kullanarak bir Xamarin.Forms uygulaması geliştirmeye giriş bilgileri sağlanır. Kapsanan konular, Araçlar, kavramlar ve Xamarin.Forms uygulaması derleme ve dağıtma için gereken adımlar şunlardır.
 
-## <a name="introduction-to-xamarinformsxamarin-formsget-startedintroduction-to-xamarin-formsmd"></a>[Xamarin.Forms giriş](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md)
+## <a name="hello-xamarinforms-multiscreenhello-xamarin-forms-multiscreenindexmd"></a>[Hello, Xamarin.Forms Multiscreen](hello-xamarin-forms-multiscreen/index.md)
 
-Bu makalede bazı Xamarin.Forms, kullanan uygulamalar geliştirmek için anahtar kavramlar ele dahil olmak üzere [görünümleri ve düzenleri](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md#Views_and_Layouts), [ListView](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md#Lists_in_Xamarin_Forms) denetimi [veri bağlama](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md#Data_Binding)ve [Gezinti](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md#Navigation).
+Bu kılavuz, ikinci bir sayfa için Gezinti sunarak daha önce oluşturulan uygulama genişletir. Kapsanan konular, bağlama ve gezinti gerçekleştirerek verileri içerir.
 
+## <a name="introduction-to-xamarinformsintroduction-to-xamarin-formsmd"></a>[Xamarin.Forms'a giriş](introduction-to-xamarin-forms.md)
+
+Bu makalede bazı kullanarak Xamarin.Forms için uygulamalar geliştirmek için anahtar kavramlar ele alınmaktadır dahil olmak üzere [görünümleri ve düzenleri](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md#user-interface), [ListView](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md#lists-in-xamarinforms) denetimi [veri bağlama](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md#data-binding)ve [Gezinti](~/xamarin-forms/get-started/introduction-to-xamarin-forms.md#navigation).
 
 ## <a name="get-started-with-xamarin-university"></a>Xamarin University ile çalışmaya başlama
 
 > [!VIDEO https://youtube.com/embed/NGvn-pGZFPA]
 
-**Visual Studio için Xamarin ile ilk Xamarin.Forms uygulamanızı göre oluşturma [Xamarin Üniversitesi](https://university.xamarin.com)**
-
+**Visual Studio için Xamarin ile ilk Xamarin.Forms uygulamanızı oluşturarak [Xamarin University](https://university.xamarin.com)**
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Ücretsiz Self-Guided öğrenme (video)](https://university.xamarin.com/self-guided)
+- [Ücretsiz kendi öğrenme (video)](https://university.xamarin.com/self-guided)
 - [Xamarin (video) ile çalışmaya başlama](https://developer.xamarin.com/videos/)
-- [Merhaba, Xamarin.Forms iOS çalışma kitabı](https://developer.xamarin.com/workbooks/xamarin-forms/getting-started/GettingStartedWithXamarinForms-ios.workbook)
+

@@ -4,39 +4,39 @@ description: Bu makalede SkiaSharp satırları farklı vuruş uçları Xamarin.F
 ms.prod: xamarin
 ms.assetid: 1F854DDD-5D1B-4DE4-BD2D-584439429FDB
 ms.technology: xamarin-skiasharp
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 000bf24c1b06baab892f0b165c8b9eeebebce49d
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 6dc7737290bf7eacb3ba0e0bca0ddcfcd4aacba3
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "39615268"
 ---
 # <a name="lines-and-stroke-caps"></a>Satırlar ve vuruş uçları
 
 _SkiaSharp farklı vuruş uçlarıyla çizgi çizmek için kullanmayı öğrenin_
 
-SkiaSharp içinde tek bir satır işleme bağlı düz çizgiler bir dizi işlemesini çok farklı değildir. Bile çoklu çizgi çizme, ancak belirli darbe genişliği ve daha geniş satırı satırları vermek genellikle gereklidir, satırlar adlı sonuna görünümünü daha önemli hale gelir *fırça darbesi ucu*:
+SkiaSharp içinde tek bir satır işleme bağlı düz çizgiler bir dizi işlemesini çok farklı değildir. Hatta tek satırlar çizme, ancak genellikle belirli darbe genişliği satırları vermek gereklidir. Bu satırlar geniş haline geldiğinden, satır görünümünü de önemli hale gelir. Satır görünümünü adlı *fırça darbesi ucu*:
 
 ![](lines-images/strokecapsexample.png "Üç vuruş caps seçenekleri")
 
-Çoklu çizgi çizme için `SKCanvas` basit tanımlar [ `DrawLine` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawLine/p/System.Single/System.Single/System.Single/System.Single/SkiaSharp.SKPaint/) yöntem bağımsız değişkenleri, başlangıç ve bitiş koordinatları içeren satırı belirten bir `SKPaint` nesnesi:
+Çoklu çizgi çizme için `SKCanvas` basit tanımlar [ `DrawLine` ](xref:SkiaSharp.SKCanvas.DrawLine(System.Single,System.Single,System.Single,System.Single,SkiaSharp.SKPaint)) yöntem bağımsız değişkenleri, başlangıç ve bitiş koordinatları içeren satırı belirten bir `SKPaint` nesnesi:
 
 ```csharp
 canvas.DrawLine (x0, y0, x1, y1, paint);
 ```
 
-Varsayılan olarak, `StrokeWidth` özelliği yeni oluşturulan `SKPaint` nesnedir 0 olarak varsayılır; bir pikselin bir çizgi kalınlığı işleme, 1 değerini aynı etkiye sahiptir. Büyük olasılıkla ayarlamak da istersiniz, böylece bu telefonlar gibi yüksek çözünürlüklü cihazlarda çok ince görünür `StrokeWidth` için daha büyük bir değer. Ancak, hacimle kalınlığı satırlar çizme başlattıktan sonra başka bir sorun oluşturan: nasıl başlangıç ve bitişini kalın satırı işlenecek?
+Varsayılan olarak, [ `StrokeWidth` ](xref:SkiaSharp.SKPaint.StrokeWidth) özelliği yeni oluşturulan `SKPaint` nesnedir 0 olarak varsayılır; bir pikselin bir çizgi kalınlığı işleme, 1 değerini aynı etkiye sahiptir. Büyük olasılıkla ayarlamak da istersiniz, böylece bu telefonlar gibi yüksek çözünürlüklü cihazlarda çok ince görünür `StrokeWidth` için daha büyük bir değer. Ancak, hacimle kalınlığı satırlar çizme başlattıktan sonra başka bir sorun oluşturan: nasıl başlangıç ve bitişini kalın satırı işlenecek?
 
-Başlangıç ve bitişini satırların görünüşünü adlı bir *çizgi ucu* veya Skia, bir *fırça darbesi ucu*. Hat tür için bu bağlamda "sınır" sözcüğünü ifade eder &mdash; satırın sonuna üzerinde yer alan bir şey. Ayarladığınız [ `StrokeCap` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeCap/) özelliği `SKPaint` aşağıdaki üyeleri birine nesne [ `SKStrokeCap` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStrokeCap/) sabit listesi:
+Başlangıç ve bitişini satırların görünüşünü adlı bir *çizgi ucu* veya Skia, bir *fırça darbesi ucu*. Hat tür için bu bağlamda "sınır" sözcüğünü ifade eder &mdash; satırın sonuna üzerinde yer alan bir şey. Ayarladığınız [ `StrokeCap` ](xref:SkiaSharp.SKPaint.StrokeCap) özelliği `SKPaint` aşağıdaki üyeleri birine nesne [ `SKStrokeCap` ](xref:SkiaSharp.SKStrokeCap) sabit listesi:
 
-- [`Butt`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Butt/) (varsayılan)
-- [`Square`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Round/)
-- [`Round`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeCap.Round/)
+- `Butt` (varsayılan)
+- `Square`
+- `Round`
 
-Bu, en iyi bir örnek program ile gösterilmiştir. İkinci bölüm giriş sayfasının [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) program başlıklı bir sayfa ile başlayan **vuruş uçları** göre [ `StrokeCapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs) sınıfı. Bu sayfayı tanımlayan bir `PaintSurface` üç üyelerinin döngü olay işleyicisi `SKStrokeCap` hem sabit listesi üye adı görüntüleme ve vuruş CAP'ye kullanarak çizgi çizme numaralandırma:
+Bu, en iyi bir örnek program ile gösterilmiştir. **SkiaSharp satırları ve yolları** bölümünü [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) program başlıklı bir sayfa ile başlayan **vuruş uçları** göre [ `StrokeCapsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeCapsPage.cs) sınıfı. Bu sayfayı tanımlayan bir `PaintSurface` üç üyelerinin döngü olay işleyicisi `SKStrokeCap` hem sabit listesi üye adı görüntüleme ve vuruş CAP'ye kullanarak çizgi çizme numaralandırma:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -90,7 +90,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Her üye için `SKStrokeCap` numaralandırma işleyici 50 piksel ve başka bir satır 2 piksel ile bir vuruş kalınlığı üstte konumlandırılmış kontur kalınlığı ile iki satır çizer. Bu ikinci satır, geometrik başlangıç ve bitiş satırı çizgi kalınlığı ve bir fırça darbesi ucu bağımsız açıklamak amacıyla oluşturulmuştur:
+Her üye için `SKStrokeCap` numaralandırma işleyici, bir vuruş kalınlığı 50 piksel ve üst kısımdaki iki piksel ile bir vuruş kalınlığı konumlandırılmış başka bir satır ile iki satır çizer. Bu ikinci satır, geometrik başlangıç ve bitiş satırı çizgi kalınlığı ve bir fırça darbesi ucu bağımsız açıklamak amacıyla oluşturulmuştur:
 
 [![](lines-images/strokecaps-small.png "Üçlü sayfasının ekran görüntüsü vuruş uçları")](lines-images/strokecaps-large.png#lightbox "Üçlü sayfasının ekran görüntüsü vuruş uçları")
 
@@ -102,19 +102,20 @@ Gördüğünüz gibi `Square` ve `Round` vuruş uçları etkili bir şekilde gen
 DrawPoints (SKPointMode mode, points, paint)
 ```
 
-`points` Parametresi, bir dizi `SKPoint` değerleri ve `mode` üyesi [ `SKPointMode` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPointMode/) üç üyesi olan sabit listesi:
+`points` Parametresi, bir dizi `SKPoint` değerleri ve `mode` üyesi [ `SKPointMode` ](xref:SkiaSharp.SKPointMode) üç üyesi olan sabit listesi:
 
-- [`Points`](https://developer.xamarin.com/api/field/SkiaSharp.SKPointMode.Points/) tek tek noktaları oluşturmak için
-- [`Lines`](https://developer.xamarin.com/api/field/SkiaSharp.SKPointMode.Lines/) Her noktası çifti bağlanmak için
-- [`Polygon`](https://developer.xamarin.com/api/field/SkiaSharp.SKPointMode.Polygon/) Tüm ardışık noktalar bağlanmak için
+- `Points` tek tek noktaları oluşturmak için
+- `Lines` Her noktası çifti bağlanmak için
+- `Polygon` Tüm ardışık noktalar bağlanmak için
 
-**Birden fazla satır** sayfası, bu yöntem gösterir. [ `MultipleLinesPage` XAML dosyası](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/MultipleLinesPage.xaml) iki `Picker` olanak tanıyan görünümleri seçin üyesi `SKPointMode` numaralandırma ve üyesi `SKStrokeCap` sabit listesi:
+**Birden fazla satır** sayfası, bu yöntem gösterir. [ **MultipleLinesPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/MultipleLinesPage.xaml) dosya iki başlatır `Picker` olanak tanıyan görünümleri seçin üyesi `SKPointMode` numaralandırma ve üyesi `SKStrokeCap` sabit listesi:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
-             x:Class="SkiaSharpFormsDemos.MultipleLinesPage"
+             xmlns:skia="clr-namespace:SkiaSharp;assembly=SkiaSharp"
+             xmlns:skiaforms="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             x:Class="SkiaSharpFormsDemos.Paths.MultipleLinesPage"
              Title="Multiple Lines">
     <Grid>
         <Grid.ColumnDefinitions>
@@ -132,11 +133,13 @@ DrawPoints (SKPointMode mode, points, paint)
                 Grid.Row="0"
                 Grid.Column="0"
                 SelectedIndexChanged="OnPickerSelectedIndexChanged">
-            <Picker.Items>
-                <x:String>Points</x:String>
-                <x:String>Lines</x:String>
-                <x:String>Polygon</x:String>
-            </Picker.Items>
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type skia:SKPointMode}">
+                    <x:Static Member="skia:SKPointMode.Points" />
+                    <x:Static Member="skia:SKPointMode.Lines" />
+                    <x:Static Member="skia:SKPointMode.Polygon" />
+                </x:Array>
+            </Picker.ItemsSource>
             <Picker.SelectedIndex>
                 0
             </Picker.SelectedIndex>
@@ -147,26 +150,28 @@ DrawPoints (SKPointMode mode, points, paint)
                 Grid.Row="0"
                 Grid.Column="1"
                 SelectedIndexChanged="OnPickerSelectedIndexChanged">
-            <Picker.Items>
-                <x:String>Butt</x:String>
-                <x:String>Round</x:String>
-                <x:String>Square</x:String>
-            </Picker.Items>
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type skia:SKStrokeCap}">
+                    <x:Static Member="skia:SKStrokeCap.Butt" />
+                    <x:Static Member="skia:SKStrokeCap.Round" />
+                    <x:Static Member="skia:SKStrokeCap.Square" />
+                </x:Array>
+            </Picker.ItemsSource>
             <Picker.SelectedIndex>
                 0
             </Picker.SelectedIndex>
         </Picker>
 
-        <skia:SKCanvasView x:Name="canvasView"
-                           PaintSurface="OnCanvasViewPaintSurface"
-                           Grid.Row="1"
-                           Grid.Column="0"
-                           Grid.ColumnSpan="2" />
+        <skiaforms:SKCanvasView x:Name="canvasView"
+                                PaintSurface="OnCanvasViewPaintSurface"
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2" />
     </Grid>
 </ContentPage>
 ```
 
-`SelectedIndexChanged` Hem işleyici `Picker` görünümleri yalnızca geçersiz kılar `SKCanvasView` nesnesi:
+SkiaSharp ad alanı bildirimi biraz farklı olduğundan olduğunu fark `SkiaSharp` üyelerine başvuru için gereken ad alanı `SKPointMode` ve `SKStrokeCap` numaralandırma. `SelectedIndexChanged` Hem işleyici `Picker` görünümleri yalnızca geçersiz kılar `SKCanvasView` nesnesi:
 
 ```csharp
 void OnPickerSelectedIndexChanged(object sender, EventArgs args)
@@ -180,7 +185,7 @@ void OnPickerSelectedIndexChanged(object sender, EventArgs args)
 
 Bu işleyici varlığını denetlemek gereken `SKCanvasView` nesne olay işleyici ilk olduğundan çağrılır `SelectedIndex` özelliği `Picker` XAML dosyasında 0 olarak ayarlanır ve oluşan önce `SKCanvasView` başlatıldı.
 
-`PaintSurface` İşleyicisi iki seçili öğeleri almak için bir genel yöntem erişen `Picker` görünümleri ve bunları sabit listesi değerlerine dönüştürme:
+`PaintSurface` İşleyici alır iki numaralandırma değerlerinden `Picker` görünümler:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -210,21 +215,12 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
         Style = SKPaintStyle.Stroke,
         Color = SKColors.DarkOrchid,
         StrokeWidth = 50,
-        StrokeCap = GetPickerItem<SKStrokeCap>(strokeCapPicker)
+        StrokeCap = (SKStrokeCap)strokeCapPicker.SelectedItem
     };
 
     // Render the points by calling DrawPoints
-    SKPointMode pointMode = GetPickerItem<SKPointMode>(pointModePicker);
+    SKPointMode pointMode = (SKPointMode)pointModePicker.SelectedItem;
     canvas.DrawPoints(pointMode, points, paint);
-}
-
-T GetPickerItem<T>(Picker picker)
-{
-    if (picker.SelectedIndex == -1)
-    {
-        return default(T);
-    }
-    return (T)Enum.Parse(typeof(T), picker.Items[picker.SelectedIndex]);
 }
 ```
 
@@ -243,5 +239,5 @@ Satırları bağlı veya bağlı değil grafik yolları ile çalışmanın önem
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [SkiaSharp API'leri](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp API'leri](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (örnek)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

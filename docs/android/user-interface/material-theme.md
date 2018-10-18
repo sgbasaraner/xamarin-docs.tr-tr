@@ -1,71 +1,71 @@
 ---
-title: Malzeme tema
-description: Tema nasıl Xamarin.Android uygulamanız ile malzeme tema
+title: Malzeme teması
+description: Tema nasıl Xamarin.Android uygulamanız ile malzeme teması
 ms.prod: xamarin
 ms.assetid: DC4CDBD0-3DF9-4B7E-B876-29128985E2A7
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
+author: conceptdev
+ms.author: crdun
 ms.date: 03/01/2018
-ms.openlocfilehash: a3b5f908330833a38aad9e329835a4a437fc29f0
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+ms.openlocfilehash: 4b9c39a0ced9a264f501d78142c3bdfd556593ed
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "30771326"
 ---
-# <a name="material-theme"></a>Malzeme tema
+# <a name="material-theme"></a>Malzeme teması
 
-*Malzeme tema* görünümleri ve etkinlikleri Android 5.0 (Lolipop) ile başlayan Görünüm ve yapısını belirleyen bir kullanıcı arabirimi stili. Sistem kullanıcı Arabirimi tarafından ve aynı zamanda uygulamalar tarafından kullanılmak üzere malzeme tema Android 5.0 oluşturulmuştur. Malzeme tema, bir kullanıcı dinamik olarak ayarlar menüsünden seçebilir bir sistem genelinde görünüm seçeneği duygusu bir "tema" değil. Bunun yerine, malzeme tema, uygulamanızı görünümünü özelleştirmek için kullanabileceğiniz yerleşik ilgili temel stilleri kümesi olarak düşünülebilir.
+*Malzeme teması* görünümleri ve etkinlikleri Android 5.0 (Lollipop) ile başlayan Görünüm ve yapısını belirleyen bir kullanıcı arabirimi stili. Sistem kullanıcı Arabirimi veya uygulamalar tarafından kullanılmak üzere malzeme teması Android 5.0 içinde yerleşik olarak bulunur. Malzeme teması bir kullanıcı, dinamik olarak ayarlar menüsünden seçim yapabileceği bir sistem genelinde görünümü seçeneğinin anlamında bir "tema" değil. Bunun yerine, malzeme teması, uygulamanızın görünümünü özelleştirmek için kullanabileceğiniz yerleşik ilgili temel stilleri bir dizi düşünülebilir.
 
-Android üç malzeme tema özellikleri sağlar:
+Android üç malzeme teması özellikleri sağlar:
 
--  `Theme.Material` &ndash; Malzeme tema koyu sürümü; Varsayılan özellik Android 5.0 budur.
+-  `Theme.Material` &ndash; Malzeme teması koyu sürümü; Android 5.0 varsayılan özellik budur.
 
--  `Theme.Material.Light` &ndash; Malzeme tema hafif sürümü.
+-  `Theme.Material.Light` &ndash; Malzeme teması açık sürümü.
 
--  `Theme.Material.Light.DarkActionBar` &ndash; Hafif sürümü malzeme temasının ancak koyu Eylem çubuğu.
+-  `Theme.Material.Light.DarkActionBar` &ndash; Malzeme teması koyu Eylem çubuğu ile ancak açık sürümü.
 
-Bu malzeme tema özellikleri örnekleri burada görüntülenir:
+Bu malzeme teması özellikleri örnekleri aşağıda görüntülenir:
 
-[![Koyu tema, açık tema ve Eylem çubuğu koyu tema örnek ekran görüntüleri](material-theme-images/three-flavors-sml.png)](material-theme-images/three-flavors.png#lightbox)
+[![Örnek ekran görüntüleri, koyu tema, açık tema ve Eylem çubuğu koyu tema](material-theme-images/three-flavors-sml.png)](material-theme-images/three-flavors.png#lightbox)
 
-Bazı veya tüm renk öznitelikleri geçersiz kılma temayı kendi tema oluşturmak için malzeme türetilemeyeceğini. Örneğin, türetilen bir tema oluşturabilirsiniz `Theme.Material.Light`, ancak uygulama çubuğu rengini, marka rengini eşleştirmek için geçersiz kılar. Ayrıca, tek bir görünüm stil ekleyebilirsiniz; Örneğin, bir stil oluşturabilirsiniz [kart görünümü](~/android/user-interface/controls/card-view.md) daha yuvarlanmış köşeleri ve koyu arka plan rengi kullanır.
+Malzeme temayı kendi temanızı oluşturmak için bazılarını veya tümünü renk öznitelikleri geçersiz kılma türetebilirsiniz. Örneğin, türetilen bir tema oluşturabilirsiniz `Theme.Material.Light`, ancak uygulama çubuğu rengi markanızı rengini eşleşecek şekilde geçersiz kılar. Ayrıca, tek bir görünüm stil uygulayabilirsiniz; Örneğin, bir stil oluşturabilirsiniz [CardView](~/android/user-interface/controls/card-view.md) yuvarlatılmış köşelere daha ve koyu bir arka plan rengi kullanır.
 
-Tek bir tema için tüm bir uygulamayı kullanabilir veya farklı ekranları (aktiviteler) bir uygulama için farklı temaları kullanabilirsiniz. Yukarıdaki ekran görüntülerinde her etkinlik için farklı bir tema tek bir uygulamada yerleşik renk düzenleri göstermek için örneğin, kullanır. Radyo düğmeleri uygulama için farklı etkinlikleri geçer ve sonuç olarak, farklı tema görüntüler.
+Tüm uygulama için tek bir tema kullanabilir veya farklı temalar, bir uygulamada farklı ekran (etkinlik) kullanabilirsiniz. Yukarıdaki ekran görüntülerinde, her etkinlik için farklı bir tema tek bir uygulama yerleşik renk düzenlerini göstermek için örnek, kullanır. Radyo düğmeleri uygulama için farklı etkinlikleri geçin ve sonuç olarak, farklı tema görüntüler.
 
-Malzeme tema yalnızca Android 5.0 ve daha sonra desteklenmediği için bunu (veya malzeme temayı türetilen özel bir tema) tema uygulamanızı Android önceki sürümlerinde çalışan için kullanamazsınız. Ancak ve Android eski sürümleri çalıştırdığında düzgün bir şekilde bir önceki tema için geri dönüş malzeme tema Android 5.0 cihazlarda kullanmak için uygulamanızı yapılandırabilirsiniz (bkz [Uyumluluk](#compatibility) Ayrıntılar için bu makalenin).
+Malzeme teması yalnızca Android 5.0 ve sonraki sürümlerde desteklenir. çünkü bunu (veya malzeme teması türetilen özel bir tema) tema uygulamanızı önceki Android sürümlerinde çalıştırmak için kullanamazsınız. Ancak, uygulamanızın Android 5.0 cihazları malzeme teması kullanın ve eski Android sürümleri üzerinde çalıştığında düzgün bir şekilde bir önceki tema dönmesi yapılandırabilirsiniz (bkz [Uyumluluk](#compatibility) Ayrıntılar için bu makalenin).
 
 
 ## <a name="requirements"></a>Gereksinimler
 
-Aşağıdaki Xamarin tabanlı uygulamalarda yeni Android 5.0 malzeme tema özellikleri kullanmak için gereklidir:
+Aşağıdaki yeni Android 5.0 malzeme teması özelliklerini Xamarin tabanlı uygulamalarında kullanmak için gereklidir:
 
--  **Xamarin.Android** &ndash; Xamarin.Android 4.20 or later must be installed and configured with either Visual Studio or Visual Studio for Mac. 
+-  **Xamarin.Android** &ndash; Xamarin.Android 4.20 veya sonraki bir sürümü yüklü ve Mac için Visual Studio veya Visual Studio ile yapılandırılmış 
 
--  **Android SDK** &ndash; Android 5.0 (API 21) veya sonrası Android SDK Yöneticisi aracılığıyla yüklü olmalıdır.
+-  **Android SDK'sı** &ndash; Android 5.0 (API 21) veya daha sonra Android SDK Yöneticisi aracılığıyla yüklenmesi gerekir.
 
--  **Java JDK 1.8** &ndash; JDK 1.7 özellikle atamak API düzey 23 ve önceki varsa kullanılabilir. JDK 1.8 edinilebilir [Oracle](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
+-  **Java JDK 1.8** &ndash; JDK 1.7 özellikle hedefleyen API düzeyi 23 ve eski olduğunda kullanılabilir. JDK 1.8 kullanılabilir [Oracle](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
 
-Bir Android 5.0 uygulama projesi yapılandırma konusunda bilgi edinmek için [ayarı oluşturan bir Android 5.0 proje](~/android/platform/lollipop.md).
+Android 5.0 uygulama projesinde yapılandırma konusunda bilgi için bkz: [ayarı bir Android 5.0 projeyi](~/android/platform/lollipop.md).
 
 
 ## <a name="using-the-built-in-themes"></a>Yerleşik Temalar kullanma
 
-Malzeme teması kullanmak için en kolay yolu, yerleşik bir tema özelleştirme olmadan kullanmak için uygulamanızı yapılandırmaktır. Bir tema açıkça yapılandırmak istemiyorsanız, uygulamanızı varsayılan `Theme.Material` (Koyu tema). Uygulamanızı yalnızca bir etkinlik varsa, uygulama düzeyinde bir tema yapılandırabilirsiniz. Uygulamanız birden çok etkinliği varsa, böylece tüm etkinliklerde aynı Tema kullanan veya farklı etkinlikler için farklı temaları atayabilirsiniz tema uygulama düzeyinde yapılandırabilirsiniz. Aşağıdaki bölümlerde, temalar uygulama düzeyinde ve etkinlik düzeyinde nasıl yapılandırılacağı açıklanmaktadır.
+Malzeme teması kullanmak için en kolay yolu, uygulamanızı özelleştirme olmadan, yerleşik bir tema kullanacak şekilde yapılandırmaktır. Bir tema açıkça yapılandırmak istemiyorsanız, uygulamanızın varsayılan `Theme.Material` (Koyu tema). Yalnızca bir etkinlik uygulamanız varsa, uygulama düzeyinde bir tema yapılandırabilirsiniz. Uygulamanız birden fazla etkinlik varsa, uygulama düzeyinde tüm etkinliklerde aynı temayı kullanır veya farklı bir tema için farklı etkinlikleri atayabilirsiniz böylece bir tema yapılandırabilirsiniz. Aşağıdaki bölümlerde, uygulama düzeyinde ve etkinlik düzeyinde tema yapılandırma işlemleri açıklanmaktadır.
 
 
-### <a name="theming-an-application"></a>Bir uygulama Tema oluşturma
+### <a name="theming-an-application"></a>Uygulama teması oluşturma
 
-Bir malzeme tema özellik kullanmak için tüm bir uygulamayı yapılandırmak için ayarlamak `android:theme` uygulama düğümünde özniteliği **AndroidManifest.xml** şunlardan biri için:
+Malzeme teması flavor kullanmak için tüm uygulama yapılandırmak için `android:theme` uygulama düğümünün özniteliği **AndroidManifest.xml** aşağıdakilerden birine:
 
 -  `@android:style/Theme.Material` &ndash; Koyu tema.
 
 -  `@android:style/Theme.Material.Light` &ndash; Açık tema.
 
--  `@android:style/Theme.Material.Light.DarkActionBar` &ndash; Açık tema koyu Eylem çubuğu.
+-  `@android:style/Theme.Material.Light.DarkActionBar` &ndash; Açık tema koyu Eylem çubuğu ile.
 
-Aşağıdaki örnek uygulamayı yapılandırır *Uygulamam* açık Tema kullanmak için:
+Aşağıdaki örnek bir uygulamayı yapılandırır *MyApp* açık Tema kullanmak için:
 
 ```xml
 <application android:label="MyApp" 
@@ -79,35 +79,35 @@ Alternatif olarak, uygulama ayarlayabilirsiniz `Theme` özniteliğini **Assembly
 [assembly: Application(Theme="@android:style/Theme.Material.Light")]
 ```
 
-Uygulama tema ayarlandığında `@android:style/Theme.Material.Light`, her etkinlik *Uygulamam* kullanılarak görüntülenen `Theme.Material.Light`.
+Uygulama teması ayarlandığında `@android:style/Theme.Material.Light`, her etkinlik *MyApp* kullanılarak gösterilecektir `Theme.Material.Light`.
 
 
 ### <a name="theming-an-activity"></a>Bir etkinlik Tema oluşturma
 
-Eklediğiniz bir etkinlik tema için bir `Theme` ayarını `[Activity]` özniteliği etkinlik bildiriminin üstüne ve Ata `Theme` için kullanmak istediğiniz malzeme tema çeşidi. Aşağıdaki örnek Temalar etkinliği ile bir `Theme.Material.Light`:
+Bir etkinlik tema için eklediğiniz bir `Theme` ayarını `[Activity]` özniteliği, etkinlik bildiriminin üstüne ve atama `Theme` kullanmak istediğiniz malzeme teması flavor için. Aşağıdaki örnek temaları etkinliği ile bir `Theme.Material.Light`:
 
 ```C#
 [Activity(Theme = "@android:style/Theme.Material.Light",
           Label = "MyApp", MainLauncher = true, Icon = "@drawable/icon")]  
 ```
 
-Bu uygulamadaki diğer etkinlikler varsayılan kullanacağı `Theme.Material` koyu renk şeması (veya yapılandırdıysanız, uygulama tema ayarı).
+Bu uygulamadaki diğer etkinlikleri varsayılan kullanacağı `Theme.Material` koyu renk (veya yapılandırdıysanız, uygulama teması ayarı).
 
 <a name="customtheme" />
 
-## <a name="using-custom-themes"></a>Özel tema kullanma
+## <a name="using-custom-themes"></a>Özel Temalar kullanma
 
-Uygulamanız, markanızla stiller özel bir tema oluşturarak, marka geliştirebilirsiniz&rsquo;s renkleri. Özel bir tema oluşturmak için değiştirmek istediğiniz renk öznitelikleri geçersiz kılma yerleşik bir malzeme tema özellik türetilen yeni bir stil tanımlayın. Örneğin, türetilen özel bir tema tanımlayabilirsiniz `Theme.Material.Light.DarkActionBar` ve ekran arka plan rengi beyaz yerine bej değiştirir.
+Uygulamanızı markanızla stiller özel bir tema oluşturarak markanızı iyileştirebilecek&rsquo;s renkleri. Özel tema oluşturma için değiştirmek istediğiniz renk öznitelikleri geçersiz kılma yerleşik bir malzeme teması flavor türeyen yeni bir stil tanımlayın. Örneğin, türetilen özel bir tema tanımlayabilirsiniz `Theme.Material.Light.DarkActionBar` ve teknik yerine bej ekranı arka plan rengi değişir.
 
-Malzeme tema özelleştirme için aşağıdaki düzen öznitelikleri gösterir:
+Malzeme teması özelleştirme için aşağıdaki düzeni özniteliklerine kullanıma sunar:
 
--  `colorPrimary` &ndash; Uygulama çubuğunu rengi.
+-  `colorPrimary` &ndash; Uygulama çubuğunda rengi.
 
--  `colorPrimaryDark` &ndash; Durum çubuğu ve bağlamsal uygulama çubukları rengini; Bu normal bir koyu sürümüdür `colorPrimary`.
+-  `colorPrimaryDark` &ndash; Durum çubuğu ve bağlamsal uygulama çubuklarının rengini; Bu normalde bir koyu sürümüdür `colorPrimary`.
 
--  `colorAccent` &ndash; Onay kutuları, radyo düğmeleri ve düzenleme metin kutuları gibi kullanıcı Arabirimi denetimlerini rengi.
+-  `colorAccent` &ndash; Onay kutularını ve radyo düğmeleri düzenleme metin kutuları gibi kullanıcı Arabirimi denetimleri rengi.
 
--  `windowBackground` &ndash; Ekran arka plan rengi.
+-  `windowBackground` &ndash; Ekranı arka plan rengi.
 
 -  `textColorPrimary` &ndash; Uygulama çubuğunda UI metin rengi.
 
@@ -115,18 +115,18 @@ Malzeme tema özelleştirme için aşağıdaki düzen öznitelikleri gösterir:
 
 -  `navigationBarColor` &ndash; Gezinti çubuğu rengi.
 
-Bu ekran alanlar aşağıdaki şemada etiketlenmiştir:
+Aşağıdaki diyagramda bu ekranı alanlardan etiketli:
 
-[![Öznitelikleri ve bunların ilişkili ekran alanları diyagramı](material-theme-images/screen-attributes-sml.png)](material-theme-images/screen-attributes.png#lightbox)
+[![Öznitelikler ve bunların ilişkili ekranın alanları diyagramı](material-theme-images/screen-attributes-sml.png)](material-theme-images/screen-attributes.png#lightbox)
 
-Varsayılan olarak, `statusBarColor` değerine ayarlanmış `colorPrimaryDark`. Ayarlayabileceğiniz `statusBarColor` düz renk için veya ayarlayabilirsiniz `@android:color/transparent` durum çubuğu saydam hale getirmek için. Gezinti çubuğu de ayarlayarak saydam hale getirilebilir `navigationBarColor` için `@android:color/transparent`.
+Varsayılan olarak, `statusBarColor` değerine ayarlanmış `colorPrimaryDark`. Ayarlayabileceğiniz `statusBarColor` düz bir renk için veya ayarlayabilirsiniz `@android:color/transparent` durum çubuğu saydam yapmak için. Gezinti çubuğunu da ayarlayarak saydam hale getirilebilir `navigationBarColor` için `@android:color/transparent`.
 
 
 ### <a name="creating-a-custom-app-theme"></a>Özel uygulama Tema oluşturma
 
-Oluşturma ve değiştirme dosyalarında bir özel uygulama tema oluşturabilirsiniz **kaynakları** uygulama projenizin klasör. Özel bir tema ile uygulamanızı stilini belirlemek için aşağıdaki adımları kullanın:
+Oluşturma ve değiştirme dosyalarında özel uygulama tema oluşturabilirsiniz **kaynakları** uygulama projenizin klasör. Özel bir tema uygulamanızla stilini belirlemek için aşağıdaki adımları kullanın:
 
--   Oluşturma bir **colors.xml** dosyasını **kaynakları/değerleri** &mdash; özel tema renkleri tanımlamak için bu dosyasını kullanın. Örneğin, aşağıdaki kodu yapıştırabilirsiniz **colors.xml** başlamanıza yardımcı olmak için:
+-   Oluşturma bir **colors.xml** dosyası **kaynakları/değerleri** &mdash; özel tema renkleri tanımlamak için bu dosyayı kullanın. Örneğin, aşağıdaki koda yapıştırabilirsiniz **colors.xml** başlamanıza yardımcı olmak için:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -138,13 +138,13 @@ Oluşturma ve değiştirme dosyalarında bir özel uygulama tema oluşturabilirs
 </resources>
 ```
 
--   Bu örnek dosya adları ve özel tema kullanacağınız renk kaynaklar için renk kodları tanımlamak için değiştirin.
+-   Bu örnek dosya adlarını ve renk kodlarının özel temanızı kullanacağınız renk kaynakları tanımlamak için değiştirin.
 
--   Oluşturma bir **değerleri/kaynakları-v21** klasör. Bu klasörde oluşturma bir **styles.xml** dosyası:
+-   Oluşturma bir **değerleri/kaynaklar-v21** klasör. Bu klasörde oluşturmak bir **styles.xml** dosyası:
 
-    [![Değerleri/kaynakları-21.xml klasöründeki styles.xml konumu](material-theme-images/values-v21-sml.png)](material-theme-images/values-v21.png#lightbox)
+    [![Kaynakları/değerleri-21.xml klasöründe styles.xml konumu](material-theme-images/values-v21-sml.png)](material-theme-images/values-v21.png#lightbox)
 
-    Unutmayın **değerleri/kaynakları-v21** Android 5.0 özgü &ndash; Android eski sürümleri değil Bu klasördeki dosyaların okuyun.
+    Unutmayın **değerleri/kaynaklar-v21** Android 5.0 özgü &ndash; Android eski sürümlerini değil Bu klasördeki dosyalar okuyun.
 
 -   Ekleme bir `resources` düğüme **styles.xml** ve tanımlayan bir `style` özel tema adını içeren düğüme. Örneğin, bir **styles.xml** tanımlayan dosyası *MyCustomTheme* (yerleşik türetilmiş `Theme.Material.Light` tema stili):
 
@@ -158,11 +158,11 @@ Oluşturma ve değiştirme dosyalarında bir özel uygulama tema oluşturabilirs
 </resources>
 ```
 
--   Bu noktada, kullanan bir uygulama *MyCustomTheme* stoğu görüntülenir `Theme.Material.Light` özelleştirmeleri olmadan tema:
+-   Bu noktada, kullanan bir uygulamayı *MyCustomTheme* hisse görüntüleyecektir `Theme.Material.Light` özelleştirmeleri olmadan teması:
 
-    [![Özelleştirmeleri önce özel tema görünümü](material-theme-images/custom-theme-before-sml.png)](material-theme-images/custom-theme-before.png#lightbox)
+    [![Özel tema görünüm özelleştirmeleri önce](material-theme-images/custom-theme-before-sml.png)](material-theme-images/custom-theme-before.png#lightbox)
 
--   Renk özelleştirmeleri eklemek **styles.xml** renkleri değiştirmek istediğiniz düzeni özniteliklerin tanımlayarak. Örneğin, uygulama çubuğu rengini değiştirmek için `my_blue` ve kullanıcı Arabirimi denetimlerini rengini değiştirmek `my_purple`, renk geçersiz kılan eklemek **styles.xml** yapılandırılan renk kaynaklara başvuran **colors.xml**:
+-   Renk özelleştirmeleri ekleme **styles.xml** renkleri değiştirmek istediğiniz düzen özniteliklerin tanımlayarak. Örneğin uygulama çubuğu rengi değiştirme `my_blue` ve UI denetimine rengini değiştirmek `my_purple`, renk geçersiz kılmaları ekleyin **styles.xml** yapılandırılan renk kaynaklara başvuran **colors.xml**:
 
 ```xml
 <?xml version="1.0" encoding="UTF-8" ?>
@@ -177,20 +177,20 @@ Oluşturma ve değiştirme dosyalarında bir özel uygulama tema oluşturabilirs
 </resources>
 ```
 
-Bir uygulama yerinde bu değişikliklerle kullanan *MyCustomTheme* bir uygulama çubuğu renkte görüntülenir `my_blue` ve UI denetimleri `my_purple`, ancak `Theme.Material.Light` renk düzenini her yerde başka:
+Yerinde bu değişikliklerle, bir uygulamanın kullandığı *MyCustomTheme* bir uygulama çubuğunu renkte görüntülenir `my_blue` ve kullanıcı Arabirimi denetimleri `my_purple`, ancak `Theme.Material.Light` her yerde başka bir renk şeması:
 
-[![Özelleştirmeleri sonra özel tema görünümü](material-theme-images/custom-theme-after-sml.png)](material-theme-images/custom-theme-after.png#lightbox)
+[![Özel tema görünüm özelleştirmeleri sonra](material-theme-images/custom-theme-after-sml.png)](material-theme-images/custom-theme-after.png#lightbox)
 
-Bu örnekte, *MyCustomTheme* renkten taşır `Theme.Material.Light` için arka plan rengi, durum çubuğu ve metin renklerini, ancak uygulama çubuğuna rengi değişir `my_blue` ve radyodüğmesinirenginiayarlar`my_purple`.
+Bu örnekte, *MyCustomTheme* renkleri çözümümüz `Theme.Material.Light` için arka plan rengi, durum çubuğu ve metin renklerini, ancak bu uygulama çubuğuna rengini değiştirir `my_blue` ve radyodüğmesinirenginiayarlar`my_purple`.
 
 <a name="customview" />
 
 ### <a name="creating-a-custom-view-style"></a>Özel görünüm stili oluşturma
 
-Android 5.0 ayrıca, tek bir görünüm stilini belirlemek mümkün kılar. Oluşturduktan sonra **colors.xml** ve **styles.xml** görüntüle stil ekleyebilirsiniz (açıklandığı gibi önceki bölümdeki), **styles.xml**.
+Android 5.0 ayrıca, tek bir görünüm stilini belirlemek için mümkün kılar. Oluşturduktan sonra **colors.xml** ve **styles.xml** için görünüm stili ekleyebilirsiniz (açıklandığı gibi önceki bölümde), **styles.xml**.
 Tek bir görünüm stilini belirlemek için aşağıdaki adımları kullanın:
 
--   Düzen **Resources/values-v21/styles.xml** ve ekleme bir `style` özel görünüm stili adını içeren düğüme. Özel renk özniteliklerini bu içinde görünümünüz için ayarlamak `style` düğümü. Örneğin, özel bir oluşturmak için [kart görünümü](~/android/user-interface/controls/card-view.md) daha köşeleri ve kullandığı yuvarlanmış stili `my_blue` kartı arka plan rengi ekleme bir `style` düğüme **styles.xml** ( içinde`resources`düğüm) ve arka plan rengi ve köşe RADIUS yapılandırın:
+-   Düzen **Resources/values-v21/styles.xml** ve ekleme bir `style` stilinizin adı olan özel görünüm düğümü. Özel renk öznitelikleri bu görünümünüz için ayarlamak `style` düğümü. Örneğin, bir özel oluşturma için [CardView](~/android/user-interface/controls/card-view.md) köşeler ve kullandığı daha yuvarlanmış stili `my_blue` kart arka plan renk olarak Ekle bir `style` düğüme **styles.xml** ( içinde`resources`düğümü) ve arka plan rengini ve köşe yarıçapı yapılandırın:
 
 ```xml
 <!-- Theme an individual view: -->
@@ -204,7 +204,7 @@ Tek bir görünüm stilini belirlemek için aşağıdaki adımları kullanın:
 </style>
 ```
 
--   Düzende ayarlamak `style` önceki adımda seçtiğiniz özel stil adı ile eşleşmesi bu görünümü özniteliği. Örneğin:
+-   Düzeninizi içinde ayarlamak `style` , önceki adımda seçtiğiniz özel bir stil adıyla eşleşecek şekilde bu görünüm için özniteliği. Örneğin:
 
 ```xml
 <android.support.v7.widget.CardView
@@ -214,18 +214,18 @@ Tek bir görünüm stilini belirlemek için aşağıdaki adımları kullanın:
     android:layout_gravity="center_horizontal">
 ```
 
-Aşağıdaki ekran görüntüsünde varsayılan bir örnek sağlar `CardView` (solunda gösterilen) ile karşılaştırıldığında gibi bir `CardView` , stilde özel `CardView.MyBlue` tema (sağ tarafta gösterilen):
+Aşağıdaki ekran görüntüsünde varsayılan bir örnek sağlar `CardView` (gösterilen soldaki) ile karşılaştırıldığında gibi bir `CardView` , biçimlendirilmiş özel `CardView.MyBlue` tema (sağ tarafta gösterilir):
 
-[![Kart görünümü varsayılan ve özel kart görünümü örnekleri](material-theme-images/custom-cardview-sml.png)](material-theme-images/custom-cardview.png#lightbox)
+[![Varsayılan CardView ve özel CardView örnekleri](material-theme-images/custom-cardview-sml.png)](material-theme-images/custom-cardview.png#lightbox)
 
-Bu örnekte, özel `CardView` arka plan rengiyle görüntülenen `my_blue` ve 18dp köşe RADIUS.
+Bu örnekte, özel `CardView` arka plan rengi görüntülenir `my_blue` ve bir 18dp köşe yarıçapı.
 
 
 ## <a name="compatibility"></a>Uyumluluk
 
-Böylece malzeme tema üzerinde Android 5.0 kullanır ancak eski Android sürümlerinde uyumlu aşağı stili için otomatik olarak döner uygulamanızı stilini belirlemek için aşağıdaki adımları kullanın:
+Android 5.0 malzeme teması kullanır ancak daha eski Android sürümlerindeki aşağı uyumlu stil için otomatik olarak döner. böylece uygulamanızı stilini belirlemek için aşağıdaki adımları kullanın:
 
--   Özel bir tema tanımlamak **Resources/values-v21/styles.xml** ' nden bir malzeme tema stil türetilir. Örneğin:
+-   Özel bir tema olarak tanımlayın **Resources/values-v21/styles.xml** bir malzeme teması stil türetilir. Örneğin:
 
 ```xml
 <resources>
@@ -235,7 +235,7 @@ Böylece malzeme tema üzerinde Android 5.0 kullanır ancak eski Android sürüm
 </resources>
 ```
 
--   Özel bir tema tanımlamak **Resources/values/styles.xml** , daha eski bir temayı türetilen, ancak aynı tema adı olarak yukarıdaki kullanır. Örneğin:
+-   Özel bir tema olarak tanımlayın **Resources/values/styles.xml** , daha eski bir temayı türer, ancak aynı tema adı olarak yukarıdaki kullanır. Örneğin:
 
 ```xml
 <resources>
@@ -245,7 +245,7 @@ Böylece malzeme tema üzerinde Android 5.0 kullanır ancak eski Android sürüm
 </resources>
 ```
 
--   İçinde **AndroidManifest.xml**, uygulamanızı özel tema adıyla yapılandırın. 
+-   İçinde **AndroidManifest.xml**, özel tema adı ile uygulamanızı yapılandırın. 
     Örneğin:
 
 ```xml
@@ -254,31 +254,32 @@ Böylece malzeme tema üzerinde Android 5.0 kullanır ancak eski Android sürüm
 </application>
 ```
 
--   Alternatif olarak, belirli bir etkinliğe özel tema kullanarak stil ekleyebilirsiniz:
+-   Alternatif olarak, özel temanızı kullanarak belirli bir etkinliği stil uygulayabilirsiniz:
 
 ```C#
 [Activity(Label = "MyActivity", Theme = "@style/MyCustomTheme")]
 ```
 
-Tema renkleri tanımlanan kullanıyorsa, bir **colors.xml** dosya, bu dosyada yerleştirdiğinizden emin olun **kaynakları/değerleri** (yerine **değerleri/kaynakları-v21**) böylece her iki sürümü özel tema rengi tanımlarınızı erişebilir.
+Tema renkleri tanımlanan kullanıyorsa bir **colors.xml** dosya, bu dosyada yerleştirdiğinizden emin olun **kaynakları/değerleri** (yerine **değerleri/kaynaklar-v21**) böylece iki sürümü özel tema rengi tanımlarınızı erişebilirsiniz.
 
-Uygulamanızı bir Android 5.0 cihazında çalıştırıldığında, belirtilen tema tanımı kullanacağı **Resources/values-v21/styles.xml**. Bu uygulamanın eski Android cihazlarda çalıştığında, onu otomatik olarak belirtilen tema tanımına döner **Resources/values/styles.xml**.
+Uygulamanızı bir Android 5.0 cihazında çalıştırıldığında, belirtilen tema tanımı kullanacağı **Resources/values-v21/styles.xml**. Bu uygulamanın eski Android cihazlarda çalıştığında, otomatik olarak belirtilen tema tanımına döner **Resources/values/styles.xml**.
 
-Önceki Android sürümlerle tema uyumluluğu hakkında daha fazla bilgi için bkz: [alternatif kaynaklar](~/android/app-fundamentals/resources-in-android/alternate-resources.md).
+Tema uyumluluğu eski Android sürümleri hakkında daha fazla bilgi için bkz. [alternatif kaynaklar](~/android/app-fundamentals/resources-in-android/alternate-resources.md).
 
 ## <a name="summary"></a>Özet
 
-Bu makalede Android 5.0 (Lolipop) dahil yeni malzeme tema kullanıcı arabirimi stili sunmuştur. Uygulamanızı stilini belirlemek için kullanabileceğiniz üç yerleşik malzeme tema özellikleri açıklanan, uygulamanızı markalama için özel bir tema oluşturma açıklanmıştır ve tek tek bir görünümünü nasıl bir örneği tema için sağlanan. Son olarak, bu makalede malzeme tema uygulamanızda Android eski sürümleriyle aşağı uyumluluk korurken kullanmayı açıklanmıştır.
+Bu makalede, Android 5.0 (Lollipop) dahil yeni malzeme teması kullanıcı arayüzü stilini kullanıma sunuldu. Uygulamanızı stilini belirlemek için kullanabileceğiniz üç yerleşik malzeme teması özellikleri açıklanan, uygulamanızı markalama için özel bir tema oluşturma açıklandığı ve tek bir görünüm ilişkin bir örnek tema için sağlanan. Son olarak, bu makalede, Android uygulamalarının eski sürümleriyle aşağı uyumluluğu korurken malzeme teması uygulamanızda kullanma açıklanmıştır.
 
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [ThemeSwitcher (örnek)](https://developer.xamarin.com/samples/monodroid/android5.0/ThemeSwitcher)
-- [Lolipop giriş](~/android/platform/lollipop.md)
-- [CardView](~/android/user-interface/controls/card-view.md)
-- [Alternatif Kaynaklar](~/android/app-fundamentals/resources-in-android/alternate-resources.md)
-- [Android L Developer Preview](http://developer.android.com/preview/index.html)
-- [Malzeme tasarım](http://developer.android.com/preview/material/index.html)
-- [Malzeme tasarım ilkeleri](http://static.googleusercontent.com/media/www.google.com/en/us/design/material-design.pdf)
-- [Uyumluluk koruma](http://developer.android.com/preview/material/compatibility.html)
+- [Lolipop giriş](../platform/lollipop.md)
+- [CardView](controls/card-view.md)
+- [Alternatif Kaynaklar](../app-fundamentals/resources-in-android/alternate-resources.md)
+- [Android Lollipop](https://developer.android.com/about/versions/lollipop)
+- [Android pasta Geliştirici](https://developer.android.com/about/versions/pie/)
+- [Malzeme tasarımı](https://developer.android.com/guide/topics/ui/look-and-feel/)
+- [Malzeme tasarım ilkeleri](https://material.io/design/)
+- [Uyumluluk](https://developer.android.com/training/backward-compatible-ui/)

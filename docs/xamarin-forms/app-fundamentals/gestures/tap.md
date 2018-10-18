@@ -1,5 +1,5 @@
 ---
-title: Bir dokunma hareketi hareket tanıyıcı ekleme
+title: Bir dokunun hareket tanıyıcı ekleme
 description: Bu makalede, bir Xamarin.Forms uygulaması dokunun algılama için dokunma hareketi kullanmayı açıklar. Dokunun algılama TapGestureRecognizer sınıfıyla uygulanır.
 ms.prod: xamarin
 ms.assetid: 1D150BAF-4157-49BC-90A0-153323B8EBCF
@@ -7,18 +7,16 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/21/2016
-ms.openlocfilehash: e602ae1f140640d9a895b65d78feab3d0a3b7861
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: a28afb30770f15861aef06643e7f51070199ea9b
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "38994860"
 ---
-# <a name="adding-a-tap-gesture-gesture-recognizer"></a>Bir dokunma hareketi hareket tanıyıcı ekleme
+# <a name="adding-a-tap-gesture-recognizer"></a>Bir dokunun hareket tanıyıcı ekleme
 
 _Dokunma hareketi dokunun algılama için kullanılır ve TapGestureRecognizer sınıfıyla uygulanır._
-
-## <a name="overview"></a>Genel Bakış
 
 Bir kullanıcı arabirimi öğesi tıklanabilir dokunma hareketi sahip olmak için oluşturun bir [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) örneği, işlemek [ `Tapped` ](xref:Xamarin.Forms.TapGestureRecognizer.Tapped) olay ve eklemek için yeni hareket tanıyıcı [ `GestureRecognizers` ](xref:Xamarin.Forms.View.GestureRecognizers) kullanıcı arabirimi öğesi koleksiyonu. Aşağıdaki kod örnekte gösterildiği bir `TapGestureRecognizer` iliştirilmiş bir [ `Image` ](xref:Xamarin.Forms.Image) öğesi:
 
@@ -72,7 +70,7 @@ void OnTapGestureRecognizerTapped(object sender, EventArgs args)
 
 ## <a name="using-icommand"></a>ICommand'ı kullanma
 
-Genellikle Mvvm düzenini kullanan uygulamaları kullanın `ICommand` doğrudan teknik olay işleyicileri'kurmak yerine. [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) Kolayca destekleyebilir `ICommand` kod içinde bağlama ayarlayarak ya da:
+Genellikle Model-View-ViewModel (MVVM) desenini kullanan uygulamaları kullanın `ICommand` doğrudan teknik olay işleyicileri'kurmak yerine. [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) Kolayca destekleyebilir `ICommand` kod içinde bağlama ayarlayarak ya da:
 
 ```csharp
 var tapGestureRecognizer = new TapGestureRecognizer();
@@ -113,10 +111,6 @@ public class TapViewModel : INotifyPropertyChanged
     //region INotifyPropertyChanged code omitted
 }
 ```
-
-## <a name="summary"></a>Özet
-
-Dokunma hareketi dokunun algılama için kullanılır ve ile uygulanan [ `TapGestureRecognizer` ](xref:Xamarin.Forms.TapGestureRecognizer) sınıfı. Tap'ları sayısı, çift dokunmayla tanımak için belirtilebilir (üçlü dokunun ya da daha fazla dokunduğunda) davranışı.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar

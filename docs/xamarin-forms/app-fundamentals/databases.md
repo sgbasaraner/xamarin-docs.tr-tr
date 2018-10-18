@@ -1,26 +1,26 @@
 ---
 title: Xamarin.Forms yerel veritabanları
-description: Xamarin.Forms veritabanı güdümlü uygulamaları yüklemek ve paylaşılan kodda nesneleri kaydetmek mümkün kılar SQLite veritabanı altyapısı kullanılarak destekler. Bu makalede nasıl Xamarin.Forms uygulamaları okuma ve SQLite.Net kullanarak yerel bir SQLite veritabanı için veri yazma açıklanmaktadır.
+description: Xamarin.Forms, yüklemek ve nesneleri paylaşılan kodu kaydetmek mümkün kılar SQLite veritabanı altyapısı kullanılarak veritabanı odaklı uygulamaları destekler. Bu makalede nasıl Xamarin.Forms uygulamalarını okuma ve SQLite.Net kullanarak yerel bir SQLite veritabanı için veri yazma açıklanır.
 ms.prod: xamarin
 ms.assetid: F687B24B-7DF0-4F8E-A21A-A9BB507480EB
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 06/21/2018
-ms.openlocfilehash: feec4993a0719a083d713e084552b18aead8ee42
-ms.sourcegitcommit: eac092f84b603958c761df305f015ff84e0fad44
+ms.openlocfilehash: 05c77c4c47841a897d0d1de5c3ba004db524ea2d
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/21/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "36310146"
 ---
 # <a name="xamarinforms-local-databases"></a>Xamarin.Forms yerel veritabanları
 
-_Xamarin.Forms veritabanı güdümlü uygulamaları yüklemek ve paylaşılan kodda nesneleri kaydetmek mümkün kılar SQLite veritabanı altyapısı kullanılarak destekler. Bu makalede nasıl Xamarin.Forms uygulamaları okuma ve SQLite.Net kullanarak yerel bir SQLite veritabanı için veri yazma açıklanmaktadır._
+_Xamarin.Forms, yüklemek ve nesneleri paylaşılan kodu kaydetmek mümkün kılar SQLite veritabanı altyapısı kullanılarak veritabanı odaklı uygulamaları destekler. Bu makalede nasıl Xamarin.Forms uygulamalarını okuma ve SQLite.Net kullanarak yerel bir SQLite veritabanı için veri yazma açıklanır._
 
 ## <a name="overview"></a>Genel Bakış
 
-Xamarin.Forms uygulamalar kullanabilir [SQLite.NET PCL NuGet](https://www.nuget.org/packages/sqlite-net-pcl/) veritabanı işlemlere eklemenizi paket başvurarak kod paylaşılan `SQLite` NuGet sevk sınıfları. Veritabanı işlemleri Xamarin.Forms çözümünü .NET standart kitaplığı projesinde tanımlanabilir.
+Xamarin.Forms uygulamaları kullanabilir [SQLite.NET PCL NuGet](https://www.nuget.org/packages/sqlite-net-pcl/) veritabanı işlemi birleştirmek için paket paylaşılan kodu başvurarak `SQLite` Nuget'te sevk sınıfları. Veritabanı işlemleri Xamarin.Forms çözümü .NET Standard kitaplığı projesinde tanımlanabilir.
 
 Eşlik eden [örnek uygulama](https://github.com/xamarin/xamarin-forms-samples/tree/master/Todo) basit bir Yapılacaklar listesi uygulamasıdır. Aşağıdaki ekran görüntüleri örnek her platformda nasıl göründüğünü gösterir:
 
@@ -30,20 +30,20 @@ Eşlik eden [örnek uygulama](https://github.com/xamarin/xamarin-forms-samples/t
 
 ## <a name="using-sqlite"></a>SQLite kullanarak
 
-Xamarin.Forms .NET standart kitaplığına SQLite desteği eklemek için bulmak için NuGet arama işlevini kullanın **sqlite net pcl** ve en son paketini yükleyin:
+Xamarin.Forms .NET Standard kitaplığı için SQLite desteği eklemek için bulmak için NuGet'ın arama işlevini kullanın **sqlite net pcl** ve en son paketini yükleyin:
 
-![NuGet SQLite.NET PCL paket ekleme](databases-images/vs2017-sqlite-pcl-nuget.png "NuGet SQLite.NET PCL Paketi Ekle")
+![NuGet SQLite.NET PCL paketi ekleme](databases-images/vs2017-sqlite-pcl-nuget.png "NuGet SQLite.NET PCL paketi ekleme")
 
-NuGet paketlerini benzer adlara sahip bir dizi vardır, doğru paket bu özniteliklere sahiptir:
+Birçok NuGet paketlerinin benzer adlarla, doğru paketi bu özniteliklere sahiptir:
 
-- **Tarafından oluşturulan:** Frank A. Krueger
-- **Kimliği:** sqlite net pcl
+- **Oluşturan:** Frank A. Krueger
+- **ID:** sqlite net pcl
 - **NuGet bağlantı:** [sqlite net pcl](https://www.nuget.org/packages/sqlite-net-pcl/)
 
 > [!NOTE]
-> Paket adı rağmen kullanmak **sqlite net pcl** bile .NET standart projelerinde NuGet paketi.
+> Paket adı rağmen **sqlite net pcl** NuGet paketini bile .NET Standard projelerine.
 
-Başvuru eklendikten sonra yeni özellik eklemek `App` veritabanını depolamak için bir yerel dosya yolu döndürür sınıfı:
+Başvuru eklendikten sonra özellik eklemek `App` veritabanını depolamak için bir yerel dosya yolu döndürür sınıfı:
 
 ```csharp
 static TodoItemDatabase database;
@@ -62,7 +62,7 @@ public static TodoItemDatabase Database
 }
 ```
 
-`TodoItemDatabase` Bağımsız değişken olarak veritabanı dosyasının yolunu alır, Oluşturucusu aşağıda gösterilmektedir:
+`TodoItemDatabase` Yolun veritabanı dosyası bağımsız değişken olarak alan oluşturucu, aşağıda gösterilmektedir:
 
 ```csharp
 public TodoItemDatabase(string dbPath)
@@ -72,9 +72,9 @@ public TodoItemDatabase(string dbPath)
 }
 ```
 
-Uygulama çalışırken açık tutulan tek tek veritabanı bağlantısı oluşturduğunuz olduğundan veritabanı gösterme avantajı çalışır, bu nedenle veritabanı işlemi açma ve veritabanı dosyası her zaman kapatılırken gider önleme gerçekleştirilir.
+Uygulama çalışırken açık tutulan tek tek veritabanı bağlantısı oluşturulur olduğundan veritabanı gösterme avantajı çalışır ve bu nedenle açmak ve her veritabanı dosyası kapatılırken bir veritabanı işlemi önleme gerçekleştirilir.
 
-Geri kalan `TodoItemDatabase` sınıfı, platformlar arası çalışması SQLite sorguları içerir. Örnek sorgu kod aşağıda gösterilen (sözdizimi hakkında daha fazla ayrıntı bulunabilir [kullanarak SQLite.NET](~/cross-platform/app-fundamentals/index.md) makale):
+Kalanı `TodoItemDatabase` sınıfı, platformlar arası çalışan SQLite sorguları içerir. Örnek sorgu kod aşağıda gösterilmektedir (söz dizimi hakkında daha fazla ayrıntı bulunabilir [kullanarak SQLite.NET Xamarin.iOS ile](~/ios/data-cloud/data/using-sqlite-orm.md).
 
 ```csharp
 public Task<List<TodoItem>> GetItemsAsync()
@@ -110,16 +110,16 @@ public Task<int> DeleteItemAsync(TodoItem item)
 ```
 
 > [!NOTE]
-> Zaman uyumsuz SQLite.Net API kullanmanın avantajı, işlemleri arka plan iş parçacıkları taşınır bu veritabanıdır. Ayrıca, ek eşzamanlılık API bunu mvc'deki çünkü kod işleme yazmaya gerek yoktur.
+> Zaman uyumsuz SQLite.Net API kullanmanın avantajı, işlemleri arka plan iş parçacığı taşınır, veritabanıdır. Ayrıca, ek eşzamanlılık API bunu üstlenir çünkü kod işleme yazmaya gerek yoktur.
 
 ## <a name="summary"></a>Özet
 
-Xamarin.Forms veritabanı güdümlü uygulamaları yüklemek ve paylaşılan kodda nesneleri kaydetmek mümkün kılar SQLite veritabanı altyapısı kullanılarak destekler.
+Xamarin.Forms, yüklemek ve nesneleri paylaşılan kodu kaydetmek mümkün kılar SQLite veritabanı altyapısı kullanılarak veritabanı odaklı uygulamaları destekler.
 
-Bu makalede odaklanan **erişme** Xamarin.Forms kullanarak bir SQLite veritabanı. SQLite.Net kendisi ile çalışma hakkında daha fazla bilgi için başvurmak [android'de SQLite.NET](~/android/data-cloud/data-access/using-sqlite-orm.md) veya [iOS SQLite.NET](~/ios/data-cloud/data/using-sqlite-orm.md) belgeleri.
+Bu makalede odaklanan **erişme** Xamarin.Forms kullanarak bir SQLite veritabanı. SQLite.Net kendisi ile çalışma hakkında daha fazla bilgi için [Android SQLite.NET](~/android/data-cloud/data-access/using-sqlite-orm.md) veya [ios'ta SQLite.NET](~/ios/data-cloud/data/using-sqlite-orm.md) belgeleri.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Yapılacaklar örnek](https://developer.xamarin.com/samples/xamarin-forms/Todo/)
+- [Yapılacaklar örneği](https://developer.xamarin.com/samples/xamarin-forms/Todo/)
 - [Xamarin.Forms Örnekleri](https://developer.xamarin.com/samples/xamarin-forms/all/)
-- [Veritabanı çalışma kitabı](https://developer.xamarin.com/workbooks/xamarin-forms/application-fundamentals/database/database.workbook)
+

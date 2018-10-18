@@ -4,23 +4,19 @@ description: Bu belge bağlantıları çeşitli kılavuzlara Apple Pay, bildirim
 ms.prod: xamarin
 ms.assetid: 13F23E01-BAED-43EB-A70E-3B30EF53D379
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.date: 06/25/2018
-ms.openlocfilehash: e915ec38ed29b6ef2a0710c9dad10cf339c3a3ab
-ms.sourcegitcommit: cfb72be633e335147d156af3ef9527151b9e31d9
+author: lobrien
+ms.author: laobri
+ms.date: 10/05/2018
+ms.openlocfilehash: 09200ba5968838edf829b30a50a8ad0f4a3ab3aa
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/13/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "39030684"
 ---
 # <a name="watchos-platform-features"></a>watchOS platform özellikleri
 
-## <a name="introduction-to-watchos-5introduction-to-watchos5indexmd"></a>[WatchOS 5 giriş](introduction-to-watchos5/index.md)
-
-> [!WARNING]
-> Xamarin'in watchOS 5 desteği, hatalar, içerdiği anlamına gelen değil özelliği tamamlamak, şu anda Önizleme aşamasında olan ve değişebilir.
-> Yalnızca deneme kullanın.
+## <a name="introduction-to-watchos-5introduction-to-watchos5indexmd"></a>[watchOS 5’e Giriş](introduction-to-watchos5/index.md)
 
 Bu belge, Xamarin ile watchOS uygulamaları oluştururken kullanılabilecek watchOS 5'deki yeni ve güncelleştirilmiş özellikler üst düzey bir genel bakış sağlar.
 

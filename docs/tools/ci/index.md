@@ -1,38 +1,40 @@
 ---
-title: Xamarin ile sürekli tümleştirme giriş
-description: Xamarin ile sürekli tümleştirme açıklamak kılavuzları bu belge bağlantılar. Bağlantılı içerik sürekli tümleştirme genel bir bakış sağlar ve merkezi uygulaması oluşturma, TeamCity ve Jenkins anlatılmaktadır.
+title: Xamarin ile Sürekli Tümleştirmeye Giriş
+description: Xamarin ile sürekli tümleştirmeyi açıklayan kılavuzları bu belge bağlar. Bağlantılı içeriği, sürekli tümleştirme için genel bir bakış sağlar ve App Center derleme, TeamCity ve Jenkins açıklanır.
 ms.prod: xamarin
 ms.assetid: 99484E96-DC69-4697-8BBB-1B44C5CBB5ED
-author: topgenorth
-ms.author: toopge
-ms.date: 05/04/2017
-ms.openlocfilehash: 1a38160b4f1536c0e0e393cb9ec3482624a40681
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+author: lobrien
+ms.author: laobri
+ms.date: 10/03/2018
+ms.openlocfilehash: 06392448682a5b3be02562578542919b42242c13
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "34793750"
 ---
-# <a name="introduction-to-continuous-integration-with-xamarin"></a>Xamarin ile sürekli tümleştirme giriş
+# <a name="introduction-to-continuous-integration-with-xamarin"></a>Xamarin ile Sürekli Tümleştirmeye Giriş
 
 > [!Video https://youtube.com/embed/wXgnh2Q7Uv8]
 
-##  <a name="introduction-to-continuous-integrationtoolsciintro-to-cimd"></a>[Sürekli Tümleştirme giriş](~/tools/ci/intro-to-ci.md)
+## <a name="introduction-to-continuous-integrationtoolsciintro-to-cimd"></a>[Sürekli Tümleştirmeye Giriş](~/tools/ci/intro-to-ci.md)
 
-Bu bölüm, sürekli tümleştirme ve bunların ilişkileri ile ilgili farklı bileşenleri kapsar. Aşağıdaki bölümler içinde ele alınmıştır sürekli tümleştirme ortamları özetlenmektedir.
+Bu bölüm, sürekli tümleştirme ve aralarındaki ilişkiler ile ilgili farklı bileşenleri kapsar. Bunu, aşağıdaki belirli bölümlerinde açıklanan sürekli tümleştirme ortamları açıklar.
 
-[!include[](~/tools/ci/includes/firewall-information.md)]
+## <a name="working-with-continuous-integration-environments"></a>Sürekli Tümleştirme ortamlarla çalışma
 
-## <a name="working-with-continuous-integration-environments"></a>Sürekli Tümleştirme ortamları ile çalışma
+### <a name="build-xamarin-apps-with-azure-pipelineshttpsdocsmicrosoftcomazuredevopspipelineslanguagesxamarin"></a>[Azure işlem hatları ile Xamarin uygulamaları oluşturun](https://docs.microsoft.com/azure/devops/pipelines/languages/xamarin/)
 
-### <a name="using-app-center-build-with-xamarinappcenterbuildxamarin"></a>[Xamarin ile Uygulama Merkezi Derlemesini Kullanma](/appcenter/build/xamarin/)
+Android ve iOS için Xamarin uygulamaları otomatik olarak oluşturmak için Azure işlem hatlarını kullanın.
 
-Uygulama Merkezi ile Xamarin.iOS ve Xamarin.Android çözümlerini doğrudan GitHub, VSTS veya Bitbucket oluşturun.
+### <a name="build-xamarin-apps-using-app-centerhttpsdocsmicrosoftcomappcenterbuildxamarin"></a>[App Center'ı kullanarak Xamarin uygulamaları oluşturun](https://docs.microsoft.com/appcenter/build/xamarin/)
 
-### <a name="using-teamcity-with-xamarintoolsciteamcitymd"></a>[Xamarin ile TeamCity Kullanma](~/tools/ci/teamcity.md)
+Xamarin.iOS ve Xamarin.Android çözümleri App Center ile doğrudan GitHub, Azure DevOps veya Bitbucket oluşturun.
 
-Bu kılavuz, mobil uygulamaları derlemek ve bunları App merkezi testine göndermek için TeamCity kullanma ile ilgili adımlar açıklanmaktadır.
+### <a name="build-xamarin-apps-with-teamcitytoolsciteamcitymd"></a>[TeamCity ile Xamarin uygulamaları oluşturun](~/tools/ci/teamcity.md)
 
-### <a name="using-jenkins-with-xamarintoolscijenkins-walkthroughmd"></a>[Xamarin ile Jenkins Kullanma](~/tools/ci/jenkins-walkthrough.md)
+Bu kılavuz, mobil uygulamalar derleyin ve ardından bunları App Center Test için göndermek için TeamCity kullanma ile ilgili adımlar açıklanmaktadır.
 
-Bu kılavuz, Jenkins sürekli tümleştirme sunucusu olarak ayarlayın ve Xamarin ile oluşturulan mobil uygulamaları derleme otomatikleştirmek göstermektedir. Jenkins OS x'te yüklemek, yapılandırmak ve sürüm denetimi sistemine değişiklikler uygulandıktan zaman Xamarin.iOS ve Xamarin.Android uygulamaları derlemek için işler ayarlamak nasıl açıklar.
+### <a name="build-xamarin-apps-with-jenkinstoolscijenkins-walkthroughmd"></a>[Jenkins ile Xamarin uygulamaları oluşturun](~/tools/ci/jenkins-walkthrough.md)
+
+Bu kılavuz, Jenkins sürekli tümleştirme sunucusu olarak ayarlayın ve Xamarin ile oluşturulan mobil uygulama derleme otomatikleştirmek gösterilmektedir. Bu, OS X üzerinde Jenkins yükleyin, yapılandırın ve sürüm denetimi sistemi için değişiklik yapıldığında, Xamarin.iOS ve Xamarin.Android uygulamaları derlemek için işler ayarlamak nasıl açıklar.

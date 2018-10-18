@@ -4,29 +4,21 @@ description: Bu belge, yüksek düzeyde genel bakış tvOS 12 hangi Xamarin'in �
 ms.prod: xamarin
 ms.assetid: 037F7FFF-2155-4017-B99A-839CE7EC5C9C
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.date: 06/25/2018
-ms.openlocfilehash: 5cbec23aa81a4637a18f83d9955a78183dadaa21
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+author: lobrien
+ms.author: laobri
+ms.date: 10/05/2018
+ms.openlocfilehash: f7fb8cc379a070b848c5154c9c1d4fbfc8186266
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "39615210"
 ---
 # <a name="introduction-to-tvos-12"></a>TvOS 12 giriş
 
-![Önizleme](~/media/shared/preview.png)
+Bu belge, yeni ve güncelleştirilmiş tvOS 12 üst düzey bir genel bakış sağlar.
 
-> [!WARNING]
-> Xamarin'in tvOS 12 desteği, hatalar, içerdiği anlamına gelen değil özelliği tamamlamak, şu anda Önizleme aşamasında olan ve değişebilir. Yalnızca deneme kullanın.
-
-Bu belge, hangi Xamarin'in preview için sürüm şu anda C# bağlamaları sağlar. 12 özellikleri yeni ve güncelleştirilmiş tvOS üst düzey bir genel bakış sağlar.
-
-Xamarin ile tvOS 12 uygulamalar oluşturmaya başlamak için göz atın:
-
-- [Başlangıç Kılavuzu](~/ios/platform/introduction-to-ios12/get-started.md)
-- Xamarin Önizleme [sürüm blog gönderisi](https://releases.xamarin.com/preview-release-xcode-10-beta-5/)
+Xamarin ile tvOS 12 uygulamalar oluşturmaya başlamak için göz atın [Başlangıç Kılavuzu](~/ios/platform/introduction-to-ios12/get-started.md).
 
 ## <a name="tvuikit"></a>TVUIKit
 
@@ -48,10 +40,13 @@ Vision çerçevesi, yüzleri çeşitli yönleriyle algılayabilir bir geliştiri
 
 Doğal dil çerçevesi, çeşitli dil analizi gerçekleştirmek uygulamaları etkinleştirir. Örneğin, konuşma bölümü tanımlamak ve bir metin bloğu tarafından temsil edilen dil belirlemek için kullanılabilir.
 
+## <a name="deprecations"></a>Bırakılanların
+
+TvOS 12 Apple OpenGL ES kullanımdan kaldırmıştır [geliştiriciler teşvik](https://developer.apple.com/tvos/whats-new/) Metal benimsemek için.
+
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [tvOS Örnekleri](https://developer.xamarin.com/samples/tvos/all/)
 - [tvOS – Apple Developer (Apple)](https://developer.apple.com/tvos/)
 - [TvOS 12 (Apple) (video) yenilikler](https://developer.apple.com/videos/play/wwdc2018/208/)
 - [TV (Apple)](https://www.apple.com/tv/)
-- Xamarin Önizleme [sürüm blog gönderisi](https://releases.xamarin.com/preview-release-xcode-10-beta-5/)
