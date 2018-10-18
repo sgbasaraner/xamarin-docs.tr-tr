@@ -4,14 +4,14 @@ description: Bu makalede, matris dönüşümleri touch sürükleyerek, hareketin
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: A0B8DD2D-7392-4EC5-BFB0-6209407AD650
-author: charlespetzold
-ms.author: chape
-ms.date: 04/03/2018
-ms.openlocfilehash: e2c1529980681ed1013c53343c2d077297352b95
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+author: davidbritch
+ms.author: dabritch
+ms.date: 09/14/2018
+ms.openlocfilehash: 6f7236a3650c04098edbef92f3d6ed620be501c3
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "39615398"
 ---
 # <a name="touch-manipulations"></a>Dokunma işlemeleri
@@ -22,12 +22,385 @@ Bu mobil cihazlardaki gibi çok noktalı dokunma ortamlarında kullanıcılar ke
 
 ![](touch-images/touchmanipulationsexample.png "Çeviri, ölçeklendirme ve döndürme için tabi bir bit eşlem")
 
-## <a name="manipulating-one-bitmap"></a>Bir bit eşlem düzenleme
+Burada gösterilen tüm örnekleri makalesinde sunulan Xamarin.Forms touch izleme etkisi kullanın [ **etkileri olayları çağırma**](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md).
 
-**Düzenleme dokunma** sayfası üzerinde tek bir bit eşlem dokunma işlemeleri gösterir.
-Bu örnek kullanır makalesinde sunulan touch izleme etkisinin [etkileri olayları çağırma](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md).
+## <a name="dragging-and-translation"></a>Sürükleme ve çeviri
 
-Birkaç diğer dosya için destek sağlayan **düzenleme dokunma** sayfası. İlk [ `TouchManipulationMode` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationMode.cs) touch işleme gördüğünüz kodu tarafından gerçekleştirilen farklı türde belirten sabit listesi:
+Matris dönüşümleri en önemli uygulamaları dokunma işleme biridir. Tek bir [ `SKMatrix` ](xref:SkiaSharp.SKMatrix) değer bir dizi touch işlem birleştirmek. 
+
+Tek-parmak sürükleme, `SKMatrix` değeri çevirisi gerçekleştirir. Bu gösterilmiştir **bit eşlem sürükleyerek** sayfası. XAML dosyası örnekleyen bir `SKCanvasView` bir Xamarin.Forms içinde `Grid`. A `TouchEffect` nesne eklendi `Effects` , koleksiyonu `Grid`:
+
+```xaml
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             xmlns:tt="clr-namespace:TouchTracking"
+             x:Class="SkiaSharpFormsDemos.Transforms.BitmapDraggingPage"
+             Title="Bitmap Dragging">
+    
+    <Grid BackgroundColor="White">
+        <skia:SKCanvasView x:Name="canvasView"
+                           PaintSurface="OnCanvasViewPaintSurface" />
+        <Grid.Effects>
+            <tt:TouchEffect Capture="True"
+                            TouchAction="OnTouchEffectAction" />
+        </Grid.Effects>
+    </Grid>
+</ContentPage>
+```
+
+Teoride, `TouchEffect` nesne doğrudan eklenebiliyordu `Effects` koleksiyonunu `SKCanvasView`, ancak bu tüm platformlarda çalışmaz. Çünkü `SKCanvasView` olarak aynı boyutta olan `Grid` bu yapılandırmada eklemeyi `Grid` da çalışır.
+
+Arka plan kod dosyası, yapıcısına bir bit eşlem kaynağındaki yükler ve görüntüler `PaintSurface` işleyicisi:
+
+```csharp
+public partial class BitmapDraggingPage : ContentPage
+{
+    // Bitmap and matrix for display
+    SKBitmap bitmap;
+    SKMatrix matrix = SKMatrix.MakeIdentity();
+    ···
+
+    public BitmapDraggingPage()
+    {
+        InitializeComponent();
+
+        string resourceID = "SkiaSharpFormsDemos.Media.SeatedMonkey.jpg";
+        Assembly assembly = GetType().GetTypeInfo().Assembly;
+
+        using (Stream stream = assembly.GetManifestResourceStream(resourceID))
+        {
+            bitmap = SKBitmap.Decode(stream);
+        }
+    }
+    ···
+    void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
+    {
+        SKImageInfo info = args.Info;
+        SKSurface surface = args.Surface;
+        SKCanvas canvas = surface.Canvas;
+
+        canvas.Clear();
+
+        // Display the bitmap
+        canvas.SetMatrix(matrix);
+        canvas.DrawBitmap(bitmap, new SKPoint());
+    }
+}
+```
+
+Herhangi başka bir kod olmadan `SKMatrix` değeri her zaman kimlik matrisi ve bir bit eşlem görüntüsü üzerinde hiçbir etkisi yoktur. Amacı `OnTouchEffectAction` XAML dosyasında ayarlanan işleyicisidir dokunma işlemeleri yansıtacak şekilde matris değeri değiştirmek için.
+
+`OnTouchEffectAction` İşleyici başlar Xamarin.Forms dönüştürerek `Point` bir SkiaSharp değerde `SKPoint` değeri. Bu temel ölçeklendirmenin basit bir konudur `Width` ve `Height` özelliklerini `SKCanvasView` (olan CİHAZDAN bağımsız birimler) ve `CanvasSize` piksel birimlerinde özelliğinin:
+
+```csharp
+public partial class BitmapDraggingPage : ContentPage
+{
+    ···
+    // Touch information
+    long touchId = -1;
+    SKPoint previousPoint;
+    ···
+    void OnTouchEffectAction(object sender, TouchActionEventArgs args)
+    {
+        // Convert Xamarin.Forms point to pixels
+        Point pt = args.Location;
+        SKPoint point = 
+            new SKPoint((float)(canvasView.CanvasSize.Width * pt.X / canvasView.Width),
+                        (float)(canvasView.CanvasSize.Height * pt.Y / canvasView.Height));
+
+        switch (args.Type)
+        {
+            case TouchActionType.Pressed:
+                // Find transformed bitmap rectangle
+                SKRect rect = new SKRect(0, 0, bitmap.Width, bitmap.Height);
+                rect = matrix.MapRect(rect);
+
+                // Determine if the touch was within that rectangle
+                if (rect.Contains(point))
+                {
+                    touchId = args.Id;
+                    previousPoint = point;
+                }
+                break;
+
+            case TouchActionType.Moved:
+                if (touchId == args.Id)
+                {
+                    // Adjust the matrix for the new position
+                    matrix.TransX += point.X - previousPoint.X;
+                    matrix.TransY += point.Y - previousPoint.Y;
+                    previousPoint = point;
+                    canvasView.InvalidateSurface();
+                }
+                break;
+
+            case TouchActionType.Released:
+            case TouchActionType.Cancelled:
+                touchId = -1;
+                break;
+        }
+    }
+    ···
+}
+```
+
+Ne zaman bir parmak ilk dokunduğu ekranında, ' % s'olay türü `TouchActionType.Pressed` tetiklenir. İlk görev parmak bit eşlem temas varsa belirlemektir. Bu tür bir görev genellikle adlandırılır _isabet sınaması_. Bu durumda, isabet sınaması oluşturarak gerçekleştirilebilir bir `SKRect` bunu matris dönüşümü uygulanarak, bit eşlem karşılık gelen değer `MapRect`ve ardından touch noktası dönüştürülmüş dikdörtgen içinde olup olmadığını belirleme.
+
+Bu durum söz konusuysa sonra `touchId` alan için touch ID ayarlanır ve bu parmak konuma kaydedilir.
+
+İçin `TouchActionType.Moved` olay, çeviri faktörünü `SKMatrix` değeri ayarlanmış tabanlı parmak geçerli konumunu ve parmak yeni konumu. Üzerinden, sonraki açışınızda için yeni bir konuma kaydedilir ve `SKCanvasView` geçersiz kılınır.
+
+Bu programla denerken parmağınızı bit eşlem görüntüleyen bir alan dokunduğunda bit eşlem yalnızca sürükleyebilirsiniz not alın. Bu kısıtlama, bu program için çok önemli olmamasına karşın, birden çok bit eşlemler işlenirken önemli olur.
+
+## <a name="pinching-and-scaling"></a>Hareketinden ve ölçeklendirme
+
+Ne iki parmağınızı bit eşlem dokunduğunuzda olmasını istiyorsunuz? Ardından paralel olarak iki parmağınızı taşırsanız, muhtemelen parmağınızı birlikte taşımak için bit eşlem istersiniz. İki parmağınızı bir tabletinizde gerçekleştirmek veya esnetme işlemi, bit eşlem (sonraki bölümde açıklanmıştır) döndürülen ya da ölçeği isteyebilirsiniz. Bir bit eşlem olduğunda, çoğu ve buna uygun olarak ölçeklendirilmesi bit eşlem bit eşlem göre aynı konumlarda kalmasına iki parmağınızı için mantıklıdır.
+
+Aynı anda iki parmağınızı işleme karmaşık görünüyor, ancak göz önünde bulundurun, `TouchAction` işleyici yalnızca aynı anda tek bir parmak hakkında bilgi alır. Bit eşlem iki parmağın hareket ettiği, her olay için tek bir parmak konumu değişti ancak diğer değiştirilmedi. İçinde **bit eşlem** sayfa kodu aşağıdaki konum değiştirilmedi parmak çağrılır _pivot_ dönüştürme o noktadan göreli olduğundan noktası.
+
+Bu programın önceki program arasındaki tek fark, kimlikleri kaydedilmelidir birden çok dokunma ' dir. Bir sözlük burada touch ID sözlük anahtarı, bu parmak geçerli konumunu sözlük değeri ise bu amaçla kullanılır:
+
+```csharp
+public partial class BitmapScalingPage : ContentPage
+{
+    ···
+    // Touch information
+    Dictionary<long, SKPoint> touchDictionary = new Dictionary<long, SKPoint>();
+    ···
+    void OnTouchEffectAction(object sender, TouchActionEventArgs args)
+    {
+        // Convert Xamarin.Forms point to pixels
+        Point pt = args.Location;
+        SKPoint point =
+            new SKPoint((float)(canvasView.CanvasSize.Width * pt.X / canvasView.Width),
+                        (float)(canvasView.CanvasSize.Height * pt.Y / canvasView.Height));
+
+        switch (args.Type)
+        {
+            case TouchActionType.Pressed:
+                // Find transformed bitmap rectangle
+                SKRect rect = new SKRect(0, 0, bitmap.Width, bitmap.Height);
+                rect = matrix.MapRect(rect);
+
+                // Determine if the touch was within that rectangle
+                if (rect.Contains(point) && !touchDictionary.ContainsKey(args.Id))
+                {
+                    touchDictionary.Add(args.Id, point);
+                }
+                break;
+
+            case TouchActionType.Moved:
+                if (touchDictionary.ContainsKey(args.Id))
+                {
+                    // Single-finger drag
+                    if (touchDictionary.Count == 1)
+                    {
+                        SKPoint prevPoint = touchDictionary[args.Id];
+
+                        // Adjust the matrix for the new position
+                        matrix.TransX += point.X - prevPoint.X;
+                        matrix.TransY += point.Y - prevPoint.Y;
+                        canvasView.InvalidateSurface();
+                    }
+                    // Double-finger scale and drag
+                    else if (touchDictionary.Count >= 2)
+                    {
+                        // Copy two dictionary keys into array
+                        long[] keys = new long[touchDictionary.Count];
+                        touchDictionary.Keys.CopyTo(keys, 0);
+
+                        // Find index of non-moving (pivot) finger
+                        int pivotIndex = (keys[0] == args.Id) ? 1 : 0;
+
+                        // Get the three points involved in the transform
+                        SKPoint pivotPoint = touchDictionary[keys[pivotIndex]];
+                        SKPoint prevPoint = touchDictionary[args.Id];
+                        SKPoint newPoint = point;
+
+                        // Calculate two vectors
+                        SKPoint oldVector = prevPoint - pivotPoint;
+                        SKPoint newVector = newPoint - pivotPoint;
+
+                        // Scaling factors are ratios of those
+                        float scaleX = newVector.X / oldVector.X;
+                        float scaleY = newVector.Y / oldVector.Y;
+
+                        if (!float.IsNaN(scaleX) && !float.IsInfinity(scaleX) &&
+                            !float.IsNaN(scaleY) && !float.IsInfinity(scaleY))
+                        {
+                            // If smething bad hasn't happened, calculate a scale and translation matrix
+                            SKMatrix scaleMatrix = 
+                                SKMatrix.MakeScale(scaleX, scaleY, pivotPoint.X, pivotPoint.Y);
+
+                            SKMatrix.PostConcat(ref matrix, scaleMatrix);
+                            canvasView.InvalidateSurface();
+                        }
+                    }
+
+                    // Store the new point in the dictionary
+                    touchDictionary[args.Id] = point;
+                }
+
+                break;
+
+            case TouchActionType.Released:
+            case TouchActionType.Cancelled:
+                if (touchDictionary.ContainsKey(args.Id))
+                {
+                    touchDictionary.Remove(args.Id);
+                }
+                break;
+        }
+    }
+    ···
+}
+```
+
+İşleme `Pressed` sözlüğe eklenen aynı önceki hariç program kimliği ve noktası dokunma eylemi neredeyse değildir. `Released` Ve `Cancelled` eylemleri sözlük girişi kaldırın.
+
+İşleme için `Moved` eylem daha karmaşık ancak. Dahil olan yalnızca bir parmak ise ardından işleme çok önceki program aynıdır. İki veya daha fazla parmağınızı program de bilgi değil taşıma parmak içeren sözlükten edinmeniz gerekir. Sözlük anahtarları bir dizi içine kopyalayarak ve taşınan parmak kimliği ile ilk anahtar ardından karşılaştırarak bunu yapar. Bu değil taşıma parmağınızı karşılık gelen pivot noktası almak program sağlar.
+
+Ardından, yeni parmak konumu pivot noktasına göreli ve eski parmak konumu pivot noktasına göreli iki vektör gelecektir. Bu vektörler, oranlarla Etkenler ölçeklendirme. Sıfıra bölme olasılığı olduğu için bu değerleri sonsuz veya NaN (sayı değil) değerleri için işaretlenmelidir. Tüm ise iyi ölçeklendirme dönüşüm ile birleştirilir `SKMatrix` değeri bir alan olarak kaydedilir.
+
+Bu sayfayla denerken bir veya iki yola sahip bir bit eşlem sürükleyin veya iki parmağınızla ölçeği fark edeceksiniz. Ölçeklendirme _anizotropik_, ölçeklendirme yatay ve dikey yönde farklı olabileceğini anlamına gelir. Bu en boy oranını deforme eder, ancak Ayrıca, bit eşlemin bir Ayna görüntüsünü yapmak için ters çevirmek sağlar. Bit eşlemin bir sıfır boyuta Küçült ve kaybolur de fark edebilirsiniz. Üretim kodunda bu karşı koruma sağlamak isteyebilirsiniz.
+
+## <a name="two-finger-rotation"></a>İki parmak döndürme
+
+**Bit eşlemi Döndür** sayfa döndürme veya isotropic ölçeklendirme için iki parmağınızı kullanmanızı sağlar. Bit eşlemin her zaman doğru en boy oranını korur. Parmağınızı hareketini için her iki görevleri çok benzer olduğundan hem döndürme hem de anizotropik ölçeklendirme için iki parmağınızı kullanarak çok iyi çalışmaz.
+
+Bu programa ilk büyük fark, isabet sınaması mantıksal ise. Önceki program kullanılan `Contains` yöntemi `SKRect` touch noktası karşılık gelen bit eşleme dönüştürülmüş dikdörtgen içinde olup olmadığını belirlemek için. Bit eşlem bit eşlem kullanıcı yönetir gibi olabilir, ancak döndürülmüş ve `SKRect` döndürülmüş bir dikdörtgen doğru şekilde temsil edemez. İsabet testi mantıksal yerine karmaşık analitik geometri durumda uygulamak gereken endişe.
+
+Bununla birlikte, bir kısayol kullanılabilir: bir noktası dönüştürülen bir dikdörtgen sınırlar içinde yer alıyorsa belirleme aynıdır ters dönüştürülmüş noktanız dönüştürülmemiş dikdörtgenin sınırlar içinde yer alıyorsa belirleme. Bir çok daha kolay bir hesaplama ve mantıksal kullanışlı kullanmaya devam edebilirsiniz `Contains` yöntemi:
+
+```csharp
+public partial class BitmapRotationPage : ContentPage
+{
+    ···
+    // Touch information
+    Dictionary<long, SKPoint> touchDictionary = new Dictionary<long, SKPoint>();
+    ···
+    void OnTouchEffectAction(object sender, TouchActionEventArgs args)
+    {
+        // Convert Xamarin.Forms point to pixels
+        Point pt = args.Location;
+        SKPoint point =
+            new SKPoint((float)(canvasView.CanvasSize.Width * pt.X / canvasView.Width),
+                        (float)(canvasView.CanvasSize.Height * pt.Y / canvasView.Height));
+
+        switch (args.Type)
+        {
+            case TouchActionType.Pressed:
+                if (!touchDictionary.ContainsKey(args.Id))
+                {
+                    // Invert the matrix
+                    if (matrix.TryInvert(out SKMatrix inverseMatrix))
+                    {
+                        // Transform the point using the inverted matrix
+                        SKPoint transformedPoint = inverseMatrix.MapPoint(point);
+
+                        // Check if it's in the untransformed bitmap rectangle
+                        SKRect rect = new SKRect(0, 0, bitmap.Width, bitmap.Height);
+
+                        if (rect.Contains(transformedPoint))
+                        {
+                            touchDictionary.Add(args.Id, point);
+                        }
+                    }
+                }
+                break;
+
+            case TouchActionType.Moved:
+                if (touchDictionary.ContainsKey(args.Id))
+                {
+                    // Single-finger drag
+                    if (touchDictionary.Count == 1)
+                    {
+                        SKPoint prevPoint = touchDictionary[args.Id];
+
+                        // Adjust the matrix for the new position
+                        matrix.TransX += point.X - prevPoint.X;
+                        matrix.TransY += point.Y - prevPoint.Y;
+                        canvasView.InvalidateSurface();
+                    }
+                    // Double-finger rotate, scale, and drag
+                    else if (touchDictionary.Count >= 2)
+                    {
+                        // Copy two dictionary keys into array
+                        long[] keys = new long[touchDictionary.Count];
+                        touchDictionary.Keys.CopyTo(keys, 0);
+
+                        // Find index non-moving (pivot) finger
+                        int pivotIndex = (keys[0] == args.Id) ? 1 : 0;
+
+                        // Get the three points in the transform
+                        SKPoint pivotPoint = touchDictionary[keys[pivotIndex]];
+                        SKPoint prevPoint = touchDictionary[args.Id];
+                        SKPoint newPoint = point;
+
+                        // Calculate two vectors
+                        SKPoint oldVector = prevPoint - pivotPoint;
+                        SKPoint newVector = newPoint - pivotPoint;
+
+                        // Find angles from pivot point to touch points
+                        float oldAngle = (float)Math.Atan2(oldVector.Y, oldVector.X);
+                        float newAngle = (float)Math.Atan2(newVector.Y, newVector.X);
+
+                        // Calculate rotation matrix
+                        float angle = newAngle - oldAngle;
+                        SKMatrix touchMatrix = SKMatrix.MakeRotation(angle, pivotPoint.X, pivotPoint.Y);
+
+                        // Effectively rotate the old vector
+                        float magnitudeRatio = Magnitude(oldVector) / Magnitude(newVector);
+                        oldVector.X = magnitudeRatio * newVector.X;
+                        oldVector.Y = magnitudeRatio * newVector.Y;
+
+                        // Isotropic scaling!
+                        float scale = Magnitude(newVector) / Magnitude(oldVector);
+
+                        if (!float.IsNaN(scale) && !float.IsInfinity(scale))
+                        {
+                            SKMatrix.PostConcat(ref touchMatrix,
+                                SKMatrix.MakeScale(scale, scale, pivotPoint.X, pivotPoint.Y));
+
+                            SKMatrix.PostConcat(ref matrix, touchMatrix);
+                            canvasView.InvalidateSurface();
+                        }
+                    }
+
+                    // Store the new point in the dictionary
+                    touchDictionary[args.Id] = point;
+                }
+
+                break;
+
+            case TouchActionType.Released:
+            case TouchActionType.Cancelled:
+                if (touchDictionary.ContainsKey(args.Id))
+                {
+                    touchDictionary.Remove(args.Id);
+                }
+                break;
+        }
+    }
+
+    float Magnitude(SKPoint point)
+    {
+        return (float)Math.Sqrt(Math.Pow(point.X, 2) + Math.Pow(point.Y, 2));
+    }
+    ···
+}
+```
+
+Mantığını `Moved` olay başlar gibi önceki program. Adlı iki vektör `oldVector` ve `newVector` önceki ve taşıma dokunmasına geçerli nokta ile unmoving parmak pivot noktasını alınarak hesaplanır. Ancak daha sonra bu vektörler açılarını belirlenir ve döndürme açısı farktır.
+
+Eski vektör tabanlı üzerinde döndürme açısı döndürüldüğüne şekilde ölçeklendirme Ayrıca, söz konusu olabilecek. İki vektörün göreli büyüklüğünü Ölçeklendirme çarpanı sunulmuştur. Dikkat aynı `scale` değeri kullanılır yatay ve dikey ölçeklendirme, ölçeklendirme, isotropic. `matrix` Döndürme matris hem ölçek matris alanın ayarlandı.
+
+Uygulamanızı touch uygulamanız gerekiyorsa, tek bir bit eşlem (veya diğer nesne) için işlem, bu üç örnekleri koddan kendi uygulamanız için uyarlayabilirsiniz. Ancak için birden çok bit eşlemlere işleme touch uygulamanız gerekiyorsa, büyük olasılıkla bu yalıtılacak istersiniz diğer sınıflar işlemlerinde touch.
+
+## <a name="encapsulating-the-touch-operations"></a>Dokunma işlemlerini kapsülleme
+
+**Düzenleme dokunma** sayfasında tek bir bit eşlemi, ancak daha yukarıda gösterilen mantığı kapsülleyen birkaç diğer dosya kullanarak touch düzenlenmesini gösterir. Bu dosyaların ilk [ `TouchManipulationMode` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationMode.cs) touch işleme gördüğünüz kodu tarafından gerçekleştirilen farklı türde belirten sabit listesi:
 
 ```csharp
 enum TouchManipulationMode
@@ -43,17 +416,19 @@ enum TouchManipulationMode
 
 `PanOnly` Çeviri ile uygulanan bir parmak Sürükle olur. Sonraki tüm seçenekleri de kaydırma içerir ancak iki parmağınızı içerir: `IsotropicScale` eşit yatay ve dikey yönde ölçeklendirme nesne sonuçlanır tabletinizde işlemdir. `AnisotropicScale` eşit bir ölçeklendirme sağlar.
 
-`ScaleRotate` Seçenektir iki parmak ölçeklendirme ve döndürme için. Ölçeklendirme isotropic. Parmak hareketleri temelde aynı olduğundan anizotropik ölçeklendirme iki parmak döndürme Uygulama sorunlu.
+`ScaleRotate` Seçenektir iki parmak ölçeklendirme ve döndürme için. Ölçeklendirme isotropic. Parmak hareketleri temelde aynı olduğu için daha önce bahsedildiği gibi iki parmak döndürme anizotropik ölçeklendirme uygulayan sorunlu.
 
 `ScaleDualRotate` Seçeneği bir parmak döndürme ekler. Böylece nesnenin merkezi sürükleyerek vektörü ile hizalanacak tek bir parmak nesneyi sürüklediğinde, sürüklenen nesnenin ilk merkezi geçici olarak döndürülmüştür.
 
 [ **TouchManipulationPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/TouchManipulationPage.xaml) dosya içeren bir `Picker` üyeleriyle `TouchManipulationMode` sabit listesi:
 
 ```xaml
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
              xmlns:tt="clr-namespace:TouchTracking"
+             xmlns:local="clr-namespace:SkiaSharpFormsDemos.Transforms"
              x:Class="SkiaSharpFormsDemos.Transforms.TouchManipulationPage"
              Title="Touch Manipulation">
     <Grid>
@@ -65,22 +440,24 @@ enum TouchManipulationMode
         <Picker Title="Touch Mode"
                 Grid.Row="0"
                 SelectedIndexChanged="OnTouchModePickerSelectedIndexChanged">
-            <Picker.Items>
-                <x:String>None</x:String>
-                <x:String>PanOnly</x:String>
-                <x:String>IsotropicScale</x:String>
-                <x:String>AnisotropicScale</x:String>
-                <x:String>ScaleRotate</x:String>
-                <x:String>ScaleDualRotate</x:String>
-            </Picker.Items>
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type local:TouchManipulationMode}">
+                    <x:Static Member="local:TouchManipulationMode.None" />
+                    <x:Static Member="local:TouchManipulationMode.PanOnly" />
+                    <x:Static Member="local:TouchManipulationMode.IsotropicScale" />
+                    <x:Static Member="local:TouchManipulationMode.AnisotropicScale" />
+                    <x:Static Member="local:TouchManipulationMode.ScaleRotate" />
+                    <x:Static Member="local:TouchManipulationMode.ScaleDualRotate" />
+                </x:Array>
+            </Picker.ItemsSource>
             <Picker.SelectedIndex>
                 4
             </Picker.SelectedIndex>
         </Picker>
-
+        
         <Grid BackgroundColor="White"
               Grid.Row="1">
-
+            
             <skia:SKCanvasView x:Name="canvasView"
                                PaintSurface="OnCanvasViewPaintSurface" />
             <Grid.Effects>
@@ -133,9 +510,7 @@ public partial class TouchManipulationPage : ContentPage
         if (bitmap != null)
         {
             Picker picker = (Picker)sender;
-            TouchManipulationMode mode;
-            Enum.TryParse(picker.Items[picker.SelectedIndex], out mode);
-            bitmap.TouchManager.Mode = mode;
+            bitmap.TouchManager.Mode = (TouchManipulationMode)picker.SelectedItem;
         }
     }
     ...
@@ -244,11 +619,7 @@ class TouchManipulationBitmap
 }
 ```
 
-`HitTest` Yöntemi döndürür `true` kullanıcı ekrandaki bit eşlemin sınırları içinde bir noktadaki dokunursa. Bit eşlem kullanıcı yönetir gibi bit eşlem Döndürülmüş veya hatta (birleşimi anizotropik ölçeklendirme ve döndürme) bir eğdiğinizde Paralel Kenar şeklinde olabilir. Endişe `HitTest` yöntemi yerine karmaşık analitik geometri bu durumda uygulama gerekiyor.
-
-Ancak, bir kısayol bulunur:
-
-Bir nokta dönüştürülen bir dikdörtgen sınırlar içinde yer alıyorsa belirleyen bir ters dönüştürülmüş noktası dönüştürülmemiş dikdörtgenin sınırlar içinde yer alıyorsa belirleme aynıdır. Bir çok daha kolay bir hesaplama ve kullanışlı kullanabilirsiniz `Contains` yöntemi tarafından tanımlanan `SKRect`:
+`HitTest` Yöntemi döndürür `true` kullanıcı ekrandaki bit eşlemin sınırları içinde bir noktadaki dokunursa. Bu, daha önce gösterilen giriş mantığı kullanır **bit eşlem döndürme** sayfası:
 
 ```csharp
 class TouchManipulationBitmap
@@ -850,7 +1221,7 @@ public partial class SingleFingerCornerScalePage : ContentPage
 
 `Moved` Eylem türü parmak basıldığında bu zamana kadar ekranın zamandan touch etkinliği karşılık gelen bir matris hesaplar. Bu, matris sunulmakta geçerli parmak ilk bit eşlem basılı zaman art arda ekler. Ölçeklendirme işlemi her zaman parmak dokunulan tek ters yönde köşe göredir.
 
-Küçük veya dikdörtgen bit eşlemler iç elips ve bit eşlem çoğunu kaplayan köşelere bit eşlem ölçeklendirmek için çok küçük alanları bırakın. Biraz farklı bir yaklaşım tercih edebilirsiniz, bu durumda, tüm değiştirebilirsiniz `if` ayarlar blok `isScaling` için `true` Bu kod ile:
+Küçük veya dikdörtgen bit eşlemler iç elips ve bit eşlem çoğunu kaplayan küçük alanları bit eşlem ölçeklendirme köşelere bırakın. Biraz farklı bir yaklaşım tercih edebilirsiniz, bu durumda, tüm değiştirebilirsiniz `if` ayarlar blok `isScaling` için `true` Bu kod ile:
 
 ```csharp
 float halfHeight = rect.Height / 2;
@@ -898,6 +1269,6 @@ Bu kod, bir iç Karo şekli bit eşleme alanı ve köşelere dört üçgenler et
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [SkiaSharp API'leri](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp API'leri](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (örnek)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 - [Etkileri olayları çağırma](~/xamarin-forms/app-fundamentals/effects/touch-tracking.md)

@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 10/27/2017
-ms.openlocfilehash: 124fc311d5e2c8c89353ba813df60f0bf1d0b34a
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 61a7d2261ac35621482e9810a0fdb69a6061ae6a
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "38997077"
 ---
 # <a name="simple-animations-in-xamarinforms"></a>Xamarin.Forms içinde basit animasyonlar
@@ -89,6 +89,9 @@ Bu kod canlandırır [ `Image` ](xref:Xamarin.Forms.Image) 2 saniye (2000 milisa
 Aşağıdaki ekran görüntüleri, devam eden her platformda ölçeklendirme göster:
 
 ![](simple-images/scaleto.png "Animasyon ölçeklendirme")
+
+> [!NOTE]
+> [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) Sınıfı da tanımlar [ `ScaleX` ](xref:Xamarin.Forms.VisualElement.ScaleX) ve [ `ScaleY` ](xref:Xamarin.Forms.VisualElement.ScaleY) ölçeklendirebilirsiniz özellikleri `VisualElement` içinde farklı Yatay ve dikey yönde. Bu özellikler ile animasyonu oluşturulabilen [ `Animation` ](xref:Xamarin.Forms.Animation) sınıfı. Daha fazla bilgi için [Xamarin.Forms içinde özel animasyon](custom.md).
 
 ### <a name="relative-scaling"></a>Göreli ölçeklendirme
 

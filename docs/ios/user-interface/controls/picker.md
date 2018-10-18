@@ -1,67 +1,66 @@
 ---
-title: Xamarin.iOS Seçici denetiminde
-description: Bu belge, tasarım ve bir Xamarin.iOS uygulaması seçici denetimlerinde çalışmak açıklar. Nasıl kodu ve Designer iOS bir seçici uygulanacağını anlatır.
+title: Xamarin.iOS seçici denetimi
+description: Bu belge, tasarım ve Seçici denetimleri bir Xamarin.iOS uygulaması ile çalışmak açıklar. Bu, kod ve iOS Designer bir seçici uygulamak nasıl ele alınmaktadır.
 ms.prod: xamarin
 ms.assetid: A2369EFC-285A-44DD-9E80-EC65BC3DF041
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.date: 08/02/2017
-ms.openlocfilehash: 7f46d354af86027d1e2656171c6595562d3555a6
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+author: lobrien
+ms.author: laobri
+ms.date: 08/14/2018
+ms.openlocfilehash: 0ef33c2036b1ff2d5a7e2035ca5fa8af58672867
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "34789918"
 ---
-# <a name="picker-control-in-xamarinios"></a>Xamarin.iOS Seçici denetiminde
+# <a name="picker-control-in-xamarinios"></a>Xamarin.iOS seçici denetimi
 
-Seçici denetim kaydırılabilir vurgulanmış seçili değerine sahip bir değer listesi içeren 'tekerleği benzeri' denetimi görüntüler. Kullanıcıların istedikleri seçeneğini tekerleği döndürün.
+A [ `UIPickerView` ](https://developer.xamarin.com/api/type/UIKit.UIPickerView/) farenizin tekerleğini benzeri arabirimi bileşenlerini ayrı ayrı bir listeden bir değer seçmesi mümkün kılar.
 
-Belirli bir kullanıcı servis talebi için seçiciler, tarih ve / veya saat ayarlayın. Bu Apple için sağlamak için özel bir alt UIDatePicker adlı UIPickerView sınıfının oluşturdu.
+Seçiciler, tarih ve saati seçmek için sık kullanılır; Apple sağlar [`UIDatePicker`](https://developer.xamarin.com/api/type/UIKit.UIDatePicker/)
+Bu amaç için sınıf.
 
-Uygulama ve kullanarak makaleyi kapsar [Seçici](#picker) ve [tarih seçici](#datepicker) kontrol eder.
+Bir makalede uygulamak ve kullanmak nasıl `UIPickerView` ve `UIDatePicker` kontrol eder.
 
-<a name="picker" />
-
-## <a name="picker"></a>Seçici
+## <a name="uipickerview"></a>UIPickerView
 
 ### <a name="implementing-a-picker"></a>Bir seçici uygulama
 
-Bir seçici yeni bir örneği tarafından uygulanan [`UIPickerView`](https://developer.xamarin.com/api/type/UIKit.UIPickerView/):
+Yeni bir örnekleme tarafından bir seçici uygulamak `UIPickerView`:
 
 ```csharp
 UIPickerView pickerView = new UIPickerView(
-                            new CGRect(
-                                UIScreen.MainScreen.Bounds.X-UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height -230, 
-                                UIScreen.MainScreen.Bounds.Width, 
-                                180));
+    new CGRect(
+        UIScreen.MainScreen.Bounds.X - UIScreen.MainScreen.Bounds.Width, 
+        UIScreen.MainScreen.Bounds.Height - 230,
+        UIScreen.MainScreen.Bounds.Width,
+        180
+    )
+);
 ```
 
+### <a name="pickers-and-storyboards"></a>Seçicileri ve görsel Taslaklar
 
-### <a name="pickers-and-storyboards"></a>Seçiciler ve film şeritleri
+Seçici'de oluşturmak için **iOS Tasarımcısı**, sürükleyin bir **Seçici görünümü** gelen **araç kutusu** tasarım yüzeyine bırakın.
 
-UI oluşturmak için iOS Tasarımcısı kullanıyorsanız, seçici Araç Kutusu'ndan düzeninizde eklenebilir:
+![Seçici görünüm tasarım yüzeyine sürükleyin](picker-images/image1.png "Seçici görünüm tasarım yüzeyine sürükleyin.")
 
-![](picker-images/image1.png)
+### <a name="working-with-a-picker-control"></a>Seçici denetimi ile çalışma
 
-
-### <a name="working-with-picker"></a>Seçici ile çalışma
-
-Bir kez bir seçici kod olup olmadığını oluşturmuş veya film şeritleri atamanız gerekir bir _modeli_ ona geçirmek ve verilerle; etkileşimli
+Bir seçici kullanan bir _modeli_ verilerle etkileşimde bulunmak için:
 
 ```csharp
 public override void ViewDidLoad()
 {
     base.ViewDidLoad();
-
     var pickerModel = new PeopleModel(personLabel);
-
     personPicker.Model = pickerModel;
 }
 ```
 
-Aşağıdaki kod bir model örneği gösterilmektedir:
+[ `UIPickerViewModel` ](https://developer.xamarin.com/api/type/UIKit.UIPickerViewModel/) Temel sınıfı, iki arabirim uygular [`IUIPickerDataSource`](https://developer.xamarin.com/api/type/UIKit.IUIPickerViewDataSource/)
+ve [ `IUIPickerViewDelegate` ](https://developer.xamarin.com/api/type/UIKit.IUIPickerViewDelegate/), belirttiğiniz bir seçicinin veri çeşitli yöntemler bildirmek ve etkileşim nasıl işler?:
 
 ```csharp
 public class PeopleModel : UIPickerViewModel
@@ -105,7 +104,7 @@ public class PeopleModel : UIPickerViewModel
     }
 
     public override void Selected(UIPickerView pickerView, nint row, nint component)
-    {   
+    {
         personLabel.Text = $"This person is: {names[pickerView.SelectedRowInComponent(0)]},\n they are number {pickerView.SelectedRowInComponent(1)}";
     }
 
@@ -123,148 +122,130 @@ public class PeopleModel : UIPickerViewModel
     }
 ```
 
-İlk seçmek bir kullanıcı için farklı seçenekleri sağlamak için bazı veriler geçmesi gerekir. Olası çalıştığınızda bu listeyi olabildiğince kısa tutmak ya da gerekli birden fazla 'Çevir' kullanmayı denerseniz (adlı *bileşenleri*):
+Bir seçici birden çok sütuna sahip olabilir veya _bileşenleri_. Bileşenleri, bir Seçici için daha kolay ve daha ayrıntılı veri seçimine izin veren birden çok bölüme, bölüm:
 
-![İki bileşenlerle Seçici](picker-images/image3.png)
+![İki bileşenlerle Seçici](picker-images/image3.png "iki bileşenlerle Seçici")
 
-Bileşenlerin sayısını ayarlamak için geçersiz kılın `GetComponentCount` yöntemi: 
+Seçici'de bileşenlerin sayısını belirtmek için kullanın [`GetComponentCount`](https://developer.xamarin.com/api/member/UIKit.UIPickerViewModel.GetComponentCount/p/UIKit.UIPickerView/) 
+yöntem.
 
-```csharp
-public override nint GetComponentCount(UIPickerView pickerView)
-{
-    return 2;
-}
-```
+### <a name="customizing-a-pickers-appearance"></a>Bir seçicinin görünümünü özelleştirme
 
-Dönüş değeri, seçici olacaktır çevirir sayısını belirtir.
+Bir seçici görünümünü özelleştirmek için [`UIPickerView.UIPickerViewAppearance`](https://developer.xamarin.com/api/type/UIKit.UIPickerView+UIPickerViewAppearance/)
+sınıf veya geçersiz kılma [ `GetView` ](https://developer.xamarin.com/api/member/UIKit.UIPickerViewModel.GetView/p/UIKit.UIPickerView/System.nint/System.nint/UIKit.UIView/) ve [ `GetRowHeight` ](https://developer.xamarin.com/api/member/UIKit.UIPickerViewModel.GetRowHeight/p/UIKit.UIPickerView/System.nint/) yöntemleri `UIPickerViewModel`.
 
-### <a name="customizing-appearance"></a>Görünümünü özelleştirme
- 
-Görünümünü `UIPickerView` kullanarak özelleştirilebilir `UIPickerView.UIPickerViewAppearance` sınıf veya göre geçersiz kılma `UIPickerViewModel.GetView` ve `UIPickerViewModel.GetRowHeight` yöntemleri `UIPickerViewModel`.
+## <a name="uidatepicker"></a>UIDatePicker
 
+### <a name="implementing-a-date-picker"></a>Bir tarih seçici uygulama
 
-<a name="datepicker" />
-
-## <a name="date-picker"></a>Tarih Seçici
-
-### <a name="implementing-a-date-picker"></a>Tarih Seçici uygulama
-
-Tarih Seçici yeni bir örneği tarafından uygulanan [ `UIDatePickerView` ](https://developer.xamarin.com/api/type/UIKit.UIDatePicker/):
+Bir tarih seçici örneği tarafından uygulayan bir `UIDatePicker`:
 
 ```csharp
 UIPickerView pickerView = new UIPickerView(
-                            new CGRect(
-                                UIScreen.MainScreen.Bounds.X-UIScreen.MainScreen.Bounds.Width, UIScreen.MainScreen.Bounds.Height -230, 
-                                UIScreen.MainScreen.Bounds.Width, 
-                                180));
+    new CGRect(
+        UIScreen.MainScreen.Bounds.X - UIScreen.MainScreen.Bounds.Width,
+        UIScreen.MainScreen.Bounds.Height - 230,
+        UIScreen.MainScreen.Bounds.Width,
+        180
+     )
+);
 ```
 
+### <a name="date-pickers-and-storyboards"></a>Tarih seçiciler ve görsel Taslaklar
 
-### <a name="date-pickers-and-storyboards"></a>Tarih seçiciler ve film şeritleri
+İçinde bir tarih seçici oluşturma **iOS Tasarımcısı**, sürükleyin bir **tarih seçici** gelen **araç kutusu** tasarım yüzeyine bırakın.
 
-Kullanıcı Arabirimi oluşturmak için iOS Tasarımcısı kullanıyorsanız **tarih seçici** düzeninizde Araç Kutusu'ndan eklenebilir. Aşağıdaki özellikler özellikler panelinden ayarlanabilir:
+![Bir tarih seçici tasarım yüzeyine sürükleyin](picker-images/image2.png "tarih seçici tasarım yüzeyine sürükleyin.")
 
-![](picker-images/image2.png)
+### <a name="date-picker-properties"></a>Tarih Seçici özellikleri
 
-* **Mod** – tarih ve saat modu. Bu tarih, saat, tarih ve saat veya geri sayım Zamanlayıcısı olabilir. 
-* **Yerel ayar** – tarih seçici yerel. Seçin **varsayılan** sistem varsayılan olarak ayarlamak veya belirli tüm yerel ayarlar için ayarlanamıyor.
-* **Aralığı** – saat seçenekleri görüntüleneceği artışı gösterir.
-* **Tarih, Minimum tarih, en fazla tarih** – seçilebilir tarihlerini Seçici görüntüler başlangıç tarihi ile kısıtlamaları ayarlar.
+#### <a name="minimum-and-maximum-date"></a>Minimum ve maksimum tarih
 
-### <a name="configuring-the-datepicker"></a>DatePicker yapılandırma
-
-Bir kullanıcı kullanarak seçebilirsiniz tarih aralığını sınırlayabilirsiniz `MinimumDate` ve `MaximumDate` özellikleri. Aşağıdaki kod parçacığını 60 yıl önce ve bugün aralığında ayarlama örneği gösterilir:
+[`MinimumDate`](https://developer.xamarin.com/api/property/UIKit.UIDatePicker.MinimumDate/) ve [ `MaximumDate` ](https://developer.xamarin.com/api/property/UIKit.UIDatePicker.MaximumDate/) tarih seçiciden kullanılabilir tarih aralığını sınırla. Örneğin, aşağıdaki kod, bir tarih seçici altmış mevcut ana sonlanan yıla kısıtlar:
 
 ```csharp
 var calendar = new NSCalendar(NSCalendarType.Gregorian);
 var currentDate = NSDate.Now;
 var components = new NSDateComponents();
-
 components.Year = -60;
-
 NSDate minDate = calendar.DateByAddingComponents(components, NSDate.Now, NSCalendarOptions.None);
-
 datePickerView.MinimumDate = minDate;
 datePickerView.MaximumDate = NSDate.Now;
 ```
 
-Alternatif olarak, minimum ve maksimum tarih aralığını ayarlamak için .NET denetimleri kullanabilirsiniz. Örneğin:
+> [!TIP]
+> Açık tür dönüştürme mümkündür bir `DateTime` için bir `NSDate`:
+> ```csharp
+> DatePicker.MinimumDate = (NSDate)DateTime.Today.AddDays (-7);
+> DatePicker.MaximumDate = (NSDate)DateTime.Today.AddDays (7);
+> ```
 
-```csharp
-DatePicker.MinimumDate = (NSDate)DateTime.Today.AddDays (-7);
-DatePicker.MaximumDate = (NSDate)DateTime.Today.AddDays (7);
-```
+#### <a name="minute-interval"></a>Dakika aralığı
 
-Ayrıca ayarlayabilirsiniz `MinuteInterval` aktarılma Seçici görüntüler dakika aralığını ayarlamak için özellik. Aşağıdaki kod parçacığını 10 aralıklarla ayarlanacak dakika Seçici ayarlamak için kullanılabilir.
+[ `MinuteInterval` ](https://developer.xamarin.com/api/property/UIKit.UIDatePicker.MinuteInterval/) Özelliğini ayarlar, seçici görüntüler dakika aralık:
 
 ```csharp
 datePickerView.MinuteInterval = 10;
 ```
 
-Tarih Seçici kullanarak ayarlanabilir dört modu bulunmaktadır. [ `UIDatePicker.Mode` ](https://developer.xamarin.com/api/property/UIKit.UIDatePicker.Mode/) özelliği. Aşağıdaki liste, her biri ve uygulamak nasıl örneği gösterilmektedir:
+#### <a name="mode"></a>Mod
 
-#### <a name="time"></a>Zaman
+Dört destek tarih seçiciler [modları](https://developer.xamarin.com/api/type/UIKit.UIDatePickerMode/)aşağıda açıklandığı gibi:
 
-Zaman modu saati bir saat ve dakika Seçici ve isteğe bağlı bir AM veya PM ataması görüntüler. İle ayarlamak `UIDatePickerMode.Time` özelliği. Örneğin:
+##### <a name="uidatepickermodetime"></a>UIDatePickerMode.Time
+
+`UIDatePickerMode.Time` bir saat ve dakika Seçici ve isteğe bağlı bir AM veya PM gösterimi zaman görüntüler:
 
 ```csharp
 datePickerView.Mode = UIDatePickerMode.Time;
 ```
 
-Aşağıdaki resimde bu DatePicker modu örneği gösterilmektedir:
+![UIDatePickerMode.Time](picker-images/image8.png "UIDatePickerMode.Time")
 
-![](picker-images/image8.png)
+##### <a name="uidatepickermodedate"></a>UIDatePickerMode.Date
 
-
-
-#### <a name="date"></a>Tarih
-
-Tarih modunu ay, gün ve yıl Seçici tarihi görüntüler. İle ayarlamak `UIDatePickerMode.Date` özelliği. Örneğin:
+`UIDatePickerMode.Date` bir ay, gün ve yıl Seçici ile tarihi görüntüler:
 
 ```csharp
 datePickerView.Mode = UIDatePickerMode.Date;
 ```
 
-Aşağıdaki resimde bu DatePicker örneği gösterilmektedir:
+![UIDatePickerMode.Date](picker-images/image7.png "UIDatePickerMode.Date")
 
-![](picker-images/image7.png)
-
-Yerel üzerinde Seçici sırası bağlıdır `UIDatePicker`. Varsayılan olarak bu sistem varsayılan olarak ayarlanır. Yukarıdaki resimde seçiciler düzenini gösterir `en_US` günü olarak değiştirmek üzere ancak yerel | Ay | Yıl düzeni, yerel ayar için aşağıdaki kodu kullanabilirsiniz:
+Sistem yerel ayarı kullanır ve varsayılan tarih seçicinin yerel ayarlarda, seçici sırası bağlıdır. Yukarıdaki resimde Seçici düzeni gösterilir `en_US` yerel ayar, ancak aşağıdaki değişiklikleri sırasını gün | Ay | Yıl:
 
 ```csharp
 datePickerView.Locale = NSLocale.FromLocaleIdentifier("en_GB");
 ```
 
-![](picker-images/image9.png)
+![Gün | Ay | Yıl](picker-images/image9.png "gün | Ay | Yıl")
 
+##### <a name="uidatepickermodedateandtime"></a>UIDatePickerMode.DateAndTime
 
-#### <a name="date-and-time"></a>Tarih ve Saat
-
-12 veya 24 saat kullanılırsa, tarih ve saat modu tarih, saat, dakika ve isteğe bağlı bir AM veya PM ataması dependings saat shortend görünümünü görüntüler. İle ayarlamak `UIDatePickerMode.DateAndTime` özelliği. Örneğin:
+`UIDatePickerMode.DateAndTime` Tarih, saat, dakika ve (bağlı olarak 12 veya 24 saat kullanılıp kullanılmadığını) isteğe bağlı bir AM veya PM gösterimi saat kısaltılmış bir görünümünü görüntüler:
 
 ```csharp
 datePickerView.Mode = UIDatePickerMode.DateAndTime;
 ```
 
-Aşağıdaki resimde bu DatePicker örneği gösterilmektedir:
+![UIDatePickerMode.DateAndTime](picker-images/image6.png "UIDatePickerMode.DateAndTime")
 
-![](picker-images/image6.png)
+Olduğu gibi [ `UIDatePickerMode.Date` ](#uidatepickermodedate), seçici sıralamasını ve 12 veya 24 saat kullanımını tarih seçici yerel ayarına göre değişir.
 
-İle [tarih](#Date), yerel üzerinde Seçici sırasını ve 12 veya 24 saat kullanımını bağlıdır `UIDatePicker`.
+> [!TIP]
+> Kullanım `Date` değerini bir tarih seçici modunda yakalama özelliğini `UIDatePickerMode.Time`, `UIDatePickerMode.Date`, veya `UIDatePickerMode.DateAndTime`. Bu değer olarak depolanan bir `NSDate`.
 
-#### <a name="countdown-timer"></a>Sayım
+##### <a name="uidatepickermodecountdowntimer"></a>UIDatePickerMode.CountDownTimer
 
-Geri sayım Zamanlayıcısı modu, saat ve dakika değerleri görüntüler. İle ayarlamak `UIDatePickerMode.CountDownTimer` özelliği. Örneğin:
+`UIDatePickerMode.CountDownTimer` saat ve dakika değerleri görüntüler:
 
 ```csharp
 datePickerView.Mode = UIDatePickerMode.CountDownTimer;
 ```
 
-Aşağıdaki resimde bu DatePicker örneği gösterilmektedir:
+!["UIDatePickerMode.CountDownTimer"](picker-images/image5.png "UIDatePickerMode.CountDownTimer")
 
-![](picker-images/image5.png)
-
-Kullanabileceğiniz `CountDownDuration` değeri dispayed geri sayım tarih seçici olarak yakalamak için özellik. Örneğin, geçerli tarihe kadar geri sayım değeri eklemek için aşağıdaki kodu kullanabilirsiniz:
+`CountDownDuration` Özelliği bir tarih seçiciden değerini yakalayan `UIDatePickerMode.CountDownTimer` modu. Örneğin, geçerli tarihe geri sayım değeri eklemek için şunu yazın:
 
 ```csharp
 var currentTime = NSDate.Now;
@@ -274,44 +255,64 @@ var finishCountdown = currentTime.AddSeconds(countDownTimerTime);
 dateLabel.Text = "Alarm set for:" + coundownTimeformat.ToString(finishCountdown);
 ```
 
-#### <a name="formatting"></a>Biçimlendirme 
+#### <a name="nsdateformatter"></a>NSDateFormatter
 
-Saat, tarih ve DateAndTime modları değerleri kullanılarak yakalanabilir `Date` UIDatePicker özelliği (örneğin: `datePickerView.Date`), NSDate türündeki. Bu tarih okunabilir bir şey daha fazla insan biçimlendirmek için [ `NSDateFormatter` ](https://developer.xamarin.com/api/type/Foundation.NSDateFormatter/). Aşağıdaki örnekler kullanılabilir özelliklerin bazıları bu sınıfa kullanmayı gösterir.
+Biçimlendirilecek bir `NSDate`, kullanan bir [ `NSDateFormatter` ](https://developer.xamarin.com/api/type/Foundation.NSDateFormatter/).
 
-`DateFormat` Tarihi nasıl görüntüleneceğini temsil etmek için bir dize olarak ayarlayın:
+Kullanılacak bir `NSDateFormatter`, arama, [ `ToString` ](https://developer.xamarin.com/api/member/Foundation.NSDateFormatter.ToString/p/Foundation.NSDate/) yöntemi. Örneğin:
+
+```csharp
+var date = NSDate.Now;
+var formatter = new NSDateFormatter();
+formatter.DateStyle = NSDateFormatterStyle.Full;
+formatter.TimeStyle = NSDateFormatterStyle.Full;
+var formattedDate = formatter.ToString(d);
+// Tuesday, August 14, 2018 at 11:20:42 PM Mountain Daylight Time
+```
+
+##### <a name="dateformat"></a>DateFormat
+
+[ `DateFormat` ](https://developer.xamarin.com/api/property/Foundation.NSDateFormatter.DateFormat/) Özelliği (dize) bir `NSDateFormatter` özelleştirilebilir tarih biçim belirtimlerinden için:
 
 ```csharp
 NSDateFormatter dateFormat = new NSDateFormatter();
 dateFormat.DateFormat = "yyyy-MM-dd";
 ```
 
-`TimeStyle` Özellik kümeleri bir `NSDateFormatterStyle`:
+##### <a name="timestyle"></a>TimeStyle
+
+[ `TimeStyle` ](https://developer.xamarin.com/api/property/Foundation.NSDateFormatter.TimeStyle/) Özelliği (bir [ `NSDateFormatterStyle` ](https://developer.xamarin.com/api/type/Foundation.NSDateFormatterStyle/)), bir `NSDateFormatter` saat biçimlendirme bağlı olarak belirlenmiş stillerini belirtir:
 
 ```csharp
 NSDateFormatter timeFormat = new NSDateFormatter();
 timeFormat.TimeStyle = NSDateFormatterStyle.Short;
 ```
 
-Alanlar için `NSDateFormatterStyle` aşağıdaki gibi görüntüleyin:
+Çeşitli `NSDateFormatterStyle` değerlerini kez şu şekilde göster:
 
-![](picker-images/timestyle.png)
+- `NSDateFormatterStyle.Full`: 19:46:00: 00 Doğu Yaz Saati
+- `NSDateFormatterStyle.Long`: 7:47:00 PM EDT
+- `NSDateFormatterStyle.Medium`: 7:47:00 PM
+- `NSDateFormatterSytle.Short`: 7:47 PM
 
-`DateStyle` Özellik kümeleri bir `NSDateFormatterStyle`:
+##### <a name="datestyle"></a>DateStyle
+
+[ `DateStyle` ](https://developer.xamarin.com/api/property/Foundation.NSDateFormatter.DateStyle/) Özelliği (bir `NSDateFormatterStyle`), bir `NSDateFormatter` tarih biçimlendirme bağlı olarak belirlenmiş stillerini belirtir:
 
 ```csharp
 NSDateFormatter dateTimeformat = new NSDateFormatter();
 dateTimeformat.DateStyle = NSDateFormatterStyle.Long;
 ```
 
-Alanlar için `NSDateFormatterStyle` aşağıdaki gibi görüntüleyin:
+Çeşitli `NSDateFormatterStyle` değerlerini tarihleri şu şekilde göster:
 
-![](picker-images/datestyle.png)
+- `NSDateFormatterStyle.Full`: Çarşamba, 2 Ağustos 2017 19:48:00
+- `NSDateFormatterStyle.Long`: 2 Ağustos 2017, 7:49 PM
+- `NSDateFormatterStyle.Medium`: 2 Ağu 2017'den itibaren 7:49 PM
+- `NSDateFormatterStyle.Short`: 2/8/17, 7:50 PM
 
-Ardından, aşağıdaki kodu kullanarak bir dizeye biçimlendirilmiş NSDate çıkarabilirsiniz:
-
-```csharp
-dateLabel.Text = dateTimeformat.ToString(datePickerView.Date);
-```
+> [!NOTE]
+> `DateFormat` ve `DateStyle` / `TimeStyle` tarih ve saat biçimlendirme belirtmenin farklı yollar sağlar. En son tarih biçimlendirici çıktı kümesi özellikleri belirler.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
