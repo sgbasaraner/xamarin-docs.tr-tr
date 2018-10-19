@@ -1,132 +1,139 @@
 ---
-title: Android denetimleri (Pencere)
-description: Xamarin.Android kullanıcı arabirimleri oluşturmak için yapı taşları
+title: Android (Widgets) denetler.
+description: Xamarin.Android kullanıcı arabirimleri oluşturmaya yönelik yapı taşları
 ms.prod: xamarin
 ms.assetid: B7A82166-B920-4672-B7A2-20DD5E0B5AEF
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: 28418c3b3fedcd24963008eb3b59ffa782d791f1
-ms.sourcegitcommit: 4b0582a0f06598f3ff8ad5b817946459fed3c42a
+author: conceptdev
+ms.author: crdun
+ms.date: 08/29/2018
+ms.openlocfilehash: 842fb1df2c9cc1aaf1a106687179a3730c2503bd
+ms.sourcegitcommit: 7e4070bc104d612b6754ea35dd5a49c5c3d45f4a
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/03/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "32436719"
 ---
-# <a name="android-controls-widgets"></a>Android denetimleri (Pencere)
+# <a name="android-controls-widgets"></a>Android (Widgets) denetler.
 
-Xamarin.Android tüm Android tarafından sağlanan yerel kullanıcı arabirimi denetimlerini (Pencere) kullanıma sunar. Bu denetimler, kolayca Xamarin.Android uygulamaları Android Tasarımcısı'nı kullanarak veya programlı şekilde XML düzeni dosyaları aracılığıyla eklenebilir. Seçtiğiniz yöntem bağımsız olarak, tüm kullanıcı arabirimi nesne özellikleri ve yöntemleri C# Xamarin.Android gösterir. Aşağıdaki bölümlerde, en yaygın Android kullanıcı arabirimi denetimlerini tanıtır ve Xamarin.Android uygulamalarda eklemenizi açıklanmaktadır.
+Xamarin.Android tüm Android tarafından sağlanan yerel kullanıcı arabirimi denetimleri (widgets) kullanıma sunar. Android Designer kullanarak Xamarin.Android uygulamaları için veya programlama arabiriminde XML düzeni dosyaları aracılığıyla bu denetimleri kolayca eklenebilir. Seçtiğiniz yöntem ne olursa olsun, Xamarin.Android tüm kullanıcı arabirimi nesne özelliklerini ve yöntemlerini C# dilinde kullanıma sunar. Aşağıdaki bölümlerde, en sık karşılaşılan Android kullanıcı arabirimi denetimleri tanıtır ve Xamarin.Android uygulamalarına eklemek açıklanmaktadır.
 
 ## <a name="action-barandroiduser-interfacecontrolsaction-barmd"></a>[Eylem çubuğu](~/android/user-interface/controls/action-bar.md) 
 
-`ActionBar` Etkinlik Başlığı, gezinti arabirimleri ve diğer etkileşimli öğeleri görüntüleyen bir araç çubuğu bulunur. Genellikle, Eylem çubuğu bir etkinliğin penceresinin en üstünde görünür.
+`ActionBar` Etkinlik Başlığı, gezinti arabirimleri ve etkileşimli diğer öğeleri görüntüleyen bir araç çubuğudur. Genellikle, Eylem çubuğu etkinlik penceresinin en üstünde görünür.
 
-![Örnek ActionBar](images/action-bar.png)
+![Örnek eylem](images/action-bar.png)
 
 
 ## <a name="auto-completeandroiduser-interfacecontrolsauto-completemd"></a>[Otomatik Tamamla](~/android/user-interface/controls/auto-complete.md)
 
-`AutoCompleteTextView` Kullanıcı yazarak sırada gösteren tamamlama önerileri otomatik olarak bir düzenlenebilir metin görünümü öğedir. Öneriler listesi bir açılan menüden kullanıcı düzenleme kutusu içeriğini değiştirmek için bir öğe seçebileceği görüntülenir.
+`AutoCompleteTextView` kullanıcının karşın, otomatik olarak tamamlama önerileri gösterir bir düzenlenebilir metin görünümü öğesidir. Bir açılan menüden kullanıcı düzenleme kutusu içeriğini değiştirmek için bir öğe seçebilir öneriler listesi görüntülenir.
 
 ![Otomatik Tamamlama örneği](images/auto-complete.png)
 
 
 ## <a name="buttonsandroiduser-interfacecontrolsbuttonsindexmd"></a>[Düğmeler](~/android/user-interface/controls/buttons/index.md)
 
-Düğmeleri bir eylemi gerçekleştirmek için kullanıcı dokunur kullanıcı Arabirimi öğeleri değildir.
+Bir eylemi gerçekleştirmek için kullanıcı dokunduğunda kullanıcı Arabirimi öğeleri düğmelerdir.
 
-![Örnek düğmeleri](images/buttons.png)
+![Örneğin düğmeler](images/buttons.png)
 
 
 ## <a name="calendarandroiduser-interfacecontrolscalendarmd"></a>[Takvim](~/android/user-interface/controls/calendar.md)
 
-`Calendar` Sınıfı, belirli bir kopya dönüştürmek için kullanılır (dönem uzaklığı bir milisaniyelik değer) yıl, ay, saat, ayın günü ve sonraki hafta sonu gibi değerler süresini.
-`Calendar` bol miktarda olayları, katılımcılar ve anımsatıcıları okuma ve yazma yeteneği dahil olmak üzere Takvim verilerle etkileşimi seçeneklerini destekler. Uygulamanızda Takvim sağlayıcısı kullanarak API aracılığıyla eklemek veri Android gelen yerleşik Takvim uygulamasını görünür.
+`Calendar` Sınıfı, belirli bir örneğinde dönüştürmek için kullanılır (dönem uzaklığı bir milisaniyeden kısa değer) yıl, ay, saat, ayın günü ve sonraki hafta sonu gibi değerler için zaman.
+`Calendar` çok sayıda olayları, katılımcı ve anımsatıcılar okuma ve yazma olanağı dahil olmak üzere Takvim verilerle etkileşimi seçenekleri destekler. Uygulamanızda Takvim sağlayıcısı kullanarak, API aracılığıyla eklediğiniz veri Android ile birlikte gelen yerleşik Takvim uygulamasını görünür.
 
 ![Örnek Takvim](images/calendar.png)
 
 
 ## <a name="cardviewandroiduser-interfacecontrolscard-viewmd"></a>[CardView](~/android/user-interface/controls/card-view.md)
 
-`CardView` metin ve resim içerik kartları benzer görünümlerde sunan bir UI bileşenidir. `CardView` olarak uygulanan bir `FrameLayout` Yuvarlatılmış köşeleri ve gölge ile pencere öğesi. Genellikle, bir `CardView` tek satır öğesinde sunmak için kullanılan bir `ListView` veya `GridView` Görünüm Grup.
+`CardView` kartları benzer görünümlerde metin ve resim içerik sunan bir UI bileşenidir. `CardView` olarak uygulanan bir `FrameLayout` yuvarlatılmış köşeler ve gölge pencere öğesi. Genellikle, bir `CardView` tek satır öğesinde sunmak için kullanılan bir `ListView` veya `GridView` görünümü grubu.
 
-![Örnek kart görünümü](images/cardview.png)
+![Örnek kartı görüntüle](images/cardview.png)
 
 
-## <a name="edit-textandroiduser-interfacecontrolsedit-textmd"></a>[Metin düzenleme](~/android/user-interface/controls/edit-text.md)
+## <a name="edit-textandroiduser-interfacecontrolsedit-textmd"></a>[Metni Düzenle](~/android/user-interface/controls/edit-text.md)
 
-`EditText` girme ve metin değiştirmek için kullanılan bir UI öğedir.
+`EditText` girme ve metin değiştirmek için kullanılan bir kullanıcı Arabirimi öğesidir.
 
 ![Örnek metnini düzenle](images/edit-text.png)
 
 
 ## <a name="galleryandroiduser-interfacecontrolsgallerymd"></a>[Galeri](~/android/user-interface/controls/gallery.md)
 
-`Gallery` Yatay kaydırma listedeki öğeleri görüntülemek için kullanılan bir düzen pencere öğesi olan; Bu görünüm merkezinde geçerli seçim yerleştirir.
+`Gallery` Yatay kaydırma listedeki öğeleri görüntülemek için kullanılan bir düzen pencere sınıflandırabilirsiniz. Bu görünümün merkezinde geçerli seçimi yerleştirir.
 
 ![Örnek Galerisi](images/gallery.png)
 
 
 ## <a name="navigation-barandroiduser-interfacecontrolsnavigation-barmd"></a>[Gezinti Çubuğu](~/android/user-interface/controls/navigation-bar.md)
 
-*Gezinti çubuğu* Gezinti denetimleri için donanım düğmeleri içermez cihazlarda sağlar **giriş**, **geri**, ve **menü**.
+*Gezinti çubuğu* Gezinti denetimlerinin cihazlarda donanım düğmelerini içermez sağlar **giriş**, **geri**, ve **menü**.
 
 ![Örnek gezinti çubuğu](images/navigation-bar.png)
 
 
 ## <a name="pickersandroiduser-interfacecontrolspickersindexmd"></a>[Seçiciler](~/android/user-interface/controls/pickers/index.md)
 
-*Seçiciler* Android tarafından sağlanan iletişim kutuları kullanarak bir tarih veya saat çekme kullanıcıya izin UI öğeleridir.
+*Seçiciler* Android tarafından sağlanan iletişim kutularını kullanarak bir tarih veya saat kullanıcının sağlayan kullanıcı Arabirimi öğeleri.
 
 ![Örnek Seçici](images/picker.png)
 
 
 ## <a name="popup-menuandroiduser-interfacecontrolspopup-menumd"></a>[Açılır Menü](~/android/user-interface/controls/popup-menu.md)
 
-`PopupMenu` belirli bir görünüme bağlı açılır menüler görüntülemek için kullanılır.
+`PopupMenu` belirli bir görünüme iliştirilmiş açılır menüler görüntülemek için kullanılır.
 
-![Örnek açılır menüsü](images/popup-menu.png)
+![Örnek açılır menü](images/popup-menu.png)
+
+
+## <a name="ratingbarandroiduser-interfacecontrolsratingbarmd"></a>[RatingBar](~/android/user-interface/controls/ratingbar.md)
+
+A `RatingBar` yıldız derecelendirmesi görüntüleyen bir kullanıcı Arabirimi öğesidir.
+
+![Bir RatingBar örneği](ratingbar-images/01-ratingbar.png)
 
 
 ## <a name="spinnerandroiduser-interfacecontrolsspinnermd"></a>[Değer Değiştirici](~/android/user-interface/controls/spinner.md)
 
-`Spinner` kümesinden tek bir değer seçmek için bir hızlı yol sağlayan bir UI öğedir. Aşağı açılan listesine simmilar olur. 
+`Spinner` Bir kümeden bir değer seçmek için hızlı bir yolunu sağlayan bir kullanıcı Arabirimi öğesidir. Bu, aşağı açılan listesine simmilar olur. 
 
 ![Örnek değer değiştirici](images/spinner.png)
 
 
 ## <a name="switchandroiduser-interfacecontrolsswitchmd"></a>[Anahtar](~/android/user-interface/controls/switch.md)
 
-`Switch` iki durumlu arasında böyle bir birimi geçiş veya kapalı bir kullanıcının bir kullanıcı Arabirimi öğedir. `Switch` Varsayılan değerdir kapalı.
+`Switch` iki durum arasında böyle bir şekilde geçiş veya kapalı açmasına izin veren bir kullanıcı Arabirimi öğesidir. `Switch` Varsayılan değer: kapalı.
 
-![Örnek anahtar](images/switch.png)
+![Örnek anahtarı](images/switch.png)
 
 
 ## <a name="textureviewandroiduser-interfacecontrolstexture-viewmd"></a>[TextureView](~/android/user-interface/controls/texture-view.md)
 
-`TextureView` bir video veya içerik akışı görüntülenecek OpenGL etkinleştirmek için donanım hızlandırılmış 2B işleme kullanan bir görünümüdür.
+`TextureView` bir video veya görüntülenecek OpenGL içerik akışı sağlamak için donanım tarafından hızlandırılan 2B işleme kullanan bir görünümüdür.
 
 ![Örnek doku görünümü](images/texture-view.png)
 
 
 ## <a name="toolbarandroiduser-interfacecontrolstool-barindexmd"></a>[Araç Çubuğu](~/android/user-interface/controls/tool-bar/index.md)
 
-`Toolbar` (Android 5.0 Lolipop içinde sunulan) pencere öğesi zorlayıcı bir eylem çubuğu arabirimi Genelleştirme &ndash; Eylem çubuğu değiştirmek için tasarlanmıştır. `Toolbar` Bir uygulama düzende herhangi bir kullanılabilir ve bir eylem çubuğu çok daha özelleştirilebilir.
+`Toolbar` (Android 5.0 Lollipop'ta sunulan) pencere öğesi düşünülebilir Eylem çubuğu arabirimi genelleştirilmiş &ndash; Eylem çubuğu değiştirmek için tasarlanmıştır. `Toolbar` Bir uygulama düzende her yerde kullanılabilir ve bir eylem çubuğu daha çok daha fazla özelleştirilebilir.
 
 ![Örnek araç çubuğu](images/toolbar.png)
 
 
 ## <a name="viewpagerandroiduser-interfacecontrolsview-pagerindexmd"></a>[ViewPager](~/android/user-interface/controls/view-pager/index.md) 
 
-`ViewPager` Sol ve sağ veri sayfaları aracılığıyla ters çevirmek kullanıcının sağlayan bir düzen yöneticisidir.
+`ViewPager` Sol ve sağda veri sayfaları aracılığıyla ters çevirmek kullanıcıya izin veren bir düzen yöneticisidir.
 
 ![Örnek ViewPager](images/viewpager.png)
 
 
 ## <a name="webviewandroiduser-interfacecontrolsweb-viewmd"></a>[WebView](~/android/user-interface/controls/web-view.md)
 
-`WebView` web sayfalarını görüntüleme için kendi pencere oluşturun (veya hatta tam bir tarayıcı geliştirmek) izin veren bir UI öğedir.
+`WebView` web sayfaları görüntülemek için kendi penceresi oluştur (veya tam bir tarayıcı bile geliştirmek) izin veren bir kullanıcı Arabirimi öğesidir.
 
 ![Örnek Web görünümü](images/web-view.png)
 
