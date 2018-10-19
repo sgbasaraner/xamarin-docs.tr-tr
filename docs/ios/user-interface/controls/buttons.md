@@ -4,14 +4,14 @@ description: UIButton sınıfı, çeşitli farklı türlerde iOS ekranları dü�
 ms.prod: xamarin
 ms.assetid: 304229E5-8FA8-41BD-8563-D19E1D2A0296
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 07/11/2018
-ms.openlocfilehash: 32f6330ad2fddc2e8386d6e574918a011f3bebad
-ms.sourcegitcommit: be4da0cd7e1a915e3b8932a7e3d6bcd74c7055be
+ms.openlocfilehash: 35fc743944c04dd1fdb8e035ba94ad6aeb6156ea
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "38986010"
 ---
 # <a name="buttons-in-xamarinios"></a>Xamarin.iOS düğmeleri
@@ -38,7 +38,7 @@ A `UIButton` yalnızca birkaç satır kod ile oluşturulabilir.
   - `UIButtonType.DetailDisclosure` -Genellikle, bir tablodaki belirli bir öğeyi hakkında ayrıntılı bilgi kullanılabilirliğini gösterir
   - `UIButtonType.InfoDark` -Yapılandırma bilgilerini kullanılabilirliğini gösterir. koyu renkli
   - `UIButtonType.InfoLight` -Yapılandırma bilgilerini kullanılabilirliğini gösterir. açık renkli
-  - `UIButtonType.AddContact` -Kişi eklenebilir gösterir
+  - `UIButtonType..AddContact` -Kişi eklenebilir gösterir
   - `UIButtonType.Custom` -Özelleştirilebilir düğmesi
 
   Düğme türleri hakkında daha fazla bilgi için göz atın:
@@ -90,7 +90,8 @@ Uygun bir olay için yeni bir olay işleyicisi adı yazın veya listeden birini 
 `UIButton` denetimleri farklı durumları sayısında varolabilir, tarafından belirtilen her bir `UIControlState` değeri – `Normal`, `Disabled`, `Focused`, `Highlighted`vb. Her durum programlama yoluyla veya iOS Designer ile belirtilen benzersiz bir stili verilebilir.
 
 > [!NOTE]
-> Tüm tam bir listesi için `UIControlState` değerleri göz atın [ `UIKit.UIControlState enumeration` ](https://developer.xamarin.com/api/type/UIKit.UIControlState/) belgeleri.
+> Tüm tam bir listesi için `UIControlState` değerleri göz atın [`UIKit.UIControlState enumeration`](https://developer.xamarin.com/api/type/UIKit.UIControlState/)
+> Belgeleri.
 
 Örneğin, başlık rengi ve gölge rengini ayarlamak için `UIControlState.Normal`:
 
@@ -127,6 +128,3 @@ Olup kullanıcı düğmeyi veya oncollisionstay bağlı olarak, bunu aşağıdak
 
 Özel düğmeler ile çalışma hakkında daha fazla bilgi için [bir görüntüyü kullanmak için bir düğme](https://github.com/xamarin/recipes/tree/master/Recipes/ios/standard_controls/buttons/use_an_image_for_a_button) tarif.
 
-## <a name="related-links"></a>İlgili bağlantılar
-
-- [UIButton çalışma kitabı](https://developer.xamarin.com/workbooks/ios/user-interface/UIbutton/uibutton.workbook)

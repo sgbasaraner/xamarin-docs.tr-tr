@@ -4,14 +4,14 @@ description: Bu makalede, farklı etkileri olası SkiaSharp yol dolgusu türleri
 ms.prod: xamarin
 ms.assetid: 57103A7A-49A2-46AE-894C-7C2664682644
 ms.technology: xamarin-skiasharp
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 17043054c920a69570f38b227d05980494e29139
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: d16f6f6023c1db0223d5d5863e19116147f948d1
+ms.sourcegitcommit: 79313604ed68829435cfdbb530db36794d50858f
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/18/2018
 ms.locfileid: "39615476"
 ---
 # <a name="the-path-fill-types"></a>Yol dolgusu türleri
@@ -22,24 +22,25 @@ Bir yolda iki dağılımlarını binebilir ve tek bir dağılımı satırların�
 
 ![](fill-types-images/filltypeexample.png "Beş işaret kısmen filles yıldız")
 
-Bu üzerinde biraz denetim var. Doldurma algoritması tabidir [ `SKFillType` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPath.FillType/) özelliği `SKPath`, üyesi için ayarlanan [ `SKPathFillType` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathFillType/) sabit listesi:
+Bu üzerinde biraz denetim var. Doldurma algoritması tabidir [ `SKFillType` ](xref:SkiaSharp.SKPath.FillType) özelliği `SKPath`, üyesi için ayarlanan [ `SKPathFillType` ](xref:SkiaSharp.SKPathFillType) sabit listesi:
 
-- [`Winding`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathFillType.Winding/), varsayılan
-- [`EvenOdd`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathFillType.EvenOdd/)
-- [`InverseWinding`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathFillType.InverseWinding/)
-- [`InverseEvenOdd`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathFillType.InverseEvenOdd/)
+- `Winding`, varsayılan
+- `EvenOdd`
+- `InverseWinding`
+- `InverseEvenOdd`
 
 Herhangi bir kapalı alan dolu veya bu alandan sonsuza kuramsal çizgi temel alınarak doldurulmamış varsa sargı ve çift-tek algoritmaları belirleyin. Bu satırı yolu bir veya daha fazla sınır satırlarını çizer. Tek yönlü Bakiye çizgileri ve diğer yöndeki ve ardından alanı sayısı kullanıma sınır çizgileri sayısı değilse sargı moduyla doldurulur. Aksi takdirde alan doldurulur. Sınır satır sayısı çift ise, çift-tek algoritması bir alan doldurur.
 
 Birçok rutin yollarıyla sargı algoritması genellikle kapalı bir yol alanlarının tüm doldurur. Çift-tek algoritması, genellikle daha ilginç sonuçlar üretir.
 
-Klasik örnek gösterildiği şekilde beş işaret eden bir yıldız olan **Five-Pointed yıldız** sayfası. [FivePointedStarPage.xaml](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FivePointedStarPage.xaml) dosya iki başlatır `Picker` görünümleri yolu seçmek için Dolgu türü ve yol konturlanan veya doldurulmuş veya her ikisi de ve hangi sırayla:
+Klasik örnek gösterildiği şekilde beş işaret eden bir yıldız olan **Five-Pointed yıldız** sayfası. [ **FivePointedStarPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/FivePointedStarPage.xaml) dosya iki başlatır `Picker` görünümleri yolu seçmek için Dolgu türü ve yol konturlanan veya doldurulmuş veya her ikisi de ve hangi sırayla:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:skia="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
-             x:Class="SkiaSharpFormsDemos.FivePointedStarPage"
+             xmlns:skia="clr-namespace:SkiaSharp;assembly=SkiaSharp"
+             xmlns:skiaforms="clr-namespace:SkiaSharp.Views.Forms;assembly=SkiaSharp.Views.Forms"
+             x:Class="SkiaSharpFormsDemos.Paths.FivePointedStarPage"
              Title="Five-Pointed Star">
     <Grid>
         <Grid.RowDefinitions>
@@ -58,12 +59,14 @@ Klasik örnek gösterildiği şekilde beş işaret eden bir yıldız olan **Five
                 Grid.Column="0"
                 Margin="10"
                 SelectedIndexChanged="OnPickerSelectedIndexChanged">
-            <Picker.Items>
-                <x:String>Winding</x:String>
-                <x:String>EvenOdd</x:String>
-                <x:String>InverseWinding</x:String>
-                <x:String>InverseEvenOdd</x:String>
-            </Picker.Items>
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type skia:SKPathFillType}">
+                    <x:Static Member="skia:SKPathFillType.Winding" />
+                    <x:Static Member="skia:SKPathFillType.EvenOdd" />
+                    <x:Static Member="skia:SKPathFillType.InverseWinding" />
+                    <x:Static Member="skia:SKPathFillType.InverseEvenOdd" />
+                </x:Array>
+            </Picker.ItemsSource>
             <Picker.SelectedIndex>
                 0
             </Picker.SelectedIndex>
@@ -75,22 +78,24 @@ Klasik örnek gösterildiği şekilde beş işaret eden bir yıldız olan **Five
                 Grid.Column="1"
                 Margin="10"
                 SelectedIndexChanged="OnPickerSelectedIndexChanged">
-            <Picker.Items>
-                <x:String>Fill only</x:String>
-                <x:String>Stroke only</x:String>
-                <x:String>Stroke then Fill</x:String>
-                <x:String>Fill then Stroke</x:String>
-            </Picker.Items>
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Fill only</x:String>
+                    <x:String>Stroke only</x:String>
+                    <x:String>Stroke then Fill</x:String>
+                    <x:String>Fill then Stroke</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
             <Picker.SelectedIndex>
                 0
             </Picker.SelectedIndex>
         </Picker>
 
-        <skia:SKCanvasView x:Name="canvasView"
-                           Grid.Row="1"
-                           Grid.Column="0"
-                           Grid.ColumnSpan="2"
-                           PaintSurface="OnCanvasViewPaintSurface" />
+        <skiaforms:SKCanvasView x:Name="canvasView"
+                                Grid.Row="1"
+                                Grid.Column="0"
+                                Grid.ColumnSpan="2"
+                                PaintSurface="OnCanvasViewPaintSurface" />
     </Grid>
 </ContentPage>
 ```
@@ -111,8 +116,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
     SKPath path = new SKPath
     {
-        FillType = (SKPathFillType)Enum.Parse(typeof(SKPathFillType),
-                        fillTypePicker.Items[fillTypePicker.SelectedIndex])
+        FillType = (SKPathFillType)fillTypePicker.SelectedItem
     };
     path.MoveTo(info.Width / 2, info.Height / 2 - radius);
 
@@ -120,7 +124,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
     {
         // angle from vertical
         double angle = i * 4 * Math.PI / 5;
-        path.LineTo(center + new SKPoint(radius * (float)Math.Sin(angle),
+        path.LineTo(center + new SKPoint(radius * (float)Math.Sin(angle), 
                                         -radius * (float)Math.Cos(angle)));
     }
     path.Close();
@@ -139,22 +143,22 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
         Color = SKColors.Blue
     };
 
-    switch (drawingModePicker.SelectedIndex)
+    switch ((string)drawingModePicker.SelectedItem)
     {
-        case 0:
+        case "Fill only":
             canvas.DrawPath(path, fillPaint);
             break;
 
-        case 1:
+        case "Stroke only":
             canvas.DrawPath(path, strokePaint);
             break;
 
-        case 2:
+        case "Stroke then Fill":
             canvas.DrawPath(path, strokePaint);
             canvas.DrawPath(path, fillPaint);
             break;
 
-        case 3:
+        case "Fill then Stroke":
             canvas.DrawPath(path, fillPaint);
             canvas.DrawPath(path, strokePaint);
             break;
@@ -168,10 +172,10 @@ Yolun Dolgu türü doldurur ve vuruş değil, ancak iki normalde etkiler `Invers
 
 Android ve UWP ekran görüntüleri tipik çift-tek ve sargı etkilerini gösterir, ancak vuruş ve dolgu sırasını de sonuçları etkiler.
 
-Sarım algoritma çizgileri çizilir yönü bağlıdır. Satırları bir noktasından diğerine çizildiğini belirttiğiniz genellikle bir yolu, oluşturmakta olduğunuz, bu yöndeki denetleyebilirsiniz. Ancak, `SKPath` sınıfı da tanımlar gibi yöntemleri `AddRect` ve `AddCircle` tüm dağılımlarını çizin. Bu nesnelerin nasıl çizildiğini kontrol etmek için yöntemleri türünde bir parametre içeren [ `SKPathDirection` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathDirection/), iki üyesi vardır:
+Sarım algoritma çizgileri çizilir yönü bağlıdır. Satırları bir noktasından diğerine çizildiğini belirttiğiniz genellikle bir yolu, oluşturmakta olduğunuz, bu yöndeki denetleyebilirsiniz. Ancak, `SKPath` sınıfı da tanımlar gibi yöntemleri `AddRect` ve `AddCircle` tüm dağılımlarını çizin. Bu nesnelerin nasıl çizildiğini kontrol etmek için yöntemleri türünde bir parametre içeren [ `SKPathDirection` ](xref:SkiaSharp.SKPathDirection), iki üyesi vardır:
 
-- [`Clockwise`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathDirection.Clockwise/)
-- [`CounterClockwise`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathDirection.CounterClockwise/)
+- `Clockwise`
+- `CounterClockwise`
 
 Yöntemlere `SKPath` içeren bir `SKPathDirection` parametresi verin, varsayılan değeri `Clockwise`.
 
@@ -222,5 +226,5 @@ Bu, oluşturulan kod en düşük ile ilgi çekici bir görüntü değil:
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [SkiaSharp API'leri](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp API'leri](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (örnek)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
