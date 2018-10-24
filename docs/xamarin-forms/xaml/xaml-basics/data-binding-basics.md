@@ -1,40 +1,40 @@
 ---
-title: Bölüm 4. Veri bağlama temelleri
-description: Veri bağlamaları bir değişiklik diğer birinde bir değişiklik neden bağlanması iki nesnelerin özelliklerini sağlar.
+title: 4. bölüm. Temel veri bağlama bilgileri
+description: Veri bağlamaları bir değişiklik diğer bir değişikliğe neden bağlanacak iki nesnelerin özelliklerini sağlar.
 ms.prod: xamarin
 ms.technology: xamarin-forms
 ms.assetid: 342288C3-BB4C-4924-B178-72E112D777BA
 author: charlespetzold
 ms.author: chape
 ms.date: 10/25/2017
-ms.openlocfilehash: 117ddd033faedda871c33ba10c246739309e2e86
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.openlocfilehash: ee6571012764e7578fa9ee03493e9f96aa7b45eb
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "35245956"
 ---
-# <a name="part-4-data-binding-basics"></a>Bölüm 4. Veri bağlama temelleri
+# <a name="part-4-data-binding-basics"></a>4. bölüm. Temel veri bağlama bilgileri
 
-_Veri bağlamaları bir değişiklik diğer birinde bir değişiklik neden bağlanması iki nesnelerin özelliklerini sağlar. Bu çok değerli bir araç ve veri bağlamaları tamamen kod içinde tanımlanabilir olsa da, XAML kısayolları ve kolaylık sağlar. Sonuç olarak, bir Xamarin.Forms en önemli biçimlendirme uzantılarında bağlama._
+_Veri bağlamaları bir değişiklik diğer bir değişikliğe neden bağlanacak iki nesnelerin özelliklerini sağlar. Bu çok değerli bir araçtır ve veri bağlamalarını tamamen kod içinde tanımlanabilir, ancak XAML kısayolları ve kolaylık sağlar. Sonuç olarak, bir Xamarin.Forms en önemli işaretleme uzantılarında bağlama._
 
-## <a name="data-bindings"></a>Veri bağlama
+## <a name="data-bindings"></a>Veri bağlamaları
 
-Veri bağlamaları bağlanmak adlı iki nesnelerin özelliklerini *kaynak* ve *hedef*. Kod içinde iki adım gerekli değildir: `BindingContext` kaynak nesneye hedef nesnenin özelliğini ayarlayın ve `SetBinding` yöntemi (genellikle birlikte kullanılan `Binding` sınıfı), bir özelliği bağlamak için hedef nesnede çağrılmalıdır kaynak nesnenin bir özelliğini nesne.
+Veri bağlamaları Bağlan adlı iki nesnelerin özelliklerini *kaynak* ve *hedef*. Kodda, iki adım zorunludur: `BindingContext` hedef nesnenin özellik, kaynak nesnesi için ayarlanmış olması gerekir ve `SetBinding` yöntemi (genellikle birlikte kullanılan `Binding` sınıfı) bir özelliği, bağlama için hedef nesne üzerinde çağrılmalıdır kaynak nesnenin bir özelliğini nesne.
 
-Target özelliği hedef nesne öğesinden türetilmelidir anlamına gelir bağlanabilir bir özellik olmalıdır `BindableObject`. Çevrimiçi Xamarin.Forms belgeleri hangi özelliklerin bağlanabilir özellikleri gösterir. Bir özelliği `Label` gibi `Text` bağlanabilirse özelliğiyle ilişkili `TextProperty`.
+Hedef özelliği hedef nesne öğesinden türetilmelidir anlamına gelir. bir bağlanılabilir özellik olmalıdır `BindableObject`. Çevrimiçi Xamarin.Forms belgeleri, hangi özelliklerin bağlanabilir özellikler olduğunu gösterir. Bir özelliği `Label` gibi `Text` bağlanılabilir özellik ile ilişkilendirilen `TextProperty`.
 
-Biçimlendirme içinde kodda, gerekli aynı iki adımları da gerçekleştirmelisiniz dışında `Binding` biçimlendirme uzantısı yerini alır `SetBinding` çağırın ve `Binding` sınıfı.
+Biçimlendirme içinde ayrıca kodda gerekli aynı iki adımları gerçekleştirmelisiniz dışında `Binding` işaretleme uzantısı yer alan `SetBinding` çağırın ve `Binding` sınıfı.
 
-Ancak, veri bağlamaları XAML'de tanımladığınızda, ayarlamak için birden çok yolu vardır `BindingContext` hedef nesnenin. Bazen bazen kullanarak arka plan kodu dosyasından ayarlanmış bir `StaticResource` veya `x:Static` biçimlendirme uzantısı ve içeriği olarak bazen `BindingContext` özellik öğesi etiketleri.
+Ancak, XAML içinde veri bağlamaları tanımladığınızda, ayarlamak için birden çok yolu vardır `BindingContext` hedef nesnenin. Bazen kullanarak arka plan kod dosyasından, bazen ayarlanmış bir `StaticResource` veya `x:Static` işaretleme uzantısı ve içeriği olarak bazen `BindingContext` özellik öğesi etiketleri.
 
-Bağlamaları çoğunlukla bir temel alınan veri modelinde, genellikle bir gerçekleştirme MVVM (Model-View-ViewModel) uygulama mimarisinin bir programın görselleri bağlamak için kullanılır anlatıldığı gibi [bölümü 5. MVVM veri bağlamalar gelen](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md), ancak diğer senaryolar mümkündür.
+Bağlamaları kullanılır çoğunlukla bir programın görseller genellikle gerçekleştirme MVVM (Model-View-ViewModel) uygulama mimarisi, temel alınan bir veri modeli ile bağlanmak için açıklandığı gibi [5. bölüm. Gelen veri bağlamaları-MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md), ancak diğer senaryoları şunlardır.
 
-## <a name="view-to-view-bindings"></a>Görünümü görünümü bağlamaları
+## <a name="view-to-view-bindings"></a>Görünüm-görünüm bağlamaları
 
-Aynı sayfada iki görünüm özelliklerini bağlamak için veri bağlamaları tanımlayabilirsiniz. Bu durumda, ayarladığınız `BindingContext` kullanarak hedef nesne `x:Reference` biçimlendirme uzantısı.
+Aynı sayfadaki iki görünüm özellikleri bağlamak için veri bağlama tanımlayabilirsiniz. Bu durumda, ayarladığınız `BindingContext` kullanarak hedef nesne `x:Reference` işaretleme uzantısı.
 
-İçeren bir XAML dosyası İşte bir `Slider` ve iki `Label` görünümler, bunlardan biri Döndürülmüş tarafından `Slider` değeri ve görüntüleyen başka `Slider` değeri:
+İçeren bir XAML dosyası İşte bir `Slider` ve iki `Label` görünümleri, biri Döndürülmüş tarafından `Slider` değeri ve görüntüleyen başka `Slider` değeri:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -65,9 +65,9 @@ Aynı sayfada iki görünüm özelliklerini bağlamak için veri bağlamaları t
 </ContentPage>
 ```
 
-`Slider` İçeren bir `x:Name` iki tarafından başvurulan öznitelik `Label` kullanarak görünümleri `x:Reference` biçimlendirme uzantısı.
+`Slider` İçeren bir `x:Name` iki tarafından başvuruda bulunulan öznitelik `Label` kullanarak görünümleri `x:Reference` işaretleme uzantısı.
 
-`x:Reference` Tanımlar adlı bir özellik uzantısı bağlama `Name` başvurulan öğenin adına bu durumda ayarlamak için `slider`. Ancak, `ReferenceExtension` tanımlayan sınıf `x:Reference` biçimlendirme uzantısı da tanımlayan bir `ContentProperty` için öznitelik `Name`, açıkça gerekli olmadığını anlamına gelir. Çeşitli, yalnızca için ilk `x:Reference` içerir "Name =" ancak ikinci desteklemez:
+`x:Reference` Uzantısı bağlama tanımlar adlı bir özellik `Name` başvurulan öğe adı için bu durumda ayarlanacak `slider`. Ancak, `ReferenceExtension` tanımlayan sınıf `x:Reference` işaretleme uzantısı da tanımlayan bir `ContentProperty` özniteliğini `Name`, açıkça gerekli olmadığını anlamına gelir. Çeşitli, yalnızca için ilk `x:Reference` içerir "Name =" ancak ikinci değildir:
 
 ```csharp
 BindingContext="{x:Reference Name=slider}"
@@ -75,7 +75,7 @@ BindingContext="{x:Reference Name=slider}"
 BindingContext="{x:Reference slider}"
 ```
 
-`Binding` Biçimlendirme uzantısı kendisini olabilir çeşitli özellikler, tıpkı `BindingBase` ve `Binding` sınıfı. `ContentProperty` İçin `Binding` olan `Path`, ancak "yolu =" biçimlendirme uzantısı parçası atlanmış yol listedeki ilk öğe ise `Binding` biçimlendirme uzantısı. İlk örnek sahip "yolu =" ancak ikinci örneği, atlar:
+`Binding` İşaretleme uzantısı kendisi olabilir çeşitli özellikleri, tıpkı `BindingBase` ve `Binding` sınıfı. `ContentProperty` İçin `Binding` olduğu `Path`, ancak "yolu =" işaretleme uzantısı bir parçası, yolun ilk öğe olarak varsa atlanabilir `Binding` işaretleme uzantısı. İlk örnek sahip "yolu =" ancak ikinci örnek yok sayar:
 
 ```csharp
 Rotation="{Binding Path=Value}"
@@ -83,39 +83,39 @@ Rotation="{Binding Path=Value}"
 Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 ```
 
-Özellikleri tüm tek bir satırda olabilir veya birden çok satıra ayrılmış:
+Özellikleri veya çoklu satırlara ayrılmış tüm bir satırda olabilir:
 
 ```csharp
 Text="{Binding Value,
                StringFormat='The angle is {0:F0} degrees'}"
 ```
 
-Kullanışlı ne olursa olsun yapın.
+İnovasyonunuz ne olursa olsun uygundur yapın.
 
-Bildirim `StringFormat` ikinci özelliği `Binding` biçimlendirme uzantısı. Xamarin.Forms tüm örtük tür dönüşümleri bağlamaları gerçekleştirmeyin ve dize olarak bir dize olmayan nesnesini görüntülemeniz gerekirse, bir tür dönüştürücüsünü sağlayın veya kullanmalısınız `StringFormat`. Planda, statik `String.Format` yöntemi uygulamak için kullanılan `StringFormat`. Biçimlendirme uzantıları sınırlandırmak için de kullanılır süslü ayraçlar .NET biçimlendirme belirtimleri ilgili olası bir sorunu olmasıdır. XAML ayrıştırıcısı kafa karıştırıcı riski oluşturur. Bunu önlemek için tüm biçimlendirme dizesi tek tırnak işaretleri içine koyun:
+Bildirim `StringFormat` ikinci özellik `Binding` işaretleme uzantısı. Xamarin.Forms içinde herhangi bir örtük tür dönüştürmelerini bağlamaları gerçekleştirmez ve bir dize olarak bir dize olmayan nesne görüntülenecek ihtiyacınız varsa, bir tür dönüştürücüsü sağlayın veya kullanmalısınız `StringFormat`. Planda, statik `String.Format` yöntemi uygulamak için kullanılan `StringFormat`. .NET biçimlendirme özellikleri biçimlendirme uzantıları sınırlandırmak için kullanılan küme ayracı ilgili olası bir sorun olmasıdır. Bu, XAML ayrıştırıcı kafa karıştırıcı riski oluşturur. Bunu önlemek için tüm biçimlendirme dizesi tek tırnak içine koyun:
 
 ```csharp
 Text="{Binding Value, StringFormat='The angle is {0:F0} degrees'}"
 ```
 
-Çalışan program şöyledir:
+Çalışan programa şu şekildedir:
 
-[![](data-binding-basics-images/sliderbinding.png "Görünümü görünümü bağlamaları")](data-binding-basics-images/sliderbinding-large.png#lightbox "görünümü görünümü bağlamaları ")
+[![](data-binding-basics-images/sliderbinding.png "Görünüm-görünüm bağlamaları")](data-binding-basics-images/sliderbinding-large.png#lightbox "görünüm-görünüm bağlamaları ")
 
 ## <a name="the-binding-mode"></a>Bağlama modu
 
-Tek bir görünüm veri bağlamaları birkaç özelliklerini olabilir. Bununla birlikte, her görünüm yalnızca bir bulunabilir `BindingContext`, tüm bu görünümde birden çok veri bağlaması gerekir böylece aynı nesne özelliklerini başvuru.
+Tek bir görünümde çeşitli özelliklerini veri bağlamaları olabilir. Her görünüm tek ancak sahip `BindingContext`, tüm bu görünümünde birden çok veri bağlamaları gerekir böylece başvuru aynı nesne özelliklerini.
 
-Bu ve diğer sorunları çözüme içerir `Mode` üyesi için ayarlama özelliği `BindingMode` numaralandırma:
+Bu ve diğer sorunların çözümü içerir `Mode` üyesi için ayarlanan özellik `BindingMode` sabit listesi:
 
 - `Default`
 - `OneWay` — değerleri, hedef kaynak sunucudan aktarılır
-- `OneWayToSource` — değerleri, hedef kaynak aktarılır
-- `TwoWay` — değerleri, her iki yönde aktarılır, kaynak ve hedef arasında
+- `OneWayToSource` — değerleri hedeften kaynağa aktarılır
+- `TwoWay` — değerler, her iki yönde aktarılır, kaynak ve hedef arasında
 
-Aşağıdaki programı bir ortak kullanımını gösteren `OneWayToSource` ve `TwoWay` modları bağlama. Dört `Slider` görünümleri denetimine yöneliktir `Scale`, `Rotate`, `RotateX`, ve `RotateY` özelliklerini bir `Label`. İlk olarak göründüğü gibi bu dört özelliklerini `Label` her ayarlandığından veri bağlama hedefleri olmalıdır bir `Slider`. Ancak, `BindingContext` , `Label` yalnızca bir nesne olabilir ve dört farklı kaydırıcılar vardır.
+Aşağıdaki program bir ortak kullanımını gösterir `OneWayToSource` ve `TwoWay` modları bağlama. Dört `Slider` görünümleri denetimine yönelik `Scale`, `Rotate`, `RotateX`, ve `RotateY` özelliklerini bir `Label`. İlk olarak göründüğü gibi bu dört özelliklerini `Label` her ayarlandığından, veri bağlama hedefleri olmalıdır bir `Slider`. Ancak, `BindingContext` , `Label` yalnızca bir nesne olabilir ve dört farklı kaydırıcılar vardır.
 
-Bu nedenle, tüm bağlamaları görünen geriye doğru ayarlanır yolları: `BindingContext` her dört kaydırıcılar biri ayarlamak `Label`, ve bağlamaları ayarlanır `Value` kaydırıcılar özelliklerini. Kullanarak `OneWayToSource` ve `TwoWay` modları, bunlar `Value` özellikleri olan kaynak özellikleri ayarlayabilirsiniz `Scale`, `Rotate`, `RotateX`, ve `RotateY` özelliklerini `Label`:
+Bu nedenle, tüm bağlamaları görünüşte geriye doğru ayarlanan yolları: `BindingContext` dört kaydırıcıları her biri ayarlanır `Label`, ve bağlamaları ayarlanır `Value` kaydırıcıları özellikleri. Kullanarak `OneWayToSource` ve `TwoWay` modları, bunlar `Value` özellikleri olan kaynak özellikleri ayarlayabilirsiniz `Scale`, `Rotate`, `RotateX`, ve `RotateY` özelliklerini `Label`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -194,25 +194,28 @@ Bu nedenle, tüm bağlamaları görünen geriye doğru ayarlanır yolları: `Bin
 </ContentPage>
 ```
 
-Üç bağlantılarına `Slider` görünümlerdir `OneWayToSource`seçeneğidir; yani, `Slider` değeri özelliğinde bir değişiklik neden olan kendi `BindingContext`, olduğu `Label` adlı `label`. Bu üç `Slider` görünümleri değişiklikleri neden `Rotate`, `RotateX`, ve `RotateY` özelliklerini `Label`.
+Üç bağlamalarda `Slider` görünümleridir `OneWayToSource`seçeneğidir; yani, `Slider` değeri özelliğinde bir değişiklik neden olur, `BindingContext`, olduğu `Label` adlı `label`. Bu üç `Slider` görünümleri değişiklikleri neden `Rotate`, `RotateX`, ve `RotateY` özelliklerini `Label`.
 
-Ancak, bağlama için `Scale` özelliği `TwoWay`. Bunun nedeni, `Scale` özelliğinin varsayılan değeri 1 ile kullanarak bir `TwoWay` nedenler bağlama `Slider` ilk 0 yerine 1 için ayarlanacak değer. Bu bağlama olsaydı `OneWayToSource`, `Scale` özelliği başlangıçta ayarlanabilir 0'dan `Slider` varsayılan değer. `Label` Görünür olmaz ve kullanıcıya bazı karışıklığa neden.
+Ancak, bağını `Scale` özelliği `TwoWay`. Bunun nedeni, `Scale` özellik 1 ile kullanarak varsayılan değerine sahip bir `TwoWay` nedenler bağlamayı `Slider` ilk 1 0 yerine ayarlanacak değer. Bu bağlama olsaydı `OneWayToSource`, `Scale` özelliği başlangıçta ayarlanması 0'dan `Slider` varsayılan değer. `Label` Görünür olmaz ve kullanıcı için karışıklığa neden.
 
  [![](data-binding-basics-images/slidertransforms.png "Geriye dönük bağlamaları")](data-binding-basics-images/slidertransforms-large.png#lightbox "geriye doğru bağlamaları")
 
+ > [!NOTE]
+ > [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) Ayrıca sınıfında [ `ScaleX` ](xref:Xamarin.Forms.VisualElement.ScaleX) ve [ `ScaleY` ](xref:Xamarin.Forms.VisualElement.ScaleY) ölçeklendirme özellikleri `VisualElement` x ekseni ve y ekseni sırasıyla.
+
 ## <a name="bindings-and-collections"></a>Bağlamalar ve koleksiyonları
 
-Hiçbir şey XAML ve veri bağlamaları şablonlu iyi güç gösterilmektedir `ListView`.
+Hiçbir şey XAML ve veri bağlamaları şablonlu iyi gücünü gösterir `ListView`.
 
-`ListView` tanımlayan bir `ItemsSource` türünde özellik `IEnumerable`, ve bu koleksiyondaki öğelerin görüntüler. Bu öğeler herhangi bir türde nesneler olabilir. Varsayılan olarak, `ListView` kullanan `ToString` bu öğeyi görüntülemek için her öğenin yöntemi. Bazı durumlarda yalnızca istediğinizi, budur ancak birçok durumda `ToString` nesnenin yalnızca tam sınıf adını döndürür.
+`ListView` tanımlayan bir `ItemsSource` türünün özelliği `IEnumerable`, ve bu koleksiyondaki öğeleri görüntüler. Bu öğeleri herhangi bir türde nesneler olabilir. Varsayılan olarak, `ListView` kullanan `ToString` her öğenin o öğe görüntülemek için yöntemi. Bazen yalnızca istediğiniz, budur ancak birçok durumda, `ToString` nesne yalnızca tam sınıf adını döndürür.
 
-Ancak, öğeleri `ListView` koleksiyonu kullanım yoluyla istediğiniz herhangi bir şekilde görüntülenebilir bir *şablonu*, türeyen bir sınıf içerir `Cell`. Her öğe için şablon klonlanmış `ListView`, ve şablona ayarlamak veri bağlamaları tek tek klonlar aktarılır.
+Ancak, öğeler `ListView` koleksiyonunu kullanarak istediğiniz herhangi bir şekilde görüntülenebilir bir *şablon*, türetilen bir sınıf içerir `Cell`. Şablon, her öğe için kopyalanan `ListView`, ve şablonu üzerinde ayarlanan veri bağlamaları için tek tek kopyaları aktarılır.
 
-Çok sık kullanarak bu öğeler için özel bir hücre oluşturmak istersiniz `ViewCell` sınıfı. Bu işlem biraz kod düzensiz ancak XAML'de çok kolay olur.
+Çok sık kullanarak bu öğeleri için özel bir hücre oluşturmak isteyebilirsiniz `ViewCell` sınıfı. Bu kod biraz karmaşık bir işlemdir ancak XAML içinde çok basit olur.
 
-XamlSamples dahil adlı bir sınıf projedir `NamedColor`. Her `NamedColor` nesnesi `Name` ve `FriendlyName` türünün özelliklerini `string`ve bir `Color` türündeki özelliği `Color`. Ayrıca, `NamedColor` türü 141 statik salt okunur alan `Color` Xamarin.Forms tanımlanan renkleri karşılık gelen `Color` sınıfı. Statik Oluşturucu oluşturur bir `IEnumerable<NamedColor>` içeren koleksiyon `NamedColor` bu statik alanlarına karşılık gelen nesne ve kendi ortak statik olarak atar `All` özelliği.
+İçinde XamlSamples proje adlı bir sınıf içerir `NamedColor`. Her `NamedColor` nesnesinin `Name` ve `FriendlyName` türünün özelliklerini `string`ve `Color` türünün özelliği `Color`. Ayrıca, `NamedColor` türü 141 statik salt okunur alanlara sahip `Color` Xamarin.Forms içinde tanımlanan renklere karşılık gelen `Color` sınıfı. Statik Oluşturucu oluşturur bir `IEnumerable<NamedColor>` içeren koleksiyon `NamedColor` bu statik alanlara karşılık gelen nesneleri ve genel, statik olarak atar `All` özelliği.
 
-Statik ayarı `NamedColor.All` özelliğine `ItemsSource` , bir `ListView` kolay kullanarak `x:Static` biçimlendirme uzantısı:
+Statik ayarlama `NamedColor.All` özelliğini `ItemsSource` , bir `ListView` kolaydır kullanarak `x:Static` işaretleme uzantısı:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -226,13 +229,13 @@ Statik ayarı `NamedColor.All` özelliğine `ItemsSource` , bir `ListView` kolay
 </ContentPage>
 ```
 
-Sonuç görünen öğeleri gerçekten türünde olmasını kurar `XamlSamples.NamedColor`:
+Sonuçta elde edilen görüntü öğeleri gerçekten türü olduğunu kurar `XamlSamples.NamedColor`:
 
-[![](data-binding-basics-images/listview1.png "Bir koleksiyona bağlama")](data-binding-basics-images/listview1-large.png#lightbox "koleksiyona bağlama")
+[![](data-binding-basics-images/listview1.png "Koleksiyona bağlama")](data-binding-basics-images/listview1-large.png#lightbox "koleksiyona bağlama")
 
 Kadar bilgi değil ancak `ListView` kaydırılabilir ve seçilebilir.
 
-Öğeleri için bir şablon tanımlamak için başlama istersiniz `ItemTemplate` özelliği bir özellik öğesi olarak ve ayarlamak bir `DataTemplate`, hangi sonra başvurular bir `ViewCell`. İçin `View` özelliği `ViewCell` her bir öğe görüntülemek için bir veya daha fazla görünümlerini yerleşimini tanımlayabilirsiniz. Basit bir örnek aşağıda verilmiştir:
+Öğeleri için bir şablon tanımlamak için ayırmak isteyebilirsiniz `ItemTemplate` özelliği bir özellik öğesi olarak ve ayarlamak bir `DataTemplate`, ardından başvuran bir `ViewCell`. İçin `View` özelliği `ViewCell` her öğeyi görüntülemek için bir veya daha fazla görünüm yerleşimini tanımlayabilirsiniz. Basit bir örnek aşağıda verilmiştir:
 
 ```xaml
 <ListView ItemsSource="{x:Static local:NamedColor.All}">
@@ -248,11 +251,11 @@ Kadar bilgi değil ancak `ListView` kaydırılabilir ve seçilebilir.
 </ListView>
 ```
 
-`Label` Ayarlanır `View` özelliği `ViewCell`. ( `ViewCell.View` Etiketleri gerekli değildir çünkü `View` içerik özelliği bir özelliktir `ViewCell`.) Bu biçimlendirme görüntüler `FriendlyName` her özellik `NamedColor` nesnesi:
+`Label` Ayarlanır `View` özelliği `ViewCell`. ( `ViewCell.View` Etiketleri değil çünkü gerekli `View` özelliktir içerik özelliğinin `ViewCell`.) Bu işaretleme görüntüler `FriendlyName` her özellik `NamedColor` nesnesi:
 
-[![](data-binding-basics-images/listview2.png "Bir DataTemplate koleksiyonuyla bağlama")](data-binding-basics-images/listview2-large.png#lightbox "DataTemplate koleksiyonuyla bağlama")
+[![](data-binding-basics-images/listview2.png "DataTemplate ile bir koleksiyon bağlama")](data-binding-basics-images/listview2-large.png#lightbox "bir koleksiyona bir DataTemplate ile bağlama")
 
-Daha iyi. Artık gerekli olan tek şey daha fazla bilgi ve gerçek rengi öğesi şablonu ladin için. Bu şablon desteklemek için bazı değerler ve nesneler sayfanın kaynak sözlükte tanımlanmıştır:
+Daha iyi. Artık gerekli olan tek şey ladin öğe şablonu ile daha fazla bilgi ve gerçek renk'kurmak için. Bu şablon desteklemek için bazı değerler ve nesneler sayfanın kaynak sözlüğünde tanımlanmıştır:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -324,13 +327,13 @@ Daha iyi. Artık gerekli olan tek şey daha fazla bilgi ve gerçek rengi öğesi
 </ContentPage>
 ```
 
-Kullanımına dikkat edin `OnPlatform` boyutunu tanımlamak için bir `BoxView` ve yüksekliğini `ListView` satır. Tüm üç platformlar için değerleri aynı olsa da, biçimlendirme kolayca görünen ince ayar yapmak diğer değerler için uyarlanmış olabilir.
+Kullanımına dikkat edin `OnPlatform` boyutunu tanımlamak için bir `BoxView` ve yüksekliğini `ListView` satır. Üç tüm platformlar için değerler aynı olsa da, biçimlendirme kolayca görüntü ince ayar yapmak, diğer değerler için uyarlanmış olabilir.
 
-## <a name="binding-value-converters"></a>Bağlama değer dönüştürücüler
+## <a name="binding-value-converters"></a>Bağlama değeri dönüştürücüleri
 
-Önceki **ListView Demo** XAML dosyası görüntüler tek tek `R`, `G`, ve `B` Xamarin.Forms özelliklerini `Color` yapısı. Bu özellikleri türlerinin `double` ve 0 ile 1 arasında. Onaltılık değerler görüntülemek istiyorsanız, yalnızca kullanamazsınız `StringFormat` "belirtimi biçimlendirme X2" ile. Yalnızca çalışan tamsayılar ve yanı sıra, `double` değerleri 255 tarafından çarpılacağı gerekir.
+Önceki **ListView tanıtım** XAML dosyasında tek tek görüntülenir `R`, `G`, ve `B` Xamarin.Forms özelliklerini `Color` yapısı. Bu özellikler, türlerinin `double` ve 0 ile 1 arasında. Onaltılık değerleri görüntülemek istiyorsanız, yalnızca kullanamazsınız `StringFormat` "belirtimi biçimlendirme X2" ile. Yalnızca çalışan tamsayılar için ve yanı sıra, `double` değerleri 255 ile çarpılmasına gerekir.
 
-Bu küçük sorunu ile Çözüldü bir *değer dönüştürücüsü*de adlı bir *bağlama dönüştürücü*. Uygulayan bir sınıf budur `IValueConverter` adlı iki yöntem olduğu anlamına gelir arabirimi `Convert` ve `ConvertBack`. `Convert` Yöntemi bir değer kaynaktan hedefe; aktarıldığında çağrılır `ConvertBack` yöntemi çağrıldığında aktarımları için hedef kaynağına `OneWayToSource` veya `TwoWay` bağlamaları:
+İle bu küçük bir sorun Çözüldü bir *değer dönüştürücü*ayrıca adlı bir *bağlama dönüştürücü*. Uygulayan bir sınıf budur `IValueConverter` adlı iki yöntem vardır, yani arabirimi `Convert` ve `ConvertBack`. `Convert` Yöntemi çağrıldığında bir değer kaynaktan hedefe; aktarılırken `ConvertBack` yöntemi çağrıldığında aktarımları için hedeften kaynağa `OneWayToSource` veya `TwoWay` bağlamaları:
 
 ```csharp
 using System;
@@ -366,17 +369,17 @@ namespace XamlSamples
 }
 ```
 
-`ConvertBack` Yöntemi yürütmek bir rolü bu programda bağlamaları yalnızca kaynaktan hedefe tek yönlü olduğundan.
+`ConvertBack` Yöntemi bağlamaları yalnızca kaynaktan hedefe bir yolu olduğundan bu programda bir rol oynamıyor.
 
-Bir bağlama dönüştürücü ile bağlama başvuran `Converter` özelliği. Bir bağlama dönüştürücü ile belirtilen bir parametre kabul edebilir `ConverterParameter` özelliği. Bazı çok yönlülük için nasıl çarpanı belirtilen budur. Bağlama dönüştürücü için geçerli bir dönüştürücü parametresi denetler `double` değeri.
+Bağlama ile bağlama dönüştürücü başvuran `Converter` özelliği. Bir bağlama Dönüştürücü ayrıca belirtilen bir parametre kabul `ConverterParameter` özelliği. Bazı çok yönlülük için çarpan nasıl belirtildiğine budur. Dönüştürücü parametresi için geçerli bir bağlama dönüştürücü denetler `double` değeri.
 
-Birden fazla bağlama arasında paylaşılabilmesi dönüştürücü kaynak sözlükte örneği:
+Birden çok bağlamaları arasında paylaşılabilir böylece Dönüştürücüsü kaynak sözlüğünde örneği:
 
 ```xaml
 <local:DoubleToIntConverter x:Key="intConverter" />
 ```
 
-Üç veri bağlamaları bu tek örnek başvuru. Dikkat `Binding` biçimlendirme uzantısı içeren katıştırılmış `StaticResource` biçimlendirme uzantısı:
+Üç veri bağlamaları tek Bu örnek başvuru. Dikkat `Binding` işaretleme uzantısı içeren katıştırılmış `StaticResource` işaretleme uzantısı:
 
 ```xaml
 <Label Text="{Binding Color.R,
@@ -385,17 +388,17 @@ Birden fazla bağlama arasında paylaşılabilmesi dönüştürücü kaynak söz
                       StringFormat='R={0:X2}'}" />
 ```
 
-Sonuç şöyledir:
+Sonuç şu şekildedir:
 
-[![](data-binding-basics-images/listview3.png "Bir DataTemplate ve dönüştürücüleri koleksiyonuyla bağlama")](data-binding-basics-images/listview3-large.png#lightbox "DataTemplate ve dönüştürücüleri koleksiyonuyla bağlama")
+[![](data-binding-basics-images/listview3.png "Bir koleksiyona bir DataTemplate ve dönüştürücüler bağlama")](data-binding-basics-images/listview3-large.png#lightbox "DataTemplate ve dönüştürücüler koleksiyonuna bağlama")
 
-`ListView` Belirli adımları izlerseniz, ancak yalnızca temel alınan veri dinamik olarak ortaya çıkabilecek değişiklikleri işleme oldukça karmaşık değil. Öğeleri koleksiyonu için atanmışsa `ItemsSource` özelliği `ListView` değişiklikleri çalışma zamanı sırasında — öğeleri eklenebilir, ise veya koleksiyondan kaldırıldı — kullanmak bir `ObservableCollection` bu öğeler için sınıf. `ObservableCollection` uygulayan `INotifyCollectionChanged` arabirimi ve `ListView` için bir işleyici yükleyecek `CollectionChanged` olay.
+`ListView` Belirli adımları atmanız oluşabilecek dinamik olarak ancak yalnızca temel alınan verilerdeki değişiklikler işlenirken oldukça karmaşık olduğundan. Öğelerin koleksiyonu için atanmışsa `ItemsSource` özelliği `ListView` değişiklikleri çalışma zamanı sırasında — öğeleri eklenebilir, ise veya koleksiyondan kaldırılır — kullanmak bir `ObservableCollection` bu öğeler için sınıf. `ObservableCollection` uygulayan `INotifyCollectionChanged` arabirimi ve `ListView` için bir işleyici yükleyecek `CollectionChanged` olay.
 
-Öğelerin özelliklerini değiştirin çalışma zamanı sırasında ardından koleksiyondaki öğelerin uygulamalıdır `INotifyPropertyChanged` arabirimi ve sinyal değişiklikleri özellik değerlerini kullanarak `PropertyChanged` olay. Bu, bu makalenin sonraki bölümünde gösterilen [bölümü 5. MVVM için bağlama verilerden](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md).
+Öğelerin özelliklerini değiştirmek çalışma zamanı sırasında sonra koleksiyondaki öğelerin uygulamalıdır `INotifyPropertyChanged` özellik değerlerini kullanarak arabirimi ve sinyal değişiklikleri `PropertyChanged` olay. Bu bu serinin sonraki bölümünde gösterilmektedir [5. bölüm. MVVM için bağlama verilerden](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md).
 
 ## <a name="summary"></a>Özet
 
-Veri bağlama özellikleri sayfasında iki nesne arasındaki veya görsel nesneler arasında bağlama ve arka plandaki veri için güçlü bir mekanizma belirtin. Ancak, uygulama veri kaynakları ile çalışmaya başladığında, popüler uygulama tasarım örüntüsü yararlı bir standardı çıkmaya başladı. Bu ele alınmıştır [bölümü 5. MVVM veri bağlamalar gelen](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md).
+Veri bağlamaları özellikleri sayfasında iki nesne arasındaki veya görsel nesneler arasında bağlama ve temel alınan veriler için güçlü bir mekanizma sağlar. Ancak, uygulama veri kaynaklarıyla çalışmaya başladığında, popüler uygulama mimari deseni yararlı bir standardı ortaya çıkmaya başladı başlar. Bu bölümünde ele alınmıştır [5. bölüm. Gelen veri bağlamaları-MVVM](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md).
 
 
 
@@ -405,4 +408,4 @@ Veri bağlama özellikleri sayfasında iki nesne arasındaki veya görsel nesnel
 - [Bölüm 1. XAML (örnek) ile çalışmaya başlama](~/xamarin-forms/xaml/xaml-basics/get-started-with-xaml.md)
 - [Bölüm 2. Temel XAML sözdizimi (örnek)](~/xamarin-forms/xaml/xaml-basics/essential-xaml-syntax.md)
 - [Bölüm 3. XAML biçimlendirme uzantıları (örnek)](~/xamarin-forms/xaml/xaml-basics/xaml-markup-extensions.md)
-- [Bölüm 5. Veri bağlama MVVM (örnek)](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)
+- [Bölüm 5. MVVM (örnek) için veri bağlama](~/xamarin-forms/xaml/xaml-basics/data-bindings-to-mvvm.md)

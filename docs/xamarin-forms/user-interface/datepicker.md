@@ -1,22 +1,22 @@
 ---
 title: Xamarin.Forms DatePicker
-description: DatePicker kullanıcının bir tarih seçmesine izin veren bir Xamarin.Forms görünümdür. Bu makalede, bir Xamarin.Forms uygulamasındaki bir DatePicker kullanılacağı açıklanmaktadır.
+description: DatePicker kullanıcının bir tarih seçmesine izin veren bir Xamarin.Forms görünümüdür. Bu makalede, bir Xamarin.Forms uygulamasındaki bir DatePicker kullanılacağı açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 68E8EF8A-42E7-4939-8ABE-64D060E609D9
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 06/04/2018
-ms.openlocfilehash: 553957bfa06c7b7a9c5261e426ebee4190de5ebb
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: 7917510e910223fc6ca276bf47b1878c19557a38
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "38994932"
 ---
 # <a name="xamarinforms-datepicker"></a>Xamarin.Forms DatePicker
 
-_Kullanıcının bir tarih seçmesine izin veren bir Xamarin.Forms görünümü_
+_Kullanıcının bir tarih seçmesine izin veren bir Xamarin.Forms görünümü._
 
 Xamarin.Forms [ `DatePicker` ](xref:Xamarin.Forms.DatePicker) platformun tarih seçici denetimi çağırır ve kullanıcının bir tarih seçmesine olanak sağlar. `DatePicker` sekiz özelliklerini tanımlar:
 
@@ -184,6 +184,9 @@ public partial class MainPage : ContentPage
 Aşağıdakilerden birini dokunarak `DatePicker` görüntüler platform tarih seçici çağırır. Üç platformda bu tarih seçicinin çok farklı yollarla uygulayın, ancak her platform kullanıcılara tanıdık bir yaklaşımdır:
 
 [![Tarih arasındaki gün seçin](datepicker-images/DaysBetweenDatesSelect.png "tarih arasındaki gün seçin")](datepicker-images/DaysBetweenDatesSelect-Large.png#lightbox "tarih arasındaki gün seçin")
+
+> [!TIP]
+> Android, `DatePicker` iletişim geçersiz kılarak özelleştirilebilir `CreateDatePickerDialog` özel Oluşturucu yöntemi. Bu, örneğin, iletişim kutusuna eklenecek ek düğmeler sağlar.
 
 İki tarih seçtikten sonra uygulama bu tarih arasındaki gün sayısını görüntüler:
 

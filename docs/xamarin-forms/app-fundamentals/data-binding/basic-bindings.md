@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
 ms.date: 01/05/2018
-ms.openlocfilehash: 16d1970b5e9d8f9c2b7c8be875c81136525c4fb7
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.openlocfilehash: b52f249b184d49731fd5decdb5877c70e29a3b84
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "38998078"
 ---
 # <a name="xamarinforms-basic-bindings"></a>Xamarin.Forms temel bağlamalar
@@ -197,6 +197,9 @@ Bu programı çalıştırmayı biraz şaşırtıcı olabilir:
 Sorun `Slider` başlangıç değerinin 0. Bu neden `Scale` özelliği `Label` Ayrıca, varsayılan değer olan 1'geçersiz kılma 0 olarak ayarlanacak. Sonuçlanır `Label` olan başlangıçta görünmez. Android ve evrensel Windows Platformu (UWP) ekran görüntüleri göz atarak, işleyebileceğiniz `Slider` yapmak `Label` yeniden görünür, ancak ilk, kaybolması disconcerting.
 
 İçinde keşfedeceksiniz [sonraki makalede](binding-mode.md) başlatarak bu sorundan kaçınmak nasıl `Slider` varsayılan değerinden `Scale` özelliği.
+
+> [!NOTE]
+> [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) Sınıfı da tanımlar [ `ScaleX` ](xref:Xamarin.Forms.VisualElement.ScaleX) ve [ `ScaleY` ](xref:Xamarin.Forms.VisualElement.ScaleY) ölçeklendirebilirsiniz özellikleri `VisualElement` içinde farklı Yatay ve dikey yönde.
 
 **Alternatif XAML bağlama** sayfası tamamen XAML içinde eşdeğer bağlama gösterir:
 

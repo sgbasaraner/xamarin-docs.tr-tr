@@ -6,12 +6,12 @@ ms.assetid: 4CBF703D-84A0-4CDF-A433-5926B587782A
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 12/07/2017
-ms.openlocfilehash: 813a913c2c2fb27456c9a489c73b16d5892c4b8d
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 07/26/2018
+ms.openlocfilehash: 3ae2fb8110b7e0a5c6c85c489897acc1a03be8d8
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "38997058"
 ---
 # <a name="xamarinforms-boxview"></a>Xamarin.Forms BoxView
@@ -35,13 +35,16 @@ Bu makalede, aşağıdaki konular ele alınmaktadır:
 
 ## <a name="setting-boxview-color-and-size"></a>Ayar BoxView rengini ve boyutunu
 
-Çok sık aşağıdaki üç özelliklerini ayarlarsınız `BoxView`:
+Genellikle aşağıdaki özelliklerini ayarlarsınız `BoxView`:
 
 - [`Color`](xref:Xamarin.Forms.BoxView.Color) rengini ayarlamak için.
+- [`CornerRadius`](xref:Xamarin.Forms.BoxView.CornerRadius) kendi köşe yarıçapı ayarlamak için.
 - [`WidthRequest`](xref:Xamarin.Forms.VisualElement.WidthRequest) genişliğini ayarlamak için `BoxView` CİHAZDAN bağımsız birimler.
 - [`HeightRequest`](xref:Xamarin.Forms.VisualElement.HeightRequest) yüksekliğini ayarlanacak `BoxView`.
 
 `Color` Özelliği türüdür `Color`; herhangi bir özellik ayarlanabilir `Color` 141 statik salt okunur alanları dahil olmak üzere adlandırılmış renkler alfabetik olarak arasında değişen değeri, `AliceBlue` için `YellowGreen`.
+
+`CornerRadius` Özelliği türüdür [ `CornerRadius` ](xref:Xamarin.Forms.CornerRadius); tek bir özellik ayarlanabilir `double` Tekdüzen köşe yarıçapı değeri veya `CornerRadius` dört tarafından tanımlanan yapı `double` uygulanacak olan değerleri üst sol, sağ üst, alt sol ve sağ alt köşesindeki `BoxView`.
 
 `WidthRequest` Ve `HeightRequest` özellikleri, bir rolü yalnızca yürütmek `BoxView` olduğu *sınırlandırılmamış* düzeni. Düzen kapsayıcısının alt kullanıcının boyutu, örneğin, ne zaman bilmek gerektiğinde bu durumda `BoxView` otomatik boyutlu bir hücreye alt `Grid` düzeni. A `BoxView` da sınırlandırılmamış olduğunda kendi `HorizontalOptions` ve `VerticalOptions` özellikleri ayarlanır değerlere dışında `LayoutOptions.Fill`. Varsa `BoxView` sınırlandırılmamış, olan ancak `WidthRequest` ve `HeightRequest` özellikleri ayarlanmadı, ardından genişliği veya yüksekliği 40 birimleri veya yaklaşık 1/4 inç mobil cihazlarda varsayılan değerlere ayarlanır.
 
@@ -58,6 +61,7 @@ A `BoxView` kısıtlı bir boyut ve diğerinde sınırlandırılmamış. Örneğ
              x:Class="BasicBoxView.MainPage">
 
     <BoxView Color="CornflowerBlue"
+             CornerRadius="10"
              WidthRequest="160"
              HeightRequest="160"
              VerticalOptions="Center"

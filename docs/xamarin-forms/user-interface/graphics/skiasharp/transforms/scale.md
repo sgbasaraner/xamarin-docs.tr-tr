@@ -4,21 +4,21 @@ description: Thhis makale nesnelerin çeşitli boyutlarına ölçeklendirmeye y�
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 54A43F3D-9DA8-44A7-9AE4-7E3025129A0B
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 03/23/2017
-ms.openlocfilehash: 94105cbb83e4c6eb3558ca3fc55e505ab41f28fe
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: d4ab7ad5a0fc645c13388d76eb11cbd4e2dd72f8
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39615609"
 ---
 # <a name="the-scale-transform"></a>Ölçekleme dönüşümü
 
 _SkiaSharp ölçekleme dönüşümü, nesnelerin çeşitli boyutlarına ölçeklendirme için keşfetmek_
 
-İçinde gördüğünüz gibi [Çevir dönüştürme](~/xamarin-forms/user-interface/graphics/skiasharp/transforms/translate.md) makalesi, çeviri dönüşümü bir grafik nesnesi bir konumdan diğerine taşıyabilirsiniz. Buna karşılık, ölçekleme dönüşümü grafik nesnenin boyutunu değiştirir:
+İçinde gördüğünüz gibi [ **Çevir dönüştürme** ](translate.md) makalesi, çeviri dönüşümü bir grafik nesnesi bir konumdan diğerine taşıyabilirsiniz. Buna karşılık, ölçekleme dönüşümü grafik nesnenin boyutunu değiştirir:
 
 ![](scale-images/scaleexample.png "Boyutu ölçeği genişletilmiş bir uzun sözcük")
 
@@ -38,7 +38,7 @@ y' sy · = y
 
 0 için çeviri faktör, varsayılan değerler; 1 ölçek faktörlerin varsayılan değerlerdir.
 
-`SKCanvas` Sınıfı tanımlar dört `Scale` yöntemleri. İlk [ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/System.Single/) yöntemi, aynı yatay ve dikey ölçeklendirme istediğinizde çalışmaları faktörü için:
+`SKCanvas` Sınıfı tanımlar dört `Scale` yöntemleri. İlk [ `Scale` ](xref:SkiaSharp.SKCanvas.Scale(System.Single)) yöntemi, aynı yatay ve dikey ölçeklendirme istediğinizde çalışmaları faktörü için:
 
 ```csharp
 public void Scale (Single s)
@@ -46,14 +46,14 @@ public void Scale (Single s)
 
 Bu olarak bilinir *isotropic* ölçeklendirme &mdash; diğer bir deyişle aynı her iki yönde ölçeklendirme. İsotropic ölçeklendirme nesnenin en boy oranını korur.
 
-İkinci [ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/System.Single/System.Single/) yöntemi yatay ve dikey ölçekleme için farklı değerler belirtmenize olanak sağlar:
+İkinci [ `Scale` ](xref:SkiaSharp.SKCanvas.Scale(System.Single,System.Single)) yöntemi yatay ve dikey ölçekleme için farklı değerler belirtmenize olanak sağlar:
 
 ```csharp
 public void Scale (Single sx, Single sy)
 ```
 
 Sonuçlanır *anizotropik* ölçeklendirme.
-Üçüncü [ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/SkiaSharp.SKPoint/) yöntemi tek bir iki ölçekleme faktörü birleştirir `SKPoint` değeri:
+Üçüncü [ `Scale` ](xref:SkiaSharp.SKCanvas.Scale(SkiaSharp.SKPoint)) yöntemi tek bir iki ölçekleme faktörü birleştirir `SKPoint` değeri:
 
 ```csharp
 public void Scale (SKPoint size)
@@ -61,7 +61,7 @@ public void Scale (SKPoint size)
 
 Dördüncü `Scale` yöntemi açıklanan kısa bir süre.
 
-**Basit bir ölçek** sayfasını gösterir `Scale` yöntemi. [ **BasicScalePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicScalePage.xaml) XAML dosyasını içeren iki `Slider` olanak tanıyan öğeleri 0 ile 10 arasındaki yatay ve dikey ölçekleme faktörü seçin. [ **BasicScalePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicScalePage.xaml.cs) arka plan kod dosyası aramak için bu değerleri kullanır `Scale` Yuvarlatılmış Dikdörtgen görüntüleme ile kesikli çizgiye konturlanan ve sol üst köşesinde metin sığdırmak için boyutta önce Tuval köşe:
+**Basit bir ölçek** sayfasını gösterir `Scale` yöntemi. [ **BasicScalePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicScalePage.xaml) dosyasını içeren iki `Slider` olanak tanıyan öğeleri 0 ile 10 arasındaki yatay ve dikey ölçekleme faktörü seçin. [ **BasicScalePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicScalePage.xaml.cs) arka plan kod dosyası aramak için bu değerleri kullanır `Scale` Yuvarlatılmış Dikdörtgen görüntüleme ile kesikli çizgiye konturlanan ve sol üst köşesinde metin sığdırmak için boyutta önce Tuval köşe:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -113,7 +113,7 @@ Metin köşeler ve tuvalin sol ve üst kenarlar ve Yuvarlatılmış Dikdörtgen 
 
 Yatay ve dikey ekseni olan hizalı satırları farklı olacak darbe genişliği anizotropik nedenleri ölçeklendirme. (Ayrıca bu sayfadaki ilk görüntüden yetkisiz değiştirmeye karşı korumalı budur.) Ölçeklendirme faktörlerden etkilendiği darbe genişliği istemiyorsanız 0 olarak ayarlayın ve her zaman bir piksel genişliğinde açmamasından olacaktır `Scale` ayarı.
 
-Ölçeklendirme, tuvalin sol üst köşesine göre olan. Tam olarak ne istediğinizi kaynaklanıyor olabilir, ancak olmaması. Tuvalde metin ve başka bir yerde dikdörtgen yerleştirmek istediğiniz ve kendi merkezi göre ölçeklendirmek istediğinizi varsayalım. Bu durumda, dördüncü sürümünü kullanabilirsiniz [ `Scale` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.Scale/p/System.Single/System.Single/System.Single/System.Single/) ölçeklendirmenin merkezi belirtmek için iki ek parametreler içeren yöntemi:
+Ölçeklendirme, tuvalin sol üst köşesine göre olan. Tam olarak ne istediğinizi kaynaklanıyor olabilir, ancak olmaması. Tuvalde metin ve başka bir yerde dikdörtgen yerleştirmek istediğiniz ve kendi merkezi göre ölçeklendirmek istediğinizi varsayalım. Bu durumda, dördüncü sürümünü kullanabilirsiniz [ `Scale` ](xref:SkiaSharp.SKCanvas.Scale(System.Single,System.Single,System.Single,System.Single)) ölçeklendirmenin merkezi belirtmek için iki ek parametreler içeren yöntemi:
 
 ```csharp
 public void Scale (Single sx, Single sy, Single px, Single py)
@@ -170,7 +170,7 @@ Yuvarlatılmış Dikdörtgen sol üst köşesinde konumlandırılmış `margin` 
 
 `Slider` Bu programda öğelere sahip bir dizi &ndash;10 ile 10. Gördüğünüz gibi dikey ölçeklendirme (Android Merkezi'nde ekran gibi), negatif değerler ölçeklendirme merkezi üzerinden geçirir yatay ekseni etrafında ters çevirmek nesneleri neden olur. Negatif değerler yatay (sağ UWP ekranında olduğu gibi) ölçeklendirme, ölçeklendirme merkezi üzerinden geçirir dikey ekseni etrafında ters çevirmek nesneleri neden olur.
 
-Bu dördüncü sürümü `Scale` aslında bir kısayol yöntemidir. Bunun yerine nasıl çalıştığını görmek isteyebilirsiniz `Scale` bu kodu şu kodla yöntemi:
+Sürümü [ `Scale` ](xref:SkiaSharp.SKCanvas.Scale(System.Single,System.Single,System.Single,System.Single)) yöntemdir pivot noktaları üç dizi için bir kısayol `Translate` ve `Scale` çağırır. Değiştirerek nasıl çalıştığını görmek isteyebilirsiniz `Scale` yönteminde **ortalanmış ölçek** aşağıdaki sayfası:
 
 ```csharp
 canvas.Translate(-px, -py);
@@ -191,7 +191,7 @@ Alışık olduğunuz, diğer sistemler programlama grafikler, yanlış olduğunu
 
 Art arda ile `Scale` ve `Translate` çağrıları, Yuvarlatılmış Dikdörtgen merkezini yine de sol üst köşedeki olmakla birlikte, şimdi de Yuvarlatılmış Dikdörtgen merkezidir tuvalin sol üst köşesinin göre ölçeklendirebilirsiniz.
 
-Şimdi, önceki `Scale` başka bir çağrı ekleyin `Translate` ortalama değerleriyle çağırın:
+Şimdi, önceki `Scale` çağrı, başka bir `Translate` ortalama değerleriyle çağırın:
 
 ```csharp
 canvas.Translate(px, py);
@@ -215,7 +215,7 @@ Aklınızda varsayılan değerlerini `sx` ve `sy` 1. Pivot noktası (px, Kopyala
 
 Birleştirdiğinizde `Translate` ve `Scale` sırasını çağrılarını önemlidir. Varsa `Translate` sonra gelen `Scale`, çeviri Etkenler etkili bir şekilde ölçeklendirme faktörlerden ölçeklenir. Varsa `Translate` önce gelen `Scale`, çeviri Etkenler değil ölçeklenir. Bu işlem biraz daha anlaşılır hale gelir (paralelleştirmeye daha matematik) ne zaman dönüşümü matrislerde konusunu sunulmuştur.
 
-`SKPath` Sınıfı tanımlar salt okunur [ `Bounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPath.Bounds/) döndüren özellik bir `SKRect` yolunda koordinatları kapsamını tanımlama. Örneğin, `Bounds` özelliği daha önce oluşturduğunuz hendecagram yolundan elde `Left` ve `Top` özelliklerdir dikdörtgenin yaklaşık – 100 `Right` ve `Bottom` özellikleri yaklaşık 100 ve `Width` ve `Height` yaklaşık 200 özelliklerdir. (Gerçek değerlerle biraz daha az yıldızların noktaları bir RADIUS 100 olan bir daire tanımlanır, ancak yalnızca üst noktanın yatay veya dikey eksen ile paralel çünkü çoğu.)
+`SKPath` Sınıfı tanımlar salt okunur [ `Bounds` ](xref:SkiaSharp.SKPath.Bounds) döndüren özellik bir `SKRect` yolunda koordinatları kapsamını tanımlama. Örneğin, `Bounds` özelliği daha önce oluşturduğunuz hendecagram yolundan elde `Left` ve `Top` özelliklerdir dikdörtgenin yaklaşık – 100 `Right` ve `Bottom` özellikleri yaklaşık 100 ve `Width` ve `Height` yaklaşık 200 özelliklerdir. (Gerçek değerlerle biraz daha az yıldızların noktaları bir RADIUS 100 olan bir daire tanımlanır, ancak yalnızca üst noktanın yatay veya dikey eksen ile paralel çünkü çoğu.)
 
 Bu bilgiler kullanılabilirliğini ölçek türetilir ve tuval boyutu için bir yol ölçeklendirme için uygun olan Etkenler çevirmek mümkün olacağını gösterir. [ **Anizotropik ölçeklendirme** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/AnisotropicScalingPage.cs) sayfası bu 11 işaret eden bir yıldızla gösterir. Bir *anizotropik* ölçek, yani yıldız özgün en boy oranı korumaz yatay ve dikey yönde eşit olup olmadığını gösterir. İlgili kod işte `PaintSurface` işleyicisi:
 
@@ -337,12 +337,12 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Kod, yıldız da on kez daha görüntüler., her zaman ölçeklendirme azalan faktörü % 10 ve aşamalı olarak kırmızı mavi rengi değiştirme:
+Kod, yıldız 10 ayrıca birden fazla kez görüntüler., her zaman ölçeklendirme azalan faktörü % 10 ve aşamalı olarak kırmızı mavi rengi değiştirme:
 
 [![](scale-images/isotropicscaling-small.png "Üçlü sayfasının ekran görüntüsü Isotropic ölçeklendirme")](scale-images/isotropicscaling-large.png#lightbox "Üçlü sayfasının ekran görüntüsü Isotropic ölçeklendirme")
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [SkiaSharp API'leri](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp API'leri](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (örnek)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

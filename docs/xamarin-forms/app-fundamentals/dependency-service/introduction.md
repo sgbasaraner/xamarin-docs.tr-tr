@@ -6,12 +6,12 @@ ms.assetid: 5d019604-4f6f-4932-9b26-1fce3b4d88f8
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 03/06/2017
-ms.openlocfilehash: 558a05b5fdc4c4f08194b708de886bca342dd860
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 09/15/2018
+ms.openlocfilehash: 28c6daa361b7de09a0d9332b21f1b6f75e035850
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "38995420"
 ---
 # <a name="introduction-to-dependencyservice"></a>DependencyService giriş
@@ -20,7 +20,10 @@ ms.locfileid: "38995420"
 
 [`DependencyService`](xref:Xamarin.Forms.DependencyService) Paylaşılan kod platforma özgü işlevlerini çağırmak uygulamalar sağlar. Xamarin.Forms uygulamaları, yerel bir uygulama yapabileceği bir şey yapmak bu işlevi etkinleştirir.
 
-`DependencyService` bağımlılık çözümleyici var. Uygulamada, bir arabirim tanımlanır ve `DependencyService` doğru uygulama çeşitli platform projelerindeki o arabirimin bulur.
+`DependencyService` hizmet bulucu olur. Uygulamada, bir arabirim tanımlanır ve `DependencyService` doğru uygulama çeşitli platform projelerindeki o arabirimin bulur.
+
+> [!NOTE]
+> Varsayılan olarak, [ `DependencyService` ](xref:Xamarin.Forms.DependencyService) parametresiz oluşturucular sahip platform uygulamalarını tek bir Çözümle olur. Bununla birlikte, bağımlılığı çözümleme yöntemi platform uygulamalarını çözümlemek için bir bağımlılık ekleme kapsayıcısını veya Fabrika yöntemleri kullanan Xamarin.Forms yerleştirilebilir. Bu yaklaşım, parametreli oluşturuculara sahip platform uygulamalarını gidermek için kullanılabilir. Daha fazla bilgi için [bağımlılık çözümlemesi xamarin.Forms'taki](~/xamarin-forms/internals/dependency-resolution.md).
 
 ## <a name="how-dependencyservice-works"></a>DependencyService nasıl çalışır?
 
@@ -144,7 +147,6 @@ DependencyService.Get<ITextToSpeech>().Speak("Hello from Xamarin Forms");
 
 > [!NOTE]
 > **Gerekir** her platform projesinde bir uygulanmasını sağlar. Arabirim uygulaması kayıtlıysa, ardından `DependencyService` çözmek mümkün olmayacaktır `Get<T>()` zamanında yöntemi.
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

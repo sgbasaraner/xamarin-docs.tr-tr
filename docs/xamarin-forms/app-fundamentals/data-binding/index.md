@@ -1,70 +1,76 @@
 ---
 title: Xamarin.Forms veri bağlama
-description: Veri bağlama bir özelliğindeki değişiklikler otomatik olarak diğer özelliğinde yansıtılır bir iki nesnelerin özelliklerini bağlama, tekniğidir. Veri bağlama modelini görünümü ViewModel (MVVM) uygulama mimarisi ayrılmaz bir parçasıdır.
+description: Veri bağlama, bir özellik değişiklikleri otomatik olarak diğer özelliğinde yansıtılır bir bağlama iki nesnelerin özelliklerini, tekniğidir. Veri bağlama Model-View-ViewModel (MVVM) uygulama mimarisi önemli bir parçasıdır.
 ms.prod: xamarin
 ms.assetid: 938E85C8-521D-43B9-92CB-D591A06D98A6
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 01/05/2018
-ms.openlocfilehash: a5ea5dcb5b108da52634f131fd36a91ba82f7da4
-ms.sourcegitcommit: 66682dd8e93c0e4f5dee69f32b5fc5a96443e307
+ms.date: 10/23/2018
+ms.openlocfilehash: def97ab77781c7a7156d4c4178097184614f3e8b
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/08/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "35240359"
 ---
 # <a name="xamarinforms-data-binding"></a>Xamarin.Forms veri bağlama
 
-_Veri bağlama bir özelliğindeki değişiklikler otomatik olarak diğer özelliğinde yansıtılır bir iki nesnelerin özelliklerini bağlama, tekniğidir. Veri bağlama modelini görünümü ViewModel (MVVM) uygulama mimarisi ayrılmaz bir parçasıdır._
+_Veri bağlama, bir özellik değişiklikleri otomatik olarak diğer özelliğinde yansıtılır bir bağlama iki nesnelerin özelliklerini, tekniğidir. Veri bağlama Model-View-ViewModel (MVVM) uygulama mimarisi önemli bir parçasıdır._
 
 ## <a name="the-data-linking-problem"></a>Veri bağlama sorunu
 
-Her biri genellikle içeren birden çok kullanıcı arabirimi nesneleri olarak adlandırılan bir veya daha fazla sayfaları, bir Xamarin.Forms uygulaması oluşur *görünümleri*. Program, birincil görevleri görünümlerindeki eşitlenmiş halde tutmak ve çeşitli değerleri veya temsil ettikleri seçimleri izlemek için biridir. Genellikle görünümleri değerleri temel alınan bir veri kaynağından temsil eder ve bu verileri değiştirmek için bu görünümleri kullanıcı yönetir. Görünüm değiştiğinde, temel alınan veri bu değişikliği yansıtacak gerekir ve temel alınan veriler değiştiğinde, benzer şekilde, bu değişikliği görünümünde yansıtılması gerekir.
+Her biri genellikle içeren birden çok kullanıcı arabirimi nesneleri olarak adlandırılan bir veya daha fazla sayfaları, bir Xamarin.Forms uygulaması oluşur *görünümleri*. Program birincil görevlerini görünümlerindeki eşitlenmiş halde tutmak ve çeşitli değerleri veya temsil ettikleri seçimleri izlemek için biridir. Genellikle görünümleri değerler temel alınan bir veri kaynağından temsil eder ve bu verileri değiştirmek için bu görünümleri kullanıcı yönetir. Görünüm değiştiğinde, temel alınan verileri bu değişikliği yansıtacak gerekir ve temel alınan veriler değiştiğinde, benzer şekilde, bu değişikliği Görünümü'nde yansıtılır gerekir.
 
-Bu işi başarılı bir şekilde işlemek için program bu görünümlere veya temel alınan veri değişiklikleri bildirilmelidir. Ortak bir değişiklik olduğunda sinyal olayları tanımlamak için çözümüdür. Olay işleyici, daha sonra bu değişiklikleri bildirimde yüklenebilir. Verileri bir nesneden diğerine aktararak yanıt verir. Ancak, çok sayıda görünümleri olduğunda, birçok olay işleyicileri bulunmalıdır ve çok fazla kod söz konusu.
+Bu işi başarılı bir şekilde işlemek için program bu görünümleri ya da temel alınan veri değişikliklerinin açıklaması bildirilmelidir. Ortak çözüm, bir değişiklik olduğunda sinyal olayları tanımlamaktır. Bir olay işleyicisi, ardından, bu değişikliklerin bildirilmesini yüklenebilir. Verileri bir nesneden diğerine aktarılmasını tarafından yanıt verir. Ancak, çok sayıda görünümleri olduğunda, ayrıca birçok olay işleyicisi de olmalıdır ve bir sürü kod söz konusu.
 
 ## <a name="the-data-binding-solution"></a>Veri bağlama çözümü
 
-Veri bağlama, bu iş otomatikleştirir ve olay işleyicileri gereksiz işler. (Veri bağlama altyapısı bunları kullandığından ancak hala gerekli olaylardır.) Veri bağlamaları kod veya XAML uygulanabilir, ancak burada arka plan kod dosyasının boyutunu azaltmak için yardımcı olurlar XAML'de çok daha yaygın. Olay işleyicileri yordam kodda bildirimsel kod veya işaretleme ile değiştirerek uygulamaya Basitleştirilmiş açıklığa kavuşturuldu ve.
+Veri bağlama, bu işlemi otomatik hale getirir ve olay işleyicileri gereksiz işler. (Veri bağlama altyapısı bunları kullandığından olayları ancak hala gerekli değildir.) Veri bağlamaları kodda veya XAML uygulanabilir, ancak bunlar burada, arka plan kod dosyasının boyutunu azaltmak için Yardım XAML içinde çok daha yaygındır. Olay işleyicileri yordam kodunda bildirim temelli bir kod veya biçimlendirme ile değiştirerek, uygulama Basitleştirilmiş açıklığa kavuşturuldu ve.
 
-Bir veri bağlamanın iki nesneler biri neredeyse her zaman türeyen bir öğe `View` ve forms görsel arabirimi bir sayfanın parçası. Diğer nesnesi kullanılıyor:
+Bir veri bağlamaya dahil edilen iki nesne biri neredeyse her zaman türetilen bir öğe `View` ve görsel arabirim sayfasının bir parçasını oluşturur. Diğer nesne ya da verilmiştir:
 
-- Başka bir `View` genellikle aynı sayfada türetilmiş.
-- Kod dosyasında bir nesne.
+- Başka bir `View` türetme genellikle aynı sayfa üzerinde.
+- Bir kod dosyasında bir nesne.
 
-Tanıtım programlarda olanlar gibi [ **DataBindingDemos** ](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) örnek, iki arasında veri bağlamaları `View` türevleri daha anlaşılır olması ve kolaylık amacıyla genellikle gösterilir. Ancak, aynı ilkeler arasında veri bağlamaları uygulanabilir bir `View` ve diğer nesneleri. Uygulamanın Model View ViewModel (MVVM) mimarisi kullanarak yapılandırıldığında, temel alınan veri sınıfıyla çoğunlukla bir ViewModel adı verilir.
+Tanıtım programlarda olanlar gibi [ **DataBindingDemos** ](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/) örnek, ikisi arasında veri bağlamaları `View` türevleri genellikle açıklık ve kolaylık olması amacıyla gösterilir. Ancak, aynı ilkeler arasında veri bağlamaları uygulanabilir bir `View` ve diğer nesneleri. Model-View-ViewModel (MVVM) mimarisini kullanarak uygulama oluşturulduğunda, temel alınan veri sınıfıyla genellikle bir ViewModel olarak adlandırılır.
 
-Veri bağlamaları makaleleri aşağıdaki serisinde incelediniz:
+Veri bağlamaları aşağıdaki dizi makale incelenmektedir:
 
 ## <a name="basic-bindingsbasic-bindingsmd"></a>[Temel Bağlamalar](basic-bindings.md)
 
-Veri bağlama hedef ve kaynak arasındaki farkı öğrenin ve kod ve XAML basit veri bağlama bakın.
+Kod ve XAML basit veri bağlamaları görmek ve veri bağlama hedef ve kaynak arasındaki farkı öğrenin.
 
 ## <a name="binding-modebinding-modemd"></a>[Bağlama Modu](binding-mode.md)
 
-Bağlama modunu iki nesne arasındaki veri akışını nasıl kontrol edebilir bulur.
+Bağlama modu iki nesne arasındaki veri akışını nasıl kontrol edebilir keşfedin.
 
 ## <a name="string-formattingstring-formattingmd"></a>[Dize Biçimlendirmesi](string-formatting.md)
 
-Veri bağlama biçimlendirmek ve dize olarak nesneleri görüntülemek için kullanın.
+Veri bağlama biçimlendirmek ve dizeleri nesneleri görüntülemek için kullanın.
 
 ## <a name="binding-pathbinding-pathmd"></a>[Bağlama Yolu](binding-path.md)
 
-İçine inebilirsiniz `Path` alt özellikleri ve koleksiyon üyeleri erişmek için veri bağlama özelliği.
+Yakından bakış ayrıntılı incelemesi `Path` alt özellikleri ve koleksiyon üyelerine erişmek için veri bağlama özelliği.
 
 ## <a name="binding-value-convertersconvertersmd"></a>[Bağlama Değeri Dönüştürücüleri](converters.md)
 
-Veri bağlama içindeki değerleri değiştirmek için bağlama değer dönüştürücüler kullanın.
+Bağlama değeri dönüştürücüleri içinde veri bağlamayı değerleri değiştirmek için kullanın.
+
+## <a name="binding-fallbacksbinding-fallbacksmd"></a>[Bağlama geri dönüşler](binding-fallbacks.md)
+
+Veri bağlamaları daha sağlam bağlama işlemi başarısız olursa kullanmak için geri dönüş değerleri tanımlayarak olun.
 
 ## <a name="the-command-interfacecommandingmd"></a>[Komut Arabirimi](commanding.md)
 
-Uygulama `Command` veri bağlamaları özelliğiyle.
+Uygulama `Command` veri bağlamaları ile özelliği.
 
+## <a name="compiled-bindingscompiled-bindingsmd"></a>[Derlenmiş bağlamaları](compiled-bindings.md)
 
+Veri bağlama performansını artırmak için derlenmiş bağlamaları kullanın.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Veri bağlama gösterileri (örnek)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
-- [Veri bağlama bölüm Xamarin.Forms defterinden](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
+- [Veri bağlama tanıtımları (örnek)](https://developer.xamarin.com/samples/xamarin-forms/DataBindingDemos/)
+- [Veri bağlama bölümden Xamarin.Forms kitabı](~/xamarin-forms/creating-mobile-apps-xamarin-forms/summaries/chapter16.md)
 - [XAML Biçimlendirme Uzantıları](~/xamarin-forms/xaml/markup-extensions/index.md)

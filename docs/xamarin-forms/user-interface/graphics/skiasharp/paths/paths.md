@@ -4,54 +4,54 @@ description: Bu makalede, bağlı çizgiler ve eğrilerle birleştirme SkiaSharp
 ms.prod: xamarin
 ms.assetid: A7EDA6C2-3921-4021-89F3-211551E430F1
 ms.technology: xamarin-skiasharp
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 3c07614c12fb503638d3d5e63b24eb5367ba691a
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 2980884c94bfa2cddbef89e8a2e5f6aaf778d033
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39615541"
 ---
 # <a name="path-basics-in-skiasharp"></a>SkiaSharp yolu temel bilgileri
 
 _Bağlantılı çizgiler ve eğrilerdir birleştirme SkiaSharp SKPath nesne keşfedin_
 
-Grafik yolun en önemli işlevselliğinden birden fazla satır olduğunda bağlı ve ne zaman bağlı tanımlama yeteneği biridir. İki bu üçgen taraflarının göz atarak fark oldukça görünür durumda olabilir:
+Grafik yolun en önemli özelliklerden biri, birden fazla satır olduğunda bağlı ve ne zaman bağlı tanımlamak için olanağıdır. İki bu üçgen taraflarının göz atarak fark önemli olabilir:
 
 ![](paths-images/connectedlinesexample.png "Bağlı ve bağlantısı kesik çizgilerin arasındaki farkı gösteren iki üçgen")
 
-Bir grafik yolu yalıtılan [ `SKPath` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath/) nesne. Bir koleksiyon bir veya daha fazla yoludur *dağılımlarını*. Her dağılımı oluşan bir koleksiyondur *bağlı* düz çizgiler ve eğrilerle. Dağılımlarını birbirine bağlı olmadığı, ancak görsel olarak örtüşüyor olabilir. Bazen tek bir dağılımı kendisini binebilir.
+Bir grafik yolu yalıtılan [ `SKPath` ](xref:SkiaSharp.SKPath) nesne. Bir koleksiyon bir veya daha fazla yoludur *dağılımlarını*. Her dağılımı oluşan bir koleksiyondur *bağlı* düz çizgiler ve eğrilerle. Dağılımlarını birbirine bağlı olmadığı, ancak görsel olarak örtüşüyor olabilir. Bazen tek bir dağılımı kendisini binebilir.
 
 Bir dağılımı genellikle aşağıdaki yöntemi çağrısı ile başlar `SKPath`:
 
-- `MoveTo` Yeni bir dağılımı başlamak için
+- [`MoveTo`](SkiaSharp.SKPath.MoveTo*) Yeni bir dağılımı başlamak için
 
 Bu yönteme bağımsız değişken olarak express tek bir noktası olan bir `SKPoint` değer veya ayrı X ve Y koordinatları. `MoveTo` Çağrı başına bir noktada dağılımı ve bir ilk kurar *geçerli noktası*. Bir satır veya eğriye zamandaki geçerli noktadan sonra yeni geçerli noktası olur yöntemi içinde belirtilen bir nokta dağılımı devam etmek için aşağıdaki yöntemleri çağırabilirsiniz:
 
-- `LineTo` düz çizgi yolu eklemek için
-- `ArcTo` bir daire veya elipsin çevresi satırda olduğu bir yay eklemek için
-- `CubicTo` bir üçüncü dereceden Bezier eğrisi eklemek için
-- `QuadTo` bir ikinci dereceden Bezier eğrisi eklemek için
-- `ConicTo` conic bölümleri (üç nokta, paraboller ve hiperboller) doğru bir şekilde oluşturulabilen bir rasyonel ikinci dereceden Bezier eğrisi, eklemek için
+- [`LineTo`](SkiaSharp.SKPath.LineTo*) düz çizgi yolu eklemek için
+- [`ArcTo`](SkiaSharp.SKPath.ArcTo*) bir daire veya elipsin çevresi satırda olduğu bir yay eklemek için
+- [`CubicTo`](SkiaSharp.SKPath.CubicTo*) bir üçüncü dereceden Bezier eğrisi eklemek için
+- [`QuadTo`](SkiaSharp.SKPath.QuadTo*) bir ikinci dereceden Bezier eğrisi eklemek için
+- [`ConicTo`](SkiaSharp.SKPath.ConicTo*) conic bölümleri (üç nokta, paraboller ve hiperboller) doğru bir şekilde oluşturulabilen bir rasyonel ikinci dereceden Bezier eğrisi, eklemek için
 
 Bu beş yöntemlerin hiçbiri satır ya da eğrisini açıklamak gereken tüm bilgileri içerir. Beş bu yöntemlerin her biri, yöntem çağrısının hemen önceki tarafından belirlenen geçerli noktasıyla birlikte çalışır. Örneğin, `LineTo` yöntemi ekler bir çizgide dağılımı dayalı geçerli bir noktasında, bu nedenle parametresi `LineTo` yalnızca tek bir nokta.
 
 `SKPath` Sınıfı da tanımlar bu altı yöntem olarak, ancak ile aynı ada sahip yöntem bir `R` başında:
 
-- `RMoveTo`
-- `RLineTo`
-- `RArcTo`
-- `RCubicTo`
-- `RQuadTo`
-- `RConicTo`
+- [`RMoveTo`]((SkiaSharp.SKPath.RMoveTo*))
+- [`RLineTo`](SkiaSharp.SKPath.RLineTo*)
+- [`RArcTo`](SkiaSharp.SKPath.RArcTo*)
+- [`RCubicTo`](SkiaSharp.SKPath.RCubicTo*)
+- [`RQuadTo`](SkiaSharp.SKPath.RQuadTo*)
+- [`RConicTo`](SkiaSharp.SKPath.RConicTo*)
 
-`R` Anlamına gelen *göreli*. Aynı söz dizimine karşılık gelen yöntemlere sahiptirler `R` ancak göre geçerli noktasıdır. Bunlar, benzer bir yolda birden çok kez çağıran bir yöntem bölümlerini çizmek için kullanışlıdır.
+`R` Anlamına gelen *göreli*. Bu yöntemleri aynı söz dizimine karşılık gelen yöntemlere sahip `R` ancak göre geçerli noktasıdır. Bunlar, benzer bir yolda birden çok kez çağıran bir yöntem bölümlerini çizmek için kullanışlıdır.
 
 Başka bir çağrıyı bir dağılımı biten `MoveTo` veya `RMoveTo`, yeni bir dağılımı veya çağrı başlar `Close`, dağılımı kapatır. `Close` Yöntemi otomatik olarak zamandaki geçerli noktadan dağılımı ilk noktasına düz bir çizgi ekler ve yolun kapalı olarak işaretler herhangi bir vuruş uçları işlenir anlamına gelir.
 
-Açık ve kapalı dağılımlarını arasındaki farkı gösterilmiştir **iki üçgen dağılımlarını** sayfası, kullanan bir `SKPath` iki üçgen işlemek için iki dağılımlarını nesne. İlk dağılımı açık ve ikinci kapalı. İşte [ `TwoTriangleContours` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/TwoTriangleContoursPage.cs) sınıfı:
+Açık ve kapalı dağılımlarını arasındaki farkı gösterilmiştir **iki üçgen dağılımlarını** sayfası, kullanan bir `SKPath` iki üçgen işlemek için iki dağılımlarını nesne. İlk dağılımı açık ve ikinci kapalı. İşte [ `TwoTriangleContoursPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/TwoTriangleContoursPage.cs) sınıfı:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -97,31 +97,31 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-Bir çağrı ilk dağılımı oluşan [ `MoveTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.MoveTo/p/System.Single/System.Single/) X ve Y koordinatları kullanarak yerine `SKPoint` değeri, üç çağrı ardından [ `LineTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.LineTo/p/System.Single/System.Single/) üç tarafının çizmek için üçgeni temsil eder. İkinci dağılımı yalnızca iki çağrısına sahip `LineTo` ancak çağrısıyla dağılımı bittikten [ `Close` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.Close()/), dağılımı kapatır. Önemli bir fark vardır:
+Bir çağrı ilk dağılımı oluşan [ `MoveTo` ](xref:SkiaSharp.SKPath.MoveTo(System.Single,System.Single)) X ve Y koordinatları kullanarak yerine `SKPoint` değeri, üç çağrı ardından [ `LineTo` ](xref:SkiaSharp.SKPath.LineTo(System.Single,System.Single)) üç tarafının çizmek için üçgeni temsil eder. İkinci dağılımı yalnızca iki çağrısına sahip `LineTo` ancak çağrısıyla dağılımı bittikten [ `Close` ](xref:SkiaSharp.SKPath.Close), dağılımı kapatır. Önemli bir fark vardır:
 
 [![](paths-images/twotrianglecontours-small.png "Üçlü sayfasının ekran görüntüsü iki üçgen dağılımlarını")](paths-images/twotrianglecontours-large.png#lightbox "Üçlü sayfasının ekran görüntüsü iki üçgen dağılımlarını")
 
 Gördüğünüz gibi ilk dağılımı açıkça üç bağlı çizgiler dizisidir, ancak son başlayarak bağlanmıyor. Aşağıdaki iki satırı üstünde çakışıyor. İkinci dağılımı açıkça kapatılır ve daha az biriyle gerçekleştirilmiştir `LineTo` çağırır çünkü `Close` yöntemi, bir son satırı dağılımı kapatmak için otomatik olarak ekler.
 
-`SKCanvas` yalnızca bir adet tanımlanır [ `DrawPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawPath/p/SkiaSharp.SKPath/SkiaSharp.SKPaint/) doldurun ve yolun vuruş yapmak için bu gösteride adlı iki kez yöntemi. Tüm dağılımlarını doldurulur, olanlar kapatılmamış. Olmayan yollar doldurma amacıyla, düz bir çizgi başlangıç ve bitiş noktaları dağılımlarını arasında mevcut varsayılır. Son kaldırırsanız `LineTo` ilk dağılımı ya da remove `Close` ikinci dağılımı, her dağılımı çağrısından bu üçgen gibi doldurulması yalnızca iki kenara ancak olacaktır.
+`SKCanvas` yalnızca bir adet tanımlanır [ `DrawPath` ](xref:SkiaSharp.SKCanvas.DrawPath(SkiaSharp.SKPath,SkiaSharp.SKPaint)) doldurun ve yolun vuruş yapmak için bu gösteride adlı iki kez yöntemi. Tüm dağılımlarını doldurulur, olanlar kapatılmamış. Olmayan yollar doldurma amacıyla, düz bir çizgi başlangıç ve bitiş noktaları dağılımlarını arasında mevcut varsayılır. Son kaldırırsanız `LineTo` ilk dağılımı ya da remove `Close` ikinci dağılımı, her dağılımı çağrısından bu üçgen gibi doldurulması yalnızca iki kenara ancak olacaktır.
 
 `SKPath` diğer birçok yöntemleri ve özellikleri tanımlar. Aşağıdaki yöntemlerden yöntemine bağlı olarak kapalı değil veya kapalı, yolun tamamı dağılımlarını ekleyin:
 
-- `AddRect`
-- [`AddRoundedRect`](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.AddRoundedRect/p/SkiaSharp.SKRect/System.Single/System.Single/SkiaSharp.SKPathDirection/)
-- [`AddCircle`](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.AddCircle/p/System.Single/System.Single/System.Single/SkiaSharp.SKPathDirection/)
-- [`AddOval`](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.AddOval/p/SkiaSharp.SKRect/SkiaSharp.SKPathDirection/)
-- [`AddArc`](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.AddArc/p/SkiaSharp.SKRect/System.Single/System.Single/) bir elipsin çevresi üzerinde bir eğri eklemek için
-- `AddPath` Geçerli bir yol için başka bir yol eklemek için
-- [`AddPathReverse`](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.AddPathReverse/p/SkiaSharp.SKPath/) geriye doğru başka bir yol eklemek için
+- [`AddRect`](xref:SkiaSharp.SKPath.AddRect*)
+- [`AddRoundedRect`](xref:SkiaSharp.SKPath.AddRoundedRect(SkiaSharp.SKRect,System.Single,System.Single,SkiaSharp.SKPathDirection))
+- [`AddCircle`](xref:SkiaSharp.SKPath.AddCircle(System.Single,System.Single,System.Single,SkiaSharp.SKPathDirection))
+- [`AddOval`](xref:SkiaSharp.SKPath.AddOval(SkiaSharp.SKRect,SkiaSharp.SKPathDirection))
+- [`AddArc`](xref:SkiaSharp.SKPath.AddArc(SkiaSharp.SKRect,System.Single,System.Single)) bir elipsin çevresi üzerinde bir eğri eklemek için
+- [`AddPath`](xref:SkiaSharp.SKPath.AddPath*) Geçerli bir yol için başka bir yol eklemek için
+- [`AddPathReverse`](xref:SkiaSharp.SKPath.AddPathReverse(SkiaSharp.SKPath)) geriye doğru başka bir yol eklemek için
 
 Aklınızda bir `SKPath` nesne tanımlar yalnızca geometri &mdash; bir dizi noktaları ve bağlantıları. Yalnızca bir `SKPath` ile birleştirilmiş bir `SKPaint` nesne belirli bir renk, darbe genişliği ve diğerleri ile işlenen yoludur. Ayrıca, aklınızda `SKPaint` geçirilen nesne `DrawPath` yöntemi yolun tamamını özelliklerini tanımlar. Birkaç renkleri gerektiren bir şeyler çizmek istiyorsanız, her renk için ayrı bir yol kullanmalısınız.
 
-Başlangıç ve bitiş satır görünümünü bir vuruş uç tarafından yalnızca tanımlandığı gibi iki satır arasında bağlantı görünümünü tarafından tanımlanan bir *vuruş birleştirme*. Ayarlayarak belirtin [ `StrokeJoin` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeJoin/) özelliği `SKPaint` üyesinin [ `SKStrokeJoin` ](https://developer.xamarin.com/api/type/SkiaSharp.SKStrokeJoin/) sabit listesi:
+Başlangıç ve bitiş satır görünümünü bir vuruş uç tarafından yalnızca tanımlandığı gibi iki satır arasında bağlantı görünümünü tarafından tanımlanan bir *vuruş birleştirme*. Ayarlayarak belirtin [ `StrokeJoin` ](xref:SkiaSharp.SKPaint.StrokeJoin) özelliği `SKPaint` üyesinin [ `SKStrokeJoin` ](xref:SkiaSharp.SKStrokeJoin) sabit listesi:
 
-- [`Miter`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeJoin.Miter/) noktalı bir birleştirme için
-- [`Round`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeJoin.Round/) yuvarlak bir birleştirme için
-- [`Bevel`](https://developer.xamarin.com/api/field/SkiaSharp.SKStrokeJoin.Bevel/) Birleştirme kesilmiş Tasarımlı-kapatmak için
+- `Miter` noktalı bir birleştirme için
+- `Round` yuvarlak bir birleştirme için
+- `Bevel` Birleştirme kesilmiş Tasarımlı-kapatmak için
 
 **Vuruş birleştirmeler** sayfasında bu üç vuruş benzer şekilde kod birleştirmelerle gösterir **vuruş uçları** sayfası. Bu `PaintSurface` olay işleyicisinde [ `StrokeJoinsPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/LinesAndPaths/StrokeJoinsPage.cs) sınıfı:
 
@@ -191,10 +191,10 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 [![](paths-images/strokejoins-small.png "Üçlü sayfasının ekran görüntüsü vuruş birleşimler")](paths-images/strokejoins-large.png#lightbox "Üçlü sayfasının ekran görüntüsü vuruş birleştirir")
 
-Gönye satırları eriştikleri bir sharp noktası oluşur. İki satırı, küçük bir açıyla katıldığında, gönye oldukça uzun olabilir. Aşırı uzun gönye birleştirmeler önlemek için gönye uzunluğu değeriyle sınırlıdır [ `StrokeMiter` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.StrokeMiter/) özelliği `SKPaint`. Bu uzunluğu aşan gönye kapalı bir Eğim birleştirme olmasını kesilmiş Tasarımlı.
+Gönye satırları eriştikleri bir sharp noktası oluşur. İki satırı, küçük bir açıyla katıldığında, gönye oldukça uzun olabilir. Aşırı uzun gönye birleştirmeler önlemek için gönye uzunluğu değeriyle sınırlıdır [ `StrokeMiter` ](xref:SkiaSharp.SKPaint.StrokeMiter) özelliği `SKPaint`. Bu uzunluğu aşan gönye kapalı bir Eğim birleştirme olmasını kesilmiş Tasarımlı.
 
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [SkiaSharp API'leri](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp API'leri](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (örnek)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

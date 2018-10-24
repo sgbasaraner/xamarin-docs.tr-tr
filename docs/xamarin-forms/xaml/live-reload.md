@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: pierceboggan
 ms.author: piboggan
 ms.date: 05/11/2018
-ms.openlocfilehash: 12b677c8cc4a709a865d2eaee3ea44a6babf1b05
-ms.sourcegitcommit: 632955f8cdb80712abd8dcc30e046cb9c435b922
+ms.openlocfilehash: ce48c4d271167b657505c52518e79c955e53b02e
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/11/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "38860673"
 ---
 # <a name="xamarin-live-reload"></a>Xamarin Canlı yeniden yükleme
@@ -26,10 +26,12 @@ Uygulamanızı Canlı yeniden yükleme kullanırken derlendiğinden tüm kitapl�
 
 Canlı yeniden yükleme şu anda yalnızca Visual Studio 2017'de kullanılabilir.
 
+[![Sohbete katılın https://gitter.im/xamarin/live-reload](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/xamarin/live-reload?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ## <a name="requirements"></a>Gereksinimler
 
-* [Visual Studio 2017 sürüm 15.7 veya üzeri](https://visualstudio.microsoft.com/vs/) veya üstü ile **.NET ile Mobil Geliştirme** iş yükü.
-* [Xamarin.Forms 3.0.0 veya yukarıdaki](https://www.nuget.org/packages/Xamarin.Forms/) veya üzeri.
+* [Visual Studio 2017 sürüm 15.7 veya üzeri](https://visualstudio.microsoft.com/vs/) ile **.NET ile Mobil Geliştirme** iş yükü.
+* [Xamarin.Forms 3.0.0 veya yukarıdaki](https://www.nuget.org/packages/Xamarin.Forms/).
 
 ## <a name="getting-started"></a>Başlarken
 ### <a name="1-install-xamarin-live-reload-from-the-visual-studio-marketplace"></a>1. Visual Studio Market'ten Xamarin Canlı yeniden yükleme
@@ -121,6 +123,8 @@ Hayır. Aslında, hatta tüm desteklenen uygulama hedeflerinizi (Android, iOS ve
 * Yalnızca Visual Studio içinde desteklenir.
 * Bağlama ayarlanmalıdır **bağlama** veya **yalnızca bağlantı Framework SDK'ları** 
 * Uygulama genelinde kaynakları yeniden (yani **App.xaml** veya paylaşılan kaynak sözlükleri), gezintisini sıfırlanır. Bu, sonraki Önizleme sürümünde düzeltilecektir.
+* ContentView şu anda yeniden yüklemeyi içeren sayfayı yeniden yüklemeyi gerektirir. Bu, sonraki Önizleme sürümünde düzeltilecektir.
+* Automationıd içeren öğeleri yeniden başarısız olmasına neden.
 * UWP hata ayıklama çalışma zamanı Çökmeye neden, ancak XAML düzenleme. Geçici çözüm: Kullanın **Başlat (Ctrl + F5) hata ayıklama olmadan** yerine **Start Debugging (F5)**.
 
 ## <a name="troubleshooting"></a>Sorun giderme

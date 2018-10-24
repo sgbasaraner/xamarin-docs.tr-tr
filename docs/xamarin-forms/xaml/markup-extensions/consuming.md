@@ -6,23 +6,25 @@ ms.assetid: CE686893-609C-4EC3-9225-6C68D2A9F79C
 ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
-ms.date: 01/05/2018
-ms.openlocfilehash: a630d7c2acb95b7551c9f5f870078a0efcfc075c
-ms.sourcegitcommit: ecdc031e9e26bbbf9572885531ee1f2e623203f5
+ms.date: 08/01/2018
+ms.openlocfilehash: e483716952aa97de4411733006f4fa12c3e6da98
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/01/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39393678"
 ---
 # <a name="consuming-xaml-markup-extensions"></a>XAML biçimlendirme uzantılarını kullanma
 
-XAML biçimlendirme uzantıları, özel olarak çeşitli kaynaklardan ayarlanacak öğenin öznitelikleri vererek gücü ve esnekliği XAML artırmaya yardımcı olun. Birkaç XAML biçimlendirme uzantıları XAML 2009 belirtiminin bir parçasıdır. Bunlar her zamanki XAML dosyalarıyla görünür `x` çalıştırdığınız ve ad alanı öneki yaygın olarak adlandırılan bu öneki. Bunlar aşağıdaki bölümlerde açıklanmıştır:
+XAML biçimlendirme uzantıları, özel olarak çeşitli kaynaklardan ayarlanacak öğenin öznitelikleri vererek gücü ve esnekliği XAML artırmaya yardımcı olun. Birkaç XAML biçimlendirme uzantıları XAML 2009 belirtiminin bir parçasıdır. Bunlar her zamanki XAML dosyalarıyla görünür `x` çalıştırdığınız ve ad alanı öneki yaygın olarak adlandırılan bu öneki. Bu makalede aşağıdaki biçimlendirme uzantıları açıklanmaktadır:
 
-- [`x:Static`](#static) &ndash; statik özellikler, alanlar veya numaralandırma üyelerini başvuru.
-- [`x:Reference`](#reference) &ndash; öğeleri sayfada adlı başvuru.
-- [`x:Type`](#type) &ndash; bir öznitelik ayarlanmış bir `System.Type` nesne.
-- [`x:Array`](#array) &ndash; belirli bir türün nesnelerinin bir dizisini oluşturur.
-- [`x:Null`](#null) &ndash; bir öznitelik ayarlanmış bir `null` değeri.
+- [`x:Static`](#static) – statik özellikler, alanlar veya numaralandırma üyelerini başvuru.
+- [`x:Reference`](#reference) – sayfadaki öğeleri adlı başvuru.
+- [`x:Type`](#type) – bir özniteliğini bir `System.Type` nesne.
+- [`x:Array`](#array) – belirli bir türdeki nesneleri içeren bir dizi oluşturun.
+- [`x:Null`](#null) – bir özniteliğini bir `null` değeri.
+- [`OnPlatform`](#onplatform) -platform başına temelinde kullanıcı Arabirimi özelleştirme.
+- [`OnIdiom`](#onidiom) – deyim uygulamanın çalıştığı cihazın temel kullanıcı arabirimini özelleştirme.
 
 Ek XAML biçimlendirme uzantıları geçmişe yönelik olarak diğer XAML uygulamaları tarafından desteklenen ve Xamarin.Forms tarafından da desteklenir. Bu, diğer makalelerden daha ayrıntılı açıklanmıştır:
 
@@ -453,10 +455,89 @@ Biri için olduğunu fark sonra `Label` öğeleri, örtük olarak tüm özellik 
 
 Bildirim, dört `Label` öğelere sahip bir serif yazı tipi, merkezi `Label` varsayılan sans-serif yazı tipi.
 
+<a name="onplatform" />
+
+## <a name="onplatform-markup-extension"></a>OnPlatform işaretleme uzantısı
+
+`OnPlatform` İşaretleme uzantısı platform başına temelinde UI görünümünü özelleştirmenize olanak sağlar. Aynı işlevselliği sağlar [ `OnPlatform` ](xref:Xamarin.Forms.OnPlatform`1) ve [ `On` ](xref:Xamarin.Forms.On) sınıfları, ancak daha kısa bir gösterim.
+
+`OnPlatform` İşaretleme uzantısı tarafından desteklenen [ `OnPlatformExtension` ](xref:Xamarin.Forms.Xaml.OnPlatformExtension) aşağıdaki özellikleri tanımlayan sınıf:
+
+- `Default` tür `object`, platformları temsil eden özellikler uygulanacak varsayılan bir değere ayarlayın.
+- `Android` tür `object`, Android'de uygulanacak bir değere ayarlanmış.
+- `GTK` tür `object`, GTK platformlarda uygulanacak bir değere ayarlanmış.
+- `iOS` tür `object`, İos'ta uygulanacak bir değere ayarlanmış.
+- `macOS` tür `object`, macOS üzerinde uygulanacak bir değere ayarlanmış.
+- `Tizen` tür `object`, Tizen platformunda uygulanacak bir değere ayarlanmış.
+- `UWP` tür `object`, Evrensel Windows platformu üzerinde uygulanacak bir değere ayarlanmış.
+- `WPF` tür `object`, Windows Presentation Foundation platformunda uygulanacak bir değere ayarlanmış.
+- `Converter` tür `IValueConverter`, ayarladığınız bir `IValueConverter` uygulaması.
+- `ConverterParameter` tür `object`, geçirmek için bir değere ayarlanmış `IValueConverter` uygulaması.
+
+> [!NOTE]
+> XAML ayrıştırıcı sağlayan [ `OnPlatformExtension` ](xref:Xamarin.Forms.Xaml.OnPlatformExtension) sınıfı olarak kısaltılır `OnPlatform`.
+
+`Default` Özelliktir içerik özelliğinin `OnPlatformExtension`. Bu nedenle, küme ayracı ile ifade edilen XAML biçimlendirme ifadeler için çıkarabilirsiniz `Default=` ilk bağımsız değişken olması şartıyla ifade parçası.
+
+> [!IMPORTANT]
+> XAML ayrıştırıcı doğru türde değerler tüketen özellikleri için sağlanan bekliyor `OnPlatform` işaretleme uzantısı. Tür dönüştürme gerekliyse, `OnPlatform` işaretleme uzantısı Xamarin.Forms tarafından sağlanan varsayılan dönüştürücüleri kullanarak gerçekleştirmeyi deneyecek. Ancak, varsayılan dönüştürücüleri ve bu gibi durumlarda gerçekleştirilemiyor bazı tür dönüştürmeleri vardır `Converter` özelliği ayarlanmalıdır bir `IValueConverter` uygulaması.
+
+**OnPlatform tanıtım** sayfasını nasıl kullanılacağını göstermektedir `OnPlatform` işaretleme uzantısı:
+
+```xaml
+<BoxView Color="{OnPlatform Yellow, iOS=Red, Android=Green, UWP=Blue}"
+         WidthRequest="{OnPlatform 250, iOS=200, Android=300, UWP=400}"  
+         HeightRequest="{OnPlatform 250, iOS=200, Android=300, UWP=400}"
+         HorizontalOptions="Center" />
+```
+
+Bu örnekte, üç `OnPlatform` ifadeleri kullanma kısaltılmış `OnPlatformExtension` sınıf adı. Üç `OnPlatform` biçimlendirme uzantıları kümesi [ `Color` ](xref:Xamarin.Forms.BoxView.Color), [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest), ve [ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest) özelliklerini [ `BoxView` ](xref:Xamarin.Forms.BoxView) iOS, Android ve UWP üzerindeki farklı değerler. Biçimlendirme uzantıları, sorununu ortadan kaldırırken belirtilmeyen platformları üzerinde bu özellikler için varsayılan değerleri de sağlar. `Default=` ifadesinin parçası. Ayarlanan işaretleme uzantısı özellikleri virgüllerle ayrılır dikkat edin.
+
+Üç tüm platformlarda çalışan bir program şöyledir:
+
+[![OnPlatform tanıtım](consuming-images/onplatformdemo-small.png "OnPlatform tanıtım")](consuming-images/onplatformdemo-large.png#lightbox "OnPlatform Tanıtımı")
+
+<a name="onidiom" />
+
+## <a name="onidiom-markup-extension"></a>OnIdiom işaretleme uzantısı
+
+`OnIdiom` Biçimlendirme uzantıları uygulamanın çalıştığı cihazın deyim temel kullanıcı arabirimini özelleştirme olanak tanır. Tarafından desteklenen [ `OnIdiomExtension` ](xref:Xamarin.Forms.Xaml.OnIdiomExtension) aşağıdaki özellikleri tanımlayan sınıf:
+
+- `Default` tür `object`, cihaz deyimleri temsil eden özellikler uygulanacak varsayılan bir değere ayarlayın.
+- `Phone` tür `object`, telefonlarda uygulanacak bir değere ayarlanmış.
+- `Tablet` tür `object`, tabletlerde uygulanacak bir değere ayarlanmış.
+- `Desktop` tür `object`, Masaüstü platformlarda uygulanacak bir değere ayarlanmış.
+- `TV` tür `object`, TV platformlarda uygulanacak bir değere ayarlanmış.
+- `Watch` tür `object`, Watch platformlarda uygulanacak bir değere ayarlanmış.
+- `Converter` tür `IValueConverter`, ayarladığınız bir `IValueConverter` uygulaması.
+- `ConverterParameter` tür `object`, geçirmek için bir değere ayarlanmış `IValueConverter` uygulaması.
+
+> [!NOTE]
+> XAML ayrıştırıcı sağlayan [ `OnIdiomExtension` ](xref:Xamarin.Forms.Xaml.OnIdiomExtension) sınıfı olarak kısaltılır `OnIdiom`.
+
+`Default` Özelliktir içerik özelliğinin `OnIdiomExtension`. Bu nedenle, küme ayracı ile ifade edilen XAML biçimlendirme ifadeler için çıkarabilirsiniz `Default=` ilk bağımsız değişken olması şartıyla ifade parçası.
+
+> [!IMPORTANT]
+> XAML ayrıştırıcı doğru türde değerler tüketen özellikleri için sağlanan bekliyor `OnIdiom` işaretleme uzantısı. Tür dönüştürme gerekliyse, `OnIdiom` işaretleme uzantısı Xamarin.Forms tarafından sağlanan varsayılan dönüştürücüleri kullanarak gerçekleştirmeyi deneyecek. Ancak, varsayılan dönüştürücüleri ve bu gibi durumlarda gerçekleştirilemiyor bazı tür dönüştürmeleri vardır `Converter` özelliği ayarlanmalıdır bir `IValueConverter` uygulaması.
+
+**OnIdiom tanıtım** sayfasını nasıl kullanılacağını göstermektedir `OnIdiom` işaretleme uzantısı:
+
+```xaml
+<BoxView Color="{OnIdiom Yellow, Phone=Red, Tablet=Green, Desktop=Blue}"
+         WidthRequest="{OnIdiom 100, Phone=200, Tablet=300, Desktop=400}"
+         HeightRequest="{OnIdiom 100, Phone=200, Tablet=300, Desktop=400}"
+         HorizontalOptions="Center" />
+```
+
+Bu örnekte, üç `OnIdiom` ifadeleri kullanma kısaltılmış `OnIdiomExtension` sınıf adı. Üç `OnIdiom` biçimlendirme uzantıları kümesi [ `Color` ](xref:Xamarin.Forms.BoxView.Color), [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest), ve [ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest) özelliklerini [ `BoxView` ](xref:Xamarin.Forms.BoxView) telefon, tablet ve Masaüstü deyimleri üzerindeki farklı değerler. Biçimlendirme uzantıları, sorununu ortadan kaldırırken belirtilmeyen deyimleri üzerinde bu özellikler için varsayılan değerleri de sağlar. `Default=` ifadesinin parçası. Ayarlanan işaretleme uzantısı özellikleri virgüllerle ayrılır dikkat edin.
+
+Üç tüm platformlarda çalışan bir program şöyledir:
+
+[![OnIdiom tanıtım](consuming-images/onidiomdemo-small.png "OnIdiom tanıtım")](consuming-images/onidiomdemo-large.png#lightbox "OnIdiom Tanıtımı")
+
 ## <a name="define-your-own-markup-extensions"></a>Kendi biçimlendirme uzantılarını tanımla
 
 Xamarin.Forms içinde kullanılamayan bir XAML işaretleme uzantısı gereksinimini karşılaştığınız varsa [kendi uzantınızı oluşturun](creating.md).
-
 
 ## <a name="related-links"></a>İlgili bağlantılar
 

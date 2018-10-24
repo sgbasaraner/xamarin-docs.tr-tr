@@ -4,14 +4,14 @@ description: Bu makalede SkiaSharp küp, ikinci dereceden ve conic Bézier Eğri
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 8FE0F6DC-16BC-435F-9626-DD1790C0145A
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 05/25/2017
-ms.openlocfilehash: 0ad722f22cf5ed8dc06fdf0d1e063d285e2ddb2f
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 1da0ee6155548a38057e4c7bf49ae5b90d445d79
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39615346"
 ---
 # <a name="three-types-of-bzier-curves"></a>Üç tür Bézier Eğriler
@@ -20,17 +20,19 @@ _SkiaSharp küp, ikinci dereceden ve conic Bézier eğrileri işlemek için nas�
 
 Bézier eğrisi Pierre Bézier (1910 – 1999), Fransız bir mühendislik eğri araba gövdeleri bilgisayar destekli tasarım için kullanılan Renault, otomotiv şirket adlandırılır.
 
-Bézier eğrileri etkileşimli bir tasarımı için uygun olan bilinir: iyi çalışan oldukları &mdash; başka bir deyişle, sonsuz veya zahmetli hale eğrinin neden singularities yok &mdash; ve genellikle aesthetically güzel . Bilgisayar tabanlı yazı tiplerinin karakter anahatlarını genellikle Bézier Eğriler tanımlanır:
+Bézier eğrileri etkileşimli bir tasarımı için uygun olan bilinir: iyi çalışan oldukları &mdash; başka bir deyişle, sonsuz veya zahmetli hale eğrinin neden singularities yok &mdash; ve genellikle aesthetically güzel :
 
 ![](beziers-images/beziersample.png "Bir örnek Bezier eğrisi")
 
-Wikipedia makaleyi [Bézier eğrisi](https://en.wikipedia.org/wiki/B%C3%A9zier_curve) bazı yararlı bilgiler içerir. Terim *Bézier eğrisi* gerçekten benzer eğrileri ailesi için ifade eder. SkiaSharp destekleyen üç tür olarak adlandırılan Bézier eğrilerinin *üçüncü dereceden*, *ikinci dereceden*ve *conic*. Conic olarak da bilinir *rasyonel dereceden*.
+Bilgisayar tabanlı yazı tiplerinin karakter anahatlarını genellikle Bézier eğrileri ile tanımlanır.
+
+Wikipedia makaleyi [ **Bézier eğrisi** ](https://en.wikipedia.org/wiki/B%C3%A9zier_curve) bazı yararlı bilgiler içerir. Terim *Bézier eğrisi* gerçekten benzer eğrileri ailesi için ifade eder. SkiaSharp destekleyen üç tür olarak adlandırılan Bézier eğrilerinin *üçüncü dereceden*, *ikinci dereceden*ve *conic*. Conic olarak da bilinir *rasyonel dereceden*.
 
 ## <a name="the-cubic-bzier-curve"></a>Üçüncü dereceden Bézier eğrisi
 
 Cubic Bézier eğrileri konusunu ortaya çıktığında, çoğu geliştirici, düşündüğünüz Bézier eğrisi türüdür.
 
-Bir küp Bézier eğriye ekleyebileceğiniz bir `SKPath` kullanarak nesne [ `CubicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.CubicTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/SkiaSharp.SKPoint/) üç yöntemi `SKPoint` parametreleri veya [ `CubicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.CubicTo/p/System.Single/System.Single/System.Single/System.Single/System.Single/System.Single/) ayrı aşırıyüklemesi`x` ve `y` parametreleri:
+Bir küp Bézier eğriye ekleyebileceğiniz bir `SKPath` kullanarak nesne [ `CubicTo` ](xref:SkiaSharp.SKPath.CubicTo(SkiaSharp.SKPoint,SkiaSharp.SKPoint,SkiaSharp.SKPoint)) üç yöntemi `SKPoint` parametreleri veya [ `CubicTo` ](xref:SkiaSharp.SKPath.CubicTo(System.Single,System.Single,System.Single,System.Single,System.Single,System.Single)) ayrı aşırıyüklemesi`x` ve `y` parametreleri:
 
 ```csharp
 public void CubicTo (SKPoint point1, SKPoint point2, SKPoint point3)
@@ -45,7 +47,7 @@ Eğriyi dağılımı geçerli noktada başlar. Tam üçüncü dereceden Bezier e
 - İkinci noktası'nı denetleyen: `point2` içinde `CubicTo` çağırın
 - uç noktası: `point3` içinde `CubicTo` çağırın
 
-Sonuç eğri başlangıç noktadan başlar ve bitiş noktasında sona erer. Eğriyi iki denetim noktaları aracılığıyla genellikle geçirmez; Bunun yerine bunları doğru eğri çekmek için çok benzer mıknatıs işlev.
+Sonuç eğri başlangıç noktadan başlar ve bitiş noktasında sona erer. Eğriyi iki denetim noktaları aracılığıyla genellikle geçirmez; Bunun yerine denetimi gibi eğriyi bunları doğrultusunda almayı çok mıknatıs işlevi işaret eder.
 
 Deneme tarafından bir küp Bézier eğrisini almak için en iyi yoludur. Amacı budur **Bezier eğrisi** türetilen sayfa `InteractivePage`. [ **BezierCurvePage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml) dosya başlatır `SKCanvasView` ve `TouchEffect`. [ **BezierCurvePage.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/BezierCurvePage.xaml.cs) arka plan kod dosyası oluşturur dört `TouchPoint` oluşturucusuna nesneleri. `PaintSurface` Olay işleyicisi oluşturur bir `SKPath` dört temel Bézier eğri işlenecek `TouchPoint` nesneleri ve ayrıca noktalı Eğim satırları Uç noktalara denetim noktalarını çizer:
 
@@ -101,7 +103,7 @@ Yol dağılımı birden çok bağlı üçüncü dereceden Bézier eğrileri içe
 - Ayrıca ikinci eğrinin başlangıç noktası olan ilk eğrisinin uç noktası
 - ilk ikinci eğrisi denetim noktası
 
-Sonraki makalede [ **SVG yol verileri** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md) kesintisiz bağlı Bézier eğrileri tanımını kolaylaştırmak için bir özellik keşfedeceksiniz.
+Sonraki makalede [ **SVG yol verileri**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/path-data.md), kesintisiz bağlı Bézier eğrileri tanımını kolaylaştırmak için bir özellik keşfedeceksiniz.
 
 Bazı durumlarda, üçüncü dereceden Bézier eğrisi işleme temel alınan parametreli denklemler bilmek de yararlı olabilir. İçin *t* 0 ile 1 arasında parametreli denklemler aşağıdaki gibidir:
 
@@ -111,7 +113,7 @@ y(t) = (1-t) ³y₀ + 3t (1-t) ²y₁ + 3t² (1-t) y₂ + t³y₃
 
 En yüksek üs 3 bunların üçüncü dereceden polynomials olduğunu onaylar. Gerektiğini doğrulamak kolayca `t` 0 değerine eşittir; noktası (x₀ y₀), başlangıç noktası olduğu ve ne zaman `t` eşittir 1, (x₃ y₃), bitiş noktası olduğu noktasıdır. Neredeyse başlangıç noktası (düşük değerler için `t`), ilk denetim noktası (x₁, y₁) güçlü efekt ve neredeyse uç noktası olan (yüksek değerler 'T ') ikinci denetim noktası (x₂, y₂) güçlü bir etkisi.
 
-## <a name="bzier-curve-approximation-to-circular-arcs"></a>Dairesel yaylara için Bézier eğrisi yaklaşık
+## <a name="bezier-curve-approximation-to-circular-arcs"></a>Bezier eğrisi yaklaşık dairesel yaylara için
 
 Bazen, Bézier eğriyi dairesel bir yay işlemek için kullanmak kullanışlıdır. Dört bağlı Bézier eğrileri tam bir daire bu sayede üçüncü dereceden Bézier eğrisi dairesel bir yay çok iyi çeyrek daire kadar yaklaşık. Bu yaklaşık 25 yılı önce yayımlanan iki makalelerde ele alınmıştır:
 
@@ -203,7 +205,7 @@ float Magnitude(SKPoint v)
 
 ```
 
-Başlangıç ve bitiş noktalarını (`point0` ve `point3`) normal parametreli denklemler daire için temel alınarak hesaplanır. Daire adresindeki ortalanır olduğundan (0, 0), bu noktaları ayrıca Radyal vektör olarak dairenin Merkezi'nden çevresi için işlenebilir. Dik Açılı Radyal bu vektörler için olur böylece daireye tanjantı satırları denetim noktaları açıktır. Dik açılı bir vektörünü yalnızca özgün takas X ve Y koordinatları ve bunlardan birinin negatif yapılan vektördür.
+Başlangıç ve bitiş noktalarını (`point0` ve `point3`) normal parametreli denklemler daire için temel alınarak hesaplanır. Daire adresindeki ortalanır olduğundan (0, 0), bu noktaları ayrıca Radyal vektör olarak dairenin Merkezi'nden çevresi için işlenebilir. Dik Açılı Radyal bu vektörler için olur böylece daireye tanjantı satırları denetim noktaları açıktır. Bir diğerine sağ açıyla yalnızca özgün vektörün takas X ve Y koordinatları ve bunlardan birinin negatif yapılan vektördür.
 
 Üç farklı açıları ile üç platformları üzerinde çalışan bir program şöyledir:
 
@@ -350,7 +352,7 @@ x(t) = (1-t) ²x₀ + 2t (1-t) x₁ + t²x₂
 
 y(t) = (1-t) ²y₀ + 2t (1-t) y₁ + t²y₂
 
-Bir yol Bézier ikinci dereceden bir eğri eklemek için [ `QuadTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.QuadTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/) yöntemi veya [ `QuadTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.QuadTo/p/System.Single/System.Single/System.Single/System.Single/) aşırı yüklemesi olan ayrı `x` ve `y` koordinatları:
+Bir yol Bézier ikinci dereceden bir eğri eklemek için [ `QuadTo` ](xref:SkiaSharp.SKPath.QuadTo(SkiaSharp.SKPoint,SkiaSharp.SKPoint)) yöntemi veya [ `QuadTo` ](xref:SkiaSharp.SKPath.QuadTo(System.Single,System.Single,System.Single,System.Single)) aşırı yüklemesi olan ayrı `x` ve `y` koordinatları:
 
 ```csharp
 public void QuadTo (SKPoint point1, SKPoint point2)
@@ -427,7 +429,7 @@ y(t) = ((1 – t) ²y₀ + 2wt (1-t) y₁ + t²y₂)) bölü; d(t)
 
 İkinci dereceden rasyonel Bézier eğrileri da verilir *conics* herhangi bir conic bölümü parçalarını tam olarak temsil edebilir çünkü &mdash; hiperboller, paraboller, elips ve daireler.
 
-İkinci dereceden bir rasyonel Bézier eğri için bir yol eklemek için [ `ConicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ConicTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/System.Single/) yöntemi veya [ `ConicTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ConicTo/p/System.Single/System.Single/System.Single/System.Single/System.Single/) aşırı yüklemesi olan ayrı `x` ve `y` koordinatları:
+İkinci dereceden bir rasyonel Bézier eğri için bir yol eklemek için [ `ConicTo` ](xref:SkiaSharp.SKPath.ConicTo(SkiaSharp.SKPoint,SkiaSharp.SKPoint,System.Single)) yöntemi veya [ `ConicTo` ](xref:SkiaSharp.SKPath.ConicTo(System.Single,System.Single,System.Single,System.Single,System.Single)) aşırı yüklemesi olan ayrı `x` ve `y` koordinatları:
 
 ```csharp
 public void ConicTo (SKPoint point1, SKPoint point2, Single weight)
@@ -552,5 +554,5 @@ Bu durumda talihsiz, `ConicTo` negatif ağırlıkları desteklemez (üzerinde pa
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [SkiaSharp API'leri](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp API'leri](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (örnek)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

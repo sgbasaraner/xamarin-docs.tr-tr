@@ -3,24 +3,29 @@ title: Otomatik Tamamlama
 ms.prod: xamarin
 ms.assetid: D4C8CA49-8369-35B7-798D-B147FDC24185
 ms.technology: xamarin-android
-author: mgmclemore
-ms.author: mamcle
-ms.date: 02/06/2018
-ms.openlocfilehash: 333264e65e814ad73eabeb7be55abb320400a59a
-ms.sourcegitcommit: 945df041e2180cb20af08b83cc703ecd1aedc6b0
+author: conceptdev
+ms.author: crdun
+ms.date: 08/31/2018
+ms.openlocfilehash: 134b8e93279dd60f860e44a444e75e0200e66b99
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 04/04/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "30764456"
 ---
 # <a name="auto-complete"></a>Otomatik Tamamlama
 
+`AutoCompleteTextView` kullanıcının karşın, otomatik olarak tamamlama önerileri gösterir bir düzenlenebilir metin görünümü öğesidir. Bir açılan menüden kullanıcı düzenleme kutusu içeriğini değiştirmek için bir öğe seçebilir öneriler listesi görüntülenir.
+
+![Otomatik Tamamlama örneği](images/auto-complete.png)
 
 ## <a name="overview"></a>Genel Bakış
 
-Otomatik Tamamlama öneriler sağlar bir metin girişi pencere öğesi oluşturmak için kullanın [ `AutoCompleteTextView` ](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/) pencere öğesi. Öneriler pencere öğesi ile ilişkili dizelerin bir koleksiyondan alınan bir [ `ArrayAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/).
+Otomatik Tamamlama önerileri sağlayan bir metin girişi pencere öğesi oluşturmak için kullanın [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
+pencere öğesi. Öneriler pencere öğesi ile ilişkili dizelerin bir koleksiyondan alınan bir [ `ArrayAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/).
 
-Bu öğreticide, oluşturacağınız bir [ `AutoCompleteTextView` ](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/) ülke adı için öneriler sağlar pencere öğesi.
+Bu öğreticide, oluşturacağınız bir [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
+ülke adı için öneriler sağlar. pencere öğesi.
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -40,14 +45,15 @@ Bu öğreticide, oluşturacağınız bir [ `AutoCompleteTextView` ](https://deve
 </LinearLayout>
 ```
 
-[ `TextView` ](https://developer.xamarin.com/api/type/Android.Widget.TextView/) Tanıtan bir etiket [ `AutoCompleteTextView` ](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/) pencere öğesi.
+[ `TextView` ](https://developer.xamarin.com/api/type/Android.Widget.TextView/) Tanıtan bir etiket [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
+pencere öğesi.
 
 
 ## <a name="tutorial"></a>Eğitmen
 
 Adlı yeni bir proje başlatın *HelloAutoComplete*.
 
-Adlı bir XML dosyası oluşturma `list_item.xml` ve içinde kaydederek **kaynakları/düzeni** klasör. Bu dosyanın derleme eylem `AndroidResource`. Şuna için dosyasını düzenleyin:
+Adlı bir XML dosyası oluşturun `list_item.xml` ve içinde kaydederek **kaynakları/Düzen** klasör. Bu dosyanın derleme eylemi ayarlamak `AndroidResource`. Bu şekilde dosyayı düzenleyin:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -61,7 +67,7 @@ Adlı bir XML dosyası oluşturma `list_item.xml` ve içinde kaydederek **kaynak
 </TextView>
 ```
 
-Bu dosya, basit bir tanımlar [ `TextView` ](https://developer.xamarin.com/api/type/Android.Widget.TextView/) önerileri Listesi'nde her bir öğe için kullanılır.
+Bu dosya, basit bir tanımlar [ `TextView` ](https://developer.xamarin.com/api/type/Android.Widget.TextView/) önerileri listesinde görüntülenen her öğe için kullanılır.
 
 Açık **Resources/Layout/Main.axml** ve aşağıdakileri ekleyin:
 
@@ -83,7 +89,8 @@ Açık **Resources/Layout/Main.axml** ve aşağıdakileri ekleyin:
 </LinearLayout>
 ```
 
-Açık **MainActivity.cs** ve aşağıdaki kodu ekleyin [ `OnCreate()` ](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/(Android.OS.Bundle)) yöntemi:
+Açık **MainActivity.cs** ve aşağıdaki kodu ekleyin [`OnCreate()`](https://developer.xamarin.com/api/member/Android.App.Activity.OnCreate/(Android.OS.Bundle))
+yöntemi:
 
 ```csharp
 protected override void OnCreate (Bundle bundle)
@@ -100,9 +107,11 @@ protected override void OnCreate (Bundle bundle)
 }
 ```
 
-İçerik görünümü ayarladıktan sonra `main.xml` düzeni [ `AutoCompleteTextView` ](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/) pencere öğesi ile düzeninden yakalanır [ `FindViewById` ](https://developer.xamarin.com/api/member/Android.App.Activity.FindViewById/). Yeni bir [ `ArrayAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/) sonra bağlamak için başlatılan `list_item.xml` her liste öğesi düzene `COUNTRIES` (sonraki adımda tanımlanan) dize dizisi. Son olarak, `SetAdapter()` ilişkilendirilecek adlı [ `ArrayAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/) ile [ `AutoCompleteTextView` ](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/) pencere öğesi böylece dize dizisi öneriler listesi doldurur.
+İçerik görünümü ayarladıktan sonra `main.xml` düzeni [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
+pencere öğesi ile düzeninden yakalanır [ `FindViewById` ](https://developer.xamarin.com/api/member/Android.App.Activity.FindViewById/). Yeni bir [ `ArrayAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/) bağlamak için başlatılır `list_item.xml` her bir liste öğesi için Düzen `COUNTRIES` (sonraki adımda tanımlanan) dize dizisi. Son olarak, `SetAdapter()` ilişkilendirmek için çağrılan [ `ArrayAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/) ile [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
+pencere öğesi böylece dize dizisi öneriler listesini doldurur.
 
-İçinde `MainActivity` sınıfı, dize dizisi Ekle:
+İçinde `MainActivity` sınıfı, dize dizisi olarak ekleyin:
 
 ```csharp
 static string[] COUNTRIES = new string[] {
@@ -150,17 +159,19 @@ static string[] COUNTRIES = new string[] {
 };
 ```
 
-Kullanıcı içine yazdığında, aşağı açılan listede sağlanan öneriler listesidir [ `AutoCompleteTextView` ](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/) pencere öğesi.
+Kullanıcının içine girdiğinde, aşağı açılan listede sağlanan öneriler listesidir [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
+pencere öğesi.
 
 Uygulamayı çalıştırın. Siz yazarken, şöyle bir şey görmeniz gerekir:
 
-[![Örnek otomatik tamamlama ekran görüntüsü, "ca" içeren adlarını listeleme](auto-complete-images/helloautocomplete.png)](auto-complete-images/helloautocomplete.png#lightbox)
+[![Örnek ekran otomatik tamamlama "ca" içeren adları listeleme](auto-complete-images/helloautocomplete.png)](auto-complete-images/helloautocomplete.png#lightbox)
 
 
 
 ## <a name="more-information"></a>Daha fazla bilgi
 
-Uygulama kodunuz davranışı, değil içerik odaklanmanız gerekir çünkü sabit kodlanmış bir dize dizisi kullanarak bir önerilen tasarım uygulama olmadığını unutmayın. Uygulama içeriği dizeler gibi değişiklikler içeriğe kolaylaştırmak ve içeriğin yerelleştirme kolaylaştırmak için koddan externalized. Yalnızca basit hale getirmek ve odaklanmak için kullanılan sabit kodlanmış dizeleri Bu öğreticide [ `AutoCompleteTextView` ](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/) pencere öğesi. Bunun yerine, uygulamanız bu tür bir XML dosyası dize dizilerde bildirmeniz gerekir. Bu, yapılabilir bir `<string-array>` projenizdeki kaynak `res/values/strings.xml` dosya. Örneğin:
+Uygulama kodunuza davranışı, içeriğin değil odaklanmanız gerekir çünkü sabit kodlanmış bir dize dizisi kullanarak önerilen tasarım uygulama olmadığını unutmayın. Dizeleri gibi uygulama içeriği, içerik değişiklikleri kolaylaştırmak ve yerelleştirme içeriğin kolaylaştırmak için koddan externalized. Sabit kodlanmış dizeleri, bu öğreticide yalnızca basit hale getirmek ve odaklanmak için kullanılır [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
+pencere öğesi. Bunun yerine, uygulamanızın bir XML dosyasında tür dizesi diziler bildirmelidir. Bu ile yapılabilir bir `<string-array>` kaynak projenizdeki `res/values/strings.xml` dosya. Örneğin:
 
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
@@ -177,7 +188,8 @@ Uygulama kodunuz davranışı, değil içerik odaklanmanız gerekir çünkü sab
 </resources>
 ```
 
-Bu kaynak dizeleri için kullanılacak [ `ArrayAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/), özgün dosyayı değiştirmek [ `ArrayAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/) aşağıdaki satırla Oluşturucusu:
+Bu kaynak dizeleri için kullanılacak [ `ArrayAdapter` ](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/), orijinalin yerine geçecek [`ArrayAdapter`](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/)
+Aşağıdaki satırı Oluşturucu:
 
 ```csharp
 string[] countries = Resources.GetStringArray (Resource.array.countries_array);
@@ -187,10 +199,11 @@ var adapter = new ArrayAdapter<String> (this, Resource.layout.list_item, countri
 
 ### <a name="references"></a>Referanslar
 
+-   [AutoCompleteTextView tarif](https://github.com/xamarin/recipes/tree/master/Recipes/android/controls/autocomplete_text_view/add_an_autocomplete_text_input) &ndash; Xamarin.Android örnek projesini `AutoCompleteTextView`.
 -   [`ArrayAdapter`](https://developer.xamarin.com/api/type/Android.Widget.ArrayAdapter/)
 -   [`AutoCompleteTextView`](https://developer.xamarin.com/api/type/Android.Widget.AutoCompleteTextView/)
 
-*Bu sayfayı bölümlerini olan oluşturulan ve Android açık kaynak projesi tarafından paylaşılan ve açıklanan terimleri göre kullanılan iş göre değişiklikler* 
- [ *Creative Commons 2.5 Attribution lisans* ](http://creativecommons.org/licenses/by/2.5/) *. Bu öğretici dayanır* 
- [ *Android otomatik tamamlama öğretici*](http://developer.android.com/resources/tutorials/views/hello-autocomplete.html)
+*Bu sayfanın bölümleri olan oluşturulan Android açık kaynak projesi tarafından paylaşılan ve açıklanan terimleri göre kullanılan iş tabanlı değişiklikleri* 
+ [ *Creative Commons 2.5 Attribution License* ](http://creativecommons.org/licenses/by/2.5/) *. Bu öğreticide dayanır* 
+ [ *Android otomatik tam öğretici*](http://developer.android.com/resources/tutorials/views/hello-autocomplete.html)
  *.*

@@ -4,35 +4,35 @@ description: Bu makalede SkiaSharp yolları hakkında bilgi almak ve içerikleri
 ms.prod: xamarin
 ms.assetid: 8E8C5C6A-F324-4155-8652-7A77D231B3E5
 ms.technology: xamarin-skiasharp
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 09/12/2017
-ms.openlocfilehash: 65c614e9a6eb26bc0d027a4a67bec19b036d0a70
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 6efefe11b31428f41bfa945aff93aa70aa764870
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39615281"
 ---
 # <a name="path-information-and-enumeration"></a>Yol bilgileri ve numaralandırması
 
 _Yolları hakkında bilgi almak ve içeriğini listeleme_
 
-[ `SKPath` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath/) Çeşitli özellikler ve yolu hakkında bilgi edinmenizi sağlayan yöntemler sınıfı tanımlar. [ `Bounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPath.Bounds/) Ve [ `TightBounds` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPath.TightBounds/) özellikleri (ve ilişkili yöntemleri) elde yol metrical boyutları. [ `Contains` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.Contains/p/System.Single/System.Single/) Yöntemi, belirli bir noktaya bir yolda olup olmadığını belirlemenize olanak sağlar.
+[ `SKPath` ](xref:SkiaSharp.SKPath) Çeşitli özellikler ve yolu hakkında bilgi edinmenizi sağlayan yöntemler sınıfı tanımlar. [ `Bounds` ](xref:SkiaSharp.SKPath.Bounds) Ve [ `TightBounds` ](xref:SkiaSharp.SKPath.TightBounds) özellikleri (ve ilişkili yöntemleri) elde yol metrical boyutları. [ `Contains` ](xref:SkiaSharp.SKPath.Contains(System.Single,System.Single)) Yöntemi, belirli bir noktaya bir yolda olup olmadığını belirlemenize olanak sağlar.
 
-Bazen, tüm satırları ve bir yolu olun eğrileri toplam uzunluğu belirlemek yararlıdır. Adlı bir sınıfın tamamı bu algorithmically basit bir görev olmadığından [ `PathMeasure` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathMeasure/) için ayrılmıştır.
+Bazen, tüm satırları ve bir yolu olun eğrileri toplam uzunluğu belirlemek yararlıdır. Bu süre hesaplama değil algorithmically basit bir görev sınıfının tümüne adlı şekilde [ `PathMeasure` ](xref:SkiaSharp.SKPathMeasure) için ayrılmıştır.
 
-Ayrıca bazen çizim operations ve bir yolu noktalar elde etmek yararlıdır. İlk başta, bu özelliği gereksiz görünebilir: programınızı yolu oluşturduysa, program içeriğini zaten bilir. Yolları tarafından da oluşturulabilir ancak gördünüz [yol etkileri](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) ve dönüştürerek [yolları metin dizelerine](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md). Çizim işlemler ve bu yolların noktalar da elde edebilirsiniz. Tüm noktalara algoritmik bir dönüştürme uygulamak bir olasılıktır. Bu metin çevresinde bir yarım küre kaydırma gibi teknikler sağlar:
+Ayrıca bazen çizim operations ve bir yolu noktalar elde etmek yararlıdır. İlk başta, bu özelliği gereksiz görünebilir: programınızı yolu oluşturduysa, program içeriğini zaten bilir. Yolları tarafından da oluşturulabilir ancak gördünüz [yol etkileri](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) ve dönüştürerek [yolları metin dizelerine](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md). Çizim işlemler ve bu yolların noktalar da elde edebilirsiniz. Bir olasılıktır algoritmik bir dönüşüm noktaları için örnek uygulama için metin bir yarım küre etrafında sarmalamak için:
 
 ![](information-images/pathenumerationsample.png "Üzerinde bir küreyi sarmalanmış metin")
 
 ## <a name="getting-the-path-length"></a>Yol uzunluğu alma
 
-Bu makalede [ **yollar ve metin** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md) kullanmayı öğrendiniz [ `DrawTextOnPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawTextOnPath/p/System.String/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPaint/) bir metin dizesi olan temel izleyen bir yol boyunca çizmek için yöntemi. Ancak metin tam yolunu uygun şekilde boyutlandırmak istiyorsanız ne olur? Bir daire çevresi hesaplamak basit bir çember metin çizmek için kolay olmasıdır. Ancak, bir elipsin çevresi veya Bézier eğrisi uzunluğu bu kadar basit değil.
+Bu makalede [ **yollar ve metin** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/text-paths.md) kullanmayı öğrendiniz [ `DrawTextOnPath` ](xref:SkiaSharp.SKCanvas.DrawTextOnPath(System.String,SkiaSharp.SKPath,System.Single,System.Single,SkiaSharp.SKPaint)) bir metin dizesi olan temel izleyen bir yol boyunca çizmek için yöntemi. Ancak metin tam yolunu uygun şekilde boyutlandırmak istiyorsanız ne olur? Metin etrafında bir daire çizme dairenin çevresi hesaplamak basit olduğu için kolaydır. Ancak, bir elipsin çevresi veya Bézier eğrisi uzunluğu bu kadar basit değil.
 
-[ `SKPathMeasure` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathMeasure/) Sınıfı yardımcı olabilir. [Oluşturucusu](https://developer.xamarin.com/api/constructor/SkiaSharp.SKPathMeasure.SKPathMeasure/p/SkiaSharp.SKPath/System.Boolean/System.Single/) kabul eden bir `SKPath` bağımsız değişken ve [ `Length` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPathMeasure.Length/) özelliği uzunluğunu gösterir.
+[ `SKPathMeasure` ](xref:SkiaSharp.SKPathMeasure) Sınıfı yardımcı olabilir. [Oluşturucusu](xref:SkiaSharp.SKPathMeasure.%23ctor(SkiaSharp.SKPath,System.Boolean,System.Single)) kabul eden bir `SKPath` bağımsız değişken ve [ `Length` ](xref:SkiaSharp.SKPathMeasure.Length) özelliği uzunluğunu gösterir.
 
-Bu gösterilmiştir **yol uzunluğu** temel örnek, **Bezier eğrisi** sayfası. [ **PathLengthPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml) dosya türetilir `InteractivePage` ve Dokunmatik arayüzü içerir:
+Bu sınıf gösterilmiştir **yol uzunluğu** temel örnek, **Bezier eğrisi** sayfası. [ **PathLengthPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathLengthPage.xaml) dosya türetilir `InteractivePage` ve Dokunmatik arayüzü içerir:
 
 ```xaml
 <local:InteractivePage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -108,7 +108,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-`Length` Özelliği yeni oluşturulan `SKPathMeasure` nesnesi yol uzunluğunu alır. Bu bölünür `baseTextWidth` (10 metin boyutuna göre metin genişliğini olmayan) değerini alır ve ardından 10 temel metin boyutu tarafından ile çarpılır. Bu yol boyunca metni görüntülemek için yeni bir metin boyutu oluşur:
+`Length` Özelliği yeni oluşturulan `SKPathMeasure` nesnesi yol uzunluğunu alır. Yol uzunluğu bölünür `baseTextWidth` (10 metin boyutuna göre metin genişliğini olmayan) değerini alır ve ardından 10 temel metin boyutu tarafından ile çarpılır. Bu yol boyunca metni görüntülemek için yeni bir metin boyutu oluşur:
 
 [![](information-images/pathlength-small.png "Üçlü sayfasının ekran görüntüsü yol uzunluğu")](information-images/pathlength-large.png#lightbox "Üçlü sayfasının ekran görüntüsü yol uzunluğu")
 
@@ -128,11 +128,11 @@ Boolean GetPositionAndTangent (Single distance, out SKPoint position, out SKPoin
 Boolean GetMatrix (Single distance, out SKMatrix matrix, SKPathMeasureMatrixFlags flag)
 ```
 
-[ `SKPathMeasureMatrixFlags` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathMeasureMatrixFlags/) Şunlardır:
+Üyeleri [ `SKPathMeasureMatrixFlags` ](xref:SkiaSharp.SKPathMeasureMatrixFlags) numaralandırma şunlardır:
 
-- [`GetPosition`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathMeasureMatrixFlags.GetPosition/)
-- [`GetTangent`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathMeasureMatrixFlags.GetPositionAndTangent/)
-- [`GetPositionAndTangent`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathMeasureMatrixFlags.GetPositionAndTangent/)
+- `GetPosition`
+- `GetTangent`
+- `GetPositionAndTangent`
 
 **Mi yarı-kanal** sayfa canlandırır çubuk şekli üzerinde üçüncü dereceden Bézier eğrisi sürekli bulutumuzda görünen mi:
 
@@ -215,9 +215,9 @@ Dikkat edin, bu değer `t` ilk bağımsız değişkeni için yol uzunluğu ile �
 
 ## <a name="enumerating-the-path"></a>Yolun numaralandırma
 
-İki katıştırılmış sınıfları `SKPath` yolu içeriğini listeleme olanak sağlar. Bu sınıflar [ `SKPath.Iterator` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath+Iterator/) ve [ `SKPath.RawIterator` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath+RawIterator/). İki sınıf oldukça benzerdir ancak `SKPath.Iterator` yolun bir sıfır uzunlukta veya sıfır uzunluk yakın öğeler ortadan kaldırabilir. `RawIterator` Aşağıdaki örnekte kullanılır.
+İki katıştırılmış sınıfları `SKPath` yolu içeriğini listeleme olanak sağlar. Bu sınıflar [ `SKPath.Iterator` ](xref:SkiaSharp.SKPath.Iterator) ve [ `SKPath.RawIterator` ](xref:SkiaSharp.SKPath.RawIterator). İki sınıf oldukça benzerdir ancak `SKPath.Iterator` yolun bir sıfır uzunlukta veya sıfır uzunluk yakın öğeler ortadan kaldırabilir. `RawIterator` Aşağıdaki örnekte kullanılır.
 
-Bir nesnenin türü elde edebilirsiniz `SKPath.RawIterator` çağırarak [ `CreateRawIterator` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.CreateRawIterator()/) yöntemi `SKPath`. Yolundan numaralandırma gerçekleştirilir tekrar tekrar çağırarak [ `Next` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath+RawIterator.Next/p/SkiaSharp.SKPoint[]/) yöntemi. Dört dizisi geçirin `SKPoint` değerleri:
+Bir nesnenin türü elde edebilirsiniz `SKPath.RawIterator` çağırarak [ `CreateRawIterator` ](xref:SkiaSharp.SKPath.CreateRawIterator) yöntemi `SKPath`. Yolundan numaralandırma gerçekleştirilir tekrar tekrar çağırarak [ `Next` ](xref:SkiaSharp.SKPath.RawIterator.Next*) yöntemi. Dört dizisi geçirin `SKPoint` değerleri:
 
 ```csharp
 SKPoint[] points = new SKPoint[4];
@@ -225,25 +225,35 @@ SKPoint[] points = new SKPoint[4];
 SKPathVerb pathVerb = rawIterator.Next(points);
 ```
 
-`Next` Yöntemi döndürür üyesi [ `SKPathVerb` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathVerb/) sabit listesi. Bu değerler yolunda belirli çizim komutu belirtir. Dizide eklenen geçerli noktalarının sayısı bu fiiline bağlıdır:
+`Next` Yöntemi döndürür üyesi [ `SKPathVerb` ](xref:SkiaSharp.SKPathVerb) numaralandırma türü. Bu değerler yolunda belirli çizim komutu belirtir. Dizide eklenen geçerli noktalarının sayısı bu fiiline bağlıdır:
 
-- [`Move`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Move/) tek bir nokta ile
-- [`Line`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Line/) iki nokta ile
-- [`Cubic`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Cubic/) dört noktalarıyla
-- [`Quad`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Quad/) üç nokta ile
-- [`Conic`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Conic/) üç nokta ile (ve ayrıca [ `ConicWeight` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath+RawIterator.ConicWeight/) ağırlık yöntemi)
-- [`Close`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Close/) bir nokta ile
-- [`Done`](https://developer.xamarin.com/api/field/SkiaSharp.SKPathVerb.Done/)
+- `Move` tek bir nokta ile
+- `Line` iki nokta ile
+- `Cubic` dört noktalarıyla
+- `Quad` üç nokta ile
+- `Conic` üç nokta ile (ve ayrıca [ `ConicWeight` ](xref:SkiaSharp.SKPath.RawIterator.ConicWeight*) ağırlık yöntemi)
+- `Close` bir nokta ile
+- `Done`
 
-`Done` Fiili numaralandırması tamamlandı olduğunu gösterir.
+`Done` Fiili yolu numaralandırması tamamlandı olduğunu gösterir.
 
 Olduğuna dikkat edin hiçbir `Arc` fiilleri. Bu, tüm yaylar yolunu eklendiğinde Bézier eğrileri içine dönüştürülür gösterir.
 
 Bazı bilgileri `SKPoint` dizi gereksizdir. Örneğin, bir `Move` fiili tarafından izlenen bir `Line` fiil ve ardından ilk birlikte gelen iki nokta `Line` aynı `Move` noktası. Uygulamada, bu yedeklilik çok yararlıdır. Aldığınızda bir `Cubic` fiil, üçüncü dereceden Bézier eğrisi tanımlayan tüm dört noktalarıyla eşlik eder. Önceki fiili tarafından belirlenen geçerli konumunu korumak gerek yoktur.
 
-Sorunlu fiili ancak olan `Close`. Bu komut tarafından daha önce oluşturulan dağılımı başlangıcına geçerli konumundan bu düz bir çizgi çizer `Move` komutu. İdeal olarak, `Close` fiil, tek bir nokta yerine bu iki nokta sağlamalıdır. Kötüsü eşlik eden noktası olan `Close` fiil, her zaman (0, 0). Bir yol listeleme, büyük olasılıkla korumak gerekir, yani `Move` noktası ve geçerli konumu.
+Sorunlu fiili ancak olan `Close`. Bu komut tarafından daha önce oluşturulan dağılımı başlangıcına geçerli konumundan bu düz bir çizgi çizer `Move` komutu. İdeal olarak, `Close` fiil, tek bir nokta yerine bu iki nokta sağlamalıdır. Kötüsü eşlik eden noktası olan `Close` fiil, her zaman (0, 0). Bir yol listeleme, büyük olasılıkla korumak ihtiyacınız olacak `Move` noktası ve geçerli konumu.
 
-Statik [ `PathExtensions` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathExtensions.cs) sınıfı eğri yaklaşık küçük düz çizgiler bir dizi Bézier eğrileri üç tür dönüştürme çeşitli yöntemler içerir. (Parametrik formülleri makalesinde sunulan [ **üç türleri, Bézier eğrileri**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md).) `Interpolate` Yöntemi yalnızca bir birim uzunlukta olan çok sayıda kısa çizgiler düz bir satıra ayırır:
+## <a name="enumerating-flattening-and-malforming"></a>Numaralandırma, düzleştirme ve Malforming
+
+Bazen bir algoritmik uygulamak için tercih edilir malform yoluna başka bir yolla dönüştürün:
+
+![](information-images/pathenumerationsample.png "Üzerinde bir küreyi sarmalanmış metin")
+
+Bu harfler çoğunu düz çizgilerden oluşur, ancak eğrisine bu düz çizgiler görünüşe göre bükümlü. Nasıl bu mümkün mü?
+
+Özgün düz çizgiler daha küçük düz çizgiler bir dizi ayrılır anahtardır. Bu tek tek daha küçük düz çizgiler eğri oluşturmak için farklı şekillerde değişebilir. 
+
+Bu işlemde size yardımcı olacak [ **SkiaSharpFormsDemos** ](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/) örnek içeren bir statik [ `PathExtensions` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathExtensions.cs) sınıfıyla birlikte bir `Interpolate` böler yöntemi bir düz çizgi içine yalnızca bir birim uzunlukta olan çok sayıda kısa çizgiler. Ayrıca, sınıf eğri yaklaşık küçük düz çizgiler bir dizi Bézier eğrileri üç tür dönüştürme çeşitli yöntemler içerir. (Parametrik formülleri makalesinde sunulan [ **üç türleri, Bézier eğrileri**](~/xamarin-forms/user-interface/graphics/skiasharp/curves/beziers.md).) Bu işlem çağrılırken _düzleştirme_ eğri:
 
 ```csharp
 static class PathExtensions
@@ -328,7 +338,7 @@ static class PathExtensions
 }
 ```
 
-Bu yöntemlerin tümü şuradan genişleme metodu başvurulan `CloneWithTransform` aşağıda gösterilmektedir. Bu yöntem bir yol, yol komutları numaralandırma ve verileri temel alan yeni bir yol oluşturmak kopyalar. Ancak, yalnızca yeni yol oluşur `MoveTo` ve `LineTo` çağırır. Bir dizi çok küçük satırları için tüm düz çizgiler ve eğriler azaltılır.
+Şuradan genişleme metodu bu yöntemler tüm başvurulan `CloneWithTransform` Ayrıca bu sınıfta bulunan ve aşağıda gösterilmektedir. Bu yöntem bir yol, yol komutları numaralandırma ve verileri temel alan yeni bir yol oluşturmak kopyalar. Ancak, yalnızca yeni yol oluşur `MoveTo` ve `LineTo` çağırır. Bir dizi çok küçük satırları için tüm düz çizgiler ve eğriler azaltılır.
 
 Çağrılırken `CloneWithTransform`, yönteme geçirin bir `Func<SKPoint, SKPoint>`, bir işlevle olduğu bir `SKPaint` döndüren parametresi bir `SKPoint` değeri. Bu işlev, her noktasının özel algoritmik dönüşüm uygulamak çağrılır:
 
@@ -421,7 +431,7 @@ static class PathExtensions
 
 Kopyalanan yolu için küçük düz çizgiler düşürüldüğünden, dönüştürme işlevi eğrilere düz çizgiler dönüştürme özelliğine sahiptir.
 
-Yöntem adlı değişken her dağılımını ilk noktasını korur bildirimi `firstPoint` ve sonra her bir geçerli konumu çizim komutu değişkeninde `lastPoint`. Bu son kapanış oluşturmak için gerekli olan zamanı satır bir `Close` fiil karşılaştı.
+Yöntem adlı değişken her dağılımını ilk noktasını korur bildirimi `firstPoint` ve sonra her bir geçerli konumu çizim komutu değişkeninde `lastPoint`. Bu değişkenler son kapanış oluşturmak için gerekli olan zamanı satır bir `Close` fiil karşılaştı.
 
 **GlobularText** örnek metin bir yarım küre etrafında bir 3B efekti görünüşte sarmalamak için bu genişletme yöntemi kullanır:
 
@@ -506,9 +516,9 @@ public class GlobularTextPage : ContentPage
 }
 ```
 
-Bu çok yönlü bir tekniktir. Yol etkileri dizisi açıklanan varsa [ **yol etkileri** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/effects.md) makale değil oldukça kapsayacak düşünmüştür olmalıdır dahil, bir şey boşlukları doldurmak için bir yolu budur.
+Bu çok yönlü bir tekniktir. Yol etkileri dizisi açıklanan varsa [ **yol etkileri** ](effects.md) makale değil oldukça kapsayacak düşünmüştür olmalıdır dahil, bir şey boşlukları doldurmak için bir yolu budur.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [SkiaSharp API'leri](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp API'leri](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (örnek)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

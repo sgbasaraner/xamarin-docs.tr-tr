@@ -4,14 +4,14 @@ description: Piksel, bit eşlemler boyutları ve en boy oranını koruyarak dikd
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 8E074F8D-4715-4146-8CC0-FD7A8290EDE9
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/17/2018
-ms.openlocfilehash: cbe3166c4edb147f7179f2c719901b382db8ec80
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: f4cc13a5e8794eb5f2f883f35d6a0e4d34788507
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39615320"
 ---
 # <a name="displaying-skiasharp-bitmaps"></a>SkiaSharp bit eşlemler görüntüleme
@@ -71,7 +71,7 @@ catch
 
 Dikkat `Stream` nesne öğesinden alınan `GetStreamAsync` kopyalanır bir `MemoryStream`. Android izin vermiyor `Stream` gelen `HttpClient` bulunan ana iş parçacığı dışında zaman uyumsuz yöntemler tarafından işlenecek. 
 
-[ `SKBitmap.Decode` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.Decode/p/System.IO.Stream/) Birçok iş yapar: `Stream` geçirilen nesne ortak bit eşlem dosyası biçimleri, genellikle JPEG, PNG veya GIF biriyle tamamını bir bit eşlem içeren bir bellek bloğunu başvuruyor. `Decode` Yöntemi gerekir biçimi belirleyin ve ardından SkiaSharp'ın kendi iç bit eşlem biçime bit eşlem dosyası kod çözme.
+[ `SKBitmap.Decode` ](xref:SkiaSharp.SKBitmap.Decode(System.IO.Stream)) Birçok iş yapar: `Stream` geçirilen nesne ortak bit eşlem dosyası biçimleri, genellikle JPEG, PNG veya GIF biriyle tamamını bir bit eşlem içeren bir bellek bloğunu başvuruyor. `Decode` Yöntemi gerekir biçimi belirleyin ve ardından SkiaSharp'ın kendi iç bit eşlem biçime bit eşlem dosyası kod çözme.
 
 Kod çağrılarınızı sonra `SKBitmap.Decode`, büyük olasılıkla kılacak `CanvasView` böylece `PaintSurface` işleyicisi yeni yüklenen bit eşlem görüntüleyebilirsiniz.
 
@@ -107,16 +107,16 @@ using (Stream stream = await picturePicker.GetImageStreamAsync())
 
 Genellikle, bu kod ayrıca çıkarır `CanvasView` böylece `PaintSurface` işleyicisi, yeni bir bit eşlem görüntüleyebilirsiniz.
 
-`SKBitmap` Sınıfı dahil olmak üzere çeşitli kullanışlı özellikler tanımlar [ `Width` ](https://developer.xamarin.com/api/property/SkiaSharp.SKBitmap.Width/) ve [ `Height` ](https://developer.xamarin.com/api/property/SkiaSharp.SKBitmap.Height/), dahil olmak üzere birçok yöntem yanı sıra, bit eşlemin piksel boyutunu göster bit eşlemler, bunları kopyalamak ve piksel BITS kullanıma sunmak için oluşturmak için yöntemleri. 
+`SKBitmap` Sınıfı dahil olmak üzere çeşitli kullanışlı özellikler tanımlar [ `Width` ](xref:SkiaSharp.SKBitmap.Width) ve [ `Height` ](xref:SkiaSharp.SKBitmap.Height), dahil olmak üzere birçok yöntem yanı sıra, bit eşlemin piksel boyutunu göster bit eşlemler, bunları kopyalamak ve piksel BITS kullanıma sunmak için oluşturmak için yöntemleri. 
 
 ## <a name="displaying-in-pixel-dimensions"></a>Piksel boyutları olarak görüntüleme
 
-SkiaSharp [ `Canvas` ](https://developer.xamarin.com/api/type/SkiaSharp.SKCanvas/) sınıfı tanımlar dört `DrawBitmap` yöntemleri. Bu yöntemler, tamamen farklı iki şekilde görüntülenecek bit eşlemleri izin ver: 
+SkiaSharp [ `Canvas` ](xref:SkiaSharp.SKCanvas) sınıfı tanımlar dört `DrawBitmap` yöntemleri. Bu yöntemler, tamamen farklı iki şekilde görüntülenecek bit eşlemleri izin ver: 
 
 - Belirten bir `SKPoint` değeri (veya ayrı `x` ve `y` değerleri) bit eşlemin piksel boyutlarıyla görüntüler. Bit eşlemin piksel doğrudan görüntü piksele eşlenir.
 - Bir dikdörtgen belirterek boyutu ve şekli dikdörtgenin uzatılmış bit eşlem neden olur. 
 
-Bir bit eşlem piksel boyutlarıyla kullanarak görüntü [ `DrawBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmap/p/SkiaSharp.SKBitmap/SkiaSharp.SKPoint/SkiaSharp.SKPaint/) ile bir `SKPoint` parametresi veya [ `DrawBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmap/p/SkiaSharp.SKBitmap/System.Single/System.Single/SkiaSharp.SKPaint/) ayrı ile `x` ve `y` parametreleri:
+Bir bit eşlem piksel boyutlarıyla kullanarak görüntü [ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKPoint,SkiaSharp.SKPaint)) ile bir `SKPoint` parametresi veya [ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,System.Single,System.Single,SkiaSharp.SKPaint)) ayrı ile `x` ve `y` parametreleri:
 
 ```csharp
 DrawBitmap(SKBitmap bitmap, SKPoint pt, SKPaint paint = null)
@@ -126,7 +126,21 @@ DrawBitmap(SKBitmap bitmap, float x, float y, SKPaint paint = null)
 
 Bu iki yöntem işlevsel olarak aynıdır. Belirtilen nokta bit eşlem tuvali göre sol üst köşesinin konumunu gösterir. Küçük bit eşlemler genellikle Mobil cihazların piksel çözünürlüğü kadar yüksek olduğundan, bu cihazlar üzerinde oldukça küçük görünür.
 
-İsteğe bağlı `SKPaint` parametresi, karışım modlarının kullanarak bit eşlem görüntülemek veya filtre efektleri olanak sağlar. Bu, sonraki makalelerinde açıklanacaktır.
+İsteğe bağlı `SKPaint` parametresi saydamlık kullanarak bit eşlem görüntülemenize olanak sağlar. Bunu yapmak için oluşturun bir `SKPaint` nesne ve ayarlamak `Color` özelliğini `SKColor` değerinin alfa kanal 1'den küçük. Örneğin:
+
+```csharp
+paint.Color = new SKColor(0, 0, 0, 0x80);
+```
+
+Son bağımsız değişken olarak geçirilen %0x80 50 saydamlık gösterir. Ayrıca önceden tanımlanmış renkleri birinde bir alfa kanalı ayarlayabilirsiniz:
+
+```csharp
+paint.Color = SKColors.Red.WithAlpha(0x80);
+```
+
+Ancak, renk önemli değildir. Kullanırken yalnızca alfa kanalı incelenir `SKPaint` nesnesine bir `DrawBitmap` çağırın.
+
+`SKPaint` Nesne gösteren bit eşlemler kullanırken karışım modları veya filtre efektleri bir rol aynı zamanda yürütülür. Bu makaleler, gösterilen [SkiaSharp birleştirme ve karışım modları](../effects/blend-modes/index.md) ve [SkiaSharp resmi filtreleri](../effects/image-filters.md).
 
 **Piksel boyutları** sayfasını **[SkiaSharpFormsDemos](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)** örnek program 320 piksel genişliğinde 240 piksel yüksekliğinde bir bit eşlem kaynağı görüntüler:
 
@@ -202,7 +216,7 @@ Bu `LoadBitmapResource` bit eşlem kaynakları gerektiren tüm sonraki örnekler
 
 ## <a name="stretching-to-fill-a-rectangle"></a>Bir dikdörtgen doldurmak için uzatma
 
-`SKCanvas` Sınıfı da tanımlar bir [ `DrawBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmap/p/SkiaSharp.SKBitmap/SkiaSharp.SKRect/SkiaSharp.SKPaint/) dikdörtgen ve başka bir bit eşlem işleyen yöntemi [ `DrawBitmap` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.DrawBitmap/p/SkiaSharp.SKBitmap/SkiaSharp.SKRect/SkiaSharp.SKRect/SkiaSharp.SKPaint/) bit eşleme dikdörtgen bir kısmını işleyen yöntemi bir Dikdörtgen:
+`SKCanvas` Sınıfı da tanımlar bir [ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKRect,SkiaSharp.SKPaint)) dikdörtgen ve başka bir bit eşlem işleyen yöntemi [ `DrawBitmap` ](xref:SkiaSharp.SKCanvas.DrawBitmap(SkiaSharp.SKBitmap,SkiaSharp.SKRect,SkiaSharp.SKRect,SkiaSharp.SKPaint)) bit eşleme dikdörtgen bir kısmını işleyen yöntemi bir Dikdörtgen:
 
 ```
 DrawBitmap(SKBitmap bitmap, SKRect dest, SKPaint paint = null)
@@ -242,7 +256,7 @@ public class FillRectanglePage : ContentPage
 }
 ```
 
-Yeni kullanımına dikkat edin `BitmapExtensions.LoadBitmapResource` ayarlanacak yöntemi `SKBitmap` alan. Hedef dikdörtgenin elde edilen [ `Rect` ](https://developer.xamarin.com/api/property/SkiaSharp.SKImageInfo.Rect/) özelliği `SKImageInfo`, hangi desribes uzaklaştırabilir boyutu:
+Yeni kullanımına dikkat edin `BitmapExtensions.LoadBitmapResource` ayarlanacak yöntemi `SKBitmap` alan. Hedef dikdörtgenin elde edilen [ `Rect` ](xref:SkiaSharp.SKImageInfo.Rect) özelliği `SKImageInfo`, hangi desribes uzaklaştırabilir boyutu:
 
 [![Dikdörtgen doldurun](displaying-images/FillRectangle.png "dikdörtgen doldurun")](displaying-images/FillRectangle-Large.png#lightbox)
 
@@ -649,6 +663,6 @@ Bu rectangle kaynağı monkey'nın head, bu ekran görüntülerinde gösterildi�
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [SkiaSharp API'leri](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp API'leri](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (örnek)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)
 

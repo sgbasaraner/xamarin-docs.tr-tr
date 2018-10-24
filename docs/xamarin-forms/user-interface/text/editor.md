@@ -6,12 +6,12 @@ ms.assetid: 7074DB3A-30D2-4A6B-9A89-B029EEF20B07
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/13/2018
-ms.openlocfilehash: 6e3cf12431440823b1d32d91927bc634f60fd5e2
-ms.sourcegitcommit: 46bb04016d3c35d91ff434b38474e0cb8197961b
+ms.date: 07/31/2018
+ms.openlocfilehash: 23ba73eb4099a9db9e989c68ae7f381e1c96541d
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/26/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39270462"
 ---
 # <a name="xamarinforms-editor"></a>Xamarin.Forms Düzenleyicisi
@@ -156,6 +156,18 @@ var editor = new Editor { ... IsSpellCheckEnabled = false };
 
 > [!NOTE]
 > Zaman [ `IsSpellCheckEnabled` ](xref:Xamarin.Forms.InputView.IsSpellCheckEnabled) özelliği `false`ve özel bir klavye kullanılmıyor, yerel yazım denetimi devre dışı bırakılır. Ancak, bir [ `Keyboard` ](xref:Xamarin.Forms.Keyboard) sahip olan yazım devre dışı bırakan kümesi denetleniyor, gibi [ `Keyboard.Chat` ](xref:Xamarin.Forms.Keyboard.Chat), `IsSpellCheckEnabled` özelliği yok sayılır. Bu nedenle, özellik için yazım denetimini etkinleştirme kullanılamaz bir `Keyboard` , açıkça bırakır.
+
+### <a name="setting-placeholder-text"></a>Yer tutucu metni ayarlama
+
+[ `Editor` ](xref:Xamarin.Forms.Editor) Kullanıcı girişi işlendiğinde değil yer tutucu metin göstermek için ayarlanabilir. Bu ayarı gerçekleştirilir [ `Placeholder` ](xref:Xamarin.Forms.Editor.Placeholder) özelliğini bir `string`ve uygun olan içerik türünü belirtmek için kullanılan `Editor`. Ayrıca, yer tutucu metin rengi ayarlayarak denetlenebilir [ `PlaceholderColor` ](xref:Xamarin.Forms.Editor.PlaceholderColor) özelliğini bir [ `Color` ](xref:Xamarin.Forms.Color):
+
+```xaml
+<Editor Placeholder="Enter text here" PlaceholderColor="Olive" />
+```
+
+```csharp
+var editor = new Editor { Placeholder = "Enter text here", PlaceholderColor = Color.Olive };
+```
 
 ### <a name="colors"></a>Renkleri
 

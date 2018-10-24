@@ -1,38 +1,44 @@
 ---
 title: Çoklu çizgiler ve parametreli denklemler
-description: Bu makalede nasıl herhangi bir satır işlemek için kullanım SkiaSharp ile parametreli denklemler tanımlayabileceğiniz açıklar ve bu örnek kod ile gösterir.
+description: Bu makalede nasıl işlemek için kullanım SkiaSharp tüm ile parametreli denklemler tanımlayabilir ve bu örnek kod ile gösterir satır açıklanmaktadır.
 ms.prod: xamarin
 ms.assetid: 85AEBB33-E954-4364-A6E1-808FAB197BEE
 ms.technology: xamarin-skiasharp
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 03/10/2017
-ms.openlocfilehash: 9118ca8e23e4c4a9023a1add89e26c4484979c8f
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: d5896a9d4f1aac2ea90d544d638e4adf68d24140
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39615801"
 ---
 # <a name="polylines-and-parametric-equations"></a>Çoklu çizgiler ve parametreli denklemler
 
-_Herhangi bir satır ile parametreli denklemler tanımlayabilirsiniz işlenecek SkiaSharp kullanma_
+_Parametreli denklemler ile tanımlayabilirsiniz herhangi bir satırında işlenecek SkiaSharp kullanma_
 
-Bu kılavuz bir sonraki bölümünde, çeşitli yöntemler görürsünüz, `SKPath` eğrileri belirli türlerdeki işlemek için tanımlar. Ancak, bazen bir tür tarafından doğrudan desteklenmeyen eğrisinin çizmek gereklidir `SKPath`. Böyle bir durumda, matematiksel olarak tanımlayan bir eğri çizme için çoklu (bağlı satır koleksiyonu) kullanabilirsiniz. Varsa satırları yeterince duruma ve çok sayıda yeterli, sonuç bir eğri gibi görünür. Bu gönderilerinizi gerçekten 3.600 küçük satırları görürsünüz:
+İçinde [ **SkiaSharp eğrileri ve yolları** ](../curves/index.md) bölümü bu kılavuz, çeşitli yöntemler görürsünüz, [ `SKPath` ](xref:SkiaSharp.SKPath) eğrileri belirli türlerdeki işlemek için tanımlar. Ancak, bazen bir tür tarafından doğrudan desteklenmeyen eğrisinin çizmek gereklidir `SKPath`. Böyle bir durumda, matematiksel olarak tanımlayan bir eğri çizme için çoklu (bağlı satır koleksiyonu) kullanabilirsiniz. Varsa satırları yeterince duruma ve çok sayıda yeterli, sonuç bir eğri gibi görünür. Bu gönderilerinizi gerçekten 3.600 küçük satırları görürsünüz:
 
 ![](polylines-images/spiralexample.png "Bir gönderilerinizi")
 
 Genellikle bir eğri parametreli denklemler çifti açısından tanımlamak idealdir. X ve Y, koordinatları için bunlar denklemler adlandırılan üçüncü değişkenine bağlı `t` kez. Örneğin, aşağıdaki parametreli denklemler 1 (0, 0) noktasında ortalanmış bir RADIUS daire tanımladığınız *t* 0-1:
 
- x cos(2πt) y = sin(2πt) =
+x cos(2πt) =
+
+y sin(2πt) =
 
  Bir RADIUS 1'den daha büyük istiyorsanız, yalnızca Sinüs ve Kosinüs değerlerini, yarıçap çarpın ve merkezi başka bir konuma taşımanız gerekiyorsa bu değerleri ekleyin:
 
- x = xCenter + radius·cos(2πt) y = yCenter + radius·sin(2πt)
+x = xCenter + radius·cos(2πt)
+
+y = yCenter + radius·sin(2πt)
 
 İki yarıçaplarını için üç noktanın yatay ve dikey eksen paralel ile ilgilidir:
 
-x = xCenter + xRadius·cos(2πt) y = yCenter + yRadius·sin(2πt)
+x = xCenter + xRadius·cos(2πt)
+
+y = yCenter + yRadius·sin(2πt)
 
 Ardından, çeşitli noktaları hesaplar ve bu yola ekler döngü içinde eşdeğer SkiaSharp kod koyabilirsiniz. Aşağıdaki SkiaSharp kod oluşturur bir `SKPath` uzaklaştırabilir dolduran bir elips nesnesi. Döngü 360 derece doğrudan geçiş yapar. Merkezi yarım genişlik ve yükseklik uzaklaştırabilir, ve bu nedenle iki yarıçaplarını:
 
@@ -116,5 +122,5 @@ Dikkat `SKPath` oluşturulan bir `using` blok. Bu `SKPath` daha fazla bellek tü
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [SkiaSharp API'leri](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp API'leri](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (örnek)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

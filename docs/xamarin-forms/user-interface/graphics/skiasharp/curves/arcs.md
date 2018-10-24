@@ -4,14 +4,14 @@ description: Bu makalede, üç farklı yolla yaylar tanımlamak için SkiaSharp 
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: F1DA55E4-0182-4388-863C-5C340213BF3C
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 05/10/2017
-ms.openlocfilehash: e862a663b35124c1470ae5239c93409c298b19ba
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 2bb5729ff369abb6e432bfd72ab240c0ce07f28a
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39615411"
 ---
 # <a name="three-ways-to-draw-an-arc"></a>Yay çizmenin üç yolu
@@ -24,11 +24,11 @@ Yay bu sonsuz oturum yuvarlatılmış bölümlerini gibi bir elipsin çevresi E�
 
 Bu tanım basitliği rağmen tüm gereksinimlerini karşılayan bir yay çizmenin işlevi tanımlamak için bir yolu yoktur ve bu nedenle, hiçbir fikir birliğine varılmış yay çizmenin en iyi yolu, grafik sistemler arasında. Bu nedenle, `SKPath` sınıfı kısıtlamaz kendisi için yalnızca bir yaklaşım.
 
-`SKPath` tanımlayan bir `AddArc` yöntemi, beş farklı `ArcTo` yöntemleri ve iki göreli `RArcTo` yöntemleri. Bu yöntemler üç çok farklı yaklaşımlar yay belirtmeye temsil eden üç kategoriye ayrılır. Kullanacağınız bir Yayı Yaya Bu çizim yaptığınız diğer grafikleri oturum uyarlama ve tanımlamak mevcut olan bilgiler bağlıdır.
+`SKPath` tanımlayan bir [ `AddArc` ](xref:SkiaSharp.SKPath.AddArc*) yöntemi, beş farklı [ `ArcTo` ](xref:SkiaSharp.SKPath.ArcTo*) yöntemleri ve iki göreli [ `RArcTo` ](xref:SkiaSharp.SKPath.RArcTo*) yöntemleri. Bu yöntemler üç çok farklı yaklaşımlar yay belirtmeye temsil eden üç kategoriye ayrılır. Kullanacağınız bir Yayı Yaya Bu çizim yaptığınız diğer grafikleri oturum uyarlama ve tanımlamak mevcut olan bilgiler bağlıdır.
 
 ## <a name="the-angle-arc"></a>Açı yay
 
-Yaylara çizim açı yay yaklaşım, bir elips sınırların bir dikdörtgen belirtmesini gerektirir. Yay bu elipsin çevresi üzerine elips yay ve uzunluğunu başlangıç yapma ortasından açıları belirtilir. İki farklı yöntemle açı yaylar çizin. Bunlar [ `AddArc` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.AddArc/p/SkiaSharp.SKRect/System.Single/System.Single/) yöntemi ve [ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/SkiaSharp.SKRect/System.Single/System.Single/System.Boolean/) yöntemi:
+Yaylara çizim açı yay yaklaşım, bir elips sınırların bir dikdörtgen belirtmesini gerektirir. Bu bir elipsin çevresi üzerinde Yayı ortasından elips yay ve uzunluğunu belirtmek açıları tarafından belirtilir. İki farklı yöntemle açı yaylar çizin. Bunlar [ `AddArc` ](xref:SkiaSharp.SKPath.AddArc(SkiaSharp.SKRect,System.Single,System.Single)) yöntemi ve [ `ArcTo` ](xref:SkiaSharp.SKPath.ArcTo(SkiaSharp.SKRect,System.Single,System.Single,System.Boolean)) yöntemi:
 
 ```csharp
 public void AddArc (SKRect oval, Single startAngle, Single sweepAngle)
@@ -44,15 +44,15 @@ Her iki yöntem ile başlayan bir `SKRect` konumunu ve boyutunu elips tanımlaya
 
 Yayı çevresi bu elipsin parçasıdır.
 
-`startAngle` Olmayan bir açıyı derece elips Merkezi'nden sağa yatay çizgi göre bağımsız değişken. `sweepAngle` Bağımsız değişkeni olan göreli `startAngle`. İşte `startAngle` ve `sweepAngle` 60 ve 100 derece değerlerini sırasıyla:
+`startAngle` Olmayan bir açıyı derece elips Merkezi'nden sağa yatay çizgi göre bağımsız değişken. `sweepAngle` Bağımsız değişkeni olan göreli `startAngle`. İşte `startAngle` ve `sweepAngle` 60 derecenin ve 100 derecenin değerleri sırasıyla:
 
 ![](arcs-images/anglearcangles.png "Açı yay tanımlama açısı")
 
-Yayı başlangıç açıyla başlar. Uzunluğu, tarama açısı tarafından yönetilir:
+Yayı başlangıç açıyla başlar. Uzunluğu, tarama açısı tarafından yönetilir. Yayı burada kırmızı renkte gösterilir:
 
 ![](arcs-images/anglearchighlight.png "Vurgulanan açı yay")
 
-Yol ile eklenen eğri `AddArc` veya `ArcTo` elips'ın çevresini, burada kırmızıyla gösterilen yalnızca söz konusu bölümünün yöntemdir:
+Yol ile eklenen eğri `AddArc` veya `ArcTo` elipsin 's çevresini yalnızca söz konusu bölümünün yöntemidir:
 
 ![](arcs-images/anglearc.png "Tek başına açı yay")
 
@@ -216,7 +216,7 @@ Bunu "patlama" nasıl göründüğünü görmek için yalnızca açıklama `Tran
 
 İkinci yay tarafından desteklenen türünü `SKPath` olduğu *Ark tanjant*, Yayı çevresi tanjantı iki bağlı çizgiler için olan bir dairenin alanının olduğundan, bu nedenle çağrılır.
 
-Bir Eğim yay çağrısı ile bir yol eklenir [ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/SkiaSharp.SKPoint/SkiaSharp.SKPoint/System.Single/) iki yöntemle `SKPoint` parametreleri veya [ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/System.Single/System.Single/System.Single/System.Single/System.Single/) aşırı yüklemesi olan ayrı `Single` parametreleri noktaları:
+Bir Eğim yay çağrısı ile bir yol eklenir [ `ArcTo` ](xref:SkiaSharp.SKPath.ArcTo(SkiaSharp.SKPoint,SkiaSharp.SKPoint,System.Single)) iki yöntemle `SKPoint` parametreleri veya [ `ArcTo` ](xref:SkiaSharp.SKPath.ArcTo(System.Single,System.Single,System.Single,System.Single,System.Single)) aşırı yüklemesi olan ayrı `Single` parametreleri noktaları:
 
 ```csharp
 public void ArcTo (SKPoint point1, SKPoint point2, Single radius)
@@ -224,7 +224,7 @@ public void ArcTo (SKPoint point1, SKPoint point2, Single radius)
 public void ArcTo (Single x1, Single y1, Single x2, Single y2, Single radius)
 ```
 
-Bu `ArcTo` yöntemi için PostScript'i benzer [ `arct` ](https://www.adobe.com/products/postscript/pdfs/PLRM.pdf) (sayfa 532 PDF belgesinde) işlevi ve iOS [ `AddArcToPoint` ](https://developer.xamarin.com/api/member/CoreGraphics.CGPath.AddArcToPoint/p/System.nfloat/System.nfloat/System.nfloat/System.nfloat/System.nfloat/) yöntemi.
+Bu `ArcTo` yöntemi için PostScript'i benzer [ `arct` ](https://www.adobe.com/products/postscript/pdfs/PLRM.pdf) (sayfa 532) işlevi ve iOS [ `AddArcToPoint` ](https://developer.xamarin.com/api/member/CoreGraphics.CGPath.AddArcToPoint/p/System.nfloat/System.nfloat/System.nfloat/System.nfloat/System.nfloat/) yöntemi.
 
 `ArcTo` Yöntemi, üç nokta içerir:
 
@@ -250,7 +250,7 @@ Aşağıdaki iki satırı herhangi bir açıyla karşılıyorsanız, teğet iki 
 
 ![](arcs-images/tangentarctangentcircle.png "Aşağıdaki iki satırı arasındaki Ark tanjant daire")
 
-Eğrinin için dağılımı eklenir ya da belirtilen noktaları dokunmaz `ArcTo` yöntemi. İlk Eğim noktası ve ikinci Eğim noktada biten yay düz bir çizgi zamandaki geçerli noktadan oluşur:
+Eğrinin için dağılımı eklenir ya da belirtilen noktaları dokunmaz `ArcTo` yöntemi. İlk Eğim noktası ve burada kırmızıyla gösterilen ikinci Eğim nokta ile biten bir yay düz bir çizgi zamandaki geçerli noktadan oluşur:
 
 ![](arcs-images/tangentarchighlight.png "İki satır arasında vurgulanan Eğim yay")
 
@@ -493,7 +493,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ## <a name="the-elliptical-arc"></a>Elips yay
 
-Elips yay çağrısıyla bir yola eklenir [ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/SkiaSharp.SKPoint/System.Single/SkiaSharp.SKPathArcSize/SkiaSharp.SKPathDirection/SkiaSharp.SKPoint/) iki yöntemin `SKPoint` parametreleri veya [ `ArcTo` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPath.ArcTo/p/System.Single/System.Single/System.Single/SkiaSharp.SKPathArcSize/SkiaSharp.SKPathDirection/System.Single/System.Single/) aşırı ayrı X ve Y koordinatları:
+Elips yay çağrısıyla bir yola eklenir [ `ArcTo` ](xref:SkiaSharp.SKPath.ArcTo(SkiaSharp.SKPoint,System.Single,SkiaSharp.SKPathArcSize,SkiaSharp.SKPathDirection,SkiaSharp.SKPoint)) iki yöntemin `SKPoint` parametreleri veya [ `ArcTo` ](xref:SkiaSharp.SKPath.ArcTo(System.Single,System.Single,System.Single,SkiaSharp.SKPathArcSize,SkiaSharp.SKPathDirection,System.Single,System.Single)) aşırı ayrı X ve Y koordinatları:
 
 ```csharp
 public void ArcTo (SKPoint r, Single xAxisRotate, SKPathArcSize largeArc, SKPathDirection sweep, SKPoint xy)
@@ -503,7 +503,7 @@ public void ArcTo (Single rx, Single ry, Single xAxisRotate, SKPathArcSize large
 
 Elips yay tutarlıdır [elips yay](http://www.w3.org/TR/SVG11/paths.html#PathDataEllipticalArcCommands) ölçeklenebilir vektör grafiği (SVG) ve evrensel Windows platformu ile birlikte [ `ArcSegment` ](/uwp/api/Windows.UI.Xaml.Media.ArcSegment/) sınıfı.
 
-Bunlar `ArcTo` yöntemleri geçerli dağılımı noktasıdır, iki nokta yay çizin ve en son parametreye `ArcTo` yöntemi ( `xy` parametresi veya ayrı `x` ve `y` parametreleri):
+Bunlar `ArcTo` yöntemleri dağılımı geçerli noktası olan iki nokta yay çizin ve en son parametreye `ArcTo` yöntemi ( `xy` parametresi veya ayrı `x` ve `y` parametreleri):
 
 ![](arcs-images/ellipticalarcpoints.png "Elips yay tanımlı iki nokta")
 
@@ -531,7 +531,7 @@ Bu iki nokta, bu nedenle bir toplam dört yoldan Eğimli elips tarafından tanı
 
 ![](arcs-images/ellipticalarccolors.png "Tüm dört elips yaylar")
 
-Bu dört yaylar dört birleşimlerini göre ayırt edilir [ `SKPathArcSize` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathArcSize/) ve [ `SKPathDirection` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathDirection/) sabit listesi türü bağımsız değişkenleri `ArcTo` yöntemi:
+Bu dört yaylar dört birleşimlerini göre ayırt edilir [ `SKPathArcSize` ](xref:SkiaSharp.SKPathArcSize) ve [ `SKPathDirection` ](xref:SkiaSharp.SKPathDirection) sabit listesi türü bağımsız değişkenleri `ArcTo` yöntemi:
 
 - kırmızı: SKPathArcSize.Large ve SKPathDirection.Clockwise
 - Yeşil: SKPathArcSize.Small ve SKPathDirection.Clockwise
@@ -662,10 +662,9 @@ Sıkı bir uyum sağlamak için kullanın `TightBounds` özelliğini kontrol nok
 
 [![](arcs-images/arcinfinitytightbounds-small.png "Üçlü sayfasının ekran görüntüsü yay sonsuz sıkı sınırları")](arcs-images/arcinfinitytightbounds-large.png#lightbox "Üçlü sayfasının ekran görüntüsü yay sonsuz sıkı sınırları")
 
-Yay ve düz çizgiler arasındaki bağlantıları matematiksel olarak kesintisiz olsa da, değişiklik yay düz çizgi için biraz sert görünebilir. Sonraki sayfada daha iyi bir sonsuz oturum sunulur.
-
+Yay ve düz çizgiler arasındaki bağlantıları matematiksel olarak kesintisiz olsa da, değişiklik yay düz çizgi için biraz sert görünebilir. Daha iyi bir sonsuz oturum sonraki makalede üzerinde sunulan [ **üç türleri, Bézier eğrileri**](beziers.md).
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [SkiaSharp API'leri](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp API'leri](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (örnek)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

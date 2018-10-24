@@ -1,20 +1,20 @@
 ---
-title: SkiaSharp piksel BITS erişme
+title: SkiaSharp bit eşlem piksel BITS erişme
 description: Erişim ve SkiaSharp bit eşlem piksel BITS değiştirmeye yönelik çeşitli teknikler keşfedin.
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: DBB58522-F816-4A8C-96A5-E0236F16A5C6
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/11/2018
-ms.openlocfilehash: 5d79dd89b5313d5d7ead665c54e9a27026cea38c
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 6d223dd051dccf7af84e4e6c35238f4ad026b00a
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39615632"
 ---
-# <a name="accessing-skiasharp-pixel-bits"></a>SkiaSharp piksel BITS erişme
+# <a name="accessing-skiasharp-bitmap-pixel-bits"></a>SkiaSharp bit eşlem piksel BITS erişme
 
 Makalesinde anlatıldığı gibi [ **dosyaları kaydetme SkiaSharp bit eşlemlere**](saving.md), bit eşlemler dosyalarında sıkıştırılmış biçimde, JPEG veya PNG gibi genel olarak depolanır. Bellekte bir SkiaSharp bit eşlem constrast içinde sıkıştırılmış değil. Bu, piksel sıralı bir dizi olarak depolanır. Sıkıştırılmamış Bu biçim bir uzaklaştırabilir bit eşlemler aktarımını kolaylaştırır.
 
@@ -39,7 +39,7 @@ Bu teknikler performans farklarını görmenize olanak [ **SkiaSharpFormsDemos**
 
 ### <a name="the-setpixel-method"></a>SetPixel yöntemi
 
-Yalnızca birkaç bağımsız piksel cinsinden ayarlayın veya gerekiyorsa [ `SetPixel` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.SetPixel/p/System.Int32/System.Int32/SkiaSharp.SKColor/) ve [ `GetPixel` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.GetPixel/p/System.Int32/System.Int32/) yöntemleri uygundur. Her iki bu yöntemlerin, tamsayı sütun ve satır belirtin. Piksel biçimi'ne olursa olsun, bu iki yöntem piksel olarak ayarlayın ya da elde izin bir `SKColor` değeri:
+Yalnızca birkaç bağımsız piksel cinsinden ayarlayın veya gerekiyorsa [ `SetPixel` ](xref:SkiaSharp.SKBitmap.SetPixel(System.Int32,System.Int32,SkiaSharp.SKColor)) ve [ `GetPixel` ](xref:SkiaSharp.SKBitmap.GetPixel(System.Int32,System.Int32)) yöntemleri uygundur. Her iki bu yöntemlerin, tamsayı sütun ve satır belirtin. Piksel biçimi'ne olursa olsun, bu iki yöntem piksel olarak ayarlayın ya da elde izin bir `SKColor` değeri:
 
 ```csharp
 bitmap.SetPixel(col, row, color);
@@ -85,7 +85,7 @@ Kırmızı bileşeni eşit bir bit eşlem sütun ve satır mavi bileşeni eşit 
 
 ### <a name="the-pixels-property"></a>Piksel özelliği
 
-`SKBitmap` tanımlayan bir [ `Pixels` ](https://developer.xamarin.com/api/property/SkiaSharp.SKBitmap.Pixels/) bir dizi döndürür bir özellik `SKColor` tüm eşlemiyle değerleri. Ayrıca `Pixels` renk değerlerinin bit eşlemin bir dizi ayarlamak için:
+`SKBitmap` tanımlayan bir [ `Pixels` ](xref:SkiaSharp.SKBitmap.Pixels) bir dizi döndürür bir özellik `SKColor` tüm eşlemiyle değerleri. Ayrıca `Pixels` renk değerlerinin bit eşlemin bir dizi ayarlamak için:
 
 ```csharp
 SKColor[] pixels = bitmap.Pixels;
@@ -129,7 +129,7 @@ Dikkat dizinini `pixels` dizi hesaplanmasını gerekiyor `row` ve `col` değişk
 
 ### <a name="the-getpixels-pointer"></a>GetPixels işaretçi
 
-Potansiyel olarak bit eşlem piksel erişmek için en güçlü bir tekniktir [ `GetPixels` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.GetPixels()/), ile karıştırılmamalıdır `GetPixel` yöntemi veya `Pixels` özelliği. Hemen bir fark görürsünüz `GetPixels` içeren C# programlama çok bilinen bir sorun döndürür:
+Potansiyel olarak bit eşlem piksel erişmek için en güçlü bir tekniktir [ `GetPixels` ](xref:SkiaSharp.SKBitmap.GetPixels), ile karıştırılmamalıdır `GetPixel` yöntemi veya `Pixels` özelliği. Hemen bir fark görürsünüz `GetPixels` içeren C# programlama çok bilinen bir sorun döndürür:
 
 ```csharp
 IntPtr pixelsAddr = bitmap.GetPixels();
@@ -145,7 +145,7 @@ byte* ptr = (byte*)pixelsAddr.ToPointer();
 
 `ptr` Değişkendir türünü _bayt işaretçi_. Bu `ptr` değişkeni eşleşmemin piksel depolamak için kullanılan tek tek bayt bellek erişmenize olanak sağlar. Bu bellekten baytı okur veya bir bayt bellek yazmak için bu kodu kullanın:
 
-```sharp
+```csharp
 byte pixelComponent = *ptr;
 
 *ptr = pixelComponent;
@@ -282,7 +282,7 @@ Yalnızca soru ise şudur: tamsayı biçimi `SKColor` sırasına göre değer `S
 
 ### <a name="the-setpixels-method"></a>SetPixels yöntemi
 
-`SKBitmap` adlı bir yöntemi de tanımlar [ `SetPixels` ](https://developer.xamarin.com/api/member/SkiaSharp.SKBitmap.SetPixels/p/System.IntPtr/), olduğu gibi çağırın:
+`SKBitmap` adlı bir yöntemi de tanımlar [ `SetPixels` ](xref:SkiaSharp.SKBitmap.SetPixels(System.IntPtr)), olduğu gibi çağırın:
 
 ```csharp
 bitmap.SetPixels(intPtr);
@@ -741,7 +741,55 @@ public partial class ColorAdjustmentPage : ContentPage
 
 Bu yöntemin performansını ayrı yöntemleri için kaynak ve hedef bit eşlem renk türleri çeşitli birleşimlerini oluşturarak daha da iyileşme ve her piksel türü, iade etmekten kaçının olma olasılığı yüksektir. Başka bir seçeneği birden çok sağlamaktır `for` için döngüsü `col` değişkeni renk türüne dayalı.
 
+## <a name="posterization"></a>Posterleştirme
+
+Piksel BITS erişme içeren başka bir yaygın iş _posterleştirme_. Sınırlı bir renk paleti kullanarak elle çizilmiş poster sonucu benzeyecek şekilde bir bit eşleşmemin piksel cinsinden renk kodlu sayısı azaltılır.
+
+**Posterleştir** sayfa monkey görüntülerden birini bu işlem gerçekleştirir:
+
+```csharp
+public class PosterizePage : ContentPage
+{
+    SKBitmap bitmap =
+        BitmapExtensions.LoadBitmapResource(typeof(FillRectanglePage),
+                                            "SkiaSharpFormsDemos.Media.Banana.jpg");
+    public PosterizePage()
+    {
+        Title = "Posterize";
+
+        unsafe
+        {
+            uint* ptr = (uint*)bitmap.GetPixels().ToPointer();
+            int pixelCount = bitmap.Width * bitmap.Height;
+
+            for (int i = 0; i < pixelCount; i++)
+            {
+                *ptr++ &= 0xE0E0E0FF; 
+            }
+        }
+
+        SKCanvasView canvasView = new SKCanvasView();
+        canvasView.PaintSurface += OnCanvasViewPaintSurface;
+        Content = canvasView;
+    }
+
+    void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
+    {
+        SKImageInfo info = args.Info;
+        SKSurface surface = args.Surface;
+        SKCanvas canvas = surface.Canvas;
+
+        canvas.Clear();
+        canvas.DrawBitmap(bitmap, info.Rect, BitmapStretch.Uniform;
+    }
+}
+```
+
+Oluşturucudaki kod her piksel erişir, 0xE0E0E0FF değerle bit düzeyinde bir AND işlemi gerçekleştirir ve sonucu bit eşleminde depolar. ' % S'değerleri 0xE0E0E0FF her renk bileşeni yüksek 3 bitlerini tutar ve daha düşük 5 bitleri 0 olarak ayarlar. 2 yerine<sup>24</sup> veya 16,777,216 renkler, bit eşlem 2 azaltıldı<sup>9</sup> veya 512 renkler:
+
+[![Posterleştirme](pixel-bits-images/Posterize.png "posterleştirme")](pixel-bits-images/posterleştirme-Large.png#lightbox)
+
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [SkiaSharp API'leri](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp API'leri](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (örnek)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

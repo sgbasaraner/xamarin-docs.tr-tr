@@ -6,25 +6,17 @@ ms.assetid: C8A5EEFF-5A3B-4163-838A-147EE3939FAA
 ms.technology: xamarin-forms
 author: davidbritch
 ms.author: dabritch
-ms.date: 07/10/2017
-ms.openlocfilehash: f8f8f9b4e5755e8b1707178fef633321b64e4e94
-ms.sourcegitcommit: 6e955f6851794d58334d41f7a550d93a47e834d2
+ms.date: 08/14/2018
+ms.openlocfilehash: a0a58cf05c97221a73cd0784b7859bb9c84cef86
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/12/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "38994682"
 ---
 # <a name="hierarchical-navigation"></a>Hiyerarşik gezinme
 
 _NavigationPage sınıf kullanıcının iletir ve geriye doğru istediğiniz şekilde, sayfada gezinme mümkün olduğu bir hiyerarşik Gezinti deneyimi sağlar. Sınıfı, gezinti sayfası nesnelerin son giren ilk çıkar (LIFO) yığını olarak uygular. Bu makalede bir sayfa yığınını Gezinti gerçekleştirmek için NavigationPage sınıfını kullanmayı gösterir._
-
-Bu makalede, aşağıdaki konular ele alınmaktadır:
-
-- [Gezinti gerçekleştirme](#Performing_Navigation) – kök sayfası oluşturma, sayfaları için gezinme yığınında gönderme pencerelerinin gezinme yığınında sayfalarını ve sayfa geçişleri animasyon ekleme.
-- [Gezinirken veri geçirme](#Passing_Data_when_Navigating) – sayfa oluşturucusu ve aracılığıyla veri geçirme bir `BindingContext`.
-- [Gezinme yığınında düzenleme](#Manipulating_the_Navigation_Stack) – stack ekleme veya kaldırma sayfaları düzenleme.
-
-## <a name="overview"></a>Genel Bakış
 
 Bir sayfadan diğerine taşımak için bir uygulama Burada, etkin sayfa, aşağıdaki diyagramda gösterildiği gibi olacak gezinme yığınında yeni bir sayfaya gönderir:
 
@@ -312,10 +304,58 @@ async void OnLoginButtonClicked (object sender, EventArgs e)
 
 Kullanıcının kimlik bilgilerinin doğru olması koşuluyla `MainPage` örneği önce geçerli sayfa gezinme yığınında eklenir. [ `PopAsync` ](xref:Xamarin.Forms.NavigationPage.PopAsync) Yöntemi ardından kaldırır gezinme yığınında geçerli sayfadaki ile `MainPage` etkin sayfa olma örneği.
 
-## <a name="summary"></a>Özet
+## <a name="displaying-views-in-the-navigation-bar"></a>Gezinti çubuğunda görünümlerini görüntüleme
 
-Bu makalede nasıl kullanılacağı gösterilmiştir [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) sayfaların yığında Gezinti gerçekleştirmek için sınıf. Bu sınıf kullanıcının iletir ve geriye doğru istediğiniz şekilde, sayfada gezinme mümkün olduğu bir hiyerarşik Gezinti deneyimi sağlar. Sınıfın uyguladığı son giren ilk çıkar (LIFO) yığını olarak Gezinti [ `Page` ](xref:Xamarin.Forms.Page) nesneleri.
+Tüm Xamarin.Forms [ `View` ](xref:Xamarin.Forms.View) gezinti çubuğunda görüntülenen bir [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage). Bu ayarı gerçekleştirilir [ `NavigationPage.TitleView` ](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) özelliğine bağlı bir `View`. Bu ekli özellik ayarlanabilir [ `Page` ](xref:Xamarin.Forms.Page)ve ne zaman `Page` üzerine itilir bir `NavigationPage`, `NavigationPage` özelliğinin değeri dikkate alır.
 
+Aşağıdaki örnek runbook'undan [başlığı görünüm örnek](https://developer.xamarin.com/samples/xamarin-forms/Navigation/TitleView/), nasıl ayarlanacağını gösterir [ `NavigationPage.TitleView` ](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) XAML ekli özellik:
+
+```xaml
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="NavigationPageTitleView.TitleViewPage">
+    <NavigationPage.TitleView>
+        <Slider HeightRequest="44" WidthRequest="300" />
+    </NavigationPage.TitleView>
+    ...
+</ContentPage>
+```
+
+Eşdeğer işte C# kod:
+
+```csharp
+public class TitleViewPage : ContentPage
+{
+    public TitleViewPage()
+    {
+        var titleView = new Slider { HeightRequest = 44, WidthRequest = 300 };
+        NavigationPage.SetTitleView(this, titleView);
+        ...
+    }
+}
+```
+
+Sonuçlanır bir [ `Slider` ](xref:Xamarin.Forms.Slider) gezinti çubuğunda üzerinde görüntülenmesini [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage):
+
+[![Kaydırıcı TitleView](hierarchical-images/titleview-small.png "kaydırıcı TitleView")](hierarchical-images/titleview-large.png#lightbox "kaydırıcı TitleView")
+
+> [!IMPORTANT]
+> Görünüm boyutu ile belirtilmediği sürece çok sayıda görünümleri Gezinti bölmesinde görünmez [ `WidthRequest` ](xref:Xamarin.Forms.VisualElement.WidthRequest) ve [ `HeightRequest` ](xref:Xamarin.Forms.VisualElement.HeightRequest) özellikleri. Alternatif olarak, görünümü içinde sarmalanabilir bir [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) ile [ `HorizontalOptions` ](xref:Xamarin.Forms.View.HorizontalOptions) ve [ `VerticalOptions` ](xref:Xamarin.Forms.View.VerticalOptions) özellikleri uygun değerlere ayarlayın.
+
+Unutmayın, çünkü [ `Layout` ](xref:Xamarin.Forms.Layout) sınıf türetilir [ `View` ](xref:Xamarin.Forms.View) sınıfı [ `TitleView` ](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) ekli özellik, bir düzen görüntülemek için ayarlanabilir birden çok görünüm içeren sınıf. İOS ve evrensel Windows Platformu (UWP) için gezinti çubuğunun yüksekliği değiştirilemez ve gezinti çubuğunda görüntülenen görünüm gezinti çubuğu varsayılan boyutundan büyükse, bu nedenle kırpma meydana gelir. Ancak, Android, gezinti çubuğunun yüksekliği ayarlayarak değiştirilebilir [ `NavigationPage.BarHeight` ](xref:Xamarin.Forms.PlatformConfiguration.AndroidSpecific.AppCompat.NavigationPage.BarHeightProperty) bağlanılabilir özellik için bir `double` yeni yüksekliğini temsil eden. Daha fazla bilgi için [üzerinde bir NavigationPage gezinti çubuğunun yüksekliği ayarlama](~/xamarin-forms/platform/platform-specifics/consuming/android.md#navigationpage-barheight).
+
+Alternatif olarak, genişletilmiş bir gezinti üst kısmında, renk için gezinti çubuğunu uyan sayfa içeriği, içeriğin gezinti çubuğunda ve bazı durumlarda bir görünüm yerleştirerek önerilebilir. Ayrıca, İos'ta ayırıcı çizginin ve gezinti çubuğunun alt kısmında bulunan olan gölge ayarlayarak kaldırılabilir [ `NavigationPage.HideNavigationBarSeparator` ](xref:Xamarin.Forms.PlatformConfiguration.iOSSpecific.NavigationPage.HideNavigationBarSeparatorProperty) bağlanılabilir özellik için `true`. Daha fazla bilgi için [bir NavigationPage gezinti çubuğu ayırıcı gizleme](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#navigationpage-hideseparatorbar).
+
+> [!NOTE]
+> [ `BackButtonTitle` ](xref:Xamarin.Forms.NavigationPage.BackButtonTitleProperty), [ `Title` ](xref:Xamarin.Forms.Page.Title), [ `TitleIcon` ](xref:Xamarin.Forms.NavigationPage.TitleIconProperty), Ve [ `TitleView` ](xref:Xamarin.Forms.NavigationPage.TitleViewProperty) özellikleri tüm tanımlayabilirsiniz Gezinti çubuğunda yer kaplayan değerleri. Gezinti çubuğu boyutu platform ve ekran boyutuna göre farklılık gösterir, ancak bu özelliklerin tümünü ayarı çakışmaları nedeniyle sınırlı alanınız neden olur. Bu özelliklerin birleşimi kullanmayı denemeden yerine, daha iyi istenen gezinti çubuğu tasarımınızı yalnızca ayarlayarak ulaşabileceği bulabilirsiniz `TitleView` özelliği.
+
+### <a name="limitations"></a>Sınırlamalar
+
+Kısıtlamaları görüntülenirken dikkat edilmesi gereken sayıda bir [ `View` ](xref:Xamarin.Forms.View) gezinti çubuğunda bir [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage):
+
+- İOS, görünümler Gezinti çubuğunda yerleştirilen bir `NavigationPage` büyük başlıklar etkinleştirilip etkinleştirilmediği bağlı olarak farklı bir konumda görüntülenir. Büyük başlıklar etkinleştirme hakkında daha fazla bilgi için bkz: [görüntüleme büyük başlıklar](~/xamarin-forms/platform/platform-specifics/consuming/ios.md#large_title).
+- Android, görünümler Gezinti çubuğunda yerleştirme bir `NavigationPage` yalnızca uygulama uyumluluğu kullanan uygulamalarda gerçekleştirilebilir.
+- Büyük ve karmaşık görünümleri gibi yerleştirmek için önermedi [ `ListView` ](xref:Xamarin.Forms.ListView) ve [ `TableView` ](xref:Xamarin.Forms.TableView), gezinti çubuğunda bir `NavigationPage`.
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
@@ -323,6 +363,7 @@ Bu makalede nasıl kullanılacağı gösterilmiştir [ `NavigationPage` ](xref:X
 - [Hiyerarşik (örnek)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/Hierarchical/)
 - [PassingData (örnek)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/PassingData/)
 - [LoginFlow (örnek)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/LoginFlow/)
+- [TitleView (örnek)](https://developer.xamarin.com/samples/xamarin-forms/Navigation/TitleView/)
 - [(Xamarin University Video) Xamarin.Forms örnek ekran Flow'da oturum oluşturma](http://xamarinuniversity.blob.core.windows.net/lightninglectures/CreateASignIn.zip)
 - [Xamarin.Forms (Xamarin University Video) ekran Flow'da oturum oluşturma](https://university.xamarin.com/lightninglectures/how-to-create-a-sign-in-screen-flow-in-xamarinforms)
 - [NavigationPage](xref:Xamarin.Forms.NavigationPage)

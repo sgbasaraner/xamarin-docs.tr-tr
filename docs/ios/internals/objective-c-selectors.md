@@ -4,89 +4,101 @@ description: Bu belge, Objective-C seçicileri C# ile etkileşim kurmak anlatıl
 ms.prod: xamarin
 ms.assetid: A80904C4-6A89-389B-0487-057AFEB70989
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
+author: lobrien
+ms.author: laobri
 ms.date: 07/12/2017
-ms.openlocfilehash: 3083770fd2874eca317585b6bf949f3efe56f879
-ms.sourcegitcommit: aa9b9b203ab4cd6a6b4fd51e27d865e2abf582c1
+ms.openlocfilehash: b51ee6b547cc53761f23379e7233bb710090a61b
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/30/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39351736"
 ---
 # <a name="objective-c-selectors-in-xamarinios"></a>Xamarin.iOS, objective-C seçicileri
 
 Objective-C dilinin temel aldığı *Seçici*. Seçici, bir nesneye gönderilen bir iletidir veya *sınıfı*. [Xamarin.iOS](~/ios/internals/api-design/index.md) haritalar örnek Seçici örnek yöntemleri için ve sınıfının statik yöntemleri Seçici.
 
-Normal C işlevlerinin aksine (ve C++ üye işlevleri gibi), doğrudan kullanarak bir seçici çağrılamıyor [P/Invoke](http://www.mono-project.com/docs/advanced/pinvoke/).
-(*Kenara*: teorik olarak, P/Invoke sanal olmayan C++ üye işlevleri için kullanabilirsiniz, ancak daha iyi göz ardı sorunlu dünyasına olduğu derleyici başına ad değiştirmeyi hakkında endişe etmeniz gerekir.) Bunun yerine, seçici bir Objective-C sınıfına gönderilir ya da kullanarak [ `objc_msgSend` işlevi](http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference.html#//apple_ref/c/func/objc_msgSend).
+Normal C işlevlerinin aksine (ve C++ üye işlevleri gibi), doğrudan kullanarak bir seçici çağrılamıyor [P/Invoke](http://www.mono-project.com/docs/advanced/pinvoke/) bunun yerine, seçici bir Objective-C sınıfına gönderilir veya kullanma örneği [`objc_msgSend`](https://developer.apple.com/documentation/objectivec/1456712-objc_msgsend)
+işlev.
 
-İlginizi çekebilecek [Objective-C ileti üzerinde bu yardımcı kılavuz](http://developer.apple.com/iphone/library/documentation/cocoa/conceptual/ObjCRuntimeGuide/Articles/ocrtHowMessagingWorks.html) yararlıdır.
-
-<a name="Example" />
+Objective-C iletiler hakkında daha fazla bilgi için Apple'nın göz atın [nesneleriyle çalışma](https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/WorkingwithObjects/WorkingwithObjects.html#//apple_ref/doc/uid/TP40011210-CH4-SW2) Kılavuzu.
 
 ## <a name="example"></a>Örnek
 
-Çağrılacak istediğinizi düşünelim [-[NSString sizeWithFont:forWidth:lineBreakMode:]](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/NSString_UIKit_Additions/Reference/Reference.html#//apple_ref/occ/instm/NSString/sizeWithFont:forWidth:lineBreakMode:) Seçici.
+Çağrılacak istediğinizi düşünelim [`sizeWithFont:forWidth:lineBreakMode:`](https://developer.apple.com/documentation/foundation/nsstring/1619914-sizewithfont)
+seçici üzerinde [ `NSString` ](https://developer.apple.com/documentation/foundation/nsstring).
 (Apple'nın belgelerindeki) bildirimi şu şekildedir:
 
-```csharp
+```objc
 - (CGSize)sizeWithFont:(UIFont *)font forWidth:(CGFloat)width lineBreakMode:(UILineBreakMode)lineBreakMode
 ```
 
--  Dönüş türü *CGSize* birleşik API'si için.
--  *Yazı tipi* parametresi bir [UIFont](https://developer.xamarin.com/api/type/UIKit.UIFont/) (ve türetilen (dolaylı olarak) bir tür [NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/) ) ve bu nedenle eşlenmiş [System.IntPtr](xref:System.IntPtr) .
--  *Genişliği* parametresi bir *CGFloat* , eşlenmiş *nfloat*.
--  *LineBreakMode* parametresi bir *UILineBreakMode* , zaten Xamarin.iOS, bağlı [UILineBreakMode numaralandırma](https://developer.xamarin.com/api/type/UIKit.UILineBreakMode/) .
+Bu API, aşağıdaki özelliklere sahiptir:
 
+- Dönüş türü `CGSize` birleşik API'si için.
+- `font` Parametresi bir [UIFont](https://developer.xamarin.com/api/type/UIKit.UIFont/) (ve türetilen (dolaylı olarak) bir tür [NSObject](https://developer.xamarin.com/api/type/Foundation.NSObject/)) ve eşlendiği [System.IntPtr](xref:System.IntPtr).
+- `width` Parametresi bir `CGFloat`, eşlenmiş `nfloat`.
+- `lineBreakMode` Parametresi bir [ `UILineBreakMode` ](https://developer.apple.com/documentation/uikit/uilinebreakmode?language=objc), Xamarin.iOS, önceden bağlandı [`UILineBreakMode`](https://developer.xamarin.com/api/type/UIKit.UILineBreakMode/)
+Sabit listesi.
 
-Hepsini bir araya getirin ve eşleşen bir objc_msgSend bildirimi istiyoruz:
+Hepsi bir araya getirildiğinde `objc_msgSend` bildirimi eşleşmelidir:
 
 ```csharp
-CGSize objc_msgSend(IntPtr target, IntPtr selector,
-    IntPtr font, nfloat width, UILineBreakMode mode);
+CGSize objc_msgSend(
+    IntPtr target, 
+    IntPtr selector, 
+    IntPtr font, 
+    nfloat width, 
+    UILineBreakMode mode
+);
 ```
 
-Bunu bildirmeniz gerekir:
+Şu şekilde bildirin:
 
 ```csharp
 [DllImport (Constants.ObjectiveCLibrary, EntryPoint="objc_msgSend")]
 static extern CGSize cgsize_objc_msgSend_IntPtr_float_int (
-    IntPtr target, IntPtr selector,
+    IntPtr target, 
+    IntPtr selector,
     IntPtr font,
     nfloat width,
-    UILineBreakMode mode);
+    UILineBreakMode mode
+);
 ```
 
-Size uygun parametreleri oluşturduktan sonra bildirilen sonra biz çağırabilirsiniz:
+Bu yöntemi çağırmak için kod aşağıdaki gibi kullanın:
 
 ```csharp
-NSString      target = ...
-Selector    selector = new Selector ("sizeWithFont:forWidth:lineBreakMode:");
-UIFont          font = ...
-nfloat          width = ...
+NSString target = ...
+Selector selector = new Selector ("sizeWithFont:forWidth:lineBreakMode:");
+UIFont font = ...
+nfloat width = ...
 UILineBreakMode mode = ...
 
 CGSize size = cgsize_objc_msgSend_IntPtr_float_int(
-    target.Handle, selector.Handle,
+    target.Handle, 
+    selector.Handle,
     font == null ? IntPtr.Zero : font.Handle,
     width,
-    mode);
+    mode
+);
 ```
 
-Döndürülen değer olan boyutu 8 bayttan küçük olan bir yapı vardı (eski ister `SizeF` için birleşik API'lerini geçmeden önce kullanılan) Yukarıdaki kod cihazda çöken ancak simülatör üzerinde çalıştırdığınız. Bu nedenle değerinden 8 bit boyutu, dolayısıyla biz bir değer döndüren bir seçici çağırmak için *ayrıca* bildirmenize gerek `objc_msgSend_stret()` işlevi:
+Döndürülen değer olan boyutu 8 bayttan küçük olan bir yapı vardı (eski ister `SizeF` için birleşik API'lerini geçmeden önce kullanılan), yukarıdaki kod cihazda çöken ancak simülatör üzerinde çalıştırdığınız. Değerinden 8 bit boyutunda bir değer döndüren bir seçici çağırmak için `objc_msgSend_stret` işlevi:
 
 ```csharp
 [DllImport (MonoTouch.Constants.ObjectiveCLibrary, EntryPoint="objc_msgSend_stret")]
 static extern void cgsize_objc_msgSend_stret_IntPtr_float_int (
     out CGSize retval,
-    IntPtr target, IntPtr selector,
+    IntPtr target, 
+    IntPtr selector,
     IntPtr font,
     nfloat width,
-    UILineBreakMode mode);
+    UILineBreakMode mode
+);
 ```
 
-Çağırma hale gelir:
+Bu yöntemi çağırmak için kod aşağıdaki gibi kullanın:
 
 ```csharp
 NSString      target = ...
@@ -99,76 +111,62 @@ CGSize size;
 
 if (Runtime.Arch == Arch.SIMULATOR)
     size = cgsize_objc_msgSend_IntPtr_float_int(
-        target.Handle, selector.Handle,
+        target.Handle, 
+        selector.Handle,
         font == null ? IntPtr.Zero : font.Handle,
         width,
-        mode);
+        mode
+    );
 else
     cgsize_objc_msgSend_stret_IntPtr_float_int(
         out size,
         target.Handle, selector.Handle,
         font == null ? IntPtr.Zero: font.Handle,
         width,
-        mode);
+        mode
+    );
 ```
-
-
-<a name="Invoking_a_Selector" />
 
 ## <a name="invoking-a-selector"></a>Bir seçici çağırma
 
 Bir seçici çağırma üç adım vardır:
 
-1.  Seçici hedef alın.
-1.  Seçici adını alın.
-1.  Uygun bağımsız değişkenlerle objc_msgSend() çağırın.
-
-
-<a name="Selector_Targets" />
+1. Seçici hedef alın.
+2. Seçici adını alın.
+3. Çağrı `objc_msgSend` uygun bağımsız değişkenlerle.
 
 ### <a name="selector-targets"></a>Seçici hedefleri
 
-Bir seçici veya bir nesne örneği, hem de bir Objective-C sınıfı hedeftir. Hedef bir örneğidir ve ilişkili bir Xamarin.iOS türünden gelen, kullanmanız [ObjCRuntime.INativeObject.Handle](https://developer.xamarin.com/api/property/ObjCRuntime.INativeObject.Handle/) özelliği.
+Bir seçici veya bir nesne örneği, hem de bir Objective-C sınıfı hedeftir. Hedef bir örneğidir ve ilişkili bir Xamarin.iOS türünden gelen, kullanmanız [ `ObjCRuntime.INativeObject.Handle` ](https://developer.xamarin.com/api/property/ObjCRuntime.INativeObject.Handle/) özelliği.
 
-Hedef sınıf ise kullanın [ObjCRuntime.Class](https://developer.xamarin.com/api/type/ObjCRuntime.Class/) sınıf örneği için bir başvuru almak için ardından kullanmak [Class.Handle](https://developer.xamarin.com/api/property/ObjCRuntime.Class.Handle/) özelliği.
-
-
-<a name="Selector_Names" />
+Hedef sınıf ise kullanın [ `ObjCRuntime.Class` ](https://developer.xamarin.com/api/type/ObjCRuntime.Class/) sınıf örneği için bir başvuru almak için ardından kullanmak [ `Class.Handle` ](https://developer.xamarin.com/api/property/ObjCRuntime.Class.Handle/) özelliği.
 
 ### <a name="selector-names"></a>Seçici adları
 
-Seçici adları içinde Apple'nın belgeleri listelenmiştir. Örneğin, [Uıkit NSString genişletme yöntemleri](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/NSString_UIKit_Additions/Reference/Reference.html) dahil [sizeWithFont:](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/NSString_UIKit_Additions/Reference/Reference.html#//apple_ref/occ/instm/NSString/sizeWithFont:) ve [sizeWithFont:forWidth:lineBreakMode:](http://developer.apple.com/iphone/library/documentation/UIKit/Reference/NSString_UIKit_Additions/Reference/Reference.html#//apple_ref/occ/instm/NSString/sizeWithFont:forWidth:lineBreakMode:). Katıştırılmış ve sondaki iki nokta üst üste önemlidir ve Seçici adın bir parçasıdır.
+Apple belgelerinde Seçici adları listelenmektedir. Örneğin, [ `NSString` ](https://developer.apple.com/documentation/foundation/nsstring?language=objc) içerir [ `sizeWithFont:` ](https://developer.apple.com/documentation/foundation/nsstring/1619917-sizewithfont?language=objc) ve [ `sizeWithFont:forWidth:lineBreakMode:` ](https://developer.apple.com/documentation/foundation/nsstring/1619914-sizewithfont?language=objc) seçicileri. Katıştırılmış ve sondaki iki nokta üst üste Seçici adın bir parçasıdır ve atlanamaz.
 
-Seçici adına sahip olduğunuzda, oluşturabileceğiniz bir [ObjCRuntime.Selector](https://developer.xamarin.com/api/type/ObjCRuntime.Selector/) de örneği.
+Seçici adına sahip olduğunuzda, oluşturabileceğiniz bir [ `ObjCRuntime.Selector` ](https://developer.xamarin.com/api/type/ObjCRuntime.Selector/) de örneği.
 
+### <a name="calling-objcmsgsend"></a>Objc_msgSend çağırma
 
-<a name="Calling_objc_msgSend()" />
+`objc_msgSend` bir nesneye (Seçici) bir ileti gönderir. Bu işlev ailesini en az iki gerekli bağımsız değişkeni alır: Seçici hedef (örneği veya tanıtıcı sınıfı), Seçici ve Seçici için gerekli herhangi bir bağımsız değişken. Örnek ve Seçici bağımsız değişkenler olmalıdır `System.IntPtr`, ve kalan tüm bağımsız değişkenleri Seçici bekliyor, örneğin türüyle eşleşmelidir bir `nint` için bir `int`, veya bir `System.IntPtr` tüm `NSObject`-türetilmiş türler. Kullanın [`NSObject.Handle`](https://developer.xamarin.com/api/property/Foundation.NSObject.Handle/)
+özelliği almak için bir `IntPtr` için Objective-C tür örneği.
 
-### <a name="calling-objcmsgsend"></a>Objc_msgSend() çağırma
+Birden fazla yoktur `objc_msgSend` işlevi:
 
- `objc_msgSend()` bir nesneye (Seçici) ileti göndermek için kullanılır. Bu işlev ailesini en az iki gerekli bağımsız değişkeni alır: Seçici hedef (örneği veya tanıtıcı sınıfı), Seçici ve ardından belirli Seçici için gerekli bağımsız değişkenler. Örnek ve Seçici bağımsız değişkenler olmalıdır `System.IntPtr`, ve kalan tüm bağımsız değişkenleri Seçici bekliyor, örneğin türüyle eşleşmelidir bir `nint` için bir `int`, veya bir `System.IntPtr` tüm `NSObject`-türetilmiş türler. Kullanım [NSObject.Handle](https://developer.xamarin.com/api/property/Foundation.NSObject.Handle/) özelliği almak için bir `IntPtr` için Objective-C tür örneği.
+- Kullanım [ `objc_msgSend_stret` ](https://developer.apple.com/documentation/objectivec/1456730-objc_msgsend_stret?language=objc) yapı döndüren seçicileri için. ARM üzerinde bu numaralandırma olmayan tüm dönüş türleri veya C yerleşik türlerinden herhangi birini içerir (`char`, `short`, `int`, `long`, `float`, `double`). X86 (simülatörü), bu yöntem boyutu 8 bayt daha büyük olan tüm yapıları için kullanılmalıdır (`CGSize` 8 bayt ve kullanmayan `objc_msgSend_stret` benzeticide). 
+- Kullanım [ `objc_msgSend_fpret` ](https://developer.apple.com/documentation/objectivec/1456697-objc_msgsend_fpret?language=objc) kayan döndüren seçiciler değeri x86 yalnızca noktası. Bu işlev üzerinde ARM kullanılması gerekmez; Bunun yerine, `objc_msgSend`. 
+- Ana [objc_msgSend](https://developer.apple.com/documentation/objectivec/1456712-objc_msgsend) işlevi, diğer tüm seçiciler için kullanılır.
 
-Ne yazık ki yok birden fazla `objc_msgSend()` işlevi.
+Hangi verdikten `objc_msgSend` çağırmak için size gereken işlevlere (simülatör ve cihaz her gerektirebilir farklı bir yöntem), normal kullanabileceğiniz [ `[DllImport]` ](xref:System.Runtime.InteropServices.DllImportAttribute) sonraki çağrı işlevi bildirmek için yöntemi.
 
-Kullanım [ `objc_msgSend_stret()` ](http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference.html#//apple_ref/c/func/objc_msgSend_stret) bir yapı döndüren seçicileri için.
-"İlginç" ARM üzerinde Bu anlatım gözetildiği için olan tüm dönüş türlerini içeren *değil* (char, short, int, long, kayan, çift) C yerleşik türlerinden herhangi birini ya da bir sabit listesi. X86 (simülatörü), bu boyutu 8 bayt daha büyük olan tüm yapıları için kullanılması gerekir. (CGSize----yukarıdaki örnekte kullanılan tam olarak 8 bayt olan ve bu nedenle kullanmaz `objc_msgSend_stret()` benzeticide.)
+Bir dizi önceden yapılmış `objc_msgSend` bildirimleri bulunabilir `ObjCRuntime.Messaging`.
 
-Kullanım [ `objc_msgSend_fpret()` ](http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference.html#//apple_ref/c/func/objc_msgSend_fpret) kayan döndürmesi seçiciler değeri x86 yalnızca noktası. Bu işlev üzerinde ARM kullanılması gerekmez; Bunun yerine, `objc_msgSend()`.
+## <a name="different-invocations-on-simulator-and-device"></a>Simülatör ve cihaz farklı çağrıları
 
-Ana [objc_msgSend()](http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference.html#//apple_ref/c/func/objc_msgSend) işlevi, diğer tüm seçiciler için kullanılır.
+Yukarıda açıklandığı gibi üç tür Objective-C sahip, `objc_msgSend` yöntemleri: normal çağrılarını, kayan nokta değerleri (yalnızca x86) döndüren etkinleştirmeleri için diğeri için yapı değerleri döndüren etkinleştirmeleri için bir tane. İkinci soneki içerir `_stret` içinde `ObjCRuntime.Messaging`.
 
-Hangi verdikten `objc_msgSend()` işlevlere çağırmanız gerekir (ve birden çok örneğin simülatör ve cihaz olabilir), normal kullanabileceğiniz [ `[DllImport]` ](xref:System.Runtime.InteropServices.DllImportAttribute) sonraki çağrı işlevi bildirmek için yöntemi.
-
-Bir dizi önceden yapılmış `objc_msgSend()` bildirimleri bulunabilir [ `ObjCRuntime.Messaging` ](https://developer.xamarin.com/api/type/ObjCRuntime.Messaging/).
-
-
-<a name="ugly" />
-
-## <a name="the-ugly"></a>Çirkin
-
-Objective-C sahip üç tür, `objc_msgSend` yöntemleri: normal çağrılarını, kayan nokta değerleri (yalnızca x86) döndüren etkinleştirmeleri için diğeri için yapı değerleri döndüren etkinleştirmeleri için bir tane. İkinci soneki içerir `_stret` içinde `ObjCRuntime.Messaging`.
-
-(Kurallar aşağıda açıklanmıştır) belirli yapılar döndüren bir yöntemi çağırdığınız, şunun gibi bir çıkış değeri, birinci parametre olarak dönüş değeri ile yöntemini çağırmanız gerekir:
+Belirli yapılar (aşağıda açıklanan kurallar) döndüren bir yöntemi çağırdığınız, birinci parametre olarak dönüş değeri ile yöntemini çağırmanız gerekir bir `out` değeri:
 
 ```csharp
 // The following returns a PointF structure:
@@ -176,37 +174,34 @@ PointF ret;
 Messaging.PointF_objc_msgSend_stret_PointF_IntPtr (out ret, this.Handle, selConvertPointFromWindow.Handle, point, window.Handle);
 ```
 
-İşlerin hallolmasını çirkin burada ve kuralı ne zaman kullanmalısınız _stret_ farklı bağlamalarınızı simülatör hem de cihaz üzerinde çalışmak için isterseniz X86 ve ARM üzerinde şuna benzeyen bir kod eklemeniz gerekir:
+Kural ne zaman kullanılacağı için `_stret_` yöntemi x86 ve ARM farklıdır.
+Simülatör hem de cihaz üzerinde çalışmaya bağlamalarınızı istiyorsanız, aşağıdaki gibi bir kod ekleyin:
 
 ```csharp
-if (Runtime.Arch == Arch.DEVICE){
+if (Runtime.Arch == Arch.DEVICE)
+{
     PointF ret;
-
     Messaging.PointF_objc_msgSend_stret_PointF_IntPtr (out ret, myHandle, selector.Handle);
-
     return ret;
-} else
+} 
+else
+{
     return Messaging.PointF_objc_msgSend_PointF_IntPtr (myHandle, selector.Handle);
+}
 ```
 
-### <a name="using-the-objcmsgsendstret-method"></a>Objc kullanarak\_msgSend\_stret yöntemi
+### <a name="using-the-objcmsgsendstret-method"></a>Objc_msgSend_stret yöntemi kullanarak
 
-Kural ne zaman kullanılacağı için [ `objc_msgSend_stret` ](http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference.html#//apple_ref/c/func/objc_msgSend_stret) bu gibidir **ARM**:
+ARM için oluşturma sırasında kullanın [`objc_msgSend_stret`](https://developer.apple.com/documentation/objectivec/1456730-objc_msgsend_stret?language=objc)
+bir numaralandırmanın veya numaralandırma için temel türlerinden herhangi birini değil herhangi bir değer türü için (`int`, `byte`, `short`, `long`, `double`, `float`).
 
--  Herhangi bir değer türü bir numaralandırmanın veya numaralandırma için temel türlerinden herhangi birini değil (int, long, double, byte, short, float).
+İçin x86 oluştururken kullanın [`objc_msgSend_stret`](https://developer.apple.com/documentation/objectivec/1456730-objc_msgsend_stret?language=objc)
+bir numaralandırmanın veya numaralandırma için temel türlerinden herhangi birini değil herhangi bir değer türü için (`int`, `byte`, `short`, `long`, `double`, `float`) ve yerel boyutu 8 bayttan büyük.
 
-
-Kural ne zaman kullanılacağı için [ `objc_msgSend_stret` ](http://developer.apple.com/mac/library/documentation/Cocoa/Reference/ObjCRuntimeRef/Reference/reference.html#//apple_ref/c/func/objc_msgSend_stret) bu gibidir **X86**:
-
--  Herhangi bir değer türü bir numaralandırmanın veya numaralandırma için temel türlerinden herhangi birini değil (int, long, double, byte, short, float) ve yerel boyutu 8 bayttan büyük.
-
-
-### <a name="creating-your-own-signatures"></a>Kendi imzaları oluşturuluyor.
+### <a name="creating-your-own-signatures"></a>Kendi imzaları oluşturma
 
 Aşağıdaki [gist](https://gist.github.com/rolfbjarne/981b778a99425a6e630c) kendi imzaları oluşturmak için gereken kullanılabilir.
 
-
-
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [Seçiciler örneği](https://developer.xamarin.com/samples/mac-ios/Objective-C/Selectors/)
+- [Objective-C seçicileri](https://developer.xamarin.com/samples/mac-ios/Objective-C/) örnek

@@ -4,21 +4,21 @@ description: Bu makalede konturlama ve doldurmak için kullanılacak yollara izi
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: 95167D1F-A718-405A-AFCC-90E596D422F3
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 07/29/2017
-ms.openlocfilehash: 28f628fb4e8ab77e9c36e6e1972d7269ad0dad4d
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: bd865471e3efe42c44a8996a8e364b1c478b69e7
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39615684"
 ---
 # <a name="path-effects-in-skiasharp"></a>SkiaSharp yol etkileri
 
 _Konturlama ve doldurmak için kullanılacak yollara izin verecek çeşitli yol etkileri keşfedin_
 
-A *yolu efektini* örneğidir [ `SKPathEffect` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPathEffect/) biri sekiz statik sınıf `Create` yöntemleri. `SKPathEffect` Nesne ayarlanmış ardından [ `PathEffect` ](https://developer.xamarin.com/api/property/SkiaSharp.SKPaint.PathEffect/) özelliği bir `SKPaint` çeşitli ilgi çekici efektleri için küçük bir çoğaltılmış yola sahip bir satır konturlama nesnesi:
+A *yolu efektini* örneğidir [ `SKPathEffect` ](xref:SkiaSharp.SKPathEffect) sınıf tarafından tanımlanan sekiz statik oluşturma yöntemlerinden biri ile oluşturulan sınıf. `SKPathEffect` Nesne ayarlanmış ardından [ `PathEffect` ](xref:SkiaSharp.SKPaint.PathEffect) özelliği bir [ `SKPaint` ](xref:SkiaSharp.SKPaint) çeşitli ilgi çekici efektleri için küçük bir çoğaltılmış yola sahip bir satır konturlama nesnesi :
 
 ![](effects-images/patheffectsample.png "Bağlantılı zinciri örneği")
 
@@ -33,11 +33,11 @@ Yol etkileri için izin ver:
 
 Ayrıca, iki veya daha fazla yol etkileri birleştirebilirsiniz.
 
-Bu makalede ayrıca nasıl kullanılacağı gösterilmektedir `GetFillPath` yöntemi `SKPaint` özelliklerini uygulayarak bir yol başka bir yola dönüştürmek `SKPaint`de dahil olmak üzere `StrokeWidth` ve `PathEffect`. Bu, anahat başka bir yolun bir yol elde etme gibi bazı ilginç teknikleri sonuçlanır. `GetFillPath` Ayrıca yol etkileri bağlantılı olarak yararlı olur.
+Bu makalede ayrıca nasıl kullanılacağı gösterilmektedir [ `GetFillPath` ](xref:SkiaSharp.SKPaint.GetFillPath*) yöntemi `SKPaint` özelliklerini uygulayarak bir yol başka bir yola dönüştürmek `SKPaint`de dahil olmak üzere `StrokeWidth` ve `PathEffect`. Bu, anahat başka bir yolun bir yol elde etme gibi bazı ilginç teknikleri sonuçlanır. `GetFillPath` Ayrıca yol etkileri bağlantılı olarak yararlı olur.
 
 ## <a name="dots-and-dashes"></a>Noktalar ve tireler
 
-Kullanımını [ `PathEffect.CreateDash` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateDash/p/System.Single[]/System.Single/) yöntemi makalesinde açıklanan [ **nokta ve çizgi**](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md). Yöntemin ilk bağımsız değişken uzunluklarının kısa çizgi ve çizgi arasındaki boşlukları uzunluklarının arasında geçiş yapma, iki veya daha fazla değer bir çift sayı içeren bir dizi şöyledir:
+Kullanımını [ `PathEffect.CreateDash` ](xref:SkiaSharp.SKPathEffect.CreateDash(System.Single[],System.Single)) yöntemi makalesinde açıklanan [ **nokta ve çizgi**](~/xamarin-forms/user-interface/graphics/skiasharp/paths/dots.md). Yöntemin ilk bağımsız değişken uzunluklarının kısa çizgi ve çizgi arasındaki boşlukları uzunluklarının arasında geçiş yapma, iki veya daha fazla değer bir çift sayı içeren bir dizi şöyledir:
 
 ```csharp
 public static SKPathEffect CreateDash (Single[] intervals, Single phase)
@@ -45,7 +45,7 @@ public static SKPathEffect CreateDash (Single[] intervals, Single phase)
 
 Bu değerler *değil* darbe genişliği göre. Örneğin, 10 darbe genişliği ve bir satıra kare çizgi ve kare boşlukları oluşan istediğiniz verilirse `intervals` için dizi {10, 10}. `phase` Bağımsız değişken içinde çizgi desenine satır başladığı belirtir. Kare boşluk ile başlamak için satır istiyorsanız, bu örnekte, ayarlama `phase` 10.
 
-Tireler ucunda etkilenen `StrokeCap` özelliği `SKPaint`. Geniş bir vuruş genişlikleri için bu özelliği ayarlamak yaygın olarak `SKStrokeCap.Round` çizgilerin uçlarını yuvarlanacak. Bu durumda, değerler `intervals` dizi *değil* döngüsel bir nokta sıfır genişliğinde belirtilmesi gerekir, yani ek uzunluğu kaynaklanan yuvarlama gelen içerir. Döngüsel bir nokta ve aynı çapta noktaları arasındaki boşlukları bir çizgi oluşturmak için bir 10 darbe genişliği için kullanmak bir `intervals` dizisi {0, 20}.
+Tireler ucunda etkilenen `StrokeCap` özelliği `SKPaint`. Geniş bir vuruş genişlikleri için bu özelliği ayarlamak yaygın olarak `SKStrokeCap.Round` çizgilerin uçlarını yuvarlanacak. Bu durumda, değerler `intervals` dizi *değil* yuvarlama alanından kaynaklanan ek uzunluğu içerir. Bu döngüsel bir nokta sıfır genişliğini belirtme gerektirdiğini anlamına gelir. Döngüsel bir nokta ve aynı çapta noktaları arasındaki boşlukları bir çizgi oluşturmak için bir 10 darbe genişliği için kullanmak bir `intervals` dizisi {0, 20}.
 
 **Noktalı metin animasyonlu** sayfasına benzer **özetlenen metin** makalesinde açıklanan sayfa [ **tümleştirme metin ve grafikleri** ](~/xamarin-forms/user-interface/graphics/skiasharp/basics/text.md) içinde görüntüler, metin karakterleri ayarlayarak özetlenen `Style` özelliği `SKPaint` nesnesini `SKPaintStyle.Stroke`. Ayrıca, **noktalı metin animasyonlu** kullanır `SKPathEffect.CreateDash` vermek için bir noktalı görünümü anahat ve programı da canlandırır `phase` bağımsız değişkeni `SKPathEffect.CreateDash` metin etrafına seyahat görünmektedir nokta kurmak üzere yöntemi karakter. Yatay modda sayfa şöyledir:
 
@@ -151,9 +151,9 @@ Yönteminin sonuna doğru `SKPathEffect.CreateDash` yöntemi kullanılarak çağ
 
 Alternatif olarak, ayarlayabileceğiniz `SKPathEffect` nesnesini `SKPaint` metin ölçme ve sayfada ortalama önce nesne. Bu durumda, ancak animasyonlu nokta ve tire bazı değişim işlenen metin boyutu neden ve metin biraz vibrate eğilimindedir. (Deneyin!)
 
-Ayrıca, metin karakterleri animasyonlu nokta çember olduğunu her kapalı eğri belirli bir noktaya burada noktaların varlığı içine ve dışına pop görünüyor görürsünüz. Yolun karakter anahat tanımlar burada başlar ve biter budur. Yol uzunluğu bir tamsayı çoklu çizgi düzeninde (Bu durumda 20 piksel cinsinden) uzunluğunu değilse bu düzeni yalnızca bir bölümünü yol sonunda uygun olamaz.
+Ayrıca, metin karakterleri animasyonlu nokta çember olduğunu her kapalı eğri belirli bir noktaya burada noktaların varlığı içine ve dışına pop görünüyor görürsünüz. Yolun karakter anahat tanımlar burada başlar ve biter budur. Yol uzunluğu bir tamsayı çoklu çizgi düzeninde (Bu durumda 20 piksel cinsinden) uzunluğunu değil, yalnızca o deseninin parçası yol sonunda uygun olamaz.
 
-Yol uzunluğunun sığdırmak için çizgi desenine uzunluğunu ayarlamak mümkündür, ancak olması bir teknik yolunun uzunluğu belirleme gerektiren gelecek bir makalede ele alınan.
+Yolunun uzunluğu sığdırmak için çizgi desenine uzunluğunu ayarlamak mümkündür, ancak, bu makalede ele alınan bir teknik yolunun uzunluğu belirleme gerektiren [ **yol bilgileri ve numaralandırması** ](information.md).
 
 **Nokta / tire Morph** program canlandırır çizgi desenine böylece form çizgi için yeniden birleştirmek nokta ayırmak için tire gibi görünebilir:
 
@@ -245,7 +245,7 @@ public class DotDashMorphPage : ContentPage
 
 ## <a name="from-path-to-path"></a>Yolundan yolu
 
-[ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/System.Single/) Yöntemi `SKPaint` ayarlarında göre başka bir yolu dönüştürür `SKPaint` nesne. Bunun nasıl çalıştığını görmek isterseniz değiştirme `canvas.DrawPath` önceki program aşağıdaki kod ile çağırın:
+[ `GetFillPath` ](xref:SkiaSharp.SKPaint.GetFillPath(SkiaSharp.SKPath,SkiaSharp.SKPath,System.Single)) Yöntemi `SKPaint` ayarlarında göre başka bir yolu dönüştürür `SKPaint` nesne. Bunun nasıl çalıştığını görmek isterseniz değiştirme `canvas.DrawPath` önceki program aşağıdaki kod ile çağırın:
 
 ```csharp
 SKPath newPath = new SKPath();
@@ -260,13 +260,13 @@ canvas.DrawPath(newPath, newPaint);
 
 Bu yeni kodda `GetFillPath` çağrı dönüştürür `ellipsePath` (yalnızca oval olmayan) uygulamasına `newPath`, ardından görüntülenen ile `newPaint`. `newPaint` Nesnesi, tüm varsayılan özellik ayarlarını oluşturulur dışında `Style` özelliği göre ayarlanmış Boolean değeri döndürür `GetFillPath`.
 
-Görsellerin ayarlanır renk dışında aynı olan `ellipsePaint` ama `newPaint`. İçinde tanımlanan basit bir elips yerine `ellipsePath`, `newPath` noktalar ve tireler dizi tanımlamak çok sayıda yolu dağılımlarını içerir. Çeşitli özelliklerini sonucu budur `ellipsePaint` — `StrokeWidth`, `StrokeCap`, ve `PathEffect` — için `ellipsePath` ve sonuçta elde edilen yolu koymaya `newPath`. `GetFillPath` Yöntemi döndürür belirten bir Boole değeri doldurulması için hedef yolda olup olmadığını; Bu örnekte, dönüş değeri olduğu `true` yolu doldurmak için.
+Görsellerin ayarlanır renk dışında aynı olan `ellipsePaint` ama `newPaint`. İçinde tanımlanan basit bir elips yerine `ellipsePath`, `newPath` noktalar ve tireler dizi tanımlamak çok sayıda yolu dağılımlarını içerir. Çeşitli özelliklerini sonucu budur `ellipsePaint` (özellikle `StrokeWidth`, `StrokeCap`, ve `PathEffect`) için `ellipsePath` ve sonuçta elde edilen yolu koymaya `newPath`. `GetFillPath` Yöntemi döndürür belirten bir Boole değeri doldurulması için hedef yolda olup olmadığını; Bu örnekte, dönüş değeri olduğu `true` yolu doldurmak için.
 
 Değiştirmeyi deneyin `Style` ayarı `newPaint` için `SKPaintStyle.Stroke` bir piksel genişliği satırla özetlenen tek yolu dağılımlarını göreceksiniz.
 
 ## <a name="stroking-with-a-path"></a>Bir yol ile konturlama
 
-[ `SKPathEffect.Create1DPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.Create1DPath/p/SkiaSharp.SKPath/System.Single/System.Single/SkiaSharp.SKPath1DPathEffectStyle/) Yöntemdir kavramsal olarak benzer şekilde `SKPathEffect.CreateDash` bir kesik çizgi ve boşluk yerine bir yolu belirtebilirsiniz. Bu yol, vuruş satır veya eğri için birden çok kez çoğaltılır.
+[ `SKPathEffect.Create1DPath` ](xref:SkiaSharp.SKPathEffect.Create1DPath(SkiaSharp.SKPath,System.Single,System.Single,SkiaSharp.SKPath1DPathEffectStyle)) Yöntemdir kavramsal olarak benzer şekilde `SKPathEffect.CreateDash` bir kesik çizgi ve boşluk yerine bir yolu belirtebilirsiniz. Bu yol, vuruş satır veya eğri için birden çok kez çoğaltılır.
 
 Sözdizimi şöyledir:
 
@@ -275,16 +275,13 @@ public static SKPathEffect Create1DPath (SKPath path, Single advance,
                                          Single phase, SKPath1DPathEffectStyle style)
 ```
 
-> [!IMPORTANT]
-> Dikkat: bir aşırı yüklemesini yoktur `Create1DPath` numaralandırma türünde bir bağımsız değişken ile tanımlanan `SkPath1DPathEffect` bir 'k' küçük harfle Bu ad bir hatadır ve numaralandırma ve metodu kullanım dışı bırakılmıştır, ancak kullanım dışı yöntemi kodunuzu bir parçası haline çok kolay bir işlemdir ve tam olarak ne kadar zor olan sonuç olarak yanlış.
+Genel olarak, geçirdiğiniz yolun `Create1DPath` küçük ve nokta (0, 0) etrafında ortalanmış olacaktır. `advance` Parametresi satırda yolu çoğaltılmasıyla yolun merkezleri arasındaki uzaklığı gösterir. Bu bağımsız değişken genellikle yaklaşık genişliğine göre yolunu ayarlayın. `phase` Aynı rol buraya olarak bunu yapar bağımsız değişken yürütür `CreateDash` yöntemi.
 
-Genel olarak, geçirdiğiniz yolun `Create1DPath` küçük ve nokta (0, 0) etrafında ortalanmış olacaktır. `advance` Parametresi satırda yolu çoğaltılmasıyla yolu merkezleri uzaklığı gösterir. Bu bağımsız değişken genellikle yaklaşık genişliğine göre yolunu ayarlayın. `phase` Aynı rol buraya olarak bunu yapar bağımsız değişken yürütür `CreateDash` yöntemi.
+[ `SKPath1DPathEffectStyle` ](xref:SkiaSharp.SKPath1DPathEffectStyle) Üç üyeleri içerir:
 
-[ `SKPath1DPathEffectStyle` ](https://developer.xamarin.com/api/type/SkiaSharp.SKPath1DPathEffectStyle/) Üç üyeleri içerir:
-
-- [`Translate`](https://developer.xamarin.com/api/field/SkiaSharp.SKPath1DPathEffectStyle.Translate/)
-- [`Rotate`](https://developer.xamarin.com/api/field/SkiaSharp.SKPath1DPathEffectStyle.Rotate/)
-- [`Morph`](https://developer.xamarin.com/api/field/SkiaSharp.SKPath1DPathEffectStyle.Morph/)
+- `Translate`
+- `Rotate`
+- `Morph`
 
 `Translate` Üye yol bir çizgi veya eğri çoğaltılmasıyla aynı yönde kalmasına neden olur. İçin `Rotate`, yolun bir eğri teğet göre döndürülür. Normal yönünü yatay çizgiler için yol vardır. `Morph` benzer `Rotate` konturlanan satır eğimi eşleştirilecek yol de eğri hariç aynıdırlar.
 
@@ -307,11 +304,13 @@ Genel olarak, geçirdiğiniz yolun `Create1DPath` küçük ve nokta (0, 0) etraf
                 Title="Effect Style"
                 Grid.Row="0"
                 SelectedIndexChanged="OnPickerSelectedIndexChanged">
-            <Picker.Items>
-                <x:String>Translate</x:String>
-                <x:String>Rotate</x:String>
-                <x:String>Morph</x:String>
-            </Picker.Items>
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Translate</x:String>
+                    <x:String>Rotate</x:String>
+                    <x:String>Morph</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
             <Picker.SelectedIndex>
                 0
             </Picker.SelectedIndex>
@@ -374,7 +373,7 @@ public partial class OneDimensionalPathEffectPage : ContentPage
                          new SKPoint(-info.Width, info.Height),
                          new SKPoint(info.Width, 0));
 
-            switch (effectStylePicker.Items[effectStylePicker.SelectedIndex])
+            switch ((string)effectStylePicker.SelectedItem))
             {
                 case "Translate":
                     pathPaint.PathEffect = translatePathEffect;
@@ -546,7 +545,7 @@ public class LinkedChainPage : ContentPage
 
 Bu program kullanılan yolunu tanımlar `Create1DPath` sağlamak için (0, 0) işaret ortasında. Bu makuldür olduğundan (0, 0) satır ya da bunu donatmak eğri noktası yolun hizalanır. Ancak, bir olmayan merkezli kullanabilirsiniz (0, 0) işaret bazı özel etkiler.
 
-**Taşıyıcı bandı** sayfası bir eğri üst ve alt bu pencerenin boyutlarını boyutta bir dikdörtgen taşıyıcı bandı benzeyen bir yol oluşturur. Yol, bir basit ile konturlanan `SKPaint` 20 piksel genişliğinde ve gri renkli nesnesi ve yeniden konturlanan başka ardından `SKPaint` nesnesi ile bir `SKPathEffect` başvuran küçük bir kova benzeyen bir yol nesnesi:
+**Taşıyıcı bandı** sayfası bir dikdörtgen taşıyıcı bandı bir eğri üst ve pencerenin boyutlarını için boyutlandırılır alt benzeyen bir yol oluşturur. Yol, bir basit ile konturlanan `SKPaint` 20 piksel genişliğinde ve gri renkli nesnesi ve yeniden konturlanan başka ardından `SKPaint` nesnesi ile bir `SKPathEffect` başvuran küçük bir kova benzeyen bir yol nesnesi:
 
 [![](effects-images/conveyorbelt-small.png "Üçlü sayfasının ekran görüntüsü taşıyıcı bandı")](effects-images/conveyorbelt-large.png#lightbox "Üçlü sayfasının ekran görüntüsü taşıyıcı bandı")
 
@@ -703,7 +702,7 @@ canvas.DrawPath(newPath, newPaint);
 
 ## <a name="hatching-an-area"></a>Bir alan tarama
 
-[ `SKPathEffect.Create2DLines` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.Create2DLine/p/System.Single/SkiaSharp.SKMatrix/) Yöntemi paralel satırları, genellikle adı ile bir alanı doldurur *tarama satırları*. Yöntem sözdizimi aşağıdaki gibidir:
+[ `SKPathEffect.Create2DLines` ](xref:SkiaSharp.SKPathEffect.Create2DLine(System.Single,SkiaSharp.SKMatrix)) Yöntemi paralel satırları, genellikle adı ile bir alanı doldurur *tarama satırları*. Yöntem sözdizimi aşağıdaki gibidir:
 
 ```csharp
 public static SKPathEffect Create2DLine (Single width, SKMatrix matrix)
@@ -713,7 +712,7 @@ public static SKPathEffect Create2DLine (Single width, SKMatrix matrix)
 
 Varsayılan olarak, tarama satırlar yatay olarak gelir. Varsa `matrix` tarama satırları saat yönünde Döndürülmüş, dönüş parametresi içerir.
 
-**Dolgu tarama** sayfası bu yolu etkiyi gösterir. [ `HatchFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/HatchFillPage.cs) Sınıfı alanları olarak üç yol etkileri tanımlar, olduklarını belirten bir ölçekleme faktörü ile 3 piksel genişliği yatay tarama satırıyla ilk 6 piksel uzaklıkta aralıklı. Satırları arasındaki ayrımı bu nedenle 3 pikseldir. İkinci yol etkisi 24 piksel (Bu nedenle ayrılmasıdır 18 piksel), birbirinden dikey tarama 6 piksel genişliği satırıyla aralıklı aranır ve üçüncü Yatık tarama 12 piksel geniş aralıklı 36 piksel uzaklıkta satırlar aranır.
+**Dolgu tarama** sayfası bu yolu etkiyi gösterir. [ `HatchFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/HatchFillPage.cs) Sınıfı alanları olarak üç yol etkileri tanımlar, olduklarını belirten bir ölçekleme faktörü ile 3 piksel genişliği yatay tarama satırıyla ilk 6 piksel uzaklıkta aralıklı. Satırları arasındaki ayrımı bu nedenle üç pikseldir. İkinci yol etkisi 24 piksel (Bu nedenle ayrılmasıdır 18 piksel), birbirinden dikey tarama çizgilerle altı piksel genişliği aralıklı aranır ve üçüncü Yatık tarama 12 piksel geniş aralıklı 36 piksel uzaklıkta satırlar aranır.
 
 ```csharp
 public class HatchFillPage : ContentPage
@@ -803,7 +802,7 @@ Android ekran gerçekten gibi görünmüyor: ekran görüntüsü ölçeklendirme
 
 ## <a name="filling-with-a-path"></a>Bir yol ile doldurma
 
-[ `SKPathEffect.Create2DPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.Create2DPath/p/SkiaSharp.SKMatrix/SkiaSharp.SKPath/) Yürürlükte döşeme alanı yatay ve dikey olarak çoğaltılmış bir yol ile bir alanı dolduracak şekilde sağlar:
+[ `SKPathEffect.Create2DPath` ](xref:SkiaSharp.SKPathEffect.Create2DPath(SkiaSharp.SKMatrix,SkiaSharp.SKPath)) Yürürlükte döşeme alanı yatay ve dikey olarak çoğaltılmış bir yol ile bir alanı dolduracak şekilde sağlar:
 
 ```csharp
 public static SKPathEffect Create2DPath (SKMatrix matrix, SKPath path)
@@ -813,7 +812,7 @@ public static SKPathEffect Create2DPath (SKMatrix matrix, SKPath path)
 
 Çoğaltılmış yolu normalde doldurulan alanı yerine ekranın sol ve üst kenarlar ile hizalanır. 0 ile sol ve üst iki tarafından yatay ve dikey uzaklık belirtmenizi ölçekleme faktörü arasında çeviri Etkenler sağlayarak bu davranışı geçersiz kılabilirsiniz.
 
-**Yolu kutucuk doldurma** sayfası bu yolu etkiyi gösterir. Alan döşeme için kullanılan yolu alan olarak tanımlı [ `PathFileFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathTileFillPage.cs) sınıfı. Bu yolu 80 piksel kare olduğu anlamına gelir yatay ve dikey koordinatları aralığından – 40, 40:
+**Yolu kutucuk doldurma** sayfası bu yolu etkiyi gösterir. Alan döşeme için kullanılan yolu alan olarak tanımlı [ `PathTileFillPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/PathTileFillPage.cs) sınıfı. Bu yolu 80 piksel kare olduğu anlamına gelir yatay ve dikey koordinatları aralığından – 40, 40:
 
 ```csharp
 public class PathTileFillPage : ContentPage
@@ -859,15 +858,17 @@ Bu kutucukların her zaman tüm görünür ve hiçbir zaman kesilir dikkat edin.
 
 Ayar deneyin `Style` özelliği `SKPaint` nesnesini `Stroke`, tek tek kutucuklara doldurulmuş yerine özetlenen göreceksiniz.
 
+Ayrıca makalede gösterildiği döşenmiş bir bit eşlem ile bir alanı dolduracak şekilde mümkündür [ **SkiaSharp bit eşlem döşeme**](../effects/shaders/bitmap-tiling.md).
+
 ## <a name="rounding-sharp-corners"></a>Keskin köşeleri yuvarlama
 
-**Heptagon yuvarlatılmış** program kısmında sunulmuştur [ **yay çizmenin üç yolu** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md) makale Eğim yay yedi taraflı bir şekil noktalarını eğri için kullanılır. **Başka bir Heptagon yuvarlatılmış** sayfası gösterir oluşturulan bir yolu etkisi kullanan bir çok daha kolay bir yaklaşım [ `SKPathEffect.CreateCorner` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateCorner/p/System.Single/) yöntemi:
+**Heptagon yuvarlatılmış** program kısmında sunulmuştur [ **yay çizmenin üç yolu** ](~/xamarin-forms/user-interface/graphics/skiasharp/curves/arcs.md) makale Eğim yay yedi taraflı bir şekil noktalarını eğri için kullanılır. **Başka bir Heptagon yuvarlatılmış** sayfası gösterir oluşturulan bir yolu etkisi kullanan bir çok daha kolay bir yaklaşım [ `SKPathEffect.CreateCorner` ](xref:SkiaSharp.SKPathEffect.CreateCorner(System.Single)) yöntemi:
 
 ```csharp
 public static SKPathEffect CreateCorner (Single radius)
 ```
 
-Tek bağımsız değişken olarak adlandırılır ancak `radius` için yarı istenen köşe yarıçapı ayarlamanız gerekir. (Temel alınan Skia kodun bir karakteristik budur.)
+Tek bağımsız değişken olarak adlandırılır ancak `radius`, yarı istenen köşe yarıçapı için ayarlamanız gerekir. (Temel alınan Skia kodun bir karakteristik budur.)
 
 İşte `PaintSurface` işleyicisinde [ `AnotherRoundedHeptagonPage` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/AnotherRoundedHeptagonPage.cs) sınıfı:
 
@@ -930,7 +931,7 @@ Bu yuvarlatılmış heptagon önceki programın aynı olduğunu görürsünüz. 
 
 ## <a name="random-jitter"></a>Rastgele değişimi
 
-Bazen aciliyetinin düz çizgiler bilgisayar grafik oldukça istediklerinizi olmayan ve az doğrulukla istenen. Bu durumda, denemek isteyebilirsiniz [ `SKPathEffect.CreateDiscrete` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateDiscrete/p/System.Single/System.Single/System.UInt32/) yöntemi:
+Bazen aciliyetinin düz çizgiler bilgisayar grafik oldukça istediklerinizi olmayan ve az doğrulukla istenen. Bu durumda, denemek isteyebilirsiniz [ `SKPathEffect.CreateDiscrete` ](xref:SkiaSharp.SKPathEffect.CreateDiscrete(System.Single,System.Single,System.UInt32)) yöntemi:
 
 ```csharp
 public static SKPathEffect CreateDiscrete (Single segLength, Single deviation, UInt32 seedAssist)
@@ -945,7 +946,7 @@ Efekt için kullanılan sözde rastgele bir sıra oluşturmak için kullanılan 
 
 [![](effects-images/jitterexperiment-small.png "Üçlü değişimi deneme sayfasının ekran görüntüsü")](effects-images/jitterexperiment-large.png#lightbox "Triple screenshot of the JitterExperiment page")
 
-Straightfoward programdır. [ **JitterExperimentPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml) dosya iki başlatır `Slider` öğeleri ve bir `SKCanvasView`:
+Program oldukça basittir. [ **JitterExperimentPage.xaml** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Curves/JitterExperimentPage.xaml) dosya iki başlatır `Slider` öğeleri ve bir `SKCanvasView`:
 
 ```xaml
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
@@ -1073,17 +1074,17 @@ Burada, tüm üç platformlarda yatay modda çalışıyor:
 
 ## <a name="path-outlining"></a>Anahat oluşturma yolu
 
-İki küçük örnekler gördünüz [ `GetFillPath` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/System.Single/) yöntemi `SKPaint`, bulunduğu aynı zamanda bir [aşırı](https://developer.xamarin.com/api/member/SkiaSharp.SKPaint.GetFillPath/p/SkiaSharp.SKPath/SkiaSharp.SKPath/SkiaSharp.SKRect/System.Single/):
+İki küçük örnekler gördünüz [ `GetFillPath` ](xref:SkiaSharp.SKPaint.GetFillPath*) yöntemi `SKPaint`, iki sürümü var:
 
 ```csharp
-public Boolean GetFillPath (SKPath src, SKPath dst, Single resScale)
+public Boolean GetFillPath (SKPath src, SKPath dst, Single resScale = 1)
 
-public Boolean GetFillPath (SKPath src, SKPath dst, SKRect cullRect, Single resScale)
+public Boolean GetFillPath (SKPath src, SKPath dst, SKRect cullRect, Single resScale = 1)
 ```
 
 Yalnızca ilk iki bağımsız değişkenleri gereklidir. Yöntem tarafından başvurulan yolu erişir `src` bağımsız değişkeni, vuruş özelliklerini temel yol verileri değiştiren `SKPaint` nesne (dahil olmak üzere `PathEffect` özelliği) ve ardından sonuçları içine Yazar `dst` yolu. `resScale` Parametresi, daha küçük bir hedef yolu oluşturmak için düşürmeyi olanak sağlar ve `cullRect` bağımsız değişkeni bir dikdörtgen dışında dağılımlarını ortadan kaldırabilir.
 
-Bu yöntemin bir temel kullanım yol etkileri hiç gerektirmez. Varsa `SKPaint` nesnesinin kendi `Style` özelliğini `SKPaintStyle.Stroke`ve *değil* sahip kendi `PathEffect` ayarlayın, ardından `GetFillPath` temsil eden bir yol oluşturur bir *anahat*kaynak yolunun alacağı bunu Boya özellikleri tarafından konturlanan.
+Bu yöntemin bir temel kullanım değil ilgili yol etkileri hiç: varsa `SKPaint` nesnesinin kendi `Style` özelliğini `SKPaintStyle.Stroke`ve *değil* sahip kendi `PathEffect` ayarlayın, ardından `GetFillPath` oluşturur bir temsil eden yolu bir *anahat* kaynak yolunun alacağı bunu Boya özellikleri tarafından konturlanan.
 
 Örneğin, varsa `src` yoludur RADIUS 500, basit bir daire ve `SKPaint` nesnesini bir darbe genişliği 100 belirtir sonra `dst` yolu 550, bir RADIUS ile 450 ve başka bir RADIUS ile iki Eşmerkezli daire haline gelir. Yöntemin çağrıldığı `GetFillPath` bu doldurma çünkü `dst` yoludur konturlama aynı `src` yolu. Ancak ayrıca vuruş `dst` yol anahatlarını görmek için yol.
 
@@ -1220,11 +1221,11 @@ using (SKPath linkPath = new SKPath())
 
 `outlinePath` Nesnedir sonra ana hat alıcı `linkPath` zaman bunu konturlanan belirtilen özelliklerle `strokePaint`.
 
-Bu tekniği kullanarak başka bir örnek kullanılan yolu için İleri'kurmak geldiği bir `SKPathEffect.Create2DPath` yöntemleri.
+Bu tekniği kullanarak başka bir örnek, sonraki bir yöntemde kullanılan yolu için'kurmak geliyor.
 
 ## <a name="combining-path-effects"></a>Yol etkileri birleştirme
 
-İki son statik oluşturma yöntemlerini `SKPathEffect` olan [ `SKPathEffect.CreateSum` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateSum/p/SkiaSharp.SKPathEffect/SkiaSharp.SKPathEffect/) ve [ `SKPathEffect.CreateCompose` ](https://developer.xamarin.com/api/member/SkiaSharp.SKPathEffect.CreateCompose/p/SkiaSharp.SKPathEffect/SkiaSharp.SKPathEffect/):
+İki son statik oluşturma yöntemlerini `SKPathEffect` olan [ `SKPathEffect.CreateSum` ](xref:SkiaSharp.SKPathEffect.CreateSum(SkiaSharp.SKPathEffect,SkiaSharp.SKPathEffect)) ve [ `SKPathEffect.CreateCompose` ](xref:SkiaSharp.SKPathEffect.CreateCompose(SkiaSharp.SKPathEffect,SkiaSharp.SKPathEffect)):
 
 ```csharp
 public static SKPathEffect CreateSum (SKPathEffect first, SKPathEffect second)
@@ -1382,7 +1383,7 @@ public class DashedHatchLinesPage : ContentPage
 }
 ```
 
-`PaintSurface` İşleyici yalnızca standart yükü artı bir çağrı içeren gerek `DrawOval`:
+`PaintSurface` İşleyici yalnızca standart yükü artı bir çağrı içeren gerekiyor `DrawOval`:
 
 ```csharp
 public class DashedHatchLinesPage : ContentPage
@@ -1414,5 +1415,5 @@ Basit noktalar ve tireler arasındayken garip birleşimleri için yol etkileri g
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [SkiaSharp API'leri](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp API'leri](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (örnek)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

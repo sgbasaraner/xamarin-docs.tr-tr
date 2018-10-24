@@ -1,233 +1,230 @@
 ---
-title: Xamarin.iOS için türü Kaydedici
-description: Bu belgede, C# sınıfları Objective-C çalışma zamanı için kullanılabilir hale getirir Xamarin.iOS türü kayıt açıklanmaktadır.
+title: Xamarin.iOS için türü kayıt şirketi
+description: Getiren Xamarin.iOS türü kayıt şirketi bu belgede açıklanır C# sınıfları Objective-C çalışma zamanı için kullanılabilir.
 ms.prod: xamarin
 ms.assetid: 610A0834-1141-4D09-A05E-B7ADF99462C5
 ms.technology: xamarin-ios
-author: bradumbaugh
-ms.author: brumbaug
-ms.openlocfilehash: e818d6a2092f408823e4a635a70c4f6666e3a7a9
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+author: lobrien
+ms.author: laobri
+ms.date: 8/29/2018
+ms.openlocfilehash: cdd57095b03c24472abec5646ee3a70350770d7c
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "34786180"
 ---
-# <a name="type-registrar-for-xamarinios"></a>Xamarin.iOS için türü Kaydedici
+# <a name="type-registrar-for-xamarinios"></a>Xamarin.iOS için türü kayıt şirketi
 
-Bu belgede Xamarin.iOS tarafından kullanılan tür kayıt sistemi açıklanmaktadır.
+Bu belgede, Xamarin.iOS tarafından kullanılan türü kayıt sistemi açıklanmaktadır.
 
 ## <a name="registration-of-managed-classes-and-methods"></a>Yönetilen sınıflar ve yöntemler kaydı
 
 Başlatma sırasında Xamarin.iOS kaydeder:
 
-  - İle sınıfları bir [[Kaydet]](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/) Objective-C sınıflar olarak özniteliği.
-  - İle sınıfları bir [[Kategori]](https://developer.xamarin.com/api/type/CRuntime.CategoryAttribute) Objective-C kategoriler olarak özniteliği.
-  - İle arabirimleri bir [[Protocol]](https://developer.xamarin.com/api/type/Foundation.ProtocolAttribute/) Objective-C protokoller olarak özniteliği.
+- İle sınıfları bir [[kaydetme]](https://developer.xamarin.com/api/type/Foundation.RegisterAttribute/) Objective-C sınıflar olarak özniteliği.
+- İle sınıfları bir [[Category]](https://developer.xamarin.com/api/type/CRuntime.CategoryAttribute) Objective-C kategorisi olarak özniteliği.
+- Arabirimleri ile bir [[Protocol]](https://developer.xamarin.com/api/type/Foundation.ProtocolAttribute/) Objective-C protokoller olarak özniteliği.
+- Üyelerle bir [[dışarı]](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/), Objective-bunlara erişmek C için mümkün hale getirme.
 
-ve her durumda üyeleriyle bir [[verme]](https://developer.xamarin.com/api/type/Foundation.ExportAttribute/) özniteliği Objective-c verilir Bu olmasını yönetilen sınıflar sağlar oluşturulan ve yönetilen Objective-C çağrılacak yöntemleri ve yöntemleri ve özellikleri Objective-C bir C# world arasında bağlı olduğunu yoludur.
+Örneğin, yönetilen düşünün `Main` Xamarin.iOS uygulamalarında yaygın yöntemi:
 
-Çok basit bir örnek her uygulama olan AppDelegate sınıftır. Yönetilen ana yöntemi bunun gibi bir satır olduğundan geri çağırma:
+```csharp
+UIApplication.Main (args, null, "AppDelegate");
+```
 
-    UIApplication.Main (args, null, "AppDelegate");
+Objective-C çalışma zamanı adı türü kullanmak için bu kodu söyler `AppDelegate` uygulamanın temsilci sınıfı. Objective-C çalışma zamanı örneğini oluşturabilmek için C# `AppDelegate` sınıfının, sınıf kayıtlı olması gerekir.
 
-Bu uygulamanın temsilci sınıf olarak "AppDelegate" olarak adlandırılan türü oluşturmak için Objective-C çalışma zamanı bildirir.  C# ile yazılmış "AppDelegate" sınıfının bir örneğini oluşturmak nasıl bilmeniz Objective-C çalışma zamanı için bu sınıfı kaydedilecek sahiptir.
+Xamarin.iOS kayıt zamanında (dinamik kayıt) veya (statik kayıt) derleme zamanında otomatik olarak gerçekleştirir.
 
-Xamarin.iOS çalışma zamanı kaydını sizin için dikkatli ve dahili olarak, bu kayıt çalışma zamanında tamamen (dinamik kayıt) yapılabilir veya derleme zamanında (statik kayıt) yapılabilir.  Tüm sınıflar ve yöntemler kaydetmek ve onlara Objective-C çalışma zamanı geçirmek için bulmak için başlangıçta yansıma kullanarak dinamik yaklaşım içerir.  Statik yaklaşım derleme zamanında uygulama tarafından kullanılan derlemeler olup olmadığını denetler.  Sınıflar ve yöntemler Objective-C ile kaydetmek için belirler ve ikili dosyanıza katıştırılmış bir harita oluşturur.  Ardından, başlangıçta, biz harita Objective-C çalışma zamanı ile kaydedin.
+Dinamik kayıt yansıma Başlangıçta tüm sınıflar ve yöntemler kaydetmek için bulmak için bunları Objective-C çalışma zamanı için geçirme kullanır. Simülatör yapıları için dinamik kayıt varsayılan olarak kullanılır.
+
+Statik kayıt derleme zamanında uygulama tarafından kullanılan derlemeleri inceler. Objective-C ile kaydetmeye yönelik yöntemler ve sınıflar belirler ve ikili dosyanıza katıştırılır bir harita oluşturur.
+Ardından, başlangıçta bu harita Objective-C çalışma zamanı ile kaydeder. Statik kayıt cihaz derlemeleri için kullanılır.
 
 ### <a name="categories"></a>Kategoriler
 
-Xamarin.iOS 8.10 ile başlatmanızı C# sözdizimi kullanarak Objective-C kategorileri oluşturmak mümkün olacaktır.
+Xamarin.iOS 8.10 ile başlayarak, Objective-C Kategoriler kullanarak oluşturmak mümkündür C# söz dizimi.
 
-Bu yapılır öznitelik bağımsız değişken olarak genişletmek için türünü belirtme [Kategori] özniteliğini kullanarak.
-Aşağıdaki örnek NSString örneği için genişletebilirsiniz:
+Bir kategori oluşturmak için `[Category]` özniteliği ve genişletmek için türü belirtin. Örneğin, aşağıdaki kod genişletir `NSString`:
 
-    [Category (typeof (NSString))]
+```csharp
+[Category (typeof (NSString))]
+```
 
-Her kategori yöntemi Objective-[verme] özniteliğini kullanarak C için yöntemleri dışa aktarmak için normal mekanizması kullanıyor:
+Her bir kategorinin yöntemlerin bir `[Export]` özniteliği, Objective-C çalışma zamanı kullanılabilir hale getirir:
 
-    [Export ("today")]
-    public static string Today ()
-    {
-        return "Today";
-    }
+```csharp
+[Export ("today")]
+public static string Today ()
+{
+    return "Today";
+}
+```
 
-Tüm yönetilen genişletme yöntemleri statik olmalıdır, ancak C# genişletme yöntemleri için standart söz dizimini kullanarak Objective-C örnek yöntemleri oluşturmak mümkündür:
+Tüm yönetilen uzantı yöntemleri statik olmalıdır, ancak standart kullanarak Objective-C örnek yöntemler oluşturmak mümkündür C# genişletme yöntemleri için söz dizimi:
 
+```csharp
+[Export ("toUpper")]
+public static string ToUpper (this NSString self)
+{
+    return self.ToString ().ToUpper ();
+}
+```
+
+Genişletme yöntemi için ilk bağımsız değişken yöntemi çağrıldı örneğidir:
+
+```csharp
+[Category (typeof (NSString))]
+public static class MyStringCategory
+{
     [Export ("toUpper")]
-    public static string ToUpper (this NSString self)
+    static string ToUpper (this NSString self)
     {
         return self.ToString ().ToUpper ();
     }
+ }
+ ```
 
-ve ilk bağımsız değişken genişletme yöntemi üzerinde yöntemi çağrıldı örneği olacaktır.
+Bu örnek yerel ekleyeceksiniz `toUpper` örnek yöntemi için `NSString` sınıfı. Bu yöntem, Objective-C: çağrılabilir
 
-Tam örnek:
-
-    [Category (typeof (NSString))]
-    public static class MyStringCategory
+```csharp
+[Category (typeof (UIViewController))]
+public static class MyViewControllerCategory
+{
+    [Export ("shouldAutoRotate")]
+    static bool GlobalRotate ()
     {
-        [Export ("toUpper")]
-        static string ToUpper (this NSString self)
-        {
-            return self.ToString ().ToUpper ();
-        }
+        return true;
     }
+}
+```
 
-Bu örnek bir yerel toUpper örnek yöntemi hedefi C'den çağrılabilir NSString sınıfı ekler
+### <a name="protocols"></a>Protokolleri
 
-    [Category (typeof (UIViewController))]
-    public static class MyViewControllerCategory
+İle Xamarin.iOS 8.10 ile başlayarak, arabirimleri `[Protocol]` öznitelik verilen protokoller olarak Objective-C:
+
+```csharp
+[Protocol ("MyProtocol")]
+interface IMyProtocol
+{
+    [Export ("method")]
+    void Method ();
+}
+
+class MyClass : IMyProtocol
+{
+    void Method ()
     {
-        [Export ("shouldAutoRotate")]
-        static bool GlobalRotate ()
-        {
-            return true;
-        }
     }
+}
+```
 
-### <a name="protocols"></a>protokolleri
+Bu kod aktarır `IMyProtocol` Objective-C olarak bir protokol için çağrılan `MyProtocol` ve bir sınıfa `MyClass` protokolü uygulayan.
 
-Xamarin.iOS 8.10 ile başlayan arabirimleri [Protocol] özniteliğiyle Objective-C protokoller olarak dışarı aktarılır.
+## <a name="new-registration-system"></a>Yeni bir kayıt sistemi
 
-Örnek:
+Kararlı 6.2.6 ile başlangıç sürümü ve 6.3.4 beta sürümü, yeni bir statik Kaydedici ekledik. 7.2.1 içinde sürüm yaptık yeni kayıt şirketi varsayılan.
 
-    [Protocol ("MyProtocol")]
-    interface IMyProtocol
-    {
-        [Export ("method")]
-        void Method ();
-    }
+Bu yeni bir kayıt sistemi aşağıdaki yeni özellikleri sunar:
 
-    class MyClass : IMyProtocol
-    {
-        void Method ()
-        {
-        }
-    }
-
-Bu Objective-C için bir protokol (İletişimKuralım) ve protokolü uygulayan bir sınıf (MyClass) dışarı aktarılır.
-
- **Dinamik kayıt**
-
-derleme/hata ayıklama döngüsü hızlandırır olarak simulator derlemeler için kullanılır.  Bu sınıf eşleme ve bu harita tablo derleme uygulama Başlatıcısı içine uygulamanızı başlatın ve bunun yerine, genel amaçlı Başlatıcısı her zaman kullanılır her zaman oluşturan adımları ortadan kaldırmaya sonucudur.  Masaüstü bilgisayarınızda çalışma zamanı gerçekleştirmek için güç Eskinin olan performans hiçbir zaman söz konusu şekilde sınıfları hızlı tarama.
-
- **Statik kayıt**
-
-cihaz derlemeler için mobil cihazları masaüstü bilgisayarlar yavaştır ve çalışma zamanı gerçekleştirme tarama yavaş yöneliktir.  Cihaz derlemeler bu yana her zaman yeni bir ikili oluşturmanız gerekir, yapı/hata ayıklama döngüsü kayıt eşleme oluşturma işlemi etkilenmez.
-
-## <a name="new-registration-system"></a>Yeni kayıt sistemi
-
-Kararlı 6.2.6 ile başlayan sürümü ve eklediğimiz yeni bir statik kayıt 6.3.4 beta sürümü. 7.2.1 içinde sürüm biz yapılan yeni kayıt varsayılan.
-
-Bu yeni kayıt sistemi aşağıdaki yeni özellikleri sunar:
-
-- Programcı hataların zaman algılama derleyin:
+- Derleme zamanı algılama Programcı hataları:
     - Aynı ada sahip Kaydedilmekte iki sınıf.
-    - Dışa aktarılan aynı Seçici yanıt için birden fazla yöntemi
+    - Aynı Seçici için yanıt verilmesini birden fazla yöntemi
+- Kullanılmayan yerel kod temizleme:
+    - Yeni bir kayıt sistemi güçlü statik kitaplıklarda kullanılan kod yerel bağlayıcıya kullanılmayan yerel koddan elde edilen ikili çıkarmanız izin vererek başvurular ekler. Xamarin'in örnek bağlamalarını üzerinde uygulamaların çoğu en az 300 k daha küçük olur.
 
+- Genel alt sınıfları için destek `NSObject`; bkz [NSObject genel türler](~/ios/internals/api-design/nsobject-generics.md) daha fazla bilgi için. Ayrıca yeni bir kayıt sistemi, daha önce çalışma zamanı rastgele davranışına neden desteklenmeyen genel yapıları yakalar.
 
+### <a name="errors-caught-by-the-new-registrar"></a>Yeni kayıt şirketi tarafından yakalanan hataları
 
-- Kullanılmayan yerel kod kaldırabilirsiniz
-    - Yeni kayıt sistemi statik kitaplıklarda kullanılan kod elde edilen ikili kullanılmayan yerel kod çıkışı çıkarabilmesi yerel bağlayıcı izin için güçlü başvurular ekler.
-      Xamarin'ın örnek bağlamaları üzerinde çoğu uygulamalar en az 300 k daha küçük hale gelir.
+Yeni kayıt şirketi tarafından yakalanan hataları bazı örnekler aşağıdadır.
 
-- NSObject Genel alt sınıflarının desteği. Bkz: [NSObject genel türler](~/ios/internals/api-design/nsobject-generics.md) daha fazla bilgi için. Ayrıca yeni kayıt sistemi daha önce çalışma zamanında rastgele davranışa neden desteklenmeyen genel yapıları yakalar.
+- Aynı Seçici aynı sınıf içinde birden çok kez dışarı aktarma:
 
-Bu yeni registar tarafından yakalanan hataları bazı örnekleri şunlardır:
+    ```csharp
+    [Register]
+    class MyDemo : NSObject 
+    {
+        [Export ("foo:")]
+        void Foo (NSString str);
+        [Export ("foo:")]
+        void Foo (string str)
+    }
+    ```
 
-Aynı Seçici aynı sınıfta birden çok kez dışarı aktarma.
+- Objective-C aynı ada sahip birden fazla yönetilen sınıf dışarı aktarma:
 
-```csharp
-[Register]
-class MyDemo : NSObject {
-    [Export ("foo:")]
-    void Foo (NSString str);
-    [Export ("foo:")]
-    void Foo (string str)
-}
-```
+    ```csharp
+    [Register ("Class")]
+    class MyClass : NSObject {}
 
-Objective-C adında birden fazla yönetilen sınıf veriliyor.
+    [Register ("Class")]
+    class YourClass : NSObject {}
+    ```
 
-```csharp
-[Register ("Class")]
-class MyClass : NSObject {}
+- Genel yöntemler dışarı aktarma:
 
-[Register ("Class")]
-class YourClass : NSObject {}
-```
+    ```csharp
+    [Register]
+    class MyDemo : NSObject
+    {
+        [Export ("foo")]
+        void Foo<T> () {}
+    }
+    ```
 
-Genel yöntemler veriliyor.
+### <a name="limitations-of-the-new-registrar"></a>Yeni kayıt şirketi sınırlamaları
 
-```csharp
-[Register]
-class MyDemo : NSObject {
-    [Export ("foo")]
-    void Foo<T> () {}
-}
-```
+Yeni kayıt şirketi hakkında göz önünde bulundurmanız gereken bazı hususlar:
 
+- Bazı üçüncü taraf kitaplıklar, yeni bir kayıt sistemi ile çalışacak şekilde güncelleştirilmesi gerekir. Bkz: [gerekli değişiklikleri](#required_modifications) aşağıda daha fazla ayrıntı için.
 
+- Kısa vadeli bir dezavantajı, ayrıca hesapları framework kullanılıyorsa, Clang kullanılmalıdır, (Bunun nedeni, Apple'nın **accounts.h** üstbilgisi yalnızca Clang tarafından derlenmesi). Ekleme `--compiler:clang` Xcode 4.6 veya önceki bir sürümü kullanıyorsanız, Clang kullanılacak diğer mtouch bağımsız değişkenleri için (Xamarin.iOS otomatik olarak seçer Clang Xcode 5.0 veya sonraki sürümlerde.)
 
-Yeni kayıt ilgili göz önünde bulundurmanız gereken bazı şeyler:
-- Kitaplıkları yeni kayıt sistemiyle çalışacak şekilde güncelleştirilmesi gereken bazı üçüncü taraf bölümüne bakın [gerekli değişiklikleri aşağıdaki](#required_modifications) daha fazla ayrıntı için.
-- Kısa vadeli dezavantajı, aynı zamanda hesapları framework kullanılıyorsa Clang kullanılmalıdır olan (Apple'nın accounts.h üstbilgisi tarafından Clang yalnızca derlenebilir olmasıdır). Ekleme <code>--compiler:clang</code> Clang durumlarda kullanmak üzere ek mtouch bağımsız değişkenler için Xcode 4.6 veya önceki bir sürümünü kullanıyorsanız (Xamarin.iOS otomatik olarak seçebilir Clang Xcode 5.0 veya daha yenisi.)
+- Xcode 4.6 (veya öncesi) ise kullanıldığında, GCC / G ++ türü dışarı aktardıysanız seçilmelidir adları (Bu, Xcode 4.6 ile birlikte gelen Clang sürümünü Objective-C kodu ASCII olmayan karakterler tanımlayıcılar içinde desteklemediğinden) ASCII olmayan karakterler içeremez. Ekleme `--compiler:gcc` GCC kullanılacak diğer mtouch bağımsız değişkenleri için.
 
-    <li>Xcode 4.6 (veya öncesi) ise kullanılan, GCC / G ++ türü veriliyorsa seçilmelidir adları (Bu, Xcode 4.6 ile gönderilen Clang sürümü Objective-C kodunu ASCII olmayan karakterler tanımlayıcıları içinde desteklemediğinden) ASCII olmayan karakterler içeriyor. Ekleme <code>--compiler:gcc</code> GCC kullanmak için ek mtouch bağımsız.
+## <a name="selecting-a-registrar"></a>Bir kaydedici seçme
 
+Aşağıdaki seçeneklerden birini diğer mtouch bağımsız değişkenleri projenin ekleyerek farklı bir kayıt şirketi seçebilirsiniz **iOS derleme** ayarları:
 
-## <a name="selecting-a-registrar"></a>Bir kayıt seçme
+- `--registrar:static` – cihaz derlemeleri için varsayılan
+- `--registrar:dynamic` – simülatör yapıları için varsayılan
 
-Aşağıdaki seçeneklerden birini projenin iOS derleme seçenekleri ek mtouch değişkenlerinde ekleyerek farklı Kaydedici seçebilirsiniz:
+> [!NOTE]
+> Xamarin'in Klasik API desteklenen diğer seçenekleri gibi `--registrar:legacystatic` ve `--registrar:legacydynamic`. Ancak, bu seçenekler birleşik API tarafından desteklenmez.
 
--  `--registrar:static` : cihaz derlemeler için varsayılan
--  `--registrar:dynamic` : simulator derlemeler için varsayılan
--  `--registrar:legacystatic` : 7.2.1 Xamarin.iOS kadar aygıt derlemeler için varsayılan
--  `--registrar:legacydynamic` : 7.2.1 Xamarin.iOS kadar simulator derlemeler için varsayılan
+## <a name="shortcomings-in-the-old-registration-system"></a>Eski kayıt sistemdeki eksiklikleri
 
+Eski kayıt sistemi aşağıdaki dezavantajları vardır:
 
-## <a name="shortcomings-in-the-old-registration-system"></a>Eski kayıt sistemindeki eksik
+- Objective-C sınıflar ve yöntemler (her şeyi kaldırılacağını nedeniyle), gerçekten kullanılan değildi üçüncü taraf yerel kod kaldırmak için yerel bağlayıcı isteriz alınamadı, amacı, üçüncü taraf yerel kitaplıklarında (yerel) statik başvuru vardı. Bunun sebebi `-force_load libNative.a` , her üçüncü taraf bağlama yapmak zorunda (veya eşdeğer `ForceLoad=true` içinde `[LinkWith]` özniteliği).
+- Objective-C aynı ada sahip iki yönetilen türler hiçbir uyarı ile dışarı aktarılamadı. Nadir bir senaryo iki düştüğünden oluşturmaktı `AppDelegate` farklı ad alanlarında sınıflar. Çalışma zamanında bu hangisinin (aslında bu çok kafa ve can sıkıcı bir hata ayıklama deneyimi için sunulan bile yeniden değildi - bir uygulama çalıştırma arasında değiştirilen) çekilmiş tamamen rastgele olacaktır.
+- Objective-C aynı imzaya sahip iki yöntem dışarı aktarılamadı. Henüz yeniden rastgele hangisinin Objective-C çağrılır (ancak çoğunlukla tek yolu aslında bu hatayı deneyimi unlucky Yönetilen yöntemi geçersiz kılmak için olduğundan bu sorunu önceki kümeyle, yaygın olarak değildi).
+- Dışarı aktarılan yöntemleri kümesini dinamik ve statik derlemeler arasında biraz farklılık gösterir.
+- Yapılandırma düzgün genel sınıfları dışarı aktarılırken çalışmaz (çalışma zamanında hangi tam bir genel uygulama yürütülen etkili bir şekilde belirlenmemiş davranışlara neden olur, rastgele olacaktır).
 
-Eski kayıt sistem aşağıdaki dezavantajları vardır:
+## <a name="new-registrar-required-changes-to-bindings"></a>Yeni kayıt şirketi: gerekli bağlamaları için değişiklikler
 
--  Objective-C sınıflar ve yöntemler biz (her şeyi kaldırılırlar nedeniyle), aslında kullanılan değildi üçüncü taraf yerel kod kaldırmak için yerel bağlayıcı isteyin uygulanamadı amacı üçüncü taraf yerel kitaplıklarında (yerel) hiçbir statik başvuru vardı. Bunun sebebi "-force_load libNative.a" her üçüncü taraf bağlama yapmak zorunda (veya eşdeğer ForceLoad = true [LinkWith] özniteliğinde).
--  İki yönetilen türleriyle aynı adla Objective-C, hiçbir uyarı dışarı aktarılamadı. Nadir bir senaryo iki AppDelegate sınıfları (farklı ad alanları) şunun için oluştu. Çalışma zamanında, hangisinin (aslında çok puzzling ve can sıkıcı hata ayıklama deneyimini hale bile yeniden değildi - bir uygulama çalıştırılan arasında farklılık) çekilmiş tamamen rastgele olacaktır.
--  Aynı Objective-C imzaya sahip iki yöntem dışarı aktarılamadı. Henüz yeniden rastgele hangisinin Objective-C adlı (ancak genellikle bu hata gerçekte yaşamaya tek yolu unlucky Yönetilen yöntemi geçersiz kılmak için olduğundan bu sorun öncekinin olarak ortak değildi).
--  Dışarı aktarılan yöntemleri kümesini dinamik ve statik yapı arasında biraz farklı.
--  Öğe düzgün genel sınıfları dışarı aktarılırken çalışmaz (tam hangi genel uygulama çalışma zamanında yürütülen etkili bir şekilde belirlenmemiş davranışını elde edilen rastgele olacaktır).
+Bu bölümde, yeni kayıt şirketi ile çalışmak için yapılması gereken bağlamaları değişiklikler açıklanmaktadır.
 
+### <a name="protocols-must-have-the-protocol-attribute"></a>Protokolleri [Protocol] özniteliği olmalıdır
 
- <a name="required_modifications" />
+Protokolleri artık olmalıdır `[Protocol]` özniteliği. Bunu yaparsanız, bir yerel bir bağlayıcı hatası gibi olur:
 
-
-## <a name="new-registrar-required-changes-to-bindings"></a>Yeni kayıt şirketi: Gerekli değişiklikleri bağlamaları
-
-
-Varolan Objective-C bağlamaları yeni registar ile çalışmak üzere güncellenmelidir gerekebilir.
-
-Burada, yapılmasına gerek yapılan değişikliklerin bir listesi verilmiştir.
-
-### <a name="protocols-must-have-the-protocol-attribute"></a>Protokolleri [Protocol] özniteliğe sahip olması gerekir
-
-Protokolleri uygulamaları artık uygulanmış [Protocol] özniteliği olmalıdır.  Bunu yaparsanız, bunun gibi bir yerel bağlayıcı hatası olur:
-
-```csharp
+```console
 Undefined symbols for architecture i386: "_OBJC_CLASS_$_ProtocolName", referenced from: ...
 ```
 
-### <a name="selectors-must-have-a-valid-number-of-parameters"></a>Seçici parametrelerinin geçerli bir sayı olmalıdır
+### <a name="selectors-must-have-a-valid-number-of-parameters"></a>Seçiciler parametreleri için geçerli bir sayı olmalıdır
 
-Tüm seçiciler doğru parametre sayısı belirtmelidir.  Daha önce bu hataları yoksayıldı ve çalışma zamanı sorunlarına neden olabilir.
+Tüm seçiciler doğru parametre sayısı belirtmelidir. Daha önce bu hataları yoksayıldı ve çalışma zamanı sorunlarına neden olabilir.
 
-Kısacası, iki nokta üst üste sayısı parametre sayısı eşleşmelidir.
+Kısacası, iki nokta üst üste, parametrelerin sayısıyla eşleşmelidir:
 
-Örneğin:
-
--  Hiçbir parametre: 'foo'
--  One parameter: `foo:'
--  Two parameters: `foo:parameterName2:'
-
+- Hiçbir parametre: `foo`
+- Bir parametre: `foo:`
+- İki parametre: `foo:parameterName2:`
 
 Yanlış kullanımları şunlardır:
 
@@ -241,20 +238,16 @@ void Apply (NSObject target);
 void Display ();
 ```
 
-### <a name="use-isvariadic-parameter-in-export"></a>Dışa aktarma IsVariadic parametresini kullanın
+### <a name="use-isvariadic-parameter-in-export"></a>İçinde dışarı aktarmayı IsVariadic parametresini kullanın
 
-Variadic işlevleri gerekir söyleyin bunu kendi verme özniteliği (Seçici bağımsız değişken sayısı hakkında yanlış olduğundan bu, yani 2 noktası. Üstten ihlal):
+Değişen sayıda bağımsız değişken işlevleri kullanmalıdır `IsVariadic` bağımsız değişkeni `[Export]` özniteliği:
 
 ```csharp
 [Export ("variadicMethod:", IsVariadic = true)]
 void VariadicMethod (NSObject first, IntPtr subsequent);
 ```
 
-### <a name="must-link-to-existing-symbols"></a>Varolan simgeleri bağlamanız gerekir
+### <a name="must-link-to-existing-symbols"></a>Mevcut sembollere bağlamanız gerekir
 
-Yerel kitaplığında mevcut sınıfları bağlamak mümkün değildir.
-
-Var olmayan sınıfları bağlamak çalışırsanız yerel bağlayıcı hata iletisi alır.
-
-Bu genellikle bir bağlama süre için var ve belirli bir yerel sınıf ya da kaldırılmıştır veya bağlama güncelleştirilmez karşın, yeniden adlandırılmış, yerel kod bu işlem sırasında değiştirilmiş olur.
-
+Yerel Kitaplığı'nda mevcut olmayan sınıflar bağlamak mümkün değildir.
+Bir sınıf kaldırıldı veya yeniden adlandırılmış yerel bir Kitaplığı'nda, eşleştirilecek bağlamalarını güncelleştirin emin olun.

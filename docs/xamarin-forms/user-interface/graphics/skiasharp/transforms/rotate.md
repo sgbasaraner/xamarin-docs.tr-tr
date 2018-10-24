@@ -4,14 +4,14 @@ description: Bu makalede efektler ve animasyon SkiaSharp döndürme dönüşüm�
 ms.prod: xamarin
 ms.technology: xamarin-skiasharp
 ms.assetid: CBB3CD72-4377-4EA3-A768-0C4228229FC2
-author: charlespetzold
-ms.author: chape
+author: davidbritch
+ms.author: dabritch
 ms.date: 03/23/2017
-ms.openlocfilehash: 1f34c64ca7c1bc9d0d0202f35602976364ab6075
-ms.sourcegitcommit: 12d48cdf99f0d916536d562e137d0e840d818fa1
+ms.openlocfilehash: 3726a93ccf43fd9a2afdc2c46bb63e0f6ef7ad51
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 08/07/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "39615255"
 ---
 # <a name="the-rotate-transform"></a>Döndürme dönüşümü
@@ -22,7 +22,7 @@ Döndürme dönüşümü ile yatay ve dikey ekseni olan SkiaSharp grafik nesnele
 
 ![](rotate-images/rotateexample.png "Bir merkezi etrafında döndürülen metin")
 
-Grafik nesnesini (0, 0) SkiaSharp destekler nokta etrafında döndürmek için bir [ `RotateDegrees` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RotateDegrees/p/System.Single/) yöntemi ve bir [ `RotateRadians` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RotateRadians/p/System.Single/) yöntemi:
+Grafik nesnesini (0, 0) SkiaSharp destekler nokta etrafında döndürmek için bir [ `RotateDegrees` ](xref:SkiaSharp.SKCanvas.RotateDegrees(System.Single)) yöntemi ve bir [ `RotateRadians` ](xref:SkiaSharp.SKCanvas.RotateRadians(System.Single)) yöntemi:
 
 ```csharp
 public void RotateDegrees (Single degrees)
@@ -30,9 +30,9 @@ public void RotateDegrees (Single degrees)
 public Void RotateRadians (Single radians)
 ```
 
-İki birim arasında dönüştürmek kolay, bu nedenle bir daire 360 derece 2π radyan aynıdır. Hangisi uygun kullanın. Statik tüm trigonometrik işlevler [ `Math` ](xref:System.Math) radyan ölçü sınıfını kullanın.
+İki birim arasında dönüştürmek kolay, bu nedenle bir daire 360 derece twoπ radyan aynıdır. Hangisi uygun kullanın. . NET'te tüm trigonometrik işlevler [ `Math` ](xref:System.Math) radyan ölçü sınıfını kullanın.
 
-Döndürme açısı artırmaya yönelik saat yönünde. (Kartezyen koordinat sisteminde döndürme kurala göre yönünün olsa da, saat yönünde bir döndürme aşağı giderek artan Y koordinatları ile uyumludur.) Açıları ve açıları 360 derece izin verilenden daha büyük negatif.
+Döndürme açısı artırmaya yönelik saat yönünde. (Kartezyen koordinat sisteminde döndürme kurala göre yönünün olsa da, saat yönünde bir döndürme aşağısına olduğu gibi SkiaSharp gittikçe artan Y koordinatları ile uyumludur.) Açıları ve açıları 360 derece izin verilenden daha büyük negatif.
 
 Döndürme dönüşümü formülleri çeviri ve ölçeklendirme için olandan daha karmaşıktır. α açısı için dönüştürme formülleri şunlardır:
 
@@ -40,7 +40,7 @@ x' x•cos(α) – = y•sin(α)
 
 y' x•sin(α) + y•cos(α) =
 
-**Temel döndürme** sayfasını gösterir `RotateDegrees` yöntemi. [ `BasicRotate.xaml.cs` ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicRotatePage.xaml.cs) Dosya ortalanıp kendi temeli ile bazı metni görüntüler ve göre döndürür bir `Slider` 360 – 360 aralıklı. İlgili bölümü işte `PaintSurface` işleyicisi:
+**Temel döndürme** sayfasını gösterir `RotateDegrees` yöntemi. [ **BasicRotate.xaml.cs** ](https://github.com/xamarin/xamarin-forms-samples/blob/master/SkiaSharpForms/Demos/Demos/SkiaSharpFormsDemos/Transforms/BasicRotatePage.xaml.cs) dosya ortalanıp kendi temeli ile bazı metni görüntüler ve göre döndürür bir `Slider` 360 – 360 aralıklı. İlgili bölümü işte `PaintSurface` işleyicisi:
 
 ```csharp
 using (SKPaint textPaint = new SKPaint
@@ -60,7 +60,7 @@ Bu programda ayarlanmış çoğu açıları için tuvalin sol üst köşesinin e
 
 [![](rotate-images/basicrotate-small.png "Üçlü sayfasının ekran görüntüsü temel döndürme")](rotate-images/basicrotate-large.png#lightbox "Üçlü sayfasının ekran görüntüsü temel Döndür")
 
-Çok sık bu sürümlerini kullanan bir belirtilen pivot noktası ortalanmış bir şey döndürmek isteyeceksiniz [ `RotateDegrees` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RotateDegrees/p/System.Single/System.Single/System.Single/) ve [ `RotateRadians` ](https://developer.xamarin.com/api/member/SkiaSharp.SKCanvas.RotateRadians/p/System.Single/System.Single/System.Single/) yöntemleri:
+Çok sık bu sürümlerini kullanan bir belirtilen pivot noktası ortalanmış bir şey döndürmek isteyeceksiniz [ `RotateDegrees` ](xref:SkiaSharp.SKCanvas.RotateDegrees(System.Single,System.Single,System.Single)) ve [ `RotateRadians` ](xref:SkiaSharp.SKCanvas.RotateRadians(System.Single,System.Single,System.Single)) yöntemleri:
 
 ```csharp
 public void RotateDegrees (Single degrees, Single px, Single py)
@@ -88,13 +88,13 @@ using (SKPaint textPaint = new SKPaint
 
 [![](rotate-images/centeredrotate-small.png "Üçlü sayfasının ekran görüntüsü ortalanmış döndürme")](rotate-images/centeredrotate-large.png#lightbox "Üçlü sayfasının ekran görüntüsü ortalanmış Döndür")
 
-Yalnızca sürümüyle ortalanmış olarak `Scale` yöntemi, ortalanmış sürümü `RotateDegrees` çağrıdır kısayol:
+Ortalanmış sürümü ile `Scale` yöntemi, ortalanmış sürümü `RotateDegrees` çağrıdır bir kısayol. Yöntem aşağıda verilmiştir:
 
 ```csharp
 RotateDegrees (degrees, px, py);
 ```
 
-Bu aşağıdakine eşdeğerdir:
+Bu çağrı aşağıdakine eşdeğerdir:
 
 ```csharp
 canvas.Translate(px, py);
@@ -180,7 +180,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 
 ```
 
-`xCenter` Ve `yCenter` değerler tuval merkezi gösterir. `yText` Değerdir, biraz uzaklığı. Bu sayfada gerçekten dikey ortalanacak şekilde metin yerleştirmek için gereken Y koordinatını belirtir. `for` Döngü, ardından tuval Merkezi'nde ortalanmış bir döndürme ayarlar. Döndürme 30 derece artışlarla ' dir. Metin kullanılarak çizilir `yText` değeri. Word önce boşluk sayısını "DÖNDÜRÜN" içinde `text` değer belirlendi türü bir on iki kenarlı olabilir görünmesine 12 metin dizelerinden arasında bağlantı kurmak için.
+`xCenter` Ve `yCenter` değerler tuval merkezi gösterir. `yText` Değerdir, biraz uzaklığı. Bu sayfada gerçekten dikey ortalanacak şekilde metin yerleştirmek için gereken Y koordinatı değerdir. `for` Döngü, ardından tuval Merkezi'nde dayalı bir döndürme ayarlar. Döndürme 30 derece artışlarla ' dir. Metin kullanılarak çizilir `yText` değeri. Word önce boşluk sayısını "DÖNDÜRÜN" içinde `text` değer belirlendi türü bir on iki kenarlı olabilir görünmesine 12 metin dizelerinden arasında bağlantı kurmak için.
 
 Bu kodu basitleştirmek için bir yol olan 30 derece döndürme açısını sonra döngü her zaman artırmak için `DrawText` çağırın. Bu çağrılar için gereksinimini ortadan kaldırır `Save` ve `Restore`. Dikkat `degrees` değişkeni gövdesi içinde artık kullanılmamaktadır `for` engelle:
 
@@ -253,7 +253,7 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
 }
 ```
 
-`revolveDegrees` Ve `rotateDegrees` alanları bir animasyon görünür. Bu program Xamarin.Forms hakkında temel bir animasyon farklı teknik kullanır `Animation` sınıfı. (Bu sınıf açıklanan [Bölüm 22, *Xamarin.Forms ile Mobile Apps oluşturma*](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf)) `OnAppearing` geçersiz kılma oluşturur iki `Animation` nesneleri geri çağırma yöntemleri ile ve ardından çağırır`Commit` bunlara bir animasyon süresi:
+`revolveDegrees` Ve `rotateDegrees` alanları bir animasyon görünür. Bu program Xamarin.Forms hakkında temel bir animasyon farklı teknik kullanır [ `Animation` ](xref:Xamarin.Forms.Animation) sınıfı. (Bu sınıf açıklanan [Bölüm 22, *Xamarin.Forms ile Mobile Apps oluşturma*](https://download.xamarin.com/developer/xamarin-forms-book/XamarinFormsBook-Ch22-Apr2016.pdf)) `OnAppearing` geçersiz kılma oluşturur iki `Animation` nesneleri geri çağırma yöntemleri ile ve ardından çağırır`Commit` bunlara bir animasyon süresi:
 
 ```csharp
 protected override void OnAppearing()
@@ -271,7 +271,7 @@ protected override void OnAppearing()
 }
 ```
 
-İlk `Animation` nesne canlandırır `revolveDegrees` 0-360 derece 10 saniyenin üzerindeki. İkincisi canlandırır `rotateDegrees` 0-360 derece her 1 saniye ve ayrıca surface başka bir çağrıyı oluşturmak için geçersiz kılar `PaintSurface` işleyici. `OnDisappearing` Geçersiz kılma iki animasyonlarına iptal eder:
+İlk `Animation` nesne canlandırır `revolveDegrees` 360 derece 10 saniyenin üzerindeki 0 dereceye öğesinden. İkincisi canlandırır `rotateDegrees` 360 derece 0 dereceye gelen her 1 saniye ve ayrıca yüzeyine başka bir çağrıyı oluşturmak için geçersiz kılar `PaintSurface` işleyici. `OnDisappearing` Geçersiz kılma iki animasyonlarına iptal eder:
 
 ```csharp
 protected override void OnDisappearing()
@@ -311,9 +311,9 @@ void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
         ...
     }
 }
+```
 
-```csharp
-There are 60 marks of two different sizes that must be drawn in a circle around the clock. The `DrawCircle` call draws that circle at the point (0, –90), which relative to the center of the clock corresponds to 12:00. The `RotateDegrees` call increments the rotation angle by 6 degrees after every tick mark. The `angle` variable is used solely to determine if a large circle or a small circle is drawn:
+Bir daire sistemlerimizdeki çizilmesi iki farklı boyutlardaki 60 işaretleri vardır. `DrawCircle` Çağrısı noktasında, 12:00 için karşılık gelen saatin merkezine göre (0, – 90), daire çizer. `RotateDegrees` Çağrı, her değer çizgisi sonra 6 derece döndürme açısını artırır. `angle` Değişkeni yalnızca büyük bir daire veya küçük daire çizilip çizilmediğini belirlemek için kullanılır:
 
 ```csharp
 void OnCanvasViewPaintSurface(object sender, SKPaintSurfaceEventArgs args)
@@ -366,8 +366,9 @@ Bire çok kaba olsa saat tam işlevsel:
 
 [![](rotate-images/uglyanalogclock-small.png "Üçlü çirkin Analog saati metin sayfasının ekran görüntüsü")](rotate-images/uglyanalogclock-large.png#lightbox "Triple screenshot of the Ugly Analog page")
 
+Daha cazip bir saat için bkz [ **SkiaSharp SVG yol verileri**](../curves/path-data.md).
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [SkiaSharp API'leri](https://developer.xamarin.com/api/root/SkiaSharp/)
+- [SkiaSharp API'leri](https://docs.microsoft.com/dotnet/api/skiasharp)
 - [SkiaSharpFormsDemos (örnek)](https://developer.xamarin.com/samples/xamarin-forms/SkiaSharpForms/Demos/)

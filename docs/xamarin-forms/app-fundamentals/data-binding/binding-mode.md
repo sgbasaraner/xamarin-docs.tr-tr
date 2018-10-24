@@ -7,11 +7,11 @@ ms.technology: xamarin-forms
 author: charlespetzold
 ms.author: chape
 ms.date: 05/01/2018
-ms.openlocfilehash: a6eaf08d17f70c43f451361e27555a09c39f26a9
-ms.sourcegitcommit: 3e980fbf92c69c3dd737554e8c6d5b94cf69ee3a
+ms.openlocfilehash: 420c1de0691de419180dd497a9031ea5e7dd1054
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/10/2018
+ms.lasthandoff: 10/24/2018
 ms.locfileid: "37935673"
 ---
 # <a name="xamarinforms-binding-mode"></a>Xamarin.Forms bağlama modu
@@ -312,6 +312,9 @@ Bağlama modu ayarlamak `OneWayToSource` içinde **alternatif XAML bağlama** ö
 ```
 
 Artık `Slider` 1 olarak başlatılır (varsayılan değeri `Scale`) ancak çağırmanın `Slider` etkilemez `Scale` özelliği, bu nedenle bu çok yararlı değildir.
+
+> [!NOTE]
+> [ `VisualElement` ](xref:Xamarin.Forms.VisualElement) Sınıfı da tanımlar [ `ScaleX` ](xref:Xamarin.Forms.VisualElement.ScaleX) ve [ `ScaleY` ](xref:Xamarin.Forms.VisualElement.ScaleY) ölçeklendirebilirsiniz özellikleri `VisualElement` içinde farklı Yatay ve dikey yönde.
 
 Varsayılan bağlama moduyla geçersiz kılma, faydalı bir uygulama `TwoWay` içerir `SelectedItem` özelliği `ListView`. Varsayılan bağlama mod `OneWayToSource`. Üzerinde veri bağlama ayarlandığında `SelectedItem` bir ViewModel kaynağı özelliğinde, kaynak özelliğini ayarlayın daha sonra başvurmak için özellik `ListView` seçimi. Ancak, bazı durumlarda da isteyebilirsiniz `ListView` ViewModel başlatılacak.
 
