@@ -5,11 +5,11 @@ ms.assetid: 4EDC9897-5FD1-44CA-A26D-2E5AB472C99A
 author: jamesmontemagno
 ms.author: jamont
 ms.date: 07/30/2018
-ms.openlocfilehash: 5c625e32a70e196b5562225bdf985cd4b3a6f5db
-ms.sourcegitcommit: 0e1b64b0aa8fc0e78f0feff3c8b39a4cb8c1da61
+ms.openlocfilehash: b81102c6c0e0d65aaa46b2d32e34db536ab58e03
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 07/31/2018
+ms.lasthandoff: 10/25/2018
 ms.locfileid: "39361008"
 ---
 # <a name="xamarinessentials"></a>Xamarin.Essentials
@@ -30,7 +30,8 @@ Bu Xamarin.Essentials özellikleri uygulamalarınızla tümleştirmek için kıl
 
 * [İvme ölçer](accelerometer.md?context=xamarin/xamarin-forms) – üç boyutlu boşluk cihazın ivmesi veri alma.
 * [Uygulama bilgileri](app-information.md?context=xamarin/xamarin-forms) – uygulama hakkında bilgi edinin.
-* [Pil](battery.md?context=xamarin/xamarin-forms) – kolayca pil düzeyi, kaynak ve durumu algılayan
+* [Barometre](barometer.md?context=xamarin/xamarin-forms) – barometre baskısı değişiklikler için izleyin.
+* [Pil](battery.md?context=xamarin/xamarin-forms) – kolayca pil düzeyi, kaynak durumu algılar.
 * [Pano](clipboard.md?context=xamarin/xamarin-forms) – hızlı ve kolay bir şekilde ayarlayın veya Panodaki metni okuyun.
 * [Compass](compass.md?context=xamarin/xamarin-forms) – monitör compass değişiklikler için.
 * [Bağlantı](connectivity.md?context=xamarin/xamarin-forms) : bağlantı durumunu denetleyin ve değişiklikleri algılar.

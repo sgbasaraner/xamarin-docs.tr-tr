@@ -1,51 +1,51 @@
 ---
-title: MonoGame oyun geliştirmeye giriş
-description: Bu çok parçalı izlenecek MonoGame kullanarak basit bir 2B uygulamasının nasıl oluşturulacağını gösterir.  Ortak oyunun kapsadığı giriş, grafik gibi programlama kavramları oyun varlıkları ve fizik.
+title: MonoGame ile oyun geliştirmeye giriş
+description: Bu çok bölümlü izlenecek MonoGame kullanarak basit 2B bir uygulamanın nasıl oluşturulacağını gösterir.  Ortak oyun kapsayan giriş, grafik gibi programlama kavramları, varlık ve fizik oyun.
 ms.prod: xamarin
 ms.assetid: D781401F-7A96-4098-9645-5F98AEAF7F71
-author: charlespetzold
-ms.author: chape
+author: conceptdev
+ms.author: crdun
 ms.date: 03/28/2017
-ms.openlocfilehash: 46cc3a7e3bb6c58e04626c9d2cc9437c16ba19f5
-ms.sourcegitcommit: 0a72c7dea020b965378b6314f558bf5360dbd066
+ms.openlocfilehash: 4ab98d59bc74672f9531f4dbd3c33a6270582612
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 05/09/2018
+ms.lasthandoff: 10/25/2018
 ms.locfileid: "33920812"
 ---
-# <a name="introduction-to-game-development-with-monogame"></a>MonoGame oyun geliştirmeye giriş
+# <a name="introduction-to-game-development-with-monogame"></a>MonoGame ile oyun geliştirmeye giriş
 
-_Bu çok parçalı izlenecek MonoGame kullanarak basit bir 2B uygulamasının nasıl oluşturulacağını gösterir.  Ortak oyunun kapsadığı giriş, grafik gibi programlama kavramları oyun varlıkları ve fizik._
+_Bu çok bölümlü izlenecek MonoGame kullanarak basit 2B bir uygulamanın nasıl oluşturulacağını gösterir.  Ortak oyun kapsayan giriş, grafik gibi programlama kavramları, varlık ve fizik oyun._
 
-Bu makalede, platformlar arası oyunlar sağlama MonoGame API teknolojisi açıklanmaktadır. Platformlar tam bir listesi için bkz: [MonoGame Web sitesi](http://www.monogame.net/). MonoGame de F # ile tam olarak işlevsel olmasına rağmen C# kod örnekleri için Bu öğreticide kullanacaksınız.
+Bu makalede, platformlar arası oyunlar oluşturmaya yönelik MonoGame API teknoloji açıklanır. Platformları tam bir listesi için bkz. [MonoGame Web sitesi](http://www.monogame.net/). Bu öğreticide kullanacağınız C# kod örnekleri için MonoGame ile tam olarak işlevsel olmasına rağmen F# de.
 
-MonoGame bir çapraz platform, donanım varlıkları içeri aktarmak için grafik, ses, oyun durum yönetimi, giriş ve içerik işlem hattı sağlama API hızlandırılmış. Çoğu oyun motoru MonoGame sağlamaz veya herhangi bir desen veya proje yapısını zorunlu tuttukları.  Bu geliştiricileri kendi kodlarını istedikleri gibi düzenlemek ücretsiz anlamına gelmekle birlikte, bu da kurulum kodu biraz önce yeni bir proje başlatırken gerekli anlamına gelir.
+Platformlar arası MonoGame, donanım hızlandırılmış grafik, ses, oyun durum yönetimi, giriş ve bir içeriği ardışık düzeni varlıklarını içeri aktararak için sağlama API'si. Çoğu oyun altyapıları, MonoGame sağlamaz veya herhangi bir desen veya proje yapı.  Bu geliştiriciler istedikleri kodlarını düzenlemek ücretsiz olduğu anlamına gelir, ancak bu da kurulum kodu biraz önce yeni bir proje başlatılırken gerektiğini anlamına gelir.
 
-Bu kılavuzda ilk bölümü boş bir projeyi ayarlama konusunda odaklanır. Son kısım, tüm bizim oyun mantığı ve hangisinin platform en olacağını içerik – yazma kapsar.
+Bu kılavuzun ilk bölümünde, boş bir projeyi ayarlama odaklanır. Son bölümde tüm oyun mantığı ve içerik, en çok hangi platformlar arası olacaktır – yazma kapsar.
 
-Bu örneklerde sonuna player dokunmatik giriş animasyonlu bir karakterle burada denetleyebilirsiniz basit bir oyun oluşturduk.  Bu (koşullar kaybeder veya win Hayır olduğundan) Teknik olarak tam oyun olmamasına karşın, çok sayıda oyun geliştirme kavramları gösterir ve temel olarak türlerde oyunlar için kullanılabilir. 
+Bu izlenecek yol sonunda player animasyonlu bir karakter dokunma girişi ile burada denetleyebilirsiniz basit bir oyun oluşturduk.  Bu (koşullar kaybeder veya win Hayır olduğundan) Teknik tam oyun olmamasına karşın, çok sayıda oyun geliştirme kavramları göstermektedir ve birçok türdeki oyunlar için temel olarak kullanılabilir. 
 
-Bu kılavuzda sonucunu gösterir:
+Bu izlenecek yolda sonucu aşağıda gösterilmektedir:
 
-![Fare aşağıdaki örnek bir oyun karakterin animasyon](images/image1.gif)
+![Örnek oyun karakteri fare aşağıdaki animasyonu](images/image1.gif)
 
 ## <a name="monogame-and-xna"></a>Monogame ve XNA
 
-MonoGame kitaplığı, Microsoft'un XNA kitaplıkta sözdizimi ve işlevsellik taklit etmek üzere tasarlanmıştır.  Hiçbir değişikliğe sahip MonoGame içinde kullanılacak çoğu XNA kodu izin vererek Microsoft.Xna ad alanı – altındaki tüm MonoGame nesneleri vardır. 
+MonoGame kitaplığı, Microsoft'un XNA kitaplıkta söz dizimi hem işlevselliğini taklit etmek üzere tasarlanmıştır.  Tüm MonoGame nesneleri ile herhangi bir değişiklik MonoGame kullanılacak çoğu XNA kodu verme Microsoft.Xna ad alanı altında– mevcut. 
 
-XNA ile hakkında bilgi sahibi geliştiriciler önceden MonoGame'nın sözdizimi hakkında bilginiz olması gerekir ve MonoGame ile çalışma hakkında ek bilgi isteyen geliştiriciler mevcut çevrimiçi XNA izlenecek yollar, API belgelerine ve tartışmaları başvuru mümkün olacaktır.
+Geliştiriciler ile XNA tanıdık zaten MonoGame'nın söz dizimi ile tanıdık gelecektir ve MonoGame ile çalışma hakkında ek bilgi isteyen geliştiriciler mevcut çevrimiçi XNA izlenecek yollar, API belgeleri ve tartışmalar başvurmak mümkün olacaktır.
 
 
 ## <a name="walkthrough-parts"></a>İzlenecek yol bölümleri
 
-- [Bölüm 1 – platformlar arası MonoGame proje oluşturma](~/graphics-games/monogame/introduction/part1.md)
-- [Bölüm 2 – WalkingGame uygulama](~/graphics-games/monogame/introduction/part2.md)
+- [Bölüm 1-platformlar arası MonoGame projesi oluşturma](~/graphics-games/monogame/introduction/part1.md)
+- [Bölüm 2-Walkinggame'i uygulama](~/graphics-games/monogame/introduction/part2.md)
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
-- [WalkingGame MonoGame proje (örnek)](https://developer.xamarin.com/samples/mobile/WalkingGameMG/)
-- [XNB yazı tiplerini iOS](https://github.com/mono/CocosSharp/tree/master/Samples/GameStarterKit/GameStarterKit/Content/fonts)
-- [XNB yazı tiplerini Android](https://github.com/mono/CocosSharp/tree/master/Samples/GameStarterKit/GameStarterKit/Assets/Content/fonts)
-- [NuGet MonoGame Android](https://www.nuget.org/packages/MonoGame.Framework.Android/)
+- [Walkinggame'i MonoGame projesi (örnek)](https://developer.xamarin.com/samples/mobile/WalkingGameMG/)
+- [İOS XNB yazı tipleri](https://github.com/mono/CocosSharp/tree/master/Samples/GameStarterKit/GameStarterKit/Content/fonts)
+- [XNB yazı tipleri Android](https://github.com/mono/CocosSharp/tree/master/Samples/GameStarterKit/GameStarterKit/Assets/Content/fonts)
+- [NuGet Android'de MonoGame](https://www.nuget.org/packages/MonoGame.Framework.Android/)
 - [NuGet MonoGame iOS](https://www.nuget.org/packages/MonoGame.Framework.iOS/)
 - [MonoGame API belgeleri](http://www.monogame.net/documentation/?page=main)

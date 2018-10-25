@@ -1,27 +1,31 @@
 ---
-title: Stil Xamarin.Forms geçişli stil sayfaları (CSS) kullanan uygulamalar
-description: Xamarin.Forms geçişli stil sayfaları (CSS) kullanarak stil görsel öğeleri destekler.
+title: Geçişli stil sayfaları (CSS) kullanarak Xamarin.Forms uygulamalarında stil oluşturma
+description: Xamarin.Forms, geçişli stil sayfaları (CSS) kullanılarak stil görsel öğeleri destekler.
 ms.prod: xamarin
 ms.assetid: C89D57A6-DAB9-4C42-963F-26D67627DDC2
 ms.technology: xamarin-forms
 ms.custom: xamu-video
 author: davidbritch
 ms.author: dabritch
-ms.date: 05/07/2018
-ms.openlocfilehash: 76ca67f7ac8a8e27e5f502455d48874c775fc172
-ms.sourcegitcommit: ea1dc12a3c2d7322f234997daacbfdb6ad542507
+ms.date: 09/28/2018
+ms.openlocfilehash: 72bb4c359717f419eb500d471fe436d1ca195ae6
+ms.sourcegitcommit: 7f6127c2f425fadc675b77d14de7a36103cff675
 ms.translationtype: MT
 ms.contentlocale: tr-TR
-ms.lasthandoff: 06/05/2018
+ms.lasthandoff: 10/25/2018
 ms.locfileid: "34794091"
 ---
-# <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>Geçişli stil sayfaları (CSS) kullanarak stil Xamarin.Forms uygulamaları
+# <a name="styling-xamarinforms-apps-using-cascading-style-sheets-css"></a>Geçişli stil sayfaları (CSS) kullanarak Xamarin.Forms uygulamalarında stil oluşturma
 
-_Xamarin.Forms geçişli stil sayfaları (CSS) kullanarak stil görsel öğeleri destekler._
+_Xamarin.Forms, geçişli stil sayfaları (CSS) kullanılarak stil görsel öğeleri destekler._
 
-Xamarin.Forms 3.0 CSS kullanarak bir uygulama stil verme olanağı sunar. Bir veya daha fazla Seçici ve bildirimi bloğundaki oluşan her bir kural ile kurallarının bir listesini, stil sayfası oluşur. Bir bildirim blok küme ayraçları bildirimlerinde bir özellik, bir iki nokta üst üste ve bir değer oluşan her bildirimiyle listesini oluşur. Bir blok içinde birden çok bildirimler olduğunda, noktalı virgül ayırıcı olarak eklenir. Aşağıdaki kod örneğinde bazı Xamarin.Forms uyumlu CSS gösterir:
+CSS kullanarak Xamarin.Forms uygulamaları biçimlendirilebilir. Bir stil sayfası kuralları, bir veya daha fazla Seçici ve bir bildirimi blok oluşan her bir kural ile bir listesini içerir. Bir bildirimi blok küme ayraçları, bildirimlerinde bir özellik, bir iki nokta üst üste ve bir değer oluşan her bildirimiyle listesini oluşur. Bir blok içinde birden fazla bildirimi olduğunda, noktalı virgül ayırıcı olarak eklenir. Aşağıdaki kod örneği, bazı Xamarin.Forms uyumlu CSS gösterir:
 
 ```css
+navigationpage {
+    -xf-bar-background-color: lightgray;
+}
+
 ^contentpage {
     background-color: lightgray;
 }
@@ -65,50 +69,46 @@ stacklayout>image {
 }
 ```
 
-Xamarin.Forms, CSS stil sayfaları ayrıştırılır ve derleme süresi yerine çalışma zamanı sırasında değerlendirilen ve stil sayfalarını kullanmak üzere yeniden ayrıştırılmış.
+Xamarin.Forms, CSS stil sayfaları ayrıştırılır ve derleme zamanı yerine çalışma zamanı sırasında değerlendirilen ve stil sayfalarını kullanmak üzere yeniden ayrıştırılmış.
 
 > [!NOTE]
-> Şu anda tüm XAML stil ile mümkündür stil CSS ile gerçekleştirilemiyor. Ancak, XAML stiller CSS Xamarin.Forms tarafından şu anda desteklenmeyen özellikleri desteklemek üzere kullanılabilir. XAML stilleri hakkında daha fazla bilgi için bkz: [stil oluşturma Xamarin.Forms XAML stilleri kullanarak uygulamaları](~/xamarin-forms/user-interface/styles/xaml/index.md).
+> Şu anda tüm XAML stil ile mümkündür stil CSS ile gerçekleştirilemiyor. Ancak, XAML stiller CSS Xamarin.Forms tarafından şu anda desteklenmeyen özellikleri desteklemek için kullanılabilir. XAML stilleri hakkında daha fazla bilgi için bkz. [stil XAML stilleri kullanarak Xamarin.Forms uygulamalarında](~/xamarin-forms/user-interface/styles/xaml/index.md).
 
 [MonkeyAppCSS](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/MonkeyAppCSS/) örnek CSS stil basit bir uygulama kullanmayı gösterir ve aşağıdaki ekran görüntülerinde gösterilir:
 
-[![CSS stil MonkeyApp ana sayfası](css-images/MonkeyAppMainPage.png "MonkeyApp ana sayfa CSS stil ile")](css-images/MonkeyAppMainPage-Large.png#lightbox "CSS stil MonkeyApp ana sayfası")
+[![CSS stil MonkeyApp ana sayfayla](css-images/MonkeyAppMainPage.png "MonkeyApp ana sayfa ile CSS stil")](css-images/MonkeyAppMainPage-Large.png#lightbox "CSS stil MonkeyApp ana sayfası")
 
-[![CSS stil MonkeyApp ayrıntı sayfası](css-images/MonkeyAppDetailPage.png "MonkeyApp ayrıntı CSS stil sayfasıyla")](css-images/MonkeyAppDetailPage-Large.png#lightbox "CSS stil MonkeyApp Ayrıntı Sayfası")
+[![CSS stil ile MonkeyApp ayrıntı sayfası](css-images/MonkeyAppDetailPage.png "MonkeyApp ayrıntı sayfası ile CSS stil")](css-images/MonkeyAppDetailPage-Large.png#lightbox "MonkeyApp ayrıntı sayfası ile CSS stil oluşturma")
 
-> [!NOTE]
-> Arka plan rengini stilini belirlemek şu anda olası değil bir [ `NavigationPage` ](xref:Xamarin.Forms.NavigationPage) bir stil sayfasını kullanarak. Bu nedenle, örnek uygulamasında [ `NavigationPage.BarBackgroundColor` ](xref:Xamarin.Forms.NavigationPage.BarBackgroundColor) özelliği, kodda ayarlanır.
+## <a name="consuming-a-style-sheet"></a>Bir stil sayfası kullanma
 
-## <a name="consuming-a-style-sheet"></a>Stil sayfası kullanma
+Bir stil sayfası bir çözüme ekleme işlemi aşağıdaki gibidir:
 
-İşlem bir stil sayfası bir çözüme eklemek için aşağıdaki gibidir:
+1. Boş bir CSS dosyası .NET Standard kitaplığı projenize ekleyin.
+1. Ayarlamak için CSS dosyasının derleme eylemini **EmbeddedResource**.
 
-1. Boş bir CSS dosya .NET standart kitaplığını projenize ekleyin.
-1. CSS dosyası derleme eylem **EmbeddedResource**.
+### <a name="loading-a-style-sheet"></a>Bir stil sayfası yükleniyor
 
-### <a name="loading-a-style-sheet"></a>Stil sayfası yükleniyor
-
-Stil sayfası yüklemek için kullanılan yaklaşım vardır.
+Bir stil sayfası yüklemek için kullanılan yaklaşım vardır.
 
 ### <a name="xaml"></a>XAML
 
-Stil sayfası yüklenen ve ile Ayrıştırılan [ `StyleSheet` ](xref:Xamarin.Forms.StyleSheets.StyleSheet) eklenmeden önce sınıfı [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) sayfası için:
+Bir stil sayfası yüklendi ve ile ayrıştırıldığında [ `StyleSheet` ](xref:Xamarin.Forms.StyleSheets.StyleSheet) eklenmeden önce sınıfı bir [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary):
 
 ```xaml
-<ContentPage ...>
-    <ContentPage.Resources>
+<Application ...>
+    <Application.Resources>
         <StyleSheet Source="/Assets/styles.css" />
-    </ContentPage.Resources>
-    ...
-</ContentPage>
+    </Application.Resources>
+</Application>
 ```
 
-[ `StyleSheet.Source` ](xref:Xamarin.Forms.Xaml.StyleSheetExtension.Source) Özellik belirtir stil sayfası kapsayan XAML dosyasının konumunu göreli veya proje köküne ilişkin bir URI olarak URI ile başlarsa bir `/`.
+[ `StyleSheet.Source` ](xref:Xamarin.Forms.Xaml.StyleSheetExtension.Source) Özellik belirtir stil sayfası kapsayan XAML dosyasının konumunu göre veya projenin köküne bir URI olarak URI ile başlarsa bir `/`.
 
 > [!WARNING]
-> CSS dosyası etkinleştirilmişse yüklenemeyecek yapı eylemi ayarlı değil **EmbeddedResource**.
+> CSS dosyasının derleme eylemini olarak ayarlanmazsa, yüklenemeyecek **EmbeddedResource**.
 
-Alternatif olarak, stil sayfası yüklenebilir ve ile Ayrıştırılan [ `StyleSheet` ](xref:Xamarin.Forms.StyleSheets.StyleSheet) tarafından sınıf satır içi kullanım içinde bir `CDATA` bölümü:
+Alternatif olarak, bir stil sayfası yüklenebilir ve ile ayrıştırılmış [ `StyleSheet` ](xref:Xamarin.Forms.StyleSheets.StyleSheet) eklenmeden önce sınıfı, bir [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary)kullanarak, satır içi kullanım içinde bir `CDATA` bölümü:
 
 ```xaml
 <ContentPage ...>
@@ -125,9 +125,11 @@ Alternatif olarak, stil sayfası yüklenebilir ve ile Ayrıştırılan [ `StyleS
 </ContentPage>
 ```
 
+Kaynak sözlükleri hakkında daha fazla bilgi için bkz: [kaynak sözlükleri](~/xamarin-forms/xaml/resource-dictionaries.md).
+
 ### <a name="c"></a>C#
 
-C# ' ta bir stil sayfası katıştırılmış bir kaynağı yüklenebilir ve eklenen [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) sayfası için:
+İçinde C#, stil sayfası bir gömülü kaynak yüklenebilir ve eklenen bir [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary):
 
 ```csharp
 public partial class MyPage : ContentPage
@@ -143,9 +145,9 @@ public partial class MyPage : ContentPage
 }
 ```
 
-İlk bağımsız değişken `StyleSheet.FromAssemblyResource` yöntemi stil sayfası içeren derlemenin, ikinci bağımsız değişkeni bir `string` kaynak tanımlayıcısını temsil eden. Kaynak tanımlayıcısı elde edilebilir **özellikleri** CSS dosyası seçildiğinde penceresi.
+İlk bağımsız değişkeni `StyleSheet.FromAssemblyResource` yöntemi stil sayfası içeren derlemenin, ikinci bağımsız değişkeni bir `string` temsil eden kaynak tanımlayıcısı. Kaynak tanımlayıcısı örneğinden alınabilen **özellikleri** CSS dosyası seçildiğinde penceresi.
 
-Alternatif olarak, stil sayfası gelen yüklenebilir bir `StringReader` ve eklenen [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary) sayfası için:
+Alternatif olarak, bir stil sayfası ndan yüklenebilen bir `StringReader` ve eklenen bir [ `ResourceDictionary` ](xref:Xamarin.Forms.ResourceDictionary):
 
 ```csharp
 public partial class MyPage : ContentPage
@@ -164,15 +166,15 @@ public partial class MyPage : ContentPage
 
 Bağımsız değişkeni `StyleSheet.FromReader` yöntemi `TextReader` stil sayfası okuma izni.
 
-## <a name="selecting-elements-and-applying-properties"></a>Öğeler seçme ve Özellikler Uygulanıyor
+## <a name="selecting-elements-and-applying-properties"></a>Öğeleri seçme ve uygulama özellikleri
 
-CSS Seçici hedeflemek için hangi öğelerin belirlemek için kullanır. Seçici eşleşen stilleri art arda, tanım sırayla uygulanır. Belirli bir öğede tanımlanan stiller her zaman en son uygulanır. Desteklenen seçiciler hakkında daha fazla bilgi için bkz: [Seçici başvuru](#selector-reference).
+CSS Seçici hedeflemek için hangi öğelerin belirlemek için kullanır. Seçiciler eşleşen stilleri birbiri ardına tanımı sırayla uygulanır. Belirli bir öğe üzerinde tanımlanan stiller her zaman en son uygulanır. Desteklenen Seçici hakkında daha fazla bilgi için bkz: [Seçici başvuru](#selector-reference).
 
-CSS özelliklerini seçili öğesinin stilini belirlemek için kullanır. Bir dizi olası değerler her bir özellik vardır ve diğer öğeleri gruplarına uygularken bazı özellikler öğesi, herhangi bir türde etkileyebilir. Desteklenen özellikler hakkında daha fazla bilgi için bkz: [Özellik Başvurusu](#property-reference).
+CSS özelliklerini seçili öğesinin stilini belirlemek için kullanır. Olası değerler kümesi her bir özellik vardır ve diğer öğeleri gruplarına uygularken bazı özellikler öğesi, herhangi bir türde etkileyebilir. Desteklenen özellikler hakkında daha fazla bilgi için bkz: [Özellik Başvurusu](#property-reference).
 
-### <a name="selecting-elements-by-type"></a>Öğeler türe göre seçme
+### <a name="selecting-elements-by-type"></a>Türe göre öğeleri seçme
 
-Görsel ağaç öğeleri, büyük küçük harfe duyarlı türüyle tarafından seçilebilir `element` Seçici:
+Büyük/küçük harfe duyarlı olmayan türe göre öğeleri görsel ağacında seçilebilir `element` Seçici:
 
 ```css
 stacklayout {
@@ -180,14 +182,14 @@ stacklayout {
 }
 ```
 
-Bu herhangi seçiciyi [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) stil sayfasına tüketen ve bunların kenar boşluklarını Tekdüzen kalınlığı 20 için ayarlar sayfaları öğelerde.
+Bu herhangi seçiciyi [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) stil sayfası kullanmanıza ve kendi kenar boşlukları Tekdüzen bir 20 kalınlığı için ayarlar sayfalarındaki öğelerin.
 
 > [!NOTE]
-> `element` Seçici alt sınıflar belirtilen türde tanımlamıyor.
+> `element` Seçici belirtilen türe ait alt sınıfları belirlemek değil.
 
-### <a name="selecting-elements-by-base-class"></a>Temel sınıfı tarafından öğeleri seçme
+### <a name="selecting-elements-by-base-class"></a>Taban sınıfı tarafından öğeleri seçme
 
-Görsel ağaç öğeleri, büyük küçük harfe duyarlı ile temel sınıfı tarafından seçilebilir `^base` Seçici:
+Görsel ağaç öğeleri, büyük/küçük harfe duyarsız ile temel sınıfı tarafından seçilebilir `^base` Seçici:
 
 ```css
 ^contentpage {
@@ -195,14 +197,14 @@ Görsel ağaç öğeleri, büyük küçük harfe duyarlı ile temel sınıfı ta
 }
 ```
 
-Bu herhangi seçiciyi [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) stil sayfasına tüketen ve bunların arka plan ayarlayan öğelerinin renk için `lightgray`.
+Bu herhangi seçiciyi [ `ContentPage` ](xref:Xamarin.Forms.ContentPage) stil sayfası kullanmanıza ve kendi arka ayarlar öğelerinin rengi `lightgray`.
 
 > [!NOTE]
-> `^base` Seçici Xamarin.Forms için özeldir ve CSS belirtiminin bir parçası değil.
+> `^base` Seçici Xamarin.Forms için özeldir ve CSS belirtiminin parçası değildir.
 
-### <a name="selecting-an-element-by-name"></a>Bir öğenin adına göre seçme
+### <a name="selecting-an-element-by-name"></a>Öğeyi adına göre seçme
 
-Görsel ağaç ayrı ayrı öğeler seçilebilir büyük küçük harfe duyarlı ile `#id` Seçici:
+Tek tek öğelerine görsel ağacında seçilebilir büyük küçük harfe duyarlı ile `#id` Seçici:
 
 ```css
 #listView {
@@ -210,7 +212,7 @@ Görsel ağaç ayrı ayrı öğeler seçilebilir büyük küçük harfe duyarlı
 }
 ```
 
-Öğe bu seçiciyi, [ `StyleId` ](xref:Xamarin.Forms.Element.StyleId) özelliği ayarlanmış `listView`. Ancak, varsa `StyleId` özellik ayarlanmamışsa, seçici kullanmaya geri döner `x:Name` öğesi. Bu nedenle, aşağıdaki örnekte XAML, `#listView` Seçici sıralanmayacağı [ `ListView` ](xref:Xamarin.Forms.ListView) , `x:Name` özniteliği `listView`ve buna ait arka plan rengini ayarlamak `lightgray`.
+Bu öğe seçiciyi olan [ `StyleId` ](xref:Xamarin.Forms.Element.StyleId) özelliği `listView`. Ancak, varsa `StyleId` özellik ayarlanmamışsa, seçici kullanmaya geri döner `x:Name` öğe. Bu nedenle, aşağıdaki örnekte XAML, `#listView` Seçici tanımlar [ `ListView` ](xref:Xamarin.Forms.ListView) olan `x:Name` özniteliği `listView`ve onun arka plan rengi ayarlamak `lightgray`.
 
 ```xaml
 <ContentPage ...>
@@ -225,9 +227,9 @@ Görsel ağaç ayrı ayrı öğeler seçilebilir büyük küçük harfe duyarlı
 </ContentPage>
 ```
 
-### <a name="selecting-elements-with-a-specific-class-attribute"></a>Belirli bir sınıf özniteliği olan öğeler seçme
+### <a name="selecting-elements-with-a-specific-class-attribute"></a>Belirli bir sınıf özniteliği olan öğeleri seçme
 
-Belirli bir sınıfa öznitelik öğeleriyle seçilebilir büyük küçük harfe duyarlı ile `.class` Seçici:
+Öğe belirli Sınıf özniteliği ile seçilebilir büyük küçük harfe duyarlı ile `.class` Seçici:
 
 ```css
 .detailPageTitle {
@@ -242,7 +244,7 @@ Belirli bir sınıfa öznitelik öğeleriyle seçilebilir büyük küçük harfe
 }
 ```
 
-Bir CSS sınıfı ayarlayarak bir XAML öğesine atanabilir [ `StyleClass` ](xref:Xamarin.Forms.VisualElement.StyleClass) özelliği öğenin CSS sınıfı adı. Bu nedenle, aşağıdaki XAML örnekte stilleri tarafından tanımlanan `.detailPageTitle` sınıf ilk atanan [ `Label` ](xref:Xamarin.Forms.Label), while tarafından tanımlanan stiller `.detailPageSubtitle` sınıf ikinci atanan `Label`.
+Ayarlayarak bir XAML öğesine bir CSS sınıfı atanabilir [ `StyleClass` ](xref:Xamarin.Forms.VisualElement.StyleClass) özelliği öğesine bir CSS sınıfı adı. Bu nedenle, aşağıdaki XAML örnekte tanımlanan stiller `.detailPageTitle` sınıfı, ilk atanan [ `Label` ](xref:Xamarin.Forms.Label), while tarafından tanımlanan stiller `.detailPageSubtitle` sınıfı, ikinci düğüme atanır `Label`.
 
 ```xaml
 <ContentPage ...>
@@ -259,9 +261,9 @@ Bir CSS sınıfı ayarlayarak bir XAML öğesine atanabilir [ `StyleClass` ](xre
 </ContentPage>
 ```
 
-### <a name="selecting-child-elements"></a>Alt öğeler seçme
+### <a name="selecting-child-elements"></a>Alt öğeleri seçme
 
-Alt öğeler görsel ağaç seçilebilir büyük küçük harfe duyarlı ile `element element` Seçici:
+Alt öğeleri görsel ağacında seçilebilir büyük küçük harfe duyarlı ile `element element` Seçici:
 
 ```css
 listview image {
@@ -270,7 +272,7 @@ listview image {
 }
 ```
 
-Bu herhangi seçiciyi [ `Image` ](xref:Xamarin.Forms.Image) , alt öğelerini [ `ListView` ](xref:Xamarin.Forms.ListView) öğeleri ve bunların yüksekliğini ve genişliğini 60 olarak ayarlar. Bu nedenle, aşağıdaki örnekte XAML, `listview image` Seçici sıralanmayacağı [ `Image` ](xref:Xamarin.Forms.Image) bir alt öğesi olan [ `ListView` ](xref:Xamarin.Forms.ListView)ve yüksekliğini ve genişliğini 60 olarak ayarlar.
+Bu herhangi seçiciyi [ `Image` ](xref:Xamarin.Forms.Image) alt öğeleri [ `ListView` ](xref:Xamarin.Forms.ListView) öğeleri ve bunların yükseklik ve genişlik için 60 ayarlar. Bu nedenle, aşağıdaki örnekte XAML, `listview image` Seçici tanımlar [ `Image` ](xref:Xamarin.Forms.Image) alt öğesi olan [ `ListView` ](xref:Xamarin.Forms.ListView)ve 60 yüksekliğini ve genişliğini ayarlar.
 
 ```xaml
 <ContentPage ...>
@@ -296,11 +298,11 @@ Bu herhangi seçiciyi [ `Image` ](xref:Xamarin.Forms.Image) , alt öğelerini [ 
 ```
 
 > [!NOTE]
-> `element element` Seçici olarak alt öğesi gerekli olmadığı bir _doğrudan_ üst-alt öğesi alt farklı bir üst öğeye sahip olabilir. Bir üst belirtilen ilk öğedir koşuluyla seçimi oluşur.
+> `element element` Alt öğe Seçici gerekli olmadığı bir _doğrudan_ üst-alt öğe alt farklı bir üst öğeye sahip olabilir. Belirtilen ilk öğenin üst öğesi olması şartıyla seçim gerçekleşir.
 
 ### <a name="selecting-direct-child-elements"></a>Doğrudan alt öğeleri seçme
 
-Alt öğeler görsel ağaç seçilebilir büyük küçük harfe duyarlı ile doğrudan `element>element` Seçici:
+Alt öğeleri görsel ağacında seçilebilir büyük küçük harfe duyarlı ile doğrudan `element>element` Seçici:
 
 ```css
 stacklayout>image {
@@ -309,7 +311,7 @@ stacklayout>image {
 }
 ```
 
-Bu herhangi seçiciyi [ `Image` ](xref:Xamarin.Forms.Image) öğeleri doğrudan alt [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) öğeleri ve bunların yükseklik ve genişlik 200'e ayarlar. Bu nedenle, aşağıdaki örnekte XAML, `stacklayout>image` Seçici sıralanmayacağı [ `Image` ](xref:Xamarin.Forms.Image) doğrudan alt öğesi olan [ `StackLayout` ](xref:Xamarin.Forms.StackLayout)ve yüksekliğini ve genişliğini 200'e ayarlar.
+Bu herhangi seçiciyi [ `Image` ](xref:Xamarin.Forms.Image) öğeleri doğrudan alt [ `StackLayout` ](xref:Xamarin.Forms.StackLayout) öğeleri ve bunların yükseklik ve genişlik 200'e ayarlar. Bu nedenle, aşağıdaki örnekte XAML, `stacklayout>image` Seçici tanımlar [ `Image` ](xref:Xamarin.Forms.Image) öğesinin doğrudan alt öğesi olan [ `StackLayout` ](xref:Xamarin.Forms.StackLayout)ve yüksekliğini ve genişliğini 200'e ayarlar.
 
 ```xaml
 <ContentPage ...>
@@ -327,7 +329,7 @@ Bu herhangi seçiciyi [ `Image` ](xref:Xamarin.Forms.Image) öğeleri doğrudan 
 ```
 
 > [!NOTE]
-> `element>element` Seçiciyi gerektirdiği alt öğesi olan bir _doğrudan_ üst alt.
+> `element>element` Seçici gerektirir alt öğe olduğundan bir _doğrudan_ üst alt.
 
 ## <a name="selector-reference"></a>Seçici başvurusu
 
@@ -335,101 +337,138 @@ Aşağıdaki CSS Seçici Xamarin.Forms tarafından desteklenir:
 
 |Seçici|Örnek|Açıklama|
 |---|---|---|
-|`.class`|`.header`|İle tüm öğeleri seçer `StyleClass` 'üstbilgisi' içeren özellik. Bu Seçici büyük küçük harfe duyarlı olduğunu unutmayın.|
-|`#id`|`#email`|İle tüm öğeleri seçer `StyleId` kümesine `email`. Varsa `StyleId` , geri dönüş için ayarlanmadı `x:Name`. XAML kullanırken `x:Name` üzerinden tercih edilir `StyleId`. Bu Seçici büyük küçük harfe duyarlı olduğunu unutmayın.|
+|`.class`|`.header`|İle tüm öğeleri seçer `StyleClass` içeren 'header' özelliği. Bu Seçici büyük küçük harfe duyarlı olduğunu unutmayın.|
+|`#id`|`#email`|İle tüm öğeleri seçer `StyleId` kümesine `email`. Varsa `StyleId` , geri dönüş için ayarlanmadı `x:Name`. XAML, kullanırken `x:Name` üzerinden tercih edilen `StyleId`. Bu Seçici büyük küçük harfe duyarlı olduğunu unutmayın.|
 |`*`|`*`|Tüm öğeleri seçer.|
 |`element`|`label`|Türündeki tüm öğeleri seçer `Label`, ancak alt sınıfların değil. Bu Seçici büyük küçük harfe duyarlı olduğunu unutmayın.|
-|`^base`|`^contentpage`|İle tüm öğeleri seçer `ContentPage` temel sınıf olarak dahil olmak üzere `ContentPage` kendisi. Bu Seçici büyük küçük harfe duyarlı olduğunu ve CSS belirtiminin bir parçası değil unutmayın.|
+|`^base`|`^contentpage`|İle tüm öğeleri seçer `ContentPage` temel sınıf olarak da dahil olmak üzere `ContentPage` kendisi. Bu Seçici büyük/küçük harfe duyarlıdır ve CSS belirtiminin bir parçası olmayan unutmayın.|
 |`element,element`|`label,button`|Tüm seçer `Button` öğeleri ve tüm `Label` öğeleri. Bu Seçici büyük küçük harfe duyarlı olduğunu unutmayın.|
-|`element element`|`stacklayout label`|Tüm seçer `Label` öğeler içinde bir `StackLayout`. Bu Seçici büyük küçük harfe duyarlı olduğunu unutmayın.|
-|`element>element`|`stacklayout>label`|Tüm seçer `Label` öğeleriyle `StackLayout` doğrudan üst öğe olarak. Bu Seçici büyük küçük harfe duyarlı olduğunu unutmayın.|
+|`element element`|`stacklayout label`|Tüm seçer `Label` içinde öğeleri bir `StackLayout`. Bu Seçici büyük küçük harfe duyarlı olduğunu unutmayın.|
+|`element>element`|`stacklayout>label`|Tüm seçer `Label` öğelerle `StackLayout` doğrudan üst öğe olarak. Bu Seçici büyük küçük harfe duyarlı olduğunu unutmayın.|
 |`element+element`|`label+entry`|Tüm seçer `Entry` öğelerden sonra doğrudan bir `Label`. Bu Seçici büyük küçük harfe duyarlı olduğunu unutmayın.|
-|`element~element`|`label~entry`|Tüm seçer `Entry` öğeleri öncesinde tarafından bir `Label`. Bu Seçici büyük küçük harfe duyarlı olduğunu unutmayın.|
+|`element~element`|`label~entry`|Tüm seçer `Entry` öğeleri öncesinde bir `Label`. Bu Seçici büyük küçük harfe duyarlı olduğunu unutmayın.|
 
-Seçici eşleşen stilleri art arda, tanım sırayla uygulanır. Belirli bir öğede tanımlanan stiller her zaman en son uygulanır.
+Seçiciler eşleşen stilleri birbiri ardına tanımı sırayla uygulanır. Belirli bir öğe üzerinde tanımlanan stiller her zaman en son uygulanır.
 
 > [!TIP]
-> Seçici birleştirilebilir bunlarla sınırlı olmamak kaydıyla gibi `StackLayout>ContentView>label.email`.
+> Seçiciler birleştirilebilir sınırlama olmaksızın gibi `StackLayout>ContentView>label.email`.
 
 Şu seçicileri şu anda desteklenmiyor:
 
 - `[attribute]`
-- `@media` Ve `@supports`
-- `:` Ve `::`
+- `@media` ve `@supports`
+- `:` ve `::`
 
 > [!NOTE]
-> Belirginliğe ve belirginliğe geçersiz kılmalar desteklenmez.
+> Belirginliğe sahiptir ve ayrıntısıyla geçersiz kılmaları desteklenmez.
 
 ## <a name="property-reference"></a>Özellik Başvurusu
 
-Aşağıdaki CSS özelliklerini Xamarin.Forms tarafından desteklenen (içinde **değerleri** sütun türleridir _italik_, dize değişmez değerleri durumdayken `gray`):
+Aşağıdaki CSS özelliklerini Xamarin.Forms tarafından desteklenir (içinde **değerleri** sütun türleridir _italik_, dize sabit değerleri çalışırken `gray`):
 
 |Özellik|Uygulandığı öğe:|Değerler|Örnek|
 |---|---|---|---|
+|`align-content`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `spacebetween` \| `spacearound` \| `spaceevenly` \| `flex-start` \| `flex-end` \| `space-between` \| `space-around` \| `initial` |`align-content: space-between;`|
+|`align-items`|`FlexLayout`| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| `flex-end` \| `initial` |`align-items: flex-start;`|
+|`align-self`|`VisualElement`| `auto` \| `stretch` \| `center` \| `start` \| `end` \| `flex-start` \| `flex-end` \| `initial`|`align-self: flex-end;`|
 |`background-color`|`VisualElement`|_Renk_ \| `initial` |`background-color: springgreen;`|
-|`background-image`|`Page`|_Dize_ \| `initial` |`background-image: bg.png;`|
+|`background-image`|`Page`|_dize_ \| `initial` |`background-image: bg.png;`|
 |`border-color`|`Button`, `Frame`|_Renk_ \| `initial`|`border-color: #9acd32;`|
-|`border-width`|`Button`|_Çift_ \| `initial` |`border-width: .5;`|
-|`color`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`|_Renk_ \| `initial` |`color: rgba(255, 0, 0, 0.3);`|
+|`border-radius`|`BoxView`|_çift_ \| `intial` |`border-radius: 10;`|
+|`border-width`|`Button`|_çift_ \| `initial` |`border-width: .5;`|
+|`color`|`ActivityIndicator`, `BoxView`, `Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `ProgressBar`, `SearchBar`, `Switch`, `TimePicker`|_Renk_ \| `initial` |`color: rgba(255, 0, 0, 0.3);`|
+|`column-gap`|`Grid`|_çift_ \| `initial`|`column-gap: 9;`|
 |`direction`|`VisualElement`|`ltr` \| `rtl` \| `inherit` \| `initial` |`direction: rtl;`|
-|`font-family`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_Dize_ \| `initial` |`font-family: Consolas;`|
-|`font-size`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_çift_ \| _namedsize_ \| `initial` |`font-size: 12;`|
+|`flex-direction`|`FlexLayout`| `column` \| `columnreverse` \| `row` \| `rowreverse` \| `row-reverse` \| `column-reverse` \| `initial`|`flex-direction: column-reverse;`|
+|`flex-basis`|`VisualElement`|_float_ \| `auto` \| `initial`. Ayrıca, de aralık 0 ile % 100 arasında bir yüzde değeri ile belirtilebilir `%` oturum.|`flex-basis: 25%;`|
+|`flex-grow`|`VisualElement`|_kayan nokta_ \| `initial`|`flex-grow: 1.5;`|
+|`flex-shrink`|`VisualElement`|_kayan nokta_ \| `initial`|`flex-shrink: 1;`|
+|`flex-wrap`|`VisualElement`| `nowrap` \| `wrap` \| `reverse` \| `wrap-reverse` \| `initial`|`flex-wrap: wrap-reverse;`|
+|`font-family`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_dize_ \| `initial` |`font-family: Consolas;`|
+|`font-size`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|_çift_ \| _namedsize_  \| `initial` |`font-size: 12;`|
 |`font-style`|`Button`, `DatePicker`, `Editor`, `Entry`, `Label`, `Picker`, `SearchBar`, `TimePicker`, `Span`|`bold` \| `italic` \| `initial` |`font-style: bold;`|
-|`height`|`VisualElement`|_Çift_ \| `initial` |`min-height: 250;`|
+|`height`|`VisualElement`|_çift_ \| `initial` |`min-height: 250;`|
+|`justify-content`|`FlexLayout`| `start` \| `center` \| `end` \| `spacebetween` \| `spacearound` \| `spaceevenly` \| `flex-start` \| `flex-end` \| `space-between` \| `space-around` \| `initial`|`justify-content: flex-end;`|
+|`line-height`|`Label`, `Span`|_çift_ \| `initial` |`line-height: 1.8;`|
 |`margin`|`View`|_Kalınlığı_ \| `initial` |`margin: 6 12;`|
 |`margin-left`|`View`|_Kalınlığı_ \| `initial` |`margin-left: 3;`|
 |`margin-top`|`View`|_Kalınlığı_ \| `initial` |`margin-top: 2;`|
 |`margin-right`|`View`|_Kalınlığı_ \| `initial` |`margin-right: 1;`|
 |`margin-bottom`|`View`|_Kalınlığı_ \| `initial` |`margin-bottom: 6;`|
-|`min-height`|`VisualElement`|_Çift_ \| `initial` |`min-height: 50;`|
-|`min-width`|`VisualElement`|_Çift_ \| `initial` |`min-width: 112;`|
-|`opacity`|`VisualElement`|_Çift_ \| `initial` |`opacity: .3;`|
+|`max-lines`|`Label`|_int_ \| `initial`|`max-lines: 2;`|
+|`min-height`|`VisualElement`|_çift_ \| `initial` |`min-height: 50;`|
+|`min-width`|`VisualElement`|_çift_ \| `initial` |`min-width: 112;`|
+|`opacity`|`VisualElement`|_çift_ \| `initial` |`opacity: .3;`|
+|`order`|`VisualElement`|_int_ \| `initial`|`order: -1;`|
 |`padding`|`Layout`, `Page`|_Kalınlığı_ \| `initial` |`padding: 6 12 12;`|
-|`padding-left`|`Layout`, `Page`|_Çift_ \| `initial`|`padding-left: 3;`|
-|`padding-top`|`Layout`, `Page`| _Çift_ \| `initial` |`padding-top: 4;`|
-|`padding-right`|`Layout`, `Page`| _Çift_ \| `initial` |`padding-right: 2;`|
-|`padding-bottom`|`Layout`, `Page`| _Çift_ \| `initial` |`padding-bottom: 6;`|
-|`text-align`| `Entry`, `EntryCell`, `Label`, `SearchBar`|`left` \| `right` \| `center` \| `start` \| `end` \| `initial`. `left` ve `right` sağdan sola ortamlarda kaçınılmalıdır.| `text-align: right;`|
+|`padding-left`|`Layout`, `Page`|_çift_ \| `initial`|`padding-left: 3;`|
+|`padding-top`|`Layout`, `Page`| _çift_ \| `initial` |`padding-top: 4;`|
+|`padding-right`|`Layout`, `Page`| _çift_ \| `initial` |`padding-right: 2;`|
+|`padding-bottom`|`Layout`, `Page`| _çift_ \| `initial` |`padding-bottom: 6;`|
+|`position`|`FlexLayout`| `relative` \| `absolute` \| `initial`|`position: absolute;`|
+|`row-gap`|`Grid`| _çift_ \| `initial`|`row-gap: 12;`|
+|`text-align`| `Entry`, `EntryCell`, `Label`, `SearchBar`|`left` \| `top` \| `right` \| `bottom` \| `start` \| `center` \| `middle` \| `end` \| `initial`. `left` ve `right` sağdan sola ortamlarda kaçınılmalıdır.| `text-align: right;`|
+|`text-decoration`|`Label`, `Span`|`none` \| `underline` \| `strikethrough` \| `line-through` \| `initial`|`text-decoration: underline, line-through;`|
+|`transform`|`VisualElement`| `none`, `rotate`, `rotateX`, `rotateY`, `scale`, `scaleX`, `scaleY`, `translate`, `translateX`, `translateY`, `initial` |`transform: rotate(180), scaleX(2.5);`|
+|`transform-origin`|`VisualElement`| _çift_, _çift_ \| `initial` |`transform-origin: 7.5, 12.5;`|
+|`vertical-align`|`Label`|`left` \| `top` \| `right` \| `bottom` \| `start` \| `center` \| `middle` \| `end` \| `initial`|`vertical-align: bottom;`|
 |`visibility`|`VisualElement`|`true` \| `visible` \| `false` \| `hidden` \| `collapse` \| `initial `|`visibility: hidden;`|
-|`width`|`VisualElement`|_Çift_ \| `initial`|`min-width: 320;`|
+|`width`|`VisualElement`|_çift_ \| `initial`|`min-width: 320;`|
+
+Aşağıdaki Xamarin.Forms belirli CSS özelliklerini de desteklenmektedir (içinde **değerleri** sütun türleridir _italik_, dize sabit değerleri çalışırken `gray`):
+
+|Özellik|Uygulandığı öğe:|Değerler|Örnek|
+|---|---|---|---|
+|`-xf-placeholder`|`Entry`, `Editor`, `SearchBar`|_sınırlandırılmış metin_ \| `initial` |`-xf-placeholder: Enter name;`|
+|`-xf-placeholder-color`|`Entry`, `Editor`, `SearchBar`|_Renk_ \| `initial` |`-xf-placeholder-color: green;`|
+|`-xf-max-length`|`Entry`, `Editor`|_int_ \| `initial` |`-xf-max-length: 20;`|
+|`-xf-bar-background-color`|`NavigationPage`, `TabbedPage`|_Renk_ \| `initial` |`-xf-bar-background-color: teal;`|
+|`-xf-bar-text-color`|`NavigationPage`, `TabbedPage`|_Renk_ \| `initial` |`-xf-bar-text-color: gray`|
+|`-xf-orientation`|`ScrollView`, `StackLayout`| `horizontal` \| `vertical` \| `both` \| `initial`. `both` üzerinde yalnızca desteklenen bir `ScrollView`. |`-xf-orientation: horizontal;`|
+|`-xf-horizontal-scroll-bar-visibility`|`ScrollView`| `default` \| `always` \| `never` \| `initial` |`-xf-horizontal-scroll-bar-visibility: never;`|
+|`-xf-vertical-scroll-bar-visibility`|`ScrollView`| `default` \| `always` \| `never` \| `initial` |`-xf-vertical-scroll-bar-visbility: always;`|
+|`-xf-min-track-color`|`Slider`|_Renk_ \| `initial` |`-xf-min-track-color: yellow;`|
+|`-xf-max-track-color`|`Slider`|_Renk_ \| `initial` |`-xf-max-track-color: red;`|
+|`-xf-thumb-color`|`Slider`|_Renk_ \| `initial` |`-xf-thumb-color: limegreen;`|
+|`-xf-spacing`|`StackLayout`|_çift_ \| `initial` |`-xf-spacing: 8;`|
 
 > [!NOTE]
-> `initial` tüm özellikler için geçerli bir değer değil. Başka bir stili ayarlanan değer (varsayılan olarak sıfırlar) temizler.
+> `initial` tüm özellikler için geçerli bir değerdir. Bu, başka bir stil ayarlanan değer (varsayılan olarak sıfırlanacak) temizler.
 
-Aşağıdaki özellikleri şu anda desteklenmiyor:
+Aşağıdaki özellikler şu anda desteklenmiyor:
 
 - `all: initial`.
-- Yerleşim özellikleri (kutusu veya kılavuz).
-- Özellikleri, gibi `font`, ve `border`.
+- Düzen özelliklerini (kutusu veya kılavuz).
+- Toplu özellikleri gibi `font`, ve `border`.
 
-Ayrıca, hiçbir `inherit` değeri ve bu nedenle devralma desteklenmiyor. Bu nedenle, örneğin, ayarlayamazsınız `font-size` bir düzende özellik ve tüm beklediğiniz [ `Label` ](xref:Xamarin.Forms.Label) değeri alması için düzeninde örnekleri. Bir özel durum `direction` varsayılan değere sahip özelliği, `inherit`.
+Ayrıca, hiçbir `inherit` değeri ve bu nedenle devralma desteklenmez. Bu nedenle, örneğin, ayarlayamazsınız `font-size` bir düzen özelliği ve tüm beklediğiniz [ `Label` ](xref:Xamarin.Forms.Label) değeri alması için düzeni örnekleri. Bir özel durum `direction` varsayılan değere sahip özelliği, `inherit`.
 
 ### <a name="color"></a>Renk
 
 Aşağıdaki `color` değerler desteklenir:
 
-- `X11` [renkleri](https://en.wikipedia.org/wiki/X11_color_names/), CSS renkleri, UWP önceden tanımlanmış renkleri ve Xamarin.Forms renkleri eşleşmesi. Bu renk değerleri büyük küçük harfe duyarlı olduğunu unutmayın.
-- onaltılı renkleri: `#rgb`, `#argb`, `#rrggbb`, `#aarrggbb`
-- RGB renk: `rgb(255,0,0)`, `rgb(100%,0%,0%)`. Değerler 0-255 veya 0-%100 aralığındadır.
-- rgba renkleri: `rgba(255, 0, 0, 0.8)`, `rgba(100%, 0%, 0%, 0.8)`. Geçirgenlik değeri 0,0-1.0 aralığında değil.
-- HSL renkleri: `hsl(120, 100%, 50%)`. S ve m aralığı % 0-% 100'durumdayken h 0-360 aralığında değerdir.
-- hsla renkleri: `hsla(120, 100%, 50%, .8)`. Geçirgenlik değeri 0,0-1.0 aralığında değil.
+- `X11` [renkleri](https://en.wikipedia.org/wiki/X11_color_names/), CSS renk, önceden tanımlanmış renkleri UWP ve Xamarin.Forms renkleri eşleşmesi. Bu renk değerleri büyük küçük harfe duyarlı olduğunu unutmayın.
+- onaltılık renk: `#rgb`, `#argb`, `#rrggbb`, `#aarrggbb`
+- RGB renkleri: `rgb(255,0,0)`, `rgb(100%,0%,0%)`. Değerleri 0-255 veya 0-%100 aralığındadır.
+- rgba renkler: `rgba(255, 0, 0, 0.8)`, `rgba(100%, 0%, 0%, 0.8)`. Geçirgenlik değeri 0,0-1.0 aralığında ' dir.
+- HSL renkler: `hsl(120, 100%, 50%)`. S ve m aralığı 0-%100 içinde çalışırken h değeri 0-360 aralığında ' dir.
+- hsla renkler: `hsla(120, 100%, 50%, .8)`. Geçirgenlik değeri 0,0-1.0 aralığında ' dir.
 
 ### <a name="thickness"></a>Kalınlığı
 
-Bir, iki, üç veya dört `thickness` değerler desteklenir, her beyaz boşlukla ayrılmış:
+Bir, iki, üç veya dört `thickness` değerler desteklenir, boşluk tarafından ayrılmış her:
 
-- Tek bir değer Tekdüzen kalınlığını belirtir.
-- İki değer dikey sonra yatay kalınlığını belirtir.
-- Üç değerler üst, sonra yatay (sol ve sağ) sonra alt kalınlığını belirtir.
-- Dört değerleri, üst, sonra sağ, alt sonra sol kalınlığı gösterir.
+- Tek bir değer Tekdüzen kalınlığı gösterir.
+- İki değer dikey sonra yatay kalınlığı gösterir.
+- Üç değer, üst, sonra yatay (sol ve sağ), sonra alt kalınlığı gösterir.
+- Dört değer, üst, sonra sağ, alt sonra sol kalınlığı gösterir.
 
 > [!NOTE]
-> CSS `thickness` değerleri farklı XAML [ `Thickness` ](/api/type/Xamarin.Forms.Thickness/) değerleri. Örneğin, XAML'de iki değer `Thickness` dört değer sırasında yatay sonra dikey kalınlığını belirtir `Thickness` sol, sonra üst ve sağ tarafta, ardından kalınlığı alt gösterir. Ayrıca, XAML `Thickness` virgülle ayrılmış değerler.
+> CSS `thickness` değerleri farklı XAML [ `Thickness` ](/api/type/Xamarin.Forms.Thickness/) değerleri. Örneğin, iki değer XAML olarak `Thickness` dört değeri yatay sonra dikey kalınlığını belirten `Thickness` sol, ardından üst ardından sağa doğru ardından kalınlığı alt gösterir. Ayrıca, XAML `Thickness` virgülle ayrılmış değerler.
 
 ### <a name="namedsize"></a>NamedSize
 
-Aşağıdaki büyük küçük harfe duyarlı `namedsize` değerler desteklenir:
+Büyük küçük harfe duyarlı aşağıdaki `namedsize` değerler desteklenir:
 
 - `default`
 - `micro`
@@ -437,15 +476,16 @@ Aşağıdaki büyük küçük harfe duyarlı `namedsize` değerler desteklenir:
 - `medium`
 - `large`
 
-Her tam anlamını `namedsize` değerdir platforma bağımlı ve görünüm bağımlı.
+Her tam anlamı `namedsize` değerdir platforma bağımlıdır ve görünüm bağımlı.
 
-## <a name="css-in-xamarinforms-with-xamarinuniversity"></a>Xamarin.Forms Xamarin.University ile CSS
+## <a name="css-in-xamarinforms-with-xamarinuniversity"></a>Xamarin.Forms ile Xamarin.University CSS
 
 > [!VIDEO https://youtube.com/embed/va-Vb7vtan8]
 
-**Xamarin.Forms 3.0 CSS, göre [Xamarin Üniversitesi](https://university.xamarin.com/)**
+**Xamarin.Forms 3.0 CSS tarafından [Xamarin University](https://university.xamarin.com/)**
 
 ## <a name="related-links"></a>İlgili bağlantılar
 
 - [MonkeyAppCSS (örnek)](https://developer.xamarin.com/samples/xamarin-forms/UserInterface/Styles/MonkeyAppCSS/)
+- [Kaynak Sözlükler](~/xamarin-forms/xaml/resource-dictionaries.md)
 - [XAML Stilleri Kullanarak Xamarin.Forms Uygulamalarında Stil Oluşturma](~/xamarin-forms/user-interface/styles/xaml/index.md)
